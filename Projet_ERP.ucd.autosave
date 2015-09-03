@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5718</SavedWith>
+    <SavedWith>10.0.5689</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <Project>
@@ -39,7 +39,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-09-03T13:28:18.1840457-04:00</DateModified>
+    <DateModified>2015-09-03T14:19:11.686493-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -249,10 +249,10 @@
     <UserID>S-2</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Name>Créer un rapport pour une tâche effectuée (UC-2)</Name>
-    <Description>Quand le Technicien ferme un dossier un rapport est automatiquement généré dans le système </Description>
+    <Description>Quand le Technicien ferme un dossier, un rapport est automatiquement généré dans le système.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Quand le \cf1 Technicien ferme un dossier un rapport est automatiquement g\'e9n\'e9r\'e9 dans le syst\'e8me \cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Quand le \cf1\ul Technicien\cf2\ulnone  ferme un dossier, un rapport est automatiquement g\'e9n\'e9r\'e9 dans le syst\'e8me.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -261,51 +261,83 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-08-31T11:06:32.151412-04:00</DateAdded>
-    <DateModified>2015-09-03T14:02:44.0660759-04:00</DateModified>
+    <DateModified>2015-09-03T14:31:37.8458684-04:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-1b9ac32e-c242-4b48-9fe2-919d2fd23bb8</UniqueID>
     <UserID>S-3</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Name>Vérifier les tâches sur un ordinateur (UC-3)</Name>
+    <Description>Le Technicien peut visualiser l'avancement du travail effectué sur un dossier du client.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  peut visualiser l'avancement du travail effectu\'e9 sur un dossier du client.\cf0\par
+}
+</RichDescription>
     <Sequence>2</Sequence>
+    <Priority>Must</Priority>
+    <Size>Med</Size>
+    <AssignedTo />
+    <Status />
     <DateAdded>2015-08-31T11:06:32.1670124-04:00</DateAdded>
-    <DateModified>2015-08-31T11:06:32.1670124-04:00</DateModified>
+    <DateModified>2015-09-03T14:33:19.7262379-04:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-e496204b-1cd5-4788-9d80-b510b6b7ede6</UniqueID>
     <UserID>S-4</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Name>Modifier les dossiers de client (UC-5)</Name>
+    <Description>Le Technicien peut changer les informations au dossier du client désiré.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  peut changer les informations au dossier du client d\'e9sir\'e9.\cf0\par
+}
+</RichDescription>
     <Sequence>3</Sequence>
-    <Priority />
-    <Size />
+    <Priority>Must</Priority>
+    <Size>Med</Size>
     <AssignedTo />
     <Status />
     <DateAdded>2015-08-31T11:06:32.1826583-04:00</DateAdded>
-    <DateModified>2015-09-03T08:59:09.7711725-04:00</DateModified>
+    <DateModified>2015-09-03T14:34:52.3922928-04:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-fa6fff70-a041-4a2d-a57e-41f1a55d67a0</UniqueID>
     <UserID>S-5</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Name>Modifier les tâches à effectuer sur un ordinateur (UC-4)</Name>
+    <Description>Quand un Technicien constate qu'il doit effectuer une tâche imprévue, il peut l'ajouter au dossier.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Quand un \cf1\ul Technicien\cf2\ulnone  constate qu'il doit effectuer une t\'e2che impr\'e9vue, il peut l'ajouter au dossier.\cf0\par
+}
+</RichDescription>
     <Sequence>4</Sequence>
-    <Priority />
-    <Size />
+    <Priority>Must</Priority>
+    <Size>Med</Size>
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-03T08:41:51.5941783-04:00</DateAdded>
-    <DateModified>2015-09-03T08:58:47.6117403-04:00</DateModified>
+    <DateModified>2015-09-03T14:42:21.8493831-04:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-80c5fd0e-a1f0-4ede-b00a-6f3a46347b14</UniqueID>
     <UserID>S-6</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Name>Mettre à jour le statut des tâches effectuées sur un ordinateur (UC-6)</Name>
+    <Description>Lorsque le Technicien effectue des tâche sur l'ordinateur, il prend en note son travail dans la fiche de suivi.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Lorsque le \cf1\ul Technicien\cf2\ulnone  effectue des t\'e2che sur l'ordinateur, il prend en note son travail dans la fiche de suivi.\cf0\par
+}
+</RichDescription>
     <Sequence>5</Sequence>
+    <Priority />
+    <Size />
+    <AssignedTo />
+    <Status />
     <DateAdded>2015-09-03T08:41:51.6566418-04:00</DateAdded>
-    <DateModified>2015-09-03T08:41:51.6566418-04:00</DateModified>
+    <DateModified>2015-09-03T14:53:32.0791752-04:00</DateModified>
   </Story>
   <Diagram>
     <UniqueID>D-daf0da6f-87e2-439a-bcc0-504de5acf8dc</UniqueID>
@@ -345,6 +377,10 @@
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
+  <Scenario>
+    <UniqueID>MSS-bf759809-c362-49f1-b099-4269972b274e</UniqueID>
+    <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
+  </Scenario>
   <Goal>
     <UniqueID>G-405351d0-cfb8-4e4e-8307-98fe66afe70c</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
@@ -432,6 +468,18 @@
 </RichDescription>
     <Sequence>5</Sequence>
   </Goal>
+  <Step>
+    <UniqueID>ST-532b7fa3-c050-4fe7-ac6b-e85ef8e506ee</UniqueID>
+    <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
+    <Description>Le Technicien demande le numéro de téléphone du client</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  demande le \cf3 num\'e9ro de t\'e9l\'e9phone\cf2  du client\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <ExternalDoc>
     <UniqueID>EX-f734a794-0deb-4f8c-bfa6-4d60b9474963</UniqueID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
@@ -451,7 +499,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-</DefaultPrefix>
-    <NextValue>2</NextValue>
+    <NextValue>3</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-</DefaultPrefix>
@@ -469,6 +517,19 @@
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <UserID>DEF-1</UserID>
     <Sequence>0</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-1b7f2bb6-f751-4e70-a8b4-9d5f669f4a6d</UniqueID>
+    <Name>numéro de téléphone</Name>
+    <Description>Numero d'identification d'un client: Série de 7 chiffres</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Numero d'identification d'un client: S\'e9rie de 7 chiffres\par
+}
+</RichDescription>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <UserID>DEF-2</UserID>
+    <Sequence>1</Sequence>
   </DictionaryEntry>
   <BuiltInField>
     <UniqueID>1</UniqueID>
