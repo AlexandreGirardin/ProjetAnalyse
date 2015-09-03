@@ -45,11 +45,11 @@
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
     <UserID>UC-2</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>Créer une facture pour une tâche effectuée</Name>
-    <Description>Transformer le dossier d'un client en facture utilisable par Acomba.</Description>
+    <Name>Créer un rapport pour une tâche effectuée</Name>
+    <Description>Transformer le dossier d'un client en rapport pouvant être utilisé au moment de la facturation.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Transformer le dossier d'un client en facture utilisable par \cf1\ul Acomba\cf2\ulnone .\cf0\par
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Transformer le dossier d'un client en rapport pouvant \'eatre utilis\'e9 au moment de la facturation\cf1 .\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -65,7 +65,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-03T13:31:45.9782669-04:00</DateModified>
+    <DateModified>2015-09-03T14:23:10.8798539-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-13d8a332-53db-4fa6-94ac-476c8efae5bb</UniqueID>
