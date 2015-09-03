@@ -28,8 +28,9 @@
 </RichDescription>
     <Sequence>0</Sequence>
     <Priority>1</Priority>
-    <PreConditions />
-    <PostConditions />
+    <PreConditions>Le client n'a pas de dossier.
+</PreConditions>
+    <PostConditions>Le client a un dossier.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -39,7 +40,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-09-03T14:19:11.686493-04:00</DateModified>
+    <DateModified>2015-09-03T15:02:30.0577229-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -170,6 +171,31 @@
     <DateAdded>2015-09-03T08:41:37.3331476-04:00</DateAdded>
     <DateModified>2015-09-03T08:50:54.3812469-04:00</DateModified>
   </UseCase>
+  <UseCase>
+    <UniqueID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</UniqueID>
+    <UserID>UC-7</UserID>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Name>Ouvrir une fiche dans le dossier d'un client</Name>
+    <Description>Ouverture d'une fiche pour le suivi d'un problème d'un appareil</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Ouverture d'une fiche pour le suivi d'un probl\'e8me d'un appareil\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
+    <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
+    <DateModified>2015-09-03T15:06:31.2790016-04:00</DateModified>
+  </UseCase>
   <Actor>
     <UniqueID>A-e90405a7-cde1-4222-87b5-8893a7d30795</UniqueID>
     <UserID>A-1</UserID>
@@ -183,7 +209,7 @@
     <Sequence>0</Sequence>
     <Complexity />
     <DateAdded>2015-08-31T10:36:17.3249026-04:00</DateAdded>
-    <DateModified>2015-09-03T10:18:06.8254665-04:00</DateModified>
+    <DateModified>2015-09-03T15:04:54.4321526-04:00</DateModified>
   </Actor>
   <Actor>
     <UniqueID>A-f35b8b86-8dad-4cc0-8c04-c8f17d8939f7</UniqueID>
@@ -224,6 +250,22 @@
     <Sequence>3</Sequence>
     <DateAdded>2015-08-31T10:44:07.6558445-04:00</DateAdded>
     <DateModified>2015-08-31T10:44:12.5625087-04:00</DateModified>
+  </Actor>
+  <Actor>
+    <UniqueID>A-025c6d87-3cad-448e-910b-00cd1cfac7b7</UniqueID>
+    <UserID>A-5</UserID>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Name>Système</Name>
+    <Description>Le système de suivi de dossier.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  de suivi de dossier.\cf0\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <Complexity />
+    <DateAdded>2015-09-03T14:58:48.2236027-04:00</DateAdded>
+    <DateModified>2015-09-03T14:59:26.9807172-04:00</DateModified>
   </Actor>
   <Story>
     <UniqueID>S-999f8af4-1662-402b-b872-05652840ac36</UniqueID>
@@ -307,6 +349,15 @@
     <DateAdded>2015-09-03T08:41:51.6566418-04:00</DateAdded>
     <DateModified>2015-09-03T08:41:51.6566418-04:00</DateModified>
   </Story>
+  <Story>
+    <UniqueID>S-91d56f14-99f8-43d5-9399-71459574b382</UniqueID>
+    <UserID>S-7</UserID>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Name>Ouvrir une fiche dans le dossier d'un client (UC-7)</Name>
+    <Sequence>6</Sequence>
+    <DateAdded>2015-09-03T15:04:39.064529-04:00</DateAdded>
+    <DateModified>2015-09-03T15:05:15.4952659-04:00</DateModified>
+  </Story>
   <Diagram>
     <UniqueID>D-daf0da6f-87e2-439a-bcc0-504de5acf8dc</UniqueID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
@@ -342,6 +393,11 @@
   </UCActor>
   <UCActor>
     <ParentID>UC-49e4e9b5-f5ce-4719-bdbc-fb04ea94d8f8</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
@@ -436,18 +492,100 @@
 </RichDescription>
     <Sequence>5</Sequence>
   </Goal>
-  <Step>
-    <UniqueID>ST-532b7fa3-c050-4fe7-ac6b-e85ef8e506ee</UniqueID>
-    <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
-    <Description>Le Technicien demande le numéro de téléphone du client</Description>
+  <Goal>
+    <UniqueID>G-4108b987-ae29-4120-8968-d9e1fa3796a9</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Ouvrir une fiche dans le dossier d'un client (S-7) (UC-7)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  demande le \cf3 num\'e9ro de t\'e9l\'e9phone\cf2  du client\cf0\par
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Ouvrir une fiche dans le dossier d'un client (\cf1\ul S-7\cf0\ulnone ) (\cf1\ul UC-7\cf0\ulnone )\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
+  </Goal>
+  <Step>
+    <UniqueID>ST-20deb73d-c3e7-4e95-b7e7-4d3d9c0f2eba</UniqueID>
+    <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
+    <Description>Le Technicien remplit le formulaire à l'aide du client</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul Technicien\cf1\ulnone  remplit le \cf3 formulaire\cf1  \'e0 l'aide du client\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-2d5bc82c-92b5-49b6-be16-3f85e13e9af4</UniqueID>
+    <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
+    <Description>Le système présente un formulaire</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  pr\'e9sente un \cf3 formulaire\cf1\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-7b1c6c51-64e1-4be0-97af-3ef7ee76f68e</UniqueID>
+    <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
+    <Description>Le système crée l'entrée dans la Base de données</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf0\ulnone  cr\'e9e l'entr\'e9e dans la \cf1\ul Base de donn\'e9es\cf0\ulnone\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-8195bdf0-c225-442f-afad-cad87ba90800</UniqueID>
+    <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
+    <Description>Retour au </Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Retour au \par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-98266919-fc5e-4b22-9757-b96c7a47060e</UniqueID>
+    <ParentID>X-813aecc7-86f1-4f0b-a047-5d67886f984f</ParentID>
+    <Description>le système réessaye de créer l'entrée dans la Base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 le \cf1\ul syst\'e8me\cf2\ulnone  r\'e9essaye de cr\'e9er l'entr\'e9e dans la \cf1\ul Base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-a81aeeef-297f-41ad-acbd-6ee839def898</UniqueID>
+    <ParentID>X-813aecc7-86f1-4f0b-a047-5d67886f984f</ParentID>
+    <Description>Le système plante et ferme automatiquement</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  plante et ferme automatiquement\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Extension>
+    <UniqueID>X-813aecc7-86f1-4f0b-a047-5d67886f984f</UniqueID>
+    <ParentID>ST-7b1c6c51-64e1-4be0-97af-3ef7ee76f68e</ParentID>
+    <Description>La connexion à la base de données n'est pas disponible</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La connexion \'e0 la \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas disponible\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
   <ExternalDoc>
     <UniqueID>EX-f734a794-0deb-4f8c-bfa6-4d60b9474963</UniqueID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
@@ -455,11 +593,11 @@
   </ExternalDoc>
   <UserID>
     <DefaultPrefix>UC-</DefaultPrefix>
-    <NextValue>7</NextValue>
+    <NextValue>8</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>A-</DefaultPrefix>
-    <NextValue>5</NextValue>
+    <NextValue>6</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>REQ-</DefaultPrefix>
@@ -471,15 +609,16 @@
   </UserID>
   <UserID>
     <DefaultPrefix>S-</DefaultPrefix>
-    <NextValue>7</NextValue>
+    <NextValue>8</NextValue>
   </UserID>
   <DictionaryEntry>
     <UniqueID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</UniqueID>
-    <Name>formulaire</Name>
-    <Description />
+    <Name>formulaire de client</Name>
+    <Description>Formulaire affiché lors de la création d'un dossier de client</Description>
     <Aliases>form</Aliases>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20\par
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Formulaire affich\'e9 lors de la cr\'e9ation d'un dossier de client\cf0\par
 }
 </RichDescription>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
@@ -499,6 +638,30 @@
     <UserID>DEF-2</UserID>
     <Sequence>1</Sequence>
   </DictionaryEntry>
+  <DictionaryField>
+    <Name>numero du client</Name>
+    <UniqueID>DF-4386eec5-4631-4764-bf4d-d6c4f9a79c3c</UniqueID>
+    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>7 derniers chiffres de son numéro de téléphone</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>nom</Name>
+    <UniqueID>DF-86b92ba2-8c99-4a51-942a-f8b2ab4d5d57</UniqueID>
+    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
+    <ElementType>String</ElementType>
+    <Description>nom du client</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>numero de téléphone</Name>
+    <UniqueID>DF-4a516e5a-c03b-4239-8075-98f190950651</UniqueID>
+    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>numéro de téléphone complet</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
   <BuiltInField>
     <UniqueID>1</UniqueID>
     <Name>Priority</Name>
