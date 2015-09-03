@@ -233,7 +233,7 @@
     <Description> Le Technicien ajoute un client en utilisant le système de gestion de dossiers à l'aide du formulaire.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20  Le \cf1\ul Technicien\cf2\ulnone  ajoute un client en utilisant le syst\'e8me de gestion de dossiers \'e0 l'aide du \cf3 formulaire\cf2 .\cf0\par
+\viewkind4\uc1\pard\f0\fs20  Le \cf1\ul Technicien\cf2\ulnone  ajoute un client en utilisant le syst\'e8me de gestion de \cf3 dossiers\cf2  \'e0 l'aide du \cf3 formulaire\cf2 .\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -242,7 +242,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-08-31T11:06:32.135796-04:00</DateAdded>
-    <DateModified>2015-09-03T13:38:01.2846183-04:00</DateModified>
+    <DateModified>2015-09-03T15:01:53.7187236-04:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-cb4a7d2e-1753-49e0-ba5b-e8f062cd2247</UniqueID>
@@ -251,8 +251,8 @@
     <Name>Créer un rapport pour une tâche effectuée (UC-2)</Name>
     <Description>Quand le Technicien ferme un dossier, un rapport est automatiquement généré dans le système.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Quand le \cf1\ul Technicien\cf2\ulnone  ferme un dossier, un rapport est automatiquement g\'e9n\'e9r\'e9 dans le syst\'e8me.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Quand le \cf1\ul Technicien\cf2\ulnone  ferme un dossier, un \cf3 rapport\cf2  est automatiquement g\'e9n\'e9r\'e9 dans le syst\'e8me.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -261,7 +261,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-08-31T11:06:32.151412-04:00</DateAdded>
-    <DateModified>2015-09-03T14:31:37.8458684-04:00</DateModified>
+    <DateModified>2015-09-03T15:03:51.2096516-04:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-1b9ac32e-c242-4b48-9fe2-919d2fd23bb8</UniqueID>
@@ -287,10 +287,10 @@
     <UserID>S-4</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Name>Modifier les dossiers de client (UC-5)</Name>
-    <Description>Le Technicien peut changer les informations au dossier du client désiré.</Description>
+    <Description>Le Technicien peut changer les informations d'un client donné.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  peut changer les informations au dossier du client d\'e9sir\'e9.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  peut changer les informations d'un client donn\'e9.\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -299,7 +299,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-08-31T11:06:32.1826583-04:00</DateAdded>
-    <DateModified>2015-09-03T14:34:52.3922928-04:00</DateModified>
+    <DateModified>2015-09-03T15:04:54.3053349-04:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-fa6fff70-a041-4a2d-a57e-41f1a55d67a0</UniqueID>
@@ -308,8 +308,8 @@
     <Name>Modifier les tâches à effectuer sur un ordinateur (UC-4)</Name>
     <Description>Quand un Technicien constate qu'il doit effectuer une tâche imprévue, il peut l'ajouter au dossier.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Quand un \cf1\ul Technicien\cf2\ulnone  constate qu'il doit effectuer une t\'e2che impr\'e9vue, il peut l'ajouter au dossier.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Quand un \cf1\ul Technicien\cf2\ulnone  constate qu'il doit effectuer une \cf3 t\'e2che\cf2  impr\'e9vue, il peut l'ajouter au dossier.\cf0\par
 }
 </RichDescription>
     <Sequence>4</Sequence>
@@ -318,7 +318,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-03T08:41:51.5941783-04:00</DateAdded>
-    <DateModified>2015-09-03T14:42:21.8493831-04:00</DateModified>
+    <DateModified>2015-09-03T15:08:15.873804-04:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-80c5fd0e-a1f0-4ede-b00a-6f3a46347b14</UniqueID>
@@ -327,17 +327,17 @@
     <Name>Mettre à jour le statut des tâches effectuées sur un ordinateur (UC-6)</Name>
     <Description>Lorsque le Technicien effectue des tâche sur l'ordinateur, il prend en note son travail dans la fiche de suivi.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Lorsque le \cf1\ul Technicien\cf2\ulnone  effectue des t\'e2che sur l'ordinateur, il prend en note son travail dans la fiche de suivi.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Lorsque le \cf1\ul Technicien\cf2\ulnone  effectue des t\'e2che sur l'ordinateur, il prend en note son travail dans la \cf3 fiche\cf2  de suivi.\cf0\par
 }
 </RichDescription>
     <Sequence>5</Sequence>
-    <Priority />
-    <Size />
+    <Priority>Must</Priority>
+    <Size>Med</Size>
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-03T08:41:51.6566418-04:00</DateAdded>
-    <DateModified>2015-09-03T14:53:32.0791752-04:00</DateModified>
+    <DateModified>2015-09-03T14:59:52.2358847-04:00</DateModified>
   </Story>
   <Diagram>
     <UniqueID>D-daf0da6f-87e2-439a-bcc0-504de5acf8dc</UniqueID>
@@ -499,7 +499,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-</DefaultPrefix>
-    <NextValue>3</NextValue>
+    <NextValue>7</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-</DefaultPrefix>
@@ -530,6 +530,60 @@
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <UserID>DEF-2</UserID>
     <Sequence>1</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-38154080-1d5a-4b39-b180-b9073d72b87b</UniqueID>
+    <Name>fiche</Name>
+    <Description>Contient les tâches à effectuer sur un appareil donné.</Description>
+    <Aliases>fiche</Aliases>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Contient les t\'e2ches \'e0 effectuer sur un appareil donn\'e9.\par
+}
+</RichDescription>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <UserID>DEF-3</UserID>
+    <Sequence>2</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-36b36b9f-4904-4abe-bd9a-e8eaf12ccc46</UniqueID>
+    <Name>dossier</Name>
+    <Description>Contient les informations d'un client.</Description>
+    <Aliases>dos</Aliases>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Contient les informations d'un client.\par
+}
+</RichDescription>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <UserID>DEF-4</UserID>
+    <Sequence>2</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-88419b29-9af0-476e-8c39-5a43815f1488</UniqueID>
+    <Name>rapport</Name>
+    <Description>Représentation lisible d'une fiche servant à la génération d'une facture.</Description>
+    <Aliases>rap</Aliases>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Repr\'e9sentation lisible d'une \cf1 fiche\cf2  servant \'e0 la g\'e9n\'e9ration d'une facture.\cf0\par
+}
+</RichDescription>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <UserID>DEF-5</UserID>
+    <Sequence>2</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-edad66dc-30d2-43a5-a976-09d85d376fa0</UniqueID>
+    <Name>tâche</Name>
+    <Description>Action effectuée par un Technicien sur un appareil.</Description>
+    <Aliases>tâche</Aliases>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Action effectu\'e9e par un \cf1\ul Technicien\cf2\ulnone  sur un appareil.\cf0\par
+}
+</RichDescription>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <UserID>DEF-6</UserID>
+    <Sequence>3</Sequence>
   </DictionaryEntry>
   <BuiltInField>
     <UniqueID>1</UniqueID>
