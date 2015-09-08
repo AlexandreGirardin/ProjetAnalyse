@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5689</SavedWith>
+    <SavedWith>10.0.5718</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <Project>
@@ -40,7 +40,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-09-03T15:02:30.0577229-04:00</DateModified>
+    <DateModified>2015-09-08T08:56:19.8030855-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -175,15 +175,16 @@
     <UniqueID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</UniqueID>
     <UserID>UC-7</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>Ouvrir une fiche dans le dossier d'un client</Name>
-    <Description>Ouverture d'une fiche pour le suivi d'un problème d'un appareil</Description>
+    <Name>Créer une fiche cans le dossier d'un client</Name>
+    <Description>Création d'une fiche pour le suivi d'un problème d'un appareil.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Ouverture d'une fiche pour le suivi d'un probl\'e8me d'un appareil\par
+{\colortbl ;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Cr\'e9ation d'une \cf1 fiche\cf0  pour le suivi d'un probl\'e8me d'un appareil.\par
 }
 </RichDescription>
     <Sequence>6</Sequence>
     <Priority>1</Priority>
-    <PreConditions />
+    <PreConditions>Le client a déjà un dossier.</PreConditions>
     <PostConditions />
     <Level />
     <Complexity />
@@ -194,7 +195,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2015-09-03T15:06:31.2790016-04:00</DateModified>
+    <DateModified>2015-09-08T09:45:08.2774008-04:00</DateModified>
   </UseCase>
   <Actor>
     <UniqueID>A-e90405a7-cde1-4222-87b5-8893a7d30795</UniqueID>
@@ -437,6 +438,10 @@
     <UniqueID>MSS-bf759809-c362-49f1-b099-4269972b274e</UniqueID>
     <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
   </Scenario>
+  <Scenario>
+    <UniqueID>MSS-e4b68dd2-ffd2-46a8-b324-27e5fbb6d1d1</UniqueID>
+    <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
+  </Scenario>
   <Goal>
     <UniqueID>G-405351d0-cfb8-4e4e-8307-98fe66afe70c</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
@@ -606,6 +611,49 @@
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-ee0e4dba-2f3e-4dda-a637-e3d34af911d2</UniqueID>
+    <ParentID>MSS-e4b68dd2-ffd2-46a8-b324-27e5fbb6d1d1</ParentID>
+    <Description>Le Technicien indique le type d'appareil apporté par le client</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  indique le type d'appareil apport\'e9 par le client\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-c6693a71-172d-4605-9b50-b43ec07c292a</UniqueID>
+    <ParentID>MSS-e4b68dd2-ffd2-46a8-b324-27e5fbb6d1d1</ParentID>
+    <Description>Le Système change l'interface selon le type d'appareil indiqué</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Syst\'e8me\cf2\ulnone  change l'interface selon le type d'appareil indiqu\'e9\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-52e9d4e9-f430-4a02-b6bd-df1682dc92d0</UniqueID>
+    <ParentID>MSS-e4b68dd2-ffd2-46a8-b324-27e5fbb6d1d1</ParentID>
+    <Description>Le Technicien entre les informations de l'appareil dans le Système</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  entre les informations de l'appareil dans le \cf1\ul Syst\'e8me\cf0\ulnone\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-8b22b01d-2de6-4191-a284-ff184edc4701</UniqueID>
+    <ParentID>MSS-e4b68dd2-ffd2-46a8-b324-27e5fbb6d1d1</ParentID>
+    <Description />
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-813aecc7-86f1-4f0b-a047-5d67886f984f</UniqueID>
     <ParentID>ST-7b1c6c51-64e1-4be0-97af-3ef7ee76f68e</ParentID>
@@ -637,11 +685,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-</DefaultPrefix>
-<<<<<<< HEAD
-    <NextValue>3</NextValue>
-=======
-    <NextValue>7</NextValue>
->>>>>>> cc40437f1c7be2024196a890c85919028055020c
+    <NextValue>9</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-</DefaultPrefix>
@@ -674,32 +718,6 @@
     <UserID>DEF-2</UserID>
     <Sequence>1</Sequence>
   </DictionaryEntry>
-<<<<<<< HEAD
-  <DictionaryField>
-    <Name>numero du client</Name>
-    <UniqueID>DF-4386eec5-4631-4764-bf4d-d6c4f9a79c3c</UniqueID>
-    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
-    <ElementType>Integer</ElementType>
-    <Description>7 derniers chiffres de son numéro de téléphone</Description>
-    <Sequence>0</Sequence>
-  </DictionaryField>
-  <DictionaryField>
-    <Name>nom</Name>
-    <UniqueID>DF-86b92ba2-8c99-4a51-942a-f8b2ab4d5d57</UniqueID>
-    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
-    <ElementType>String</ElementType>
-    <Description>nom du client</Description>
-    <Sequence>1</Sequence>
-  </DictionaryField>
-  <DictionaryField>
-    <Name>numero de téléphone</Name>
-    <UniqueID>DF-4a516e5a-c03b-4239-8075-98f190950651</UniqueID>
-    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
-    <ElementType>Integer</ElementType>
-    <Description>numéro de téléphone complet</Description>
-    <Sequence>2</Sequence>
-  </DictionaryField>
-=======
   <DictionaryEntry>
     <UniqueID>D2-38154080-1d5a-4b39-b180-b9073d72b87b</UniqueID>
     <Name>fiche</Name>
@@ -754,7 +772,130 @@
     <UserID>DEF-6</UserID>
     <Sequence>3</Sequence>
   </DictionaryEntry>
->>>>>>> cc40437f1c7be2024196a890c85919028055020c
+  <DictionaryEntry>
+    <UniqueID>D2-fbd927cb-eae2-4fb0-ba42-a84107fa5c7a</UniqueID>
+    <Name>fiche de portable</Name>
+    <Description>Fiche contenant les informations du portable d'un client</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Fiche\cf2  contenant les informations du portable d'un client\cf0\par
+}
+</RichDescription>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <UserID>DEF-7</UserID>
+    <Sequence>4</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-d45cb129-906b-4bae-b165-b577ffdf3e25</UniqueID>
+    <Name>fiche d'ordinateur de bureau</Name>
+    <Description>Fiche d'information à remplir contenant les informations de l'ordinateur de bureau d'un client</Description>
+    <Aliases>fiche de PC</Aliases>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Fiche\cf2  d'information \'e0 remplir contenant les informations de l'ordinateur de bureau d'un client\cf0\par
+}
+</RichDescription>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <UserID>DEF-8</UserID>
+    <Sequence>4</Sequence>
+  </DictionaryEntry>
+  <DictionaryField>
+    <Name>numero du client</Name>
+    <UniqueID>DF-4386eec5-4631-4764-bf4d-d6c4f9a79c3c</UniqueID>
+    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>7 derniers chiffres de son numéro de téléphone</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>nom</Name>
+    <UniqueID>DF-86b92ba2-8c99-4a51-942a-f8b2ab4d5d57</UniqueID>
+    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
+    <ElementType>String</ElementType>
+    <Description>nom du client</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>numero de téléphone</Name>
+    <UniqueID>DF-4a516e5a-c03b-4239-8075-98f190950651</UniqueID>
+    <ParentID>D2-e91fa5e3-3b86-4aac-951a-2a2f9ecce93e</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>numéro de téléphone complet</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Marque</Name>
+    <UniqueID>DF-04553dcd-ffca-4893-98fc-6bd4a70fe3c4</UniqueID>
+    <ParentID>D2-d45cb129-906b-4bae-b165-b577ffdf3e25</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Marque du boitier, si visible</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Couleur</Name>
+    <UniqueID>DF-e6e3a488-4e24-4033-8642-44ff43d53f07</UniqueID>
+    <ParentID>D2-d45cb129-906b-4bae-b165-b577ffdf3e25</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Couleur du boîtier</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Modèle</Name>
+    <UniqueID>DF-e1545e25-625c-4dee-affe-88c9a46f8c29</UniqueID>
+    <ParentID>D2-d45cb129-906b-4bae-b165-b577ffdf3e25</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Modèle du boîtier</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>État</Name>
+    <UniqueID>DF-120af6f9-1df1-4ac2-ab4d-9b5996660a91</UniqueID>
+    <ParentID>D2-d45cb129-906b-4bae-b165-b577ffdf3e25</ParentID>
+    <ElementType>String</ElementType>
+    <Description>État général (manque des morceaux, ...)</Description>
+    <Sequence>3</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Marque</Name>
+    <UniqueID>DF-2ca60d6c-5520-4486-9822-cf2dd5030e26</UniqueID>
+    <ParentID>D2-fbd927cb-eae2-4fb0-ba42-a84107fa5c7a</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Marque du portable</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Modèle</Name>
+    <UniqueID>DF-3c9bdc2c-0607-4a91-9cb3-419702fb0a13</UniqueID>
+    <ParentID>D2-fbd927cb-eae2-4fb0-ba42-a84107fa5c7a</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Modèle du portable</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Couleur</Name>
+    <UniqueID>DF-8b59bda7-a86a-4e19-bbf8-cbd1651e8b69</UniqueID>
+    <ParentID>D2-fbd927cb-eae2-4fb0-ba42-a84107fa5c7a</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Couleur du portable</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Taille</Name>
+    <UniqueID>DF-df1843da-60eb-41d7-b123-4d7823ca2953</UniqueID>
+    <ParentID>D2-fbd927cb-eae2-4fb0-ba42-a84107fa5c7a</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Taille du portable</Description>
+    <Sequence>3</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>New Field</Name>
+    <UniqueID>DF-46d1f769-8fe6-4cb4-b252-6a002cd4d68b</UniqueID>
+    <ParentID>D2-fbd927cb-eae2-4fb0-ba42-a84107fa5c7a</ParentID>
+    <ElementType>[Type]</ElementType>
+    <Description>[Description]</Description>
+    <Sequence>4</Sequence>
+  </DictionaryField>
   <BuiltInField>
     <UniqueID>1</UniqueID>
     <Name>Priority</Name>
