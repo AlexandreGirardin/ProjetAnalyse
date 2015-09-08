@@ -75,7 +75,7 @@
   </ActorList>
   <StoryList>
     <Columns>Name,UserID,Status,Priority,Package</Columns>
-    <ColumnWidths>460,57,80,80,125</ColumnWidths>
+    <ColumnWidths>582,57,80,80,125</ColumnWidths>
   </StoryList>
   <RequirementList>
     <Columns>Name,UserID,ReqType,Priority,Package</Columns>
