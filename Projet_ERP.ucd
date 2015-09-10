@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5689</SavedWith>
+    <SavedWith>10.0.5718</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <Project>
@@ -40,7 +40,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-09-10T10:22:25.4953588-04:00</DateModified>
+    <DateModified>2015-09-10T10:34:41.4594832-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -226,11 +226,21 @@
     <UniqueID>UC-eec925da-091e-42c8-b860-c1841536beb0</UniqueID>
     <UserID>UC-9</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>New Use Case</Name>
+    <Name />
     <Sequence>8</Sequence>
     <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
     <DateAdded>2015-09-08T09:59:20.7772349-04:00</DateAdded>
-    <DateModified>2015-09-08T09:59:20.7787466-04:00</DateModified>
+    <DateModified>2015-09-10T13:44:56.3970662-04:00</DateModified>
   </UseCase>
   <Actor>
     <UniqueID>A-e90405a7-cde1-4222-87b5-8893a7d30795</UniqueID>
