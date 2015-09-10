@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5718</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -71,7 +71,7 @@
     <UniqueID>UC-13d8a332-53db-4fa6-94ac-476c8efae5bb</UniqueID>
     <UserID>UC-3</UserID>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
-    <Name>Vérifier les tâche sur un ordinateur</Name>
+    <Name>Vérifier les tâches dans une fiche de maintenance</Name>
     <Description>Le Technicien vérifie les tâches déjà faites et qui restent à faire sur un ordinateur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
@@ -91,7 +91,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-10T13:56:27.4746234-04:00</DateModified>
+    <DateModified>2015-09-10T14:24:46.5598179-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -231,46 +231,6 @@
     <DateAdded>2015-09-08T09:59:20.7772349-04:00</DateAdded>
     <DateModified>2015-09-10T13:56:43.2804513-04:00</DateModified>
   </UseCase>
-  <UCActor>
-    <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
-    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
-    <Kind>0</Kind>
-  </UCActor>
-  <UCActor>
-    <ParentID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</ParentID>
-    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
-    <Kind>0</Kind>
-  </UCActor>
-  <UCActor>
-    <ParentID>UC-13d8a332-53db-4fa6-94ac-476c8efae5bb</ParentID>
-    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
-    <Kind>0</Kind>
-  </UCActor>
-  <UCActor>
-    <ParentID>UC-388771e5-784d-4380-9d34-0ce80ef94230</ParentID>
-    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
-    <Kind>0</Kind>
-  </UCActor>
-  <UCActor>
-    <ParentID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</ParentID>
-    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
-    <Kind>0</Kind>
-  </UCActor>
-  <UCActor>
-    <ParentID>UC-49e4e9b5-f5ce-4719-bdbc-fb04ea94d8f8</ParentID>
-    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
-    <Kind>0</Kind>
-  </UCActor>
-  <UCActor>
-    <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
-    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
-    <Kind>0</Kind>
-  </UCActor>
-  <UCActor>
-    <ParentID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</ParentID>
-    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
-    <Kind>0</Kind>
-  </UCActor>
   <Scenario>
     <UniqueID>MSS-bf759809-c362-49f1-b099-4269972b274e</UniqueID>
     <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
