@@ -40,7 +40,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-09-10T08:15:15.9978055-04:00</DateModified>
+    <DateModified>2015-09-10T10:22:25.4953588-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -175,7 +175,7 @@
     <UniqueID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</UniqueID>
     <UserID>UC-7</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>Créer une fiche cans le dossier d'un client</Name>
+    <Name>Créer une fiche dans le dossier d'un client</Name>
     <Description>Création d'une fiche pour le suivi d'un problème d'un appareil.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;}
@@ -195,7 +195,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2015-09-08T09:45:08.2774008-04:00</DateModified>
+    <DateModified>2015-09-10T10:22:54.9411784-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</UniqueID>
