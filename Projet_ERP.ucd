@@ -501,14 +501,14 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  doit permettre d'assurer un meilleur suivi des
 }
 </RichDescription>
     <Sequence>0</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
     <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T09:49:22.2233875-04:00</DateAdded>
-    <DateModified>2015-09-10T10:00:00.2189088-04:00</DateModified>
+    <DateModified>2015-09-10T10:16:56.3814937-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -527,14 +527,14 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
 }
 </RichDescription>
     <Sequence>1</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
     <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T10:00:02.6993131-04:00</DateAdded>
-    <DateModified>2015-09-10T10:08:36.665816-04:00</DateModified>
+    <DateModified>2015-09-10T10:16:51.9198859-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Goal>
