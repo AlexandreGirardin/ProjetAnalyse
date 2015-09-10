@@ -2,7 +2,7 @@
 <ModelSettings xmlns:Serlio="http://www.serliosoft.com/modelsettings">
   <PackageId>P-737265d8-b58e-4837-a439-827ad7aed8f9</PackageId>
   <ShowDescendants>true</ShowDescendants>
-  <ProjectOpenedTabName>pgUseCases</ProjectOpenedTabName>
+  <ProjectOpenedTabName>pgStart</ProjectOpenedTabName>
   <Sorting>
     <UseCaseViewSortColumns>
       <string>UserID</string>
