@@ -2,7 +2,7 @@
 <ModelSettings xmlns:Serlio="http://www.serliosoft.com/modelsettings">
   <PackageId>P-737265d8-b58e-4837-a439-827ad7aed8f9</PackageId>
   <ShowDescendants>true</ShowDescendants>
-  <ProjectOpenedTabName>pgStart</ProjectOpenedTabName>
+  <ProjectOpenedTabName>pgUseCases</ProjectOpenedTabName>
   <Sorting>
     <UseCaseViewSortColumns>
       <string>UserID</string>
@@ -75,7 +75,7 @@
   </ActorList>
   <StoryList>
     <Columns>Name,UserID,Status,Priority,Package</Columns>
-    <ColumnWidths>582,57,80,80,125</ColumnWidths>
+    <ColumnWidths>460,57,80,80,125</ColumnWidths>
   </StoryList>
   <RequirementList>
     <Columns>Name,UserID,ReqType,Priority,Package</Columns>

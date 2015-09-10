@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5689</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <Project>
@@ -46,11 +46,11 @@
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
     <UserID>UC-2</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>Créer un rapport pour une tâche effectuée</Name>
-    <Description>Transformer le dossier d'un client en rapport pouvant être utilisé au moment de la facturation.</Description>
+    <Name>Fermer une Fiche de maintenance</Name>
+    <Description>Transformer la fiche de maintenance d'un client en rapport pouvant être utilisé au moment de la facturation.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Transformer le dossier d'un client en rapport pouvant \'eatre utilis\'e9 au moment de la facturation\cf1 .\cf0\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Transformer la \cf1 fiche de maintenance\cf0  d'un client en \cf1 rapport\cf2  \cf0 pouvant \'eatre utilis\'e9 au moment de la facturation\cf2 .\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -66,13 +66,13 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-03T14:23:10.8798539-04:00</DateModified>
+    <DateModified>2015-09-10T09:59:46.4091069-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-13d8a332-53db-4fa6-94ac-476c8efae5bb</UniqueID>
     <UserID>UC-3</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>Vérifier les tâches sur un ordinateur</Name>
+    <Name>Vérifier les Tâche sur un ordinateur</Name>
     <Description>Le Technicien vérifie les tâches déjà faites et qui restent à faire sur un ordinateur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
@@ -92,7 +92,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-03T08:52:40.1354147-04:00</DateModified>
+    <DateModified>2015-09-10T10:01:26.5462743-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -220,7 +220,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:33:34.1946433-04:00</DateAdded>
-    <DateModified>2015-09-08T10:00:36.9652149-04:00</DateModified>
+    <DateModified>2015-09-10T09:48:10.1324516-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eec925da-091e-42c8-b860-c1841536beb0</UniqueID>
@@ -245,7 +245,7 @@
     <Sequence>0</Sequence>
     <Complexity />
     <DateAdded>2015-08-31T10:36:17.3249026-04:00</DateAdded>
-    <DateModified>2015-09-03T15:04:54.4321526-04:00</DateModified>
+    <DateModified>2015-09-10T10:17:26.1138095-04:00</DateModified>
   </Actor>
   <Actor>
     <UniqueID>A-f35b8b86-8dad-4cc0-8c04-c8f17d8939f7</UniqueID>
@@ -479,6 +479,11 @@
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
+  <UCActor>
+    <ParentID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
   <Scenario>
     <UniqueID>MSS-bf759809-c362-49f1-b099-4269972b274e</UniqueID>
     <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
@@ -487,13 +492,17 @@
     <UniqueID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</UniqueID>
     <ParentID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</ParentID>
   </Scenario>
+  <Scenario>
+    <UniqueID>MSS-e26b8b26-5218-4dba-aef4-86ae23aaf457</UniqueID>
+    <ParentID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</ParentID>
+  </Scenario>
   <Goal>
     <UniqueID>G-405351d0-cfb8-4e4e-8307-98fe66afe70c</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
     <Description>Créer un dossier de client (UC-1) (S-1)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Cr\'e9er un dossier de client (\cf1\ul UC-1\cf0\ulnone ) (\cf1\ul S-1\cf2\ulnone )\cf0\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Cr\'e9er un \cf1 dossier de client\cf0  (\cf2\ul UC-1\cf0\ulnone ) (\cf2\ul S-1\cf3\ulnone )\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -501,10 +510,10 @@
   <Goal>
     <UniqueID>G-06ccd92e-1afd-44f4-ad76-a94eafc433b1</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Créer une facture pour une tâche effectuée (UC-2) (S-2)</Description>
+    <Description>Fermer une fiche de maintenance (UC-2) (S-2)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Cr\'e9er une facture pour une t\'e2che effectu\'e9e (\cf1\ul UC-2\cf0\ulnone ) (\cf1\ul S-2\cf2\ulnone )\cf0\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Fermer une \cf1 fiche de maintenance\cf0  (\cf2\ul UC-2\cf0\ulnone ) (\cf2\ul S-2\cf3\ulnone )\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -512,10 +521,10 @@
   <Goal>
     <UniqueID>G-629e6fdf-ed6b-498b-970b-2bdeb8ed3be8</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Vérifier les tâches sur un ordinateur (UC-3) (S-3)</Description>
+    <Description>Vérifier les tâches à effectuer dans une fiche de maintenance (UC-3) (S-3)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 V\'e9rifier les t\'e2ches sur un ordinateur (\cf1\ul UC-3\cf0\ulnone ) (\cf1\ul S-3\cf0\ulnone )\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 V\'e9rifier les \cf1 t\'e2ches\cf0  \'e0 effectuer dans une \cf1 fiche de maintenance\cf2  \cf0 (\cf3\ul UC-3\cf0\ulnone ) (\cf3\ul S-3\cf2\ulnone )\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -523,10 +532,10 @@
   <Goal>
     <UniqueID>G-dcb36be1-520b-4d82-b436-c995581a0db3</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Modifier les tâches à effectuer sur un ordinateur (UC-4) (S-4)</Description>
+    <Description>Modifier les tâches à effectuer dans une fiche de maintenance (UC-4) (S-4)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Modifier les t\'e2ches \'e0 effectuer sur un ordinateur (\cf1\ul UC-4\cf0\ulnone ) (\cf1\ul S-4\cf2\ulnone )\cf0\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Modifier les \cf1 t\'e2ches\cf0  \'e0 effectuer dans une \cf1 fiche de maintenance\cf2  \cf0 (\cf3\ul UC-4\cf0\ulnone ) (\cf3\ul S-4\cf2\ulnone )\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -555,10 +564,10 @@
   <Goal>
     <UniqueID>G-22112816-7bf0-42bc-b367-0f51348e3a0a</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Modifier les dossiers de client (UC-5) (S-5)</Description>
+    <Description>Modifier les dossier de client (UC-5) (S-5)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Modifier les dossiers de client (\cf1\ul UC-5\cf2\ulnone ) (\cf1\ul S-5\cf2\ulnone )\cf0\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Modifier les \cf1 dossier de client\cf0  (\cf2\ul UC-5\cf3\ulnone ) (\cf2\ul S-5\cf3\ulnone )\cf0\par
 }
 </RichDescription>
     <Sequence>4</Sequence>
@@ -566,10 +575,10 @@
   <Goal>
     <UniqueID>G-283acfe8-aa31-4b30-a0a3-61211abc1508</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Mettre à jour le statut des tâches effectuées sur un ordinateur (UC-6) (S-6)</Description>
+    <Description>Mettre à jour le statut des tâches effectuées dans une fiche de maintenance (UC-6) (S-6)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 Mettre \'e0 jour le statut des t\'e2ches effectu\'e9es sur un ordinateur (\cf1\ul UC-6\cf0\ulnone ) (\cf1\ul S-6\cf0\ulnone )\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Mettre \'e0 jour le statut des \cf1 t\'e2ches\cf0  effectu\'e9es dans une \cf1 fiche de maintenance\cf0  (\cf2\ul UC-6\cf0\ulnone ) (\cf2\ul S-6\cf3\ulnone )\cf0\par
 }
 </RichDescription>
     <Sequence>5</Sequence>
@@ -577,13 +586,23 @@
   <Goal>
     <UniqueID>G-4108b987-ae29-4120-8968-d9e1fa3796a9</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Ouvrir une fiche dans le dossier d'un client (S-7) (UC-7)</Description>
+    <Description>Créer une fiche de maintenance dans le dossier de client (S-7) (UC-7)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 Ouvrir une fiche dans le dossier d'un client (\cf1\ul S-7\cf0\ulnone ) (\cf1\ul UC-7\cf0\ulnone )\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Cr\'e9er une \cf1 fiche de maintenance\cf0  dans le \cf1 dossier de client\cf2  \cf0 (\cf3\ul S-7\cf0\ulnone ) (\cf3\ul UC-7\cf0\ulnone )\par
 }
 </RichDescription>
     <Sequence>6</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-0a0f3625-b7bb-4963-92d6-d3a2a2f590da</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Ouverture de session</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Ouverture de session\par
+}
+</RichDescription>
+    <Sequence>7</Sequence>
   </Goal>
   <Step>
     <UniqueID>ST-20deb73d-c3e7-4e95-b7e7-4d3d9c0f2eba</UniqueID>
@@ -799,6 +818,18 @@
     <ParentID>MSS-e4b68dd2-ffd2-46a8-b324-27e5fbb6d1d1</ParentID>
     <Description />
     <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-fa45f5b8-7b19-408c-96ec-a9d3e7d524c7</UniqueID>
+    <ParentID>MSS-e26b8b26-5218-4dba-aef4-86ae23aaf457</ParentID>
+    <Description>Le Technicien</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf0\ulnone\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
