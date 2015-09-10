@@ -20,11 +20,13 @@
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Suivi détaillé de la maintenance</Name>
     <Description>Exigé par Jean Joly
-Le système doit permettre d'assurer un meilleur suivi des tâches effectuées par les techniciens. Par exemple, le résultat des analyses et le nombre de virus supprimés doivent pouvoir être consignés dans la fiche de maintenance afin de pouvoir répondre aux questions des clients et protéger l'entreprise de plaintes futures.</Description>
+Le système doit permettre d'assurer un meilleur suivi des tâches effectuées par les techniciens. Par exemple, le résultat des analyses et le nombre de virus supprimés doivent pouvoir être consignés dans la fiche de maintenance afin de pouvoir répondre aux questions des clients et protéger l'entreprise de plaintes futures.
+Le système devrait aussi permettre de garder la trace des objets (portables, chargeurs, câbles) laissés par les clients pour éviter de les perdre et pour simplifier les recherches en cas de vol.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
 \viewkind4\uc1\pard\cf1\f0\fs20 Exig\'e9 par Jean Joly\par
 Le \cf2\ul syst\'e8me\cf1\ulnone  doit permettre d'assurer un meilleur suivi des \cf3\ul t\'e2ches\cf1\ulnone  effectu\'e9es par les \cf2\ul techniciens\cf1\ulnone . Par exemple, le r\'e9sultat des analyses et le nombre de virus supprim\'e9s doivent pouvoir \'eatre consign\'e9s dans la \cf3\ul fiche de maintenance\cf1\ulnone  afin de pouvoir r\'e9pondre aux questions des \cf3\ul clients\cf1\ulnone  et prot\'e9ger l'entreprise de plaintes futures.\par
+Le \cf2\ul syst\'e8me\cf1\ulnone  devrait aussi permettre de garder la trace des objets (portables, chargeurs, c\'e2bles) laiss\'e9s par les \cf3\ul clients\cf1\ulnone  pour \'e9viter de les perdre et pour simplifier les recherches en cas de vol.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -35,7 +37,7 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  doit permettre d'assurer un meilleur suivi des
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T09:49:22.2233875-04:00</DateAdded>
-    <DateModified>2015-09-10T13:58:28.9066376-04:00</DateModified>
+    <DateModified>2015-09-10T14:24:50.2918586-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -68,22 +70,110 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UniqueID>REQ-56f29219-ffda-4735-8473-98610ffc3f9b</UniqueID>
     <UserID>REQ-3</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Numero de Telephone</Name>
-    <Description />
+    <Name>Numéro de téléphone</Name>
+    <Description>Afin de simplifier la compatibilité avec le système Acomba actuellement utilisé, le numéro servant à l'identification des clients doit être les 7 chiffres de leur numéro de téléphone.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20\par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Afin de simplifier la compatibilit\'e9 avec le \cf2\ul syst\'e8me\cf1\ulnone  \cf2\ul Acomba\cf1\ulnone  actuellement utilis\'e9, le num\'e9ro servant \'e0 l'identification des \cf3\ul clients\cf1\ulnone  doit \'eatre les 7 chiffres de leur \cf3\ul num\'e9ro de t\'e9l\'e9phone\cf1\ulnone .\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
     <Type>Business Rule</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T10:38:47.9538447-04:00</DateAdded>
-    <DateModified>2015-09-10T13:58:35.5386494-04:00</DateModified>
+    <DateModified>2015-09-10T15:02:08.068989-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-58a5ebb5-e943-4a31-aabb-7859ad6b0132</UniqueID>
+    <UserID>REQ-5-2</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Création seulement</Name>
+    <Description>Pour des raisons de comptabilité, les données ne doivent jamais être effacées, seulement modifiées.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Pour des raisons de comptabilit\'e9, les donn\'e9es ne doivent jamais \'eatre effac\'e9es, seulement modifi\'e9es.\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <Type>Business Rule</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status>Mandatory</Status>
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-10T14:30:54.6928986-04:00</DateAdded>
+    <DateModified>2015-09-10T15:02:15.8690027-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-dcaddce6-ca3b-4c87-8009-2b097523833e</UniqueID>
+    <UserID>REQ-5-3</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Rapidité</Name>
+    <Description>Le système proposé doit être plus rapide que l'actuel.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  propos\'e9 doit \'eatre plus rapide que l'actuel.\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status>Mandatory</Status>
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-10T14:40:06.9026685-04:00</DateAdded>
+    <DateModified>2015-09-10T15:02:20.4554108-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-fab51d8e-4fad-408a-afca-cc2de50cd56b</UniqueID>
+    <UserID>REQ-5-4</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Simplicité</Name>
+    <Description>Le système doit être simple d'utilisation et ne pas ralentir le travail des employés de l'entreprise, que ce soit lors du service à la clientèle ou pendant l'exécution des tâches de maintenance d'appareils.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  doit \'eatre simple d'utilisation et ne pas ralentir le travail des employ\'e9s de l'entreprise, que ce soit lors du service \'e0 la client\'e8le ou pendant l'ex\'e9cution des \cf3\ul t\'e2ches\cf1\ulnone  de maintenance d'\cf3\ul appareils\cf1\ulnone .\par
+}
+</RichDescription>
+    <Sequence>5</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status>Approved</Status>
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-10T14:42:11.4064872-04:00</DateAdded>
+    <DateModified>2015-09-10T15:02:01.1893769-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-c5795878-7bfe-419b-b9f3-926a3f818ae2</UniqueID>
+    <UserID>REQ-5-5</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Confidentialité</Name>
+    <Description>Les informations contenues dans le système doivent demeurer confidentielles.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Les informations contenues dans le \cf2\ul syst\'e8me\cf1\ulnone  doivent demeurer confidentielles.\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status>Mandatory</Status>
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-10T14:45:03.3343892-04:00</DateAdded>
+    <DateModified>2015-09-10T15:02:35.6186374-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <UserID>
@@ -96,7 +186,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
   </UserID>
   <UserID>
     <DefaultPrefix>REQ-5-</DefaultPrefix>
-    <NextValue>2</NextValue>
+    <NextValue>6</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-5-</DefaultPrefix>
