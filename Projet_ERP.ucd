@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5689</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <Project>
@@ -40,7 +40,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-09-08T10:31:23.1414673-04:00</DateModified>
+    <DateModified>2015-09-10T08:15:15.9978055-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -580,8 +580,8 @@
     <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
     <Description>Le Technicien remplit le formulaire à l'aide du client</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul Technicien\cf1\ulnone  remplit le \cf3 formulaire\cf1  \'e0 l'aide du client\par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul Technicien\cf1\ulnone  remplit le formulaire \'e0 l'aide du client\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -592,8 +592,8 @@
     <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
     <Description>Le système présente un formulaire de client</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  pr\'e9sente un \cf3 formulaire de client\cf1\par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  pr\'e9sente un formulaire de client\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -616,8 +616,8 @@
     <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
     <Description>Le système retourne le dossier du client nouvellement créé (UC-9)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne le \cf3 dossier\cf2  du client nouvellement cr\'e9\'e9 (\cf1\ul UC-9\cf2\ulnone )\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne le dossier du client nouvellement cr\'e9\'e9 (\cf1\ul UC-9\cf2\ulnone )\cf0\par
 }
 </RichDescription>
     <Sequence>4</Sequence>
@@ -712,8 +712,8 @@
     <ParentID>MSS-bf759809-c362-49f1-b099-4269972b274e</ParentID>
     <Description>Le système valide les entrées du formulaire de client</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  valide les entr\'e9es du \cf3 formulaire de client\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  valide les entr\'e9es du formulaire de client\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -846,10 +846,307 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-</DefaultPrefix>
-    <NextValue>9</NextValue>
+    <NextValue>10</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-</DefaultPrefix>
     <NextValue>8</NextValue>
   </UserID>
+  <BuiltInField>
+    <UniqueID>1</UniqueID>
+    <Name>Priority</Name>
+    <AppliesTo>0</AppliesTo>
+    <Category>Details</Category>
+    <Description>Priority of the use case.</Description>
+    <DefaultValue>1</DefaultValue>
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>2</UniqueID>
+    <Name>Level</Name>
+    <AppliesTo>0</AppliesTo>
+    <Category>Details</Category>
+    <Description>The level of detail in the use case.</Description>
+    <DefaultValue />
+    <Choices>Summary;User;Subfunction</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>3</UniqueID>
+    <Name>Complexity</Name>
+    <AppliesTo>0</AppliesTo>
+    <Category>Details</Category>
+    <Description>An indication of the difficulty of implementation.</Description>
+    <DefaultValue />
+    <Choices>Low;Medium;High</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>4</UniqueID>
+    <Name>UseCaseStatus</Name>
+    <AppliesTo>0</AppliesTo>
+    <Category>Details</Category>
+    <Description>Status of the use case specification.</Description>
+    <DefaultValue />
+    <Choices>Name Only;Initial;Base;Complete;Deferred</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>5</UniqueID>
+    <Name>ImplStatus</Name>
+    <AppliesTo>0</AppliesTo>
+    <Category>Details</Category>
+    <Description>Status of the use case implementation.</Description>
+    <DefaultValue />
+    <Choices>Scheduled;Started;Partially Complete;Complete;Partially Deferred;Deferred</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>6</UniqueID>
+    <Name>AssignedTo</Name>
+    <AppliesTo>0</AppliesTo>
+    <Category>Details</Category>
+    <Description>Who is responsible for this use case.</Description>
+    <DefaultValue />
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>7</UniqueID>
+    <Name>Release</Name>
+    <AppliesTo>0</AppliesTo>
+    <Category>Details</Category>
+    <Description>Which release this use case is applicable to.</Description>
+    <DefaultValue />
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>100</UniqueID>
+    <Name>ReqType</Name>
+    <AppliesTo>3</AppliesTo>
+    <Category>Details</Category>
+    <Description>The type of requirement.</Description>
+    <DefaultValue>Non-functional</DefaultValue>
+    <Choices>Functional;Non-functional;Business Rule;Constraint;Performance;Test;Change Request</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>101</UniqueID>
+    <Name>Priority</Name>
+    <AppliesTo>3</AppliesTo>
+    <Category>Details</Category>
+    <Description>Priority of the requirement.</Description>
+    <DefaultValue>1</DefaultValue>
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>102</UniqueID>
+    <Name>Source</Name>
+    <AppliesTo>3</AppliesTo>
+    <Category>Details</Category>
+    <Description>Where did the requirement originate?</Description>
+    <DefaultValue />
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>103</UniqueID>
+    <Name>Status</Name>
+    <AppliesTo>3</AppliesTo>
+    <Category>Details</Category>
+    <Description>Status of the requirement.</Description>
+    <DefaultValue />
+    <Choices>Proposed;Approved;Rejected;Deferred;Implemented;Mandatory;Obsolete</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>104</UniqueID>
+    <Name>AssignedTo</Name>
+    <AppliesTo>3</AppliesTo>
+    <Category>Details</Category>
+    <Description>Who is responsible for this requirement?</Description>
+    <DefaultValue />
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>105</UniqueID>
+    <Name>Release</Name>
+    <AppliesTo>3</AppliesTo>
+    <Category>Details</Category>
+    <Description>Which release this requirement is applicable to.</Description>
+    <DefaultValue />
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>200</UniqueID>
+    <Name>Complexity</Name>
+    <AppliesTo>1</AppliesTo>
+    <Category>Details</Category>
+    <Description>Complexity of this actor's interactions with the system.</Description>
+    <DefaultValue />
+    <Choices>Low;Medium;High</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>300</UniqueID>
+    <Name>Priority</Name>
+    <AppliesTo>6</AppliesTo>
+    <Category>Details</Category>
+    <Description>Priority for resolving issue.</Description>
+    <DefaultValue />
+    <Choices>Low;Medium;High</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>301</UniqueID>
+    <Name>Status</Name>
+    <AppliesTo>6</AppliesTo>
+    <Category>Details</Category>
+    <Description>State of issue.</Description>
+    <DefaultValue />
+    <Choices>New;Assigned;Resolved;Deferred</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>302</UniqueID>
+    <Name>Type</Name>
+    <AppliesTo>6</AppliesTo>
+    <Category>Details</Category>
+    <Description>Type of issue.</Description>
+    <DefaultValue />
+    <Choices>Question;Approval;Clarification;Defect;Feature</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>303</UniqueID>
+    <Name>Complexity</Name>
+    <AppliesTo>6</AppliesTo>
+    <Category>Details</Category>
+    <Description>Complexity of issue to be resolved.</Description>
+    <DefaultValue />
+    <Choices>Low;Medium;High</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>304</UniqueID>
+    <Name>Risk</Name>
+    <AppliesTo>6</AppliesTo>
+    <Category>Details</Category>
+    <Description>Risk to project while unresolved.</Description>
+    <DefaultValue />
+    <Choices>Low;Medium;High</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>400</UniqueID>
+    <Name>Status</Name>
+    <AppliesTo>7</AppliesTo>
+    <Category>Details</Category>
+    <Description>State of test scenario.</Description>
+    <DefaultValue />
+    <Choices>New;Partially defined;Defined</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>401</UniqueID>
+    <Name>TestType</Name>
+    <AppliesTo>7</AppliesTo>
+    <Category>Details</Category>
+    <Description>Type of test.</Description>
+    <DefaultValue />
+    <Choices>Acceptance;Usability;Performance;Load;Security;Bounds;White box</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>402</UniqueID>
+    <Name>Complexity</Name>
+    <AppliesTo>7</AppliesTo>
+    <Category>Details</Category>
+    <Description>Complexity of test.</Description>
+    <DefaultValue />
+    <Choices>Low;Medium;High</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>403</UniqueID>
+    <Name>Priority</Name>
+    <AppliesTo>7</AppliesTo>
+    <Category>Details</Category>
+    <Description>Priority of the test scenario.</Description>
+    <DefaultValue>1</DefaultValue>
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>501</UniqueID>
+    <Name>Priority</Name>
+    <AppliesTo>9</AppliesTo>
+    <Category>Details</Category>
+    <Description>Priority of the user story.</Description>
+    <DefaultValue />
+    <Choices>Must;Should;Could;Won't</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>502</UniqueID>
+    <Name>Size</Name>
+    <AppliesTo>9</AppliesTo>
+    <Category>Details</Category>
+    <Description>The relative complexity of the user story.</Description>
+    <DefaultValue />
+    <Choices>X-Small;Small;Med;Large;X-Large</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>503</UniqueID>
+    <Name>AssignedTo</Name>
+    <AppliesTo>9</AppliesTo>
+    <Category>Details</Category>
+    <Description>Who is responsible for this user story?</Description>
+    <DefaultValue />
+    <Choices />
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
+  <BuiltInField>
+    <UniqueID>504</UniqueID>
+    <Name>Status</Name>
+    <AppliesTo>9</AppliesTo>
+    <Category>Details</Category>
+    <Description>Status of the user story.</Description>
+    <DefaultValue />
+    <Choices>Backlog;Doing;Review;Done</Choices>
+    <ChoicesExclusive>false</ChoicesExclusive>
+    <Multiline>false</Multiline>
+  </BuiltInField>
 </UCTDataSet>
