@@ -1,0 +1,135 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5718</SavedWith>
+    <CreatedWith>10.0.5718</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-ff092a79-7b5e-466c-af89-8377e68db807</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-ff092a79-7b5e-466c-af89-8377e68db807</UniqueID>
+    <ExternalParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ExternalParentID>
+    <Name>Fiches</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <UseCase>
+    <UniqueID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</UniqueID>
+    <UserID>UC-7</UserID>
+    <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
+    <Name>Créer une fiche dans le dossier d'un client</Name>
+    <Description>Création d'une fiche pour le suivi d'un problème d'un appareil.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Cr\'e9ation d'une \cf1 fiche\cf0  pour le suivi d'un probl\'e8me d'un appareil.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <Priority>1</Priority>
+    <PreConditions>Le client a déjà un dossier.</PreConditions>
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
+    <DateModified>2015-09-10T14:45:02.5171821-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
+    <UserID>UC-4</UserID>
+    <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
+    <Name>Modifier une fiche de maintenance</Name>
+    <Description>Le technicien ajoute, modifie ou supprime des tâches à effectuer dans une fiche de maintenance, selon la situation.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  ajoute, modifie ou supprime des \cf3 t\'e2ches\cf2  \'e0 effectuer dans une \cf3 fiche de maintenance\cf2 , selon la situation.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
+    <DateModified>2015-09-10T14:59:37.416857-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</UniqueID>
+    <UserID>UC-7-1</UserID>
+    <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
+    <Name>Rechercher une fiche de maintenance</Name>
+    <Sequence>2</Sequence>
+    <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-10T15:01:51.5093054-04:00</DateAdded>
+    <DateModified>2015-09-10T15:02:27.2360111-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
+    <UserID>UC-2</UserID>
+    <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
+    <Name>Fermer une fiche de maintenance</Name>
+    <Description>Transformer la fiche de maintenance d'un client en rapport pouvant être utilisé au moment de la facturation.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Transformer la \cf1 fiche de maintenance\cf0  d'un client en \cf1 rapport\cf2  \cf0 pouvant \'eatre utilis\'e9 au moment de la facturation\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
+    <DateModified>2015-09-10T15:13:09.8005204-04:00</DateModified>
+  </UseCase>
+  <UserID>
+    <DefaultPrefix>UC-7-</DefaultPrefix>
+    <NextValue>2</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-7-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-7-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-7-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-7-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+</UCTDataSet>

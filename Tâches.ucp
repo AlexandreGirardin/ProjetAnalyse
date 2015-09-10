@@ -1,0 +1,92 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5718</SavedWith>
+    <CreatedWith>10.0.5718</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-af231236-c8f6-43a7-9545-17ad38cf025d</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-af231236-c8f6-43a7-9545-17ad38cf025d</UniqueID>
+    <ExternalParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ExternalParentID>
+    <Name>Tâches</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <UseCase>
+    <UniqueID>UC-6f16e93c-f54a-4648-8390-92bc00bf351f</UniqueID>
+    <UserID>UC-8-1</UserID>
+    <ParentID>P-af231236-c8f6-43a7-9545-17ad38cf025d</ParentID>
+    <Name>Créer une tâche</Name>
+    <Sequence>0</Sequence>
+    <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-10T15:04:55.5623216-04:00</DateAdded>
+    <DateModified>2015-09-10T15:05:14.9799125-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-49e4e9b5-f5ce-4719-bdbc-fb04ea94d8f8</UniqueID>
+    <UserID>UC-6</UserID>
+    <ParentID>P-af231236-c8f6-43a7-9545-17ad38cf025d</ParentID>
+    <Name>Modifier l'état des tâches</Name>
+    <Description>Noter l'état d'avancement des différentes tâches assignées à un ordinateur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Noter l'\'e9tat d'avancement des diff\'e9rentes t\'e2ches assign\'e9es \'e0 un ordinateur.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-03T08:41:37.3331476-04:00</DateAdded>
+    <DateModified>2015-09-10T15:09:29.3856879-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-70cf062d-d8b2-42e8-9a00-cdaa827a72a0</UniqueID>
+    <UserID>UC-8-2</UserID>
+    <ParentID>P-af231236-c8f6-43a7-9545-17ad38cf025d</ParentID>
+    <Name>Retirer une tâche</Name>
+    <Sequence>2</Sequence>
+    <Priority>1</Priority>
+    <DateAdded>2015-09-10T15:13:25.1372805-04:00</DateAdded>
+    <DateModified>2015-09-10T15:13:37.2705019-04:00</DateModified>
+  </UseCase>
+  <UserID>
+    <DefaultPrefix>UC-8-</DefaultPrefix>
+    <NextValue>3</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-8-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-8-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-8-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-8-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+</UCTDataSet>
