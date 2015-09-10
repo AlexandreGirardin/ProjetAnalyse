@@ -46,7 +46,7 @@
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
     <UserID>UC-2</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>Fermer une Fiche de maintenance</Name>
+    <Name>Fermer une fiche de maintenance</Name>
     <Description>Transformer la fiche de maintenance d'un client en rapport pouvant être utilisé au moment de la facturation.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
@@ -66,17 +66,17 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-10T09:59:46.4091069-04:00</DateModified>
+    <DateModified>2015-09-10T13:20:00.4500167-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-13d8a332-53db-4fa6-94ac-476c8efae5bb</UniqueID>
     <UserID>UC-3</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>Vérifier les Tâche sur un ordinateur</Name>
+    <Name>Vérifier les tâche sur un ordinateur</Name>
     <Description>Le Technicien vérifie les tâches déjà faites et qui restent à faire sur un ordinateur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  v\'e9rifie les t\'e2ches d\'e9j\'e0 faites et qui restent \'e0 faire sur un ordinateur.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul Technicien\cf2\ulnone  v\'e9rifie les \cf3 t\'e2ches\cf2  d\'e9j\'e0 faites et qui restent \'e0 faire sur un ordinateur.\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -92,17 +92,17 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-10T10:01:26.5462743-04:00</DateModified>
+    <DateModified>2015-09-10T13:23:24.1216234-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
     <UserID>UC-4</UserID>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Name>Modifier les tâches à effectuer sur un ordinateur</Name>
-    <Description>Le technicien ajoute, modifie ou supprime des tâches à effectuer sur un ordinateur, selon la situation.</Description>
+    <Name>Modifier les tâches dans une fiche de maintenance</Name>
+    <Description>Le technicien ajoute, modifie ou supprime des tâches à effectuer dans une fiche de maintenance, selon la situation.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  ajoute, modifie ou supprime des t\'e2ches \'e0 effectuer sur un ordinateur, selon la situation.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  ajoute, modifie ou supprime des \cf3 t\'e2ches\cf2  \'e0 effectuer dans une \cf3 fiche de maintenance\cf2 , selon la situation.\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -118,7 +118,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
-    <DateModified>2015-09-03T08:42:18.6004523-04:00</DateModified>
+    <DateModified>2015-09-10T13:24:40.3961129-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</UniqueID>
@@ -542,6 +542,28 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <DateModified>2015-09-10T10:16:51.9198859-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
+  <Requirement>
+    <UniqueID>REQ-56f29219-ffda-4735-8473-98610ffc3f9b</UniqueID>
+    <UserID>REQ-3</UserID>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Name>Numero de Telephone</Name>
+    <Description />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <Type>Business Rule</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status />
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-10T10:38:47.9538447-04:00</DateAdded>
+    <DateModified>2015-09-10T10:52:56.4506416-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
   <Goal>
     <UniqueID>G-405351d0-cfb8-4e4e-8307-98fe66afe70c</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
@@ -929,7 +951,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
   </UserID>
   <UserID>
     <DefaultPrefix>REQ-</DefaultPrefix>
-    <NextValue>3</NextValue>
+    <NextValue>4</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-</DefaultPrefix>
