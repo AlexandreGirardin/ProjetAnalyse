@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5689</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -71,7 +71,7 @@
     <UniqueID>UC-13d8a332-53db-4fa6-94ac-476c8efae5bb</UniqueID>
     <UserID>UC-3</UserID>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
-    <Name>Vérifier les tâche sur un ordinateur</Name>
+    <Name>Vérifier les tâches dans une fiche de maintenance</Name>
     <Description>Le Technicien vérifie les tâches déjà faites et qui restent à faire sur un ordinateur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
@@ -91,7 +91,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-10T13:56:27.4746234-04:00</DateModified>
+    <DateModified>2015-09-10T14:24:46.5598179-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
