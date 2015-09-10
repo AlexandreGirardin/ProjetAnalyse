@@ -487,6 +487,56 @@
     <UniqueID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</UniqueID>
     <ParentID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</ParentID>
   </Scenario>
+  <Requirement>
+    <UniqueID>REQ-bd86b376-14d3-40ee-9ef7-4316520f83ef</UniqueID>
+    <UserID>REQ-1</UserID>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Name>Suivi détaillé de la maintenance</Name>
+    <Description>Exigé par Jean Joly
+Le système doit permettre d'assurer un meilleur suivi des tâches effectuées par les techniciens. Par exemple, le résultat des analyses et le nombre de virus supprimés doivent pouvoir être consignés dans la fiche de maintenance afin de pouvoir répondre aux questions des clients et protéger l'entreprise de plaintes futures.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Exig\'e9 par Jean Joly\par
+Le \cf2\ul syst\'e8me\cf1\ulnone  doit permettre d'assurer un meilleur suivi des \cf3\ul t\'e2ches\cf1\ulnone  effectu\'e9es par les \cf2\ul techniciens\cf1\ulnone . Par exemple, le r\'e9sultat des analyses et le nombre de virus supprim\'e9s doivent pouvoir \'eatre consign\'e9s dans la \cf3\ul fiche de maintenance\cf1\ulnone  afin de pouvoir r\'e9pondre aux questions des \cf3\ul clients\cf1\ulnone  et prot\'e9ger l'entreprise de plaintes futures.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status>Mandatory</Status>
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-10T09:49:22.2233875-04:00</DateAdded>
+    <DateModified>2015-09-10T10:00:00.2189088-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-fbbd5fda-1de4-4396-a073-861f28f5c4b5</UniqueID>
+    <UserID>REQ-2</UserID>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Name>Conserver des archives</Name>
+    <Description>Exigé par Jean Joly, demandé par Jannie et Pierre-Luc
+Le système doit conserver les données concernant les tâches effectuées sur les appareils pour référence future. Cela sert à éviter des litiges et protéger l'entreprise de plaintes en gardant une trace de tout ce qui a été fait. Par exemple, si les tests de routine ont révélé qu'un disque dur commençait à faire défaut, l'entreprise a pour politique d'appeler le client pour demander si elle doit le remplacer. Le système doit permettre de noter qu'un appel a été fait ainsi que la réponse du client pour ne pas que le client se plaigne que le technicien a endommagé son disque dur ou qu'il a été remplacé sans son accord.
+Les archives peuvent également faciliter le diagnostic de nouveaux problèmes sur un ordinateur ayant déjà été maintenu par l'entreprise par le passé.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Exig\'e9 par Jean Joly, demand\'e9 par Jannie et Pierre-Luc\par
+Le \cf2\ul syst\'e8me\cf1\ulnone  doit conserver les donn\'e9es concernant les \cf3\ul t\'e2ches\cf1\ulnone  effectu\'e9es sur les \cf3\ul appareils\cf1\ulnone  pour r\'e9f\'e9rence future. Cela sert \'e0 \'e9viter des litiges et prot\'e9ger l'entreprise de plaintes en gardant une trace de tout ce qui a \'e9t\'e9 fait. Par exemple, si les tests de routine ont r\'e9v\'e9l\'e9 qu'un disque dur commen\'e7ait \'e0 faire d\'e9faut, l'entreprise a pour politique d'appeler le \cf3\ul client\cf1\ulnone  pour demander si elle doit le remplacer. Le \cf2\ul syst\'e8me\cf1\ulnone  doit permettre de noter qu'un appel a \'e9t\'e9 fait ainsi que la r\'e9ponse du \cf3\ul client\cf1\ulnone  pour ne pas que le \cf3\ul client\cf1\ulnone  se plaigne que le \cf2\ul technicien\cf1\ulnone  a endommag\'e9 son disque dur ou qu'il a \'e9t\'e9 remplac\'e9 sans son accord.\par
+Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8mes sur un ordinateur ayant d\'e9j\'e0 \'e9t\'e9 maintenu par l'entreprise par le pass\'e9.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status>Mandatory</Status>
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-10T10:00:02.6993131-04:00</DateAdded>
+    <DateModified>2015-09-10T10:08:36.665816-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
   <Goal>
     <UniqueID>G-405351d0-cfb8-4e4e-8307-98fe66afe70c</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
@@ -852,7 +902,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>REQ-</DefaultPrefix>
-    <NextValue>1</NextValue>
+    <NextValue>3</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-</DefaultPrefix>
