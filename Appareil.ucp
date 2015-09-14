@@ -19,10 +19,27 @@
     <UserID>UC-9-1</UserID>
     <ParentID>P-29d380ae-0f9f-4585-8e74-e0779429e865</ParentID>
     <Name>Créer un appareil</Name>
+    <Description>Ajout d'un appareil dans la base de données et association avec le client</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Ajout d'un \cf1 appareil\cf2  dans la \cf3\ul base de donn\'e9es\cf2\ulnone  et association avec le \cf1 client\cf0\par
+}
+</RichDescription>
     <Sequence>0</Sequence>
     <Priority>1</Priority>
+    <PreConditions>L'appareil du client n'existe pas dans la liste de ceux lui appartenant
+Un client est sélectionné.</PreConditions>
+    <PostConditions>L'appareil a été ajouté à dans le dossier de client.</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:22.6397736-04:00</DateAdded>
-    <DateModified>2015-09-14T09:59:35.2002699-04:00</DateModified>
+    <DateModified>2015-09-14T10:37:49.5267065-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</UniqueID>
@@ -44,6 +61,56 @@
     <DateAdded>2015-09-14T09:59:53.5851661-04:00</DateAdded>
     <DateModified>2015-09-14T10:01:04.5685993-04:00</DateModified>
   </UseCase>
+  <UCActor>
+    <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
+    <ActorID>A-f35b8b86-8dad-4cc0-8c04-c8f17d8939f7</ActorID>
+    <Kind>1</Kind>
+  </UCActor>
+  <Scenario>
+    <UniqueID>MSS-ddc16678-4a9b-4e99-92e9-ba698f669e49</UniqueID>
+    <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
+  </Scenario>
+  <Step>
+    <UniqueID>ST-bc347cf6-afbe-4a70-a8df-cce66a7f0a2e</UniqueID>
+    <ParentID>MSS-ddc16678-4a9b-4e99-92e9-ba698f669e49</ParentID>
+    <Description>Le système affiche le formulaire d'ajout d'appareil.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche le \cf3 formulaire d'ajout d'appareil\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-8f26fae6-bcf3-43c7-a1cf-10382e125e86</UniqueID>
+    <ParentID>MSS-ddc16678-4a9b-4e99-92e9-ba698f669e49</ParentID>
+    <Description>Le technicien rempli les champs du formulaire.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rempli les champs du formulaire.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-795f05e8-eca0-4597-a02a-2aa98524a99c</UniqueID>
+    <ParentID>MSS-ddc16678-4a9b-4e99-92e9-ba698f669e49</ParentID>
+    <Description>Le technicien confirme l'ajout d'un appareil.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme l'ajout d'un \cf3 appareil\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <UserID>
     <DefaultPrefix>UC-9-</DefaultPrefix>
     <NextValue>4</NextValue>
