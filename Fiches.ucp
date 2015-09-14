@@ -2,11 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-<<<<<<< HEAD
     <SavedWith>10.0.5718</SavedWith>
-=======
-    <SavedWith>10.0.5606</SavedWith>
->>>>>>> 8e430afa67c66c9c390a444cf4dabf8df6e9316a
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
