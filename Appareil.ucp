@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5689</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -39,7 +39,7 @@ Un client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:22.6397736-04:00</DateAdded>
-    <DateModified>2015-09-14T10:37:49.5267065-04:00</DateModified>
+    <DateModified>2015-09-14T11:09:09.8810721-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</UniqueID>
@@ -49,7 +49,7 @@ Un client est sélectionné.</PreConditions>
     <Sequence>1</Sequence>
     <Priority>1</Priority>
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-09-14T09:59:50.3293326-04:00</DateModified>
+    <DateModified>2015-09-14T11:09:15.6374822-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-7fc215a1-23c2-4776-b926-b62f4574723f</UniqueID>
@@ -59,8 +59,32 @@ Un client est sélectionné.</PreConditions>
     <Sequence>2</Sequence>
     <Priority>1</Priority>
     <DateAdded>2015-09-14T09:59:53.5851661-04:00</DateAdded>
-    <DateModified>2015-09-14T10:01:04.5685993-04:00</DateModified>
+    <DateModified>2015-09-14T11:09:22.8914949-04:00</DateModified>
   </UseCase>
+  <Diagram>
+    <UniqueID>D-eefa19b2-aa2a-433c-b1c1-fa6ad5b3a7ae</UniqueID>
+    <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>CréerUnAppareilActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-e8b6be1c-f60e-4c44-a9d2-67fd51c63b5c</UniqueID>
+    <ParentID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>ConsulterUnAppareilActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-e2b5bbc8-187f-4cce-b7bc-28fe8465f060</UniqueID>
+    <ParentID>UC-7fc215a1-23c2-4776-b926-b62f4574723f</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>ModifierUnAppareilActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
   <UCActor>
     <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
@@ -90,10 +114,10 @@ Un client est sélectionné.</PreConditions>
   <Step>
     <UniqueID>ST-8f26fae6-bcf3-43c7-a1cf-10382e125e86</UniqueID>
     <ParentID>MSS-ddc16678-4a9b-4e99-92e9-ba698f669e49</ParentID>
-    <Description>Le technicien rempli les champs du formulaire.</Description>
+    <Description>Le technicien remplit les champs du formulaire.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rempli les champs du formulaire.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  remplit les champs du formulaire.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -109,6 +133,18 @@ Un client est sélectionné.</PreConditions>
 }
 </RichDescription>
     <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-c5564c28-5748-437c-b2e1-b0f1c8844d93</UniqueID>
+    <ParentID>MSS-ddc16678-4a9b-4e99-92e9-ba698f669e49</ParentID>
+    <Description>Le système inscrit le nouvel appareil dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  inscrit le nouvel \cf3\ul appareil\cf2\ulnone  dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <UserID>
