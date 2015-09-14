@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5689</SavedWith>
+    <SavedWith>10.0.5718</SavedWith>
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -111,6 +111,31 @@
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
     <DateModified>2015-09-10T15:13:09.8005204-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-49e4e9b5-f5ce-4719-bdbc-fb04ea94d8f8</UniqueID>
+    <UserID>UC-6</UserID>
+    <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
+    <Name>Modifier l'état des tâches</Name>
+    <Description>Noter l'état d'avancement des différentes tâches assignées à un ordinateur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Noter l'\'e9tat d'avancement des diff\'e9rentes t\'e2ches assign\'e9es \'e0 un ordinateur.\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions />
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-03T08:41:37.3331476-04:00</DateAdded>
+    <DateModified>2015-09-14T11:20:27.3317938-04:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
