@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5718</SavedWith>
+    <SavedWith>10.0.5689</SavedWith>
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2015-09-10T14:45:02.5171821-04:00</DateModified>
+    <DateModified>2015-09-14T09:56:56.9013016-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -112,6 +112,135 @@
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
     <DateModified>2015-09-10T15:13:09.8005204-04:00</DateModified>
   </UseCase>
+  <UCActor>
+    <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <Scenario>
+    <UniqueID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</UniqueID>
+    <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
+  </Scenario>
+  <Step>
+    <UniqueID>ST-7c5a48ce-4720-4e3d-9313-72a954622d8e</UniqueID>
+    <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
+    <Description>Le technicien sélectionne l'appareil du client dans la liste proposée.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3 appareil\cf2  du \cf3 client\cf2  dans la liste propos\'e9e.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-253ddd9b-2055-4dfc-b4bb-fb4be1db7595</UniqueID>
+    <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
+    <Description>Le technicien rempli la fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  rempli la \cf3 fiche de maintenance\cf1 .\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-68fd48bc-5c62-4a71-836f-9787029a486e</UniqueID>
+    <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
+    <Description>Le système présente la fiche de maintenance correspondant à l'appareil apporté.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  pr\'e9sente la \cf3 fiche de maintenance\cf1  correspondant \'e0 l'\cf3 appareil\cf1  apport\'e9.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd</UniqueID>
+    <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
+    <Description>Le technicien choisi un ensemble de tâches à effectuer</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  choisi un \cf3 ensemble de t\'e2ches\cf2  \'e0 effectuer\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-6ca83106-9fc7-49cf-917c-d32f09e5f90c</UniqueID>
+    <ParentID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</ParentID>
+    <Description>Le technicien sélectionne les tâches manuellement dans la liste.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  s\'e9lectionne les \cf3 t\'e2ches\cf1  manuellement dans la liste.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-c9151e72-015a-4391-995e-54f1e55b3d92</UniqueID>
+    <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
+    <Description>Le technicien enregistre </Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  enregistre \par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-ea143863-44e4-46fc-9e11-82d3dfb21f3d</UniqueID>
+    <ParentID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</ParentID>
+    <Description>continue to step 5.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 continue to step 5.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-c04b0da1-7620-4b0a-872a-52c097d75ece</UniqueID>
+    <ParentID>X-5ec2ecd7-b485-4a1f-b756-266410bb6054</ParentID>
+    <Description>Le technicien crée l'appareil du client</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  cr\'e9e l'\cf3 appareil\cf2  du \cf3 client\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Extension>
+    <UniqueID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</UniqueID>
+    <ParentID>ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd</ParentID>
+    <Description>La tâche a effectuer n'existe pas dans la liste des ensemble de tâches.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1 t\'e2che\cf2  a effectuer n'existe pas dans la liste des \cf1 ensemble de t\'e2ches\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-5ec2ecd7-b485-4a1f-b756-266410bb6054</UniqueID>
+    <ParentID>ST-7c5a48ce-4720-4e3d-9313-72a954622d8e</ParentID>
+    <Description>L'appareil que le client a apporté n'est pas présent dans la liste proposée.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 L'\cf1 appareil\cf2  que le \cf1 client\cf2  a apport\'e9 n'est pas pr\'e9sent dans la liste propos\'e9e.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
   <UserID>
     <DefaultPrefix>UC-7-</DefaultPrefix>
     <NextValue>2</NextValue>

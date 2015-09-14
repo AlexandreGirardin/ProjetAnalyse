@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5689</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -28,7 +28,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-4-</DefaultPrefix>
-    <NextValue>1</NextValue>
+    <NextValue>2</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-4-</DefaultPrefix>
@@ -178,6 +178,20 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-19</UserID>
+    <Sequence>1</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-060f080c-c7ce-4b53-b37d-405d673bd45f</UniqueID>
+    <Name>Ensemble de tâches</Name>
+    <Description>Un ensemble de tâches à effectuer sur un appareil. </Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1 ensemble de t\'e2ches\cf2  \'e0 effectuer sur un \cf1 appareil\cf2 . \cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-1</UserID>
     <Sequence>1</Sequence>
   </DictionaryEntry>
   <DictionaryField>

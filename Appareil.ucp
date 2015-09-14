@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5689</SavedWith>
+    <CreatedWith>10.0.5689</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-29d380ae-0f9f-4585-8e74-e0779429e865</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-29d380ae-0f9f-4585-8e74-e0779429e865</UniqueID>
+    <ExternalParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ExternalParentID>
+    <Name>Appareil</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <UseCase>
+    <UniqueID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</UniqueID>
+    <UserID>UC-9-1</UserID>
+    <ParentID>P-29d380ae-0f9f-4585-8e74-e0779429e865</ParentID>
+    <Name>Créer un appareil</Name>
+    <Sequence>0</Sequence>
+    <Priority>1</Priority>
+    <DateAdded>2015-09-14T09:59:22.6397736-04:00</DateAdded>
+    <DateModified>2015-09-14T09:59:35.2002699-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</UniqueID>
+    <UserID>UC-9-2</UserID>
+    <ParentID>P-29d380ae-0f9f-4585-8e74-e0779429e865</ParentID>
+    <Name>Consulter un appareil</Name>
+    <Sequence>1</Sequence>
+    <Priority>1</Priority>
+    <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
+    <DateModified>2015-09-14T09:59:50.3293326-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-7fc215a1-23c2-4776-b926-b62f4574723f</UniqueID>
+    <UserID>UC-9-3</UserID>
+    <ParentID>P-29d380ae-0f9f-4585-8e74-e0779429e865</ParentID>
+    <Name>Modifier un appareil</Name>
+    <Sequence>2</Sequence>
+    <Priority>1</Priority>
+    <DateAdded>2015-09-14T09:59:53.5851661-04:00</DateAdded>
+    <DateModified>2015-09-14T10:01:04.5685993-04:00</DateModified>
+  </UseCase>
+  <UserID>
+    <DefaultPrefix>UC-9-</DefaultPrefix>
+    <NextValue>4</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-9-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-9-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-9-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-9-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+</UCTDataSet>
