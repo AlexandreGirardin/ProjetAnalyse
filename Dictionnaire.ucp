@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5689</SavedWith>
+    <SavedWith>10.0.5718</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -37,13 +37,11 @@
   <DictionaryEntry>
     <UniqueID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</UniqueID>
     <Name>Tâche</Name>
-    <Description>Action effectuée sur un appareil par un technicien.
-Constitue les fiches de maintenance.</Description>
+    <Description>Instance d'une définition de tâche propre à une fiche de maintenance.</Description>
     <Aliases />
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Action effectu\'e9e sur un appareil par un \cf1\ul technicien\cf2\ulnone .\par
-Constitue les fiches de maintenance.\cf0\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Instance d'une d\'e9finition de \cf1 t\'e2che\cf0  propre \'e0 une \cf2 fiche de maintenance.\cf0\par
 }
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
@@ -192,6 +190,17 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-4-1</UserID>
+    <UniqueID>D2-8295ee4b-837d-4f46-8567-6ff2ad88febe</UniqueID>
+    <Name>Définition de tâche</Name>
+    <Description>Description formelle d'une action effectuée sur un appareil par un technicien.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Description formelle d'une \cf1 a\cf0\lang4105 ction effectu\'e9e sur un \cf2 appareil\cf0  par un \cf3\ul technicien\cf1\lang3084\ulnone .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-20</UserID>
     <Sequence>1</Sequence>
   </DictionaryEntry>
   <DictionaryField>
