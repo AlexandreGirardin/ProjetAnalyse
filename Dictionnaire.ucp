@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5718</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -206,6 +206,20 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
     <UserID>DEF-4-2</UserID>
     <Sequence>1</Sequence>
   </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-24bdb2c9-0f30-4089-885d-44444c5b0491</UniqueID>
+    <Name>Formulaire d'ajout d'appareil</Name>
+    <Description>Formulaire contenant les champs à remplir pour compléter l'ajout d'un appareil dans la base de données.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Formulaire contenant les champs \'e0 remplir pour compl\'e9ter l'ajout d'un \cf1 appareil\cf2  dans la \cf3\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-21</UserID>
+    <Sequence>1</Sequence>
+  </DictionaryEntry>
   <DictionaryField>
     <Name>Appareil</Name>
     <UniqueID>DF-40b02375-f2f5-4a44-a778-0934d209157a</UniqueID>
@@ -293,6 +307,14 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
     <ElementType>Integer</ElementType>
     <Description>Poste téléphonique</Description>
     <Sequence>3</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name />
+    <UniqueID>DF-6db582d0-c1ae-465c-b9e2-cc4f740003ca</UniqueID>
+    <ParentID>D2-24bdb2c9-0f30-4089-885d-44444c5b0491</ParentID>
+    <ElementType>[Type]</ElementType>
+    <Description>[Description]</Description>
+    <Sequence>0</Sequence>
   </DictionaryField>
   <DictionaryFieldConstraint>
     <ParentID>DF-300f1799-f9d9-428b-b949-363c5794362c</ParentID>

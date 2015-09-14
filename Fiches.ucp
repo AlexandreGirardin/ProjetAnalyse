@@ -2,7 +2,11 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
+<<<<<<< HEAD
     <SavedWith>10.0.5718</SavedWith>
+=======
+    <SavedWith>10.0.5606</SavedWith>
+>>>>>>> 8e430afa67c66c9c390a444cf4dabf8df6e9316a
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -19,15 +23,16 @@
     <UserID>UC-7</UserID>
     <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
     <Name>Créer une fiche dans le dossier d'un client</Name>
-    <Description>Création d'une fiche pour le suivi d'un problème d'un appareil.</Description>
+    <Description>Création d'une fiche pour le suivi d'un appareil.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Cr\'e9ation d'une \cf1 fiche\cf0  pour le suivi d'un probl\'e8me d'un appareil.\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Cr\'e9ation d'une \cf1 fiche\cf0  pour le suivi d'un \cf1\ul appareil\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le client a déjà un dossier.</PreConditions>
+    <PreConditions>Le client a déjà un dossier.
+Le client est sélectionné.</PreConditions>
     <PostConditions />
     <Level />
     <Complexity />
@@ -38,7 +43,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2015-09-14T09:56:56.9013016-04:00</DateModified>
+    <DateModified>2015-09-14T11:01:45.4206914-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -64,7 +69,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
-    <DateModified>2015-09-10T14:59:37.416857-04:00</DateModified>
+    <DateModified>2015-09-14T11:07:40.0093142-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</UniqueID>
@@ -112,6 +117,7 @@
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
     <DateModified>2015-09-10T15:13:09.8005204-04:00</DateModified>
   </UseCase>
+<<<<<<< HEAD
   <UseCase>
     <UniqueID>UC-49e4e9b5-f5ce-4719-bdbc-fb04ea94d8f8</UniqueID>
     <UserID>UC-6</UserID>
@@ -137,14 +143,41 @@
     <DateAdded>2015-09-03T08:41:37.3331476-04:00</DateAdded>
     <DateModified>2015-09-14T11:20:27.3317938-04:00</DateModified>
   </UseCase>
+=======
+  <Diagram>
+    <UniqueID>D-707d1d6d-c0c2-49fa-9b5f-17f1309d56fd</UniqueID>
+    <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>CréerUneFicheDansLeDossierD'unClientActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-fa1bd01e-e884-4e09-b316-0eda9a88de60</UniqueID>
+    <ParentID>UC-388771e5-784d-4380-9d34-0ce80ef94230</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>ModifierUneFicheDeMaintenanceActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+>>>>>>> 8e430afa67c66c9c390a444cf4dabf8df6e9316a
   <UCActor>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-388771e5-784d-4380-9d34-0ce80ef94230</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
   <Scenario>
     <UniqueID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</UniqueID>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</UniqueID>
+    <ParentID>UC-388771e5-784d-4380-9d34-0ce80ef94230</ParentID>
   </Scenario>
   <Step>
     <UniqueID>ST-7c5a48ce-4720-4e3d-9313-72a954622d8e</UniqueID>
@@ -161,10 +194,10 @@
   <Step>
     <UniqueID>ST-253ddd9b-2055-4dfc-b4bb-fb4be1db7595</UniqueID>
     <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
-    <Description>Le technicien rempli la fiche de maintenance.</Description>
+    <Description>Le technicien remplit la fiche de maintenance.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  rempli la \cf3 fiche de maintenance\cf1 .\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  remplit la \cf3\ul fiche de maintenance\cf1\ulnone .\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -173,10 +206,10 @@
   <Step>
     <UniqueID>ST-68fd48bc-5c62-4a71-836f-9787029a486e</UniqueID>
     <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
-    <Description>Le système présente la fiche de maintenance correspondant à l'appareil apporté.</Description>
+    <Description>Le système présente la fiche de maintenance correspondant à l'appareil sélectionné.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  pr\'e9sente la \cf3 fiche de maintenance\cf1  correspondant \'e0 l'\cf3 appareil\cf1  apport\'e9.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  pr\'e9sente la \cf3\ul fiche de maintenance\cf1\ulnone  correspondant \'e0 l'\cf3\ul appareil\cf1\ulnone  s\'e9lectionn\'e9.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -185,10 +218,10 @@
   <Step>
     <UniqueID>ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd</UniqueID>
     <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
-    <Description>Le technicien choisi un ensemble de tâches à effectuer</Description>
+    <Description>Le technicien choisit un ensemble de tâches à effectuer.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  choisi un \cf3 ensemble de t\'e2ches\cf2  \'e0 effectuer\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  choisit un \cf3\ul ensemble de t\'e2ches\cf2\ulnone  \'e0 effectuer.\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -209,10 +242,10 @@
   <Step>
     <UniqueID>ST-c9151e72-015a-4391-995e-54f1e55b3d92</UniqueID>
     <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
-    <Description>Le technicien enregistre </Description>
+    <Description>Le technicien enregistre la fiche.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  enregistre \par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  enregistre la fiche.\par
 }
 </RichDescription>
     <Sequence>4</Sequence>
@@ -233,22 +266,105 @@
   <Step>
     <UniqueID>ST-c04b0da1-7620-4b0a-872a-52c097d75ece</UniqueID>
     <ParentID>X-5ec2ecd7-b485-4a1f-b756-266410bb6054</ParentID>
-    <Description>Le technicien crée l'appareil du client</Description>
+    <Description>Le technicien crée l'appareil du client (Créer un appareil (UC-9-1))</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  cr\'e9e l'\cf3 appareil\cf2  du \cf3 client\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  cr\'e9e l'\cf3 appareil\cf2  du \cf3 client\cf2  (Cr\'e9er un \cf3 appareil\cf2  (\cf1\ul UC-9-1\cf2\ulnone ))\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-e30f49cf-6ea8-4b17-a74e-7768c6e2c231</UniqueID>
+    <ParentID>X-5ec2ecd7-b485-4a1f-b756-266410bb6054</ParentID>
+    <Description>continue to step 2.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 continue to step 2.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-2132b1f0-7dce-4abc-a850-e8995622959e</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description>Le technicien change les informations dans les champs concernés.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  change les informations dans les champs concern\'e9s.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-3d549701-7760-4a42-8ae3-ba374e9ee8c3</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description>Le technicien enregistre les modifications apportées.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  enregistre les modifications apport\'e9es.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-e0e11d95-7a44-4c74-a232-f2efe82f9c5a</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description>Le système demande une confirmation.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  demande une confirmation.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-b3081de0-dc35-4870-836a-bec9dee1d048</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description>Le technicien confirme les modifications.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme les modifications.\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-e7377e83-2272-48ea-a60d-25cd9c7cda90</UniqueID>
+    <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
+    <Description>Le système inscrit les informations dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  inscrit les informations dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>5</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-7826d7be-7aa8-4983-948d-45561288906a</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description>Le système inscrit les modifications dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  inscrit les modifications dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</UniqueID>
     <ParentID>ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd</ParentID>
-    <Description>La tâche a effectuer n'existe pas dans la liste des ensemble de tâches.</Description>
+    <Description>Aucun ensemble de tâches ne correspond aux tâches voulues.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 La \cf1 t\'e2che\cf2  a effectuer n'existe pas dans la liste des \cf1 ensemble de t\'e2ches\cf2 .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Aucun \cf1\ul ensemble de t\'e2ches\cf2\ulnone  ne correspond aux \cf1\ul t\'e2ches\cf2\ulnone  voulues.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
