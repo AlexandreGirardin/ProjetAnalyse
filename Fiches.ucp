@@ -113,7 +113,6 @@ Le client est sélectionné.</PreConditions>
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
     <DateModified>2015-09-10T15:13:09.8005204-04:00</DateModified>
   </UseCase>
-<<<<<<< HEAD
   <UseCase>
     <UniqueID>UC-49e4e9b5-f5ce-4719-bdbc-fb04ea94d8f8</UniqueID>
     <UserID>UC-6</UserID>
@@ -139,7 +138,6 @@ Le client est sélectionné.</PreConditions>
     <DateAdded>2015-09-03T08:41:37.3331476-04:00</DateAdded>
     <DateModified>2015-09-14T11:20:27.3317938-04:00</DateModified>
   </UseCase>
-=======
   <Diagram>
     <UniqueID>D-707d1d6d-c0c2-49fa-9b5f-17f1309d56fd</UniqueID>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
@@ -156,7 +154,6 @@ Le client est sélectionné.</PreConditions>
     <FileName>ModifierUneFicheDeMaintenanceActivityDiagram.ndx</FileName>
     <Type>1</Type>
   </Diagram>
->>>>>>> 8e430afa67c66c9c390a444cf4dabf8df6e9316a
   <UCActor>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
