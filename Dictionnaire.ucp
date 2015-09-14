@@ -28,7 +28,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-4-</DefaultPrefix>
-    <NextValue>2</NextValue>
+    <NextValue>3</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-4-</DefaultPrefix>
@@ -190,17 +190,20 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-4-1</UserID>
-    <UniqueID>D2-8295ee4b-837d-4f46-8567-6ff2ad88febe</UniqueID>
+    <Sequence>1</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</UniqueID>
     <Name>Définition de tâche</Name>
     <Description>Description formelle d'une action effectuée sur un appareil par un technicien.</Description>
     <Aliases />
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 Description formelle d'une \cf1 a\cf0\lang4105 ction effectu\'e9e sur un \cf2 appareil\cf0  par un \cf3\ul technicien\cf1\lang3084\ulnone .\cf0\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Description formelle d'une action effectu\'e9e sur un \cf1 appareil\cf2  par un \cf3\ul technicien\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
-    <UserID>DEF-20</UserID>
+    <UserID>DEF-4-2</UserID>
     <Sequence>1</Sequence>
   </DictionaryEntry>
   <DictionaryField>

@@ -18,7 +18,7 @@
     <UniqueID>UC-6f16e93c-f54a-4648-8390-92bc00bf351f</UniqueID>
     <UserID>UC-8-1</UserID>
     <ParentID>P-af231236-c8f6-43a7-9545-17ad38cf025d</ParentID>
-    <Name>Créer une définition tâche</Name>
+    <Name>Créer une définition de tâche</Name>
     <Description>Ajouter une nouvelle tâche à la liste des tâches déjà définies.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:04:55.5623216-04:00</DateAdded>
-    <DateModified>2015-09-14T09:50:53.6388251-04:00</DateModified>
+    <DateModified>2015-09-14T10:17:34.4471656-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-49e4e9b5-f5ce-4719-bdbc-fb04ea94d8f8</UniqueID>
