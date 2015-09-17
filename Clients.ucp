@@ -91,7 +91,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:59:20.7772349-04:00</DateAdded>
-    <DateModified>2015-09-17T14:08:58.4510002-04:00</DateModified>
+    <DateModified>2015-09-17T14:45:53.8134747-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-08180199-a070-4026-8672-a322bdcbb35b</UniqueID>
@@ -109,6 +109,14 @@
     <FileName>ModifierLesDossiersDeClientActivityDiagram.ndx</FileName>
     <Type>1</Type>
   </Diagram>
+  <Diagram>
+    <UniqueID>D-170259d3-1ddf-4015-bb61-328f4467bc14</UniqueID>
+    <ParentID>UC-eec925da-091e-42c8-b860-c1841536beb0</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>RechercherUnDossierDeClientActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
   <UCActor>
     <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
@@ -121,6 +129,11 @@
   </UCActor>
   <UCActor>
     <ParentID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-eec925da-091e-42c8-b860-c1841536beb0</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
@@ -400,10 +413,10 @@
   <Step>
     <UniqueID>ST-964444a7-f248-4991-8892-8b9fd6482c4d</UniqueID>
     <ParentID>MSS-4c40d616-f349-433f-9cf9-3e60e24a7350</ParentID>
-    <Description>Le système </Description>
+    <Description>Le technicien sélectionne le dossier du client recherché.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  \cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne le dossier du \cf3 client\cf2  recherch\'e9.\cf0\par
 }
 </RichDescription>
     <Sequence>5</Sequence>
@@ -450,6 +463,24 @@
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur en cons\'e9quence.\cf0\par
+    <UniqueID>ST-f44abaad-0daf-4e12-9c36-b968abf94be6</UniqueID>
+    <ParentID>MSS-4c40d616-f349-433f-9cf9-3e60e24a7350</ParentID>
+    <Description>Le système affiche les informations sur ce dossier.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche les informations sur ce dossier.\cf0\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-17c9c09f-ab89-433a-a340-3c49c4751c66</UniqueID>
+    <ParentID>X-66ded81b-18a8-4bb0-9fa0-526c4cb43ef7</ParentID>
+    <Description>Le technicien indique au système qu'il veut recommencer la recherche</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  indique au \cf1\ul syst\'e8me\cf2\ulnone  qu'il veut recommencer la recherche\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -484,6 +515,12 @@
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne le \cf3 dossier de client\cf2  voulu.\cf0\par
+    <UniqueID>ST-1eebc308-3161-45f4-99bf-022ab12cbe37</UniqueID>
+    <ParentID>X-ae62e176-eaef-489a-80ad-8daf0e6c6fff</ParentID>
+    <Description>Le technicien informe le client que la fiche n'existe pas.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  informe le \cf3 client\cf2  que la \cf3 fiche\cf2  n'existe pas.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -496,6 +533,11 @@
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abModifier\'bb.\cf0\par
+    <UniqueID>ST-8761e39f-c86a-4bc7-bb6c-cb4254f01523</UniqueID>
+    <ParentID>X-ae62e176-eaef-489a-80ad-8daf0e6c6fff</ParentID>
+    <Description>ends</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 ends\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -510,6 +552,15 @@
 }
 </RichDescription>
     <Sequence>0</Sequence>
+    <UniqueID>ST-fe3e4906-a195-4012-9ce0-cb5bbee70133</UniqueID>
+    <ParentID>X-66ded81b-18a8-4bb0-9fa0-526c4cb43ef7</ParentID>
+    <Description>Return to step 1</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Return to step 1\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
@@ -553,6 +604,12 @@
     <Description>Certains champs requis sont vides.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 \viewkind4\uc1\pard\f0\fs20 Certains champs requis sont vides.\par
+    <UniqueID>X-66ded81b-18a8-4bb0-9fa0-526c4cb43ef7</UniqueID>
+    <ParentID>ST-ab8c4a08-446d-467b-923c-0ae089f3715b</ParentID>
+    <Description>Le dossier n'apparait pas dans la liste.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le dossier\cf1  n'apparait pas dans la liste.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -577,6 +634,12 @@
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abAnnuler\'bb.\cf0\par
+    <UniqueID>X-ae62e176-eaef-489a-80ad-8daf0e6c6fff</UniqueID>
+    <ParentID>ST-0d2df5d3-7386-4d0c-a749-040947b228fa</ParentID>
+    <Description>Le dossier est introuvable</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le dossier \cf1 est introuvable\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
