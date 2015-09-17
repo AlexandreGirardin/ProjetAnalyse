@@ -55,20 +55,20 @@
   </ElementStub>
   <ElementStub>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
-    <Path>Tâches.ucp</Path>
-    <ElementID>P-af231236-c8f6-43a7-9545-17ad38cf025d</ElementID>
-    <Sequence>1</Sequence>
-  </ElementStub>
-  <ElementStub>
-    <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
     <Path>Appareil.ucp</Path>
     <ElementID>P-29d380ae-0f9f-4585-8e74-e0779429e865</ElementID>
-    <Sequence>2</Sequence>
+    <Sequence>1</Sequence>
   </ElementStub>
   <ElementStub>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
     <Path>Clients.ucp</Path>
     <ElementID>P-8ff62fea-5061-4aae-a27f-8ecce8094ed7</ElementID>
+    <Sequence>2</Sequence>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
+    <Path>Actions.ucp</Path>
+    <ElementID>P-5c1248cd-ad98-4937-9ead-6f8d89ff6087</ElementID>
     <Sequence>3</Sequence>
   </ElementStub>
   <UCActor>
