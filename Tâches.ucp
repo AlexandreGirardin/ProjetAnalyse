@@ -11,7 +11,7 @@
   <Package>
     <UniqueID>P-af231236-c8f6-43a7-9545-17ad38cf025d</UniqueID>
     <ExternalParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ExternalParentID>
-    <Name>Action</Name>
+    <Name>Actions</Name>
     <Sequence>-1</Sequence>
   </Package>
   <UseCase>
