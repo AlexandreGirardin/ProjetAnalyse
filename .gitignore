@@ -1,4 +1,8 @@
 Projet_ERP.ucd.autosave
 Projet_ERP_Context.autosave.ndx
 *.autosave
+*.autosave.ndx
+*.autosave.*
 *.settings
+*.settings.autosave
+*.settings.*

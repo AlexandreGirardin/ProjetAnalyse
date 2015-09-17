@@ -18,7 +18,7 @@
     <UniqueID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</UniqueID>
     <UserID>UC-7</UserID>
     <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
-    <Name>Créer une fiche dans le dossier d'un client</Name>
+    <Name>Créer une fiche de maintenance</Name>
     <Description>Création d'une fiche pour le suivi d'un appareil.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
@@ -29,7 +29,7 @@
     <Priority>1</Priority>
     <PreConditions>Le client a déjà un dossier.
 Le client est sélectionné.</PreConditions>
-    <PostConditions />
+    <PostConditions>Une nouvelle fiche est créée pour un appareil du client.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -39,22 +39,22 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2015-09-17T10:39:00.5963566-04:00</DateModified>
+    <DateModified>2015-09-17T18:59:43.9905727-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
     <UserID>UC-4</UserID>
     <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
     <Name>Modifier une fiche de maintenance</Name>
-    <Description>Le technicien ajoute, modifie ou supprime des tâches à effectuer dans une fiche de maintenance, selon la situation.</Description>
+    <Description>Le technicien ajoute, modifie ou supprime des tâches à effectuer dans une fiche de maintenance.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  ajoute, modifie ou supprime des \cf3 t\'e2ches\cf2  \'e0 effectuer dans une \cf3 fiche de maintenance\cf2 , selon la situation.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  ajoute, modifie ou supprime des \cf3 t\'e2ches\cf2  \'e0 effectuer dans une \cf3\ul fiche de maintenance\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le Technicien est déjà dans la fiche de maintenance</PreConditions>
+    <PreConditions>Le technicien est dans la page de visualisation des fiches de maintenance.</PreConditions>
     <PostConditions>Les modifications ont été apportées et la fiche est sauvegardée.</PostConditions>
     <Level />
     <Complexity />
@@ -65,7 +65,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
-    <DateModified>2015-09-17T13:29:39.7327972-04:00</DateModified>
+    <DateModified>2015-09-17T18:32:49.1693364-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</UniqueID>
@@ -80,8 +80,8 @@ Le client est sélectionné.</PreConditions>
 </RichDescription>
     <Sequence>2</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien est dans l'affichage global</PreConditions>
-    <PostConditions>La fiche est trouvée</PostConditions>
+    <PreConditions>Le technicien est dans la page de visualisation des fiches de maintenance.</PreConditions>
+    <PostConditions>La fiche recherchée est identifiée.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -91,7 +91,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:01:51.5093054-04:00</DateAdded>
-    <DateModified>2015-09-17T10:39:53.2824707-04:00</DateModified>
+    <DateModified>2015-09-17T18:35:24.6392094-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -106,9 +106,10 @@ Le client est sélectionné.</PreConditions>
 </RichDescription>
     <Sequence>3</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien est déjà dans la fiche de maintenance.</PreConditions>
-    <PostConditions>L'état de la Fiche de maintenance est changé en «Fermé».
-Le rapport est construit.</PostConditions>
+    <PreConditions>Le technicien est dans la fenêtre d'édition de la fiche de maintenance.</PreConditions>
+    <PostConditions>L'état de la fiche de maintenance est changé en «Fermé».
+Le rapport est construit.
+La facture est ajoutée à Acomba.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -118,7 +119,7 @@ Le rapport est construit.</PostConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-17T13:44:23.71135-04:00</DateModified>
+    <DateModified>2015-09-17T18:38:52.4627745-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-707d1d6d-c0c2-49fa-9b5f-17f1309d56fd</UniqueID>
@@ -191,10 +192,10 @@ Le rapport est construit.</PostConditions>
   <Step>
     <UniqueID>ST-7c5a48ce-4720-4e3d-9313-72a954622d8e</UniqueID>
     <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
-    <Description>Le technicien sélectionne l'appareil du client dans la liste proposée.</Description>
+    <Description>Le technicien sélectionne l'appareil du client dans la liste des appareils du client.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3\ul appareil\cf2\ulnone  du \cf3\ul client\cf2\ulnone  dans la liste propos\'e9e.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3\ul appareil\cf2\ulnone  du \cf3\ul client\cf2\ulnone  dans la liste des \cf3\ul appareils\cf2\ulnone  du \cf3\ul client\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -304,43 +305,19 @@ Le rapport est construit.</PostConditions>
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  change les informations dans les champs concern\'e9s.\cf0\par
 }
 </RichDescription>
-    <Sequence>0</Sequence>
+    <Sequence>3</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
     <UniqueID>ST-3d549701-7760-4a42-8ae3-ba374e9ee8c3</UniqueID>
     <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
-    <Description>Le technicien enregistre les modifications apportées.</Description>
+    <Description>Le technicien appuie sur le bouton «Valider».</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  enregistre les modifications apport\'e9es.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abValider\'bb.\cf0\par
 }
 </RichDescription>
-    <Sequence>1</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-e0e11d95-7a44-4c74-a232-f2efe82f9c5a</UniqueID>
-    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
-    <Description>Le système demande une confirmation.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  demande une confirmation.\cf0\par
-}
-</RichDescription>
-    <Sequence>2</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-b3081de0-dc35-4870-836a-bec9dee1d048</UniqueID>
-    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
-    <Description>Le technicien confirme les modifications.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme les modifications.\cf0\par
-}
-</RichDescription>
-    <Sequence>3</Sequence>
+    <Sequence>4</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -364,16 +341,16 @@ Le rapport est construit.</PostConditions>
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  inscrit les modifications dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
 }
 </RichDescription>
-    <Sequence>4</Sequence>
+    <Sequence>5</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
     <UniqueID>ST-fff784a6-501b-4e68-b2d3-80deeb810ba2</UniqueID>
     <ParentID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</ParentID>
-    <Description>Le technicien applique les filtres voulus pour trouver la fiche recherchée.</Description>
+    <Description>Le technicien entre un mot-clé dans la boîte de recherche.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  applique les filtres voulus pour trouver la \cf3 fiche\cf1  recherch\'e9e.\par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  entre un mot-cl\'e9 dans la bo\'eete de recherche.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -382,10 +359,10 @@ Le rapport est construit.</PostConditions>
   <Step>
     <UniqueID>ST-fbe60b5a-9e19-413f-9a8f-6b5f7ea7e1d7</UniqueID>
     <ParentID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</ParentID>
-    <Description>Le système retire les fiches ne correspondant pas aux critères de recherche de l'affichage global.</Description>
+    <Description>Le système filtre les fiches de maintenance affichées en fonction du mot-clé.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retire les \cf3 fiches\cf2  ne correspondant pas aux crit\'e8res de recherche de l'affichage global.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  filtre les \cf3\ul fiches\cf2\ulnone  de maintenance affich\'e9es en fonction du mot-cl\'e9.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -394,10 +371,10 @@ Le rapport est construit.</PostConditions>
   <Step>
     <UniqueID>ST-5eee0792-44a2-418f-be1f-37592e92abf9</UniqueID>
     <ParentID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</ParentID>
-    <Description>Le technicien sélectionne la fiche du client.</Description>
+    <Description>Le technicien double-clique sur la fiche du client.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne la \cf3 fiche\cf2  du \cf3 client\cf2 .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  double-clique sur la \cf3 fiche\cf2  du \cf3 client\cf2 .\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -406,10 +383,10 @@ Le rapport est construit.</PostConditions>
   <Step>
     <UniqueID>ST-25b8c3aa-7f3d-474d-8add-40a61d2a546d</UniqueID>
     <ParentID>X-cce072bb-be02-4235-8c4a-46006f44694b</ParentID>
-    <Description>le technicien modifie les filtres qu'il a appliqué.</Description>
+    <Description>Le technicien modifie les filtres qu'il a appliqués.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 le \cf1\ul technicien\cf2\ulnone  modifie les filtres qu'il a appliqu\'e9.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  modifie les filtres qu'il a appliqu\'e9s.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -465,10 +442,10 @@ Le rapport est construit.</PostConditions>
   <Step>
     <UniqueID>ST-6baa438b-a4b0-4b02-afab-fae09f842148</UniqueID>
     <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
-    <Description>Le technicien confirme la fermeture de la Fiche de maintenance.</Description>
+    <Description>Le technicien confirme la fermeture de la fiche de maintenance en appuyant sur le bouton «Générer le rapport».</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme la fermeture de la \cf3 Fiche de maintenance\cf2 .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme la fermeture de la \cf3\ul fiche de maintenance\cf2\ulnone  en appuyant sur le bouton \'abG\'e9n\'e9rer le \cf3\ul rapport\cf2\ulnone\'bb.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -477,10 +454,10 @@ Le rapport est construit.</PostConditions>
   <Step>
     <UniqueID>ST-22aeb89f-da51-4d67-b4fe-bfb2207a3d16</UniqueID>
     <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
-    <Description>Le système change l'état de la Fiche de maintenance pour la rendre «Fermée».</Description>
+    <Description>Le système marque la fiche de maintenance dans la base de données comme étant fermée.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  change l'\'e9tat de la \cf3 Fiche de maintenance\cf2  pour la rendre \'abFerm\'e9e\'bb.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  marque la \cf3\ul fiche de maintenance\cf2\ulnone  dans la \cf1\ul base de donn\'e9es\cf2\ulnone  comme \'e9tant ferm\'e9e.\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -489,10 +466,10 @@ Le rapport est construit.</PostConditions>
   <Step>
     <UniqueID>ST-5e46c579-d246-4e78-8c82-8d5b16eadb88</UniqueID>
     <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
-    <Description>Le système prépare le rapport pour la facturation</Description>
+    <Description>Le système génère le rapport pour la facturation.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9pare le \cf3 rapport\cf2  pour la facturation\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  g\'e9n\'e8re le \cf3\ul rapport\cf2\ulnone  pour la facturation.\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -510,10 +487,51 @@ Le rapport est construit.</PostConditions>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-ed5701c7-0ee2-4525-a2cd-ec9c6553809c</UniqueID>
+    <UniqueID>ST-d8cb4d90-d6c2-41aa-99be-1342e663eb92</UniqueID>
     <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
-    <Description />
-    <Sequence>5</Sequence>
+    <Description>Le technicien identifie la fiche dans la liste des fiches de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  identifie la \cf3\ul fiche\cf2\ulnone  dans la liste des \cf3\ul fiches\cf2\ulnone  de maintenance.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-10dcd3ec-f526-454e-bc40-944e023480c7</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description>Le système présente une fenêtre d'édition pour la fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9sente une fen\'eatre d'\'e9dition pour la \cf3\ul fiche de maintenance\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-e7039552-4c63-4fa5-8dcf-b79e2e33c4ce</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description>Le technicien double-clique sur la fiche.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  double-clique sur la \cf3\ul fiche\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-ac129db9-a3c1-484f-a731-9fd7b61b4c5a</UniqueID>
+    <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
+    <Description>Le système crée une nouvelle facture dans la base de données d'Acomba.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  cr\'e9e une nouvelle facture dans la \cf1\ul base de donn\'e9es\cf2\ulnone  d'\cf1\ul Acomba\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
@@ -555,10 +573,10 @@ Le rapport est construit.</PostConditions>
   <Extension>
     <UniqueID>X-b526603f-02b6-492f-adbc-d0f10ea9a1b7</UniqueID>
     <ParentID>ST-5eee0792-44a2-418f-be1f-37592e92abf9</ParentID>
-    <Description>La fiche est introuvable</Description>
+    <Description>La fiche est introuvable.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 La \cf1 fiche\cf2  est introuvable\cf0\par
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul fiche\cf2\ulnone  est introuvable.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>

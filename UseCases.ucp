@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -27,7 +27,7 @@
     <Sequence>0</Sequence>
     <Priority>1</Priority>
     <PreConditions />
-    <PostConditions />
+    <PostConditions>Le système est lancé et la fenêtre principale est ouverte.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -37,7 +37,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:33:34.1946433-04:00</DateAdded>
-    <DateModified>2015-09-17T08:38:27.5637198-04:00</DateModified>
+    <DateModified>2015-09-17T18:28:56.0113269-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-8b8974dc-6b42-488e-b822-bd6c39d67f96</UniqueID>
@@ -83,10 +83,10 @@
   <Step>
     <UniqueID>ST-c3e4587e-8e21-489b-a420-a693d27b42fd</UniqueID>
     <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
-    <Description>Le système présente un fenêtre d'authentification.</Description>
+    <Description>Le système présente une fenêtre d'authentification.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9sente un \cf3 fen\'eatre d'authentification.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9sente une \cf3 fen\'eatre d'authentification.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -95,10 +95,10 @@
   <Step>
     <UniqueID>ST-b4ad4e6c-e9cf-43be-a97d-f0ab3c3777cf</UniqueID>
     <ParentID>X-6dad97a2-4130-43be-9098-94664701f4ce</ParentID>
-    <Description>Le Système affiche un message d'erreur.</Description>
+    <Description>Le système affiche un message d'erreur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul Syst\'e8me\cf1\ulnone  affiche un message d'erreur.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -107,10 +107,10 @@
   <Step>
     <UniqueID>ST-b0d286e5-6200-47c8-8007-92333cefd389</UniqueID>
     <ParentID>X-6dad97a2-4130-43be-9098-94664701f4ce</ParentID>
-    <Description>Retour étape 2.</Description>
+    <Description>Continue to step 2.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Retour \'e9tape 2.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 2.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -131,10 +131,10 @@
   <Step>
     <UniqueID>ST-651ddad5-edc9-4a00-8da8-4bc44bd3058e</UniqueID>
     <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
-    <Description>Le système lance la fenêtre principale .</Description>
+    <Description>Le système lance la fenêtre principale.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  lance la \cf3 fen\'eatre principale .\cf1\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  lance la \cf3 fen\'eatre principale.\cf1\par
 }
 </RichDescription>
     <Sequence>2</Sequence>

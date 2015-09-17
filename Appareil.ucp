@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -28,7 +28,7 @@
     <Sequence>0</Sequence>
     <Priority>1</Priority>
     <PreConditions>Le technicien se trouve dans le dossier de client et a appuyé sur le bouton «Ajouter un appareil».</PreConditions>
-    <PostConditions>L'appareil a été ajouté à dans le dossier de client.</PostConditions>
+    <PostConditions>L'appareil a été ajouté au dossier du client.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:22.6397736-04:00</DateAdded>
-    <DateModified>2015-09-17T14:57:17.3068706-04:00</DateModified>
+    <DateModified>2015-09-17T18:56:21.9546178-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</UniqueID>
@@ -64,7 +64,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-09-17T15:21:33.0184299-04:00</DateModified>
+    <DateModified>2015-09-17T18:40:22.6465329-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-7fc215a1-23c2-4776-b926-b62f4574723f</UniqueID>
@@ -93,14 +93,6 @@
     <DateModified>2015-09-17T15:21:38.0033288-04:00</DateModified>
   </UseCase>
   <Diagram>
-    <UniqueID>D-42c12b32-2ab4-44d5-bcc5-9ca2275fb4d6</UniqueID>
-    <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>CréerUnAppareilActivityDiagram(2).ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
-  <Diagram>
     <UniqueID>D-58c6e75a-5fe9-46e6-b17d-5dba40d72433</UniqueID>
     <ParentID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</ParentID>
     <Name>Activity Diagram</Name>
@@ -114,6 +106,14 @@
     <Name>Activity Diagram</Name>
     <Sequence>0</Sequence>
     <FileName>ModifierUnAppareilActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-43783fcc-5be5-4af1-a55a-41c6f3bc7ace</UniqueID>
+    <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>CréerUnAppareilActivityDiagram(2).ndx</FileName>
     <Type>1</Type>
   </Diagram>
   <UCActor>
