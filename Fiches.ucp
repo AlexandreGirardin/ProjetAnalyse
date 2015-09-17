@@ -39,7 +39,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2015-09-17T08:39:57.5758779-04:00</DateModified>
+    <DateModified>2015-09-17T10:39:00.5963566-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -54,8 +54,8 @@ Le client est sélectionné.</PreConditions>
 </RichDescription>
     <Sequence>1</Sequence>
     <Priority>1</Priority>
-    <PreConditions />
-    <PostConditions />
+    <PreConditions>Le Technicien est déjà dans la fiche de maintenance</PreConditions>
+    <PostConditions>Les modifications ont été apportées et la fiche est sauvegardée.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -65,7 +65,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
-    <DateModified>2015-09-14T11:07:40.0093142-04:00</DateModified>
+    <DateModified>2015-09-17T10:36:02.4885324-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</UniqueID>
@@ -80,8 +80,8 @@ Le client est sélectionné.</PreConditions>
 </RichDescription>
     <Sequence>2</Sequence>
     <Priority>1</Priority>
-    <PreConditions />
-    <PostConditions />
+    <PreConditions>Le technicien est dans l'affichage global</PreConditions>
+    <PostConditions>La fiche est trouvée</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -91,7 +91,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:01:51.5093054-04:00</DateAdded>
-    <DateModified>2015-09-17T08:44:41.8100685-04:00</DateModified>
+    <DateModified>2015-09-17T10:39:53.2824707-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -106,8 +106,9 @@ Le client est sélectionné.</PreConditions>
 </RichDescription>
     <Sequence>3</Sequence>
     <Priority>1</Priority>
-    <PreConditions />
-    <PostConditions />
+    <PreConditions>Le technicien est déjà dans la fiche de maintenance.</PreConditions>
+    <PostConditions>L'état de la Fiche de maintenance est changé en «Fermé».
+Le rapport est construit.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -117,32 +118,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-10T15:13:09.8005204-04:00</DateModified>
-  </UseCase>
-  <UseCase>
-    <UniqueID>UC-49e4e9b5-f5ce-4719-bdbc-fb04ea94d8f8</UniqueID>
-    <UserID>UC-6</UserID>
-    <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
-    <Name>Modifier l'état des tâches</Name>
-    <Description>Noter l'état d'avancement des différentes tâches assignées à un ordinateur.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Noter l'\'e9tat d'avancement des diff\'e9rentes t\'e2ches assign\'e9es \'e0 un ordinateur.\par
-}
-</RichDescription>
-    <Sequence>4</Sequence>
-    <Priority>1</Priority>
-    <PreConditions />
-    <PostConditions />
-    <Level />
-    <Complexity />
-    <UCStatus />
-    <ImplStatus />
-    <AssignedTo />
-    <Release />
-    <TestingSetup />
-    <TestingConfigurations />
-    <DateAdded>2015-09-03T08:41:37.3331476-04:00</DateAdded>
-    <DateModified>2015-09-14T11:20:27.3317938-04:00</DateModified>
+    <DateModified>2015-09-17T10:39:55.8090074-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-707d1d6d-c0c2-49fa-9b5f-17f1309d56fd</UniqueID>
@@ -160,6 +136,22 @@ Le client est sélectionné.</PreConditions>
     <FileName>ModifierUneFicheDeMaintenanceActivityDiagram.ndx</FileName>
     <Type>1</Type>
   </Diagram>
+  <Diagram>
+    <UniqueID>D-f9ad27c6-19a5-4ad5-8e51-f47db62ff1bd</UniqueID>
+    <ParentID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>RechercherUneFicheDeMaintenanceActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-72c80782-af6e-454c-93b7-64652be67e89</UniqueID>
+    <ParentID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>FermerUneFicheDeMaintenanceActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
   <UCActor>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
@@ -172,6 +164,11 @@ Le client est sélectionné.</PreConditions>
   </UCActor>
   <UCActor>
     <ParentID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
@@ -186,6 +183,10 @@ Le client est sélectionné.</PreConditions>
   <Scenario>
     <UniqueID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</UniqueID>
     <ParentID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</UniqueID>
+    <ParentID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</ParentID>
   </Scenario>
   <Step>
     <UniqueID>ST-7c5a48ce-4720-4e3d-9313-72a954622d8e</UniqueID>
@@ -238,10 +239,10 @@ Le client est sélectionné.</PreConditions>
   <Step>
     <UniqueID>ST-6ca83106-9fc7-49cf-917c-d32f09e5f90c</UniqueID>
     <ParentID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</ParentID>
-    <Description>Le technicien sélectionne les tâches manuellement dans la liste.</Description>
+    <Description>Le technicien sélectionne les actions manuellement dans la liste.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  s\'e9lectionne les \cf3 t\'e2ches\cf1  manuellement dans la liste.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  s\'e9lectionne les \cf3 actions\cf1  manuellement dans la liste.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -393,8 +394,119 @@ Le client est sélectionné.</PreConditions>
   <Step>
     <UniqueID>ST-5eee0792-44a2-418f-be1f-37592e92abf9</UniqueID>
     <ParentID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</ParentID>
-    <Description />
+    <Description>Le technicien sélectionne la fiche du client.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne la \cf3 fiche\cf2  du \cf3 client\cf2 .\cf0\par
+}
+</RichDescription>
     <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-25b8c3aa-7f3d-474d-8add-40a61d2a546d</UniqueID>
+    <ParentID>X-cce072bb-be02-4235-8c4a-46006f44694b</ParentID>
+    <Description>le technicien modifie les filtres qu'il a appliqué.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 le \cf1\ul technicien\cf2\ulnone  modifie les filtres qu'il a appliqu\'e9.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-7e0635ed-4085-45eb-97ea-2f3a5806177e</UniqueID>
+    <ParentID>X-cce072bb-be02-4235-8c4a-46006f44694b</ParentID>
+    <Description>continue to step 2</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 continue to step 2\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-d7bffc41-9c7c-4a85-83c9-2ac77aaccb8e</UniqueID>
+    <ParentID>X-b526603f-02b6-492f-adbc-d0f10ea9a1b7</ParentID>
+    <Description>Le technicien informe le client que la fiche n'existe pas.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  informe le \cf3 client\cf2  que la \cf3 fiche\cf2  n'existe pas.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-2e997f47-ec2b-41b6-9920-6dee9219a9a4</UniqueID>
+    <ParentID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</ParentID>
+    <Description>Le système affiche cette fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche cette \cf3 fiche de maintenance\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-37dd78d6-032b-4f06-b713-02f3a738f4e1</UniqueID>
+    <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
+    <Description>Le technicien vérifie que toutes les actions ont été complétées ou annulées.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  v\'e9rifie que toutes les \cf3 actions\cf2  ont \'e9t\'e9 compl\'e9t\'e9es ou annul\'e9es.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-6baa438b-a4b0-4b02-afab-fae09f842148</UniqueID>
+    <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
+    <Description>Le technicien confirme la fermeture de la Fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme la fermeture de la \cf3 Fiche de maintenance\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-22aeb89f-da51-4d67-b4fe-bfb2207a3d16</UniqueID>
+    <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
+    <Description>Le système change l'état de la Fiche de maintenance pour la rendre «Fermée».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  change l'\'e9tat de la \cf3 Fiche de maintenance\cf2  pour la rendre \'abFerm\'e9e\'bb.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-5e46c579-d246-4e78-8c82-8d5b16eadb88</UniqueID>
+    <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
+    <Description>Le système prépare le rapport pour la facturation</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9pare le \cf3 rapport\cf2  pour la facturation\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-81e6e199-57e0-4293-acfb-840f041736da</UniqueID>
+    <ParentID>X-b526603f-02b6-492f-adbc-d0f10ea9a1b7</ParentID>
+    <Description>ends</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 ends\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
@@ -419,6 +531,30 @@ Le client est sélectionné.</PreConditions>
 }
 </RichDescription>
     <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-cce072bb-be02-4235-8c4a-46006f44694b</UniqueID>
+    <ParentID>ST-5eee0792-44a2-418f-be1f-37592e92abf9</ParentID>
+    <Description>La fiche n'apparait pas dans la liste.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1 fiche\cf2  n'apparait pas dans la liste.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-b526603f-02b6-492f-adbc-d0f10ea9a1b7</UniqueID>
+    <ParentID>ST-5eee0792-44a2-418f-be1f-37592e92abf9</ParentID>
+    <Description>La fiche est introuvable</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1 fiche\cf2  est introuvable\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Extension>
   <UserID>
