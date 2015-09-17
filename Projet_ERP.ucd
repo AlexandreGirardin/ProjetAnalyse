@@ -37,20 +37,20 @@
   </ElementStub>
   <ElementStub>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
-    <Path>UserStories.ucp</Path>
-    <ElementID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</ElementID>
-    <Sequence>2</Sequence>
-  </ElementStub>
-  <ElementStub>
-    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Path>Dictionnaire.ucp</Path>
     <ElementID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ElementID>
-    <Sequence>3</Sequence>
+    <Sequence>2</Sequence>
   </ElementStub>
   <ElementStub>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Path>Exigences.ucp</Path>
     <ElementID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ElementID>
+    <Sequence>3</Sequence>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Path>UserStories.ucp</Path>
+    <ElementID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ElementID>
     <Sequence>4</Sequence>
   </ElementStub>
   <Step>
