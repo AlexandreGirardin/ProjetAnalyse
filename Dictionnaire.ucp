@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5736</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -124,7 +124,7 @@ Contient un minimum de 7 chiffres.\cf0\par
     <UniqueID>D2-309c8c23-976c-469c-b621-ce1a2f41e058</UniqueID>
     <Name>Fiche de maintenance</Name>
     <Description>Spécifie les tâches à effectuer sur un appareil donné.</Description>
-    <Aliases />
+    <Aliases>Fiche</Aliases>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;}
 \viewkind4\uc1\pard\lang3084\f0\fs20 Sp\'e9cifie les \cf1 t\'e2ches\cf0  \'e0 effectuer sur un \cf1\ul appareil\cf0\ulnone  donn\'e9.\lang4105\par

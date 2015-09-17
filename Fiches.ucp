@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5718</SavedWith>
+    <SavedWith>10.0.5736</SavedWith>
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -72,6 +72,12 @@ Le client est sélectionné.</PreConditions>
     <UserID>UC-7-1</UserID>
     <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
     <Name>Rechercher une fiche de maintenance</Name>
+    <Description>Le technicien recherche une fiche de maintenance demandée par un client.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  recherche une \cf3 fiche de maintenance\cf2  demand\'e9e par un \cf3 client\cf2 .\cf0\par
+}
+</RichDescription>
     <Sequence>2</Sequence>
     <Priority>1</Priority>
     <PreConditions />
@@ -85,7 +91,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:01:51.5093054-04:00</DateAdded>
-    <DateModified>2015-09-10T15:02:27.2360111-04:00</DateModified>
+    <DateModified>2015-09-17T08:44:41.8100685-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -164,6 +170,11 @@ Le client est sélectionné.</PreConditions>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
+  <UCActor>
+    <ParentID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
   <Scenario>
     <UniqueID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</UniqueID>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
@@ -171,6 +182,10 @@ Le client est sélectionné.</PreConditions>
   <Scenario>
     <UniqueID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</UniqueID>
     <ParentID>UC-388771e5-784d-4380-9d34-0ce80ef94230</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</UniqueID>
+    <ParentID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</ParentID>
   </Scenario>
   <Step>
     <UniqueID>ST-7c5a48ce-4720-4e3d-9313-72a954622d8e</UniqueID>
@@ -349,6 +364,37 @@ Le client est sélectionné.</PreConditions>
 }
 </RichDescription>
     <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-fff784a6-501b-4e68-b2d3-80deeb810ba2</UniqueID>
+    <ParentID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</ParentID>
+    <Description>Le technicien applique les filtres voulus pour trouver la fiche recherchée.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  applique les filtres voulus pour trouver la \cf3 fiche\cf1  recherch\'e9e.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-fbe60b5a-9e19-413f-9a8f-6b5f7ea7e1d7</UniqueID>
+    <ParentID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</ParentID>
+    <Description>Le système retire les fiches ne correspondant pas aux critères de recherche de l'affichage global.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retire les \cf3 fiches\cf2  ne correspondant pas aux crit\'e8res de recherche de l'affichage global.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-5eee0792-44a2-418f-be1f-37592e92abf9</UniqueID>
+    <ParentID>MSS-79d7f5c0-e7da-421a-aeeb-e8d97851de82</ParentID>
+    <Description />
+    <Sequence>2</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
