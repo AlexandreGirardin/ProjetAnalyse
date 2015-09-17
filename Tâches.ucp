@@ -11,7 +11,7 @@
   <Package>
     <UniqueID>P-af231236-c8f6-43a7-9545-17ad38cf025d</UniqueID>
     <ExternalParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ExternalParentID>
-    <Name>Action</Name>
+    <Name>Actions</Name>
     <Sequence>-1</Sequence>
   </Package>
   <UseCase>
@@ -54,7 +54,7 @@
     <Sequence>1</Sequence>
     <Priority>1</Priority>
     <PreConditions>Le technicien doit être dans la page de visualisation des actions.</PreConditions>
-    <PostConditions>L'action a été retirée de la liste des actions définies.</PostConditions>
+    <PostConditions>L'état de l'action à été changé.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -64,7 +64,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:13:25.1372805-04:00</DateAdded>
-    <DateModified>2015-09-17T10:42:42.3104287-04:00</DateModified>
+    <DateModified>2015-09-17T13:21:19.7157679-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-70f463c9-8eec-4b37-83f6-2ce760b9db1b</UniqueID>
@@ -90,7 +90,33 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T10:46:03.7980141-04:00</DateAdded>
-    <DateModified>2015-09-17T09:21:19.8393053-04:00</DateModified>
+    <DateModified>2015-09-17T13:22:05.1953305-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-519db064-3cc5-4179-9f52-5eea87db0e3f</UniqueID>
+    <UserID>UC-8-4</UserID>
+    <ParentID>P-af231236-c8f6-43a7-9545-17ad38cf025d</ParentID>
+    <Name>Modifier une action</Name>
+    <Description>Permet de modifier le nom et/ou la description d'une action.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Permet de modifier le nom et/ou la description d'une \cf1 action\cf2 .\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <Priority>1</Priority>
+    <PreConditions>Le technicien doit être dans la page de visualisation des actions.</PreConditions>
+    <PostConditions>Le nom et/ou la description de l'action à été modifié.</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-17T13:22:14.9084413-04:00</DateAdded>
+    <DateModified>2015-09-17T13:52:57.6504057-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-06d41637-19c2-44d6-9cd7-48a00c51a6b9</UniqueID>
@@ -98,6 +124,30 @@
     <Name>Activity Diagram</Name>
     <Sequence>0</Sequence>
     <FileName>CréerUneNouvelleActionActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-29078d87-10fe-49b5-827e-9505c2c67275</UniqueID>
+    <ParentID>UC-70cf062d-d8b2-42e8-9a00-cdaa827a72a0</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>ActiverDésactiverUneActionActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-b0e6ecff-c383-47c4-8e6a-4b1e462a4377</UniqueID>
+    <ParentID>UC-70f463c9-8eec-4b37-83f6-2ce760b9db1b</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>VoirUneDéfinitionD'actionActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-ba6c3089-c9cd-46e9-8ca5-5b32cfcdcc28</UniqueID>
+    <ParentID>UC-519db064-3cc5-4179-9f52-5eea87db0e3f</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>ModifierUneActionActivityDiagram.ndx</FileName>
     <Type>1</Type>
   </Diagram>
   <Scenario>
@@ -111,6 +161,10 @@
   <Scenario>
     <UniqueID>MSS-63ee2487-5f69-40f8-8b3f-8e1c3d54df1c</UniqueID>
     <ParentID>UC-70f463c9-8eec-4b37-83f6-2ce760b9db1b</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</UniqueID>
+    <ParentID>UC-519db064-3cc5-4179-9f52-5eea87db0e3f</ParentID>
   </Scenario>
   <Step>
     <UniqueID>ST-ae68e986-0c46-4811-bd06-f341432860bc</UniqueID>
@@ -149,18 +203,6 @@
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-16a6ece1-516b-48f4-b525-7f1a0c8aa374</UniqueID>
-    <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
-    <Description>Le technicien sélectionne l'action à modifier.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3 action\cf2  \'e0 modifier.\cf0\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
     <UniqueID>ST-7f079859-12aa-4455-a9ff-719bbd652f8d</UniqueID>
     <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
     <Description>Le technicien change l'état de la case à cocher «Actif».</Description>
@@ -173,50 +215,15 @@
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-fe5b9621-4c1d-4aea-819c-8f0a21f35ae4</UniqueID>
-    <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
-    <Description>Le technicien confirme de nouveau.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme de nouveau.\cf0\par
-}
-</RichDescription>
-    <Sequence>3</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
     <UniqueID>ST-5cc97417-6642-43d8-ba28-4e77a9ca080a</UniqueID>
     <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
-    <Description>Le système marque l'action comme étant obselète.</Description>
+    <Description>Le système marque l'action comme étant inactive dans la base de données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  marque l'\cf3 action\cf2  comme \'e9tant obsel\'e8te.\cf0\par
-}
-</RichDescription>
-    <Sequence>4</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-de9fa6d1-39bf-4113-8a78-c05655a89dab</UniqueID>
-    <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
-    <Description>Le système présente un message de confirmation.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf0\ulnone  pr\'e9sente un message de confirmation.\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  marque l'\cf3 action\cf2  comme \'e9tant inactive dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-16244c6b-42d9-4016-89bc-552b50400461</UniqueID>
-    <ParentID>X-3a491580-bbca-429d-8804-3ef31d17d9ba</ParentID>
-    <Description>end</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 end\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -228,7 +235,7 @@
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  double-clique sur l'\cf3\ul action\cf2\ulnone .\cf0\par
 }
 </RichDescription>
-    <Sequence>0</Sequence>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -240,7 +247,7 @@
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9sente les informations.\cf0\par
 }
 </RichDescription>
-    <Sequence>1</Sequence>
+    <Sequence>2</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -327,18 +334,162 @@
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
-  <Extension>
-    <UniqueID>X-3a491580-bbca-429d-8804-3ef31d17d9ba</UniqueID>
-    <ParentID>ST-fe5b9621-4c1d-4aea-819c-8f0a21f35ae4</ParentID>
-    <Description>Le technicien annule le retrait.</Description>
+  <Step>
+    <UniqueID>ST-3f9d4a08-89fb-452e-9248-c9348c7aeadb</UniqueID>
+    <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
+    <Description>Le technicien repère l'action désirée dans la liste des actions définies.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  annule le retrait.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rep\'e8re l'\cf3 action\cf2  d\'e9sir\'e9e dans la liste des \cf3 actions\cf2  d\'e9finies.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Extension>
+  </Step>
+  <Step>
+    <UniqueID>ST-c3ca9849-91a1-4987-b080-bb7170cf6426</UniqueID>
+    <ParentID>MSS-63ee2487-5f69-40f8-8b3f-8e1c3d54df1c</ParentID>
+    <Description>Le technicien repère l'action désirée dans la liste des actions définies</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rep\'e8re l'\cf3 action\cf2  d\'e9sir\'e9e dans la liste des \cf3 actions\cf2  d\'e9finies\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-b33f6f84-6de4-44d4-bc59-39a3e1eca931</UniqueID>
+    <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
+    <Description>Le technicien repère l'action désirée dans la liste des actions définies.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rep\'e8re l'\cf3 action\cf2  d\'e9sir\'e9e dans la liste des \cf3 actions\cf2  d\'e9finies.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-c5acc2d1-dd85-4df9-a879-3c225124c3de</UniqueID>
+    <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
+    <Description>Le technicien double-clique sur l'action.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  double-clique sur l'\cf3\ul action\cf2\ulnone .\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-6cb4ae9c-b304-4f7f-bb56-8a1524e5540b</UniqueID>
+    <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
+    <Description>Le technicien change le nom et/ou la description de l'action.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  change le nom et/ou la description de l'\cf3 action\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-91051b81-75c1-4073-aa72-df3d59b90d91</UniqueID>
+    <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
+    <Description>Le technicien appuie sur le bouton «confirmer».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abconfirmer\'bb.\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-2e4072be-0b31-4da3-bd5f-1f23ec5d11f3</UniqueID>
+    <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
+    <Description>Le système effectue les modification dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  effectue les modification dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-3cec2b32-cd3d-4163-9851-19a65823fb10</UniqueID>
+    <ParentID>X-de65eeea-0726-4626-97e9-9b4458e8737b</ParentID>
+    <Description>Le système affiche un message d'erreur approprié.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur appropri\'e9.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-497adc1e-ec7f-4320-bfee-4a3872c401a5</UniqueID>
+    <ParentID>X-de65eeea-0726-4626-97e9-9b4458e8737b</ParentID>
+    <Description>Continue to step 3.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 3.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-a542e696-3365-4d19-bb6f-ccdd983adfd3</UniqueID>
+    <ParentID>X-02ef5f45-11d7-40d4-8700-24b8259776ca</ParentID>
+    <Description>Ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Ends.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-7c338582-384a-45a7-8cb1-f3b8ebeef47f</UniqueID>
+    <ParentID>X-d721b79d-8679-49c1-824b-e3dfa998d179</ParentID>
+    <Description>Le système annule la transaction.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  annule la transaction.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-2a5c4974-faf9-4afa-9dab-2c075edfd1a5</UniqueID>
+    <ParentID>X-d721b79d-8679-49c1-824b-e3dfa998d179</ParentID>
+    <Description>Le système affiche un message d'erreur approprié.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur appropri\'e9.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-01d71443-9a5e-4ef2-a4a0-c1bddaa50b5b</UniqueID>
+    <ParentID>X-d721b79d-8679-49c1-824b-e3dfa998d179</ParentID>
+    <Description>Continue to step 3.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 3.\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-1dbefd40-b1c0-4319-943a-e34bd26db84c</UniqueID>
     <ParentID>ST-041b9296-bdd4-4343-ad71-592b3cae5deb</ParentID>
@@ -375,9 +526,45 @@
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Extension>
+  <Extension>
+    <UniqueID>X-de65eeea-0726-4626-97e9-9b4458e8737b</UniqueID>
+    <ParentID>ST-91051b81-75c1-4073-aa72-df3d59b90d91</ParentID>
+    <Description>Le nom de l'action est vide.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le nom de l'\cf2 action\cf1  est vide.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-02ef5f45-11d7-40d4-8700-24b8259776ca</UniqueID>
+    <ParentID>ST-91051b81-75c1-4073-aa72-df3d59b90d91</ParentID>
+    <Description>Le technicien appuie sur le bouton «annuler».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton \'abannuler\'bb.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-d721b79d-8679-49c1-824b-e3dfa998d179</UniqueID>
+    <ParentID>ST-2e4072be-0b31-4da3-bd5f-1f23ec5d11f3</ParentID>
+    <Description>Il y a déjà une action du même nom dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Il y a d\'e9j\'e0 une \cf2 action\cf1  du m\'eame nom dans la \cf3\ul base de donn\'e9es\cf1\ulnone .\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
   <UserID>
     <DefaultPrefix>UC-8-</DefaultPrefix>
-    <NextValue>4</NextValue>
+    <NextValue>5</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>A-8-</DefaultPrefix>

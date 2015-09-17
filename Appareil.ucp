@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5736</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -11,7 +11,7 @@
   <Package>
     <UniqueID>P-29d380ae-0f9f-4585-8e74-e0779429e865</UniqueID>
     <ExternalParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ExternalParentID>
-    <Name>Appareil</Name>
+    <Name>Appareils</Name>
     <Sequence>-1</Sequence>
   </Package>
   <UseCase>
@@ -39,7 +39,7 @@ Un client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:22.6397736-04:00</DateAdded>
-    <DateModified>2015-09-14T11:09:09.8810721-04:00</DateModified>
+    <DateModified>2015-09-17T13:50:23.5732136-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</UniqueID>
