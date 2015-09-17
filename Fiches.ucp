@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5718</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -39,7 +39,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2015-09-14T11:01:45.4206914-04:00</DateModified>
+    <DateModified>2015-09-17T08:39:57.5758779-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -178,7 +178,7 @@ Le client est sélectionné.</PreConditions>
     <Description>Le technicien sélectionne l'appareil du client dans la liste proposée.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3 appareil\cf2  du \cf3 client\cf2  dans la liste propos\'e9e.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3\ul appareil\cf2\ulnone  du \cf3\ul client\cf2\ulnone  dans la liste propos\'e9e.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -262,7 +262,7 @@ Le client est sélectionné.</PreConditions>
     <Description>Le technicien crée l'appareil du client (Créer un appareil (UC-9-1))</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  cr\'e9e l'\cf3 appareil\cf2  du \cf3 client\cf2  (Cr\'e9er un \cf3 appareil\cf2  (\cf1\ul UC-9-1\cf2\ulnone ))\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  cr\'e9e l'\cf3\ul appareil\cf2\ulnone  du \cf3\ul client\cf2\ulnone  (Cr\'e9er un \cf3\ul appareil\cf2\ulnone  (\cf1\ul UC-9-1\cf2\ulnone ))\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -369,7 +369,7 @@ Le client est sélectionné.</PreConditions>
     <Description>L'appareil que le client a apporté n'est pas présent dans la liste proposée.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 L'\cf1 appareil\cf2  que le \cf1 client\cf2  a apport\'e9 n'est pas pr\'e9sent dans la liste propos\'e9e.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 L'\cf1\ul appareil\cf2\ulnone  que le \cf1\ul client\cf2\ulnone  a apport\'e9 n'est pas pr\'e9sent dans la liste propos\'e9e.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
