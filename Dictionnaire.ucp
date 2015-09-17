@@ -28,7 +28,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-4-</DefaultPrefix>
-    <NextValue>3</NextValue>
+    <NextValue>4</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-4-</DefaultPrefix>
@@ -224,6 +224,20 @@ N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
     <UserID>DEF-21</UserID>
     <Sequence>1</Sequence>
   </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-d6fc3064-41cf-4f7f-86e3-613332f79e84</UniqueID>
+    <Name>Formulaire de création de fiche de maintenance</Name>
+    <Description>Contient les champs à entrer pour la création d'une fiche de maintenance dans le dossier de client.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Contient les champs \'e0 entrer pour la cr\'e9ation d'une \cf1 fiche de maintenance\cf2  dans le \cf1 dossier de client\cf2 .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-3</UserID>
+    <Sequence>1</Sequence>
+  </DictionaryEntry>
   <DictionaryField>
     <Name>Action</Name>
     <UniqueID>DF-40b02375-f2f5-4a44-a778-0934d209157a</UniqueID>
@@ -305,14 +319,6 @@ N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
     <Sequence>3</Sequence>
   </DictionaryField>
   <DictionaryField>
-    <Name />
-    <UniqueID>DF-6db582d0-c1ae-465c-b9e2-cc4f740003ca</UniqueID>
-    <ParentID>D2-24bdb2c9-0f30-4089-885d-44444c5b0491</ParentID>
-    <ElementType>[Type]</ElementType>
-    <Description>[Description]</Description>
-    <Sequence>0</Sequence>
-  </DictionaryField>
-  <DictionaryField>
     <Name>Commentaire</Name>
     <UniqueID>DF-fae5feac-3cd3-405b-a96d-37535ec5740b</UniqueID>
     <ParentID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</ParentID>
@@ -343,6 +349,118 @@ N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
     <ElementType>String</ElementType>
     <Description>Description de l'action (format long)</Description>
     <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>idAppareil</Name>
+    <UniqueID>DF-728442e8-c65f-4222-821e-a6c5e296fcd3</UniqueID>
+    <ParentID>D2-d6fc3064-41cf-4f7f-86e3-613332f79e84</ParentID>
+    <ElementType>INT</ElementType>
+    <Description>Identifiant de l'appareil du client</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name />
+    <UniqueID>DF-0bf71f0a-2149-4521-939e-c97b228d65ac</UniqueID>
+    <ParentID>D2-d6fc3064-41cf-4f7f-86e3-613332f79e84</ParentID>
+    <ElementType>[Type]</ElementType>
+    <Description>[Description]</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Marque</Name>
+    <UniqueID>DF-f79b5cec-3579-4f90-91bf-4ff1ab5073c2</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Marque du portable</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Modèle</Name>
+    <UniqueID>DF-a10bd468-5f4d-4fc8-bdd8-bea5025a34e1</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Modèle du portable</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Couleur</Name>
+    <UniqueID>DF-5bba36d6-19c5-4655-8e96-3685870e8d19</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Couleur du portable</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Taille</Name>
+    <UniqueID>DF-7489e4dc-ed94-41d7-b7b2-e151e761446b</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Taille du portable</Description>
+    <Sequence>3</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>État</Name>
+    <UniqueID>DF-d3110b47-8c36-457c-9be5-afebc764bcad</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>État physique de l'appareil</Description>
+    <Sequence>4</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Adapteur</Name>
+    <UniqueID>DF-3c740d8f-91bf-44c3-9481-be95dcb684b1</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>[Type]</ElementType>
+    <Description>Présence de l'adapteur CA</Description>
+    <Sequence>5</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Malette</Name>
+    <UniqueID>DF-689cef77-31dc-4eeb-af8a-8e0613be33b1</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>[Type]</ElementType>
+    <Description>Présence de la manette du client</Description>
+    <Sequence>6</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Autre</Name>
+    <UniqueID>DF-e3f6eb32-84c9-4ae9-af63-ba1910de314b</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Autre caractéristiques</Description>
+    <Sequence>7</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Marque</Name>
+    <UniqueID>DF-f8f78f9f-1309-4354-bbf4-c7dd12abbcc1</UniqueID>
+    <ParentID>D2-4c141ef9-a583-41e5-98db-9574869674f7</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Marque du boitier, si visible</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Modèle</Name>
+    <UniqueID>DF-108ef125-a443-4a77-af83-273fa28d1227</UniqueID>
+    <ParentID>D2-4c141ef9-a583-41e5-98db-9574869674f7</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Modèle du boîtier</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Couleur</Name>
+    <UniqueID>DF-4b979fed-7a85-4e0b-88b3-8f193c8f1d14</UniqueID>
+    <ParentID>D2-4c141ef9-a583-41e5-98db-9574869674f7</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Couleur du boîtier</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>État</Name>
+    <UniqueID>DF-8ef779b0-2575-43ac-bb8b-7e8442731635</UniqueID>
+    <ParentID>D2-4c141ef9-a583-41e5-98db-9574869674f7</ParentID>
+    <ElementType>String</ElementType>
+    <Description>État général (manque des morceaux, ...)</Description>
+    <Sequence>3</Sequence>
   </DictionaryField>
   <DictionaryFieldConstraint>
     <ParentID>DF-300f1799-f9d9-428b-b949-363c5794362c</ParentID>
