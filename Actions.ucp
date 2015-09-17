@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:04:55.5623216-04:00</DateAdded>
-    <DateModified>2015-09-17T14:20:16.1320042-04:00</DateModified>
+    <DateModified>2015-09-17T15:40:29.3882786-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-70cf062d-d8b2-42e8-9a00-cdaa827a72a0</UniqueID>
@@ -116,7 +116,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-17T13:22:14.9084413-04:00</DateAdded>
-    <DateModified>2015-09-17T14:20:25.4604509-04:00</DateModified>
+    <DateModified>2015-09-17T15:40:52.6379514-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-06d41637-19c2-44d6-9cd7-48a00c51a6b9</UniqueID>
@@ -249,10 +249,10 @@
   <Step>
     <UniqueID>ST-b1731489-fc3d-4164-84d8-6bd2dfc5a8b0</UniqueID>
     <ParentID>MSS-94553b8d-2533-439c-8949-fa0e38aae752</ParentID>
-    <Description>Le technicien confirme en appuyant sur le bouton «valider».</Description>
+    <Description>Le technicien confirme en appuyant sur le bouton «Valider».</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme en appuyant sur le bouton \'abvalider\'bb.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme en appuyant sur le bouton \'abValider\'bb.\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -453,10 +453,10 @@
   <Step>
     <UniqueID>ST-91051b81-75c1-4073-aa72-df3d59b90d91</UniqueID>
     <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
-    <Description>Le technicien appuie sur le bouton «confirmer».</Description>
+    <Description>Le technicien appuie sur le bouton «Valider».</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abconfirmer\'bb.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abValider\'bb.\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -525,10 +525,10 @@
   <Extension>
     <UniqueID>X-38c61a78-9dea-4ba9-a5b5-084d684451c3</UniqueID>
     <ParentID>ST-b1731489-fc3d-4164-84d8-6bd2dfc5a8b0</ParentID>
-    <Description>Le technicien appuie sur le bouton «annuler».</Description>
+    <Description>Le technicien appuie sur le bouton «Annuler».</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton \'abannuler\'bb.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton \'abAnnuler\'bb.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -561,10 +561,10 @@
   <Extension>
     <UniqueID>X-02ef5f45-11d7-40d4-8700-24b8259776ca</UniqueID>
     <ParentID>ST-91051b81-75c1-4073-aa72-df3d59b90d91</ParentID>
-    <Description>Le technicien appuie sur le bouton «annuler».</Description>
+    <Description>Le technicien appuie sur le bouton «Annuler».</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton \'abannuler\'bb.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton \'abAnnuler\'bb.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
