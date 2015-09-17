@@ -23,6 +23,14 @@
     <FileName>Projet_ERP_Context.ndx</FileName>
     <Type>0</Type>
   </Diagram>
+  <Diagram>
+    <UniqueID>D-0657e3bc-98e5-49e3-b219-1abd657fb229</UniqueID>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Name>Diagramme des use cases</Name>
+    <Sequence>1</Sequence>
+    <FileName>Diagramme des use cases.ndx</FileName>
+    <Type>0</Type>
+  </Diagram>
   <ElementStub>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Path>UseCases.ucp</Path>

@@ -31,13 +31,13 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  devrait aussi permettre de garder la trace des
 </RichDescription>
     <Sequence>0</Sequence>
     <Type>Functional</Type>
-    <Priority>1</Priority>
+    <Priority>2</Priority>
     <Source />
     <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T09:49:22.2233875-04:00</DateAdded>
-    <DateModified>2015-09-10T14:24:50.2918586-04:00</DateModified>
+    <DateModified>2015-09-17T14:49:14.8729844-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -79,13 +79,13 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
 </RichDescription>
     <Sequence>1</Sequence>
     <Type>Business Rule</Type>
-    <Priority>1</Priority>
+    <Priority>2</Priority>
     <Source />
     <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T10:38:47.9538447-04:00</DateAdded>
-    <DateModified>2015-09-10T15:02:08.068989-04:00</DateModified>
+    <DateModified>2015-09-17T14:49:25.1846026-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -123,13 +123,13 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
 </RichDescription>
     <Sequence>4</Sequence>
     <Type>Non-functional</Type>
-    <Priority>1</Priority>
+    <Priority>3</Priority>
     <Source />
     <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T14:40:06.9026685-04:00</DateAdded>
-    <DateModified>2015-09-10T15:02:20.4554108-04:00</DateModified>
+    <DateModified>2015-09-17T14:49:52.8746512-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -145,13 +145,13 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
 </RichDescription>
     <Sequence>5</Sequence>
     <Type>Non-functional</Type>
-    <Priority>1</Priority>
+    <Priority>3</Priority>
     <Source />
     <Status>Approved</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T14:42:11.4064872-04:00</DateAdded>
-    <DateModified>2015-09-10T15:02:01.1893769-04:00</DateModified>
+    <DateModified>2015-09-17T14:49:56.727858-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -167,13 +167,13 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
 </RichDescription>
     <Sequence>6</Sequence>
     <Type>Non-functional</Type>
-    <Priority>1</Priority>
+    <Priority>2</Priority>
     <Source />
     <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T14:45:03.3343892-04:00</DateAdded>
-    <DateModified>2015-09-10T15:02:35.6186374-04:00</DateModified>
+    <DateModified>2015-09-17T14:50:08.4590786-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <UserID>
