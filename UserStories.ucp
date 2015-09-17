@@ -6,165 +6,69 @@
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
-    <RefID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</RefID>
+    <RefID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</RefID>
   </TopLevelElement>
   <Package>
-    <UniqueID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</UniqueID>
+    <UniqueID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</UniqueID>
     <ExternalParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ExternalParentID>
     <Name>UserStories</Name>
     <Sequence>-1</Sequence>
   </Package>
   <Story>
-    <UniqueID>S-91d56f14-99f8-43d5-9399-71459574b382</UniqueID>
-    <UserID>S-7</UserID>
-    <ParentID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</ParentID>
-    <Name>Ouvrir une fiche dans le dossier d'un client (UC-7)</Name>
-    <Description>Un technicien peut inscrire des tâches à effectuer sur un appareil pour un client.</Description>
+    <UniqueID>S-70893881-ee57-4d80-a57f-20a8b62f7957</UniqueID>
+    <UserID>S-10-3</UserID>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Name>Ouverture de session</Name>
+    <Description>Pour une plus grande sécurité, un mot de passe est demandé à l'ouverture du système. Ainsi, seul le personnel autorisé peut consulter et modifier les informations.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut inscrire des \cf3\ul t\'e2ches\cf2\ulnone  \'e0 effectuer sur un \cf3\ul appareil\cf2\ulnone  pour un \cf3\ul client\cf2\ulnone .\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Pour une plus grande s\'e9curit\'e9, un mot de passe est demand\'e9 \'e0 l'ouverture du \cf1\ul syst\'e8me\cf2\ulnone . Ainsi, seul le personnel autoris\'e9 peut consulter et modifier les informations.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
-    <Priority />
+    <Priority>Should</Priority>
     <Size />
     <AssignedTo />
     <Status />
-    <DateAdded>2015-09-03T15:04:39.064529-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:18.9783143-04:00</DateModified>
+    <DateAdded>2015-09-17T09:54:14.4037058-04:00</DateAdded>
+    <DateModified>2015-09-17T09:55:27.4430341-04:00</DateModified>
   </Story>
-  <Story>
-    <UniqueID>S-80c5fd0e-a1f0-4ede-b00a-6f3a46347b14</UniqueID>
-    <UserID>S-6</UserID>
-    <ParentID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</ParentID>
-    <Name>Mettre à jour le statut des tâches effectuées sur un ordinateur (UC-6)</Name>
-    <Description>Lorsque le technicien effectue des tâches sur l'ordinateur, il prend en note son travail dans la  fiche de maintenance.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Lorsque le \cf1\ul technicien\cf2\ulnone  effectue des \cf3\ul t\'e2ches\cf2\ulnone  sur l'ordinateur, il prend en note son travail dans la \cf3  \ul fiche de maintenance\cf2\ulnone .\cf0\par
-}
-</RichDescription>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-Dossiers.ucp</Path>
+    <ElementID>P-14fb2410-5591-42a0-aa04-018a1b5e05f6</ElementID>
+    <Sequence>0</Sequence>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-Appareils.ucp</Path>
+    <ElementID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</ElementID>
     <Sequence>1</Sequence>
-    <Priority>Must</Priority>
-    <Size>Med</Size>
-    <AssignedTo />
-    <Status />
-    <DateAdded>2015-09-03T08:41:51.6566418-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:21.1633182-04:00</DateModified>
-  </Story>
-  <Story>
-    <UniqueID>S-fa6fff70-a041-4a2d-a57e-41f1a55d67a0</UniqueID>
-    <UserID>S-5</UserID>
-    <ParentID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</ParentID>
-    <Name>Modifier les tâches à effectuer sur un ordinateur (UC-4)</Name>
-    <Description>Quand un technicien constate qu'il doit effectuer une tâche imprévue, il peut l'ajouter à la fiche de maintenance.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Quand un \cf1\ul technicien\cf2\ulnone  constate qu'il doit effectuer une \cf3\ul t\'e2che\cf2\ulnone  impr\'e9vue, il peut l'ajouter \'e0 la \cf3\ul fiche de maintenance\cf2\ulnone .\cf0\par
-}
-</RichDescription>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-Tâches.ucp</Path>
+    <ElementID>P-dc93d4ae-547a-4809-a8a3-bca4003bc9fc</ElementID>
     <Sequence>2</Sequence>
-    <Priority>Must</Priority>
-    <Size>Med</Size>
-    <AssignedTo />
-    <Status />
-    <DateAdded>2015-09-03T08:41:51.5941783-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:22.9573213-04:00</DateModified>
-  </Story>
-  <Story>
-    <UniqueID>S-e496204b-1cd5-4788-9d80-b510b6b7ede6</UniqueID>
-    <UserID>S-4</UserID>
-    <ParentID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</ParentID>
-    <Name>Modifier les dossiers de client (UC-5)</Name>
-    <Description>Le technicien peut changer les informations d'un client donné.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  peut changer les informations d'un \cf3\ul client\cf2\ulnone  donn\'e9.\cf0\par
-}
-</RichDescription>
-    <Sequence>3</Sequence>
-    <Priority>Must</Priority>
-    <Size>Med</Size>
-    <AssignedTo />
-    <Status />
-    <DateAdded>2015-08-31T11:06:32.1826583-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:26.3279273-04:00</DateModified>
-  </Story>
-  <Story>
-    <UniqueID>S-1b9ac32e-c242-4b48-9fe2-919d2fd23bb8</UniqueID>
-    <UserID>S-3</UserID>
-    <ParentID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</ParentID>
-    <Name>Vérifier les tâches sur un ordinateur (UC-3)</Name>
-    <Description>Le technicien peut visualiser l'avancement du travail effectué sur un appareil.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  peut visualiser l'avancement du travail effectu\'e9 sur un \cf3\ul appareil\cf2\ulnone .\cf0\par
-}
-</RichDescription>
-    <Sequence>4</Sequence>
-    <Priority>Must</Priority>
-    <Size>Med</Size>
-    <AssignedTo />
-    <Status />
-    <DateAdded>2015-08-31T11:06:32.1670124-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:29.572733-04:00</DateModified>
-  </Story>
-  <Story>
-    <UniqueID>S-cb4a7d2e-1753-49e0-ba5b-e8f062cd2247</UniqueID>
-    <UserID>S-2</UserID>
-    <ParentID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</ParentID>
-    <Name>Créer un rapport pour une tâche effectuée (UC-2)</Name>
-    <Description>Quand le technicien ferme une fiche de maintenance, un rapport est automatiquement généré dans le système pour faciliter la facturation.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Quand le \cf1\ul technicien\cf2\ulnone  ferme une \cf3\ul fiche de maintenance\cf2\ulnone , un \cf3\ul rapport\cf2\ulnone  est automatiquement g\'e9n\'e9r\'e9 dans le \cf1\ul syst\'e8me\cf2\ulnone  pour faciliter la facturation.\cf0\par
-}
-</RichDescription>
-    <Sequence>5</Sequence>
-    <Priority>Must</Priority>
-    <Size>Med</Size>
-    <AssignedTo />
-    <Status />
-    <DateAdded>2015-08-31T11:06:32.151412-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:32.0385374-04:00</DateModified>
-  </Story>
-  <Story>
-    <UniqueID>S-999f8af4-1662-402b-b872-05652840ac36</UniqueID>
-    <UserID>S-1</UserID>
-    <ParentID>P-3ef22a1c-4c8c-42dd-8810-65626e0876a4</ParentID>
-    <Name>Créer les dossiers de client (UC-1)</Name>
-    <Description> Le technicien ajoute un client au système en utilisant un formulaire de client.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20  Le \cf1\ul technicien\cf2\ulnone  ajoute un \cf3\ul client\cf2\ulnone  au \cf1\ul syst\'e8me\cf2\ulnone  en utilisant un \cf3\ul formulaire de client\cf2\ulnone .\cf0\par
-}
-</RichDescription>
-    <Sequence>6</Sequence>
-    <Priority>Must</Priority>
-    <Size>Med</Size>
-    <AssignedTo />
-    <Status />
-    <DateAdded>2015-08-31T11:06:32.135796-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:34.8465423-04:00</DateModified>
-  </Story>
+  </ElementStub>
   <UserID>
-    <DefaultPrefix>UC-3-</DefaultPrefix>
+    <DefaultPrefix>UC-10-</DefaultPrefix>
     <NextValue>1</NextValue>
   </UserID>
   <UserID>
-    <DefaultPrefix>A-3-</DefaultPrefix>
+    <DefaultPrefix>A-10-</DefaultPrefix>
     <NextValue>1</NextValue>
   </UserID>
   <UserID>
-    <DefaultPrefix>REQ-3-</DefaultPrefix>
+    <DefaultPrefix>REQ-10-</DefaultPrefix>
     <NextValue>1</NextValue>
   </UserID>
   <UserID>
-    <DefaultPrefix>DEF-3-</DefaultPrefix>
+    <DefaultPrefix>DEF-10-</DefaultPrefix>
     <NextValue>1</NextValue>
   </UserID>
   <UserID>
-    <DefaultPrefix>S-3-</DefaultPrefix>
-    <NextValue>1</NextValue>
+    <DefaultPrefix>S-10-</DefaultPrefix>
+    <NextValue>6</NextValue>
   </UserID>
 </UCTDataSet>
