@@ -51,6 +51,12 @@
     <ElementID>P-dc93d4ae-547a-4809-a8a3-bca4003bc9fc</ElementID>
     <Sequence>2</Sequence>
   </ElementStub>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-Fiches.ucp</Path>
+    <ElementID>P-4324cde9-0974-408f-89e3-7cba51c1f518</ElementID>
+    <Sequence>3</Sequence>
+  </ElementStub>
   <UserID>
     <DefaultPrefix>UC-10-</DefaultPrefix>
     <NextValue>1</NextValue>
@@ -69,6 +75,6 @@
   </UserID>
   <UserID>
     <DefaultPrefix>S-10-</DefaultPrefix>
-    <NextValue>6</NextValue>
+    <NextValue>8</NextValue>
   </UserID>
 </UCTDataSet>

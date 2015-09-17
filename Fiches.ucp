@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -65,7 +65,7 @@ Le client est sélectionné.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
-    <DateModified>2015-09-17T10:36:02.4885324-04:00</DateModified>
+    <DateModified>2015-09-17T13:29:39.7327972-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</UniqueID>
@@ -118,7 +118,7 @@ Le rapport est construit.</PostConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-09-17T10:39:55.8090074-04:00</DateModified>
+    <DateModified>2015-09-17T13:44:23.71135-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-707d1d6d-c0c2-49fa-9b5f-17f1309d56fd</UniqueID>
@@ -507,6 +507,13 @@ Le rapport est construit.</PostConditions>
 }
 </RichDescription>
     <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-ed5701c7-0ee2-4525-a2cd-ec9c6553809c</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description />
+    <Sequence>5</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
