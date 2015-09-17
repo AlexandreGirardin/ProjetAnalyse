@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5718</SavedWith>
+    <SavedWith>10.0.5736</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -83,7 +83,7 @@
     <Sequence>4</Sequence>
     <Complexity />
     <DateAdded>2015-08-31T10:36:17.3249026-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:05.9814913-04:00</DateModified>
+    <DateModified>2015-09-17T14:50:32.2768733-04:00</DateModified>
   </Actor>
   <Goal>
     <UniqueID>G-7cba7801-8627-4b83-a5d7-9f01b8cd964e</UniqueID>
@@ -107,91 +107,169 @@
     <Sequence>1</Sequence>
   </Goal>
   <Goal>
-    <UniqueID>G-405351d0-cfb8-4e4e-8307-98fe66afe70c</UniqueID>
+    <UniqueID>G-42d59d96-58cd-4155-bb48-686c87251c42</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Créer un dossier de client (UC-1) (S-1)</Description>
+    <Description>Activer/désactiver une action (UC-8-2)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Cr\'e9er un \cf1 dossier de client\cf0  (\cf2\ul UC-1\cf0\ulnone ) (\cf2\ul S-1\cf3\ulnone )\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Activer/d\'e9sactiver une \cf2 action\cf1  (\cf3\ul UC-8-2\cf1\ulnone )\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
   </Goal>
   <Goal>
-    <UniqueID>G-06ccd92e-1afd-44f4-ad76-a94eafc433b1</UniqueID>
+    <UniqueID>G-cc08dfb2-0f7a-4c8a-a922-b14560584a68</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Fermer une fiche de maintenance (UC-2) (S-2)</Description>
+    <Description>Consulter un appareil (UC-9-2)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Fermer une \cf1 fiche de maintenance\cf0  (\cf2\ul UC-2\cf0\ulnone ) (\cf2\ul S-2\cf3\ulnone )\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Consulter un \cf2 appareil\cf1  (\cf3\ul UC-9-2\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
   </Goal>
   <Goal>
-    <UniqueID>G-629e6fdf-ed6b-498b-970b-2bdeb8ed3be8</UniqueID>
+    <UniqueID>G-37e814eb-816d-49cc-a5e4-72ee90ca23cd</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Vérifier les tâches à effectuer dans une fiche de maintenance (UC-3) (S-3)</Description>
+    <Description>Créer un appareil (UC-9-1)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 V\'e9rifier les \cf1 t\'e2ches\cf0  \'e0 effectuer dans une \cf1 fiche de maintenance\cf2  \cf0 (\cf3\ul UC-3\cf0\ulnone ) (\cf3\ul S-3\cf2\ulnone )\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er un \cf2 appareil\cf1  (\cf3\ul UC-9-1\cf1\ulnone )\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
   </Goal>
   <Goal>
-    <UniqueID>G-dcb36be1-520b-4d82-b436-c995581a0db3</UniqueID>
+    <UniqueID>G-4302343e-41c2-45a3-8f58-0d39565ab061</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Modifier les tâches à effectuer dans une fiche de maintenance (UC-4) (S-4)</Description>
+    <Description>Créer un dossier de client (UC-1)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 Modifier les \cf1 t\'e2ches\cf0  \'e0 effectuer dans une \cf1 fiche de maintenance\cf2  \cf0 (\cf3\ul UC-4\cf0\ulnone ) (\cf3\ul S-4\cf2\ulnone )\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er un \cf2 dossier de client\cf1  (\cf3\ul UC-1\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
   </Goal>
   <Goal>
-    <UniqueID>G-22112816-7bf0-42bc-b367-0f51348e3a0a</UniqueID>
+    <UniqueID>G-52ab2833-10a2-4643-be35-f28d740c8952</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Modifier les dossier de client (UC-5) (S-5)</Description>
+    <Description>Créer une fiche dans le dossier d'un client (UC-7)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Modifier les \cf1 dossier de client\cf0  (\cf2\ul UC-5\cf3\ulnone ) (\cf2\ul S-5\cf3\ulnone )\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er une \cf2 fiche\cf1  dans le dossier d'un \cf2 client\cf1  (\cf3\ul UC-7\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
     <Sequence>4</Sequence>
   </Goal>
   <Goal>
-    <UniqueID>G-283acfe8-aa31-4b30-a0a3-61211abc1508</UniqueID>
+    <UniqueID>G-24ba86a4-0c86-4668-a408-7345e5dfdc4a</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Mettre à jour le statut des tâches effectuées dans une fiche de maintenance (UC-6) (S-6)</Description>
+    <Description>Créer une nouvelle action (UC-8-1)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Mettre \'e0 jour le statut des \cf1 t\'e2ches\cf0  effectu\'e9es dans une \cf1 fiche de maintenance\cf0  (\cf2\ul UC-6\cf0\ulnone ) (\cf2\ul S-6\cf3\ulnone )\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er une nouvelle \cf2 action\cf1  (\cf3\ul UC-8-1\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
     <Sequence>5</Sequence>
   </Goal>
   <Goal>
-    <UniqueID>G-4108b987-ae29-4120-8968-d9e1fa3796a9</UniqueID>
+    <UniqueID>G-8988185f-bad1-4d2c-b95b-1b773396fc62</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Créer une fiche de maintenance dans le dossier de client (S-7) (UC-7)</Description>
+    <Description>Fermer une fiche de maintenance (UC-2)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 Cr\'e9er une \cf1 fiche de maintenance\cf0  dans le \cf1 dossier de client\cf2  \cf0 (\cf3\ul S-7\cf0\ulnone ) (\cf3\ul UC-7\cf0\ulnone )\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Fermer une \cf2 fiche de maintenance\cf1  (\cf3\ul UC-2\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
     <Sequence>6</Sequence>
   </Goal>
   <Goal>
-    <UniqueID>G-0a0f3625-b7bb-4963-92d6-d3a2a2f590da</UniqueID>
+    <UniqueID>G-a98f488f-fdb8-468d-a53d-9b9e21a34749</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Ouverture de session</Description>
+    <Description>Modifier un appareil (UC-9-3)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Ouverture de session\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Modifier un \cf2 appareil\cf1  (\cf3\ul UC-9-3\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
     <Sequence>7</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-ac1d01b9-492d-462a-af5b-707757dd449f</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Modifier un dossiers de client (UC-5)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Modifier un dossiers de \cf2 client\cf1  (\cf3\ul UC-5\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>8</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-0188f97b-dbac-4afe-81b7-7309df4426c6</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Modifier une action (UC-8-4)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Modifier une \cf2 action\cf1  (\cf3\ul UC-8-4\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>9</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-af48f787-f382-4c8a-9c65-d9938e7bfc14</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Modifier une fiche de maintenance (UC-4)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Modifier une \cf2 fiche de maintenance\cf1  (\cf3\ul UC-4\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>10</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-3b2a4d33-a1e3-48a7-a0bf-3764d178d9f1</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Ouverture de session (UC-8)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Ouverture de session (\cf2\ul UC-8\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>11</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-b9450f8d-d2a0-4f39-87a4-aa01c53ab0e8</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Rechercher un dossier de client (UC-9)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Rechercher un \cf2 dossier de client\cf1  (\cf3\ul UC-9\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>12</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-52b393c4-c3f5-4929-8da1-c10050ba6aac</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Rechercher une fiche de maintenance (UC-7-1)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Rechercher une \cf2 fiche de maintenance\cf1  (\cf3\ul UC-7-1\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>13</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-d90bae53-167a-4758-9c15-b5a653babab7</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Voir une définition d'action (UC-8-3)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Voir une d\'e9finition d'\cf2 action\cf1  (\cf3\ul UC-8-3\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>14</Sequence>
   </Goal>
   <UserID>
     <DefaultPrefix>UC-2-</DefaultPrefix>
