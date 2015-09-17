@@ -37,11 +37,13 @@
   <DictionaryEntry>
     <UniqueID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</UniqueID>
     <Name>Tâche</Name>
-    <Description>Instance d'une définition de tâche propre à une fiche de maintenance.</Description>
+    <Description>Instance d'une action propre à une fiche de maintenance.
+Associe un contexte à la définition de l'action.</Description>
     <Aliases />
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Instance d'une d\'e9finition de \cf1 t\'e2che\cf0  propre \'e0 une \cf2 fiche de maintenance.\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Instance d'une \cf1 action \cf0 propre \'e0 une \cf1 fiche de maintenance.\par
+Associe un contexte \'e0 la d\'e9finition de l'\cf2\ul action\cf1\ulnone .\cf0\par
 }
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
@@ -194,12 +196,14 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</UniqueID>
-    <Name>Définition de tâche</Name>
-    <Description>Description formelle d'une action effectuée sur un appareil par un technicien.</Description>
+    <Name>Action</Name>
+    <Description>Description formelle d'une action effectuée sur un appareil par un technicien.
+N'a pas de contexte; existe en tant que simple définition.</Description>
     <Aliases />
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\f0\fs20 Description formelle d'une action effectu\'e9e sur un \cf1 appareil\cf2  par un \cf3\ul technicien\cf2\ulnone .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Description formelle d'une action effectu\'e9e sur un \cf1 appareil\cf2  par un \cf3\ul technicien\cf2\ulnone .\par
+N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
 }
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
@@ -221,28 +225,20 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
     <Sequence>1</Sequence>
   </DictionaryEntry>
   <DictionaryField>
-    <Name>Appareil</Name>
+    <Name>Action</Name>
     <UniqueID>DF-40b02375-f2f5-4a44-a778-0934d209157a</UniqueID>
     <ParentID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</ParentID>
     <ElementType>Integer</ElementType>
-    <Description>Identifiant de l'appareil concerné</Description>
+    <Description>ID de l'action</Description>
     <Sequence>0</Sequence>
   </DictionaryField>
   <DictionaryField>
-    <Name>Type</Name>
+    <Name>État</Name>
     <UniqueID>DF-b84f04bc-ec6e-4390-b821-91376306c885</UniqueID>
     <ParentID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</ParentID>
-    <ElementType>Integer</ElementType>
-    <Description>Numéro de l'entrée prédéfinie</Description>
-    <Sequence>1</Sequence>
-  </DictionaryField>
-  <DictionaryField>
-    <Name>Commentaire</Name>
-    <UniqueID>DF-cf3d83c0-22c1-4a21-a54e-c2452f753190</UniqueID>
-    <ParentID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</ParentID>
     <ElementType>String</ElementType>
-    <Description>Commentaire additionnel ou tâche qui n'est pas prédéfinie</Description>
-    <Sequence>2</Sequence>
+    <Description>À faire, en cours, terminé...</Description>
+    <Sequence>1</Sequence>
   </DictionaryField>
   <DictionaryField>
     <Name>Numéro du client</Name>
@@ -315,6 +311,38 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
     <ElementType>[Type]</ElementType>
     <Description>[Description]</Description>
     <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Commentaire</Name>
+    <UniqueID>DF-fae5feac-3cd3-405b-a96d-37535ec5740b</UniqueID>
+    <ParentID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</ParentID>
+    <ElementType>String</ElementType>
+    <Description>À l'usage des techniciens</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>ID</Name>
+    <UniqueID>DF-8bf48f6b-dbdd-4597-a3e0-711a3a898a5f</UniqueID>
+    <ParentID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>Identifiant interne</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Nom</Name>
+    <UniqueID>DF-66df1f85-4a64-4bbd-911e-2544d291a841</UniqueID>
+    <ParentID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Nom de l'action (format court)</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Description</Name>
+    <UniqueID>DF-07240927-7a77-4df3-8045-0505806e3655</UniqueID>
+    <ParentID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Description de l'action (format long)</Description>
+    <Sequence>2</Sequence>
   </DictionaryField>
   <DictionaryFieldConstraint>
     <ParentID>DF-300f1799-f9d9-428b-b949-363c5794362c</ParentID>
