@@ -48,7 +48,7 @@ Associe un contexte \'e0 la d\'e9finition de l'\cf2\ul action\cf1\ulnone .\cf0\p
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-18</UserID>
-    <Sequence>0</Sequence>
+    <Sequence>12</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-2004b023-d961-4ca4-9c57-b0b756f76beb</UniqueID>
@@ -62,7 +62,7 @@ Associe un contexte \'e0 la d\'e9finition de l'\cf2\ul action\cf1\ulnone .\cf0\p
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-17</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>11</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-c78f8ba2-a2c0-4ea6-b7c0-63ba2f9d32d4</UniqueID>
@@ -78,7 +78,7 @@ Contient un minimum de 7 chiffres.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-16</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>10</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-8307e339-acb0-4703-9a01-6037d1240eaa</UniqueID>
@@ -92,7 +92,7 @@ Contient un minimum de 7 chiffres.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-15</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>8</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-4c141ef9-a583-41e5-98db-9574869674f7</UniqueID>
@@ -106,7 +106,7 @@ Contient un minimum de 7 chiffres.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-14</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>6</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</UniqueID>
@@ -120,7 +120,7 @@ Contient un minimum de 7 chiffres.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-13</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>5</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-309c8c23-976c-469c-b621-ce1a2f41e058</UniqueID>
@@ -134,7 +134,7 @@ Contient un minimum de 7 chiffres.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-12</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>4</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-f948bfee-d218-4785-b611-f4587f389850</UniqueID>
@@ -148,23 +148,7 @@ Contient un minimum de 7 chiffres.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-11</UserID>
-    <Sequence>1</Sequence>
-  </DictionaryEntry>
-  <DictionaryEntry>
-    <UniqueID>D2-2841f18c-6514-4247-869f-bba9fd458395</UniqueID>
-    <Name>Client</Name>
-    <Description>Individu qui fait affaire avec l'entreprise.
-En ce qui concerne le Système, un client possède un dossier et des fiches de maintenance.</Description>
-    <Aliases />
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Individu qui fait affaire avec l'entreprise.\par
-En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulnone  poss\'e8de un dossier et des fiches de maintenance.\cf0\par
-}
-</RichDescription>
-    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
-    <UserID>DEF-10</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>2</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-a28224bb-6c61-464f-8b45-cc778ff6202e</UniqueID>
@@ -192,7 +176,7 @@ En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3\ul client\cf2\ulno
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-4-1</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>3</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</UniqueID>
@@ -208,7 +192,7 @@ N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-4-2</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>0</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-24bdb2c9-0f30-4089-885d-44444c5b0491</UniqueID>
@@ -222,7 +206,7 @@ N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-21</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>7</Sequence>
   </DictionaryEntry>
   <DictionaryEntry>
     <UniqueID>D2-d6fc3064-41cf-4f7f-86e3-613332f79e84</UniqueID>
@@ -236,7 +220,7 @@ N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-4-3</UserID>
-    <Sequence>1</Sequence>
+    <Sequence>9</Sequence>
   </DictionaryEntry>
   <DictionaryField>
     <Name>Action</Name>
