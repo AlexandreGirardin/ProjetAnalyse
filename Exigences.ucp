@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5736</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -176,6 +176,118 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <DateModified>2015-09-17T14:50:08.4590786-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
+  <Requirement>
+    <UniqueID>REQ-b4fe0324-ba13-47f6-9b5c-c4c38ac2c804</UniqueID>
+    <UserID>REQ-5-6</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Permet le suivi des tâches</Name>
+    <Sequence>7</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status />
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-24T08:19:22.964287-04:00</DateAdded>
+    <DateModified>2015-09-24T08:23:14.2750458-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-9f9a9e51-e3f3-45ae-b82a-ab8addacd7ca</UniqueID>
+    <UserID>REQ-5-7</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Permet la gestion de clients</Name>
+    <Sequence>8</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status />
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-24T08:23:27.4766448-04:00</DateAdded>
+    <DateModified>2015-09-24T08:28:51.2898299-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-cde001c1-7b2c-4f94-b880-41d85d9905ee</UniqueID>
+    <UserID>REQ-5-8</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Permet la gestion d'appareils</Name>
+    <Sequence>9</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <DateAdded>2015-09-24T08:28:58.6328991-04:00</DateAdded>
+    <DateModified>2015-09-24T08:29:59.3459081-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-1cd048c3-23eb-4249-af01-0990307ecfc5</UniqueID>
+    <UserID>REQ-5-9</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Permet la gestion de fiches</Name>
+    <Sequence>10</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <DateAdded>2015-09-24T08:29:43.1480511-04:00</DateAdded>
+    <DateModified>2015-09-24T08:29:55.4653725-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-f7faa38a-b475-4a42-ab1a-b69991b9c40f</UniqueID>
+    <UserID>REQ-5-10</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Faire des rapports</Name>
+    <Sequence>11</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status />
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-24T08:43:54.8670356-04:00</DateAdded>
+    <DateModified>2015-09-24T08:48:36.8981176-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-a2ed5ecb-22e2-498c-bf37-84125401dd8a</UniqueID>
+    <UserID>REQ-5-11</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Permet le suivi du matériel</Name>
+    <Sequence>12</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <DateAdded>2015-09-24T08:50:49.2082544-04:00</DateAdded>
+    <DateModified>2015-09-24T08:52:56.5574091-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-8bde740d-4dfd-4634-b215-f8a54084275d</UniqueID>
+    <UserID>REQ-5-12</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Sécurité</Name>
+    <Sequence>13</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status />
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-24T08:58:29.9099414-04:00</DateAdded>
+    <DateModified>2015-09-24T10:06:36.9175184-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-ff3d7229-3193-4fa0-afd2-e50c04b3d00f</UniqueID>
+    <UserID>REQ-5-13</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Identification du technicien</Name>
+    <Sequence>14</Sequence>
+    <Type>Non-functional</Type>
+    <Priority>1</Priority>
+    <DateAdded>2015-09-24T10:08:37.1474049-04:00</DateAdded>
+    <DateModified>2015-09-24T10:12:16.9598198-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
   <UserID>
     <DefaultPrefix>UC-5-</DefaultPrefix>
     <NextValue>1</NextValue>
@@ -186,7 +298,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
   </UserID>
   <UserID>
     <DefaultPrefix>REQ-5-</DefaultPrefix>
-    <NextValue>6</NextValue>
+    <NextValue>14</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-5-</DefaultPrefix>
