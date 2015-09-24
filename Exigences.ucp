@@ -181,21 +181,21 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UserID>REQ-5-6</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permet le suivi des tâches</Name>
-    <Description>Les techniciens doivent pouvoir mettre à jour le statut des tâches au fur et à mesure qu'elles sont effectuées.</Description>
+    <Description>Les techniciens doivent pouvoir mettre à jour le statut des tâches au fur et à mesure qu'elles sont effectuées, afin que le dossier soit constamment à jour et faciliter la transition entre les techniciens.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir mettre \'e0 jour le statut des \cf3 t\'e2ches\cf1  au fur et \'e0 mesure qu'elles sont effectu\'e9es.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir mettre \'e0 jour le statut des \cf3 t\'e2ches\cf1  au fur et \'e0 mesure qu'elles sont effectu\'e9es, afin que le dossier soit constamment \'e0 jour et faciliter la transition entre les \cf2\ul techniciens\cf1\ulnone .\par
 }
 </RichDescription>
     <Sequence>7</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:19:22.964287-04:00</DateAdded>
-    <DateModified>2015-09-24T10:46:21.8695034-04:00</DateModified>
+    <DateModified>2015-09-24T15:46:32.4597263-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -203,21 +203,21 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UserID>REQ-5-7</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permet la gestion de clients</Name>
-    <Description>Les techniciens doivent pouvoir créer, modifier et voir les dossiers de clients.</Description>
+    <Description>Les techniciens doivent pouvoir créer, modifier et visualiser les dossiers de clients, afin de faciliter et unifier l'accès aux données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir cr\'e9er, modifier et voir les dossiers de \cf2\ul clients\cf1\ulnone .\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir cr\'e9er, modifier et visualiser les dossiers de \cf2\ul clients\cf1\ulnone , afin de faciliter et unifier l'acc\'e8s aux donn\'e9es.\par
 }
 </RichDescription>
     <Sequence>8</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:23:27.4766448-04:00</DateAdded>
-    <DateModified>2015-09-24T12:39:11.1534886-04:00</DateModified>
+    <DateModified>2015-09-24T15:47:48.726681-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -225,21 +225,21 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UserID>REQ-5-8</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permet la gestion d'appareils</Name>
-    <Description>Les techniciens doivent pouvoir ajouter, modifier et visualiser les appareils.</Description>
+    <Description>Les techniciens doivent pouvoir ajouter, modifier et visualiser les appareils, afin d'améliorer et de faciliter le suivi, le diagnostiques et la maintenance.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier et visualiser les \cf3 appareils\cf1 .\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier et visualiser les \cf3 appareils\cf1 , afin d'am\'e9liorer et de faciliter le suivi, le diagnostiques et la maintenance.\par
 }
 </RichDescription>
     <Sequence>9</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:28:58.6328991-04:00</DateAdded>
-    <DateModified>2015-09-24T12:40:45.3754263-04:00</DateModified>
+    <DateModified>2015-09-24T15:49:29.5998038-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -247,21 +247,21 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UserID>REQ-5-9</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permet la gestion de fiches</Name>
-    <Description>Les techniciens doivent pouvoir ajouter, modifier, et visualiser les fiches.</Description>
+    <Description>Les techniciens doivent pouvoir ajouter, modifier, et visualiser les fiches, afin de conserver un archive des tâches effectuées sur un appareil.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier, et visualiser les \cf3 fiches\cf1 .\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier, et visualiser les \cf3 fiches\cf1 , afin de conserver un archive des \cf3 t\'e2ches\cf1  effectu\'e9es sur un \cf3 appareil\cf1 .\par
 }
 </RichDescription>
     <Sequence>10</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:29:43.1480511-04:00</DateAdded>
-    <DateModified>2015-09-24T12:42:47.2142896-04:00</DateModified>
+    <DateModified>2015-09-24T15:51:47.1053187-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -269,21 +269,21 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UserID>REQ-5-10</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Faire des rapports</Name>
-    <Description>Les techniciens doivent pouvoir générer un rapport contenant l'historique des tâches, les informations du client et des commentaires.</Description>
+    <Description>Les techniciens doivent pouvoir générer un rapport contenant l'historique des tâches, des informations du client et des commentaires, afin de d'améliorer le service clientèle.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir g\'e9n\'e9rer un \cf3 rapport\cf1  contenant l'historique des \cf3 t\'e2ches\cf1 , les informations du \cf2\ul client\cf1\ulnone  et des commentaires.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir g\'e9n\'e9rer un \cf3 rapport\cf1  contenant l'historique des \cf3 t\'e2ches\cf1 , des informations du \cf2\ul client\cf1\ulnone  et des commentaires, afin de d'am\'e9liorer le service client\'e8le.\par
 }
 </RichDescription>
     <Sequence>11</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Proposed</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:43:54.8670356-04:00</DateAdded>
-    <DateModified>2015-09-24T13:17:07.554824-04:00</DateModified>
+    <DateModified>2015-09-24T15:54:05.8582389-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -291,43 +291,43 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UserID>REQ-5-11</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permet le suivi du matériel</Name>
-    <Description>Le système doit pouvoir garder les traces des accessoires apportés par les clients.</Description>
+    <Description>Le système doit pouvoir garder les traces des accessoires apportés par les clients, afin d'éviter une perte de matériel.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  doit pouvoir garder les traces des accessoires apport\'e9s par les \cf2\ul clients\cf1\ulnone .\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  doit pouvoir garder les traces des accessoires apport\'e9s par les \cf2\ul clients\cf1\ulnone , afin d'\'e9viter une perte de mat\'e9riel.\par
 }
 </RichDescription>
     <Sequence>12</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:50:49.2082544-04:00</DateAdded>
-    <DateModified>2015-09-24T13:43:54.2580492-04:00</DateModified>
+    <DateModified>2015-09-24T15:42:13.7614719-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-8bde740d-4dfd-4634-b215-f8a54084275d</UniqueID>
     <UserID>REQ-5-12</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Sécurité</Name>
-    <Description>Le système doit être sécurisé par un mot de passe.</Description>
+    <Name>Mot de passe</Name>
+    <Description>Le système doit être sécurisé par un mot de passe, pour éviter l'accès non autorisé au système.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  doit \'eatre s\'e9curis\'e9 par un mot de passe.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  doit \'eatre s\'e9curis\'e9 par un mot de passe, pour \'e9viter l'acc\'e8s non autoris\'e9 au \cf2\ul syst\'e8me\cf1\ulnone .\par
 }
 </RichDescription>
     <Sequence>13</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Proposed</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:58:29.9099414-04:00</DateAdded>
-    <DateModified>2015-09-24T13:45:47.4943148-04:00</DateModified>
+    <DateModified>2015-09-24T15:58:59.8420231-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -335,21 +335,21 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UserID>REQ-5-13</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Identification du technicien</Name>
-    <Description>Le système doit permettre d'identifier le technicien qui à effectué des tâches sur un appareil.</Description>
+    <Description>Le système doit permettre d'identifier le technicien qui à effectué des tâches sur un appareil, dans le but d'offrir un meilleur suivi.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  doit permettre d'identifier le \cf2\ul technicien\cf1\ulnone  qui \'e0 effectu\'e9 des \cf3 t\'e2ches\cf1  sur un \cf3 appareil\cf1 .\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  doit permettre d'identifier le \cf2\ul technicien\cf1\ulnone  qui \'e0 effectu\'e9 des \cf3 t\'e2ches\cf1  sur un \cf3 appareil\cf1 , dans le but d'offrir un meilleur suivi.\par
 }
 </RichDescription>
     <Sequence>14</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T10:08:37.1474049-04:00</DateAdded>
-    <DateModified>2015-09-24T13:49:09.6910284-04:00</DateModified>
+    <DateModified>2015-09-24T15:58:38.9238799-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -357,21 +357,21 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UserID>REQ-5-14</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permet la gestion des tâches</Name>
-    <Description>Les techniciens doivent pouvoir ajouter, modifier ou visualiser les tâches réalisable.</Description>
+    <Description>Les techniciens doivent pouvoir ajouter, modifier ou visualiser les tâches réalisable, pour offrir un suivi plus détaillé.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier ou visualiser les \cf3 t\'e2ches\cf1  r\'e9alisable.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier ou visualiser les \cf3 t\'e2ches\cf1  r\'e9alisable, pour offrir un suivi plus d\'e9taill\'e9.\par
 }
 </RichDescription>
     <Sequence>15</Sequence>
-    <Type>Non-functional</Type>
+    <Type>Functional</Type>
     <Priority>1</Priority>
     <Source />
-    <Status />
+    <Status>Mandatory</Status>
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T12:43:02.1202276-04:00</DateAdded>
-    <DateModified>2015-09-24T14:34:18.2711986-04:00</DateModified>
+    <DateModified>2015-09-24T16:00:49.7889995-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <UserID>
