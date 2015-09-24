@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5736</SavedWith>
+    <CreatedWith>10.0.5736</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-ecf41bcd-d7d2-40ec-9992-b622dad70af1</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-ecf41bcd-d7d2-40ec-9992-b622dad70af1</UniqueID>
+    <ExternalParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ExternalParentID>
+    <Name>US-VueClient</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <UserID>
+    <DefaultPrefix>UC-19-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-19-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-19-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-19-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-19-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+</UCTDataSet>

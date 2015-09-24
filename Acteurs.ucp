@@ -85,6 +85,15 @@
     <DateAdded>2015-08-31T10:36:17.3249026-04:00</DateAdded>
     <DateModified>2015-09-17T14:50:32.2768733-04:00</DateModified>
   </Actor>
+  <Actor>
+    <UniqueID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</UniqueID>
+    <UserID>A-2-1</UserID>
+    <ParentID>P-9221a0e8-6356-49f3-8ca0-7df5cd506cae</ParentID>
+    <Name>Client</Name>
+    <Sequence>5</Sequence>
+    <DateAdded>2015-09-21T11:29:41.9893835-04:00</DateAdded>
+    <DateModified>2015-09-21T11:29:57.3657706-04:00</DateModified>
+  </Actor>
   <Goal>
     <UniqueID>G-7cba7801-8627-4b83-a5d7-9f01b8cd964e</UniqueID>
     <ParentID>A-2e4b1eeb-65e3-4ec7-8169-3ba6434e02fc</ParentID>
@@ -271,13 +280,23 @@
 </RichDescription>
     <Sequence>14</Sequence>
   </Goal>
+  <Goal>
+    <UniqueID>G-611bfed3-06ff-4ee0-870b-3cfa8e48edbc</UniqueID>
+    <ParentID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</ParentID>
+    <Description>S'identifier</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 S'identifier\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+  </Goal>
   <UserID>
     <DefaultPrefix>UC-2-</DefaultPrefix>
     <NextValue>1</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>A-2-</DefaultPrefix>
-    <NextValue>1</NextValue>
+    <NextValue>2</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>REQ-2-</DefaultPrefix>

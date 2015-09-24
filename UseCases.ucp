@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5736</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -70,6 +70,12 @@
     <Path>Actions.ucp</Path>
     <ElementID>P-5c1248cd-ad98-4937-9ead-6f8d89ff6087</ElementID>
     <Sequence>3</Sequence>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
+    <Path>VueClient.ucp</Path>
+    <ElementID>P-5f655777-724c-4a11-b59c-3daad79ce451</ElementID>
+    <Sequence>4</Sequence>
   </ElementStub>
   <UCActor>
     <ParentID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</ParentID>
