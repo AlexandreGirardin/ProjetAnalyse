@@ -14,9 +14,578 @@
     <Name>VueClient</Name>
     <Sequence>-1</Sequence>
   </Package>
+  <UseCase>
+    <UniqueID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</UniqueID>
+    <UserID>UC-18-1</UserID>
+    <ParentID>P-5f655777-724c-4a11-b59c-3daad79ce451</ParentID>
+    <Name>S'identifier sur le site.</Name>
+    <Description>Le client s'identifie sur le site web pour pouvoir accéder à la liste de ses appareils.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  s'identifie sur le site web pour pouvoir acc\'e9der \'e0 la liste de ses \cf1 appareils\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <Priority>1</Priority>
+    <PreConditions />
+    <PostConditions>Le client est identifié
+Le client a été redirigé vers la page d'aperçu de ses appareils.</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-24T08:17:17.0301979-04:00</DateAdded>
+    <DateModified>2015-09-24T09:21:27.0785126-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</UniqueID>
+    <UserID>UC-18-2</UserID>
+    <ParentID>P-5f655777-724c-4a11-b59c-3daad79ce451</ParentID>
+    <Name>Ajouter un appareil.</Name>
+    <Description>Le client ajoute un appareil dans son dossier pour maintenance future.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  ajoute un \cf1 appareil\cf2  dans son dossier pour maintenance future.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <Priority>1</Priority>
+    <PreConditions>Le client a demandé à ajouter un appareil à son dossier.</PreConditions>
+    <PostConditions>L'appareil a été ajouté.
+Le client a été redirigé vers la page d'aperçu de ses appareils.</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
+    <DateModified>2015-09-24T09:24:52.915926-04:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</UniqueID>
+    <UserID>UC-18-3</UserID>
+    <ParentID>P-5f655777-724c-4a11-b59c-3daad79ce451</ParentID>
+    <Name>Modifier un Appareil.</Name>
+    <Description>Le client modifie les informations relatives à un appareil de son dossier.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  modifie les informations relatives \'e0 un \cf1 appareil\cf2  de son dossier.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <Priority>1</Priority>
+    <PreConditions>Le client se trouve sur la page de modification d'appareil</PreConditions>
+    <PostConditions>L'appareil a été modifié dans la base de données.
+Le client a été redirigé vers la page d'aperçu de ses appareils.</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
+    <DateModified>2015-09-24T09:23:15.1847353-04:00</DateModified>
+  </UseCase>
+  <Diagram>
+    <UniqueID>D-a3fae628-d284-4b54-b06c-5846ddcc463e</UniqueID>
+    <ParentID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>AjouterUnAppareil.ActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-d49cd502-5a4c-4600-80a6-df88c28d2cb9</UniqueID>
+    <ParentID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>S'identifierSurLeSite.ActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <Diagram>
+    <UniqueID>D-baf42a96-6647-493f-aab8-6bddfeada42e</UniqueID>
+    <ParentID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</ParentID>
+    <Name>Activity Diagram</Name>
+    <Sequence>0</Sequence>
+    <FileName>ModifierUnAppareil.ActivityDiagram.ndx</FileName>
+    <Type>1</Type>
+  </Diagram>
+  <UCActor>
+    <ParentID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</ParentID>
+    <ActorID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</ParentID>
+    <ActorID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</ParentID>
+    <ActorID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <Scenario>
+    <UniqueID>MSS-b3efa2ba-ac08-4105-a2f6-f269ecb3066c</UniqueID>
+    <ParentID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</UniqueID>
+    <ParentID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-d3e34e2a-aef8-40e9-9a69-9d730b8c4165</UniqueID>
+    <ParentID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</ParentID>
+  </Scenario>
+  <Step>
+    <UniqueID>ST-e3d82d38-d191-4f60-8ee3-84af043fe473</UniqueID>
+    <ParentID>MSS-b3efa2ba-ac08-4105-a2f6-f269ecb3066c</ParentID>
+    <Description>Le client entre son numero de client.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  entre son numero de \cf1 client\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-69c330ca-6c65-408f-87f6-0201714c1368</UniqueID>
+    <ParentID>MSS-b3efa2ba-ac08-4105-a2f6-f269ecb3066c</ParentID>
+    <Description>Le client entre son mot de passe.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  entre son mot de passe.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-bab3de28-fdc2-4dfd-a661-1376ab98ca81</UniqueID>
+    <ParentID>MSS-b3efa2ba-ac08-4105-a2f6-f269ecb3066c</ParentID>
+    <Description>Le système vérifie les informations entrées par le client dans la Base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  v\'e9rifie les informations entr\'e9es par le \cf3 client\cf1  dans la \cf2\ul Base de donn\'e9es\cf1\ulnone .\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-f1c8b359-2111-40b3-b3aa-f842b74aba44</UniqueID>
+    <ParentID>X-65b3cc51-f8ec-4266-bc14-83d4f8e29104</ParentID>
+    <Description>Le système retourne un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  retourne un message d'erreur.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-f84de93a-6e74-4933-8143-8f35f17cb0eb</UniqueID>
+    <ParentID>X-65b3cc51-f8ec-4266-bc14-83d4f8e29104</ParentID>
+    <Description>Continue at step 1</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Continue at step 1\cf1\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-1b1cb374-5023-4d74-a4f4-7f6c317bfc53</UniqueID>
+    <ParentID>X-00ca191c-76e0-4c75-a117-5ea634cf90ad</ParentID>
+    <Description>Le système retourne un message d'erreur</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-fc7035c8-33d3-4c1a-8922-0f3e5e2bc0f7</UniqueID>
+    <ParentID>X-00ca191c-76e0-4c75-a117-5ea634cf90ad</ParentID>
+    <Description>Continue at step 1</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue at step 1\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-117f6341-b0de-4599-9d93-e34e6c71a2e4</UniqueID>
+    <ParentID>MSS-b3efa2ba-ac08-4105-a2f6-f269ecb3066c</ParentID>
+    <Description>Le système indique que les informations entrées sont valides.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  indique que les informations entr\'e9es sont valides.\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-3aaa4248-5dbf-4f4b-b47b-fbaf0f343c1e</UniqueID>
+    <ParentID>MSS-b3efa2ba-ac08-4105-a2f6-f269ecb3066c</ParentID>
+    <Description>Le système redirige le client vers la page de gestion des appareils.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  redirige le \cf3 client\cf1  vers la page de gestion des \cf3 appareils\cf1 .\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-3351c72b-756f-486f-88d3-f5e560fe75f2</UniqueID>
+    <ParentID>X-0595e81f-4016-48e1-a5e9-27d62c4119ca</ParentID>
+    <Description>Le système retourne un message d'erreur</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-8b27df59-92f8-453c-825d-d7a2138fe10d</UniqueID>
+    <ParentID>X-0595e81f-4016-48e1-a5e9-27d62c4119ca</ParentID>
+    <Description>Continue at step 1</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue at step 1\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-6b2c84ef-dccf-4921-9950-c83e60a7deef</UniqueID>
+    <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
+    <Description>Le client remplit le formulaire d'ajout d'appareil.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  remplit le\fs20  \cf1 formulaire d'ajout d'appareil\cf2 .\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-d3b0718d-e599-4ecb-88be-b0965d46548a</UniqueID>
+    <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
+    <Description>Le client clique sur le bouton «Confirmer»</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  clique sur le bouton \'abConfirmer\'bb\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-babf0f1e-af2e-48c0-91ce-4140a4766cbb</UniqueID>
+    <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
+    <Description>Le système valide les informations entrées.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  valide les informations entr\'e9es.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-9a0e28df-cfde-4904-babe-f997aa8c84a6</UniqueID>
+    <ParentID>X-ed732aff-dbba-46f1-b785-b3fc05edf220</ParentID>
+    <Description>Le système retourne un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-0a31208c-e842-4cc2-b1cc-44973658b274</UniqueID>
+    <ParentID>X-ed732aff-dbba-46f1-b785-b3fc05edf220</ParentID>
+    <Description>Le client effectue les modifications demandées.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  effectue les modifications demand\'e9es.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-c893a1d5-d679-41de-bb07-e56ca01df552</UniqueID>
+    <ParentID>X-ed732aff-dbba-46f1-b785-b3fc05edf220</ParentID>
+    <Description>Continue to step 2.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue to step 2.\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-460c90cc-96cf-4807-8aec-7b23363e345d</UniqueID>
+    <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
+    <Description>Le système ajoute l'appareil à la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  ajoute l'\cf3 appareil\cf2  \'e0 la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-7af264d9-c40c-4165-a955-375eaceaa6b2</UniqueID>
+    <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
+    <Description>Le système redirige le client à la page d'aperçu de ses appareils.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  redirige le \cf3 client\cf2  \'e0 la page d'aper\'e7u de ses \cf3 appareils\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>5</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-3fc4c8e2-5771-41c4-b586-25d76ae6c4cb</UniqueID>
+    <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
+    <Description>Le système indique que l'appareil a été ajouté.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  indique que l'\cf3 appareil\cf2  a \'e9t\'e9 ajout\'e9.\cf0\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-16df9f25-b6a2-4356-b131-ea386a842da4</UniqueID>
+    <ParentID>X-a6457190-3935-4172-9bc8-d3c46c04bc15</ParentID>
+    <Description>Le système envoie un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  envoie un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-41a049ae-721a-47f0-88f8-395bd259c787</UniqueID>
+    <ParentID>X-a6457190-3935-4172-9bc8-d3c46c04bc15</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue to step 1.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-fcf3f8ec-0a7e-42ed-b9e7-bda92c1ee589</UniqueID>
+    <ParentID>MSS-d3e34e2a-aef8-40e9-9a69-9d730b8c4165</ParentID>
+    <Description>Le client modifie les informations de l'appareil.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  modifie les informations de l'\cf1 appareil\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-39b5b54e-8c5a-48be-89bb-8807a0201545</UniqueID>
+    <ParentID>MSS-d3e34e2a-aef8-40e9-9a69-9d730b8c4165</ParentID>
+    <Description>Le client appuie sur le bouton «Confirmer».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  appuie sur le bouton \'abConfirmer\'bb.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-6cdf8596-a34b-4ebb-85d0-157718e4c6f0</UniqueID>
+    <ParentID>X-34636aa9-8bc4-448d-8984-682d04849184</ParentID>
+    <Description>Le système affiche un message d'erreur en conséquence.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur en cons\'e9quence.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-3335bbaf-d8c4-4c40-8474-3da2a4819f23</UniqueID>
+    <ParentID>X-34636aa9-8bc4-448d-8984-682d04849184</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue to step 1.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-35c23949-0618-4245-87e8-3f05e8b3f16b</UniqueID>
+    <ParentID>X-1da485a7-4203-492f-bb0c-b837ec55aef3</ParentID>
+    <Description>Ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Ends.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-f6867454-6b3e-4b15-a5fe-d271438e1c2c</UniqueID>
+    <ParentID>MSS-d3e34e2a-aef8-40e9-9a69-9d730b8c4165</ParentID>
+    <Description>Le système enregistre les modifications dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  enregistre les modifications dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-7d244f50-0504-4acb-a0ff-eb87fff7d238</UniqueID>
+    <ParentID>X-1bd4824c-8421-44e1-b205-af6f077cba4e</ParentID>
+    <Description>Ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Ends.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Extension>
+    <UniqueID>X-65b3cc51-f8ec-4266-bc14-83d4f8e29104</UniqueID>
+    <ParentID>ST-bab3de28-fdc2-4dfd-a661-1376ab98ca81</ParentID>
+    <Description>Le numero de client n'existe pas.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le numero de \cf2 client\cf1  n'existe pas.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-00ca191c-76e0-4c75-a117-5ea634cf90ad</UniqueID>
+    <ParentID>ST-bab3de28-fdc2-4dfd-a661-1376ab98ca81</ParentID>
+    <Description>Le mot de passe est incorrect.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Le mot de passe est incorrect.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-0595e81f-4016-48e1-a5e9-27d62c4119ca</UniqueID>
+    <ParentID>ST-bab3de28-fdc2-4dfd-a661-1376ab98ca81</ParentID>
+    <Description>La base de données est inaccessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 La \cf2\ul base de donn\'e9es\cf1\ulnone  est inaccessible.\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-ed732aff-dbba-46f1-b785-b3fc05edf220</UniqueID>
+    <ParentID>ST-babf0f1e-af2e-48c0-91ce-4140a4766cbb</ParentID>
+    <Description>Certains champs sont invalides.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Certains champs sont invalides.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-a6457190-3935-4172-9bc8-d3c46c04bc15</UniqueID>
+    <ParentID>ST-460c90cc-96cf-4807-8aec-7b23363e345d</ParentID>
+    <Description>La base de données est inaccessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  est inaccessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-34636aa9-8bc4-448d-8984-682d04849184</UniqueID>
+    <ParentID>ST-39b5b54e-8c5a-48be-89bb-8807a0201545</ParentID>
+    <Description>Certains champs requis du formulaire de modification d'appareil sont vides.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Certains champs requis du \cf1 formulaire de modification d'appareil\cf0  sont vides.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-1da485a7-4203-492f-bb0c-b837ec55aef3</UniqueID>
+    <ParentID>ST-39b5b54e-8c5a-48be-89bb-8807a0201545</ParentID>
+    <Description>Le client appuie sur le bouton «Annuler».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2 client\cf1  appuie sur le bouton \'abAnnuler\'bb.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-1bd4824c-8421-44e1-b205-af6f077cba4e</UniqueID>
+    <ParentID>ST-d3b0718d-e599-4ecb-88be-b0965d46548a</ParentID>
+    <Description>Le client appuie sur le bouton «Annuler».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2 client\cf1  appuie sur le bouton \'abAnnuler\'bb.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
   <UserID>
     <DefaultPrefix>UC-18-</DefaultPrefix>
-    <NextValue>1</NextValue>
+    <NextValue>4</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>A-18-</DefaultPrefix>

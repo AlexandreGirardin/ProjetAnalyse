@@ -90,9 +90,20 @@
     <UserID>A-2-1</UserID>
     <ParentID>P-9221a0e8-6356-49f3-8ca0-7df5cd506cae</ParentID>
     <Name>Client</Name>
+    <Description>Individu qui fait affaire avec l'entreprise.
+En ce qui concerne le Système, un client possède un dossier et des fiches de maintenance.
+Il a aussi accès à une partie externe du système pour ajouter et modifier la liste de ses appareils.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\lang4105\f0\fs20 Individu qui fait affaire avec l'entreprise.\par
+En ce qui concerne le \cf1\ul Syst\'e8me\cf2\ulnone , un \cf3 client\cf2  poss\'e8de un dossier et des \cf3 fiches\cf2  de maintenance.\par
+Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  pour ajouter et modifier la liste de ses \cf3 appareils\cf2 .\cf0\lang3084\par
+}
+</RichDescription>
     <Sequence>5</Sequence>
+    <Complexity />
     <DateAdded>2015-09-21T11:29:41.9893835-04:00</DateAdded>
-    <DateModified>2015-09-21T11:29:57.3657706-04:00</DateModified>
+    <DateModified>2015-09-24T08:18:02.9809587-04:00</DateModified>
   </Actor>
   <Goal>
     <UniqueID>G-7cba7801-8627-4b83-a5d7-9f01b8cd964e</UniqueID>
@@ -283,12 +294,35 @@
   <Goal>
     <UniqueID>G-611bfed3-06ff-4ee0-870b-3cfa8e48edbc</UniqueID>
     <ParentID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</ParentID>
-    <Description>S'identifier</Description>
+    <Description>S'identifier sur le site. (UC-18-1) (S-19-1)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 S'identifier\par
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 S'identifier sur le site. (\cf1\ul UC-18-1\cf0\ulnone ) (\cf1\ul S-19-1\cf0\ulnone )\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-d71d640c-a069-428c-9b13-3abeefba7659</UniqueID>
+    <ParentID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</ParentID>
+    <Description>Ajouter un Appareil. (UC-18-2) (S-19-2)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Ajouter un \cf1 Appareil\cf2 . (\cf3\ul UC-18-2\cf2\ulnone ) (\cf3\ul S-19-2\cf2\ulnone )\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-59b317ad-d621-4c17-ac5f-2726ac87d389</UniqueID>
+    <ParentID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</ParentID>
+    <Description>Modifier un Appareil. (UC-18-3) (S-19-3)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Modifier un \cf1 Appareil\cf2 . (\cf3\ul UC-18-3\cf2\ulnone ) (\cf3\ul S-19-3\cf2\ulnone )\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
   </Goal>
   <UserID>
     <DefaultPrefix>UC-2-</DefaultPrefix>
