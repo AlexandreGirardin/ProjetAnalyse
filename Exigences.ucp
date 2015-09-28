@@ -70,7 +70,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UniqueID>REQ-56f29219-ffda-4735-8473-98610ffc3f9b</UniqueID>
     <UserID>REQ-3</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Numéro de téléphone</Name>
+    <Name>Doit rester compatible avec Acomba</Name>
     <Description>Afin de simplifier la compatibilité avec le système Acomba actuellement utilisé, le numéro servant à l'identification des clients doit être les 7 chiffres de leur numéro de téléphone.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
@@ -85,7 +85,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T10:38:47.9538447-04:00</DateAdded>
-    <DateModified>2015-09-17T14:49:25.1846026-04:00</DateModified>
+    <DateModified>2015-09-28T09:04:42.4759225-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -173,7 +173,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T14:45:03.3343892-04:00</DateAdded>
-    <DateModified>2015-09-17T14:50:08.4590786-04:00</DateModified>
+    <DateModified>2015-09-28T09:05:18.2623928-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -202,7 +202,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UniqueID>REQ-9f9a9e51-e3f3-45ae-b82a-ab8addacd7ca</UniqueID>
     <UserID>REQ-5-7</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Permet la gestion de clients</Name>
+    <Name>Doit gérer les clients (CRU)</Name>
     <Description>Les techniciens doivent pouvoir créer, modifier et visualiser les dossiers de clients, afin de faciliter et unifier l'accès aux données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
@@ -217,18 +217,18 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:23:27.4766448-04:00</DateAdded>
-    <DateModified>2015-09-24T15:47:48.726681-04:00</DateModified>
+    <DateModified>2015-09-28T09:03:30.9955888-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-cde001c1-7b2c-4f94-b880-41d85d9905ee</UniqueID>
     <UserID>REQ-5-8</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Permet la gestion d'appareils</Name>
-    <Description>Les techniciens doivent pouvoir ajouter, modifier et visualiser les appareils, afin d'améliorer et de faciliter le suivi, le diagnostiques et la maintenance.</Description>
+    <Name>Doit gérer les appareils (CRUA)</Name>
+    <Description>Les techniciens doivent pouvoir ajouter, modifier, visualiser et archiver les appareils, afin d'améliorer et de faciliter le suivi, le diagnostiques et la maintenance.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier et visualiser les \cf3 appareils\cf1 , afin d'am\'e9liorer et de faciliter le suivi, le diagnostiques et la maintenance.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier, visualiser et archiver les \cf3 appareils\cf1 , afin d'am\'e9liorer et de faciliter le suivi, le diagnostiques et la maintenance.\par
 }
 </RichDescription>
     <Sequence>9</Sequence>
@@ -239,14 +239,14 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:28:58.6328991-04:00</DateAdded>
-    <DateModified>2015-09-24T15:49:29.5998038-04:00</DateModified>
+    <DateModified>2015-09-28T09:02:38.0994457-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-1cd048c3-23eb-4249-af01-0990307ecfc5</UniqueID>
     <UserID>REQ-5-9</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Permet la gestion de fiches</Name>
+    <Name>Doit gérer les fiches (CRU)</Name>
     <Description>Les techniciens doivent pouvoir ajouter, modifier, et visualiser les fiches, afin de conserver un archive des tâches effectuées sur un appareil.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
@@ -261,7 +261,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:29:43.1480511-04:00</DateAdded>
-    <DateModified>2015-09-24T15:51:47.1053187-04:00</DateModified>
+    <DateModified>2015-09-28T09:03:51.3108924-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
@@ -312,7 +312,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <UniqueID>REQ-8bde740d-4dfd-4634-b215-f8a54084275d</UniqueID>
     <UserID>REQ-5-12</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Mot de passe</Name>
+    <Name>Fournir une protection par mot de passe</Name>
     <Description>Le système doit être sécurisé par un mot de passe, pour éviter l'accès non autorisé au système.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
@@ -327,14 +327,14 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:58:29.9099414-04:00</DateAdded>
-    <DateModified>2015-09-24T15:58:59.8420231-04:00</DateModified>
+    <DateModified>2015-09-28T08:54:08.7443856-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-ff3d7229-3193-4fa0-afd2-e50c04b3d00f</UniqueID>
     <UserID>REQ-5-13</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Identification du technicien</Name>
+    <Name>Identifier le technicien</Name>
     <Description>Le système doit permettre d'identifier le technicien qui à effectué des tâches sur un appareil, dans le but d'offrir un meilleur suivi.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
@@ -349,14 +349,14 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T10:08:37.1474049-04:00</DateAdded>
-    <DateModified>2015-09-24T15:58:38.9238799-04:00</DateModified>
+    <DateModified>2015-09-28T08:37:42.150883-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-9e51d517-0b9f-4cd6-9051-0e0ae6c79649</UniqueID>
     <UserID>REQ-5-14</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
-    <Name>Permet la gestion des tâches</Name>
+    <Name>Doit gérer les tâches (CRU)</Name>
     <Description>Les techniciens doivent pouvoir ajouter, modifier ou visualiser les tâches réalisable, pour offrir un suivi plus détaillé.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
@@ -371,7 +371,29 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T12:43:02.1202276-04:00</DateAdded>
-    <DateModified>2015-09-24T16:00:49.7889995-04:00</DateModified>
+    <DateModified>2015-09-28T09:04:01.9682618-04:00</DateModified>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Requirement>
+  <Requirement>
+    <UniqueID>REQ-a0ad0dfd-0084-44bb-a41c-9c9a6e4fbdfb</UniqueID>
+    <UserID>REQ-5-15</UserID>
+    <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
+    <Name>Doit permettre la gestion des appareils par le client (CRUA)</Name>
+    <Description>Le client doit pouvoir consulter, ajouter, modifier et archiver un appareil lui appartenant, de n'importe où.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul client\cf1\ulnone  doit pouvoir consulter, ajouter, modifier et archiver un \cf3 appareil\cf1  lui appartenant, de n'importe o\'f9.\par
+}
+</RichDescription>
+    <Sequence>16</Sequence>
+    <Type>Functional</Type>
+    <Priority>1</Priority>
+    <Source />
+    <Status>Proposed</Status>
+    <AssignedTo />
+    <Release />
+    <DateAdded>2015-09-28T08:29:54.326271-04:00</DateAdded>
+    <DateModified>2015-09-28T09:03:11.3838859-04:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <UserID>
@@ -384,7 +406,7 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
   </UserID>
   <UserID>
     <DefaultPrefix>REQ-5-</DefaultPrefix>
-    <NextValue>15</NextValue>
+    <NextValue>16</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-5-</DefaultPrefix>

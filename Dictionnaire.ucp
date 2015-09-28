@@ -28,7 +28,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-4-</DefaultPrefix>
-    <NextValue>4</NextValue>
+    <NextValue>6</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-4-</DefaultPrefix>
@@ -221,6 +221,33 @@ N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-4-3</UserID>
     <Sequence>9</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-c1e00535-ddab-4ff9-9d78-3d1174a8f707</UniqueID>
+    <Name>CRU</Name>
+    <Description>l'abréviation du patron «Create, Read, Update, Delete» mais sans la partie de suppression</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 l'abr\'e9viation du patron \'abCreate, Read, Update, Delete\'bb mais sans la partie de suppression\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-4</UserID>
+    <Sequence>13</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-08200ed8-b4c3-42bb-aa32-f9af47dc70d6</UniqueID>
+    <Name>CRUA</Name>
+    <Description>l'abréviation du patron «Create, Read, Update, Delete» mais en remplaçant la partie suppression par un système d'archivage. </Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 l'abr\'e9viation du patron \'abCreate, Read, Update, Delete\'bb mais en rempla\'e7ant la partie suppression par un \cf1\ul syst\'e8me\cf2\ulnone  d'archivage. \cf0\fs20\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-5</UserID>
+    <Sequence>13</Sequence>
   </DictionaryEntry>
   <DictionaryField>
     <Name>Action</Name>
