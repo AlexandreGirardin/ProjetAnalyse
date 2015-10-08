@@ -35,9 +35,16 @@
     <UserID>A-4</UserID>
     <ParentID>P-9221a0e8-6356-49f3-8ca0-7df5cd506cae</ParentID>
     <Name>Acomba</Name>
+    <Description>Logiciel de comptabilité actuellement utilisé par l'entreprise. Gère tout ce qui touche à la clientèle, la facturation, les employés et l'inventaire.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Logiciel de comptabilit\'e9 actuellement utilis\'e9 par l'entreprise. G\'e8re tout ce qui touche \'e0 la \cf1 client\'e8le, la facturation, les employ\'e9s et l'inventaire.\cf0\par
+}
+</RichDescription>
     <Sequence>1</Sequence>
+    <Complexity />
     <DateAdded>2015-08-31T10:44:07.6558445-04:00</DateAdded>
-    <DateModified>2015-09-10T13:56:57.4784763-04:00</DateModified>
+    <DateModified>2015-10-01T13:19:23.5569979-04:00</DateModified>
   </Actor>
   <Actor>
     <UniqueID>A-2e4b1eeb-65e3-4ec7-8169-3ba6434e02fc</UniqueID>
