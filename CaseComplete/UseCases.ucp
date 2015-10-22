@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -19,9 +19,10 @@
     <UserID>UC-8</UserID>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
     <Name>Ouverture de session</Name>
-    <Description>Processus d'authentification de l'usager</Description>
+    <Description>Processus d'authentification de l'usager.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Processus d'authentification de l'usager\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Processus d'authentification de l'\cf1 usager\cf2 .\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -37,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:33:34.1946433-04:00</DateAdded>
-    <DateModified>2015-10-01T13:34:39.4283427-04:00</DateModified>
+    <DateModified>2015-10-22T10:04:47.9306617-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-8b8974dc-6b42-488e-b822-bd6c39d67f96</UniqueID>
@@ -144,13 +145,6 @@
 }
 </RichDescription>
     <Sequence>1</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-44eae02a-a8b7-4482-8813-f939005eaa10</UniqueID>
-    <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
-    <Description />
-    <Sequence>3</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>

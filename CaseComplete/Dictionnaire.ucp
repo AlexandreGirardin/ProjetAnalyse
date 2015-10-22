@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -28,7 +28,7 @@
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-4-</DefaultPrefix>
-    <NextValue>6</NextValue>
+    <NextValue>7</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>S-4-</DefaultPrefix>
@@ -247,6 +247,20 @@ N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
 </RichDescription>
     <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
     <UserID>DEF-4-5</UserID>
+    <Sequence>13</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-bac923c6-7035-4593-bb15-e81d8e800d65</UniqueID>
+    <Name>usager</Name>
+    <Description>Technicien utilisant le système actuellement. Utilisé pour garder en mémoire quel technicien a fais quoi lors de la confirmation des actions.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\ul\f0\fs20 Technicien\cf2\ulnone  utilisant le \cf1\ul syst\'e8me\cf2\ulnone  actuellement. Utilis\'e9 pour garder en m\'e9moire quel \cf1\ul technicien\cf2\ulnone  a fais quoi lors de la confirmation des \cf3 actions\cf2 .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-6</UserID>
     <Sequence>13</Sequence>
   </DictionaryEntry>
   <DictionaryField>

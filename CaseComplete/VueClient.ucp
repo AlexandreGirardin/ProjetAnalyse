@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5736</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -46,10 +46,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <UserID>UC-18-2</UserID>
     <ParentID>P-5f655777-724c-4a11-b59c-3daad79ce451</ParentID>
     <Name>Ajouter un appareil.</Name>
-    <Description>Le client ajoute un appareil dans son dossier pour maintenance future.</Description>
+    <Description>Le client ajoute un appareil dans son dossier pour une maintenance future.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  ajoute un \cf1 appareil\cf2  dans son dossier pour maintenance future.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul client\cf2\ulnone  ajoute un \cf3 appareil\cf2  dans son dossier pour une maintenance future.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -66,7 +66,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
-    <DateModified>2015-09-24T09:24:52.915926-04:00</DateModified>
+    <DateModified>2015-10-22T09:40:03.0859209-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</UniqueID>
@@ -291,10 +291,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-d3b0718d-e599-4ecb-88be-b0965d46548a</UniqueID>
     <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
-    <Description>Le client clique sur le bouton «Confirmer»</Description>
+    <Description>Le client clique sur le bouton «Confirmer».</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  clique sur le bouton \'abConfirmer\'bb\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul client\cf2\ulnone  clique sur le bouton \'abConfirmer\'bb.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -350,10 +350,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-460c90cc-96cf-4807-8aec-7b23363e345d</UniqueID>
     <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
-    <Description>Le système ajoute l'appareil à la base de données.</Description>
+    <Description>Le système ajoute l'appareil dans la base de données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  ajoute l'\cf3 appareil\cf2  \'e0 la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  ajoute l'\cf3 appareil\cf2  dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -362,10 +362,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-7af264d9-c40c-4165-a955-375eaceaa6b2</UniqueID>
     <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
-    <Description>Le système redirige le client à la page d'aperçu de ses appareils.</Description>
+    <Description>Le système affiche la page d'aperçu des appareils du client.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  redirige le \cf3 client\cf2  \'e0 la page d'aper\'e7u de ses \cf3 appareils\cf2 .\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 syst\'e8me affiche la page d'aper\'e7u des \cf2 appareils\cf1  du \cf3\ul client\cf1\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>5</Sequence>
@@ -374,10 +374,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-3fc4c8e2-5771-41c4-b586-25d76ae6c4cb</UniqueID>
     <ParentID>MSS-6d3de559-e81e-43c3-9a5f-705b604c9501</ParentID>
-    <Description>Le système indique que l'appareil a été ajouté.</Description>
+    <Description>Le système affiche un message pour indiquer que l'appareil a été ajouté.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  indique que l'\cf3 appareil\cf2  a \'e9t\'e9 ajout\'e9.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message pour indiquer que l'\cf3 appareil\cf2  a \'e9t\'e9 ajout\'e9.\cf0\par
 }
 </RichDescription>
     <Sequence>4</Sequence>

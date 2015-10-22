@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -54,7 +54,7 @@
     <Sequence>1</Sequence>
     <Priority>1</Priority>
     <PreConditions>Le technicien se trouve dans le dossier de client.</PreConditions>
-    <PostConditions>Les informations de l'appareil sélectionné sont affichées.</PostConditions>
+    <PostConditions>Les informations de l'appareil sélectionné sont affichées à l'écran</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -64,7 +64,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-09-17T18:40:22.6465329-04:00</DateModified>
+    <DateModified>2015-10-22T09:47:56.233804-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-7fc215a1-23c2-4776-b926-b62f4574723f</UniqueID>
@@ -90,7 +90,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:53.5851661-04:00</DateAdded>
-    <DateModified>2015-09-17T15:21:38.0033288-04:00</DateModified>
+    <DateModified>2015-10-22T15:04:28.491746-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-58c6e75a-5fe9-46e6-b17d-5dba40d72433</UniqueID>
@@ -246,10 +246,10 @@
   <Step>
     <UniqueID>ST-68d56478-8adc-48bf-a9e4-69f5092b3ef9</UniqueID>
     <ParentID>MSS-7e315fe2-73a6-4d9b-8e0a-468a94a71b9c</ParentID>
-    <Description>Le technicien double-clique sur l'appareil à consulter.</Description>
+    <Description>Le technicien sélectionne l'appareil à consulter.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  double-clique sur l'\cf3 appareil\cf2  \'e0 consulter.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3 appareil\cf2  \'e0 consulter.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -258,10 +258,10 @@
   <Step>
     <UniqueID>ST-42363ab6-1bb3-4a5a-a72a-0408e8e63190</UniqueID>
     <ParentID>MSS-7e315fe2-73a6-4d9b-8e0a-468a94a71b9c</ParentID>
-    <Description>Le système affiche la page de visualisation d'appareil.</Description>
+    <Description>Le système affiche la page de visualisation de l'appareil.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la page de visualisation d'\cf3 appareil\cf2 .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la page de visualisation de l'\cf3 appareil\cf2 .\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -374,6 +374,13 @@
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-d44957df-920c-45d1-972e-582c1a88e38c</UniqueID>
+    <ParentID>X-dd488faf-e8c7-4a34-b3d1-320aadf5574e</ParentID>
+    <Description />
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-3bde9781-fb76-4055-a35c-ca34bd28c6fc</UniqueID>
     <ParentID>ST-795f05e8-eca0-4597-a02a-2aa98524a99c</ParentID>
@@ -420,6 +427,18 @@
 }
 </RichDescription>
     <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-dd488faf-e8c7-4a34-b3d1-320aadf5574e</UniqueID>
+    <ParentID>ST-38bec355-cb7a-4fb9-bd36-9a56cb3dc21c</ParentID>
+    <Description>La base de données n'est pas accessible</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Extension>
   <UserID>

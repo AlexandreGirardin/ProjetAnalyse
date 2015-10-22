@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5736</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -39,7 +39,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-09-17T18:42:31.4715591-04:00</DateModified>
+    <DateModified>2015-10-22T14:29:26.0949579-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</UniqueID>
@@ -449,6 +449,29 @@
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-b8112730-cd1c-47be-bdcd-bf56d29530d2</UniqueID>
+    <ParentID>X-189485e4-24d0-4717-af32-93dccae1c878</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-468c0a80-9249-45e0-9629-203b00ebe12c</UniqueID>
+    <ParentID>X-189485e4-24d0-4717-af32-93dccae1c878</ParentID>
+    <Description>ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 ends.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-85aab6c3-5435-44b0-a7ce-22705a617eeb</UniqueID>
     <ParentID>ST-efbae605-dd62-4f2e-aef9-ab54003de923</ParentID>
@@ -506,6 +529,18 @@
 }
 </RichDescription>
     <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-189485e4-24d0-4717-af32-93dccae1c878</UniqueID>
+    <ParentID>ST-7b1c6c51-64e1-4be0-97af-3ef7ee76f68e</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Extension>
   <UserID>

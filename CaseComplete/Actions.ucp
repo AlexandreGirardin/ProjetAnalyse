@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5736</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -64,7 +64,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:13:25.1372805-04:00</DateAdded>
-    <DateModified>2015-09-17T18:53:37.9047297-04:00</DateModified>
+    <DateModified>2015-10-22T09:14:37.4064188-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-70f463c9-8eec-4b37-83f6-2ce760b9db1b</UniqueID>
@@ -333,10 +333,10 @@
   <Step>
     <UniqueID>ST-5cc97417-6642-43d8-ba28-4e77a9ca080a</UniqueID>
     <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
-    <Description>Le système marque l'action comme étant inactive dans la base de données.</Description>
+    <Description>Le système inscrit l'action comme étant inactive dans la base de données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  marque l'\cf3 action\cf2  comme \'e9tant inactive dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  inscrit l'\cf3 action\cf2  comme \'e9tant inactive dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -546,6 +546,42 @@
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-debc46d2-a704-49c3-a01e-520f400eda1f</UniqueID>
+    <ParentID>X-6fdc1aea-3c7f-49fb-aa0d-1787faef46de</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-92a0b7ce-bd3f-41e0-a0fa-f9c5c10ff5ab</UniqueID>
+    <ParentID>X-6fdc1aea-3c7f-49fb-aa0d-1787faef46de</ParentID>
+    <Description>Ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Ends.\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-912e2642-3f5c-4a6f-952b-75199ce86729</UniqueID>
+    <ParentID>X-6fdc1aea-3c7f-49fb-aa0d-1787faef46de</ParentID>
+    <Description>Le système remet l'état de la case à cocher «Actif» à son état initial.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  remet l'\'e9tat de la case \'e0 cocher \'abActif\'bb \'e0 son \'e9tat initial.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-3492940c-db6d-4c6b-9f69-e6bedc340ced</UniqueID>
     <ParentID>ST-b1731489-fc3d-4164-84d8-6bd2dfc5a8b0</ParentID>
@@ -613,6 +649,18 @@
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
 \viewkind4\uc1\pard\cf1\f0\fs20 Il y a d\'e9j\'e0 une \cf2 action\cf1  du m\'eame nom dans la \cf3\ul base de donn\'e9es\cf1\ulnone .\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-6fdc1aea-3c7f-49fb-aa0d-1787faef46de</UniqueID>
+    <ParentID>ST-5cc97417-6642-43d8-ba28-4e77a9ca080a</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
