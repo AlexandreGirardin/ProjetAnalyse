@@ -39,7 +39,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0301979-04:00</DateAdded>
-    <DateModified>2015-09-24T09:21:27.0785126-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.4127433-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</UniqueID>
@@ -66,7 +66,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
-    <DateModified>2015-10-22T09:40:03.0859209-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.4187481-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</UniqueID>
@@ -93,32 +93,8 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
-    <DateModified>2015-09-24T09:23:15.1847353-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.4217501-04:00</DateModified>
   </UseCase>
-  <Diagram>
-    <UniqueID>D-a3fae628-d284-4b54-b06c-5846ddcc463e</UniqueID>
-    <ParentID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>AjouterUnAppareil.ActivityDiagram.ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
-  <Diagram>
-    <UniqueID>D-d49cd502-5a4c-4600-80a6-df88c28d2cb9</UniqueID>
-    <ParentID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>S'identifierSurLeSite.ActivityDiagram.ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
-  <Diagram>
-    <UniqueID>D-baf42a96-6647-493f-aab8-6bddfeada42e</UniqueID>
-    <ParentID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>ModifierUnAppareil.ActivityDiagram.ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
   <UCActor>
     <ParentID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</ParentID>
     <ActorID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</ActorID>

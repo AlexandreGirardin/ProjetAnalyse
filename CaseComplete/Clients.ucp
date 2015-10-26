@@ -39,7 +39,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-10-22T14:29:26.0949579-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.3667127-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</UniqueID>
@@ -65,7 +65,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T08:21:35.5151788-04:00</DateAdded>
-    <DateModified>2015-09-17T18:45:41.6982932-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.373717-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eec925da-091e-42c8-b860-c1841536beb0</UniqueID>
@@ -91,32 +91,8 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:59:20.7772349-04:00</DateAdded>
-    <DateModified>2015-09-17T18:51:45.2413318-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.3807224-04:00</DateModified>
   </UseCase>
-  <Diagram>
-    <UniqueID>D-08180199-a070-4026-8672-a322bdcbb35b</UniqueID>
-    <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>CréerUnDossierDeClientActivityDiagram.ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
-  <Diagram>
-    <UniqueID>D-09f5703b-e25a-4886-bac2-aec825e34d97</UniqueID>
-    <ParentID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>ModifierLesDossiersDeClientActivityDiagram.ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
-  <Diagram>
-    <UniqueID>D-170259d3-1ddf-4015-bb61-328f4467bc14</UniqueID>
-    <ParentID>UC-eec925da-091e-42c8-b860-c1841536beb0</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>RechercherUnDossierDeClientActivityDiagram.ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
   <UCActor>
     <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>

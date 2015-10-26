@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:22.6397736-04:00</DateAdded>
-    <DateModified>2015-09-17T18:56:21.9546178-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.3497018-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</UniqueID>
@@ -64,7 +64,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-10-22T09:47:56.233804-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.3547048-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-7fc215a1-23c2-4776-b926-b62f4574723f</UniqueID>
@@ -90,32 +90,8 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:53.5851661-04:00</DateAdded>
-    <DateModified>2015-10-22T15:04:28.491746-04:00</DateModified>
+    <DateModified>2015-10-22T15:14:26.3587102-04:00</DateModified>
   </UseCase>
-  <Diagram>
-    <UniqueID>D-58c6e75a-5fe9-46e6-b17d-5dba40d72433</UniqueID>
-    <ParentID>UC-2af407eb-b179-44a0-aeab-d642b25c2211</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>ConsulterUnAppareilActivityDiagram.ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
-  <Diagram>
-    <UniqueID>D-1a711acf-bb7f-46c6-a709-c5db3b73e3f1</UniqueID>
-    <ParentID>UC-7fc215a1-23c2-4776-b926-b62f4574723f</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>ModifierUnAppareilActivityDiagram.ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
-  <Diagram>
-    <UniqueID>D-43783fcc-5be5-4af1-a55a-41c6f3bc7ace</UniqueID>
-    <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
-    <Name>Activity Diagram</Name>
-    <Sequence>0</Sequence>
-    <FileName>CréerUnAppareilActivityDiagram(2).ndx</FileName>
-    <Type>1</Type>
-  </Diagram>
   <UCActor>
     <ParentID>UC-5dfafec3-2d28-44de-ad3d-07ac951b315a</ParentID>
     <ActorID>A-f35b8b86-8dad-4cc0-8c04-c8f17d8939f7</ActorID>
