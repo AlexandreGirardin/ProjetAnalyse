@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5767</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5736</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -39,7 +39,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.3667127-04:00</DateModified>
+    <DateModified>2015-10-26T08:24:46.6344492-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</UniqueID>
@@ -55,7 +55,8 @@
     <Sequence>1</Sequence>
     <Priority>1</Priority>
     <PreConditions>Le technicien doit être dans la page de visualisation des dossiers de client.</PreConditions>
-    <PostConditions>Les informations du client ont été modifiées.</PostConditions>
+    <PostConditions>Les informations du client ont été modifiées.
+Le système est de retour à la page de visualisation des dossiers de client.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -65,7 +66,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T08:21:35.5151788-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.373717-04:00</DateModified>
+    <DateModified>2015-10-26T08:26:54.5078738-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eec925da-091e-42c8-b860-c1841536beb0</UniqueID>
@@ -91,7 +92,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:59:20.7772349-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.3807224-04:00</DateModified>
+    <DateModified>2015-10-26T09:25:24.81541-04:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
@@ -176,10 +177,10 @@
   <Step>
     <UniqueID>ST-e480c20f-f7d5-4790-bd80-c7eea882d184</UniqueID>
     <ParentID>MSS-3095a5ed-563a-406a-b0f1-e5833b76b270</ParentID>
-    <Description>Le technicien modifie la valeur des champs du dossier de client.</Description>
+    <Description>Le technicien modifie les valeurs des champs du dossier de client.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  modifie la valeur des champs du \cf3\ul dossier de client\cf2\ulnone .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  modifie les valeurs des champs du \cf3\ul dossier de client\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -212,10 +213,10 @@
   <Step>
     <UniqueID>ST-21c401e5-8e2c-46c3-9905-a72bce4d4a9b</UniqueID>
     <ParentID>MSS-4c40d616-f349-433f-9cf9-3e60e24a7350</ParentID>
-    <Description>Le technicien entre le mot-clé dans le champ de recherche.</Description>
+    <Description>Le technicien entre le numéro dans le champ de recherche.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  entre le mot-cl\'e9 dans le champ de recherche.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  entre le num\'e9ro dans le champ de recherche.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -224,10 +225,10 @@
   <Step>
     <UniqueID>ST-0d2df5d3-7386-4d0c-a749-040947b228fa</UniqueID>
     <ParentID>MSS-4c40d616-f349-433f-9cf9-3e60e24a7350</ParentID>
-    <Description>Le système recherche dans la base de données tous les dossiers de client avec ce mot-clé.</Description>
+    <Description>Le système recherche dans la base de données le dossier de client ayant ce numéro.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  recherche dans la \cf1\ul base de donn\'e9es\cf2\ulnone  tous les dossiers de \cf3\ul client\cf2\ulnone  avec ce mot-cl\'e9.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  recherche dans la \cf1\ul base de donn\'e9es\cf2\ulnone  le \cf3\ul dossier de client\cf2\ulnone  ayant ce num\'e9ro.\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -236,10 +237,10 @@
   <Step>
     <UniqueID>ST-e7d57709-f9ec-4ca9-af94-b1ed71fd2634</UniqueID>
     <ParentID>MSS-4c40d616-f349-433f-9cf9-3e60e24a7350</ParentID>
-    <Description>Le système affiche une liste contenant les dossiers des clients trouvés.</Description>
+    <Description>Le système affiche une liste contenant le(s) dossier(s) de client trouvé(s).</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche une liste contenant les dossiers des \cf3 clients\cf2  trouv\'e9s.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche une liste contenant le(s) dossier(s) de \cf1\ul client\cf2\ulnone  trouv\'e9(s).\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -380,10 +381,10 @@
   <Step>
     <UniqueID>ST-1419eedb-59d2-4988-91f4-1de5c1ebed66</UniqueID>
     <ParentID>X-eca740c2-b959-419b-b4ab-309e15d18d21</ParentID>
-    <Description>Le technicien recommence la recherche en utilisant un autre mot-clé.</Description>
+    <Description>Le technicien recommence la recherche en utilisant un autre numéro ou une autre valeur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  recommence la recherche en utilisant un autre mot-cl\'e9.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  recommence la recherche en utilisant un autre num\'e9ro ou une autre valeur.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -392,10 +393,10 @@
   <Step>
     <UniqueID>ST-9d7d1deb-150a-4dd6-983e-62eb869dc330</UniqueID>
     <ParentID>X-eca740c2-b959-419b-b4ab-309e15d18d21</ParentID>
-    <Description>Return to step 2</Description>
+    <Description>Return to step 2.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Return to step 2\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Return to step 2.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -448,13 +449,25 @@
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-51365393-e016-4282-982d-8ec1198be9fd</UniqueID>
+    <ParentID>MSS-3095a5ed-563a-406a-b0f1-e5833b76b270</ParentID>
+    <Description>Le système retourne à la page de modification de client.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne \'e0 la page de modification de \cf1\ul client\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-85aab6c3-5435-44b0-a7ce-22705a617eeb</UniqueID>
     <ParentID>ST-efbae605-dd62-4f2e-aef9-ab54003de923</ParentID>
-    <Description>Un des champs est vide.</Description>
+    <Description>Un des champs requis est vide.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Un des champs est vide.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Un des champs requis est vide.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -498,10 +511,10 @@
   <Extension>
     <UniqueID>X-b66d8987-a90c-4ad4-aa3d-d6f9a1f7ec0a</UniqueID>
     <ParentID>ST-964444a7-f248-4991-8892-8b9fd6482c4d</ParentID>
-    <Description>Le dossier du client est introuvable</Description>
+    <Description>Le dossier du client est introuvable.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le dossier du \cf2\ul client\cf1\ulnone  est introuvable\par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le dossier du \cf2\ul client\cf1\ulnone  est introuvable.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>

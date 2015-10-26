@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5767</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5736</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -39,7 +39,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0301979-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.4127433-04:00</DateModified>
+    <DateModified>2015-10-26T09:42:02.327962-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</UniqueID>
@@ -72,7 +72,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <UniqueID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</UniqueID>
     <UserID>UC-18-3</UserID>
     <ParentID>P-5f655777-724c-4a11-b59c-3daad79ce451</ParentID>
-    <Name>Modifier un Appareil.</Name>
+    <Name>Modifier un appareil</Name>
     <Description>Le client modifie les informations relatives à un appareil de son dossier.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
@@ -81,7 +81,8 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
 </RichDescription>
     <Sequence>2</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le client se trouve sur la page de modification d'appareil</PreConditions>
+    <PreConditions>Le client est authentifié au site web.
+Le client se trouve sur la page de modification d'appareil.</PreConditions>
     <PostConditions>L'appareil a été modifié dans la base de données.
 Le client a été redirigé vers la page d'aperçu de ses appareils.</PostConditions>
     <Level />
@@ -93,7 +94,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.4217501-04:00</DateModified>
+    <DateModified>2015-10-22T15:28:54.2204796-04:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</ParentID>
@@ -125,10 +126,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-e3d82d38-d191-4f60-8ee3-84af043fe473</UniqueID>
     <ParentID>MSS-b3efa2ba-ac08-4105-a2f6-f269ecb3066c</ParentID>
-    <Description>Le client entre son numero de client.</Description>
+    <Description>Le client entre son numéro de client.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  entre son numero de \cf1 client\cf2 .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 client\cf2  entre son num\'e9ro de \cf1 client\cf2 .\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -149,10 +150,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-bab3de28-fdc2-4dfd-a661-1376ab98ca81</UniqueID>
     <ParentID>MSS-b3efa2ba-ac08-4105-a2f6-f269ecb3066c</ParentID>
-    <Description>Le système vérifie les informations entrées par le client dans la Base de données.</Description>
+    <Description>Le système vérifie les informations entrées par le client dans la base de données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  v\'e9rifie les informations entr\'e9es par le \cf3 client\cf1  dans la \cf2\ul Base de donn\'e9es\cf1\ulnone .\par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  v\'e9rifie les informations entr\'e9es par le \cf2\ul client\cf1\ulnone  dans la \cf2\ul base de donn\'e9es\cf1\ulnone .\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -173,10 +174,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-f84de93a-6e74-4933-8143-8f35f17cb0eb</UniqueID>
     <ParentID>X-65b3cc51-f8ec-4266-bc14-83d4f8e29104</ParentID>
-    <Description>Continue at step 1</Description>
+    <Description>Continue to step 1.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Continue at step 1\cf1\par
+\viewkind4\uc1\pard\f0\fs20 Continue to step 1.\cf1\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -185,10 +186,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-1b1cb374-5023-4d74-a4f4-7f6c317bfc53</UniqueID>
     <ParentID>X-00ca191c-76e0-4c75-a117-5ea634cf90ad</ParentID>
-    <Description>Le système retourne un message d'erreur</Description>
+    <Description>Le système retourne un message d'erreur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -197,9 +198,9 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-fc7035c8-33d3-4c1a-8922-0f3e5e2bc0f7</UniqueID>
     <ParentID>X-00ca191c-76e0-4c75-a117-5ea634cf90ad</ParentID>
-    <Description>Continue at step 1</Description>
+    <Description>Continue to step 1.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Continue at step 1\par
+\viewkind4\uc1\pard\f0\fs20 Continue to step 1.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -232,10 +233,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-3351c72b-756f-486f-88d3-f5e560fe75f2</UniqueID>
     <ParentID>X-0595e81f-4016-48e1-a5e9-27d62c4119ca</ParentID>
-    <Description>Le système retourne un message d'erreur</Description>
+    <Description>Le système retourne un message d'erreur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -244,9 +245,9 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-8b27df59-92f8-453c-825d-d7a2138fe10d</UniqueID>
     <ParentID>X-0595e81f-4016-48e1-a5e9-27d62c4119ca</ParentID>
-    <Description>Continue at step 1</Description>
+    <Description>Continue to step 1.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Continue at step 1\par
+\viewkind4\uc1\pard\f0\fs20 Continue to step 1.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -432,10 +433,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-35c23949-0618-4245-87e8-3f05e8b3f16b</UniqueID>
     <ParentID>X-1da485a7-4203-492f-bb0c-b837ec55aef3</ParentID>
-    <Description>Ends.</Description>
+    <Description>Continue to step 4.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Ends.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 4.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -463,6 +464,18 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
 }
 </RichDescription>
     <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-0a127653-bc9b-4a39-b8b2-9aba07f1522f</UniqueID>
+    <ParentID>MSS-d3e34e2a-aef8-40e9-9a69-9d730b8c4165</ParentID>
+    <Description>Le système redirige le client vers la page d'aperçu de ses appareils.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  redirige le \cf1\ul client\cf2\ulnone  vers la \cf0 page d'aper\'e7u de ses \cf3\ul appareils\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>

@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5767</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -27,8 +27,8 @@
 </RichDescription>
     <Sequence>0</Sequence>
     <Priority>1</Priority>
-    <PreConditions>La fenêtre d'authentification est affichée</PreConditions>
-    <PostConditions>Le système est lancé et la fenêtre principale est ouverte.</PostConditions>
+    <PreConditions>La fenêtre d'authentification est affichée.</PreConditions>
+    <PostConditions>Le système est démarré et la fenêtre principale est ouverte.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:33:34.1946433-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.2970179-04:00</DateModified>
+    <DateModified>2015-10-26T09:03:25.4586926-04:00</DateModified>
   </UseCase>
   <ElementStub>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
@@ -80,30 +80,6 @@
     <ParentID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</ParentID>
   </Scenario>
   <Step>
-    <UniqueID>ST-b4ad4e6c-e9cf-43be-a97d-f0ab3c3777cf</UniqueID>
-    <ParentID>X-6dad97a2-4130-43be-9098-94664701f4ce</ParentID>
-    <Description>Le système affiche un message d'erreur.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur.\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-b0d286e5-6200-47c8-8007-92333cefd389</UniqueID>
-    <ParentID>X-6dad97a2-4130-43be-9098-94664701f4ce</ParentID>
-    <Description>Continue to step 1.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 1.\par
-}
-</RichDescription>
-    <Sequence>1</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
     <UniqueID>ST-faf512fe-58aa-4e43-8d74-79617b574717</UniqueID>
     <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
     <Description>Le technicien entre un nom d'utilisateur et un mot de passe.</Description>
@@ -139,9 +115,57 @@
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-eb25c22d-ad2a-4a3c-8261-3d57c6593c73</UniqueID>
+    <ParentID>X-aaddf2ef-2a96-418a-a21d-746a8007f4ec</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-dd1da44f-f531-4ceb-9866-6ec85cff59de</UniqueID>
+    <ParentID>X-aaddf2ef-2a96-418a-a21d-746a8007f4ec</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 1.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-118764ea-6f15-4443-9fe1-0346877def38</UniqueID>
+    <ParentID>X-83e063ed-d885-4cf0-b505-0addbe01e993</ParentID>
+    <Description>Ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Ends.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
-    <UniqueID>X-6dad97a2-4130-43be-9098-94664701f4ce</UniqueID>
+    <UniqueID>X-83e063ed-d885-4cf0-b505-0addbe01e993</UniqueID>
     <ParentID>ST-faf512fe-58aa-4e43-8d74-79617b574717</ParentID>
+    <Description>Le technicien appuie sur le bouton de fermeture de la fenêtre d'authentification.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton de fermeture de la fen\'eatre d'authentification.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-aaddf2ef-2a96-418a-a21d-746a8007f4ec</UniqueID>
+    <ParentID>ST-ba56bf95-7bc7-40cc-8514-891158910858</ParentID>
     <Description>Les informations sont invalides.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
