@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5767</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -90,7 +90,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:53.5851661-04:00</DateAdded>
-    <DateModified>2015-10-22T15:04:28.491746-04:00</DateModified>
+    <DateModified>2015-10-22T15:24:46.0084437-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-58c6e75a-5fe9-46e6-b17d-5dba40d72433</UniqueID>
@@ -377,7 +377,11 @@
   <Step>
     <UniqueID>ST-d44957df-920c-45d1-972e-582c1a88e38c</UniqueID>
     <ParentID>X-dd488faf-e8c7-4a34-b3d1-320aadf5574e</ParentID>
-    <Description />
+    <Description>Ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Ends.\par
+}
+</RichDescription>
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
@@ -432,10 +436,10 @@
   <Extension>
     <UniqueID>X-dd488faf-e8c7-4a34-b3d1-320aadf5574e</UniqueID>
     <ParentID>ST-38bec355-cb7a-4fb9-bd36-9a56cb3dc21c</ParentID>
-    <Description>La base de données n'est pas accessible</Description>
+    <Description>La base de données n'est pas accessible.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible\cf0\par
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>

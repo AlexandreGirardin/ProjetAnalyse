@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5767</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5736</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -90,23 +90,24 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T10:46:03.7980141-04:00</DateAdded>
-    <DateModified>2015-09-17T18:53:55.3767603-04:00</DateModified>
+    <DateModified>2015-10-26T09:51:25.1769506-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-519db064-3cc5-4179-9f52-5eea87db0e3f</UniqueID>
     <UserID>UC-8-4</UserID>
     <ParentID>P-5c1248cd-ad98-4937-9ead-6f8d89ff6087</ParentID>
     <Name>Modifier une action</Name>
-    <Description>Permet de modifier le nom et/ou la description d'une action.</Description>
+    <Description>Permet de modifier les informations d'une action.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Permet de modifier le nom et/ou la description d'une \cf1 action\cf2 .\cf0\fs20\par
+\viewkind4\uc1\pard\f0\fs20 Permet de modifier les informations d'une \cf1\ul action\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
     <Priority>1</Priority>
     <PreConditions>Le technicien doit être dans la page de visualisation des actions.</PreConditions>
-    <PostConditions>Le nom et/ou la description de l'action ont été modifiés.</PostConditions>
+    <PostConditions>Les informations de l'action ont été modifiés.
+Le système est de retour à la page de visualisation des actions.</PostConditions>
     <Level />
     <Complexity />
     <UCStatus />
@@ -116,7 +117,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-17T13:22:14.9084413-04:00</DateAdded>
-    <DateModified>2015-09-17T17:54:23.1392835-04:00</DateModified>
+    <DateModified>2015-10-26T08:40:25.4582676-04:00</DateModified>
   </UseCase>
   <Diagram>
     <UniqueID>D-06d41637-19c2-44d6-9cd7-48a00c51a6b9</UniqueID>
@@ -369,10 +370,10 @@
   <Step>
     <UniqueID>ST-d8901b95-2638-4196-8af0-853fb8b113d7</UniqueID>
     <ParentID>MSS-63ee2487-5f69-40f8-8b3f-8e1c3d54df1c</ParentID>
-    <Description>Le système présente les informations.</Description>
+    <Description>Le système présente les informations de l'action dans une fenêtre de visualisation d'action.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9sente les informations.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9sente les informations de l'\cf3\ul action\cf2\ulnone  dans une fen\'eatre de visualisation d'\cf3\ul action\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -405,10 +406,10 @@
   <Step>
     <UniqueID>ST-6cb4ae9c-b304-4f7f-bb56-8a1524e5540b</UniqueID>
     <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
-    <Description>Le technicien change le nom et/ou la description de l'action.</Description>
+    <Description>Le technicien change la valeur des champs de l'action.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  change le nom et/ou la description de l'\cf3 action\cf2 .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  change la valeur des champs de l'\cf3\ul action\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -441,10 +442,10 @@
   <Step>
     <UniqueID>ST-a542e696-3365-4d19-bb6f-ccdd983adfd3</UniqueID>
     <ParentID>X-02ef5f45-11d7-40d4-8700-24b8259776ca</ParentID>
-    <Description>Ends.</Description>
+    <Description>Continue to step 7.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Ends.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 7.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -463,18 +464,6 @@
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-7c338582-384a-45a7-8cb1-f3b8ebeef47f</UniqueID>
-    <ParentID>X-d721b79d-8679-49c1-824b-e3dfa998d179</ParentID>
-    <Description>Le système annule la transaction.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  annule la transaction.\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
     <UniqueID>ST-2a5c4974-faf9-4afa-9dab-2c075edfd1a5</UniqueID>
     <ParentID>X-d721b79d-8679-49c1-824b-e3dfa998d179</ParentID>
     <Description>Le système affiche un message d'erreur approprié.</Description>
@@ -483,7 +472,7 @@
 \viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur appropri\'e9.\par
 }
 </RichDescription>
-    <Sequence>1</Sequence>
+    <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -495,7 +484,7 @@
 \viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 4.\par
 }
 </RichDescription>
-    <Sequence>2</Sequence>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -580,6 +569,18 @@
 }
 </RichDescription>
     <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-befe263c-6331-47e4-a2d6-bc8c584bebf3</UniqueID>
+    <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
+    <Description>Le système retourne à la page des actions.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne \'e0 la page des \cf3\ul actions\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>

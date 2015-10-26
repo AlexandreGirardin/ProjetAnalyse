@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5767</SavedWith>
+    <SavedWith>10.0.5606</SavedWith>
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -47,10 +47,10 @@ Le technicien se trouve dans l'écran des fiches.</PreConditions>
     <UserID>UC-4</UserID>
     <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
     <Name>Modifier une fiche de maintenance</Name>
-    <Description>Le technicien ajoute, modifie ou supprime des tâches à effectuer dans une fiche de maintenance.</Description>
+    <Description>Le technicien ajoute, modifie ou supprime des tâches à effectuer dans une fiche de maintenance ou modifie toute autre information qui s'y rapporte.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  ajoute, modifie ou supprime des \cf3 t\'e2ches\cf2  \'e0 effectuer dans une \cf3\ul fiche de maintenance\cf2\ulnone .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  ajoute, modifie ou supprime des \cf3\ul t\'e2ches\cf2\ulnone  \'e0 effectuer dans une \cf3\ul fiche de maintenance\cf2\ulnone  ou modifie toute autre information qui s'y rapporte.\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -66,7 +66,7 @@ Le technicien se trouve dans l'écran des fiches.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
-    <DateModified>2015-09-17T18:32:49.1693364-04:00</DateModified>
+    <DateModified>2015-10-26T08:50:39.9745469-04:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</UniqueID>
@@ -288,10 +288,10 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Step>
     <UniqueID>ST-2132b1f0-7dce-4abc-a850-e8995622959e</UniqueID>
     <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
-    <Description>Le technicien change les informations dans les champs concernés.</Description>
+    <Description>Le technicien modifie les informations dans les champs concernés.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  change les informations dans les champs concern\'e9s.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  modifie les informations dans les champs concern\'e9s.\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -547,6 +547,54 @@ La facture est ajoutée à Acomba.</PostConditions>
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-c06e1f8d-c109-4f69-9929-9891ed3fee01</UniqueID>
+    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
+    <Description>Le système retourne à la page de visualisations des fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne \'e0 la page de visualisations des \cf3\ul fiche de maintenance\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-0ce22c7f-2818-4065-a780-3385476c593a</UniqueID>
+    <ParentID>X-74bbf4a3-e429-4f0e-bf32-9787f4f0ab2b</ParentID>
+    <Description>Le système affiche un message d'erreur approprié.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur appropri\'e9.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-94c41846-a487-4594-8cdb-ac7eccecfee5</UniqueID>
+    <ParentID>X-74bbf4a3-e429-4f0e-bf32-9787f4f0ab2b</ParentID>
+    <Description>Continue to step 4.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 4.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-7baa6340-446a-4439-8423-c32d3a5ab66b</UniqueID>
+    <ParentID>X-df66cc23-ae3c-4b17-b489-a4ace74e2ce2</ParentID>
+    <Description>Continue to step 7.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 7.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</UniqueID>
     <ParentID>ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd</ParentID>
@@ -590,6 +638,30 @@ La facture est ajoutée à Acomba.</PostConditions>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
 \viewkind4\uc1\pard\f0\fs20 La \cf1\ul fiche\cf2\ulnone  est introuvable.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-74bbf4a3-e429-4f0e-bf32-9787f4f0ab2b</UniqueID>
+    <ParentID>ST-3d549701-7760-4a42-8ae3-ba374e9ee8c3</ParentID>
+    <Description>Un des champs est vide.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Un des champs est vide.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-df66cc23-ae3c-4b17-b489-a4ace74e2ce2</UniqueID>
+    <ParentID>ST-3d549701-7760-4a42-8ae3-ba374e9ee8c3</ParentID>
+    <Description>Le technicien appuie sur le bouton «Annuler».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton \'abAnnuler\'bb.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
