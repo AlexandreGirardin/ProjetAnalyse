@@ -15,8 +15,12 @@ TARGET = QtSQL
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    mainwindow.cpp \
+    gestionnaireconnexion.cpp
 
-HEADERS  +=
+HEADERS  += \
+    mainwindow.h \
+    gestionnaireconnexion.h
 
 FORMS    += mainwindow.ui
