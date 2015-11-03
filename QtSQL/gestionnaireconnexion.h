@@ -14,6 +14,7 @@ class GestionnaireConnexion : public QObject
 public:
     explicit GestionnaireConnexion(QObject *parent = 0);
     QSqlDatabase db;
+    QSqlQuery requete(const char *commande);
 
 private:
 

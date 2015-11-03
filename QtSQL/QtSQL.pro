@@ -6,14 +6,10 @@
 
 QT       += core gui sql
 
-CONFIG += console
-CONFIG -= app_bundle
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QtSQL
 TEMPLATE = app
-
 
 SOURCES += main.cpp \
     mainwindow.cpp \
