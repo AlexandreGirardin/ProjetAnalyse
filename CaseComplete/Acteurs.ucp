@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -19,16 +19,16 @@
     <UserID>A-5</UserID>
     <ParentID>P-9221a0e8-6356-49f3-8ca0-7df5cd506cae</ParentID>
     <Name>Système</Name>
-    <Description>Le système de suivi de dossier.</Description>
+    <Description>Le système de suivi de dossier. L'application elle-même</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  de suivi de dossier.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  de suivi de dossier. L'application elle-m\'eame\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
     <Complexity />
     <DateAdded>2015-09-03T14:58:48.2236027-04:00</DateAdded>
-    <DateModified>2015-09-10T13:56:54.8108717-04:00</DateModified>
+    <DateModified>2015-11-02T10:26:17.9791487-05:00</DateModified>
   </Actor>
   <Actor>
     <UniqueID>A-660e9085-9a4f-46e5-b148-e1208675c588</UniqueID>

@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5689</CreatedWith>
   </VersionInfo>
   <Project>
@@ -438,4 +438,9 @@
     <ChoicesExclusive>false</ChoicesExclusive>
     <Multiline>false</Multiline>
   </BuiltInField>
+  <Filter>
+    <UniqueID>F-84eb389e-67c2-4e45-890c-90e21b55b99c</UniqueID>
+    <Name>Diagrams</Name>
+    <AppliesTo>DiagramElement</AppliesTo>
+  </Filter>
 </UCTDataSet>
