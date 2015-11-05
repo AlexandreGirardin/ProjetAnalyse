@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSql/QSqlTableModel>
+#include <QtSql/QSqlQueryModel>
+#include <QStandardItemModel>
 
 namespace Ui {
 class MainWindow;
