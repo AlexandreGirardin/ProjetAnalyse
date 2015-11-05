@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     GestionnaireConnexion gc;
     QSqlTableModel *stm = new QSqlTableModel(this, gc.db);
     stm->setTable("actions");
-    stm->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    stm->setEditStrategy(QSqlTableModel::OnFieldChange);
     stm->select();
     stm->setHeaderData(0, Qt::Horizontal, tr("id"));
     stm->setHeaderData(1, Qt::Horizontal, tr("nom"));
