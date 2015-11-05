@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5736</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -39,7 +39,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0301979-04:00</DateAdded>
-    <DateModified>2015-10-26T09:42:02.327962-04:00</DateModified>
+    <DateModified>2015-11-02T09:43:02.5798297-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</UniqueID>
@@ -66,7 +66,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.4187481-04:00</DateModified>
+    <DateModified>2015-11-02T09:44:07.643558-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</UniqueID>
@@ -94,7 +94,7 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
-    <DateModified>2015-10-22T15:28:54.2204796-04:00</DateModified>
+    <DateModified>2015-11-02T09:43:48.1521889-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</ParentID>
@@ -233,10 +233,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-3351c72b-756f-486f-88d3-f5e560fe75f2</UniqueID>
     <ParentID>X-0595e81f-4016-48e1-a5e9-27d62c4119ca</ParentID>
-    <Description>Le système retourne un message d'erreur.</Description>
+    <Description>Le système affiche un message d'erreur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -292,10 +292,10 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
   <Step>
     <UniqueID>ST-9a0e28df-cfde-4904-babe-f997aa8c84a6</UniqueID>
     <ParentID>X-ed732aff-dbba-46f1-b785-b3fc05edf220</ParentID>
-    <Description>Le système retourne un message d'erreur.</Description>
+    <Description>Le système affiche un message d'erreur.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne un message d'erreur.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -478,6 +478,29 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <Sequence>3</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-9cac6be1-7123-4de1-9439-84c7c07f3353</UniqueID>
+    <ParentID>X-523a1b8f-1faa-42d4-8f69-a5c5767b362f</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-dcc1f900-c58c-4355-a508-1ba1240b4938</UniqueID>
+    <ParentID>X-523a1b8f-1faa-42d4-8f69-a5c5767b362f</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue to step 1.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-65b3cc51-f8ec-4266-bc14-83d4f8e29104</UniqueID>
     <ParentID>ST-bab3de28-fdc2-4dfd-a661-1376ab98ca81</ParentID>
@@ -567,6 +590,18 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
 \viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2 client\cf1  appuie sur le bouton \'abAnnuler\'bb.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-523a1b8f-1faa-42d4-8f69-a5c5767b362f</UniqueID>
+    <ParentID>ST-f6867454-6b3e-4b15-a5fe-d271438e1c2c</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
