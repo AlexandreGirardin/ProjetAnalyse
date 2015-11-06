@@ -1,18 +1,32 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 #include "dialog.h"
+#include <QDebug>
 
-Dialog::Dialog(QWidget *parent, Action *a_action) :
+Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
-    ui->lineEdit->setText(a_action->id);
-    ui->lineEdit_2->setText(a_action->nom);
-    ui->lineEdit_3->setText(a_action->description);
 }
 
 Dialog::~Dialog()
 {
     delete ui;
+}
+
+void Dialog::setNom(QString a_nom) {
+    ui->champNom->setText(a_nom);
+}
+
+QString Dialog::getNom() {
+    return ui->champNom->text();
+}
+
+void Dialog::setDescription(QString a_description) {
+    ui->champDescription->setText(a_description);
+}
+
+QString Dialog::getDescription() {
+    return ui->champDescription->text();
 }

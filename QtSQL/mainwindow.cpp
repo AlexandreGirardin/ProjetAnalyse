@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QSqlQuery commande = gc.requete("SELECT * FROM actions");
     while (commande.next()) {
         Action action(commande.value(0).toInt(), commande.value(1).toString(), commande.value(2).toString());
-        liste.append(action.nom+" "+action.description);
+//        liste.append(action.nom+" "+action.description);
     }
 
     modele->setStringList(liste);
