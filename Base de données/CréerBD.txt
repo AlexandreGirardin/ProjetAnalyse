@@ -1,0 +1,4 @@
+pour créer la BD, exécuter les script dans cet ordre:
+Dossiers.sql
+Contraintes.sql
+Seeder.sql
