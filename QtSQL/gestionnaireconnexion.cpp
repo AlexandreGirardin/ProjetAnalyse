@@ -9,8 +9,6 @@ GestionnaireConnexion::GestionnaireConnexion(QObject *parent) : QObject(parent)
     db.setPassword("");
     if (!db.open()) {
         qDebug() << "Database error occurred";
-    }else{
-        qDebug() << "Connecté!";
     }
 }
 
