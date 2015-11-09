@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5718</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -40,7 +40,7 @@ Le technicien se trouve dans l'écran des fiches.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.3091728-04:00</DateModified>
+    <DateModified>2015-11-02T09:55:07.371343-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -66,7 +66,7 @@ Le technicien se trouve dans l'écran des fiches.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
-    <DateModified>2015-10-26T08:50:39.9745469-04:00</DateModified>
+    <DateModified>2015-11-02T09:54:54.8038501-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</UniqueID>
@@ -120,7 +120,33 @@ La facture est ajoutée à Acomba.</PostConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.3426976-04:00</DateModified>
+    <DateModified>2015-11-02T09:53:24.0619744-05:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-d6188758-d353-48f5-aba2-86e7e521c02c</UniqueID>
+    <UserID>UC-7-3</UserID>
+    <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
+    <Name>Consulter une fiche de maintenance</Name>
+    <Description>Affiche les informations sur la fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Affiche les informations sur la\cf1  \cf2 fiche de maintenance\cf1 .\cf0\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <Priority>1</Priority>
+    <PreConditions>Le technicien se trouve dans le dossier de client.</PreConditions>
+    <PostConditions>Les informations de l'appareil sélectionné sont affichées à l'écran</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
+    <DateModified>2015-11-02T10:13:46.345908-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
@@ -142,6 +168,11 @@ La facture est ajoutée à Acomba.</PostConditions>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
+  <UCActor>
+    <ParentID>UC-d6188758-d353-48f5-aba2-86e7e521c02c</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
   <Scenario>
     <UniqueID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</UniqueID>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
@@ -157,6 +188,10 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Scenario>
     <UniqueID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</UniqueID>
     <ParentID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-5bcb2ed6-0bdd-4790-bfc7-900b576f23c4</UniqueID>
+    <ParentID>UC-d6188758-d353-48f5-aba2-86e7e521c02c</ParentID>
   </Scenario>
   <Step>
     <UniqueID>ST-7c5a48ce-4720-4e3d-9313-72a954622d8e</UniqueID>
@@ -245,9 +280,9 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Step>
     <UniqueID>ST-e30f49cf-6ea8-4b17-a74e-7768c6e2c231</UniqueID>
     <ParentID>X-5ec2ecd7-b485-4a1f-b756-266410bb6054</ParentID>
-    <Description>continue to step 0.</Description>
+    <Description>continue to step 1.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 continue to step 0.\par
+\viewkind4\uc1\pard\f0\fs20 continue to step 1.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -506,10 +541,10 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Step>
     <UniqueID>ST-228a6e3e-280b-406e-841a-072e07440ffa</UniqueID>
     <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
-    <Description>Le système présente </Description>
+    <Description>Le système présente le formulaire de création de fiche de maintenance</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  pr\'e9sente \par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  pr\'e9sente le \cf3 formulaire de cr\'e9ation de fiche de maintenance\cf1\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -561,6 +596,122 @@ La facture est ajoutée à Acomba.</PostConditions>
 }
 </RichDescription>
     <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-6a61ed60-bec3-41e5-ba09-59a45caaa6c7</UniqueID>
+    <ParentID>X-52ccb30f-b2a8-45b7-85e0-5bf31c8e3ebc</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-5ae95cb2-a1be-457b-8649-bd977a11c87b</UniqueID>
+    <ParentID>X-ed557a29-5a30-4993-a79d-96594749be1f</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-9ce9d81a-e642-484a-9ee4-0a8177257b7a</UniqueID>
+    <ParentID>X-ed557a29-5a30-4993-a79d-96594749be1f</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue to step 1.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-98a229db-6810-43ab-8417-b19713aac191</UniqueID>
+    <ParentID>X-038df748-19dc-499e-b70a-25a65cf08e34</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-1d031e1b-c0a1-48db-bb1e-f9dfbfb54643</UniqueID>
+    <ParentID>X-038df748-19dc-499e-b70a-25a65cf08e34</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\lang3084\f0\fs20 Continue to step 1.\lang4105\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-ee795056-9264-42b2-86c5-7d31ac64f359</UniqueID>
+    <ParentID>X-f933c454-76e4-452a-8b4d-decc1519a54c</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-1b4530c9-a6ae-411d-825b-d792f22aa79e</UniqueID>
+    <ParentID>X-f933c454-76e4-452a-8b4d-decc1519a54c</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\lang3084\f0\fs20 Continue to step 1.\lang4105\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-9521fbdc-b579-442c-b047-30a6189d03f9</UniqueID>
+    <ParentID>X-52ccb30f-b2a8-45b7-85e0-5bf31c8e3ebc</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue to step 1.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-696f1b59-3934-4847-b401-f089b21cd47f</UniqueID>
+    <ParentID>MSS-5bcb2ed6-0bdd-4790-bfc7-900b576f23c4</ParentID>
+    <Description>Le technicien sélectionne la fiche de maintenance à consulter.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne la \cf3 fiche de maintenance\cf2  \'e0\cf3  \cf2 consulter.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-eb491b93-2ea0-4945-8f33-a7a8ee08c6a1</UniqueID>
+    <ParentID>MSS-5bcb2ed6-0bdd-4790-bfc7-900b576f23c4</ParentID>
+    <Description>Le système affiche la page de visualisation de la fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la page de visualisation de la \cf3 fiche de maintenance\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
@@ -635,9 +786,57 @@ La facture est ajoutée à Acomba.</PostConditions>
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Extension>
+  <Extension>
+    <UniqueID>X-52ccb30f-b2a8-45b7-85e0-5bf31c8e3ebc</UniqueID>
+    <ParentID>ST-e7377e83-2272-48ea-a60d-25cd9c7cda90</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-ed557a29-5a30-4993-a79d-96594749be1f</UniqueID>
+    <ParentID>ST-7826d7be-7aa8-4983-948d-45561288906a</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-038df748-19dc-499e-b70a-25a65cf08e34</UniqueID>
+    <ParentID>ST-ac129db9-a3c1-484f-a731-9fd7b61b4c5a</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-f933c454-76e4-452a-8b4d-decc1519a54c</UniqueID>
+    <ParentID>ST-22aeb89f-da51-4d67-b4fe-bfb2207a3d16</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
   <UserID>
     <DefaultPrefix>UC-7-</DefaultPrefix>
-    <NextValue>2</NextValue>
+    <NextValue>5</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>A-7-</DefaultPrefix>

@@ -1,25 +1,26 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "gestionnaireconnexion.h"
+#include "action.h"
+#include "QStringListModel"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QStringListModel *modele;
+    modele = new QStringListModel(this);
+    QStringList liste;
     GestionnaireConnexion gc;
-    QSqlTableModel *stm = new QSqlTableModel(this, gc.db);
-    stm->setTable("actions");
-    stm->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    stm->select();
-    stm->setHeaderData(0, Qt::Horizontal, tr("id"));
-    stm->setHeaderData(1, Qt::Horizontal, tr("nom"));
-    stm->setHeaderData(2, Qt::Horizontal, tr("description"));
-    ui->tableView->setModel(stm);
-//    QSqlQuery commande = gc.requete("SELECT * FROM actions");
-//    while (commande.next()) {
+    QSqlQuery commande = gc.requete("SELECT * FROM actions");
+    while (commande.next()) {
+        Action action(commande.value(0).toInt(), commande.value(1).toString(), commande.value(2).toString());
+//        liste.append(action.nom+" "+action.description);
+    }
 
-//    }
+    modele->setStringList(liste);
+    ui->listView->setModel(modele);
 }
 
 MainWindow::~MainWindow()

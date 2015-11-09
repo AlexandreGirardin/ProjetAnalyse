@@ -13,10 +13,17 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     mainwindow.cpp \
-    gestionnaireconnexion.cpp
+    gestionnaireconnexion.cpp \
+    entreedb.cpp \
+    action.cpp \
+    dialog.cpp
 
 HEADERS  += \
     mainwindow.h \
-    gestionnaireconnexion.h
+    gestionnaireconnexion.h \
+    entreedb.h \
+    action.h \
+    dialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialog.ui
