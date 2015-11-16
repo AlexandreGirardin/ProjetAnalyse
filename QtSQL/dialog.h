@@ -16,6 +16,7 @@ public:
     explicit Dialog(QWidget *parent = 0);
     ~Dialog();
     void setNom(QString a_nom);
+    void setId(int a_id);
     QString getNom();
     void setDescription(QString a_description);
     QString getDescription();
