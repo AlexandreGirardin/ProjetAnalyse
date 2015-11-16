@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
         Action *action = new Action(commande.value(0).toInt(), commande.value(1).toString(), commande.value(2).toString());
         Dialog *fenetre;
         fenetre = new Dialog();
+        fenetre->setId(action->id);
         fenetre->setNom(action->nom);
         fenetre->setDescription(action->description);
         if (fenetre->exec() == QDialog::Accepted) {

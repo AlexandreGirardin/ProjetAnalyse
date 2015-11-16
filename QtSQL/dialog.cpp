@@ -15,6 +15,10 @@ Dialog::~Dialog()
     delete ui;
 }
 
+void Dialog::setId(int a_id) {
+    ui->champId->setText(QString::number(a_id));
+}
+
 void Dialog::setNom(QString a_nom) {
     ui->champNom->setText(a_nom);
 }
