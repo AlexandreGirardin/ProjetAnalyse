@@ -90,7 +90,7 @@
     <Sequence>4</Sequence>
     <Complexity />
     <DateAdded>2015-08-31T10:36:17.3249026-04:00</DateAdded>
-    <DateModified>2015-09-17T14:50:32.2768733-04:00</DateModified>
+    <DateModified>2015-11-16T09:37:34.8553201-05:00</DateModified>
   </Actor>
   <Actor>
     <UniqueID>A-edb87720-59a8-4bf3-80ad-5c5351fbb7c0</UniqueID>
@@ -164,7 +164,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er un \cf2 appareil\cf1  (\cf3\ul UC-9-1\cf1\ulnone )\cf0\par
 }
 </RichDescription>
-    <Sequence>2</Sequence>
+    <Sequence>5</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-4302343e-41c2-45a3-8f58-0d39565ab061</UniqueID>
@@ -175,18 +175,18 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er un \cf2 dossier de client\cf1  (\cf3\ul UC-1\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>3</Sequence>
+    <Sequence>6</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-52ab2833-10a2-4643-be35-f28d740c8952</UniqueID>
     <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
-    <Description>Créer une fiche dans le dossier d'un client (UC-7)</Description>
+    <Description>Créer une fiche de maintenance (UC-7)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er une \cf2 fiche\cf1  dans le dossier d'un \cf2 client\cf1  (\cf3\ul UC-7\cf1\ulnone )\cf0\fs20\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er une \cf2 fiche de maintenance\cf1  (\cf3\ul UC-7\cf1\ulnone )\cf0\par
 }
 </RichDescription>
-    <Sequence>4</Sequence>
+    <Sequence>7</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-24ba86a4-0c86-4668-a408-7345e5dfdc4a</UniqueID>
@@ -197,7 +197,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Cr\'e9er une nouvelle \cf2 action\cf1  (\cf3\ul UC-8-1\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>5</Sequence>
+    <Sequence>8</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-8988185f-bad1-4d2c-b95b-1b773396fc62</UniqueID>
@@ -208,7 +208,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Fermer une \cf2 fiche de maintenance\cf1  (\cf3\ul UC-2\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>6</Sequence>
+    <Sequence>9</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-a98f488f-fdb8-468d-a53d-9b9e21a34749</UniqueID>
@@ -219,7 +219,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Modifier un \cf2 appareil\cf1  (\cf3\ul UC-9-3\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>7</Sequence>
+    <Sequence>10</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-ac1d01b9-492d-462a-af5b-707757dd449f</UniqueID>
@@ -230,7 +230,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Modifier un dossiers de \cf2 client\cf1  (\cf3\ul UC-5\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>8</Sequence>
+    <Sequence>11</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-0188f97b-dbac-4afe-81b7-7309df4426c6</UniqueID>
@@ -241,7 +241,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Modifier une \cf2 action\cf1  (\cf3\ul UC-8-4\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>9</Sequence>
+    <Sequence>12</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-af48f787-f382-4c8a-9c65-d9938e7bfc14</UniqueID>
@@ -252,7 +252,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Modifier une \cf2 fiche de maintenance\cf1  (\cf3\ul UC-4\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>10</Sequence>
+    <Sequence>13</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-3b2a4d33-a1e3-48a7-a0bf-3764d178d9f1</UniqueID>
@@ -263,7 +263,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Ouverture de session (\cf2\ul UC-8\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>11</Sequence>
+    <Sequence>14</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-b9450f8d-d2a0-4f39-87a4-aa01c53ab0e8</UniqueID>
@@ -274,7 +274,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Rechercher un \cf2 dossier de client\cf1  (\cf3\ul UC-9\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>12</Sequence>
+    <Sequence>15</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-52b393c4-c3f5-4929-8da1-c10050ba6aac</UniqueID>
@@ -285,7 +285,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Rechercher une \cf2 fiche de maintenance\cf1  (\cf3\ul UC-7-1\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>13</Sequence>
+    <Sequence>16</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-d90bae53-167a-4758-9c15-b5a653babab7</UniqueID>
@@ -296,7 +296,7 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 \viewkind4\uc1\pard\cf1\f0\fs20 Voir une d\'e9finition d'\cf2 action\cf1  (\cf3\ul UC-8-3\cf1\ulnone )\cf0\fs20\par
 }
 </RichDescription>
-    <Sequence>14</Sequence>
+    <Sequence>17</Sequence>
   </Goal>
   <Goal>
     <UniqueID>G-611bfed3-06ff-4ee0-870b-3cfa8e48edbc</UniqueID>
@@ -330,6 +330,39 @@ Il a aussi acc\'e8s \'e0 une partie externe du \cf1\ul syst\'e8me\cf2\ulnone  po
 }
 </RichDescription>
     <Sequence>2</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-a46a71ce-18f2-4afe-8a5d-c647d5629c79</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Consulter un dossier de client (UC-7-4)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Consulter un \cf2 dossier de client\cf1  (\cf3\ul UC-7-4\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-17038253-d347-4113-9187-a85199b28380</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Consulter une action (UC-15-1)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Consulter une \cf2 action\cf1  (\cf3\ul UC-15-1\cf1\ulnone )\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+  </Goal>
+  <Goal>
+    <UniqueID>G-205a6cbc-77a7-45b5-bf5f-3ed4d5eaa851</UniqueID>
+    <ParentID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ParentID>
+    <Description>Consulter une fiche de maintenance (UC-7-3)</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Consulter une \cf2 fiche de maintenance\cf1  (\cf3\ul UC-7-3\cf1\ulnone )\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
   </Goal>
   <UserID>
     <DefaultPrefix>UC-2-</DefaultPrefix>

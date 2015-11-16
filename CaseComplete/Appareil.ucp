@@ -53,7 +53,7 @@
 </RichDescription>
     <Sequence>1</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien se trouve dans le dossier de client.</PreConditions>
+    <PreConditions>Le technicien se trouve dans le dossier de client ou dans la page principale des appareils.</PreConditions>
     <PostConditions>Les informations de l'appareil sélectionné sont affichées à l'écran</PostConditions>
     <Level />
     <Complexity />
@@ -64,7 +64,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-11-02T10:11:18.1910937-05:00</DateModified>
+    <DateModified>2015-11-09T11:19:18.8724358-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-7fc215a1-23c2-4776-b926-b62f4574723f</UniqueID>
@@ -240,7 +240,7 @@
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la page de visualisation de l'\cf3 appareil\cf2 .\cf0\par
 }
 </RichDescription>
-    <Sequence>1</Sequence>
+    <Sequence>2</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -396,6 +396,41 @@
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
+  <Step>
+    <UniqueID>ST-101aed09-6938-40dd-94e1-3c6dbc7596db</UniqueID>
+    <ParentID>MSS-7e315fe2-73a6-4d9b-8e0a-468a94a71b9c</ParentID>
+    <Description>Le système va chercher les informations de l'appareil dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  va chercher les informations de l'\cf3 appareil\cf2  dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-ec3c6f99-ec83-408a-89f0-a7bcfac6a861</UniqueID>
+    <ParentID>X-62f5a627-3806-4f63-ad6f-e4d02571163a</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-3f721b34-ca21-48db-83d9-0caaaf711ec7</UniqueID>
+    <ParentID>X-62f5a627-3806-4f63-ad6f-e4d02571163a</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\lang3084\f0\fs20 Continue to step 1.\lang4105\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-3bde9781-fb76-4055-a35c-ca34bd28c6fc</UniqueID>
     <ParentID>ST-795f05e8-eca0-4597-a02a-2aa98524a99c</ParentID>
@@ -459,6 +494,18 @@
   <Extension>
     <UniqueID>X-94a663cc-a7e1-48b9-9005-f77c508b7545</UniqueID>
     <ParentID>ST-c5564c28-5748-437c-b2e1-b0f1c8844d93</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-62f5a627-3806-4f63-ad6f-e4d02571163a</UniqueID>
+    <ParentID>ST-101aed09-6938-40dd-94e1-3c6dbc7596db</ParentID>
     <Description>La base de données n'est pas accessible.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}

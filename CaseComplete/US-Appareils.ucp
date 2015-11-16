@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -26,12 +26,12 @@
 }
 </RichDescription>
     <Sequence>0</Sequence>
-    <Priority />
+    <Priority>Must</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T09:47:42.796218-04:00</DateAdded>
-    <DateModified>2015-09-17T10:14:49.6154754-04:00</DateModified>
+    <DateModified>2015-11-16T08:56:02.85314-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-8aceabb7-ca3b-4028-b1e1-344edbd8354d</UniqueID>
@@ -45,12 +45,12 @@
 }
 </RichDescription>
     <Sequence>1</Sequence>
-    <Priority />
+    <Priority>Must</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T10:16:09.659216-04:00</DateAdded>
-    <DateModified>2015-09-17T10:21:49.6074133-04:00</DateModified>
+    <DateModified>2015-11-16T08:56:14.5255771-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-28313edc-3c5d-4cd9-a820-dcb113c436f5</UniqueID>
@@ -66,12 +66,12 @@ Pour satisfaire les r\'e8gles d'affaires, un dossier d'\cf2\ul appareil\cf1\ulno
 }
 </RichDescription>
     <Sequence>2</Sequence>
-    <Priority />
+    <Priority>Must</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T10:17:46.0049852-04:00</DateAdded>
-    <DateModified>2015-09-17T10:19:20.7907517-04:00</DateModified>
+    <DateModified>2015-11-16T08:56:18.1507509-05:00</DateModified>
   </Story>
   <UserID>
     <DefaultPrefix>UC-12-</DefaultPrefix>

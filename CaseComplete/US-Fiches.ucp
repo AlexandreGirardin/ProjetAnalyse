@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5606</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5606</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -18,7 +18,7 @@
     <UniqueID>S-ed43d6cc-3e5e-492e-a414-ea32e2c98461</UniqueID>
     <UserID>S-14-1</UserID>
     <ParentID>P-4324cde9-0974-408f-89e3-7cba51c1f518</ParentID>
-    <Name>Ajouter une fiche dans le dossier d'un client</Name>
+    <Name>Créer une fiche de maintenance.</Name>
     <Description>Un technicien peut créer une nouvelle fiche de maintenance pour prendre en note les tâches à effectuer sur un appareil et y noter leur avancement individuel par la suite.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
@@ -26,12 +26,12 @@
 }
 </RichDescription>
     <Sequence>0</Sequence>
-    <Priority />
+    <Priority>Must</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T13:12:52.540228-04:00</DateAdded>
-    <DateModified>2015-09-17T13:21:30.6951381-04:00</DateModified>
+    <DateModified>2015-11-16T09:33:11.8876655-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-08fa35e3-a0bb-4362-aa71-387404991b8c</UniqueID>
@@ -45,12 +45,12 @@
 }
 </RichDescription>
     <Sequence>1</Sequence>
-    <Priority />
+    <Priority>Must</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T13:21:37.8867507-04:00</DateAdded>
-    <DateModified>2015-09-17T13:33:12.0647701-04:00</DateModified>
+    <DateModified>2015-11-16T08:56:57.0588919-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-a088a10d-095e-4501-9219-ed4f1ef4da42</UniqueID>
@@ -64,12 +64,12 @@
 }
 </RichDescription>
     <Sequence>2</Sequence>
-    <Priority />
+    <Priority>Must</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T13:33:24.9815928-04:00</DateAdded>
-    <DateModified>2015-09-17T13:37:01.6065735-04:00</DateModified>
+    <DateModified>2015-11-16T08:57:01.9341097-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-252a0aa6-404e-429d-8ff2-83bf273a48b6</UniqueID>
@@ -83,12 +83,31 @@
 }
 </RichDescription>
     <Sequence>3</Sequence>
-    <Priority />
+    <Priority>Must</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T13:37:04.757779-04:00</DateAdded>
-    <DateModified>2015-09-17T13:44:21.3869459-04:00</DateModified>
+    <DateModified>2015-11-16T08:57:07.7625193-05:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-4e5e09eb-21f6-4804-8242-b19bc7306838</UniqueID>
+    <UserID>S-14-5</UserID>
+    <ParentID>P-4324cde9-0974-408f-89e3-7cba51c1f518</ParentID>
+    <Name>Consulter une fiche de maintenance</Name>
+    <Description>Un technicien peut consulter une fiche de maintenance dans le système. Permet d'afficher toutes les informations contenues dans une fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut consulter une \cf3 fiche de maintenance\cf2  dans le \cf1\ul syst\'e8me\cf2\ulnone . Permet d'afficher toutes les informations contenues dans une \cf3 fiche de maintenance\cf2 .\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-11-16T09:32:15.641709-05:00</DateAdded>
+    <DateModified>2015-11-16T09:32:51.6125524-05:00</DateModified>
   </Story>
   <UserID>
     <DefaultPrefix>UC-14-</DefaultPrefix>
@@ -108,6 +127,6 @@
   </UserID>
   <UserID>
     <DefaultPrefix>S-14-</DefaultPrefix>
-    <NextValue>5</NextValue>
+    <NextValue>6</NextValue>
   </UserID>
 </UCTDataSet>

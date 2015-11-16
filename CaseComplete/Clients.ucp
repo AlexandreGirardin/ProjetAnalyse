@@ -66,7 +66,7 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T08:21:35.5151788-04:00</DateAdded>
-    <DateModified>2015-11-02T09:52:35.5006055-05:00</DateModified>
+    <DateModified>2015-11-09T11:24:05.8441622-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eec925da-091e-42c8-b860-c1841536beb0</UniqueID>
@@ -81,7 +81,8 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
 </RichDescription>
     <Sequence>2</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien est dans la page de visualisation des dossiers de client.</PreConditions>
+    <PreConditions>Le technicien est dans la page de visualisation des dossiers de client.
+La base de données est accessible et les dossiers de clients sont affichés.</PreConditions>
     <PostConditions>S'il existe, le dossier recherché est identifié.</PostConditions>
     <Level />
     <Complexity />
@@ -92,7 +93,7 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:59:20.7772349-04:00</DateAdded>
-    <DateModified>2015-11-02T09:47:45.3360273-05:00</DateModified>
+    <DateModified>2015-11-09T11:20:09.7015324-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-61e8633f-4ad2-4a95-9dc6-b046e6423dda</UniqueID>
@@ -107,7 +108,7 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
 </RichDescription>
     <Sequence>3</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien se trouve dans le dossier de client.</PreConditions>
+    <PreConditions>Le technicien se trouve dans la page principale des clients.</PreConditions>
     <PostConditions>Les informations de l'appareil sélectionné sont affichées à l'écran</PostConditions>
     <Level />
     <Complexity />
@@ -118,7 +119,7 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-11-02T10:15:13.5575909-05:00</DateModified>
+    <DateModified>2015-11-09T11:19:15.318132-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
@@ -234,18 +235,6 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-e11574b3-81a1-431c-9996-1ca062ebd8fd</UniqueID>
-    <ParentID>MSS-4c40d616-f349-433f-9cf9-3e60e24a7350</ParentID>
-    <Description>Le technicien demande au client son numéro de téléphone.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  demande au \cf3\ul client\cf2\ulnone  son \cf3\ul num\'e9ro de t\'e9l\'e9phone\cf2\ulnone .\cf0\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
     <UniqueID>ST-21c401e5-8e2c-46c3-9905-a72bce4d4a9b</UniqueID>
     <ParentID>MSS-4c40d616-f349-433f-9cf9-3e60e24a7350</ParentID>
     <Description>Le technicien entre le numéro dans le champ de recherche.</Description>
@@ -254,7 +243,7 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  entre le num\'e9ro dans le champ de recherche.\cf0\par
 }
 </RichDescription>
-    <Sequence>1</Sequence>
+    <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -266,7 +255,7 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  recherche dans la \cf1\ul base de donn\'e9es\cf2\ulnone  le \cf3\ul dossier de client\cf2\ulnone  ayant ce num\'e9ro.\cf0\par
 }
 </RichDescription>
-    <Sequence>2</Sequence>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -278,7 +267,7 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche une liste contenant le(s) dossier(s) de \cf1\ul client\cf2\ulnone  trouv\'e9(s).\cf0\par
 }
 </RichDescription>
-    <Sequence>3</Sequence>
+    <Sequence>2</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -290,7 +279,7 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  double-clique sur le dossier du \cf3\ul client\cf2\ulnone  recherch\'e9.\cf0\par
 }
 </RichDescription>
-    <Sequence>4</Sequence>
+    <Sequence>3</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -302,16 +291,16 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche les informations sur ce dossier.\cf0\par
 }
 </RichDescription>
-    <Sequence>5</Sequence>
+    <Sequence>4</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
     <UniqueID>ST-68300113-5f67-4d44-93d2-38dbd779707b</UniqueID>
     <ParentID>MSS-3095a5ed-563a-406a-b0f1-e5833b76b270</ParentID>
-    <Description>Le technicien repère le client désiré dans la liste des clients.</Description>
+    <Description>Le technicien sélectionne le client désiré dans la liste des clients.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rep\'e8re le \cf3\ul client\cf2\ulnone  d\'e9sir\'e9 dans la liste des \cf3\ul clients\cf2\ulnone .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne le \cf3\ul client\cf2\ulnone  d\'e9sir\'e9 dans la liste des \cf3\ul clients\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -428,10 +417,10 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
   <Step>
     <UniqueID>ST-9d7d1deb-150a-4dd6-983e-62eb869dc330</UniqueID>
     <ParentID>X-eca740c2-b959-419b-b4ab-309e15d18d21</ParentID>
-    <Description>Return to step 2.</Description>
+    <Description>Return to step 1.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Return to step 2.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Return to step 1.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -534,9 +523,9 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
   <Step>
     <UniqueID>ST-03d48531-db03-40a0-a098-dc721a328a9e</UniqueID>
     <ParentID>X-e335cfec-b7c1-4094-9c24-864e3cfc1318</ParentID>
-    <Description>Continue to step 2.</Description>
+    <Description>Continue to step 1.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\lang3084\f0\fs20 Continue to step 2.\lang4105\par
+\viewkind4\uc1\pard\lang3084\f0\fs20 Continue to step 1.\lang4105\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -563,14 +552,42 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la page de visualisation du \cf3 dossier de client\cf2 .\cf0\par
 }
 </RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-937a7873-1f00-4e88-8aba-a4f2570d4c6c</UniqueID>
+    <ParentID>MSS-0fa73827-a4db-47b1-91c4-8ecd13e18918</ParentID>
+    <Description>Le système va chercher les informations du dossier de client dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  va chercher les informations du \cf3 dossier de client\cf2  dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\fs20\par
+}
+</RichDescription>
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-7fc48b9c-a50e-4cb3-90ee-7bf023614649</UniqueID>
-    <ParentID>MSS-0fa73827-a4db-47b1-91c4-8ecd13e18918</ParentID>
-    <Description />
-    <Sequence>2</Sequence>
+    <UniqueID>ST-e9347412-86bb-4628-8dec-1193e401a632</UniqueID>
+    <ParentID>X-6cb312c2-5138-4add-b203-5c27969d2c3c</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-5ecfb0b9-9483-48e2-8731-56713304b196</UniqueID>
+    <ParentID>X-6cb312c2-5138-4add-b203-5c27969d2c3c</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\lang3084\f0\fs20 Continue to step 1.\lang4105\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
@@ -659,6 +676,18 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
   <Extension>
     <UniqueID>X-e335cfec-b7c1-4094-9c24-864e3cfc1318</UniqueID>
     <ParentID>ST-0d2df5d3-7386-4d0c-a749-040947b228fa</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-6cb312c2-5138-4add-b203-5c27969d2c3c</UniqueID>
+    <ParentID>ST-937a7873-1f00-4e88-8aba-a4f2570d4c6c</ParentID>
     <Description>La base de données n'est pas accessible.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}

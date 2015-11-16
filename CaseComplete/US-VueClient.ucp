@@ -2,7 +2,7 @@
 <UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
   <VersionInfo>
     <Version>5.0</Version>
-    <SavedWith>10.0.5736</SavedWith>
+    <SavedWith>10.0.5767</SavedWith>
     <CreatedWith>10.0.5736</CreatedWith>
   </VersionInfo>
   <TopLevelElement>
@@ -18,7 +18,7 @@
     <UniqueID>S-dbee5c0c-817c-4219-831d-fa12a38850c8</UniqueID>
     <UserID>S-19-1</UserID>
     <ParentID>P-ecf41bcd-d7d2-40ec-9992-b622dad70af1</ParentID>
-    <Name>S'identifier sur le site. (UC-18-1)</Name>
+    <Name>S'identifier sur le site.</Name>
     <Description>Le client va s'identifier sur le site pour gérer sa liste d'appareils en sa possession, dans le but d'accéler le service au magasin.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
@@ -26,18 +26,18 @@
 }
 </RichDescription>
     <Sequence>0</Sequence>
-    <Priority />
+    <Priority>Could</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-24T08:18:02.9497055-04:00</DateAdded>
-    <DateModified>2015-09-24T09:41:24.2294712-04:00</DateModified>
+    <DateModified>2015-11-16T08:57:33.2324915-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-af2e2ba8-331a-4679-a0cd-849346864eae</UniqueID>
     <UserID>S-19-2</UserID>
     <ParentID>P-ecf41bcd-d7d2-40ec-9992-b622dad70af1</ParentID>
-    <Name>Ajouter un Appareil. (UC-18-2)</Name>
+    <Name>Ajouter un Appareil.</Name>
     <Description>Le client ajoute un appareil dans son dossier. Il entre les informations spécifiques sur son appareil et le système insère le tout dans la base de données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
@@ -45,18 +45,18 @@
 }
 </RichDescription>
     <Sequence>1</Sequence>
-    <Priority />
+    <Priority>Could</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-24T08:18:02.9497055-04:00</DateAdded>
-    <DateModified>2015-09-24T09:59:48.2540983-04:00</DateModified>
+    <DateModified>2015-11-16T08:57:27.5603441-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-06b5ac19-8b91-4b13-a180-da31c8942eab</UniqueID>
     <UserID>S-19-3</UserID>
     <ParentID>P-ecf41bcd-d7d2-40ec-9992-b622dad70af1</ParentID>
-    <Name>Modifier un Appareil. (UC-18-3)</Name>
+    <Name>Modifier un Appareil.</Name>
     <Description>Lorsque le client voit que les informations sur son appareil sont erronées, il peut aller les modifier directement. Cela permet de sauver du temps quand il va au magasin pour une maintenance.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
@@ -64,12 +64,12 @@
 }
 </RichDescription>
     <Sequence>2</Sequence>
-    <Priority />
+    <Priority>Could</Priority>
     <Size />
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-24T08:18:02.9653317-04:00</DateAdded>
-    <DateModified>2015-09-24T10:05:52.5301661-04:00</DateModified>
+    <DateModified>2015-11-16T08:57:23.6695326-05:00</DateModified>
   </Story>
   <UserID>
     <DefaultPrefix>UC-19-</DefaultPrefix>

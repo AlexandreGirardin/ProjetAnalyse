@@ -66,7 +66,7 @@ Le technicien se trouve dans l'écran des fiches.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6973196-04:00</DateAdded>
-    <DateModified>2015-11-02T09:54:54.8038501-05:00</DateModified>
+    <DateModified>2015-11-09T11:41:47.9666991-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-c63a6aba-b5f1-45e0-b771-1d2bf9c9135a</UniqueID>
@@ -81,7 +81,8 @@ Le technicien se trouve dans l'écran des fiches.</PreConditions>
 </RichDescription>
     <Sequence>2</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien est dans la page de visualisation des fiches de maintenance.</PreConditions>
+    <PreConditions>Le technicien est dans la page de visualisation des fiches de maintenance.
+La base de données est accessible et les fiches de maintenances sont affichées.</PreConditions>
     <PostConditions>La fiche recherchée est identifiée.</PostConditions>
     <Level />
     <Complexity />
@@ -92,7 +93,7 @@ Le technicien se trouve dans l'écran des fiches.</PreConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:01:51.5093054-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.3386953-04:00</DateModified>
+    <DateModified>2015-11-09T11:20:34.1157856-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-ec728295-0e0a-4c2d-be3d-7269ecc19930</UniqueID>
@@ -135,7 +136,7 @@ La facture est ajoutée à Acomba.</PostConditions>
 </RichDescription>
     <Sequence>4</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien se trouve dans le dossier de client.</PreConditions>
+    <PreConditions>Le technicien se trouve dans le dossier de client, dans la page principale des fiches ou dans la page de consultation des appareils.</PreConditions>
     <PostConditions>Les informations de l'appareil sélectionné sont affichées à l'écran</PostConditions>
     <Level />
     <Complexity />
@@ -146,7 +147,7 @@ La facture est ajoutée à Acomba.</PostConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-11-02T10:13:46.345908-05:00</DateModified>
+    <DateModified>2015-11-09T11:19:00.5499294-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
@@ -297,7 +298,7 @@ La facture est ajoutée à Acomba.</PostConditions>
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  modifie les informations dans les champs concern\'e9s.\cf0\par
 }
 </RichDescription>
-    <Sequence>3</Sequence>
+    <Sequence>2</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -309,7 +310,7 @@ La facture est ajoutée à Acomba.</PostConditions>
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abValider\'bb.\cf0\par
 }
 </RichDescription>
-    <Sequence>4</Sequence>
+    <Sequence>3</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -333,7 +334,7 @@ La facture est ajoutée à Acomba.</PostConditions>
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  inscrit les modifications dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
 }
 </RichDescription>
-    <Sequence>5</Sequence>
+    <Sequence>4</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -481,10 +482,10 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Step>
     <UniqueID>ST-d8cb4d90-d6c2-41aa-99be-1342e663eb92</UniqueID>
     <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
-    <Description>Le technicien identifie la fiche dans la liste des fiches de maintenance.</Description>
+    <Description>Le technicien sélectionne  la fiche désirée dans la liste des fiches de maintenance.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  identifie la \cf3\ul fiche\cf2\ulnone  dans la liste des \cf3\ul fiches\cf2\ulnone  de maintenance.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne  la \cf3\ul fiche\cf2\ulnone  d\'e9sir\'e9e dans la liste des \cf3\ul fiches\cf2\ulnone  de maintenance.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -497,18 +498,6 @@ La facture est ajoutée à Acomba.</PostConditions>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  pr\'e9sente une fen\'eatre d'\'e9dition pour la \cf3\ul fiche de maintenance\cf2\ulnone .\cf0\par
-}
-</RichDescription>
-    <Sequence>2</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-e7039552-4c63-4fa5-8dcf-b79e2e33c4ce</UniqueID>
-    <ParentID>MSS-f06b939a-1f80-4a7a-936f-f06d3fd5dcc9</ParentID>
-    <Description>Le technicien double-clique sur la fiche.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  double-clique sur la \cf3\ul fiche\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -559,7 +548,7 @@ La facture est ajoutée à Acomba.</PostConditions>
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  retourne \'e0 la page de visualisations des \cf3\ul fiche de maintenance\cf2\ulnone .\cf0\par
 }
 </RichDescription>
-    <Sequence>6</Sequence>
+    <Sequence>5</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
@@ -577,10 +566,10 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Step>
     <UniqueID>ST-94c41846-a487-4594-8cdb-ac7eccecfee5</UniqueID>
     <ParentID>X-74bbf4a3-e429-4f0e-bf32-9787f4f0ab2b</ParentID>
-    <Description>Continue to step 4.</Description>
+    <Description>Continue to step 3.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 4.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 3.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -589,10 +578,10 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Step>
     <UniqueID>ST-7baa6340-446a-4439-8423-c32d3a5ab66b</UniqueID>
     <ParentID>X-df66cc23-ae3c-4b17-b489-a4ace74e2ce2</ParentID>
-    <Description>Continue to step 7.</Description>
+    <Description>Continue to step 6.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 7.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 6.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -711,6 +700,41 @@ La facture est ajoutée à Acomba.</PostConditions>
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la page de visualisation de la \cf3 fiche de maintenance\cf2 .\cf0\par
 }
 </RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-1aa9407e-5c05-4817-9c35-410d5719372e</UniqueID>
+    <ParentID>MSS-5bcb2ed6-0bdd-4790-bfc7-900b576f23c4</ParentID>
+    <Description>Le système va chercher les informations de l'appareil dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  va chercher les informations de l'\cf3 appareil\cf2  dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-5735f80e-38d3-4846-9c9e-38b89477da6a</UniqueID>
+    <ParentID>X-6c1515be-b0b8-486f-a095-f746822a4a45</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-00d84713-5c9f-4d89-9064-d8e1ae5b9f6e</UniqueID>
+    <ParentID>X-6c1515be-b0b8-486f-a095-f746822a4a45</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\lang3084\f0\fs20 Continue to step 1.\lang4105\par
+}
+</RichDescription>
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
@@ -825,6 +849,18 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Extension>
     <UniqueID>X-f933c454-76e4-452a-8b4d-decc1519a54c</UniqueID>
     <ParentID>ST-22aeb89f-da51-4d67-b4fe-bfb2207a3d16</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-6c1515be-b0b8-486f-a095-f746822a4a45</UniqueID>
+    <ParentID>ST-1aa9407e-5c05-4817-9c35-410d5719372e</ParentID>
     <Description>La base de données n'est pas accessible.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
