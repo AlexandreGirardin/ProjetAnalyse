@@ -9,3 +9,5 @@ Projet_ERP_Context.autosave.ndx
 *.vpp.working
 *.vpp~*
 *.pro.user
+*.pro.user.*
+QtSQL/*-Debug
