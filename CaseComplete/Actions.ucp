@@ -64,7 +64,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:13:25.1372805-04:00</DateAdded>
-    <DateModified>2015-10-22T15:14:26.3937311-04:00</DateModified>
+    <DateModified>2015-11-09T11:22:43.2262095-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-70f463c9-8eec-4b37-83f6-2ce760b9db1b</UniqueID>
@@ -90,7 +90,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T10:46:03.7980141-04:00</DateAdded>
-    <DateModified>2015-10-26T09:51:25.1769506-04:00</DateModified>
+    <DateModified>2015-11-09T11:42:28.6418874-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-519db064-3cc5-4179-9f52-5eea87db0e3f</UniqueID>
@@ -117,7 +117,7 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-17T13:22:14.9084413-04:00</DateAdded>
-    <DateModified>2015-11-02T09:44:39.0047073-05:00</DateModified>
+    <DateModified>2015-11-09T11:41:22.289742-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-18c80497-16f0-4fa5-af14-cdf84b88b24c</UniqueID>
@@ -132,7 +132,7 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
 </RichDescription>
     <Sequence>4</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien se trouve dans le dossier de client.</PreConditions>
+    <PreConditions>Le technicien se trouve dans la page principale des actions.</PreConditions>
     <PostConditions>Les informations de l'appareil sélectionné sont affichées à l'écran</PostConditions>
     <Level />
     <Complexity />
@@ -143,7 +143,7 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-11-02T10:16:05.7103214-05:00</DateModified>
+    <DateModified>2015-11-09T11:19:11.2490613-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-6f16e93c-f54a-4648-8390-92bc00bf351f</ParentID>
@@ -313,10 +313,10 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
   <Step>
     <UniqueID>ST-3f9d4a08-89fb-452e-9248-c9348c7aeadb</UniqueID>
     <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
-    <Description>Le technicien repère l'action désirée dans la liste des actions définies.</Description>
+    <Description>Le technicien sélectionne l'action désirée dans la liste des actions définies.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rep\'e8re l'\cf3 action\cf2  d\'e9sir\'e9e dans la liste des \cf3 actions\cf2  d\'e9finies.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3 action\cf2  d\'e9sir\'e9e dans la liste des \cf3 actions\cf2  d\'e9finies.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -349,10 +349,10 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
   <Step>
     <UniqueID>ST-c3ca9849-91a1-4987-b080-bb7170cf6426</UniqueID>
     <ParentID>MSS-63ee2487-5f69-40f8-8b3f-8e1c3d54df1c</ParentID>
-    <Description>Le technicien repère l'action désirée dans la liste des actions définies.</Description>
+    <Description>Le technicien sélectionne l'action désirée dans la liste des actions définies.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rep\'e8re l'\cf3\ul action\cf2\ulnone  d\'e9sir\'e9e dans la liste des \cf3\ul actions\cf2\ulnone  d\'e9finies.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne l'\cf3\ul action\cf2\ulnone  d\'e9sir\'e9e dans la liste des \cf3\ul actions\cf2\ulnone  d\'e9finies.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -385,10 +385,10 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
   <Step>
     <UniqueID>ST-b33f6f84-6de4-44d4-bc59-39a3e1eca931</UniqueID>
     <ParentID>MSS-05778b04-501b-4a74-8ee0-abf4dc3da719</ParentID>
-    <Description>Le technicien repère l'action désirée dans la liste des actions définies.</Description>
+    <Description>Le technicien sélectionne  l'action désirée dans la liste des actions définies.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  rep\'e8re l'\cf3 action\cf2  d\'e9sir\'e9e dans la liste des \cf3 actions\cf2  d\'e9finies.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne  l'\cf3 action\cf2  d\'e9sir\'e9e dans la liste des \cf3 actions\cf2  d\'e9finies.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -653,14 +653,42 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la page de visualisation de l'\cf3 action\cf2 .\cf0\par
 }
 </RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-509be7d7-56e8-4ce1-b683-555bc31038f4</UniqueID>
+    <ParentID>MSS-cbb70db4-56bd-47a0-967e-1a7e1f463d42</ParentID>
+    <Description>Le système va chercher les informations de l'action dans la base de données.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  va chercher les informations de l'\cf3 action\cf2  dans la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\fs20\par
+}
+</RichDescription>
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-5a324629-d27e-44b9-b763-e9c3a90b58ea</UniqueID>
-    <ParentID>MSS-cbb70db4-56bd-47a0-967e-1a7e1f463d42</ParentID>
-    <Description />
-    <Sequence>2</Sequence>
+    <UniqueID>ST-0eff0ed4-b1f4-4e22-9079-ef45279cfd0d</UniqueID>
+    <ParentID>X-95dda12e-dad4-45a9-88e3-f6084f934312</ParentID>
+    <Description>Le système affiche un message d'erreur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-d77e0083-ee66-498a-bcf2-279f76d7d581</UniqueID>
+    <ParentID>X-95dda12e-dad4-45a9-88e3-f6084f934312</ParentID>
+    <Description>Continue to step 1.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\lang3084\f0\fs20 Continue to step 1.\lang4105\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
@@ -769,6 +797,18 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
 }
 </RichDescription>
     <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-95dda12e-dad4-45a9-88e3-f6084f934312</UniqueID>
+    <ParentID>ST-509be7d7-56e8-4ce1-b683-555bc31038f4</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Extension>
   <UserID>
