@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy">
@@ -42,26 +42,31 @@
        <attribute name="title">
         <string>Clients</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2"/>
       </widget>
       <widget class="QWidget" name="ongletFiches">
        <attribute name="title">
         <string>Fiches</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3"/>
       </widget>
       <widget class="QWidget" name="ongletAppareils">
        <attribute name="title">
         <string>Appareils</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4"/>
       </widget>
       <widget class="QWidget" name="ongletTechniciens">
        <attribute name="title">
         <string>Techniciens</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5"/>
       </widget>
       <widget class="QWidget" name="ongletActions">
        <attribute name="title">
         <string>Actions</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6"/>
       </widget>
      </widget>
     </item>
