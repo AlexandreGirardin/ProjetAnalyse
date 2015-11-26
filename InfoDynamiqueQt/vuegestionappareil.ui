@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>gestionPiece</class>
- <widget class="QDialog" name="gestionPiece">
+ <class>VueGestionAppareil</class>
+ <widget class="QDialog" name="VueGestionAppareil">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,38 +15,60 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Nom:</string>
+        <string>Type:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Fabriquant:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_2"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Mot de passe:</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLineEdit" name="lineEdit"/>
      </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Prix:</string>
+        <string>Description:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QTextEdit" name="textEdit"/>
      </item>
     </layout>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Description</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QTextEdit" name="textEdit"/>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -65,7 +87,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>gestionPiece</receiver>
+   <receiver>VueGestionAppareil</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -81,7 +103,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>gestionPiece</receiver>
+   <receiver>VueGestionAppareil</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

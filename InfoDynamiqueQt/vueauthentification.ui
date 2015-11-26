@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>gestionTache</class>
- <widget class="QDialog" name="gestionTache">
+ <class>VueAuthentification</class>
+ <widget class="QDialog" name="VueAuthentification">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>335</width>
+    <height>194</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Nom:</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -33,12 +33,12 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Description:</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="textEdit"/>
+      <widget class="QLineEdit" name="lineEdit_2"/>
      </item>
     </layout>
    </item>
@@ -50,6 +50,9 @@
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
+     <property name="centerButtons">
+      <bool>false</bool>
+     </property>
     </widget>
    </item>
   </layout>
@@ -59,7 +62,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>gestionTache</receiver>
+   <receiver>VueAuthentification</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -75,7 +78,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>gestionTache</receiver>
+   <receiver>VueAuthentification</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

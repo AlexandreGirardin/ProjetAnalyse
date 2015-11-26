@@ -13,33 +13,37 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    fragment.cpp \
-    gestionappareil.cpp \
-    gestionfiche.cpp \
-    editionfiche.cpp \
-    gestionpiece.cpp \
-    gestiontache.cpp \
-    gestionensemble.cpp \
-    gestionclient.cpp
+    vueauthentification.cpp \
+    vueprincipale.cpp \
+    vuegestiontache.cpp \
+    vuegestionpiece.cpp \
+    vuegestionfiche.cpp \
+    vuegestionensemble.cpp \
+    vuegestionclient.cpp \
+    vuegestionappareil.cpp \
+    vuefragment.cpp \
+    vueeditionfiche.cpp
 
-HEADERS  += mainwindow.h \
-    fragment.h \
-    gestionappareil.h \
-    gestionfiche.h \
-    editionfiche.h \
-    gestionpiece.h \
-    gestiontache.h \
-    gestionensemble.h \
-    gestionclient.h
+HEADERS  += \
+    vueauthentification.h \
+    vueprincipale.h \
+    vuegestiontache.h \
+    vuegestionpiece.h \
+    vuegestionfiche.h \
+    vuegestionensemble.h \
+    vuegestionclient.h \
+    vuegestionappareil.h \
+    vuefragment.h \
+    vueeditionfiche.h
 
 FORMS    += \
-    fragment.ui \
-    gestiontache.ui \
-    gestionpiece.ui \
-    gestionfiche.ui \
-    gestionappareil.ui \
-    editionfiche.ui \
-    mainwindow.ui \
-    gestionensemble.ui \
-    gestionclient.ui
+    vueauthentification.ui \
+    vueeditionfiche.ui \
+    vuefragment.ui \
+    vuegestionappareil.ui \
+    vuegestionclient.ui \
+    vuegestionensemble.ui \
+    vuegestionfiche.ui \
+    vuegestionpiece.ui \
+    vuegestiontache.ui \
+    vueprincipale.ui

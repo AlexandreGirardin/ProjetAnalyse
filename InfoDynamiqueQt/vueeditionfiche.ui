@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>editionFiche</class>
- <widget class="QWidget" name="editionFiche">
+ <class>VueEditionFiche</class>
+ <widget class="QWidget" name="VueEditionFiche">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>705</width>
-    <height>402</height>
+    <width>603</width>
+    <height>380</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
           <item>
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>IId client:</string>
+             <string>Id client:</string>
             </property>
            </widget>
           </item>
@@ -58,7 +58,7 @@
           <item>
            <widget class="QLabel" name="label_5">
             <property name="text">
-             <string>IId appareil:</string>
+             <string>Id appareil:</string>
             </property>
            </widget>
           </item>
@@ -72,7 +72,7 @@
           <item>
            <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>IId fiche:</string>
+             <string>Id fiche:</string>
             </property>
            </widget>
           </item>
@@ -173,11 +173,69 @@
       </layout>
      </item>
      <item>
-      <widget class="QDialogButtonBox" name="buttonBox">
-       <property name="standardButtons">
-        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Fermer la fiche</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDialogButtonBox" name="buttonBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="cursor">
+            <cursorShape>ArrowCursor</cursorShape>
+           </property>
+           <property name="acceptDrops">
+            <bool>false</bool>
+           </property>
+           <property name="inputMethodHints">
+            <set>Qt::ImhNone</set>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="standardButtons">
+            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+           </property>
+           <property name="centerButtons">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
