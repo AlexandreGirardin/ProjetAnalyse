@@ -12,7 +12,6 @@ TARGET = QtSQL
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    mainwindow.cpp \
     gestionnaireconnexion.cpp \
     entreedb.cpp \
     Modeles/action.cpp \
@@ -26,10 +25,10 @@ SOURCES += main.cpp \
     Modeles/ensembletaches.cpp \
     Modeles/fiche.cpp \
     Modeles/appareil.cpp \
-    Modeles/client.cpp
+    Modeles/client.cpp \
+    Fabrique/fabriquefabricant.cpp
 
 HEADERS  += \
-    mainwindow.h \
     gestionnaireconnexion.h \
     entreedb.h \
     Modeles/action.h \
@@ -43,7 +42,8 @@ HEADERS  += \
     Modeles/ensembletaches.h \
     Modeles/fiche.h \
     Modeles/appareil.h \
-    Modeles/client.h
+    Modeles/client.h \
+    Fabrique/fabriquefabricant.h
 
 FORMS    += mainwindow.ui \
     dialog.ui

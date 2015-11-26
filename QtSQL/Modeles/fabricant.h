@@ -14,12 +14,13 @@ private:
 
 public:
     explicit Fabricant(QObject *parent = 0);
+    explicit Fabricant(int a_id, QString a_nom, QObject *parent = 0);
 
-    int getId(void);
-    void setId(int);
+    int getId() const;
+    void setId(int value);
 
-    QString getNom(void);
-    void setNom(QString);
+    QString getNom() const;
+    void setNom(const QString &value);
 
 signals:
 
