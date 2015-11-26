@@ -12,7 +12,7 @@ GestionnaireConnexion::GestionnaireConnexion(QObject *parent) : QObject(parent)
     }
 }
 
-QSqlQuery GestionnaireConnexion::requete(const char *commande) {
+QSqlQuery GestionnaireConnexion::requete(const QString commande) {
     QSqlQuery query(db);
     query.exec(commande);
     return query;
