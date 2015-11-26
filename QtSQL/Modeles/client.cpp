@@ -50,6 +50,11 @@ void Client::setId(int value)
 {
     id = value;
 }
+
+QString Client::out()
+{
+
+}
 Client::Client(QObject *parent) :
     QObject(parent)
 {

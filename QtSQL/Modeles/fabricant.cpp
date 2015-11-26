@@ -20,6 +20,11 @@ void Fabricant::setNom(const QString &value)
 {
     nom = value;
 }
+
+QString Fabricant::out()
+{
+    return QString::number(id) + " " + nom;
+}
 Fabricant::Fabricant(QObject *parent) :
     QObject(parent)
 {

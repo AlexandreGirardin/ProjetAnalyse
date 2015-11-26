@@ -20,6 +20,11 @@ void Technicien::setNom(const QString &value)
 {
     nom = value;
 }
+
+QString Technicien::out()
+{
+    return QString::number(id) + " " + nom;
+}
 Technicien::Technicien(QObject *parent) :
     QObject(parent)
 {

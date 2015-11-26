@@ -30,6 +30,11 @@ void Appareil::setType(TypeAppareil *value)
 {
     type = value;
 }
+
+QString Appareil::out()
+{
+    return QString::number(id) + " " + fabricant->getNom() + " " + type->getNom();
+}
 Appareil::Appareil(QObject *parent) :
     QObject(parent)
 {

@@ -33,6 +33,8 @@ public:
     int getId() const;
     void setId(int value);
 
+    QString out(void);
+
 signals:
 
 public slots:

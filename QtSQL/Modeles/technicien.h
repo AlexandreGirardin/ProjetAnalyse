@@ -21,6 +21,8 @@ public:
     QString getNom() const;
     void setNom(const QString &value);
 
+    QString out(void);
+
 signals:
 
 public slots:

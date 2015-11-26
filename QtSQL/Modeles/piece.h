@@ -30,6 +30,8 @@ public:
     int getPrix() const;
     void setPrix(int value);
 
+    QString out(void);
+
 signals:
 
 public slots:

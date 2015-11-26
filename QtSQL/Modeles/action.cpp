@@ -30,6 +30,11 @@ void Action::setDescription(const QString &value)
 {
     description = value;
 }
+
+QString Action::out()
+{
+    return QString::number(id) + " " + nom + " " + description;
+}
 Action::Action(int a_id, QString a_nom, QString a_description)
 {
     id = a_id;

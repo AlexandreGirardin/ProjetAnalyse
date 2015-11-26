@@ -40,6 +40,11 @@ void Piece::setPrix(int value)
 {
     prix = value;
 }
+
+QString Piece::out()
+{
+    return QString::number(id) + " " + nom + " " + description + " " + QString::number(prix);
+}
 Piece::Piece(QObject *parent) :
     QObject(parent)
 {

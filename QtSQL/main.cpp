@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < liste.count(); ++i) {
         Action* modele = liste.at(i);
         if (!(modele == NULL)) {
-            qDebug() << modele->getId() << " " << modele->getNom();
+            qDebug() << modele->out();
         } else {
             qDebug() << i;
         }

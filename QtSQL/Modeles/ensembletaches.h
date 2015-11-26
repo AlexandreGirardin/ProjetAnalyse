@@ -13,6 +13,8 @@ public:
 
     QList<Action*> actions;
 
+    QString out(void);
+
 signals:
 
 public slots:

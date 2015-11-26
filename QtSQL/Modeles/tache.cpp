@@ -30,6 +30,11 @@ void Tache::setStatut(Statut *value)
 {
     statut = value;
 }
+
+QString Tache::out()
+{
+    return QString::number(id) + " " + action->getNom() + " " + statut->getNom();
+}
 Tache::Tache(QObject *parent) :
     QObject(parent)
 {

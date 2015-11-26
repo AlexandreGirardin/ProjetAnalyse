@@ -26,6 +26,8 @@ public:
     TypeAppareil *getType() const;
     void setType(TypeAppareil *value);
 
+    QString out(void);
+
 signals:
 
 public slots:

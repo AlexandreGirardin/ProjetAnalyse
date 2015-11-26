@@ -5,3 +5,8 @@ EnsembleTaches::EnsembleTaches(QObject *parent) :
 {
 }
 
+QString EnsembleTaches::out()
+{
+
+}
+

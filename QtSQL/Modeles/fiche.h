@@ -36,6 +36,8 @@ public:
     Statut *getStatut() const;
     void setStatut(Statut *value);
 
+    QString out(void);
+
 signals:
 
 public slots:

@@ -14,6 +14,11 @@ void TypeAppareil::setNom(const QString &value)
     nom = value;
 }
 
+QString TypeAppareil::out()
+{
+    return QString::number(id) + " " + nom;
+}
+
 int TypeAppareil::getId() const
 {
     return id;

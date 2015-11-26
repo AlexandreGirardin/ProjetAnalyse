@@ -25,6 +25,8 @@ public:
     QString getDescription() const;
     void setDescription(const QString &value);
 
+    QString out(void);
+
 public slots:
 };
 

@@ -40,6 +40,11 @@ void Fiche::setStatut(Statut *value)
 {
     statut = value;
 }
+
+QString Fiche::out()
+{
+    return QString::number(id) + " " + QString::number(priorite) + " " + commentaire + " " + statut->getNom();
+}
 Fiche::Fiche(QObject *parent) :
     QObject(parent)
 {
