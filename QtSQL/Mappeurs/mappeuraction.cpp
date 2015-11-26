@@ -1,12 +1,12 @@
-#include "fabriqueaction.h"
+#include "mappeuraction.h"
 
-FabriqueAction::FabriqueAction(GestionnaireConnexion *a_gc, QObject *parent) :
+MappeurAction::MappeurAction(GestionnaireConnexion* a_gc, QObject *parent) :
     QObject(parent)
 {
     gc = a_gc;
 }
 
-Action *FabriqueAction::getAction(int id)
+Action *MappeurAction::getAction(int id)
 {
     Action *action = NULL;
     QString requete = "SELECT * FROM actions WHERE id="+QString::number(id);
@@ -17,7 +17,7 @@ Action *FabriqueAction::getAction(int id)
     return action;
 }
 
-QList<Action *> FabriqueAction::getActions()
+QList<Action *> MappeurAction::getActions()
 {
     QList<Action*> liste;
     QString requete = "SELECT * FROM actions";

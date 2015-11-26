@@ -1,11 +1,11 @@
-#ifndef FABRIQUEACTION_H
-#define FABRIQUEACTION_H
+#ifndef MAPPEURACTION_H
+#define MAPPEURACTION_H
 
 #include <QObject>
 #include "Modeles/action.h"
 #include "gestionnaireconnexion.h"
 
-class FabriqueAction : public QObject
+class MappeurAction : public QObject
 {
     Q_OBJECT
 
@@ -13,7 +13,7 @@ private:
     GestionnaireConnexion *gc;
 
 public:
-    explicit FabriqueAction(GestionnaireConnexion* a_gc, QObject *parent = 0);
+    explicit MappeurAction(GestionnaireConnexion* a_gc, QObject *parent = 0);
 
     Action* getAction(int id);
 
@@ -25,4 +25,4 @@ public slots:
 
 };
 
-#endif // FABRIQUEACTION_H
+#endif // MAPPEURACTION_H

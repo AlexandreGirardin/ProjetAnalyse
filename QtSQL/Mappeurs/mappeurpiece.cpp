@@ -1,12 +1,12 @@
-#include "fabriquepiece.h"
+#include "mappeurpiece.h"
 
-FabriquePiece::FabriquePiece(GestionnaireConnexion *a_gc, QObject *parent) :
+MappeurPiece::MappeurPiece(GestionnaireConnexion *a_gc, QObject *parent) :
     QObject(parent)
 {
     gc = a_gc;
 }
 
-Piece *FabriquePiece::getPiece(int id)
+Piece *MappeurPiece::getPiece(int id)
 {
     Piece *piece = NULL;
     QString requete = "SELECT * FROM pieces WHERE id="+QString::number(id);
@@ -17,7 +17,7 @@ Piece *FabriquePiece::getPiece(int id)
     return piece;
 }
 
-QList<Piece*> FabriquePiece::getPieces(void) {
+QList<Piece*> MappeurPiece::getPieces(void) {
     QList<Piece*> liste;
     QString requete = "SELECT * FROM pieces";
     QSqlQuery commande = gc->requete(requete);

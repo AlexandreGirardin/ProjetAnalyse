@@ -1,11 +1,11 @@
-#ifndef FABRIQUEPIECES_H
-#define FABRIQUEPIECES_H
+#ifndef MAPPEURPIECE_H
+#define MAPPEURPIECE_H
 
 #include <QObject>
 #include "gestionnaireconnexion.h"
 #include "Modeles/piece.h"
 
-class FabriquePiece : public QObject
+class MappeurPiece : public QObject
 {
     Q_OBJECT
 
@@ -13,7 +13,7 @@ private:
     GestionnaireConnexion *gc;
 
 public:
-    explicit FabriquePiece(GestionnaireConnexion *a_gc, QObject *parent = 0);
+    explicit MappeurPiece(GestionnaireConnexion *a_gc, QObject *parent = 0);
 
     Piece* getPiece(int id);
 
@@ -25,4 +25,4 @@ public slots:
 
 };
 
-#endif // FABRIQUEPIECES_H
+#endif // MAPPEURPIECE_H

@@ -1,18 +1,18 @@
 #include <QApplication>
 #include "gestionnaireconnexion.h"
-#include "Modeles/piece.h"
-#include "Fabriques/fabriquepiece.h"
+#include "Modeles/action.h"
+#include "Mappeurs/mappeuraction.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     GestionnaireConnexion gc;
-    FabriquePiece *fabrique = new FabriquePiece(&gc);
-    QList<Piece*> liste = fabrique->getPieces();
+    MappeurAction *fabrique = new MappeurAction(&gc);
+    QList<Action*> liste = fabrique->getActions();
     for (int i = 0; i < liste.count(); ++i) {
-        Piece* modele = liste.at(i);
+        Action* modele = liste.at(i);
         if (!(modele == NULL)) {
-            qDebug() << modele->getId() << " " << modele->getNom() << " " << modele->getDescription() << " " << modele->getPrix();
+            qDebug() << modele->getId() << " " << modele->getNom();
         } else {
             qDebug() << i;
         }

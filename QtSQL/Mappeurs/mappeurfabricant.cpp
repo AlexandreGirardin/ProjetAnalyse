@@ -1,12 +1,12 @@
-#include "fabriquefabricant.h"
+#include "mappeurfabricant.h"
 
-FabriqueFabricant::FabriqueFabricant(GestionnaireConnexion *a_gc, QObject *parent) :
+MappeurFabricant::MappeurFabricant(GestionnaireConnexion *a_gc, QObject *parent) :
     QObject(parent)
 {
     gc = a_gc;
 }
 
-Fabricant* FabriqueFabricant::getFabricant(int id)
+Fabricant* MappeurFabricant::getFabricant(int id)
 {
     Fabricant *fabricant = NULL;
     QString requete = "SELECT * FROM fabricants WHERE id="+QString::number(id);
@@ -17,7 +17,7 @@ Fabricant* FabriqueFabricant::getFabricant(int id)
     return fabricant;
 }
 
-QList<Fabricant *> FabriqueFabricant::getFabricants()
+QList<Fabricant *> MappeurFabricant::getFabricants()
 {
     QList<Fabricant*> liste;
     QString requete = "SELECT * FROM fabricants";
