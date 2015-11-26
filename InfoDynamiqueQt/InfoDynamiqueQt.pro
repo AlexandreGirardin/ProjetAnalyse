@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     gestionpiece.cpp \
     gestiontache.cpp \
     gestionensemble.cpp \
-    gestionclient.cpp
+    gestionclient.cpp \
+    ../entreebd.cpp
 
 HEADERS  += mainwindow.h \
     fragment.h \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     gestionpiece.h \
     gestiontache.h \
     gestionensemble.h \
-    gestionclient.h
+    gestionclient.h \
+    ../entreebd.h
 
 FORMS    += \
     fragment.ui \

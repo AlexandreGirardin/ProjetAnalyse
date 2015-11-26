@@ -1,7 +1,6 @@
-#include "mainwindow.h"
 #include <QApplication>
 #include "gestionnaireconnexion.h"
-#include "action.h"
+#include "Modeles/action.h"
 #include "dialog.h"
 
 int main(int argc, char *argv[])
@@ -13,14 +12,14 @@ int main(int argc, char *argv[])
         Action *action = new Action(commande.value(0).toInt(), commande.value(1).toString(), commande.value(2).toString());
         Dialog *fenetre;
         fenetre = new Dialog();
-        fenetre->setId(action->id);
-        fenetre->setNom(action->nom);
-        fenetre->setDescription(action->description);
+        fenetre->setId(action->getId());
+        fenetre->setNom(action->getNom());
+        fenetre->setDescription(action->getDescription());
         if (fenetre->exec() == QDialog::Accepted) {
-            qDebug() << action->description;
+            qDebug() << action->getDescription();
             action->setNom(fenetre->getNom());
             action->setDescription(fenetre->getDescription());
-            qDebug() << action->description;
+            qDebug() << action->getDescription();
         }
 
     } else {
