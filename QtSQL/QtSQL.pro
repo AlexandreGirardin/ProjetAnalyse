@@ -25,7 +25,8 @@ SOURCES += main.cpp \
     Modeles/appareil.cpp \
     Modeles/client.cpp \
     Fabriques/fabriquefabricant.cpp \
-    Fabriques/fabriquepieces.cpp
+    Fabriques/fabriquepieces.cpp \
+    Fabriques/fabriqueaction.cpp
 
 HEADERS  += \
     gestionnaireconnexion.h \
@@ -41,7 +42,8 @@ HEADERS  += \
     Modeles/appareil.h \
     Modeles/client.h \
     Fabriques/fabriquefabricant.h \
-    Fabriques/fabriquepiece.h
+    Fabriques/fabriquepiece.h \
+    Fabriques/fabriqueaction.h
 
 FORMS    += mainwindow.ui \
     dialog.ui

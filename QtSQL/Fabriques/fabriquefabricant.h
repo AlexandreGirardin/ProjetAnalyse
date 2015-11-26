@@ -17,6 +17,8 @@ public:
 
     Fabricant* getFabricant(int id);
 
+    QList<Fabricant*> getFabricants(void);
+
 signals:
 
 public slots:

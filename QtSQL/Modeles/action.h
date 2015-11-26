@@ -12,6 +12,7 @@ private:
     QString description;
 
 public:
+    explicit Action(QObject *parent = 0);
     Action(int, QString, QString);
 
     int getId() const;

@@ -1,4 +1,4 @@
-#include "fabriquepieces.h"
+#include "fabriquepiece.h"
 
 FabriquePiece::FabriquePiece(GestionnaireConnexion *a_gc, QObject *parent) :
     QObject(parent)
@@ -15,4 +15,15 @@ Piece *FabriquePiece::getPiece(int id)
         piece = new Piece(commande.value(0).toInt(), commande.value(1).toString(), commande.value(2).toString(), commande.value(3).toInt(), this);
     }
     return piece;
+}
+
+QList<Piece*> FabriquePiece::getPieces(void) {
+    QList<Piece*> liste;
+    QString requete = "SELECT * FROM pieces";
+    QSqlQuery commande = gc->requete(requete);
+    while (commande.next()) {
+        Piece *piece = new Piece(commande.value(0).toInt(), commande.value(1).toString(), commande.value(2).toString(), commande.value(3).toInt(), this);
+        liste.append(piece);
+    }
+    return liste;
 }

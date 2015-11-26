@@ -17,6 +17,8 @@ public:
 
     Piece* getPiece(int id);
 
+    QList<Piece*> getPieces(void);
+
 signals:
 
 public slots:
