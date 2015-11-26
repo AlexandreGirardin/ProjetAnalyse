@@ -13,6 +13,7 @@ private:
 
 public:
     explicit Statut(QObject *parent = 0);
+    explicit Statut(int a_id, QString a_nom, QObject *parent = 0);
 
     int getId() const;
     void setId(int value);
