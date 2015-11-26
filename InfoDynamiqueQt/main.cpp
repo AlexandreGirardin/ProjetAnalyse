@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    VueAuthentification w;
+    VuePrincipale w;
     w.show();
 
     return a.exec();

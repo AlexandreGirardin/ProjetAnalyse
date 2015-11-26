@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::VueFragment *ui;
+
+
+public slots:
+    void changerEtiquette(QString a_etiquette);
 };
 
 #endif // FRAGMENT_H
