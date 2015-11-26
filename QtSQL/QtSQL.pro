@@ -13,9 +13,7 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     gestionnaireconnexion.cpp \
-    entreedb.cpp \
     Modeles/action.cpp \
-    dialog.cpp \
     Modeles/fabricant.cpp \
     Modeles/typeappareil.cpp \
     Modeles/technicien.cpp \
@@ -26,13 +24,11 @@ SOURCES += main.cpp \
     Modeles/fiche.cpp \
     Modeles/appareil.cpp \
     Modeles/client.cpp \
-    Fabrique/fabriquefabricant.cpp
+    Fabriques/fabriquefabricant.cpp
 
 HEADERS  += \
     gestionnaireconnexion.h \
-    entreedb.h \
     Modeles/action.h \
-    dialog.h \
     Modeles/fabricant.h \
     Modeles/typeappareil.h \
     Modeles/technicien.h \
@@ -43,7 +39,7 @@ HEADERS  += \
     Modeles/fiche.h \
     Modeles/appareil.h \
     Modeles/client.h \
-    Fabrique/fabriquefabricant.h
+    Fabriques/fabriquefabricant.h
 
 FORMS    += mainwindow.ui \
     dialog.ui
