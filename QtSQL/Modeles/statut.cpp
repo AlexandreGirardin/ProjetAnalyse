@@ -24,3 +24,9 @@ Statut::Statut(QObject *parent) :
     QObject(parent)
 {
 }
+
+Statut::Statut(int a_id, QString a_nom, QObject *parent) : QObject(parent)
+{
+    setId(a_id);
+    setNom(a_nom);
+}
