@@ -1,0 +1,86 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5736</SavedWith>
+    <CreatedWith>10.0.5606</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</UniqueID>
+    <ExternalParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ExternalParentID>
+    <Name>UserStories</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <Story>
+    <UniqueID>S-70893881-ee57-4d80-a57f-20a8b62f7957</UniqueID>
+    <UserID>S-10-3</UserID>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Name>Ouverture de session</Name>
+    <Description>Pour une plus grande sécurité, un mot de passe est demandé à l'ouverture du système. Ainsi, seul le personnel autorisé peut consulter et modifier les informations.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Pour une plus grande s\'e9curit\'e9, un mot de passe est demand\'e9 \'e0 l'ouverture du \cf1\ul syst\'e8me\cf2\ulnone . Ainsi, seul le personnel autoris\'e9 peut consulter et modifier les informations.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <Priority>Should</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T09:54:14.4037058-04:00</DateAdded>
+    <DateModified>2015-09-17T09:55:27.4430341-04:00</DateModified>
+  </Story>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-Dossiers.ucp</Path>
+    <ElementID>P-14fb2410-5591-42a0-aa04-018a1b5e05f6</ElementID>
+    <Sequence>0</Sequence>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-Appareils.ucp</Path>
+    <ElementID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</ElementID>
+    <Sequence>1</Sequence>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-Fiches.ucp</Path>
+    <ElementID>P-4324cde9-0974-408f-89e3-7cba51c1f518</ElementID>
+    <Sequence>2</Sequence>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-Actions.ucp</Path>
+    <ElementID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ElementID>
+    <Sequence>3</Sequence>
+  </ElementStub>
+  <ElementStub>
+    <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
+    <Path>US-VueClient.ucp</Path>
+    <ElementID>P-ecf41bcd-d7d2-40ec-9992-b622dad70af1</ElementID>
+    <Sequence>4</Sequence>
+  </ElementStub>
+  <UserID>
+    <DefaultPrefix>UC-10-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-10-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-10-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-10-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-10-</DefaultPrefix>
+    <NextValue>8</NextValue>
+  </UserID>
+</UCTDataSet>

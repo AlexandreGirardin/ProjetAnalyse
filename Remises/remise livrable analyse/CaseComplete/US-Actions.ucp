@@ -1,0 +1,132 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5767</SavedWith>
+    <CreatedWith>10.0.5606</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-21c41e59-543c-4731-b875-a4ef673bbb67</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-21c41e59-543c-4731-b875-a4ef673bbb67</UniqueID>
+    <ExternalParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ExternalParentID>
+    <Name>US-Actions</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <Story>
+    <UniqueID>S-33a9dbca-7379-4278-a783-894186bb2ba1</UniqueID>
+    <UserID>S-13-4</UserID>
+    <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
+    <Name>Modifier une action</Name>
+    <Description>Un technicien peut modifier le nom ou la définition d'une action.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut modifier le nom ou la d\'e9finition d'une \cf3\ul action\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T15:08:52.3630526-04:00</DateAdded>
+    <DateModified>2015-11-16T08:56:38.8548733-05:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-2410a328-88b8-48b9-bbf3-e5e18d7c84f9</UniqueID>
+    <UserID>S-13-3</UserID>
+    <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
+    <Name>Voir une définition d'action</Name>
+    <Description>Les techniciens peuvent facilement visualiser la définition d'une tâche lorsqu'il est temps de l'effectuer afin de savoir exactement ce qu'ils doivent faire sur un appareil.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Les \cf1\ul techniciens\cf2\ulnone  peuvent facilement visualiser la d\'e9finition d'une \cf3\ul t\'e2che\cf2\ulnone  lorsqu'il est temps de l'effectuer afin de savoir exactement ce qu'ils doivent faire sur un \cf3\ul appareil\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T10:35:15.9104295-04:00</DateAdded>
+    <DateModified>2015-11-16T08:56:35.2609534-05:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-4052f541-dccc-4dfe-81a6-08dd6539b773</UniqueID>
+    <UserID>S-13-2</UserID>
+    <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
+    <Name>Activer/désactiver une action</Name>
+    <Description>Lorsque l'entreprise décide d'arrêter d'offrir un service, un technicien peut retirer l'action de la liste des actions. Pour des raisons d'archives, l'action n'est pas effacée mais simplement désactivée. Ainsi, elle est encore visible dans les tâches mais n'est plus présentée lors de la création d'une fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Lorsque l'entreprise d\'e9cide d'arr\'eater d'offrir un service, un \cf1\ul technicien\cf2\ulnone  peut retirer l'\cf3\ul action\cf2\ulnone  de la liste des \cf3\ul actions\cf2\ulnone . Pour des raisons d'archives, l'\cf3\ul action\cf2\ulnone  n'est pas effac\'e9e mais simplement d\'e9sactiv\'e9e. Ainsi, elle est encore visible dans les \cf3\ul t\'e2ches\cf2\ulnone  mais n'est plus pr\'e9sent\'e9e lors de la cr\'e9ation d'une \cf3\ul fiche de maintenance\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T10:26:32.5451102-04:00</DateAdded>
+    <DateModified>2015-11-16T08:56:22.0728191-05:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-614a9b43-4830-443d-b076-ed2e4d061f52</UniqueID>
+    <UserID>S-13-1</UserID>
+    <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
+    <Name>Créer une nouvelle action</Name>
+    <Description>Un technicien peut créer une nouvelle définition d'une action à effectuer lorsque l'entreprise veut l'ajouter aux services offerts.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut cr\'e9er une nouvelle d\'e9finition d'une \cf3\ul action\cf2\ulnone  \'e0 effectuer lorsque l'entreprise veut l'ajouter aux services offerts.\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T10:22:51.4615219-04:00</DateAdded>
+    <DateModified>2015-09-17T15:11:35.6797394-04:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-069f4b6b-0660-4ff4-9b00-f23223372a39</UniqueID>
+    <UserID>S-17-1</UserID>
+    <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
+    <Name>Consulter une action</Name>
+    <Description>Un technicien peut consulter une action dans le système. Permet d'afficher toutes les informations d'une action.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut consulter une \cf3 action\cf2  dans le \cf1\ul syst\'e8me\cf2\ulnone . Permet d'afficher toutes les informations d'une \cf3 action\cf2 .\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-11-16T09:33:27.0115098-05:00</DateAdded>
+    <DateModified>2015-11-16T09:33:55.905891-05:00</DateModified>
+  </Story>
+  <UserID>
+    <DefaultPrefix>UC-17-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-17-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-17-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-17-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-17-</DefaultPrefix>
+    <NextValue>2</NextValue>
+  </UserID>
+</UCTDataSet>

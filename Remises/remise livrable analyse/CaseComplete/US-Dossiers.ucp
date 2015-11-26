@@ -1,0 +1,115 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5767</SavedWith>
+    <CreatedWith>10.0.5606</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-14fb2410-5591-42a0-aa04-018a1b5e05f6</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-14fb2410-5591-42a0-aa04-018a1b5e05f6</UniqueID>
+    <ExternalParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ExternalParentID>
+    <Name>US-Clients</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <Story>
+    <UniqueID>S-7c46ec5f-ed8b-4bc3-8fa0-fb876ab9c95e</UniqueID>
+    <UserID>S-10-1</UserID>
+    <ParentID>P-14fb2410-5591-42a0-aa04-018a1b5e05f6</ParentID>
+    <Name>Créer un dossier de client</Name>
+    <Description>Lorsqu'un nouveau client se présente pour recevoir un service, l'employé commence par lui créer un dossier afin de pouvoir regrouper ses informations. Ainsi, elles pourront être retrouvées plus facilement et seront conservées pour les archives.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Lorsqu'un nouveau \cf1\ul client\cf2\ulnone  se pr\'e9sente pour recevoir un service, l'employ\'e9 commence par lui cr\'e9er un dossier afin de pouvoir regrouper ses informations. Ainsi, elles pourront \'eatre retrouv\'e9es plus facilement et seront conserv\'e9es pour les archives.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T09:36:55.8162817-04:00</DateAdded>
+    <DateModified>2015-09-17T10:07:01.5054532-04:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-fa99b607-e905-4692-82d3-0ffd701e5907</UniqueID>
+    <UserID>S-10-4</UserID>
+    <ParentID>P-14fb2410-5591-42a0-aa04-018a1b5e05f6</ParentID>
+    <Name>Modifier un dossier de client</Name>
+    <Description>Un dossier de client peut être mis à jour après avoir été créé.
+Pour satisfaire les règles d'affaires, un dossier de client ne peut pas être effacé.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul dossier de client\cf2\ulnone  peut \'eatre mis \'e0 jour apr\'e8s avoir \'e9t\'e9 cr\'e9\'e9.\par
+Pour satisfaire les r\'e8gles d'affaires, un \cf1\ul dossier de client\cf2\ulnone  ne peut pas \'eatre effac\'e9.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T09:56:29.6403434-04:00</DateAdded>
+    <DateModified>2015-11-16T08:56:08.6971884-05:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-c9ab459a-b24a-402e-bcdd-00bd40cad300</UniqueID>
+    <UserID>S-10-5</UserID>
+    <ParentID>P-14fb2410-5591-42a0-aa04-018a1b5e05f6</ParentID>
+    <Name>Rechercher un dossier de client</Name>
+    <Description>Un technicien peut facilement rechercher un dossier de client en filtrant la liste affichée.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut facilement rechercher un \cf3\ul dossier de client\cf2\ulnone  en filtrant la liste affich\'e9e.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T09:59:43.033883-04:00</DateAdded>
+    <DateModified>2015-11-16T09:05:58.4116254-05:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-e48e442b-fa9b-4b08-ac83-70ceac374883</UniqueID>
+    <UserID>S-11-1</UserID>
+    <ParentID>P-14fb2410-5591-42a0-aa04-018a1b5e05f6</ParentID>
+    <Name>Consulter un dossier de client</Name>
+    <Description>Un technicien peut consulter un dossier de client dans le système. Permet d'afficher toutes les informations contenues dans un dossier de client.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut consulter un \cf3 dossier de client\cf2  dans le \cf1\ul syst\'e8me\cf2\ulnone . Permet d'afficher toutes les informations contenues dans un \cf3 dossier de \ul client\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-11-16T09:29:52.120125-05:00</DateAdded>
+    <DateModified>2015-11-16T09:31:42.5254018-05:00</DateModified>
+  </Story>
+  <UserID>
+    <DefaultPrefix>UC-11-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-11-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-11-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-11-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-11-</DefaultPrefix>
+    <NextValue>2</NextValue>
+  </UserID>
+</UCTDataSet>

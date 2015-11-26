@@ -1,0 +1,495 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5767</SavedWith>
+    <CreatedWith>10.0.5606</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</UniqueID>
+    <ExternalParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ExternalParentID>
+    <Name>Dictionnaire</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <UserID>
+    <DefaultPrefix>UC-4-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-4-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-4-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-4-</DefaultPrefix>
+    <NextValue>7</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-4-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <DictionaryEntry>
+    <UniqueID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</UniqueID>
+    <Name>Tâche</Name>
+    <Description>Instance d'une action propre à une fiche de maintenance.
+Associe un contexte à la définition de l'action.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Instance d'une \cf1 action \cf0 propre \'e0 une \cf1 fiche de maintenance.\par
+Associe un contexte \'e0 la d\'e9finition de l'\cf2\ul action\cf1\ulnone .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-18</UserID>
+    <Sequence>12</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-2004b023-d961-4ca4-9c57-b0b756f76beb</UniqueID>
+    <Name>Rapport</Name>
+    <Description>Représentation formatée résumant l'état d'une fiche de maintenance et servant à la génération d'une facture par le technicien.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Repr\'e9sentation format\'e9e r\'e9sumant l'\'e9tat d'une \cf1\ul fiche de maintenance\cf2\ulnone  et servant \'e0 la g\'e9n\'e9ration d'une facture par le \cf3\ul technicien\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-17</UserID>
+    <Sequence>11</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-c78f8ba2-a2c0-4ea6-b7c0-63ba2f9d32d4</UniqueID>
+    <Name>Numéro de téléphone</Name>
+    <Description>Sert également à l'identification d'un client.
+Contient un minimum de 7 chiffres.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Sert \'e9galement \'e0 l'identification d'un \cf1\ul client\cf2\ulnone .\par
+Contient un minimum de 7 chiffres.\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-16</UserID>
+    <Sequence>10</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-8307e339-acb0-4703-9a01-6037d1240eaa</UniqueID>
+    <Name>Formulaire de client</Name>
+    <Description>Formulaire servant à la création d'un dossier de client.</Description>
+    <Aliases>formC</Aliases>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Formulaire servant \'e0 la cr\'e9ation d'un \cf1\ul dossier de client\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-15</UserID>
+    <Sequence>8</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-4c141ef9-a583-41e5-98db-9574869674f7</UniqueID>
+    <Name>Fiche d'ordinateur de bureau</Name>
+    <Description>Fiche de maintenance spécifique à un ordinateur de bureau.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\ul\f0\fs20 Fiche de maintenance\cf2\ulnone  sp\'e9cifique \'e0 un ordinateur de bureau.\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-14</UserID>
+    <Sequence>6</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</UniqueID>
+    <Name>Fiche de portable</Name>
+    <Description>Fiche de maintenance spécifique à un ordinateur portable.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\lang3084\ul\f0\fs20 Fiche de maintenance\cf2\ulnone  sp\'e9cifique \'e0 un ordinateur portable.\cf0\lang4105\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-13</UserID>
+    <Sequence>5</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-309c8c23-976c-469c-b621-ce1a2f41e058</UniqueID>
+    <Name>Fiche de maintenance</Name>
+    <Description>Spécifie les tâches à effectuer sur un appareil donné.</Description>
+    <Aliases>Fiche</Aliases>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;}
+\viewkind4\uc1\pard\lang3084\f0\fs20 Sp\'e9cifie les \cf1 t\'e2ches\cf0  \'e0 effectuer sur un \cf1\ul appareil\cf0\ulnone  donn\'e9.\lang4105\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-12</UserID>
+    <Sequence>4</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-f948bfee-d218-4785-b611-f4587f389850</UniqueID>
+    <Name>Dossier de client</Name>
+    <Description>Regroupe les informations personnelles du client et les caractéristiques et fiches de ses appareils.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Regroupe les informations personnelles du \cf1\ul client\cf2\ulnone  et les caract\'e9ristiques et \cf3 fiches\cf2  de ses \cf3 appareils\cf2 .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-11</UserID>
+    <Sequence>2</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-a28224bb-6c61-464f-8b45-cc778ff6202e</UniqueID>
+    <Name>Appareil</Name>
+    <Description>Appareil électronique laissé par un client pour qu'un technicien en effectue la maintenance.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\ul\f0\fs20 Appareil\cf2\ulnone  \'e9lectronique laiss\'e9 par un \cf1\ul client\cf2\ulnone  pour qu'un \cf3\ul technicien\cf2\ulnone  en effectue la maintenance.\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-19</UserID>
+    <Sequence>1</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-060f080c-c7ce-4b53-b37d-405d673bd45f</UniqueID>
+    <Name>Ensemble de tâches</Name>
+    <Description>Un ensemble de tâches à effectuer sur un appareil. </Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1 ensemble de t\'e2ches\cf2  \'e0 effectuer sur un \cf1 appareil\cf2 . \cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-1</UserID>
+    <Sequence>3</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</UniqueID>
+    <Name>Action</Name>
+    <Description>Description formelle d'une action effectuée sur un appareil par un technicien.
+N'a pas de contexte; existe en tant que simple définition.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Description formelle d'une action effectu\'e9e sur un \cf1 appareil\cf2  par un \cf3\ul technicien\cf2\ulnone .\par
+N'a pas de contexte; existe en tant que simple d\'e9finition.\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-2</UserID>
+    <Sequence>0</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-24bdb2c9-0f30-4089-885d-44444c5b0491</UniqueID>
+    <Name>Formulaire d'ajout d'appareil</Name>
+    <Description>Formulaire contenant les champs à remplir pour compléter l'ajout d'un appareil dans la base de données.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Formulaire contenant les champs \'e0 remplir pour compl\'e9ter l'ajout d'un \cf1 appareil\cf2  dans la \cf3\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-21</UserID>
+    <Sequence>7</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-d6fc3064-41cf-4f7f-86e3-613332f79e84</UniqueID>
+    <Name>Formulaire de création de fiche de maintenance</Name>
+    <Description>Contient les champs à entrer pour la création d'une fiche de maintenance dans le dossier de client.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Contient les champs \'e0 entrer pour la cr\'e9ation d'une \cf1 fiche de maintenance\cf2  dans le \cf1 dossier de client\cf2 .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-3</UserID>
+    <Sequence>9</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-c1e00535-ddab-4ff9-9d78-3d1174a8f707</UniqueID>
+    <Name>CRU</Name>
+    <Description>l'abréviation du patron «Create, Read, Update, Delete» mais sans la partie de suppression</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 l'abr\'e9viation du patron \'abCreate, Read, Update, Delete\'bb mais sans la partie de suppression\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-4</UserID>
+    <Sequence>13</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-08200ed8-b4c3-42bb-aa32-f9af47dc70d6</UniqueID>
+    <Name>CRUA</Name>
+    <Description>l'abréviation du patron «Create, Read, Update, Delete» mais en remplaçant la partie suppression par un système d'archivage. </Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 l'abr\'e9viation du patron \'abCreate, Read, Update, Delete\'bb mais en rempla\'e7ant la partie suppression par un \cf1\ul syst\'e8me\cf2\ulnone  d'archivage. \cf0\fs20\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-5</UserID>
+    <Sequence>13</Sequence>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <UniqueID>D2-bac923c6-7035-4593-bb15-e81d8e800d65</UniqueID>
+    <Name>usager</Name>
+    <Description>Technicien utilisant le système actuellement. Utilisé pour garder en mémoire quel technicien a fais quoi lors de la confirmation des actions.</Description>
+    <Aliases />
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\ul\f0\fs20 Technicien\cf2\ulnone  utilisant le \cf1\ul syst\'e8me\cf2\ulnone  actuellement. Utilis\'e9 pour garder en m\'e9moire quel \cf1\ul technicien\cf2\ulnone  a fais quoi lors de la confirmation des \cf3 actions\cf2 .\cf0\par
+}
+</RichDescription>
+    <ParentID>P-cdd8e163-2580-40c4-a8c2-74ec1372a9c3</ParentID>
+    <UserID>DEF-4-6</UserID>
+    <Sequence>13</Sequence>
+  </DictionaryEntry>
+  <DictionaryField>
+    <Name>Action</Name>
+    <UniqueID>DF-40b02375-f2f5-4a44-a778-0934d209157a</UniqueID>
+    <ParentID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>ID de l'action</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>État</Name>
+    <UniqueID>DF-b84f04bc-ec6e-4390-b821-91376306c885</UniqueID>
+    <ParentID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</ParentID>
+    <ElementType>String</ElementType>
+    <Description>À faire, en cours, terminé...</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Numéro du client</Name>
+    <UniqueID>DF-300f1799-f9d9-428b-b949-363c5794362c</UniqueID>
+    <ParentID>D2-8307e339-acb0-4703-9a01-6037d1240eaa</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>7 derniers chiffres du numéro de téléphone</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Nom</Name>
+    <UniqueID>DF-780bbe1e-9f06-4c41-9921-ed1cff6156fa</UniqueID>
+    <ParentID>D2-8307e339-acb0-4703-9a01-6037d1240eaa</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Nom, Prénom du client</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Numéro de téléphone</Name>
+    <UniqueID>DF-e10344ae-c866-4d8b-b34e-9256e63479b7</UniqueID>
+    <ParentID>D2-8307e339-acb0-4703-9a01-6037d1240eaa</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>Numéro de téléphone complet</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Poste</Name>
+    <UniqueID>DF-f3ef7f7e-0f10-41dd-a76e-dd546db0ffff</UniqueID>
+    <ParentID>D2-8307e339-acb0-4703-9a01-6037d1240eaa</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>Poste téléphonique</Description>
+    <Sequence>3</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Numéro du client</Name>
+    <UniqueID>DF-bcdaf18e-237d-4e05-ba53-5bb795893187</UniqueID>
+    <ParentID>D2-f948bfee-d218-4785-b611-f4587f389850</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>7 derniers chiffres du numéro de téléphone</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Nom</Name>
+    <UniqueID>DF-61b2ce2b-c1f8-4335-a759-f78989b9bc1c</UniqueID>
+    <ParentID>D2-f948bfee-d218-4785-b611-f4587f389850</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Nom, Prénom du client</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Numéro de téléphone</Name>
+    <UniqueID>DF-a147341d-d576-438e-a18c-2b50ed78a7d6</UniqueID>
+    <ParentID>D2-f948bfee-d218-4785-b611-f4587f389850</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>Numéro de téléphone complet</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Poste</Name>
+    <UniqueID>DF-0f996e76-6d9f-4fc8-9000-277c9e04279a</UniqueID>
+    <ParentID>D2-f948bfee-d218-4785-b611-f4587f389850</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>Poste téléphonique</Description>
+    <Sequence>3</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Commentaire</Name>
+    <UniqueID>DF-fae5feac-3cd3-405b-a96d-37535ec5740b</UniqueID>
+    <ParentID>D2-4fb4c478-7fd1-4489-a957-659392e9f052</ParentID>
+    <ElementType>String</ElementType>
+    <Description>À l'usage des techniciens</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>ID</Name>
+    <UniqueID>DF-8bf48f6b-dbdd-4597-a3e0-711a3a898a5f</UniqueID>
+    <ParentID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</ParentID>
+    <ElementType>Integer</ElementType>
+    <Description>Identifiant interne</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Nom</Name>
+    <UniqueID>DF-66df1f85-4a64-4bbd-911e-2544d291a841</UniqueID>
+    <ParentID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Nom de l'action (format court)</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Description</Name>
+    <UniqueID>DF-07240927-7a77-4df3-8045-0505806e3655</UniqueID>
+    <ParentID>D2-cb7580b3-d454-4b41-a8ed-00ab5fb8d1f8</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Description de l'action (format long)</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>idAppareil</Name>
+    <UniqueID>DF-728442e8-c65f-4222-821e-a6c5e296fcd3</UniqueID>
+    <ParentID>D2-d6fc3064-41cf-4f7f-86e3-613332f79e84</ParentID>
+    <ElementType>INT</ElementType>
+    <Description>Identifiant de l'appareil du client</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name />
+    <UniqueID>DF-0bf71f0a-2149-4521-939e-c97b228d65ac</UniqueID>
+    <ParentID>D2-d6fc3064-41cf-4f7f-86e3-613332f79e84</ParentID>
+    <ElementType>[Type]</ElementType>
+    <Description>[Description]</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Marque</Name>
+    <UniqueID>DF-f79b5cec-3579-4f90-91bf-4ff1ab5073c2</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Marque du portable</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Modèle</Name>
+    <UniqueID>DF-a10bd468-5f4d-4fc8-bdd8-bea5025a34e1</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Modèle du portable</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Couleur</Name>
+    <UniqueID>DF-5bba36d6-19c5-4655-8e96-3685870e8d19</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Couleur du portable</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Taille</Name>
+    <UniqueID>DF-7489e4dc-ed94-41d7-b7b2-e151e761446b</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Taille du portable</Description>
+    <Sequence>3</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>État</Name>
+    <UniqueID>DF-d3110b47-8c36-457c-9be5-afebc764bcad</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>État physique de l'appareil</Description>
+    <Sequence>4</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Adapteur</Name>
+    <UniqueID>DF-3c740d8f-91bf-44c3-9481-be95dcb684b1</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>[Type]</ElementType>
+    <Description>Présence de l'adapteur CA</Description>
+    <Sequence>5</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Malette</Name>
+    <UniqueID>DF-689cef77-31dc-4eeb-af8a-8e0613be33b1</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>[Type]</ElementType>
+    <Description>Présence de la manette du client</Description>
+    <Sequence>6</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Autre</Name>
+    <UniqueID>DF-e3f6eb32-84c9-4ae9-af63-ba1910de314b</UniqueID>
+    <ParentID>D2-539a26e1-2320-4210-80ec-d4c707cadb8b</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Autre caractéristiques</Description>
+    <Sequence>7</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Marque</Name>
+    <UniqueID>DF-f8f78f9f-1309-4354-bbf4-c7dd12abbcc1</UniqueID>
+    <ParentID>D2-4c141ef9-a583-41e5-98db-9574869674f7</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Marque du boitier, si visible</Description>
+    <Sequence>0</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Modèle</Name>
+    <UniqueID>DF-108ef125-a443-4a77-af83-273fa28d1227</UniqueID>
+    <ParentID>D2-4c141ef9-a583-41e5-98db-9574869674f7</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Modèle du boîtier</Description>
+    <Sequence>1</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>Couleur</Name>
+    <UniqueID>DF-4b979fed-7a85-4e0b-88b3-8f193c8f1d14</UniqueID>
+    <ParentID>D2-4c141ef9-a583-41e5-98db-9574869674f7</ParentID>
+    <ElementType>String</ElementType>
+    <Description>Couleur du boîtier</Description>
+    <Sequence>2</Sequence>
+  </DictionaryField>
+  <DictionaryField>
+    <Name>État</Name>
+    <UniqueID>DF-8ef779b0-2575-43ac-bb8b-7e8442731635</UniqueID>
+    <ParentID>D2-4c141ef9-a583-41e5-98db-9574869674f7</ParentID>
+    <ElementType>String</ElementType>
+    <Description>État général (manque des morceaux, ...)</Description>
+    <Sequence>3</Sequence>
+  </DictionaryField>
+  <DictionaryFieldConstraint>
+    <ParentID>DF-300f1799-f9d9-428b-b949-363c5794362c</ParentID>
+    <ConstraintKind>REQUIRED</ConstraintKind>
+    <UniqueID>DC-40e36596-7e3c-401c-98e9-ffa697c98a0b</UniqueID>
+  </DictionaryFieldConstraint>
+</UCTDataSet>
