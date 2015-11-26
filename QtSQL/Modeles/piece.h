@@ -16,20 +16,21 @@ private:
 
 public:
     explicit Piece(QObject *parent = 0);
+    Piece(int a_id, QString a_nom, QString a_description, int a_prix, QObject *parent = 0);
+
+    int getId() const;
+    void setId(int value);
+
+    QString getNom() const;
+    void setNom(const QString &value);
+
+    QString getDescription() const;
+    void setDescription(const QString &value);
+
+    int getPrix() const;
+    void setPrix(int value);
 
 signals:
-
-    int getId(void);
-    void setId(int);
-
-    QString getNom(void);
-    void setNom(QString);
-
-    QString getDescription(void);
-    void setDescription(QString);
-
-    int getPrix(void);
-    void setPrix(int);
 
 public slots:
 
