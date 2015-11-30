@@ -26,7 +26,8 @@ SOURCES += main.cpp \
 	Modeles/client.cpp \
 	Mappeurs/mappeuraction.cpp \
 	Mappeurs/mappeurfabricant.cpp \
-	Mappeurs/mappeurpiece.cpp
+	Mappeurs/mappeurpiece.cpp \
+    Mappeurs/mappeurstatut.cpp
 
 HEADERS  += \
 	gestionnaireconnexion.h \
@@ -43,6 +44,7 @@ HEADERS  += \
 	Modeles/client.h \
 	Mappeurs/mappeuraction.h \
 	Mappeurs/mappeurfabricant.h \
-	Mappeurs/mappeurpiece.h
+	Mappeurs/mappeurpiece.h \
+    Mappeurs/mappeurstatut.h
 
 FORMS
