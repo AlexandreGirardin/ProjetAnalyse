@@ -7,7 +7,7 @@ class TypeAppareil : public QObject
 {
     Q_OBJECT
 public:
-    explicit TypeAppareil(QObject *parent = 0);
+    explicit TypeAppareil(int a_id, QString a_nom, QObject *parent = 0);
 
     int id;
     QString nom;
