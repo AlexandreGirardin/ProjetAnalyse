@@ -1,8 +1,10 @@
 #include "typeappareil.h"
 
-TypeAppareil::TypeAppareil(QObject *parent) :
+TypeAppareil::TypeAppareil(int a_id, QString a_nom, QObject *parent) :
     QObject(parent)
 {
+    setId(a_id);
+    setNom(a_nom);
 }
 QString TypeAppareil::getNom() const
 {
