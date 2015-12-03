@@ -35,17 +35,11 @@ QString Action::out()
 {
     return QString::number(id) + " " + nom + " " + description;
 }
-Action::Action(int a_id, QString a_nom, QString a_description)
-{
-    id = a_id;
-    nom = a_nom;
-    description = a_description;
-}
 
-void Action::setId(const QString *a_idStr) {
-    bool ok;
-    int a_id = a_idStr->toInt(&ok);
-    if (ok) {
-        id = a_id;
-    }
+Action::Action(int a_id, QString a_nom, QString a_description, QObject *parent):
+    QObject(parent)
+{
+    setId(a_id);
+    setNom(a_nom);
+    setDescription(a_description);
 }

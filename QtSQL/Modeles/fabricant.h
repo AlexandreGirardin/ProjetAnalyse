@@ -24,8 +24,6 @@ public:
 
     QString out(void);
 
-signals:
-
 public slots:
 
 };

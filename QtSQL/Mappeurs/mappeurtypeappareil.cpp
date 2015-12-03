@@ -1,4 +1,5 @@
 #include "mappeurtypeappareil.h"
+#include <QSqlRecord>
 
 MappeurTypeAppareil::MappeurTypeAppareil(GestionnaireConnexion *a_gc, QObject *parent) :
     QObject(parent)
@@ -11,8 +12,10 @@ TypeAppareil *MappeurTypeAppareil::getTypeAppareil(int id)
     TypeAppareil *typeAppareil = NULL;
     QString requete = "SELECT * FROM types WHERE id="+QString::number(id);
     QSqlQuery commande = gc->requete(requete);
+    int colId = commande.record().indexOf("id");
+    int colNom = commande.record().indexOf("nom");
     if (commande.next()) {
-        typeAppareil = new TypeAppareil(commande.value(0).toInt(), commande.value(1).toString(), this);
+        typeAppareil = new TypeAppareil(commande.value(colId).toInt(), commande.value(colNom).toString(), this);
     }
     return typeAppareil;
 }
@@ -21,8 +24,10 @@ QList<TypeAppareil*> MappeurTypeAppareil::getTypesAppareil(void) {
     QList<TypeAppareil*> liste;
     QString requete = "SELECT * FROM types";
     QSqlQuery commande = gc->requete(requete);
+    int colId = commande.record().indexOf("id");
+    int colNom = commande.record().indexOf("nom");
     while (commande.next()) {
-        TypeAppareil *typeAppareil = new TypeAppareil(commande.value(0).toInt(), commande.value(1).toString(), this);
+        TypeAppareil *typeAppareil = new TypeAppareil(commande.value(colId).toInt(), commande.value(colNom).toString(), this);
         liste.append(typeAppareil);
     }
     return liste;

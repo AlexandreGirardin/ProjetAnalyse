@@ -28,7 +28,9 @@ SOURCES += main.cpp \
 	Mappeurs/mappeurfabricant.cpp \
 	Mappeurs/mappeurpiece.cpp \
     Mappeurs/mappeurstatut.cpp \
-    Mappeurs/mappeurtypeappareil.cpp
+    Mappeurs/mappeurtypeappareil.cpp \
+    Mappeurs/mappeurtechnicien.cpp \
+    Mappeurs/mappeurtache.cpp
 
 HEADERS  += \
 	gestionnaireconnexion.h \
@@ -47,6 +49,8 @@ HEADERS  += \
 	Mappeurs/mappeurfabricant.h \
 	Mappeurs/mappeurpiece.h \
     Mappeurs/mappeurstatut.h \
-    Mappeurs/mappeurtypeappareil.h
+    Mappeurs/mappeurtypeappareil.h \
+    Mappeurs/mappeurtechnicien.h \
+    Mappeurs/mappeurtache.h
 
 FORMS

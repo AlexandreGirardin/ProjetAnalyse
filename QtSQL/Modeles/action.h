@@ -3,8 +3,9 @@
 
 #include <QObject>
 
-class Action
+class Action : public QObject
 {
+    Q_OBJECT
 
 private:
     int id;
@@ -13,11 +14,10 @@ private:
 
 public:
     explicit Action(QObject *parent = 0);
-    Action(int, QString, QString);
+    explicit Action(int a_id, QString a_nom, QString a_description, QObject *parent = 0);
 
     int getId() const;
     void setId(int value);
-    void setId(const QString *a_idStr);
 
     QString getNom() const;
     void setNom(const QString &value);

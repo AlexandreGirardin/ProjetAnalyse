@@ -52,8 +52,8 @@ Piece::Piece(QObject *parent) :
 
 Piece::Piece(int a_id, QString a_nom, QString a_description, int a_prix, QObject *parent): QObject(parent)
 {
-    id = a_id;
-    nom = a_nom;
-    description = a_description;
-    prix = a_prix;
+    setId(a_id);
+    setNom(a_nom);
+    setDescription(a_description);
+    setPrix(a_prix);
 }
