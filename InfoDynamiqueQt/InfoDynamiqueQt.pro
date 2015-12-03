@@ -13,37 +13,46 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    vueauthentification.cpp \
-    vueprincipale.cpp \
-    vuegestiontache.cpp \
-    vuegestionpiece.cpp \
-    vuegestionfiche.cpp \
-    vuegestionensemble.cpp \
-    vuegestionclient.cpp \
-    vuegestionappareil.cpp \
-    vuefragment.cpp \
-    vueeditionfiche.cpp
+    Vues/vueauthentification.cpp \
+    Vues/vueprincipale.cpp \
+    Vues/vuegestiontache.cpp \
+    Vues/vuegestionpiece.cpp \
+    Vues/vuegestionfiche.cpp \
+    Vues/vuegestionensemble.cpp \
+    Vues/vuegestionclient.cpp \
+    Vues/vuegestionappareil.cpp \
+    Vues/vuefragment.cpp \
+    Vues/vueeditionfiche.cpp \
+    Vues/vuesecondaire.cpp \
+    Controleurs/controleurapplication.cpp \
+    Controleurs/controleurclients.cpp \
+    Controleurs/controleurfiches.cpp
 
 HEADERS  += \
-    vueauthentification.h \
-    vueprincipale.h \
-    vuegestiontache.h \
-    vuegestionpiece.h \
-    vuegestionfiche.h \
-    vuegestionensemble.h \
-    vuegestionclient.h \
-    vuegestionappareil.h \
-    vuefragment.h \
-    vueeditionfiche.h
+    Vues/vueauthentification.h \
+    Vues/vueprincipale.h \
+    Vues/vuegestiontache.h \
+    Vues/vuegestionpiece.h \
+    Vues/vuegestionfiche.h \
+    Vues/vuegestionensemble.h \
+    Vues/vuegestionclient.h \
+    Vues/vuegestionappareil.h \
+    Vues/vuefragment.h \
+    Vues/vueeditionfiche.h \
+    Vues/vuesecondaire.h \
+    Controleurs/controleurapplication.h \
+    Controleurs/controleurclients.h \
+    Controleurs/controleurfiches.h
 
 FORMS    += \
-    vueauthentification.ui \
-    vueeditionfiche.ui \
-    vuefragment.ui \
-    vuegestionappareil.ui \
-    vuegestionclient.ui \
-    vuegestionensemble.ui \
-    vuegestionfiche.ui \
-    vuegestionpiece.ui \
-    vuegestiontache.ui \
-    vueprincipale.ui
+    Vues/vueauthentification.ui \
+    Vues/vueeditionfiche.ui \
+    Vues/vuefragment.ui \
+    Vues/vuegestionappareil.ui \
+    Vues/vuegestionclient.ui \
+    Vues/vuegestionensemble.ui \
+    Vues/vuegestionfiche.ui \
+    Vues/vuegestionpiece.ui \
+    Vues/vuegestiontache.ui \
+    Vues/vueprincipale.ui \
+    Vues/vuesecondaire.ui

@@ -1,12 +1,10 @@
-#include "vueprincipale.h"
-#include "vueauthentification.h"
+#include "Controleurs/controleurapplication.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    VuePrincipale w;
-    w.show();
+    ControleurApplication controleurApplication;
 
     return a.exec();
 }

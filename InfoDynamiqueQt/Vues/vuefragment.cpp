@@ -3,14 +3,14 @@
 
 VueFragment::VueFragment(QWidget *parent) : QWidget(parent), ui(new Ui::VueFragment) {
     ui->setupUi(this);
-    QObject::connect(ui->bouton1, SIGNAL(clicked()), this, SLOT(changerEtiquette("Slut!")));
+    QObject::connect(ui->bouton1, SIGNAL(clicked()), this, SLOT(changerEtiquette()));
 }
 
 VueFragment::~VueFragment() {
     delete ui;
 }
 
-void VueFragment::changerEtiquette(QString a_etiquette)
+void VueFragment::changerEtiquette()
 {
-    ui->etiquette->setText(a_etiquette);
+    ui->etiquette->setText("Slut!");
 }

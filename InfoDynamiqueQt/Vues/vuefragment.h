@@ -20,7 +20,7 @@ private:
 
 
 public slots:
-    void changerEtiquette(QString a_etiquette);
+    void changerEtiquette();
 };
 
 #endif // FRAGMENT_H
