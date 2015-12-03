@@ -10,6 +10,6 @@ ControleurFiches::ControleurFiches(VuePrincipale *vuePrincipale, QObject *parent
     vueSecondaireFiches = new VueSecondaire();
     fragment = new VueFragment();
     vueSecondaireFiches->getUi()->verticalLayout->addWidget(fragment);
-    vuePrincipale->getUi()->ongletClients->layout()->addWidget(vueSecondaireFiches);
+    vuePrincipale->getUi()->ongletFiches->layout()->addWidget(vueSecondaireFiches);
 }
 
