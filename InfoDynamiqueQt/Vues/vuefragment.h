@@ -21,6 +21,15 @@ private:
 
 public slots:
     void changerEtiquette();
+
+signals:
+    void clicCreer(void);
+    void clicEditer(void);
+    void clicVoir(void);
+    void caseCochee(void);
+    void caseDecochee(void);
+    void rechercher(void);
+
 };
 
 #endif // FRAGMENT_H

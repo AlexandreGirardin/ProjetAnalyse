@@ -2,16 +2,18 @@
 #define MAPPEURPIECES_H
 
 #include <QObject>
-#include "Controleurs/controleurconnexion.h"
+#include <QSqlDatabase>
+
+#include "Controleurs/controleurbd.h"
 #include "Modeles/piece.h"
 
 class MappeurPieces : public QObject
 {
     Q_OBJECT
 public:
-    explicit MappeurPieces(ControleurBD *a_gc, QObject *parent = 0);
+    explicit MappeurPieces(QSqlDatabase *a_bd, QObject *parent = 0);
 
-    ControleurBD *gc;
+    QSqlDatabase bd;
 
     Piece* getPiece(int id);
 
