@@ -3,9 +3,8 @@
 #include <QtSql/QSqlDatabase>
 #include <QDebug>
 
-ControleurBD::ControleurBD(QObject *parent) :
-    QObject(parent)
-{
+ControleurBD::ControleurBD(QObject* parent) :
+    QObject(parent) {
     bd = QSqlDatabase::addDatabase(QString("QMYSQL"), QString("dossiers"));
     bd.setHostName("localhost");
     bd.setDatabaseName("InfoDynamiqueDossiers");
@@ -16,13 +15,6 @@ ControleurBD::ControleurBD(QObject *parent) :
     }
 }
 
-QSqlQuery ControleurBD::requete(const QString commande)
-{
-    QSqlQuery* query = new QSqlQuery(bd);
-    query->exec(commande);
-    return *query;
-}
-QSqlDatabase *ControleurBD::getBd()
-{
+QSqlDatabase* ControleurBD::getBd() {
     return &bd;
 }

@@ -9,14 +9,21 @@
 class ControleurBD : public QObject
 {
     Q_OBJECT
-public:
-    explicit ControleurBD(QObject *parent = 0);
-    QSqlQuery requete(const QString commande);
-
-    QSqlDatabase *getBd();
 
 private:
+
+    // La base de donnée principale
     QSqlDatabase bd;
+
+public:
+
+    explicit ControleurBD(QObject* parent = 0);
+
+    /**
+     * @brief getBd
+     * @return La base de donnée principale
+     */
+    QSqlDatabase* getBd();
 
 signals:
 
