@@ -23,6 +23,18 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -70,7 +82,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QCheckBox" name="case_2">
+      <widget class="QCheckBox" name="caseCocher">
        <property name="text">
         <string>CheckBox</string>
        </property>
@@ -80,9 +92,21 @@
       <widget class="QLineEdit" name="champ">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>0</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Recherche</string>
        </property>
       </widget>
      </item>

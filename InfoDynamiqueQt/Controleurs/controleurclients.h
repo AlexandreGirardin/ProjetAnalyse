@@ -2,6 +2,7 @@
 #define CONTROLEURCLIENTS_H
 
 #include <QObject>
+#include "Controleurs/controleurgestionclient.h"
 #include "Vues/vueprincipale.h"
 #include "Vues/vuesecondaire.h"
 #include "Vues/vuefragment.h"
@@ -13,6 +14,7 @@ public:
     explicit ControleurClients(VuePrincipale *, QObject *parent = 0);
 
 private:
+    ControleurGestionClient *controleurGestionClient;
     VueSecondaire *vueSecondaireClients;
     VueFragment *fragmentClients;
     VueFragment *fragmentAppareils;

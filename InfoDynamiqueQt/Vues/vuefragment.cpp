@@ -10,7 +10,37 @@ VueFragment::~VueFragment() {
     delete ui;
 }
 
-void VueFragment::changerEtiquette()
+QLabel *VueFragment::getEtiquette() const
 {
-    ui->etiquette->setText("Slut!");
+    return ui->etiquette;
+}
+
+QPushButton *VueFragment::getBouton1() const
+{
+    return ui->bouton1;
+}
+
+QPushButton *VueFragment::getBouton2() const
+{
+    return ui->bouton2;
+}
+
+QPushButton *VueFragment::getBouton3() const
+{
+    return ui->bouton3;
+}
+
+QCheckBox *VueFragment::getCaseCocher() const
+{
+    return ui->caseCocher;
+}
+
+QLineEdit *VueFragment::getChamp() const
+{
+    return ui->champ;
+}
+
+QTableWidget *VueFragment::getTableau() const
+{
+    return ui->tableau;
 }
