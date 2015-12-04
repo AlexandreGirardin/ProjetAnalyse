@@ -1,16 +1,16 @@
 #include <QApplication>
 #include "gestionnaireconnexion.h"
-#include "Modeles/action.h"
-#include "Mappeurs/mappeuraction.h"
+#include "Modeles/technicien.h"
+#include "Mappeurs/mappeurtechnicien.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     GestionnaireConnexion gc;
-    MappeurAction *fabrique = new MappeurAction(&gc);
-    QList<Action*> liste = fabrique->getActions();
+    MappeurTechnicien *fabrique = new MappeurTechnicien(&gc);
+    QList<Technicien*> liste = fabrique->getTechniciens();
     for (int i = 0; i < liste.count(); ++i) {
-        Action* modele = liste.at(i);
+        Technicien* modele = liste.at(i);
         if (!(modele == NULL)) {
             qDebug() << modele->out();
         } else {

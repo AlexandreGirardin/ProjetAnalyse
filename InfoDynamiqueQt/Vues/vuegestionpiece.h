@@ -15,6 +15,15 @@ public:
     explicit VueGestionPiece(QWidget *parent = 0);
     ~VueGestionPiece();
 
+    QString getNom() const;
+    void setNom(const QString &);
+
+    QString getDescription() const;
+    void setDescription(const QString &);
+
+    double getPrix() const;
+    void setPrix(double);
+
 private:
     Ui::VueGestionPiece *ui;
 };

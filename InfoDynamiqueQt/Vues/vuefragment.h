@@ -31,5 +31,15 @@ public:
 private:
     Ui::VueFragment *ui;
 
+public slots:
+
+signals:
+    void clicCreer(void);
+    void clicEditer(void);
+    void clicVoir(void);
+    void caseCochee(void);
+    void caseDecochee(void);
+    void rechercher(void);
+
 };
 #endif // FRAGMENT_H

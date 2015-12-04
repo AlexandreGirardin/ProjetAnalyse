@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,7 +29,10 @@ SOURCES += main.cpp\
     Controleurs/controleurfiches.cpp \
     Controleurs/controleurappareils.cpp \
     Controleurs/controleuractions.cpp \
-    Controleurs/controleurgestionclient.cpp
+    Controleurs/controleurgestionclient.cpp \
+    Mappeurs/mappeurpieces.cpp \
+    Modeles/piece.cpp \
+    Controleurs/controleurbd.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -48,17 +51,20 @@ HEADERS  += \
     Controleurs/controleurfiches.h \
     Controleurs/controleurappareils.h \
     Controleurs/controleuractions.h \
-    Controleurs/controleurgestionclient.h
+    Controleurs/controleurgestionclient.h \
+    Mappeurs/mappeurpieces.h \
+    Modeles/piece.h \
+    Controleurs/controleurbd.h
 
 FORMS    += \
-    Vues/vueauthentification.ui \
-    Vues/vueeditionfiche.ui \
-    Vues/vuefragment.ui \
-    Vues/vuegestionappareil.ui \
-    Vues/vuegestionclient.ui \
-    Vues/vuegestionensemble.ui \
-    Vues/vuegestionfiche.ui \
-    Vues/vuegestionpiece.ui \
-    Vues/vuegestiontache.ui \
-    Vues/vueprincipale.ui \
-    Vues/vuesecondaire.ui
+	Vues/vueauthentification.ui \
+	Vues/vueeditionfiche.ui \
+	Vues/vuefragment.ui \
+	Vues/vuegestionappareil.ui \
+	Vues/vuegestionclient.ui \
+	Vues/vuegestionensemble.ui \
+	Vues/vuegestionfiche.ui \
+	Vues/vuegestionpiece.ui \
+	Vues/vuegestiontache.ui \
+	Vues/vueprincipale.ui \
+	Vues/vuesecondaire.ui
