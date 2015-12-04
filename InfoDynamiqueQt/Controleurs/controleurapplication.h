@@ -2,6 +2,8 @@
 #define CONTROLEURAPPLICATION_H
 
 #include <QObject>
+#include "controleuractions.h"
+#include "controleurappareils.h"
 #include "controleurclients.h"
 #include "controleurfiches.h"
 #include "Vues/vueprincipale.h"
@@ -17,6 +19,8 @@ private:
     VuePrincipale *vuePrincipale;
     ControleurClients *controleurClients;
     ControleurFiches *controleurFiches;
+    ControleurAppareils *controleurAppareils;
+    ControleurActions *controleurActions;
 
 signals:
 

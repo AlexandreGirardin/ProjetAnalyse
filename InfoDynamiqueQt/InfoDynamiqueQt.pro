@@ -26,7 +26,10 @@ SOURCES += main.cpp\
     Vues/vuesecondaire.cpp \
     Controleurs/controleurapplication.cpp \
     Controleurs/controleurclients.cpp \
-    Controleurs/controleurfiches.cpp
+    Controleurs/controleurfiches.cpp \
+    Controleurs/controleurappareils.cpp \
+    Controleurs/controleuractions.cpp \
+    Controleurs/controleurgestionclient.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -42,7 +45,10 @@ HEADERS  += \
     Vues/vuesecondaire.h \
     Controleurs/controleurapplication.h \
     Controleurs/controleurclients.h \
-    Controleurs/controleurfiches.h
+    Controleurs/controleurfiches.h \
+    Controleurs/controleurappareils.h \
+    Controleurs/controleuractions.h \
+    Controleurs/controleurgestionclient.h
 
 FORMS    += \
     Vues/vueauthentification.ui \
