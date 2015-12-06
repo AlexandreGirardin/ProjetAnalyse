@@ -32,7 +32,9 @@ SOURCES += main.cpp\
     Controleurs/controleurgestionclient.cpp \
     Mappeurs/mappeurpieces.cpp \
     Modeles/piece.cpp \
-    Controleurs/controleurbd.cpp
+    Controleurs/controleurbd.cpp \
+    Controleurs/controleurgestionappareil.cpp \
+    Controleurs/controleurgestionfiche.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -54,7 +56,9 @@ HEADERS  += \
     Controleurs/controleurgestionclient.h \
     Mappeurs/mappeurpieces.h \
     Modeles/piece.h \
-    Controleurs/controleurbd.h
+    Controleurs/controleurbd.h \
+    Controleurs/controleurgestionappareil.h \
+    Controleurs/controleurgestionfiche.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \

@@ -23,22 +23,20 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>0</number>
    </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="etiquette">
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+         <underline>false</underline>
+        </font>
+       </property>
        <property name="text">
         <string>TextLabel</string>
        </property>
@@ -47,7 +45,7 @@
      <item>
       <widget class="QPushButton" name="bouton1">
        <property name="text">
-        <string>PushButton</string>
+        <string>Ajouter</string>
        </property>
       </widget>
      </item>
@@ -57,14 +55,14 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>PushButton</string>
+        <string>Modifier</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="bouton3">
        <property name="text">
-        <string>PushButton</string>
+        <string>Visualiser</string>
        </property>
       </widget>
      </item>
@@ -113,7 +111,32 @@
     </layout>
    </item>
    <item>
-    <widget class="QTableWidget" name="tableau"/>
+    <widget class="QTableView" name="tableau">
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+    </widget>
    </item>
   </layout>
  </widget>

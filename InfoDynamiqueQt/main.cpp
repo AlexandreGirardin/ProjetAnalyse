@@ -12,19 +12,13 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     ControleurBD *db = new ControleurBD();
-    MappeurPieces *map = new MappeurPieces(db->getBd());
-//    Piece *modele = map->getPiece(6);
-    QList<Piece*>* modeles = map->getPieces();
-    for (int i = 0; i < modeles->count(); ++i) {
-        qDebug() << modeles->at(i)->out();
-    }
-//    if (!(modele == NULL)) {
-//        VueGestionPiece* vue = new VueGestionPiece();
-//        vue->setWindowTitle("youpi");
-//        vue->setNom(modele->getNom());
-//        vue->setPrix(modele->getPrixDouble());
-//        vue->setDescription(modele->getDescription());
-//        vue->show();
+    ControleurApplication* ca = new ControleurApplication();
+    ca->executer();
+
+//    MappeurPieces *map = new MappeurPieces(db->getBd());
+//    QList<Piece*>* modeles = map->getPieces();
+//    for (int i = 0; i < modeles->count(); ++i) {
+//        qDebug() << modeles->at(i)->out();
 //    }
 
     return a.exec();

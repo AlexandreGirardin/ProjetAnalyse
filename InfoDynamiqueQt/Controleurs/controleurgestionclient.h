@@ -7,14 +7,21 @@
 class ControleurGestionClient : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit ControleurGestionClient(QObject *parent = 0);
-    VueGestionClient *vueGestionClient;
+    explicit ControleurGestionClient(QObject* parent = 0);
+
+    // La vue utilisée pour modifier un client
+    VueGestionClient* vueGestionClient;
 
 signals:
 
 public slots:
-    void ajouterClient(void);
+
+    /**
+     * @brief ajouterClient Lance la création d'un nouveau client
+     */
+    void ajouterClient();
 };
 
 #endif // CONTROLEURGESTIONCLIENT_H

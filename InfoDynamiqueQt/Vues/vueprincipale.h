@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "vuesecondaire.h"
+
 namespace Ui {
 class VuePrincipale;
 }
@@ -19,9 +20,6 @@ public:
 
 private:
     Ui::VuePrincipale *ui;
-    VueSecondaire *vueClients;
-    VueSecondaire *vueClientsAppareils;
-    VueSecondaire *vueClientsTaches;
     VueSecondaire *vueAppareils;
     VueSecondaire *vueFiches;
     VueSecondaire *vueActions;
