@@ -3,7 +3,7 @@
 
 VueFragment::VueFragment(QWidget *parent) : QWidget(parent), ui(new Ui::VueFragment) {
     ui->setupUi(this);
-    QObject::connect(ui->bouton1, SIGNAL(clicked()), this, SLOT(changerEtiquette()));
+//    QObject::connect(ui->bouton1, SIGNAL(clicked()), this, SLOT(changerEtiquette()));
 }
 
 VueFragment::~VueFragment() {
@@ -40,7 +40,12 @@ QLineEdit *VueFragment::getChamp() const
     return ui->champ;
 }
 
-QTableWidget *VueFragment::getTableau() const
+QTableView *VueFragment::getTableau() const
 {
     return ui->tableau;
+}
+
+void VueFragment::setModele(QAbstractTableModel* modele)
+{
+    ui->tableau->setModel(modele);
 }

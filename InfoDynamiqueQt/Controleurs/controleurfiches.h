@@ -9,11 +9,22 @@
 class ControleurFiches : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit ControleurFiches(VuePrincipale *, QObject *parent = 0);
+
+    /**
+     * @brief ControleurFiches
+     * @param vuePrincipale
+     * @param parent
+     */
+    explicit ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent = 0);
 
 private:
+
+    // La vue secondaire à contrôler
     VueSecondaire *vueSecondaireFiches;
+
+    // Le fragment des fiches
     VueFragment *fragment;
 
 signals:

@@ -4,8 +4,7 @@ ControleurGestionClient::ControleurGestionClient(QObject *parent) : QObject(pare
     vueGestionClient = new VueGestionClient();
 }
 
-void ControleurGestionClient::ajouterClient()
-{
+void ControleurGestionClient::ajouterClient() {
     vueGestionClient->exec();
 }
 

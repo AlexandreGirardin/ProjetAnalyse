@@ -26,7 +26,8 @@ public:
     QPushButton *getBouton3() const;
     QCheckBox *getCaseCocher() const;
     QLineEdit *getChamp() const;
-    QTableWidget *getTableau() const;
+    QTableView *getTableau() const;
+    void setModele(QAbstractTableModel*);
 
 private:
     Ui::VueFragment *ui;
