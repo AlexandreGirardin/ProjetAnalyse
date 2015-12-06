@@ -29,17 +29,8 @@ QList<Piece*>* MappeurPieces::getPieces(void) {
     QList<Piece*>* liste = new QList<Piece*>();
     QString requete = "SELECT * FROM pieces";
     QSqlQuery* commande = new QSqlQuery(requete, *bd);
-    QSqlRecord ligne = commande->record();
-    int colId = ligne.indexOf("id");
-    int colNom = ligne.indexOf("nom");
-    int colDesc = ligne.indexOf("description");
-    int colPrix = ligne.indexOf("prix");
     while (commande->next()) {
-        ligne = commande->record();
-        Piece* piece = new Piece(ligne.value(colId).toInt(),
-                                 ligne.value(colNom).toString(),
-                                 ligne.value(colDesc).toString(),
-                                 ligne.value(colPrix).toInt(), this);
+        Piece* piece = mapper(commande->record());
         liste->append(piece);
     }
     return liste;
