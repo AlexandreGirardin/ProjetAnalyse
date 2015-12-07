@@ -1,16 +1,17 @@
 #include "mappeurfabricant.h"
 #include <QSqlRecord>
 
+
 MappeurFabricant::MappeurFabricant(GestionnaireConnexion *a_gc, QObject *parent) :
     QObject(parent)
 {
     gc = a_gc;
 }
 
-Fabricant* MappeurFabricant::getFabricant(int id)
+Fabricant* MappeurFabricant::getFabricant(int a_id)
 {
     Fabricant *fabricant = NULL;
-    QString requete = "SELECT * FROM fabricants WHERE id="+QString::number(id);
+    QString requete = "SELECT * FROM fabricants WHERE id="+QString::number(a_id);
     QSqlQuery commande = gc->requete(requete);
     int colId = commande.record().indexOf("id");
     int colNom = commande.record().indexOf("nom");

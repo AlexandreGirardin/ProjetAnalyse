@@ -1,6 +1,7 @@
 #include "mappeuraction.h"
 #include <QSqlRecord>
 
+
 MappeurAction::MappeurAction(GestionnaireConnexion* a_gc, QObject *parent) :
     QObject(parent)
 {

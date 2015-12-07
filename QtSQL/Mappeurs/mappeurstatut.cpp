@@ -1,15 +1,16 @@
 #include "mappeurstatut.h"
 #include <QSqlRecord>
 
+
 MappeurStatut::MappeurStatut(GestionnaireConnexion *a_gc,QObject *parent) : QObject(parent)
 {
     gc = a_gc;
 }
 
-Statut *MappeurStatut::getStatutFiche(int id)
+Statut *MappeurStatut::getStatutFiche(int a_id)
 {
     Statut *statut = NULL;
-    QString requete = "SELECT * FROM statutsFiche WHERE id="+QString::number(id);
+    QString requete = "SELECT * FROM statutsFiche WHERE id="+QString::number(a_id);
     QSqlQuery commande = gc->requete(requete);
     int colId = commande.record().indexOf("id");
     int colNom = commande.record().indexOf("nom");

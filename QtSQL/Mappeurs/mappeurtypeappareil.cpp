@@ -1,16 +1,17 @@
 #include "mappeurtypeappareil.h"
 #include <QSqlRecord>
 
+
 MappeurTypeAppareil::MappeurTypeAppareil(GestionnaireConnexion *a_gc, QObject *parent) :
     QObject(parent)
 {
     gc = a_gc;
 }
 
-TypeAppareil *MappeurTypeAppareil::getTypeAppareil(int id)
+TypeAppareil *MappeurTypeAppareil::getTypeAppareil(int a_id)
 {
     TypeAppareil *typeAppareil = NULL;
-    QString requete = "SELECT * FROM types WHERE id="+QString::number(id);
+    QString requete = "SELECT * FROM types WHERE id="+QString::number(a_id);
     QSqlQuery commande = gc->requete(requete);
     int colId = commande.record().indexOf("id");
     int colNom = commande.record().indexOf("nom");

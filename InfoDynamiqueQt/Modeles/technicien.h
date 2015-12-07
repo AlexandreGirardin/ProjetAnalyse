@@ -14,7 +14,7 @@ private:
 
 public:
     explicit Technicien(QObject *parent = 0);
-
+    Technicien(int a_id, QString a_nom, QObject *parent = 0);
     int getId() const;
     void setId(int value);
 

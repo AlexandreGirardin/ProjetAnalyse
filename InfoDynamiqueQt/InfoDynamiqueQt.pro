@@ -32,14 +32,13 @@ SOURCES += main.cpp\
     Controleurs/controleurgestionclient.cpp \
     Controleurs/controleurbd.cpp \
     Controleurs/controleurgestionappareil.cpp \
-    Controleurs/controleurgestionfiche.cpp
+    Controleurs/controleurgestionfiche.cpp \
     Mappeurs/mappeurpieces.cpp \
     Mappeurs/mappeuractions.cpp \
     Mappeurs/mappeurfabricants.cpp \
     Mappeurs/mappeurstatuts.cpp \
     Mappeurs/mappeurtypeappareils.cpp \
-    Mappeurs/mappeurtaches.cpp \
-    Mappeurs/mappeurtechniciens.cpp
+    Mappeurs/mappeurtechniciens.cpp\
     Modeles/action.cpp \
     Modeles/appareil.cpp \
     Modeles/client.cpp \
@@ -50,7 +49,7 @@ SOURCES += main.cpp\
     Modeles/tache.cpp \
     Modeles/technicien.cpp \
     Modeles/typeappareil.cpp \
-    Modeles/piece.cpp \
+    Modeles/piece.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -71,15 +70,14 @@ HEADERS  += \
     Controleurs/controleuractions.h \
     Controleurs/controleurgestionclient.h \
     Controleurs/controleurgestionappareil.h \
-    Controleurs/controleurgestionfiche.h
+    Controleurs/controleurgestionfiche.h \
     Controleurs/controleurbd.h \
     Mappeurs/mappeurpieces.h \
     Mappeurs/mappeuractions.h \
     Mappeurs/mappeurfabricants.h \
     Mappeurs/mappeurstatuts.h \
     Mappeurs/mappeurtypeappareils.h \
-    Mappeurs/mappeurtaches.h \
-    Mappeurs/mappeurtechniciens.h
+    Mappeurs/mappeurtechniciens.h \
     Modeles/action.h \
     Modeles/appareil.h \
     Modeles/client.h \
@@ -90,7 +88,7 @@ HEADERS  += \
     Modeles/tache.h \
     Modeles/technicien.h \
     Modeles/typeappareil.h \
-    Modeles/piece.h \
+    Modeles/piece.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
