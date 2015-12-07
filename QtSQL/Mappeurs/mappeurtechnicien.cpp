@@ -1,16 +1,17 @@
 #include "mappeurtechnicien.h"
 #include <QSqlRecord>
 
+
 MappeurTechnicien::MappeurTechnicien(GestionnaireConnexion *a_gc, QObject *parent) :
     QObject(parent)
 {
     gc = a_gc;
 }
 
-Technicien *MappeurTechnicien::getTechnicien(int id)
+Technicien *MappeurTechnicien::getTechnicien(int a_id)
 {
     Technicien *technicien = NULL;
-    QString requete = "SELECT * FROM techniciens WHERE id="+QString::number(id);
+    QString requete = "SELECT * FROM techniciens WHERE id="+QString::number(a_id);
     QSqlQuery commande = gc->requete(requete);
     int colId = commande.record().indexOf("id");
     int colNom = commande.record().indexOf("nom");

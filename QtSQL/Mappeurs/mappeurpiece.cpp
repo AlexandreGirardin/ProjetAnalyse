@@ -1,16 +1,17 @@
 #include "mappeurpiece.h"
 #include <QSqlRecord>
 
+
 MappeurPiece::MappeurPiece(GestionnaireConnexion *a_gc, QObject *parent) :
     QObject(parent)
 {
     gc = a_gc;
 }
 
-Piece *MappeurPiece::getPiece(int id)
+Piece *MappeurPiece::getPiece(int a_id)
 {
     Piece *piece = NULL;
-    QString requete = "SELECT * FROM pieces WHERE id="+QString::number(id);
+    QString requete = "SELECT * FROM pieces WHERE id="+QString::number(a_id);
     QSqlQuery commande = gc->requete(requete);
     int colId = commande.record().indexOf("id");
     int colNom = commande.record().indexOf("nom");
