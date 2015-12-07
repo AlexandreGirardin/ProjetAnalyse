@@ -66,7 +66,18 @@ void ControleurClients::configurerFragmentAppareils() {
     fragmentAppareils->getCaseCocher()->hide();
     fragmentAppareils->setHidden(true);
     QObject::connect(fragmentAppareils->getBouton1(), SIGNAL(pressed()), controleurGestionAppareil, SLOT(ajouterAppareil()));
-    QObject::connect(fragmentClients->getTableau(), SIGNAL(clicked(QModelIndex)), this, SLOT(afficherAppareils(QModelIndex)));
+    QObject::connect(fragmentClients->getTableau(), SIGNAL(clicked(QModelIndex)), this, SLOT(clientSelectionne(QModelIndex)));
+}
+
+void ControleurClients::clientSelectionne(QModelIndex index)
+{
+    int colonne = 0;
+    int rangee = index.row();
+    QModelIndex index2 = fragmentClients->getTableau()->model()->index(rangee, colonne);
+    QVariant id = fragmentClients->getTableau()->model()->data(index2);
+    peuplerAppareils(id.toInt());
+    fragmentAppareils->show();
+    fragmentFiches->hide();
 }
 
 void ControleurClients::peuplerAppareils(int idClient)
@@ -96,15 +107,25 @@ void ControleurClients::configurerFragmentFiches() {
     fragmentFiches->getCaseCocher()->setText("Afficher toutes les fiches");
     fragmentFiches->hide();
     QObject::connect(fragmentFiches->getBouton1(), SIGNAL(pressed()), controleurGestionFiche, SLOT(ajouterFiche()));
+    QObject::connect(fragmentAppareils->getTableau(), SIGNAL(clicked(QModelIndex)), this, SLOT(afficherFiches(QModelIndex)));
 }
 
-void ControleurClients::afficherAppareils(QModelIndex index)
+void ControleurClients::peuplerFiches(int idAppareil)
+{
+    QSqlQueryModel* fiches = new QSqlQueryModel(this);
+    const QSqlDatabase bd = QSqlDatabase::database("dossiers");
+    QString requete = "SELECT * FROM fiches WHERE idAppareil="+QString::number(idAppareil);
+    fiches->setQuery(requete, bd);
+    fragmentFiches->setModele(fiches);
+}
+
+void ControleurClients::afficherFiches(QModelIndex index)
 {
     int colonne = 0;
     int rangee = index.row();
-    QModelIndex index2 = fragmentClients->getTableau()->model()->index(rangee, colonne);
-    QVariant id = fragmentClients->getTableau()->model()->data(index2);
-    peuplerAppareils(id.toInt());
-    fragmentAppareils->show();
+    QModelIndex index2 = fragmentAppareils->getTableau()->model()->index(rangee, colonne);
+    QVariant id = fragmentAppareils->getTableau()->model()->data(index2);
+    peuplerFiches(id.toInt());
+    fragmentFiches->show();
 }
 

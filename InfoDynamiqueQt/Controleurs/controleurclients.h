@@ -66,9 +66,11 @@ private:
 signals:
 
 public slots:
-    void afficherAppareils(QModelIndex);
+    void clientSelectionne(QModelIndex);
+    void afficherFiches(QModelIndex);
     void peuplerClients();
     void peuplerAppareils(int idClient);
+    void peuplerFiches(int idAppareil);
 };
 
 #endif // CONTROLEURCLIENTS_H

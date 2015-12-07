@@ -15,49 +15,41 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QLabel" name="label_3">
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="etiquetteDescription">
        <property name="text">
         <string>Description:</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QTextEdit" name="textEdit"/>
+     <item row="0" column="1">
+      <widget class="QTextEdit" name="champDescription"/>
      </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="label_2">
+     <item row="2" column="1">
+      <widget class="QComboBox" name="comboPreselection"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboPriorite"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="etiquettePriorite">
        <property name="text">
         <string>Priorité:</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QComboBox" name="comboBox"/>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="label">
+     <item row="2" column="0">
+      <widget class="QLabel" name="etiquettePreselection">
        <property name="text">
-        <string>Préselection:</string>
+        <string>Présélection:</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QComboBox" name="comboBox_2"/>
-     </item>
     </layout>
    </item>
    <item>
-    <widget class="QTableView" name="tableView"/>
+    <widget class="QTableView" name="tableTaches"/>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
