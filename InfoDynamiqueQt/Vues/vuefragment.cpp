@@ -47,5 +47,7 @@ QTableView *VueFragment::getTableau() const
 
 void VueFragment::setModele(QAbstractTableModel* modele)
 {
+    QItemSelectionModel* vieilleSelection = ui->tableau->selectionModel();
     ui->tableau->setModel(modele);
+    delete vieilleSelection;
 }
