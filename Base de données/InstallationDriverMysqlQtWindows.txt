@@ -1,0 +1,57 @@
+Requis
+	Qt 5.5 32bits		http://www.qt.io/download-open-source/
+	MySQL 5.6 32bits	http://dev.mysql.com/downloads/windows/installer/5.6.html
+
+installation
+	Qt 5.5
+	x:Décocher
+	/:Cocher partiel
+	-:Cocher	
+	Choix des composantes
+		xDécocher Qt 5.4
+		-Dans Qt 5.5 sélectionner
+			-MinGW 4.9.2 32 bit
+			/SourceComponents
+				/Add-Ons
+					x(Il est possible de déselectionner qtwebengine pour accélérer l'installation)
+				-Essentials
+			-QtScript
+			/Tools
+				-MinGW 4.9.2
+
+	MySQL
+		MySQL Server x86
+		MySQL Workbench x86
+		MySQL Notifier x86
+		MySQL Fabric 1.5.6 & MySQL Utilities 1.5.6
+		Connector/C++
+
+	
+	My SQL Workbench
+		Pour créer la BD, exécuter les script dans cet ordre
+			Dossiers.sql
+			Contraintes.sql
+			Seeder.sql
+
+	Compilation du driver MySQL
+		http://doc.qt.io/qt-5/sql-driver.html
+		cd C:\Qt\5.5\Src\qtbase\src\plugins\sqldrivers\mysql
+		qmake "INCLUDEPATH+='C:\Program Files (x86)\MySQL\MySQL Server 5.6\include'" "LIBS+='C:\Program Files (x86)\MySQL\MySQL Server 5.6\lib'" mysql.pro
+		mingw32-make
+
+	Copie du libmysql.dll
+		C:\Program Files (x86)\MySQL\MySQL Server 5.6\lib
+		Vers
+		32 bits C:\Windows\System32
+		64 bits C:\Windows\SysWOW64
+
+	InfoDynamiqueQt
+		modifier la classe controleurbd.cpp
+		InfoDynamiqueQt
+			Sources
+				Controlleurs
+					controlleurbd
+						bd.setPort(3307);
+						bd.setPassword("VotreMotDePasse");
+
+	
