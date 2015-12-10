@@ -3,13 +3,19 @@
 
 #include <QObject>
 
-class ControleurGestionClient : public QObject
-{
+#include "Mappeurs/mappeurclients.h"
+#include "Vues/vuegestionclient.h"
+
+class ControleurGestionClient : public QObject{
     Q_OBJECT
 
 public:
     explicit ControleurGestionClient(QObject* parent = 0);
 
+private:
+    MappeurClients* mappeur;
+
+    void assignerClient(VueGestionClient *vue, Client *client);
 signals:
 
 public slots:
@@ -23,6 +29,8 @@ public slots:
      * @brief modifierClient Lance la modification d'un client
      */
     void modifierClient(int idClient);
+
+    void voirClient(int idClient);
 };
 
 #endif // CONTROLEURGESTIONCLIENT_H

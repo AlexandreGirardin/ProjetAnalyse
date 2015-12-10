@@ -47,22 +47,23 @@
       <widget class="QLineEdit" name="champTelephone"/>
      </item>
      <item row="3" column="0">
-      <widget class="QLabel" name="etiquetteCourriel">
+      <widget class="QLabel" name="etiquetteAdresse">
        <property name="text">
-        <string>Courriel:</string>
+        <string>Adresse:</string>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="champCourriel"/>
+      <widget class="QLineEdit" name="champCourriel">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox_2">
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
+    <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
@@ -74,5 +75,38 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>VueGestionClient</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>VueGestionClient</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -9,11 +9,11 @@ ControleurFiches::ControleurFiches(VuePrincipale *vuePrincipale, QObject *parent
     //Configuration du fragment
     fragment = new VueFragment();
     fragment->getEtiquette()->setText("Fiches");
-    fragment->getBouton1()->setText("Ajouter une fiche");
-    fragment->getBouton2()->setText("Modifier la fiche");
-    fragment->getBouton2()->setDisabled(true);
-    fragment->getBouton3()->setText("Visualiser la fiche");
-    fragment->getBouton3()->setDisabled(true);
+    fragment->getBoutonAjouter()->setText("Ajouter une fiche");
+    fragment->getBoutonModifier()->setText("Modifier la fiche");
+    fragment->getBoutonModifier()->setDisabled(true);
+    fragment->getBoutonVoir()->setText("Visualiser la fiche");
+    fragment->getBoutonVoir()->setDisabled(true);
     fragment->getCaseCocher()->setText("Afficher toutes les fiches");
     vueSecondaireFiches->getUi()->verticalLayout->addWidget(fragment);
 

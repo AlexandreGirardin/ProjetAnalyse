@@ -44,23 +44,19 @@ private:
     // Le fragment des clients
     VueFragment *fragmentClients;
 
-    // Le numéro de la colonne contenant les id des clients dans fragmentClients
-    int colonneIdClients;
-
     // Le fragment des appareils
     VueFragment *fragmentAppareils;
-
-    // Le numéro de la colonne contenant les id des appareils dans fragmentAppareils
-    int colonneIdAppareils;
 
     // Le fragment des fiches
     VueFragment *fragmentFiches;
 
-    // Le numéro de la colonne contenant les id des fiches dans fragmentFiches
-    int colonneIdFiches;
-
+    // Le numéro du client actuellement sélectionné, ou -1
     int idClient;
+
+    // Le numéro de l'appareil actuellement sélectionné, ou -1
     int idAppareil;
+
+    // Le numéro de la fiche actuellement sélectionnée, ou -1
     int idFiche;
 
     /**
@@ -162,7 +158,7 @@ public slots:
     /**
      * @brief peuplerClients
      * Peuple la table du fragmentClients avec tous les clients
-     * Émet clientRelache
+     * Relâche le client sélectionné
      */
     void peuplerClients();
 
@@ -184,7 +180,7 @@ public slots:
     /**
      * @brief peuplerAppareils
      * Peuple la table de fragmentAppareils avec tous les appareils du client donné
-     * Émet appareilRelache
+     * Relâche l'appareil sélectionné
      * @param int L'id du client
      */
     void peuplerAppareils(int idClient);
@@ -207,7 +203,7 @@ public slots:
     /**
      * @brief peuplerFiches
      * Peuple la table de fragmentFiches avec toutes les fiches de l'appareil donné
-     * Émet ficheRelachee
+     * Relâche la fiche sélectionnée
      * @param int L'id de l'appareil
      */
     void peuplerFiches(int idAppareil);
@@ -216,6 +212,8 @@ public slots:
      * @brief modifierClient
      */
     void modifierClient();
+
+    void voirClient();
 };
 
 #endif // CONTROLEURCLIENTS_H

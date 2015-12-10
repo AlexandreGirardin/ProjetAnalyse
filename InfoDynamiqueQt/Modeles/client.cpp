@@ -1,6 +1,19 @@
 #include "client.h"
 
 
+QString Client::getPrenom() const
+{
+    return prenom;
+}
+
+void Client::setPrenom(const QString &value)
+{
+    prenom = value;
+}
+Client::Client(QObject* parent) :
+    QObject(parent) {
+}
+
 QString Client::getNom() const
 {
     return nom;
@@ -31,14 +44,14 @@ void Client::setAdresse(const QString &value)
     adresse = value;
 }
 
-QList<Appareil *> Client::getAppareils() const
+QList<Appareil*>* Client::getAppareils() const
 {
     return appareils;
 }
 
-void Client::setAppareils(const QList<Appareil *> &value)
+void Client::setAppareils(const QList<Appareil*> &value)
 {
-    appareils = value;
+    *appareils = value;
 }
 
 int Client::getId() const
@@ -51,11 +64,5 @@ void Client::setId(int value)
     id = value;
 }
 
-QString Client::out()
-{
-
-}
-Client::Client(QObject *parent) :
-    QObject(parent)
-{
+QString Client::out() {
 }

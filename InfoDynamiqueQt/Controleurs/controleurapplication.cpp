@@ -16,7 +16,7 @@ ControleurApplication::ControleurApplication(QObject *parent) :
 
 void ControleurApplication::executer()
 {
-    vuePrincipale->show();
+    vuePrincipale->showMaximized();
 }
 
 
