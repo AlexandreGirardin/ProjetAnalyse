@@ -49,7 +49,8 @@ SOURCES += main.cpp\
     Modeles/tache.cpp \
     Modeles/technicien.cpp \
     Modeles/typeappareil.cpp \
-    Modeles/piece.cpp
+    Modeles/piece.cpp \
+    Mappeurs/mappeurclients.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -88,7 +89,8 @@ HEADERS  += \
     Modeles/tache.h \
     Modeles/technicien.h \
     Modeles/typeappareil.h \
-    Modeles/piece.h
+    Modeles/piece.h \
+    Mappeurs/mappeurclients.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \

@@ -7,11 +7,11 @@ ControleurAppareils::ControleurAppareils(VuePrincipale *vuePrincipale, QObject *
     vueSecondaireAppareils = new VueSecondaire();
     fragment = new VueFragment();
     fragment->getEtiquette()->setText("Appareils");
-    fragment->getBouton1()->setText("Ajouter un appareil");
-    fragment->getBouton2()->setText("Modifier l'appareil");
-    fragment->getBouton2()->setDisabled(true);
-    fragment->getBouton3()->setText("Visualiser l'appareil");
-    fragment->getBouton3()->setDisabled(true);
+    fragment->getBoutonAjouter()->setText("Ajouter un appareil");
+    fragment->getBoutonModifier()->setText("Modifier l'appareil");
+    fragment->getBoutonModifier()->setDisabled(true);
+    fragment->getBoutonVoir()->setText("Visualiser l'appareil");
+    fragment->getBoutonVoir()->setDisabled(true);
     fragment->getCaseCocher()->setHidden(true);
     vueSecondaireAppareils->getUi()->verticalLayout->addWidget(fragment);
     vuePrincipale->getUi()->ongletAppareils->layout()->addWidget(vueSecondaireAppareils);

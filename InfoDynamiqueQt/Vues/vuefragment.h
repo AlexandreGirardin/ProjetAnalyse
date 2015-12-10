@@ -21,26 +21,35 @@ public:
     ~VueFragment();
 
     QLabel *getEtiquette() const;
-    QPushButton *getBouton1() const;
-    QPushButton *getBouton2() const;
-    QPushButton *getBouton3() const;
+    QPushButton *getBoutonAjouter() const;
+    QPushButton *getBoutonModifier() const;
+    QPushButton *getBoutonVoir() const;
     QCheckBox *getCaseCocher() const;
     QLineEdit *getChamp() const;
     QTableView *getTableau() const;
     void setModele(QAbstractTableModel*);
+    int getId(QModelIndex);
 
 private:
     Ui::VueFragment *ui;
 
 public slots:
+    void relacherModele();
+    void activerBoutonsModele();
+    void desactiverBoutonsModele();
+
+private slots:
+    void signalerCase(bool);
+    void signalerSelection(QModelIndex, QModelIndex);
 
 signals:
-    void clicCreer(void);
-    void clicEditer(void);
-    void clicVoir(void);
-    void caseCochee(void);
-    void caseDecochee(void);
-    void rechercher(void);
+    void clicCreer();
+    void clicEditer();
+    void clicVoir();
+    void caseCochee();
+    void caseDecochee();
+    void rechercher();
+    void nouvelleSelection(QModelIndex);
 
 };
 #endif // FRAGMENT_H
