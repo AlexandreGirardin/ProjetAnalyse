@@ -1,16 +1,16 @@
 -- Commandes pour insérer des valeurs par défaut dans les tables
 
-INSERT INTO `InfoDynamiqueDossiers`.`techniciens`(`id`, `nom`) VALUES (NULL,'Jean');
-INSERT INTO `InfoDynamiqueDossiers`.`techniciens`(`id`, `nom`) VALUES (NULL,'Jacques');
-INSERT INTO `InfoDynamiqueDossiers`.`techniciens`(`id`, `nom`) VALUES (NULL,'Brochu');
+INSERT INTO `InfoDynamiqueDossiers`.`techniciens`(`id`, `prenom`, `nom`) VALUES (NULL,'Jean', 'Joly');
+INSERT INTO `InfoDynamiqueDossiers`.`techniciens`(`id`, `prenom`, `nom`) VALUES (NULL,'Jacques', 'Gervais');
+INSERT INTO `InfoDynamiqueDossiers`.`techniciens`(`id`, `prenom`, `nom`) VALUES (NULL,'Brochu', 'Eric');
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `telephone`, `adresse`) VALUES (NULL, 'rejwoifdjiaso', '1454745858', 'dbshbsajkd');
-INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `telephone`, `adresse`) VALUES (NULL, 'dasbnmbam', '14252147582', 'dbsahdbas bdsuahdjkhsajk');
-INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `telephone`, `adresse`) VALUES (NULL, 'hdjfkdsfkld', '1454745858', 'dbshbsajkd');
-INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `telephone`, `adresse`) VALUES (NULL, 'dbsansjs dh', '21253695852', 'dsabkjdbas bdsajkhbda');
-INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `telephone`, `adresse`) VALUES (NULL, 'rejwsbjsbjbjoifdjiaso', '1454745858', 'hfdjkjskfn vkhvjs');
+INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `prenom`, `telephone`, `adresse`) VALUES (NULL, 'Chouette',  'Machin', '1454745858', 'dbshbsajkd');
+INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `prenom`, `telephone`, `adresse`) VALUES (NULL, 'Lui-là',  'Machine', '14252147582', 'dbsahdbas bdsuahdjkhsajk');
+INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `prenom`, `telephone`, `adresse`) VALUES (NULL, 'Là',  'Autre-là', '1454745858', 'dbshbsajkd');
+INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `prenom`, `telephone`, `adresse`) VALUES (NULL, 'Chose',  'Machin', '21253695852', 'dsabkjdbas bdsajkhbda');
+INSERT INTO `InfoDynamiqueDossiers`.`clients` (`id`, `nom`, `prenom`, `telephone`, `adresse`) VALUES (NULL, 'Autre',  'Chouette', '1454745858', 'hfdjkjskfn vkhvjs');
 
 -- ------------------------------------------------------------
 
