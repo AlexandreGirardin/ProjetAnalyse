@@ -47,6 +47,9 @@
        <property name="text">
         <string>Ajouter</string>
        </property>
+       <property name="icon">
+        <iconset theme="list-add"/>
+       </property>
       </widget>
      </item>
      <item>
@@ -57,12 +60,18 @@
        <property name="text">
         <string>Modifier</string>
        </property>
+       <property name="icon">
+        <iconset theme="document-edit"/>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="bouton3">
        <property name="text">
         <string>Visualiser</string>
+       </property>
+       <property name="icon">
+        <iconset theme="documentinfo"/>
        </property>
       </widget>
      </item>
@@ -119,7 +128,7 @@
       <bool>false</bool>
      </property>
      <property name="sortingEnabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="cornerButtonEnabled">
       <bool>false</bool>
@@ -128,6 +137,9 @@
       <bool>true</bool>
      </attribute>
      <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
       <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderVisible">

@@ -2,7 +2,6 @@
 #define CONTROLEURGESTIONCLIENT_H
 
 #include <QObject>
-#include "Vues/vuegestionclient.h"
 
 class ControleurGestionClient : public QObject
 {
@@ -10,9 +9,6 @@ class ControleurGestionClient : public QObject
 
 public:
     explicit ControleurGestionClient(QObject* parent = 0);
-
-    // La vue utilisée pour modifier un client
-    VueGestionClient* vueGestionClient;
 
 signals:
 
@@ -22,6 +18,11 @@ public slots:
      * @brief ajouterClient Lance la création d'un nouveau client
      */
     void ajouterClient();
+
+    /**
+     * @brief modifierClient Lance la modification d'un client
+     */
+    void modifierClient(int idClient);
 };
 
 #endif // CONTROLEURGESTIONCLIENT_H

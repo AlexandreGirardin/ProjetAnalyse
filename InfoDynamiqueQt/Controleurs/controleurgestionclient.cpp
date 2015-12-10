@@ -1,10 +1,18 @@
-#include "controleurgestionclient.h"
+#include "Controleurs/controleurgestionclient.h"
+#include "Vues/vuegestionclient.h"
 
 ControleurGestionClient::ControleurGestionClient(QObject *parent) : QObject(parent) {
-    vueGestionClient = new VueGestionClient();
+//    VueGestionClient = new VueGestionClient();
 }
 
 void ControleurGestionClient::ajouterClient() {
-    vueGestionClient->exec();
+    VueGestionClient* vue = new VueGestionClient();
+    vue->exec();
+}
+
+void ControleurGestionClient::modifierClient(int idClient) {
+    VueGestionClient* vue = new VueGestionClient();
+    vue->setWindowTitle(QString::number(idClient));
+    vue->exec();
 }
 

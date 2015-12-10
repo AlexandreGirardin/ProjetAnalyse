@@ -7,7 +7,9 @@
 
 ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* parent)
     : QObject(parent) {
-    vueSecondaireClients = new VueSecondaire();
+    vueSecondaireClients = new VueSecondaire(vuePrincipale->getUi()->ongletClients);
+    splitter = new QSplitter(Qt::Vertical, vueSecondaireClients);
+    vueSecondaireClients->layout()->addWidget(splitter);
     vuePrincipale->getUi()->ongletClients->layout()->addWidget(vueSecondaireClients);
     controleurGestionClient = new ControleurGestionClient();
     controleurGestionAppareil = new ControleurGestionAppareil();
@@ -21,8 +23,7 @@ ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* pare
                       c.id as '#',\
                       coalesce(a.nb,0) as 'Nb. appareils',\
                       c.nom as 'Nom',\
-                      c.telephone as 'Téléphone',\
-                      c.adresse as 'Adresse'\
+                      c.telephone as 'Téléphone'\
                   from\
                       clients c\
                     left outer join\
@@ -34,32 +35,19 @@ ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* pare
 }
 
 void ControleurClients::configurerFragmentClients() {
-    fragmentClients = new VueFragment();
-    vueSecondaireClients->getUi()->verticalLayout->addWidget(fragmentClients);
+    fragmentClients = new VueFragment(splitter);
     fragmentClients->getEtiquette()->setText("Clients");
-    QPushButton* boutonAjouter = fragmentClients->getBouton1();
-    boutonAjouter->setIcon(QIcon::fromTheme("list-add-user"));
-    QPushButton* boutonModifier = fragmentClients->getBouton2();
-    boutonModifier->setIcon(QIcon::fromTheme("document-edit"));
-    QPushButton* boutonVisualiser = fragmentClients->getBouton3();
-    boutonVisualiser->setIcon(QIcon::fromTheme("user-properties"));
     fragmentClients->getCaseCocher()->hide();
     QObject::connect(fragmentClients->getBouton1(), SIGNAL(pressed()), controleurGestionClient, SLOT(ajouterClient()));
+    QObject::connect(fragmentClients->getBouton2(), SIGNAL(pressed()), this, SLOT(modifierClient()));
     QObject::connect(fragmentClients->getTableau(), SIGNAL(activated(QModelIndex)), this, SLOT(selectionnerClient(QModelIndex)));
 }
 
 void ControleurClients::configurerFragmentAppareils() {
-    fragmentAppareils = new VueFragment();
-    vueSecondaireClients->getUi()->verticalLayout->addWidget(fragmentAppareils);
+    fragmentAppareils = new VueFragment(splitter);
     fragmentAppareils->getEtiquette()->setText("Appareils");
-    QPushButton* boutonAjouter = fragmentAppareils->getBouton1();
-    boutonAjouter->setIcon(QIcon::fromTheme("list-add"));
-    QPushButton* boutonModifier = fragmentAppareils->getBouton2();
-    boutonModifier->setIcon(QIcon::fromTheme("document-edit"));
-    QPushButton* boutonVisualiser = fragmentAppareils->getBouton3();
-    boutonVisualiser->setIcon(QIcon::fromTheme("document-preview"));
     fragmentAppareils->getCaseCocher()->hide();
-    QObject::connect(boutonAjouter, SIGNAL(pressed()), controleurGestionAppareil, SLOT(ajouterAppareil()));
+    QObject::connect(fragmentAppareils->getBouton1(), SIGNAL(pressed()), controleurGestionAppareil, SLOT(ajouterAppareil()));
     QObject::connect(this, SIGNAL(clientSelectionne(int)), this, SLOT(peuplerAppareils(int)));
     QObject::connect(this, SIGNAL(clientSelectionne(int)), fragmentAppareils, SLOT(show()));
     QObject::connect(this, SIGNAL(clientRelache()), this, SLOT(relacherAppareil()));
@@ -68,17 +56,10 @@ void ControleurClients::configurerFragmentAppareils() {
 }
 
 void ControleurClients::configurerFragmentFiches() {
-    fragmentFiches = new VueFragment();
-    vueSecondaireClients->getUi()->verticalLayout->addWidget(fragmentFiches);
+    fragmentFiches = new VueFragment(splitter);
     fragmentFiches->getEtiquette()->setText("Fiches");
-    QPushButton* boutonAjouter = fragmentFiches->getBouton1();
-    boutonAjouter->setIcon(QIcon::fromTheme("document-new"));
-    QPushButton* boutonModifier = fragmentFiches->getBouton2();
-    boutonModifier->setIcon(QIcon::fromTheme("document-edit"));
-    QPushButton* boutonVisualiser = fragmentFiches->getBouton3();
-    boutonVisualiser->setIcon(QIcon::fromTheme("document-preview"));
     fragmentFiches->getCaseCocher()->setText("Afficher toutes les fiches");
-    QObject::connect(boutonAjouter, SIGNAL(pressed()), controleurGestionFiche, SLOT(ajouterFiche()));
+    QObject::connect(fragmentFiches->getBouton1(), SIGNAL(pressed()), controleurGestionFiche, SLOT(ajouterFiche()));
     QObject::connect(this, SIGNAL(appareilSelectionne(int)), this, SLOT(peuplerFiches(int)));
     QObject::connect(this, SIGNAL(appareilSelectionne(int)), fragmentFiches, SLOT(show()));
     QObject::connect(this, SIGNAL(appareilRelache()), this, SLOT(relacherFiche()));
@@ -95,30 +76,42 @@ void ControleurClients::peuplerClients() {
     relacherClient();
 }
 
+void ControleurClients::modifierClient() {
+    if (idClient != -1) {
+        controleurGestionClient->modifierClient(idClient);
+    }
+}
+
 void ControleurClients::peuplerAppareils(int idClient) {
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database("dossiers");
-    appareils->setQuery(*requeteAppareils(idClient), bd);
+    appareils->setQuery(requeteAppareils(idClient));
     fragmentAppareils->setModele(appareils);
     fragmentAppareils->getTableau()->resizeColumnsToContents();
     relacherAppareil();
 }
 
-QString *ControleurClients::requeteAppareils(int idClient) const {
-    return new QString("SELECT * FROM appareils WHERE idClient="+QString::number(idClient));
+QSqlQuery ControleurClients::requeteAppareils(int idClient) const {
+    QSqlQuery requete = QSqlQuery(QSqlDatabase::database("dossiers"));
+    requete.prepare("SELECT * FROM appareils WHERE idClient=:idClient");
+    requete.bindValue(":idClient", idClient);
+    requete.exec();
+    return requete;
 }
 
 void ControleurClients::peuplerFiches(int idAppareil) {
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database("dossiers");
-    fiches->setQuery(*requeteFiches(idAppareil), bd);
+    fiches->setQuery(requeteFiches(idAppareil));
     fragmentFiches->setModele(fiches);
     fragmentFiches->getTableau()->resizeColumnsToContents();
     relacherFiche();
 }
 
-QString *ControleurClients::requeteFiches(int idAppareil) const {
-    return new QString("SELECT * FROM fiches WHERE idAppareil="+QString::number(idAppareil));
+QSqlQuery ControleurClients::requeteFiches(int idAppareil) const {
+    QSqlQuery requete = QSqlQuery(QSqlDatabase::database("dossiers"));
+    requete.prepare("SELECT * FROM fiches WHERE idAppareil=:idAppareil");
+    requete.bindValue(":idAppareil", idAppareil);
+    requete.exec();
+    return requete;
 }
 
 void ControleurClients::selectionnerClient(QModelIndex caseSelectionnee) {
@@ -127,14 +120,15 @@ void ControleurClients::selectionnerClient(QModelIndex caseSelectionnee) {
     int colonne = 0;
     int rangee = caseSelectionnee.row();
     QModelIndex caseId = fragmentClients->getTableau()->model()->index(rangee, colonne);
-    int id = fragmentClients->getTableau()->model()->data(caseId).toInt();
-    emit clientSelectionne(id);
+    idClient = fragmentClients->getTableau()->model()->data(caseId).toInt();
+    emit clientSelectionne(idClient);
 }
 
 void ControleurClients::relacherClient() {
     fragmentClients->getTableau()->clearSelection();
     fragmentClients->getBouton2()->setEnabled(false);
     fragmentClients->getBouton3()->setEnabled(false);
+    idClient = -1;
     emit clientRelache();
 }
 
@@ -144,14 +138,15 @@ void ControleurClients::selectionnerAppareil(QModelIndex caseSelectionnee) {
     int colonne = 0;
     int rangee = caseSelectionnee.row();
     QModelIndex caseId = fragmentAppareils->getTableau()->model()->index(rangee, colonne);
-    int id = fragmentAppareils->getTableau()->model()->data(caseId).toInt();
-    emit appareilSelectionne(id);
+    idAppareil = fragmentAppareils->getTableau()->model()->data(caseId).toInt();
+    emit appareilSelectionne(idAppareil);
 }
 
 void ControleurClients::relacherAppareil() {
     fragmentAppareils->getTableau()->clearSelection();
     fragmentAppareils->getBouton2()->setEnabled(false);
     fragmentAppareils->getBouton3()->setEnabled(false);
+    idAppareil = -1;
     emit appareilRelache();
 }
 
@@ -161,13 +156,14 @@ void ControleurClients::selectionnerFiche(QModelIndex caseSelectionnee) {
     int colonne = 0;
     int rangee = caseSelectionnee.row();
     QModelIndex caseId = fragmentAppareils->getTableau()->model()->index(rangee, colonne);
-    int id = fragmentFiches->getTableau()->model()->data(caseId).toInt();
-    emit ficheSelectionnee(id);
+    idFiche = fragmentFiches->getTableau()->model()->data(caseId).toInt();
+    emit ficheSelectionnee(idFiche);
 }
 
 void ControleurClients::relacherFiche() {
     fragmentFiches->getTableau()->clearSelection();
     fragmentFiches->getBouton2()->setEnabled(false);
     fragmentFiches->getBouton3()->setEnabled(false);
+    idFiche = -1;
     emit ficheRelachee();
 }

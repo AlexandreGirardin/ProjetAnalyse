@@ -2,6 +2,9 @@
 #define CONTROLEURCLIENTS_H
 
 #include <QObject>
+#include <QSqlQuery>
+#include <QSplitter>
+
 #include "Controleurs/controleurgestionclient.h"
 #include "Controleurs/controleurgestionappareil.h"
 #include "Controleurs/controleurgestionfiche.h"
@@ -23,6 +26,8 @@ public:
     explicit ControleurClients(VuePrincipale* vuePrincipale, QObject* parent = 0);
 
 private:
+
+    QSplitter* splitter;
 
     // Le contrôleur de gestion de clients
     ControleurGestionClient *controleurGestionClient;
@@ -54,6 +59,10 @@ private:
     // Le numéro de la colonne contenant les id des fiches dans fragmentFiches
     int colonneIdFiches;
 
+    int idClient;
+    int idAppareil;
+    int idFiche;
+
     /**
      * @brief configurerFragmentClients
      * Configure fragmentClients
@@ -83,14 +92,14 @@ private:
      * @param idClient Le client dont on souhaite afficher les appareils
      * @return La requête utilisée pour peupler les appareils
      */
-    QString* requeteAppareils(int idClient) const;
+    QSqlQuery requeteAppareils(int idClient) const;
 
     /**
      * @brief requeteFiches
      * @param idAppareil L'appareil dont on souhaite afficher les fiches
      * @return La requête utilisée pour peupler les fiches
      */
-    QString* requeteFiches(int idAppareil) const;
+    QSqlQuery requeteFiches(int idAppareil) const;
 
 signals:
 
@@ -202,6 +211,11 @@ public slots:
      * @param int L'id de l'appareil
      */
     void peuplerFiches(int idAppareil);
+
+    /**
+     * @brief modifierClient
+     */
+    void modifierClient();
 };
 
 #endif // CONTROLEURCLIENTS_H
