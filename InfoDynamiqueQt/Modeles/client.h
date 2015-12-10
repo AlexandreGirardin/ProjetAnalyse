@@ -10,13 +10,14 @@ class Client : public QObject
 
 private:
     int id;
+    QString prenom;
     QString nom;
     QString telephone;
     QString adresse;
-    QList<Appareil*> appareils;
+    QList<Appareil*>* appareils;
 
 public:
-    explicit Client(QObject *parent = 0);
+    explicit Client(QObject* parent = 0);
 
     QString getNom() const;
     void setNom(const QString &value);
@@ -27,13 +28,16 @@ public:
     QString getAdresse() const;
     void setAdresse(const QString &value);
 
-    QList<Appareil *> getAppareils() const;
-    void setAppareils(const QList<Appareil *> &value);
+    QList<Appareil*>* getAppareils() const;
+    void setAppareils(const QList<Appareil*> &value);
 
     int getId() const;
     void setId(int value);
 
     QString out(void);
+
+    QString getPrenom() const;
+    void setPrenom(const QString &value);
 
 signals:
 
