@@ -1,22 +1,30 @@
 #include "controleurfiches.h"
 #include "ui_vueprincipale.h"
-#include "ui_vuesecondaire.h"
 
-ControleurFiches::ControleurFiches(VuePrincipale *vuePrincipale, QObject *parent) : QObject(parent)
-{
-    vueSecondaireFiches = new VueSecondaire();
+#include <QSqlQueryModel>
 
-    //Configuration du fragment
+ControleurFiches::ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent)
+    : QObject(parent) {
     fragment = new VueFragment();
     fragment->getEtiquette()->setText("Fiches");
-    fragment->getBoutonAjouter()->setText("Ajouter une fiche");
-    fragment->getBoutonModifier()->setText("Modifier la fiche");
-    fragment->getBoutonModifier()->setDisabled(true);
-    fragment->getBoutonVoir()->setText("Visualiser la fiche");
-    fragment->getBoutonVoir()->setDisabled(true);
     fragment->getCaseCocher()->setText("Afficher toutes les fiches");
-    vueSecondaireFiches->getUi()->verticalLayout->addWidget(fragment);
+    vuePrincipale->getUi()->ongletFiches->layout()->addWidget(fragment);
+    requeteFiches = new QString("select * from fiches");
+    peuplerFiches();
+}
 
-    vuePrincipale->getUi()->ongletFiches->layout()->addWidget(vueSecondaireFiches);
+void ControleurFiches::peuplerFiches() {
+    QSqlQueryModel* fiches = new QSqlQueryModel(this);
+    const QSqlDatabase bd = QSqlDatabase::database("dossiers");
+    fiches->setQuery(*requeteFiches, bd);
+    fragment->peuplerTableau(fiches);
+
+}
+
+void ControleurFiches::modifierFiche() {
+
+}
+
+void ControleurFiches::voirFiche() {
 }
 

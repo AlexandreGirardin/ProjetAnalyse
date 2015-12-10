@@ -27,16 +27,21 @@ public:
     QCheckBox *getCaseCocher() const;
     QLineEdit *getChamp() const;
     QTableView *getTableau() const;
-    void setModele(QAbstractTableModel*);
+    void peuplerTableau(QAbstractTableModel*);
     int getId(QModelIndex);
+
+    int getIdModele() const;
+    void setIdModele(int value);
 
 private:
     Ui::VueFragment *ui;
+    int idModele;
 
 public slots:
-    void relacherModele();
     void activerBoutonsModele();
     void desactiverBoutonsModele();
+    void selectionnerModele(QModelIndex);
+    void relacherModele();
 
 private slots:
     void signalerCase(bool);
@@ -50,6 +55,8 @@ signals:
     void caseDecochee();
     void rechercher();
     void nouvelleSelection(QModelIndex);
+    void modeleSelectionne(int);
+    void modeleRelache();
 
 };
 #endif // FRAGMENT_H

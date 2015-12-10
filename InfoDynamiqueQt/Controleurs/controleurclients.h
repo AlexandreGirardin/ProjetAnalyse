@@ -5,12 +5,11 @@
 #include <QSqlQuery>
 #include <QSplitter>
 
-#include "Controleurs/controleurgestionclient.h"
 #include "Controleurs/controleurgestionappareil.h"
+#include "Controleurs/controleurgestionclient.h"
 #include "Controleurs/controleurgestionfiche.h"
-#include "Vues/vueprincipale.h"
-#include "Vues/vuesecondaire.h"
 #include "Vues/vuefragment.h"
+#include "Vues/vueprincipale.h"
 
 class ControleurClients : public QObject
 {
@@ -27,6 +26,7 @@ public:
 
 private:
 
+    // Le séparateur redimensionnable contenant les fragments
     QSplitter* splitter;
 
     // Le contrôleur de gestion de clients
@@ -38,9 +38,6 @@ private:
     // Le contrôleur de gestion de fiches
     ControleurGestionFiche *controleurGestionFiche;
 
-    // La vue secondaire à contrôler
-    VueSecondaire *vueSecondaireClients;
-
     // Le fragment des clients
     VueFragment *fragmentClients;
 
@@ -49,15 +46,6 @@ private:
 
     // Le fragment des fiches
     VueFragment *fragmentFiches;
-
-    // Le numéro du client actuellement sélectionné, ou -1
-    int idClient;
-
-    // Le numéro de l'appareil actuellement sélectionné, ou -1
-    int idAppareil;
-
-    // Le numéro de la fiche actuellement sélectionnée, ou -1
-    int idFiche;
 
     /**
      * @brief configurerFragmentClients
@@ -77,10 +65,7 @@ private:
      */
     void configurerFragmentFiches();
 
-    /**
-     * @brief requeteClients
-     * La requête utilisée pour peupler les clients
-     */
+    // La requête utilisée pour peupler les clients
     const QString* requeteClients;
 
     /**
@@ -97,122 +82,38 @@ private:
      */
     QSqlQuery requeteFiches(int idAppareil) const;
 
-signals:
-
-    /**
-     * @brief clientSelectionne
-     * Signal émis lorsqu'un client est sélectionné dans fragmentClients
-     * @param int L'id du client
-     */
-    void clientSelectionne(int);
-
-    /**
-     * @brief clientRelache
-     * Signal émis lorsque le client sélectionné est relâché
-     */
-    void clientRelache();
-
-    /**
-     * @brief appareilSelectionne
-     * Signal émis lorsqu'un appareil est sélectionné dans fragmentAppareils
-     * @param int L'id de l'appareil
-     */
-    void appareilSelectionne(int);
-
-    /**
-     * @brief appareilRelache
-     * Signal émis lorsque l'appareil sélectionné est relâché
-     */
-    void appareilRelache();
-
-    /**
-     * @brief ficheSelectionnee
-     * Signal émis lorsqu'une fiche est sélectionnée dans fragmentFiche
-     */
-    void ficheSelectionnee(int);
-
-    /**
-     * @brief ficheRelachee
-     * Signal émis lorsque la fiche sélectionnée est relâchée
-     * @param int L'id de la fiche
-     */
-    void ficheRelachee();
-
 public slots:
-
-    /**
-     * @brief selectionnerClient
-     * Réagit à une sélection de client
-     * Émet clientSelectionne
-     * @param QModelIndex L'index de la case sélectionnée dans fragmentClients
-     */
-    void selectionnerClient(QModelIndex);
-
-    /**
-     * @brief relacherClient
-     * Réagit à une désélection de client
-     * Émet clientRelache
-     */
-    void relacherClient();
 
     /**
      * @brief peuplerClients
      * Peuple la table du fragmentClients avec tous les clients
-     * Relâche le client sélectionné
      */
     void peuplerClients();
 
     /**
-     * @brief selectionnerAppareil
-     * Réagit à une sélection d'appareil
-     * Émet appareilSelectionne
-     * @param QModelIndex L'index de la case sélectionnée dans fragmentAppareils
-     */
-    void selectionnerAppareil(QModelIndex);
-
-    /**
-     * @brief relacherAppareil
-     * Réagit à une désélection d'appareil
-     * Émet appareilRelache
-     */
-    void relacherAppareil();
-
-    /**
      * @brief peuplerAppareils
      * Peuple la table de fragmentAppareils avec tous les appareils du client donné
-     * Relâche l'appareil sélectionné
      * @param int L'id du client
      */
     void peuplerAppareils(int idClient);
 
     /**
-     * @brief selectionnerFiche
-     * Réagit à une sélection de fiche
-     * Émet ficheSelectionnee
-     * @param QModelIndex L'index de la case sélectionnée dans fragmentFiches
-     */
-    void selectionnerFiche(QModelIndex);
-
-    /**
-     * @brief relacherFiche
-     * Réagit à une désélection de fiche
-     * Émet ficheRelachee
-     */
-    void relacherFiche();
-
-    /**
      * @brief peuplerFiches
      * Peuple la table de fragmentFiches avec toutes les fiches de l'appareil donné
-     * Relâche la fiche sélectionnée
      * @param int L'id de l'appareil
      */
     void peuplerFiches(int idAppareil);
 
     /**
      * @brief modifierClient
+     * Lance la modification du client sélectionné
      */
     void modifierClient();
 
+    /**
+     * @brief modifierClient
+     * Lance la visualisation du client sélectionné
+     */
     void voirClient();
 };
 

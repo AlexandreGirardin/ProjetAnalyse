@@ -13,7 +13,8 @@ void ControleurGestionClient::ajouterClient() {
 
 void ControleurGestionClient::modifierClient(int idClient) {
     VueGestionClient* vue = new VueGestionClient();
-    vue->setWindowTitle(QString::number(idClient));
+    Client* client = mappeur->getClient(idClient);
+    assignerClient(vue, client);
     vue->exec();
 }
 

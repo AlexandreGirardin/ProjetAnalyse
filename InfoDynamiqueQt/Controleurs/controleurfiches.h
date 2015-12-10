@@ -2,8 +2,8 @@
 #define CONTROLEURFICHES_H
 
 #include <QObject>
+
 #include "Vues/vueprincipale.h"
-#include "Vues/vuesecondaire.h"
 #include "Vues/vuefragment.h"
 
 class ControleurFiches : public QObject
@@ -21,15 +21,34 @@ public:
 
 private:
 
-    // La vue secondaire à contrôler
-    VueSecondaire *vueSecondaireFiches;
-
     // Le fragment des fiches
     VueFragment *fragment;
 
-signals:
+    /**
+     * @brief requeteFiches
+     * La requête utilisée pour peupler les fiches
+     */
+    const QString* requeteFiches;
 
 public slots:
+
+    /**
+     * @brief peuplerFiches
+     * Peuple la table du fragment avec toutes les fiches
+     */
+    void peuplerFiches();
+
+    /**
+     * @brief modifierFiche
+     * Lance la modification de la fiche sélectionnée
+     */
+    void modifierFiche();
+
+    /**
+     * @brief modifierFiche
+     * Lance la visualisation de la fiche sélectionnée
+     */
+    void voirFiche();
 };
 
 #endif // CONTROLEURFICHES_H
