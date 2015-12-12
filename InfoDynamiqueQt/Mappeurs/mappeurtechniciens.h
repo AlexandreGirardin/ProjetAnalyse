@@ -12,6 +12,8 @@ class MappeurTechniciens : public QObject
 {
     Q_OBJECT
 
+    // Extrait des objets Technicien de la base de données
+
 public:
 
     /**
@@ -44,11 +46,9 @@ private:
     /**
      * @brief mapper
      * @param ligne La ligne de la base de données à mapper en pièce
-     * @return La technicien
+     * @return Le technicien
      */
     Technicien* mapper(QSqlRecord);
-
-public slots:
 
 };
 

@@ -2,16 +2,24 @@
 #define CONTROLEURAPPLICATION_H
 
 #include <QObject>
-#include "controleuractions.h"
-#include "controleurappareils.h"
-#include "controleurclients.h"
-#include "controleurfiches.h"
+
+#include "Controleurs/controleuractions.h"
+#include "Controleurs/controleurappareils.h"
+#include "Controleurs/controleurclients.h"
+#include "Controleurs/controleurfiches.h"
 #include "Vues/vueprincipale.h"
 
 class ControleurApplication : public QObject {
     Q_OBJECT
 
+    // Contrôle l'exécution de l'application
+
 public:
+
+    /**
+     * @brief ControleurApplication
+     * @param parent
+     */
     explicit ControleurApplication(QObject* parent = 0);
 
     /**
@@ -37,9 +45,6 @@ private:
     // Le contrôleur de la vue des actions
     ControleurActions *controleurActions;
 
-signals:
-
-public slots:
 };
 
 #endif // CONTROLEURAPPLICATION_H

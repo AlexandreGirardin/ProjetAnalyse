@@ -7,6 +7,8 @@ class Statut : public QObject
 {
     Q_OBJECT
 
+    // Statut d'une fiche ou d'une tâche
+
 private:
 
     // L'identifiant unique du statut
@@ -60,10 +62,6 @@ public:
      * @return La chaîne imprimable correspondant à la pièce
      */
     QString out(void);
-
-signals:
-
-public slots:
 
 };
 

@@ -42,9 +42,9 @@ QTableView *VueFragment::getTableau() const {
     return ui->tableau;
 }
 
-void VueFragment::peuplerTableau(QAbstractTableModel* modele) {
+void VueFragment::peuplerTableau(QAbstractTableModel* valeurs) {
     QItemSelectionModel* vieilleSelection = ui->tableau->selectionModel();
-    ui->tableau->setModel(modele);
+    ui->tableau->setModel(valeurs);
     delete vieilleSelection;
     QObject::connect(ui->tableau->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(signalerSelection(QModelIndex, QModelIndex)));
     ui->tableau->resizeColumnsToContents();
@@ -57,16 +57,13 @@ int VueFragment::getId(QModelIndex index) {
     QModelIndex caseId = ui->tableau->model()->index(rangee, colonne);
     return ui->tableau->model()->data(caseId).toInt();
 }
-int VueFragment::getIdModele() const
-{
+int VueFragment::getIdModele() const {
     return idModele;
 }
 
-void VueFragment::setIdModele(int value)
-{
+void VueFragment::setIdModele(int value) {
     idModele = value;
 }
-
 
 void VueFragment::relacherModele() {
     ui->tableau->clearSelection();

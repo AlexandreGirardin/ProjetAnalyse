@@ -8,13 +8,18 @@ class ControleurGestionAppareil : public QObject
 {
     Q_OBJECT
 
+    // Contrôle l'exécution de la création, de la lecture et de la mise à jour des appareils
+
 public:
+
+    /**
+     * @brief ControleurGestionAppareil
+     * @param parent
+     */
     explicit ControleurGestionAppareil(QObject* parent = 0);
 
     // La vue utilisée pour modifier un appareil
     VueGestionAppareil* vueGestionAppareil;
-
-signals:
 
 public slots:
 

@@ -15,11 +15,13 @@ class ControleurClients : public QObject
 {
     Q_OBJECT
 
+    // Contrôle l'exécution de l'onglet Clients de la vue principale
+
 public:
 
     /**
      * @brief ControleurClients
-     * @param vuePrincipale
+     * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
     explicit ControleurClients(VuePrincipale* vuePrincipale, QObject* parent = 0);

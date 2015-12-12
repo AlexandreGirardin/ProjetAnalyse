@@ -2,35 +2,76 @@
 #define TACHE_H
 
 #include <QObject>
-#include "action.h"
-#include "statut.h"
+
+#include "Modeles/action.h"
+#include "Modeles/statut.h"
 
 class Tache : public QObject
 {
     Q_OBJECT
 
+    // Exécution d'une action sur un appareil dans le cadre d'une fiche de maintenance
+
 private:
+
+    // L'id de la tâche
     int id;
-    Action *action;
-    Statut *statut;
+
+    // L'action à accomplir
+    Action* action;
+
+    // Le statut de la tâche
+    Statut* statut;
 
 public:
-    explicit Tache(QObject *parent = 0);
 
+    /**
+     * @brief Tache
+     * @param parent
+     */
+    explicit Tache(QObject* parent = 0);
+
+    /**
+     * @brief getId
+     * @return L'id de la tâche
+     */
     int getId() const;
+
+    /**
+     * @brief setId
+     * @param value L'id à assigner à la tâche
+     */
     void setId(int value);
 
-    Action *getAction() const;
-    void setAction(Action *value);
+    /**
+     * @brief getAction
+     * @return L'action à accomplir
+     */
+    Action* getAction() const;
 
-    Statut *getStatut() const;
-    void setStatut(Statut *value);
+    /**
+     * @brief setAction
+     * @param value L'action à assigner à la tâche
+     */
+    void setAction(Action* value);
 
+    /**
+     * @brief getStatut
+     * @return Le statut de la tâche
+     */
+    Statut* getStatut() const;
+
+    /**
+     * @brief setStatut
+     * @param value Le statut à assigner à la tâche
+     */
+    void setStatut(Statut* value);
+
+    /**
+     * @brief out
+     * @return Représentation textuelle de la tâche
+     */
     QString out(void);
-
-signals:
-
-public slots:
 
 };
 

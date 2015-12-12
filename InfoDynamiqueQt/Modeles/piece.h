@@ -7,6 +7,8 @@ class Piece : public QObject
 {
     Q_OBJECT
 
+    // Pièce utilisée pour réaliser les tâches d'une fiche de maintenance
+
 private:
 
     // L'identifiant unique de la pièce
@@ -98,10 +100,6 @@ public:
      * @return La chaîne imprimable correspondant à la pièce
      */
     QString out();
-
-signals:
-
-public slots:
 
 };
 

@@ -19,7 +19,7 @@ Statut* MappeurStatuts::getStatutFiche(int id) {
 }
 
 QList<Statut*>* MappeurStatuts::getStatutsFiche(void) {
-    QList<Statut*>* liste;
+    QList<Statut*>* liste = new QList<Statut*>();
     QString requete = "SELECT * FROM statutsFiche";
     QSqlQuery* commande = new QSqlQuery(requete, *bd);
     QSqlRecord ligne = commande->record();

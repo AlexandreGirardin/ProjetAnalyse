@@ -13,7 +13,16 @@
 class MappeurClients : public QObject
 {
     Q_OBJECT
+
+    // Extrait des objets Client de la base de données
+
 public:
+
+    /**
+     * @brief MappeurClients
+     * @param a_bd La base de données à utiliser
+     * @param parent
+     */
     explicit MappeurClients(QSqlDatabase *a_bd, QObject *parent = 0);
 
     /**
@@ -36,9 +45,6 @@ private:
      * @return Le client
      */
     Client* mapper(QSqlRecord ligne);
-signals:
-
-public slots:
 
 };
 

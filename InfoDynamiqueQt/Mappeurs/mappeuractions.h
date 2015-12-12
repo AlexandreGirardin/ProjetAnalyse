@@ -12,6 +12,8 @@ class MappeurActions : public QObject
 {
     Q_OBJECT
 
+    // Extrait des objets Action de la base de données
+
 public:
 
     /**
@@ -19,7 +21,7 @@ public:
      * @param a_bd La base de données à utiliser
      * @param parent
      */
-    explicit MappeurActions(QSqlDatabase* a_bd, QObject *parent = 0);
+    explicit MappeurActions(QSqlDatabase* a_bd, QObject* parent = 0);
 
     /**
      * @brief getAction
@@ -47,8 +49,6 @@ private:
      * @return l'Action
      */
     Action* mapper(QSqlRecord);
-
-public slots:
 
 };
 

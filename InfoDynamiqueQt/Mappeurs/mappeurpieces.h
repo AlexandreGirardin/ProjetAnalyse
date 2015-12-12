@@ -12,6 +12,8 @@ class MappeurPieces : public QObject
 {
     Q_OBJECT
 
+    // Extrait des objets Piece de la base de données
+
 public:
 
     /**
@@ -47,8 +49,6 @@ private:
      * @return La pièce
      */
     Piece* mapper(QSqlRecord);
-
-public slots:
 
 };
 
