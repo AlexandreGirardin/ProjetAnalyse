@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "vuesecondaire.h"
 
 namespace Ui {
 class VuePrincipale;
@@ -12,6 +11,8 @@ class VuePrincipale : public QMainWindow
 {
     Q_OBJECT
 
+    // Vue principale de l'application, regroupant les autres vues dans des onglets
+
 public:
     explicit VuePrincipale(QWidget *parent = 0);
     ~VuePrincipale();
@@ -20,10 +21,6 @@ public:
 
 private:
     Ui::VuePrincipale *ui;
-    VueSecondaire *vueAppareils;
-    VueSecondaire *vueFiches;
-    VueSecondaire *vueActions;
-    VueSecondaire *vueEnsembles;
 };
 
 #endif // MAINWINDOW_H

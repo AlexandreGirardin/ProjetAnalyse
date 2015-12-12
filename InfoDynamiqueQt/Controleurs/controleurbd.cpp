@@ -5,6 +5,13 @@
 
 ControleurBD::ControleurBD(QObject* parent) :
     QObject(parent) {
+}
+
+QSqlDatabase* ControleurBD::getBd() {
+    return &bd;
+}
+
+void ControleurBD::connecterDossiers() {
     bd = QSqlDatabase::addDatabase(QString("QMYSQL"), QString("dossiers"));
     bd.setHostName("localhost");
     bd.setDatabaseName("InfoDynamiqueDossiers");
@@ -13,8 +20,4 @@ ControleurBD::ControleurBD(QObject* parent) :
     if (!bd.open()) {
         qDebug() << "Database error occurred";
     }
-}
-
-QSqlDatabase* ControleurBD::getBd() {
-    return &bd;
 }

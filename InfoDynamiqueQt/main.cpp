@@ -12,14 +12,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     ControleurBD *db = new ControleurBD();
+    db->connecterDossiers();
     ControleurApplication* ca = new ControleurApplication();
     ca->executer();
-
-//    MappeurPieces *map = new MappeurPieces(db->getBd());
-//    QList<Piece*>* modeles = map->getPieces();
-//    for (int i = 0; i < modeles->count(); ++i) {
-//        qDebug() << modeles->at(i)->out();
-//    }
 
     return a.exec();
 }

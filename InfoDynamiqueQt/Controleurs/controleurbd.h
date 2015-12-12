@@ -31,6 +31,13 @@ public:
      */
     QSqlDatabase* getBd();
 
+    /**
+     * @brief connecterDossiers
+     * Établit la connexion avec la base de données principale
+     * Elle sera accessible statiquement par QSqlDatabase::database("dossiers)
+     */
+    void connecterDossiers();
+
 };
 
 #endif // CONTROLEURCONNEXION_H

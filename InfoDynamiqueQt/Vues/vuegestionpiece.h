@@ -11,6 +11,8 @@ class VueGestionPiece : public QDialog
 {
     Q_OBJECT
 
+    // Vue servant à créer, visualiser et modifier une pièce
+
 public:
     explicit VueGestionPiece(QWidget *parent = 0);
     ~VueGestionPiece();

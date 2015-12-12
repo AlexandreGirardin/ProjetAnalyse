@@ -7,7 +7,6 @@
 #include "Controleurs/controleurappareils.h"
 #include "Controleurs/controleurclients.h"
 #include "Controleurs/controleurfiches.h"
-#include "Vues/vueprincipale.h"
 
 class ControleurApplication : public QObject {
     Q_OBJECT

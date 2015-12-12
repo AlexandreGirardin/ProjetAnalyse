@@ -12,6 +12,8 @@ class VueGestionClient : public QDialog
 {
     Q_OBJECT
 
+    // Vue servant à créer, visualiser et modifier un client
+
 public:
     explicit VueGestionClient(QWidget *parent = 0);
     ~VueGestionClient();

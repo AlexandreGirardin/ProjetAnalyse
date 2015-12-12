@@ -11,7 +11,7 @@ class VueEditionFiche : public QWidget
 {
     Q_OBJECT
 
-    // Vue permettant d'éditer une fiche
+    // Vue permettant d'éditer en détails une fiche déjà créée
 
 public:
     explicit VueEditionFiche(QWidget *parent = 0);
