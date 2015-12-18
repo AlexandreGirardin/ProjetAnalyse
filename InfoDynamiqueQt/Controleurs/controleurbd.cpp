@@ -7,9 +7,10 @@ ControleurBD::ControleurBD(QObject* parent) :
     QObject(parent) {
     bd = QSqlDatabase::addDatabase(QString("QMYSQL"), QString("dossiers"));
     bd.setHostName("localhost");
+    bd.setPort(3307);
     bd.setDatabaseName("InfoDynamiqueDossiers");
     bd.setUserName("root");
-    bd.setPassword("");
+    bd.setPassword("patate");
     if (!bd.open()) {
         qDebug() << "Database error occurred";
     }
