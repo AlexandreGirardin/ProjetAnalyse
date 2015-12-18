@@ -14,11 +14,11 @@ class VueGestionEnsemble : public QDialog
     // Vue servant à créer, visualiser et modifier un ensemble de tâches
 
 public:
-    explicit VueGestionEnsemble(QWidget *parent = 0);
+    explicit VueGestionEnsemble(QWidget* parent = 0);
     ~VueGestionEnsemble();
 
 private:
-    Ui::VueGestionEnsemble *ui;
+    Ui::VueGestionEnsemble* ui;
 };
 
 #endif // GESTIONENSEMBLE_H

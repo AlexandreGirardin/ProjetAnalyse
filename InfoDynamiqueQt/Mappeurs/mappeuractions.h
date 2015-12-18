@@ -34,7 +34,7 @@ public:
      * @brief getActions
      * @return La liste de toutes les actions de la base de données.
      */
-    QList<Action*>* getActions(void);
+    QList<Action*>* getActions();
 
 private:
 

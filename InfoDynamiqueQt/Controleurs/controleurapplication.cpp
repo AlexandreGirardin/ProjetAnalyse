@@ -5,7 +5,7 @@
 #include "controleurfiches.h"
 #include "Vues/vueprincipale.h"
 
-ControleurApplication::ControleurApplication(QObject *parent) :
+ControleurApplication::ControleurApplication(QObject* parent) :
     QObject(parent) {
     vuePrincipale = new VuePrincipale();
     controleurClients = new ControleurClients(vuePrincipale, this);

@@ -14,7 +14,7 @@ class VueGestionPiece : public QDialog
     // Vue servant à créer, visualiser et modifier une pièce
 
 public:
-    explicit VueGestionPiece(QWidget *parent = 0);
+    explicit VueGestionPiece(QWidget* parent = 0);
     ~VueGestionPiece();
 
     QString getNom() const;
@@ -27,7 +27,7 @@ public:
     void setPrix(double);
 
 private:
-    Ui::VueGestionPiece *ui;
+    Ui::VueGestionPiece* ui;
 };
 
 #endif // GESTIONPIECE_H

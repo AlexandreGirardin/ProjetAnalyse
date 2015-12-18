@@ -31,12 +31,12 @@ void Fiche::setCommentaire(const QString &value)
     commentaire = value;
 }
 
-Statut *Fiche::getStatut() const
+Statut* Fiche::getStatut() const
 {
     return statut;
 }
 
-void Fiche::setStatut(Statut *value)
+void Fiche::setStatut(Statut* value)
 {
     statut = value;
 }
@@ -46,36 +46,36 @@ QString Fiche::out()
     return QString::number(id) + " " + QString::number(priorite) + " " + commentaire + " " + statut->getNom();
 }
 
-QList<Tache *> Fiche::getTaches() const
+QList<Tache* > Fiche::getTaches() const
 {
     return taches;
 }
 
-void Fiche::setTaches(const QList<Tache *> &value)
+void Fiche::setTaches(const QList<Tache* > &value)
 {
     taches = value;
 }
 
-QList<Piece *> Fiche::getPieces() const
+QList<Piece* > Fiche::getPieces() const
 {
     return pieces;
 }
 
-void Fiche::setPieces(const QList<Piece *> &value)
+void Fiche::setPieces(const QList<Piece* > &value)
 {
     pieces = value;
 }
 
-QList<Technicien *> Fiche::getTechniciens() const
+QList<Technicien* > Fiche::getTechniciens() const
 {
     return techniciens;
 }
 
-void Fiche::setTechniciens(const QList<Technicien *> &value)
+void Fiche::setTechniciens(const QList<Technicien* > &value)
 {
     techniciens = value;
 }
-Fiche::Fiche(QObject *parent) :
+Fiche::Fiche(QObject* parent) :
     QObject(parent)
 {
 }

@@ -30,19 +30,19 @@ public:
 private:
 
     // La vue principale de l'application
-    VuePrincipale *vuePrincipale;
+    VuePrincipale* vuePrincipale;
 
     // Le contrôleur de la vue des clients
-    ControleurClients *controleurClients;
+    ControleurClients* controleurClients;
 
     // Le contrôleur de la vue des fiches
-    ControleurFiches *controleurFiches;
+    ControleurFiches* controleurFiches;
 
     // Le contrôleur de la vue des appareils
-    ControleurAppareils *controleurAppareils;
+    ControleurAppareils* controleurAppareils;
 
     // Le contrôleur de la vue des actions
-    ControleurActions *controleurActions;
+    ControleurActions* controleurActions;
 
 };
 

@@ -3,7 +3,7 @@
 
 #include <QVariant>
 
-MappeurFabricants::MappeurFabricants(QSqlDatabase* a_bd, QObject *parent) :
+MappeurFabricants::MappeurFabricants(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {
     bd = a_bd;
 }
@@ -11,7 +11,7 @@ MappeurFabricants::MappeurFabricants(QSqlDatabase* a_bd, QObject *parent) :
 Fabricant* MappeurFabricants::getFabricant(int id) {
     Fabricant* fabricant = NULL;
     QString requete = "SELECT * FROM fabricants WHERE id="+QString::number(id);
-    QSqlQuery* commande = new QSqlQuery(requete, *bd);
+    QSqlQuery* commande = new QSqlQuery(requete,* bd);
     if (commande->next()) {
         fabricant = mapper(commande->record());
     }
@@ -26,7 +26,7 @@ Fabricant* MappeurFabricants::mapper(QSqlRecord ligne) {
 QList<Fabricant*>* MappeurFabricants::getFabricants() {
     QList<Fabricant*>* liste = new QList<Fabricant*>();
     QString requete = "SELECT * FROM fabricants";
-    QSqlQuery* commande = new QSqlQuery(requete, *bd);
+    QSqlQuery* commande = new QSqlQuery(requete,* bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");

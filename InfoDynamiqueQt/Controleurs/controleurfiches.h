@@ -24,7 +24,7 @@ public:
 private:
 
     // Le fragment des fiches
-    VueFragment *fragment;
+    VueFragment* fragment;
 
     /**
      * @brief requeteFiches

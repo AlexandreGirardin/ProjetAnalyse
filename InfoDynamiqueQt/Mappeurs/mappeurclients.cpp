@@ -1,6 +1,6 @@
 #include "mappeurclients.h"
 
-MappeurClients::MappeurClients(QSqlDatabase* a_bd, QObject *parent) :
+MappeurClients::MappeurClients(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {
     bd = a_bd;
 }

@@ -1,7 +1,7 @@
 #include "vuegestiontache.h"
 #include "ui_vuegestiontache.h"
 
-VueGestionTache::VueGestionTache(QWidget *parent) :
+VueGestionTache::VueGestionTache(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionTache)
 {

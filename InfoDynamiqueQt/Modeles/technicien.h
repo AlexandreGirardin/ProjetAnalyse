@@ -23,7 +23,7 @@ public:
      * @brief Technicien
      * @param parent
      */
-    explicit Technicien(QObject *parent = 0);
+    explicit Technicien(QObject* parent = 0);
 
     /**
      * @brief Technicien
@@ -31,7 +31,7 @@ public:
      * @param a_nom Le nom à assigner au technicien
      * @param parent
      */
-    Technicien(int a_id, QString a_nom, QObject *parent = 0);
+    Technicien(int a_id, QString a_nom, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -61,7 +61,7 @@ public:
      * @brief out
      * @return Représentation textuelle du technicien
      */
-    QString out(void);
+    QString out();
 
 };
 

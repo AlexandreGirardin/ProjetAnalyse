@@ -1,6 +1,6 @@
 #include "piece.h"
 
-Piece::Piece(QObject *parent) :
+Piece::Piece(QObject* parent) :
     QObject(parent) {
 }
 

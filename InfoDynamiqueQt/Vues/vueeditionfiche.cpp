@@ -1,7 +1,7 @@
 #include "vueeditionfiche.h"
 #include "ui_vueeditionfiche.h"
 
-VueEditionFiche::VueEditionFiche(QWidget *parent) :
+VueEditionFiche::VueEditionFiche(QWidget* parent) :
     QWidget(parent),
     ui(new Ui::VueEditionFiche)
 {
