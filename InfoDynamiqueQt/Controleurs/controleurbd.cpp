@@ -14,10 +14,9 @@ QSqlDatabase* ControleurBD::getBd() {
 void ControleurBD::connecterDossiers() {
     bd = QSqlDatabase::addDatabase(QString("QMYSQL"), QString("dossiers"));
     bd.setHostName("localhost");
-    bd.setPort(3307);
     bd.setDatabaseName("InfoDynamiqueDossiers");
     bd.setUserName("root");
-    bd.setPassword("patate");
+    bd.setPassword("");
     if (!bd.open()) {
         qDebug() << "Database error occurred";
     }
