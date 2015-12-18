@@ -28,7 +28,7 @@
     <Sequence>0</Sequence>
     <Complexity />
     <DateAdded>2015-09-03T14:58:48.2236027-04:00</DateAdded>
-    <DateModified>2015-11-02T10:26:17.9791487-05:00</DateModified>
+    <DateModified>2015-12-09T21:22:58.5396511-05:00</DateModified>
   </Actor>
   <Actor>
     <UniqueID>A-660e9085-9a4f-46e5-b148-e1208675c588</UniqueID>
@@ -67,15 +67,18 @@
     <UserID>A-2</UserID>
     <ParentID>P-9221a0e8-6356-49f3-8ca0-7df5cd506cae</ParentID>
     <Name>Base de données</Name>
-    <Description>Contient les informations servant au suivi des dossiers</Description>
+    <Description>Contient les informations servant au suivi des dossiers de maintenance de l'entreprise
+C'est la base de données utilisée par le système.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Contient les informations servant au suivi des dossiers\par
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Contient les informations servant au suivi des \cf1 dossiers\cf2  de maintenance de l'entreprise\par
+C'est la \cf3\ul base de donn\'e9es\cf2\ulnone  utilis\'e9e par le \cf3\ul syst\'e8me\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
     <Complexity />
     <DateAdded>2015-08-31T10:37:46.6035018-04:00</DateAdded>
-    <DateModified>2015-09-10T13:57:02.5182853-04:00</DateModified>
+    <DateModified>2015-12-18T14:53:41.6707174-05:00</DateModified>
   </Actor>
   <Actor>
     <UniqueID>A-e90405a7-cde1-4222-87b5-8893a7d30795</UniqueID>

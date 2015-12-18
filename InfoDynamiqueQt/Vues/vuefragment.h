@@ -37,7 +37,7 @@ public:
      * @brief VueFragment
      * @param parent
      */
-    explicit VueFragment(QWidget *parent = 0);
+    explicit VueFragment(QWidget* parent = 0);
     ~VueFragment();
 
     /**

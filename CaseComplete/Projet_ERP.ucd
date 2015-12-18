@@ -31,6 +31,14 @@
     <FileName>Diagramme des use cases.ndx</FileName>
     <Type>0</Type>
   </Diagram>
+  <Diagram>
+    <UniqueID>D-d3b98efe-35b3-402c-ac51-7f5b55f84925</UniqueID>
+    <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
+    <Name>Acteurs</Name>
+    <Sequence>2</Sequence>
+    <FileName>Acteurs.ndx</FileName>
+    <Type>0</Type>
+  </Diagram>
   <ElementStub>
     <ParentID>P-737265d8-b58e-4837-a439-827ad7aed8f9</ParentID>
     <Path>UseCases.ucp</Path>

@@ -31,7 +31,7 @@ public:
      * @param a_nom Le nom du statut
      * @param parent
      */
-    explicit Statut(int a_id, QString a_nom, QObject *parent = 0);
+    explicit Statut(int a_id, QString a_nom, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -61,7 +61,7 @@ public:
      * @brief out
      * @return La chaîne imprimable correspondant à la pièce
      */
-    QString out(void);
+    QString out();
 
 };
 

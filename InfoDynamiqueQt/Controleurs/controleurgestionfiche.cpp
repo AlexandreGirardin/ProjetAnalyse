@@ -1,6 +1,6 @@
-#include "controleurgestionfiche.h"
+#include "Controleurs/controleurgestionfiche.h"
 
-ControleurGestionFiche::ControleurGestionFiche(QObject *parent) :
+ControleurGestionFiche::ControleurGestionFiche(QObject* parent) :
     QObject(parent) {
     vueGestionFiche = new VueGestionFiche();
 }

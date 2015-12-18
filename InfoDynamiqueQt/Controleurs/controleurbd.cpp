@@ -1,4 +1,4 @@
-#include "controleurbd.h"
+#include "Controleurs/controleurbd.h"
 
 #include <QtSql/QSqlDatabase>
 #include <QDebug>

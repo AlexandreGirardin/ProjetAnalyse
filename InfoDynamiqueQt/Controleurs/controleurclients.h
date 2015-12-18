@@ -32,22 +32,22 @@ private:
     QSplitter* splitter;
 
     // Le contrôleur de gestion de clients
-    ControleurGestionClient *controleurGestionClient;
+    ControleurGestionClient* controleurGestionClient;
 
     // Le contrôleur de gestion d'appareils
-    ControleurGestionAppareil *controleurGestionAppareil;
+    ControleurGestionAppareil* controleurGestionAppareil;
 
     // Le contrôleur de gestion de fiches
-    ControleurGestionFiche *controleurGestionFiche;
+    ControleurGestionFiche* controleurGestionFiche;
 
     // Le fragment des clients
-    VueFragment *fragmentClients;
+    VueFragment* fragmentClients;
 
     // Le fragment des appareils
-    VueFragment *fragmentAppareils;
+    VueFragment* fragmentAppareils;
 
     // Le fragment des fiches
-    VueFragment *fragmentFiches;
+    VueFragment* fragmentFiches;
 
     /**
      * @brief configurerFragmentClients

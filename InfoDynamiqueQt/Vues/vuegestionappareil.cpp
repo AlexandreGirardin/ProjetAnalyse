@@ -1,7 +1,7 @@
-#include "vuegestionappareil.h"
+#include "Vues/vuegestionappareil.h"
 #include "ui_vuegestionappareil.h"
 
-VueGestionAppareil::VueGestionAppareil(QWidget *parent) :
+VueGestionAppareil::VueGestionAppareil(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionAppareil)
 {

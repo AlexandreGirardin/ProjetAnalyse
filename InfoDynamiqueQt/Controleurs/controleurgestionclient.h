@@ -32,7 +32,7 @@ private:
      * @param vue La vue cible
      * @param client Le client cible
      */
-    void assignerClient(VueGestionClient *vue, Client *client);
+    void assignerClient(VueGestionClient* vue, Client* client);
 
 public slots:
 

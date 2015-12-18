@@ -1,4 +1,4 @@
-#include "statut.h"
+#include "Modeles/statut.h"
 
 
 int Statut::getId() const {
@@ -21,11 +21,11 @@ QString Statut::out() {
     return QString::number(id) + " " + nom;
 }
 
-Statut::Statut(QObject *parent) :
+Statut::Statut(QObject* parent) :
     QObject(parent) {
 }
 
-Statut::Statut(int a_id, QString a_nom, QObject *parent) :
+Statut::Statut(int a_id, QString a_nom, QObject* parent) :
     QObject(parent) {
     setId(a_id);
     setNom(a_nom);

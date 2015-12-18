@@ -24,7 +24,7 @@ public:
      * @param a_nom Le nom à assigner au nom
      * @param parent
      */
-    explicit TypeAppareil(int a_id, QString a_nom, QObject *parent = 0);
+    explicit TypeAppareil(int a_id, QString a_nom, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -54,7 +54,7 @@ public:
      * @brief out
      * @return Représentation textuelle du type d'appareil
      */
-    QString out(void);
+    QString out();
 
 };
 

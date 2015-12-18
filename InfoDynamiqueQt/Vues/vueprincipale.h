@@ -14,13 +14,13 @@ class VuePrincipale : public QMainWindow
     // Vue principale de l'application, regroupant les autres vues dans des onglets
 
 public:
-    explicit VuePrincipale(QWidget *parent = 0);
+    explicit VuePrincipale(QWidget* parent = 0);
     ~VuePrincipale();
 
-    Ui::VuePrincipale *getUi() const;
+    Ui::VuePrincipale* getUi() const;
 
 private:
-    Ui::VuePrincipale *ui;
+    Ui::VuePrincipale* ui;
 };
 
 #endif // MAINWINDOW_H

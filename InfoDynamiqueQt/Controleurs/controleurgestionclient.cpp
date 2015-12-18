@@ -1,7 +1,7 @@
 #include "Controleurs/controleurgestionclient.h"
 #include "Vues/vuegestionclient.h"
 
-ControleurGestionClient::ControleurGestionClient(QObject *parent) : QObject(parent) {
+ControleurGestionClient::ControleurGestionClient(QObject* parent) : QObject(parent) {
     QSqlDatabase bd = QSqlDatabase::database("dossiers");
     mappeur = new MappeurClients(&bd);
 }
@@ -27,7 +27,7 @@ void ControleurGestionClient::voirClient(int idClient) {
     vue->show();
 }
 
-void ControleurGestionClient::assignerClient(VueGestionClient *vue, Client* client) {
+void ControleurGestionClient::assignerClient(VueGestionClient* vue, Client* client) {
     vue->getChampPrenom()->setText(client->getPrenom());
     vue->getChampNom()->setText(client->getNom());
     vue->getChampCourriel()->setText(client->getAdresse());

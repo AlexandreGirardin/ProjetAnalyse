@@ -34,7 +34,7 @@ public:
      * @brief getTechniciens
      * @return La liste de tous les techniciens de la base de données
      */
-    QList<Technicien*>* getTechniciens(void);
+    QList<Technicien*>* getTechniciens();
 
 private:
 

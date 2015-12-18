@@ -14,11 +14,11 @@ class VueGestionTache : public QDialog
     // Vue servant à créer, visualiser et modifier une tâche
 
 public:
-    explicit VueGestionTache(QWidget *parent = 0);
+    explicit VueGestionTache(QWidget* parent = 0);
     ~VueGestionTache();
 
 private:
-    Ui::VueGestionTache *ui;
+    Ui::VueGestionTache* ui;
 };
 
 #endif // GESTIONTACHE_H

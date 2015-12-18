@@ -12,7 +12,7 @@ private:
     // Le numéro de l'action
     int id;
 
-    // Le nomde l'Action
+    // Le nom de l'Action
     QString nom;
 
     // La description de l'Action
@@ -21,13 +21,13 @@ private:
 public:
 
     /**
-     * @brief Action
+     * @brief Action Constructeur d'action
      * @param parent
      */
     explicit Action(QObject* parent = 0);
 
     /**
-     * @brief Action
+     * @brief Action Constructeur d'Action
      * @param parent
      */
     Action(int, QString, QString, QObject* parent = 0);

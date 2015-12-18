@@ -34,7 +34,7 @@ public:
      * @brief getTypesAppareil
      * @return La liste de tous les types d'appareils de la base de données
      */
-    QList<TypeAppareil*>* getTypesAppareil(void);
+    QList<TypeAppareil*>* getTypesAppareil();
 
 private:
 

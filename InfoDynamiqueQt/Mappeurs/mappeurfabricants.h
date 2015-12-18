@@ -34,7 +34,7 @@ public:
      * @brief getFabricants
      * @return La liste de tous les fabricants de la base de données
      */
-    QList<Fabricant*>* getFabricants(void);
+    QList<Fabricant*>* getFabricants();
 
 private:
 

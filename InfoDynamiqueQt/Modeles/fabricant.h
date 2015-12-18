@@ -22,7 +22,7 @@ public:
      * @brief Fabricant
      * @param parent
      */
-    explicit Fabricant(QObject *parent = 0);
+    explicit Fabricant(QObject* parent = 0);
 
     /**
      * @brief Fabricant
@@ -30,7 +30,7 @@ public:
      * @param a_nom Le nom à assigner au fabricant
      * @param parent
      */
-    explicit Fabricant(int a_id, QString a_nom, QObject *parent = 0);
+    explicit Fabricant(int a_id, QString a_nom, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -60,7 +60,7 @@ public:
      * @brief out
      * @return Représentation textuelle du fabricant
      */
-    QString out(void);
+    QString out();
 
 };
 

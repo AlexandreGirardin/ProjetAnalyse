@@ -19,10 +19,10 @@
     <UserID>S-14-1</UserID>
     <ParentID>P-4324cde9-0974-408f-89e3-7cba51c1f518</ParentID>
     <Name>Créer une fiche de maintenance.</Name>
-    <Description>Un technicien peut créer une nouvelle fiche de maintenance pour prendre en note les tâches à effectuer sur un appareil et y noter leur avancement individuel par la suite.</Description>
+    <Description>Un technicien peut créer une nouvelle fiche de maintenance pour prendre en note les tâches à effectuer sur un appareil et y noter leur avancement individuel</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut cr\'e9er une nouvelle \cf3\ul fiche de maintenance\cf2\ulnone  pour prendre en note les \cf3\ul t\'e2ches\cf2\ulnone  \'e0 effectuer sur un \cf3\ul appareil\cf2\ulnone  et y noter leur avancement individuel par la suite.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut cr\'e9er une nouvelle \cf3\ul fiche de maintenance\cf2\ulnone  pour prendre en note les \cf3\ul t\'e2ches\cf2\ulnone  \'e0 effectuer sur un \cf3\ul appareil\cf2\ulnone  et y noter leur avancement individuel\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -31,7 +31,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T13:12:52.540228-04:00</DateAdded>
-    <DateModified>2015-11-16T09:33:11.8876655-05:00</DateModified>
+    <DateModified>2015-12-18T14:07:54.0702933-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-08fa35e3-a0bb-4362-aa71-387404991b8c</UniqueID>
@@ -57,10 +57,10 @@
     <UserID>S-14-3</UserID>
     <ParentID>P-4324cde9-0974-408f-89e3-7cba51c1f518</ParentID>
     <Name>Rechercher une fiche de maintenance</Name>
-    <Description>Un technicien peut facilement chercher une fiche de maintenance parmi la liste en filtrant les résultats par mots-clés, par état d'avancement, par appareil, par client, etc.</Description>
+    <Description>Un technicien peut facilement chercher une fiche de maintenance parmi la liste en filtrant les résultats par mots-clés, par état d'avancement, par appareil ou par client.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut facilement chercher une \cf3\ul fiche de maintenance\cf2\ulnone  parmi la liste en filtrant les r\'e9sultats par mots-cl\'e9s, par \'e9tat d'avancement, par \cf3\ul appareil\cf2\ulnone , par \cf3\ul client\cf2\ulnone , etc.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut facilement chercher une \cf3\ul fiche de maintenance\cf2\ulnone  parmi la liste en filtrant les r\'e9sultats par mots-cl\'e9s, par \'e9tat d'avancement, par \cf3 appareil\cf2  ou par \cf1\ul client\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
@@ -69,7 +69,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T13:33:24.9815928-04:00</DateAdded>
-    <DateModified>2015-11-16T08:57:01.9341097-05:00</DateModified>
+    <DateModified>2015-12-18T14:34:23.9946079-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-252a0aa6-404e-429d-8ff2-83bf273a48b6</UniqueID>
@@ -95,10 +95,10 @@
     <UserID>S-14-5</UserID>
     <ParentID>P-4324cde9-0974-408f-89e3-7cba51c1f518</ParentID>
     <Name>Consulter une fiche de maintenance</Name>
-    <Description>Un technicien peut consulter une fiche de maintenance dans le système. Permet d'afficher toutes les informations contenues dans une fiche de maintenance.</Description>
+    <Description>Un technicien peut consulter une fiche de maintenance dans le système. Affiche toutes les informations contenues dans une fiche de maintenance.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut consulter une \cf3 fiche de maintenance\cf2  dans le \cf1\ul syst\'e8me\cf2\ulnone . Permet d'afficher toutes les informations contenues dans une \cf3 fiche de maintenance\cf2 .\cf0\fs20\par
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut consulter une \cf3 fiche de maintenance\cf2  dans le \cf1\ul syst\'e8me\cf2\ulnone . Affiche toutes les informations contenues dans une \cf3 fiche de maintenance\cf2 .\cf0\par
 }
 </RichDescription>
     <Sequence>4</Sequence>
@@ -107,7 +107,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-11-16T09:32:15.641709-05:00</DateAdded>
-    <DateModified>2015-11-16T09:32:51.6125524-05:00</DateModified>
+    <DateModified>2015-12-18T14:41:04.5913293-05:00</DateModified>
   </Story>
   <UserID>
     <DefaultPrefix>UC-14-</DefaultPrefix>

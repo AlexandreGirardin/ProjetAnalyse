@@ -12,4 +12,5 @@ Projet_ERP_Context.autosave.ndx
 *.pro.user.*
 QtSQL/*-Debug
 build*-Debug
+build*-Release
 InfoDynamiqueQt/controleurbd.cpp

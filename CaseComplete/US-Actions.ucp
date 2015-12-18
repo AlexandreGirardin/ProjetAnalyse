@@ -38,10 +38,10 @@
     <UserID>S-13-3</UserID>
     <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
     <Name>Voir une définition d'action</Name>
-    <Description>Les techniciens peuvent facilement visualiser la définition d'une tâche lorsqu'il est temps de l'effectuer afin de savoir exactement ce qu'ils doivent faire sur un appareil.</Description>
+    <Description>Les techniciens peuvent visualiser la définition d'une tâche afin de savoir ce qu'ils y a à faire sur un appareil.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Les \cf1\ul techniciens\cf2\ulnone  peuvent facilement visualiser la d\'e9finition d'une \cf3\ul t\'e2che\cf2\ulnone  lorsqu'il est temps de l'effectuer afin de savoir exactement ce qu'ils doivent faire sur un \cf3\ul appareil\cf2\ulnone .\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Les \cf1\ul techniciens\cf2\ulnone  peuvent visualiser la d\'e9finition d'une \cf3 t\'e2che\cf2  afin de savoir ce qu'ils y a \'e0 faire sur un \cf3\ul appareil\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -50,7 +50,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T10:35:15.9104295-04:00</DateAdded>
-    <DateModified>2015-11-16T08:56:35.2609534-05:00</DateModified>
+    <DateModified>2015-12-18T14:07:33.3521085-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-4052f541-dccc-4dfe-81a6-08dd6539b773</UniqueID>
@@ -95,10 +95,10 @@
     <UserID>S-17-1</UserID>
     <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
     <Name>Consulter une action</Name>
-    <Description>Un technicien peut consulter une action dans le système. Permet d'afficher toutes les informations d'une action.</Description>
+    <Description>Un technicien peut consulter une action dans le système. Affiche toutes les informations d'une action.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut consulter une \cf3 action\cf2  dans le \cf1\ul syst\'e8me\cf2\ulnone . Permet d'afficher toutes les informations d'une \cf3 action\cf2 .\cf0\fs20\par
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut consulter une \cf3 action\cf2  dans le \cf1\ul syst\'e8me\cf2\ulnone . Affiche toutes les informations d'une \cf3 action\cf2 .\cf0\par
 }
 </RichDescription>
     <Sequence>4</Sequence>
@@ -107,7 +107,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-11-16T09:33:27.0115098-05:00</DateAdded>
-    <DateModified>2015-11-16T09:33:55.905891-05:00</DateModified>
+    <DateModified>2015-12-18T14:43:42.5496764-05:00</DateModified>
   </Story>
   <UserID>
     <DefaultPrefix>UC-17-</DefaultPrefix>

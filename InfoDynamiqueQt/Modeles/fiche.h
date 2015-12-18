@@ -43,7 +43,7 @@ public:
      * @brief Fiche
      * @param parent
      */
-    explicit Fiche(QObject *parent = 0);
+    explicit Fiche(QObject* parent = 0);
 
     /**
      * @brief getId
@@ -91,13 +91,13 @@ public:
      * @brief setStatut
      * @param value Le statut à assigner à la fiche
      */
-    void setStatut(Statut *value);
+    void setStatut(Statut* value);
 
     /**
      * @brief getTaches
      * @return La liste des tâches de la fiche
      */
-    QList<Tache *> getTaches() const;
+    QList<Tache*> getTaches() const;
 
     /**
      * @brief setTaches
@@ -133,7 +133,7 @@ public:
      * @brief out
      * @return Représentation textuelle de la fiche
      */
-    QString out(void);
+    QString out();
 
 };
 

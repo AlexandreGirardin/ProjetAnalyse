@@ -17,7 +17,7 @@ public:
      * @brief ControleurGestionFiche
      * @param parent
      */
-    explicit ControleurGestionFiche(QObject *parent = 0);
+    explicit ControleurGestionFiche(QObject* parent = 0);
 
     // La vue utilisée pour editer une fiche
     VueGestionFiche* vueGestionFiche;

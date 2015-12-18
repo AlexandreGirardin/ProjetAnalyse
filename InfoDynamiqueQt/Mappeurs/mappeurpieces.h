@@ -34,7 +34,7 @@ public:
      * @brief MappeurPieces::getPieces
      * @return La liste de toutes les pièces de la base de données
      */
-    QList<Piece*>* getPieces(void);
+    QList<Piece*>* getPieces();
 
 private:
 

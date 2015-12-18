@@ -140,7 +140,7 @@ Contient un minimum de 7 chiffres.\cf0\par
     <UniqueID>D2-f948bfee-d218-4785-b611-f4587f389850</UniqueID>
     <Name>Dossier de client</Name>
     <Description>Regroupe les informations personnelles du client et les caractéristiques et fiches de ses appareils.</Description>
-    <Aliases />
+    <Aliases>Dossier</Aliases>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
 \viewkind4\uc1\pard\f0\fs20 Regroupe les informations personnelles du \cf1\ul client\cf2\ulnone  et les caract\'e9ristiques et \cf3 fiches\cf2  de ses \cf3 appareils\cf2 .\cf0\par

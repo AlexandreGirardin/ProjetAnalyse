@@ -17,7 +17,7 @@ private:
     int id;
 
     // Le frabricant de l'appareil
-    Fabricant *fabricant;
+    Fabricant* fabricant;
 
     // Le type de l'appareil
     TypeAppareil* type;
@@ -28,7 +28,7 @@ public:
      * @brief Appareil
      * @param parent
      */
-    explicit Appareil(QObject *parent = 0);
+    explicit Appareil(QObject* parent = 0);
 
     /**
      * @brief getId
@@ -46,31 +46,31 @@ public:
      * @brief getFabricant
      * @return Le fabricant de l'appareil
      */
-    Fabricant *getFabricant() const;
+    Fabricant* getFabricant() const;
 
     /**
      * @brief setFabricant
      * @param value Le fabricant à assigner à l'appareil
      */
-    void setFabricant(Fabricant *value);
+    void setFabricant(Fabricant* value);
 
     /**
      * @brief getType
      * @return Le type de l'appareil
      */
-    TypeAppareil *getType() const;
+    TypeAppareil* getType() const;
 
     /**
      * @brief setType
      * @param value Le type à assigner à l'appareil
      */
-    void setType(TypeAppareil *value);
+    void setType(TypeAppareil* value);
 
     /**
      * @brief out
      * @return Représentation textuelle de l'appareil
      */
-    QString out(void);
+    QString out();
 
 };
 

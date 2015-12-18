@@ -1,0 +1,1 @@
+Il y a plusieurs contrôleurs sans fonction et qui n'hérite de rien... Ce n'est pas possible. Un contrôleur doit contrôleur quelque chose.
