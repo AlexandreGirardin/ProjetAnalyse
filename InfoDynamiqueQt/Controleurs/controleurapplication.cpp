@@ -1,8 +1,8 @@
-#include "controleuractions.h"
-#include "controleurappareils.h"
-#include "controleurapplication.h"
-#include "controleurclients.h"
-#include "controleurfiches.h"
+#include "Controleurs/controleuractions.h"
+#include "Controleurs/controleurappareils.h"
+#include "Controleurs/controleurapplication.h"
+#include "Controleurs/controleurclients.h"
+#include "Controleurs/controleurfiches.h"
 #include "Vues/vueprincipale.h"
 
 ControleurApplication::ControleurApplication(QObject* parent) :

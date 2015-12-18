@@ -1,4 +1,4 @@
-#include "vuegestionpiece.h"
+#include "Vues/vuegestionpiece.h"
 #include "ui_vuegestionpiece.h"
 
 VueGestionPiece::VueGestionPiece(QWidget* parent) :

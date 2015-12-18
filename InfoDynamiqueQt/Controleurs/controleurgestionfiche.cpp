@@ -1,4 +1,4 @@
-#include "controleurgestionfiche.h"
+#include "Controleurs/controleurgestionfiche.h"
 
 ControleurGestionFiche::ControleurGestionFiche(QObject* parent) :
     QObject(parent) {

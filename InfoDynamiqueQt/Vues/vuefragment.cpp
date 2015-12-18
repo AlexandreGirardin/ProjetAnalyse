@@ -1,4 +1,4 @@
-#include "vuefragment.h"
+#include "Vues/vuefragment.h"
 #include "ui_vuefragment.h"
 
 VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment) {

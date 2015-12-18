@@ -1,4 +1,4 @@
-#include "vuegestionensemble.h"
+#include "Vues/vuegestionensemble.h"
 #include "ui_vuegestionensemble.h"
 
 VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :

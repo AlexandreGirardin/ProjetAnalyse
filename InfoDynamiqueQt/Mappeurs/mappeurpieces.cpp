@@ -1,5 +1,4 @@
-#include "mappeurpieces.h"
-#include "Modeles/piece.h"
+#include "Mappeurs/mappeurpieces.h"
 
 #include <QVariant>
 

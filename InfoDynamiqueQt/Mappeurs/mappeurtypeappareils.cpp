@@ -1,5 +1,4 @@
-#include "mappeurtypeappareils.h"
-#include "Modeles/typeappareil.h"
+#include "Mappeurs/mappeurtypeappareils.h"
 
 #include <QVariant>
 

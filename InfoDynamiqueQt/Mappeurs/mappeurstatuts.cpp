@@ -1,5 +1,4 @@
-#include "mappeurstatuts.h"
-#include "Modeles/statut.h"
+#include "Mappeurs/mappeurstatuts.h"
 
 #include <QVariant>
 

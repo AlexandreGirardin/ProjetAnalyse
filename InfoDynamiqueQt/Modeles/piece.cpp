@@ -1,4 +1,4 @@
-#include "piece.h"
+#include "Modeles/piece.h"
 
 Piece::Piece(QObject* parent) :
     QObject(parent) {

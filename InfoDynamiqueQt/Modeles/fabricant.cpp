@@ -1,4 +1,4 @@
-#include "fabricant.h"
+#include "Modeles/fabricant.h"
 
 
 int Fabricant::getId() const

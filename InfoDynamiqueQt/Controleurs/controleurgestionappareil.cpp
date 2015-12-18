@@ -1,4 +1,4 @@
-#include "controleurgestionappareil.h"
+#include "Controleurs/controleurgestionappareil.h"
 
 ControleurGestionAppareil::ControleurGestionAppareil(QObject* parent) :
     QObject(parent) {

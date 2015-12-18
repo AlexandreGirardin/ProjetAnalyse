@@ -1,4 +1,4 @@
-#include "vuegestionappareil.h"
+#include "Vues/vuegestionappareil.h"
 #include "ui_vuegestionappareil.h"
 
 VueGestionAppareil::VueGestionAppareil(QWidget* parent) :

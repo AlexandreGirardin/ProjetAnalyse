@@ -1,4 +1,4 @@
-#include "vueeditionfiche.h"
+#include "Vues/vueeditionfiche.h"
 #include "ui_vueeditionfiche.h"
 
 VueEditionFiche::VueEditionFiche(QWidget* parent) :

@@ -1,4 +1,4 @@
-#include "typeappareil.h"
+#include "Modeles/typeappareil.h"
 
 TypeAppareil::TypeAppareil(int a_id, QString a_nom, QObject* parent) :
     QObject(parent)

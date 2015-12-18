@@ -1,4 +1,4 @@
-#include "technicien.h"
+#include "Modeles/technicien.h"
 
 
 int Technicien::getId() const {

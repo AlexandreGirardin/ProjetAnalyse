@@ -1,5 +1,4 @@
-#include "mappeurfabricants.h"
-#include "Modeles/fabricant.h"
+#include "Mappeurs/mappeurfabricants.h"
 
 #include <QVariant>
 

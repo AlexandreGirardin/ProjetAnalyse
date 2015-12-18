@@ -1,5 +1,4 @@
-#include "mappeurtechniciens.h"
-#include "Modeles/technicien.h"
+#include "Mappeurs/mappeurtechniciens.h"
 
 #include <QVariant>
 

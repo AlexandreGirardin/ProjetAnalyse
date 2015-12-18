@@ -1,4 +1,4 @@
-#include "vueprincipale.h"
+#include "Vues/vueprincipale.h"
 #include "ui_vueprincipale.h"
 
 

@@ -1,4 +1,4 @@
-#include "vuegestionclient.h"
+#include "Vues/vuegestionclient.h"
 #include "ui_vuegestionclient.h"
 
 VueGestionClient::VueGestionClient(QWidget* parent) :

@@ -1,5 +1,4 @@
-#include "mappeuractions.h"
-#include "Modeles/action.h"
+#include "Mappeurs/mappeuractions.h"
 
 #include <QVariant>
 

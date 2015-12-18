@@ -1,4 +1,4 @@
-#include "appareil.h"
+#include "Modeles/appareil.h"
 
 
 int Appareil::getId() const
