@@ -1,7 +1,7 @@
-#include "vuefragment.h"
+#include "Vues/vuefragment.h"
 #include "ui_vuefragment.h"
 
-VueFragment::VueFragment(QWidget *parent) : QWidget(parent), ui(new Ui::VueFragment) {
+VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment) {
     ui->setupUi(this);
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
     QObject::connect(ui->boutonModifier, SIGNAL(clicked()), this, SIGNAL(clicEditer()));
@@ -14,37 +14,37 @@ VueFragment::~VueFragment() {
     delete ui;
 }
 
-QLabel *VueFragment::getEtiquette() const {
+QLabel* VueFragment::getEtiquette() const {
     return ui->etiquette;
 }
 
-QPushButton *VueFragment::getBoutonAjouter() const {
+QPushButton* VueFragment::getBoutonAjouter() const {
     return ui->boutonAjouter;
 }
 
-QPushButton *VueFragment::getBoutonModifier() const {
+QPushButton* VueFragment::getBoutonModifier() const {
     return ui->boutonModifier;
 }
 
-QPushButton *VueFragment::getBoutonVoir() const {
+QPushButton* VueFragment::getBoutonVoir() const {
     return ui->boutonVoir;
 }
 
-QCheckBox *VueFragment::getCaseCocher() const {
+QCheckBox* VueFragment::getCaseCocher() const {
     return ui->caseCocher;
 }
 
-QLineEdit *VueFragment::getChamp() const {
+QLineEdit* VueFragment::getChamp() const {
     return ui->champ;
 }
 
-QTableView *VueFragment::getTableau() const {
+QTableView* VueFragment::getTableau() const {
     return ui->tableau;
 }
 
-void VueFragment::peuplerTableau(QAbstractTableModel* modele) {
+void VueFragment::peuplerTableau(QAbstractTableModel* valeurs) {
     QItemSelectionModel* vieilleSelection = ui->tableau->selectionModel();
-    ui->tableau->setModel(modele);
+    ui->tableau->setModel(valeurs);
     delete vieilleSelection;
     QObject::connect(ui->tableau->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(signalerSelection(QModelIndex, QModelIndex)));
     ui->tableau->resizeColumnsToContents();
@@ -57,16 +57,13 @@ int VueFragment::getId(QModelIndex index) {
     QModelIndex caseId = ui->tableau->model()->index(rangee, colonne);
     return ui->tableau->model()->data(caseId).toInt();
 }
-int VueFragment::getIdModele() const
-{
+int VueFragment::getIdModele() const {
     return idModele;
 }
 
-void VueFragment::setIdModele(int value)
-{
+void VueFragment::setIdModele(int value) {
     idModele = value;
 }
-
 
 void VueFragment::relacherModele() {
     ui->tableau->clearSelection();

@@ -7,6 +7,8 @@ class Piece : public QObject
 {
     Q_OBJECT
 
+    // Pièce utilisée pour réaliser les tâches d'une fiche de maintenance
+
 private:
 
     // L'identifiant unique de la pièce
@@ -37,7 +39,7 @@ public:
      * @param a_prix Le prix à donner à la pièce
      * @param parent
      */
-    Piece(int a_id, QString a_nom, QString a_description, int a_prix, QObject *parent = 0);
+    Piece(int a_id, QString a_nom, QString a_description, int a_prix, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -98,10 +100,6 @@ public:
      * @return La chaîne imprimable correspondant à la pièce
      */
     QString out();
-
-signals:
-
-public slots:
 
 };
 

@@ -1,7 +1,7 @@
-#include "vuegestionclient.h"
+#include "Vues/vuegestionclient.h"
 #include "ui_vuegestionclient.h"
 
-VueGestionClient::VueGestionClient(QWidget *parent) :
+VueGestionClient::VueGestionClient(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionClient) {
     ui->setupUi(this);

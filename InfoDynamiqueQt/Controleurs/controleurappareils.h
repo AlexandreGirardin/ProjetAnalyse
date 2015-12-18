@@ -10,16 +10,23 @@ class ControleurAppareils : public QObject
 {
     Q_OBJECT
 
+    // Contrôle l'exécution de l'onglet Appareils de la vue principale
+
 public:
+
+    /**
+     * @brief ControleurAppareils
+     * @param vuePrincipale La vue à laquelle se rattache le contrôleur
+     * @param parent
+     */
     explicit ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent = 0);
 
 private:
+
+    // Le fragment des appareils
     VueFragment* fragment;
 
-    /**
-     * @brief requeteFiches
-     * La requête utilisée pour peupler les fiches
-     */
+    // La requête utilisée pour peupler les fiches
     const QString* requeteAppareils;
 
 public slots:

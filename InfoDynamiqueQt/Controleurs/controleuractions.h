@@ -12,7 +12,15 @@ class ControleurActions : public QObject
 {
     Q_OBJECT
 
+    // Contrôle l'exécution de l'onglet Actions de la vue principale
+
 public:
+
+    /**
+     * @brief ControleurActions
+     * @param vuePrincipale La vue à laquelle se rattache le contrôleur
+     * @param parent
+     */
     explicit ControleurActions(VuePrincipale* vuePrincipale, QObject* parent = 0);
 
 private:

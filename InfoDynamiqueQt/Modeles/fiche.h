@@ -2,45 +2,138 @@
 #define FICHE_H
 
 #include <QObject>
-#include "tache.h"
-#include "piece.h"
-#include "technicien.h"
-#include "statut.h"
+
+#include "Modeles/piece.h"
+#include "Modeles/statut.h"
+#include "Modeles/tache.h"
+#include "Modeles/technicien.h"
 
 class Fiche : public QObject
 {
     Q_OBJECT
 
+    // Fiche de maintenance d'un appareil
+
 private:
+
+    // L'id de la fiche
     int id;
+
+    // La priorité de la fiche
     int priorite;
+
+    // Le commentaire facultatif sur la fiche
     QString commentaire;
-    Statut *statut;
 
-public:
-    explicit Fiche(QObject *parent = 0);
+    // Le statut de la fiche
+    Statut* statut;
 
+    // La liste des tâches de la fiche
     QList<Tache*> taches;
+
+    // La liste des pièces utilisées pour la fiche
     QList<Piece*> pieces;
+
+    // La liste des techniciens ayant travaillé sur la fiche
     QList<Technicien*> techniciens;
 
+public:
+
+    /**
+     * @brief Fiche
+     * @param parent
+     */
+    explicit Fiche(QObject* parent = 0);
+
+    /**
+     * @brief getId
+     * @return L'id de la fiche
+     */
     int getId() const;
+
+    /**
+     * @brief setId
+     * @param value L'id à assigner à la fiche
+     */
     void setId(int value);
 
+    /**
+     * @brief getPriorite
+     * @return La priorité de la fiche
+     */
     int getPriorite() const;
+
+    /**
+     * @brief setPriorite
+     * @param value La priorité à assigner à la fiche
+     */
     void setPriorite(int value);
 
+    /**
+     * @brief getCommentaire
+     * @return Le commentaire de la fiche
+     */
     QString getCommentaire() const;
+
+    /**
+     * @brief setCommentaire
+     * @param value Le commentaire à assigner à la fiche
+     */
     void setCommentaire(const QString &value);
 
+    /**
+     * @brief getStatut
+     * @return Le statut de la fiche
+     */
     Statut *getStatut() const;
-    void setStatut(Statut *value);
 
-    QString out(void);
+    /**
+     * @brief setStatut
+     * @param value Le statut à assigner à la fiche
+     */
+    void setStatut(Statut* value);
 
-signals:
+    /**
+     * @brief getTaches
+     * @return La liste des tâches de la fiche
+     */
+    QList<Tache*> getTaches() const;
 
-public slots:
+    /**
+     * @brief setTaches
+     * @param value La liste des tâches à assigner à la fiche
+     */
+    void setTaches(const QList<Tache*> &value);
+
+    /**
+     * @brief getPieces
+     * @return La liste de pièces de la fiche
+     */
+    QList<Piece*> getPieces() const;
+
+    /**
+     * @brief setPieces
+     * @param value La liste de pièces à assigner à la fiche
+     */
+    void setPieces(const QList<Piece*> &value);
+
+    /**
+     * @brief getTechniciens
+     * @return La liste des techniciens associés à la fiche
+     */
+    QList<Technicien*> getTechniciens() const;
+
+    /**
+     * @brief setTechniciens
+     * @param value La liste de techniciens à assigner à la fiche
+     */
+    void setTechniciens(const QList<Technicien*> &value);
+
+    /**
+     * @brief out
+     * @return Représentation textuelle de la fiche
+     */
+    QString out();
 
 };
 

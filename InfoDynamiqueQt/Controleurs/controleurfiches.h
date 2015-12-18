@@ -10,11 +10,13 @@ class ControleurFiches : public QObject
 {
     Q_OBJECT
 
+    // Contrôle l'exécution de l'onglet Fiches de la vue principale
+
 public:
 
     /**
      * @brief ControleurFiches
-     * @param vuePrincipale
+     * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
     explicit ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent = 0);
@@ -22,7 +24,7 @@ public:
 private:
 
     // Le fragment des fiches
-    VueFragment *fragment;
+    VueFragment* fragment;
 
     /**
      * @brief requeteFiches

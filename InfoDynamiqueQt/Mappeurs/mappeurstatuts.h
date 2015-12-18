@@ -12,6 +12,8 @@ class MappeurStatuts : public QObject
 {
     Q_OBJECT
 
+    // Extrait des objets Statut (fiches ou pièces) de la base de données
+
 public:
 
     /**
@@ -24,7 +26,7 @@ public:
     /**
      * @brief getStatutFiche
      * @param id Le numéro du statutFiche à mapper
-     * @return La statut si elle existe. NULL autrement
+     * @return Le statut si elle existe. NULL autrement
      */
     Statut* getStatutFiche(int id);
 
@@ -37,7 +39,7 @@ public:
     /**
      * @brief getStatutAction
      * @param id Le numéro du statutAction à mapper
-     * @return Le statut si il existe, NULL autrement
+     * @return Le statut s'il existe, NULL autrement
      */
     Statut* getStatutAction(int id);
 
@@ -61,7 +63,6 @@ private:
      */
     Statut* mapper(QSqlRecord);
 
-public slots:
 };
 
 #endif // MAPPEURSTATUTS_H

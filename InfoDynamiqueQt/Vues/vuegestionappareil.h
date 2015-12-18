@@ -11,12 +11,14 @@ class VueGestionAppareil : public QDialog
 {
     Q_OBJECT
 
+    // Vue servant à créer, visualiser et modifier un appareil
+
 public:
-    explicit VueGestionAppareil(QWidget *parent = 0);
+    explicit VueGestionAppareil(QWidget* parent = 0);
     ~VueGestionAppareil();
 
 private:
-    Ui::VueGestionAppareil *ui;
+    Ui::VueGestionAppareil* ui;
 };
 
 #endif // GESTIONAPPAREIL_H

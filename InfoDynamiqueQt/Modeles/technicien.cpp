@@ -1,4 +1,4 @@
-#include "technicien.h"
+#include "Modeles/technicien.h"
 
 
 int Technicien::getId() const {
@@ -21,7 +21,7 @@ QString Technicien::out() {
     return QString::number(id) + " " + nom;
 }
 
-Technicien::Technicien(QObject *parent) :
+Technicien::Technicien(QObject* parent) :
     QObject(parent) {
 }
 

@@ -10,13 +10,19 @@ class ControleurBD : public QObject
 {
     Q_OBJECT
 
+    // Définit la connexion avec les bases de données
+
 private:
 
-    // La base de donnée principale
+    // La base de données principale
     QSqlDatabase bd;
 
 public:
 
+    /**
+     * @brief ControleurBD
+     * @param parent
+     */
     explicit ControleurBD(QObject* parent = 0);
 
     /**
@@ -25,9 +31,12 @@ public:
      */
     QSqlDatabase* getBd();
 
-signals:
-
-public slots:
+    /**
+     * @brief connecterDossiers
+     * Établit la connexion avec la base de données principale
+     * Elle sera accessible statiquement par QSqlDatabase::database("dossiers)
+     */
+    void connecterDossiers();
 
 };
 

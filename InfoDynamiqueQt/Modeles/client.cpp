@@ -1,4 +1,4 @@
-#include "client.h"
+#include "Modeles/client.h"
 
 
 QString Client::getPrenom() const

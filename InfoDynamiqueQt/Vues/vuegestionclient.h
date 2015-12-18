@@ -12,8 +12,10 @@ class VueGestionClient : public QDialog
 {
     Q_OBJECT
 
+    // Vue servant à créer, visualiser et modifier un client
+
 public:
-    explicit VueGestionClient(QWidget *parent = 0);
+    explicit VueGestionClient(QWidget* parent = 0);
     ~VueGestionClient();
 
     QLineEdit* getChampPrenom() const;
@@ -29,7 +31,7 @@ public slots:
     void setEditable();
 
 private:
-    Ui::VueGestionClient *ui;
+    Ui::VueGestionClient* ui;
 };
 
 #endif // GESTIONCLIENT_H

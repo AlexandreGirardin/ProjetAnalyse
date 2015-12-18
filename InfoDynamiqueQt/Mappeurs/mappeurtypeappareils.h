@@ -12,14 +12,16 @@ class MappeurTypeAppareils : public QObject
 {
     Q_OBJECT
 
+    // Extrait des objets Appareil de la base de données
+
 public:
 
     /**
      * @brief MappeurTypeAppareil
-     * @param a_bc La base de données à utiliser
+     * @param a_bd La base de données à utiliser
      * @param parent
      */
-    explicit MappeurTypeAppareils(QSqlDatabase* a_bc, QObject* parent = 0);
+    explicit MappeurTypeAppareils(QSqlDatabase* a_bd, QObject* parent = 0);
 
     /**
      * @brief getTypeAppareil
@@ -32,7 +34,7 @@ public:
      * @brief getTypesAppareil
      * @return La liste de tous les types d'appareils de la base de données
      */
-    QList<TypeAppareil*>* getTypesAppareil(void);
+    QList<TypeAppareil*>* getTypesAppareil();
 
 private:
 
@@ -47,8 +49,6 @@ private:
      * @return La pièce
      */
     TypeAppareil* mapper(QSqlRecord);
-
-public slots:
 
 };
 

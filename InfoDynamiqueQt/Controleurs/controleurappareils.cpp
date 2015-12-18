@@ -3,7 +3,7 @@
 
 #include <QSqlQueryModel>
 
-ControleurAppareils::ControleurAppareils(VuePrincipale *vuePrincipale, QObject *parent)
+ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent)
     : QObject(parent) {
     fragment = new VueFragment();
     fragment->getEtiquette()->setText("Appareils");

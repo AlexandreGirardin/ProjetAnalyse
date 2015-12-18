@@ -1,4 +1,4 @@
-#include "controleurfiches.h"
+#include "Controleurs/controleurfiches.h"
 #include "ui_vueprincipale.h"
 
 #include <QSqlQueryModel>

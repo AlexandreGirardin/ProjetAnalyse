@@ -1,5 +1,4 @@
-#include "mappeurstatuts.h"
-#include "Modeles/statut.h"
+#include "Mappeurs/mappeurstatuts.h"
 
 #include <QVariant>
 
@@ -19,7 +18,7 @@ Statut* MappeurStatuts::getStatutFiche(int id) {
 }
 
 QList<Statut*>* MappeurStatuts::getStatutsFiche(void) {
-    QList<Statut*>* liste;
+    QList<Statut*>* liste = new QList<Statut*>();
     QString requete = "SELECT * FROM statutsFiche";
     QSqlQuery* commande = new QSqlQuery(requete, *bd);
     QSqlRecord ligne = commande->record();
@@ -60,7 +59,7 @@ QList<Statut*>* MappeurStatuts::getStatutsAction(void) {
     return liste;
 }
 
-Statut *MappeurStatuts::mapper(QSqlRecord ligne) {
+Statut* MappeurStatuts::mapper(QSqlRecord ligne) {
     return new Statut(ligne.value("id").toInt(),
                      ligne.value("nom").toString(), this);
 }
