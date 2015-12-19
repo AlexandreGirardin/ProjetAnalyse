@@ -6,7 +6,7 @@
 ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent)
     : QObject(parent) {
     fragment = new VueFragment();
-    fragment->getEtiquette()->setText("Appareils");
+    fragment->getEtiquette()->setText(tr("Appareils"));
     fragment->getCaseCocher()->hide();
     vuePrincipale->getUi()->ongletAppareils->layout()->addWidget(fragment);
     requeteAppareils = new QString("select * from appareils");

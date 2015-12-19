@@ -20,13 +20,13 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
 
 void ControleurActions::configurerFragmentActions() {
     fragmentActions = new VueFragment(splitter);
-    fragmentActions->getEtiquette()->setText("Actions");
-    fragmentActions->getCaseCocher()->setText("Afficher toutes les actions");
+    fragmentActions->getEtiquette()->setText(tr("Actions"));
+    fragmentActions->getCaseCocher()->setText(tr("Afficher toutes les actions"));
 }
 
 void ControleurActions::configurerFragmentEnsembles() {
     fragmentEnsembles = new VueFragment(splitter);
-    fragmentEnsembles->getEtiquette()->setText("Ensembles");
+    fragmentEnsembles->getEtiquette()->setText(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
 }
 

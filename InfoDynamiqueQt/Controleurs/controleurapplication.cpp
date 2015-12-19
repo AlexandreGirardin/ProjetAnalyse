@@ -14,8 +14,7 @@ ControleurApplication::ControleurApplication(QObject* parent) :
     controleurActions = new ControleurActions(vuePrincipale, this);
 }
 
-void ControleurApplication::executer()
-{
+void ControleurApplication::executer() {
     vuePrincipale->showMaximized();
 }
 

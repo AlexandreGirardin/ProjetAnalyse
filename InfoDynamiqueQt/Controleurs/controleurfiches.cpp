@@ -6,8 +6,8 @@
 ControleurFiches::ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent)
     : QObject(parent) {
     fragment = new VueFragment();
-    fragment->getEtiquette()->setText("Fiches");
-    fragment->getCaseCocher()->setText("Afficher toutes les fiches");
+    fragment->getEtiquette()->setText(tr("Fiches"));
+    fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     vuePrincipale->getUi()->ongletFiches->layout()->addWidget(fragment);
     requeteFiches = new QString("select * from fiches");
     peuplerFiches();

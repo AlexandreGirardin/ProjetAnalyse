@@ -7,6 +7,7 @@ ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* pare
     : QObject(parent) {
     splitter = new QSplitter(Qt::Vertical, vuePrincipale->getUi()->ongletClients);
     vuePrincipale->getUi()->ongletClients->layout()->addWidget(splitter);
+    splitter->setChildrenCollapsible(false);
     controleurGestionClient = new ControleurGestionClient();
     controleurGestionAppareil = new ControleurGestionAppareil();
     controleurGestionFiche = new ControleurGestionFiche();
@@ -32,7 +33,7 @@ ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* pare
 
 void ControleurClients::configurerFragmentClients() {
     fragmentClients = new VueFragment(splitter);
-    fragmentClients->getEtiquette()->setText("Clients");
+    fragmentClients->getEtiquette()->setText(tr("Clients"));
     fragmentClients->getCaseCocher()->hide();
     QObject::connect(fragmentClients, SIGNAL(clicCreer()), controleurGestionClient, SLOT(ajouterClient()));
     QObject::connect(fragmentClients, SIGNAL(clicEditer()), this, SLOT(modifierClient()));
@@ -41,7 +42,7 @@ void ControleurClients::configurerFragmentClients() {
 
 void ControleurClients::configurerFragmentAppareils() {
     fragmentAppareils = new VueFragment(splitter);
-    fragmentAppareils->getEtiquette()->setText("Appareils");
+    fragmentAppareils->getEtiquette()->setText(tr("Appareils"));
     fragmentAppareils->getCaseCocher()->hide();
     QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), controleurGestionAppareil, SLOT(ajouterAppareil()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
@@ -52,8 +53,8 @@ void ControleurClients::configurerFragmentAppareils() {
 
 void ControleurClients::configurerFragmentFiches() {
     fragmentFiches = new VueFragment(splitter);
-    fragmentFiches->getEtiquette()->setText("Fiches");
-    fragmentFiches->getCaseCocher()->setText("Afficher toutes les fiches");
+    fragmentFiches->getEtiquette()->setText(tr("Fiches"));
+    fragmentFiches->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), controleurGestionFiche, SLOT(ajouterFiche()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
