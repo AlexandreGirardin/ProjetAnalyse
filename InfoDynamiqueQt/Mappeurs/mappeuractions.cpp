@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeuractions.h"
 
 #include <QVariant>
+#include <QtSql/QSqlQuery>
 
 MappeurActions::MappeurActions(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {

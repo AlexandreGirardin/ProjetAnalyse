@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeurstatuts.h"
 
 #include <QVariant>
+#include <QtSql/QSqlQuery>
 
 MappeurStatuts::MappeurStatuts(QSqlDatabase* a_bd, QObject* parent)
     : QObject(parent) {

@@ -5,7 +5,6 @@
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-#include "Controleurs/controleurbd.h"
 #include "Modeles/action.h"
 
 class MappeurActions : public QObject

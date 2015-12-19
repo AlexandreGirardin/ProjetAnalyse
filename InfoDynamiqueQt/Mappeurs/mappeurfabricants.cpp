@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeurfabricants.h"
 
 #include <QVariant>
+#include <QtSql/QSqlQuery>
 
 MappeurFabricants::MappeurFabricants(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {

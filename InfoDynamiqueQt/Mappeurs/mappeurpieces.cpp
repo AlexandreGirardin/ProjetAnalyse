@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeurpieces.h"
 
 #include <QVariant>
+#include <QtSql/QSqlQuery>
 
 MappeurPieces::MappeurPieces(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {

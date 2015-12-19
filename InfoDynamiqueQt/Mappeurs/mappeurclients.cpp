@@ -1,5 +1,7 @@
 #include "Mappeurs/mappeurclients.h"
 
+#include <QtSql/QSqlQuery>
+
 MappeurClients::MappeurClients(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {
     bd = a_bd;

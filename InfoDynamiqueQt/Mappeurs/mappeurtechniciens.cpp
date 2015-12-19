@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeurtechniciens.h"
 
 #include <QVariant>
+#include <QtSql/QSqlQuery>
 
 MappeurTechniciens::MappeurTechniciens(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {

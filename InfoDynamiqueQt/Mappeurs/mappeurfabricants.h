@@ -5,7 +5,6 @@
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-#include "Controleurs/controleurbd.h"
 #include "Modeles/fabricant.h"
 
 class MappeurFabricants : public QObject

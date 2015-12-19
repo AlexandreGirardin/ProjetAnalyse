@@ -41,7 +41,6 @@ SOURCES += main.cpp\
     Modeles/action.cpp \
     Modeles/appareil.cpp \
     Modeles/client.cpp \
-    Modeles/ensembletaches.cpp \
     Modeles/fabricant.cpp \
     Modeles/fiche.cpp \
     Modeles/statut.cpp \
@@ -49,7 +48,8 @@ SOURCES += main.cpp\
     Modeles/technicien.cpp \
     Modeles/typeappareil.cpp \
     Modeles/piece.cpp \
-    Mappeurs/mappeurclients.cpp
+    Mappeurs/mappeurclients.cpp \
+    Modeles/ensembleactions.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -80,7 +80,6 @@ HEADERS  += \
     Modeles/action.h \
     Modeles/appareil.h \
     Modeles/client.h \
-    Modeles/ensembletaches.h \
     Modeles/fabricant.h \
     Modeles/fiche.h \
     Modeles/statut.h \
@@ -88,7 +87,8 @@ HEADERS  += \
     Modeles/technicien.h \
     Modeles/typeappareil.h \
     Modeles/piece.h \
-    Mappeurs/mappeurclients.h
+    Mappeurs/mappeurclients.h \
+    Modeles/ensembleactions.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \

@@ -6,7 +6,6 @@
 #include <QSqlRecord>
 #include <QVariant>
 
-#include "Controleurs/controleurbd.h"
 #include "Modeles/client.h"
 
 

@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeurtypeappareils.h"
 
 #include <QVariant>
+#include <QtSql/QSqlQuery>
 
 MappeurTypeAppareils::MappeurTypeAppareils(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent)
