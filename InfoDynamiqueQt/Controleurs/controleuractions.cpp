@@ -1,6 +1,8 @@
 #include "controleuractions.h"
 #include "ui_vueprincipale.h"
 
+#include "Controleurs/controleurbd.h"
+
 #include <QSqlQueryModel>
 
 ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* parent)
@@ -13,9 +15,6 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
 
     requeteActions = new QString("select * from actions");
     requeteEnsembles = new QString("select * from ensembles");
-
-    peuplerActions();
-    peuplerAppareils();
 }
 
 void ControleurActions::configurerFragmentActions() {
@@ -32,14 +31,14 @@ void ControleurActions::configurerFragmentEnsembles() {
 
 void ControleurActions::peuplerActions() {
     QSqlQueryModel* actions = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database("dossiers");
+    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     actions->setQuery(*requeteActions, bd);
     fragmentActions->peuplerTableau(actions);
 }
 
-void ControleurActions::peuplerAppareils() {
+void ControleurActions::peuplerEnsembles() {
     QSqlQueryModel* ensembles = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database("dossiers");
+    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     ensembles->setQuery(*requeteEnsembles, bd);
     fragmentEnsembles->peuplerTableau(ensembles);
 }

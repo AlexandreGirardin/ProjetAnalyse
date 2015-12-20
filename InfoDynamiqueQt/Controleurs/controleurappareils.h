@@ -21,6 +21,13 @@ public:
      */
     explicit ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent = 0);
 
+    /**
+     * @brief ongletDejaCharge
+     * Si l'onglet a déjà été peuplé une première fois
+     * Utilisé pour le chargement paresseux initial
+     */
+    bool ongletDejaCharge;
+
 private:
 
     // Le fragment des appareils

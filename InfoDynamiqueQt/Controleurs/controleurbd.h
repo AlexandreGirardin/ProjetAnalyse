@@ -38,6 +38,8 @@ public:
      */
     void connecterDossiers();
 
+    static const QString nomBd();
+
 };
 
 #endif // CONTROLEURCONNEXION_H

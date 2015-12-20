@@ -1,6 +1,8 @@
 #include "Controleurs/controleurfiches.h"
 #include "ui_vueprincipale.h"
 
+#include "Controleurs/controleurbd.h"
+
 #include <QSqlQueryModel>
 
 ControleurFiches::ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent)
@@ -10,12 +12,11 @@ ControleurFiches::ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent
     fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     vuePrincipale->getUi()->ongletFiches->layout()->addWidget(fragment);
     requeteFiches = new QString("select * from fiches");
-    peuplerFiches();
 }
 
 void ControleurFiches::peuplerFiches() {
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database("dossiers");
+    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     fiches->setQuery(*requeteFiches, bd);
     fragment->peuplerTableau(fiches);
 

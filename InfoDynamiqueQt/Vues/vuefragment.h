@@ -190,7 +190,7 @@ signals:
      * @brief rechercher
      * Émis lorsque le champ de recherche est utilisé
      */
-    void rechercher();
+    void rechercher(QString);
 
     /**
      * @brief nouvelleSelection

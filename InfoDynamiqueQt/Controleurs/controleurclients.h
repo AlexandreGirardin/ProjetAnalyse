@@ -26,10 +26,19 @@ public:
      */
     explicit ControleurClients(VuePrincipale* vuePrincipale, QObject* parent = 0);
 
+    /**
+     * @brief ongletDejaCharge
+     * Si l'onglet a déjà été peuplé une première fois
+     * Utilisé pour le chargement paresseux initial
+     */
+    bool ongletDejaCharge;
+
 private:
 
     // Le séparateur redimensionnable contenant les fragments
     QSplitter* splitter;
+
+    // Si l'onglet contrôlé a déjà été activé
 
     // Le contrôleur de gestion de clients
     ControleurGestionClient* controleurGestionClient;
@@ -67,8 +76,14 @@ private:
      */
     void configurerFragmentFiches();
 
+    // Assigne les valeurs aux attributs requêtes
+    void definirRequetes();
+
     // La requête utilisée pour peupler les clients
     const QString* requeteClients;
+
+    // La requête utilisée pour chercher des clients
+    const QString* requeteFiltreClients;
 
     /**
      * @brief requeteAppareils
@@ -117,6 +132,13 @@ public slots:
      * Lance la visualisation du client sélectionné
      */
     void voirClient();
+
+    /**
+     * @brief filtrerClients
+     * Filtre les clients affichés selon la correspondance avec une chaîne
+     * @param filtre Critère de filtre à utiliser
+     */
+    void filtrerClients(QString filtre);
 };
 
 #endif // CONTROLEURCLIENTS_H

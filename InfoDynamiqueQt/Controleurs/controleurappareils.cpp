@@ -1,6 +1,8 @@
 #include "controleurappareils.h"
 #include "ui_vueprincipale.h"
 
+#include "Controleurs/controleurbd.h"
+
 #include <QSqlQueryModel>
 
 ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent)
@@ -10,12 +12,11 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
     fragment->getCaseCocher()->hide();
     vuePrincipale->getUi()->ongletAppareils->layout()->addWidget(fragment);
     requeteAppareils = new QString("select * from appareils");
-    peuplerAppareils();
 }
 
 void ControleurAppareils::peuplerAppareils() {
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database("dossiers");
+    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     appareils->setQuery(*requeteAppareils, bd);
     fragment->peuplerTableau(appareils);
 }

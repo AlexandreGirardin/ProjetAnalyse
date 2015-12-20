@@ -44,6 +44,10 @@ private:
     // Le contrôleur de la vue des actions
     ControleurActions* controleurActions;
 
+public slots:
+
+    void chargerOnglet();
+
 };
 
 #endif // CONTROLEURAPPLICATION_H

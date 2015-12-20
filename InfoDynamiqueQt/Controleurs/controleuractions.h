@@ -23,6 +23,13 @@ public:
      */
     explicit ControleurActions(VuePrincipale* vuePrincipale, QObject* parent = 0);
 
+    /**
+     * @brief ongletDejaCharge
+     * Si l'onglet a déjà été peuplé une première fois
+     * Utilisé pour le chargement paresseux initial
+     */
+    bool ongletDejaCharge;
+
 private:
 
     // Le séparateur redimensionnable contenant les fragments
@@ -64,7 +71,7 @@ public slots:
      * @brief peuplerEnsembles
      * Peuple la table de fragmentEnsembles avec tous les ensembles
      */
-    void peuplerAppareils();
+    void peuplerEnsembles();
 
 };
 
