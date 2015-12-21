@@ -106,7 +106,8 @@ public slots:
     /**
      * @brief peuplerTableau
      * @param valeurs Les valeurs à afficher dans le tableau
-     * Relâche le modèle actuel
+     * Peuple le tableau avec les valeurs du modèle donné.
+     * S'assure que le modèle est triable et réinitialise le tri.
      */
     void peuplerTableau(QAbstractTableModel* valeurs);
 

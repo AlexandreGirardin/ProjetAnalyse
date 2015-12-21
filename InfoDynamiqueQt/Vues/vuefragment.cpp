@@ -1,6 +1,8 @@
 #include "Vues/vuefragment.h"
 #include "ui_vuefragment.h"
 
+#include <QSortFilterProxyModel>
+
 VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment) {
     ui->setupUi(this);
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
@@ -44,11 +46,14 @@ QTableView* VueFragment::getTableau() const {
 }
 
 void VueFragment::peuplerTableau(QAbstractTableModel* valeurs) {
+    QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->tableau);
+    modeleTriable->setSourceModel(valeurs);
     QItemSelectionModel* vieilleSelection = ui->tableau->selectionModel();
-    ui->tableau->setModel(valeurs);
+    ui->tableau->setModel(modeleTriable);
     delete vieilleSelection;
     QObject::connect(ui->tableau->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(signalerSelection(QModelIndex, QModelIndex)));
     ui->tableau->resizeColumnsToContents();
+    ui->tableau->sortByColumn(0, Qt::AscendingOrder);
     relacherModele();
 }
 
