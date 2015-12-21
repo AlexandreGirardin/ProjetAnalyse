@@ -31,6 +31,9 @@ private:
     // -1 S'il n'y en a aucun
     int idModele;
 
+    // L'index de la colonne des id des modèles dans le tableau
+    int colonneId;
+
 public:
 
     /**
@@ -100,6 +103,9 @@ public:
      * @param value L'id de modèle à assigner au fragment
      */
     void setIdModele(int value);
+
+    int getColonneId() const;
+    void setColonneId(int value);
 
 public slots:
 

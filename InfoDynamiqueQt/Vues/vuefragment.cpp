@@ -4,7 +4,11 @@
 #include <QSortFilterProxyModel>
 
 VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment) {
+    colonneId = 0;
+    idModele = -1;
     ui->setupUi(this);
+    ui->tableau->horizontalHeader()->setStretchLastSection(true);
+    ui->tableau->horizontalHeader()->setSectionsMovable(true);
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
     QObject::connect(ui->boutonModifier, SIGNAL(clicked()), this, SIGNAL(clicEditer()));
     QObject::connect(ui->boutonVoir, SIGNAL(clicked()), this, SIGNAL(clicVoir()));
@@ -16,6 +20,16 @@ VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragm
 VueFragment::~VueFragment() {
     delete ui;
 }
+int VueFragment::getColonneId() const
+{
+    return colonneId;
+}
+
+void VueFragment::setColonneId(int value)
+{
+    colonneId = value;
+}
+
 
 QLabel* VueFragment::getEtiquette() const {
     return ui->etiquette;
@@ -58,7 +72,7 @@ void VueFragment::peuplerTableau(QAbstractTableModel* valeurs) {
 }
 
 int VueFragment::getId(QModelIndex index) {
-    int colonne = 0;
+    int colonne = colonneId;
     int rangee = index.row();
     QModelIndex caseId = ui->tableau->model()->index(rangee, colonne);
     return ui->tableau->model()->data(caseId).toInt();
