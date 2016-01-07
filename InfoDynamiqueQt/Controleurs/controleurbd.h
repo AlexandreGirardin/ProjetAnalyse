@@ -40,6 +40,8 @@ public:
 
     static const QString nomBd();
 
+    static const QString* meta();
+
 };
 
 #endif // CONTROLEURCONNEXION_H

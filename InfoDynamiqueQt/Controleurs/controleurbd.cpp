@@ -25,3 +25,7 @@ void ControleurBD::connecterDossiers() {
 const QString ControleurBD::nomBd() {
     return QString("dossiers");
 }
+
+const QString* ControleurBD::meta() {
+    return new QString("%");
+}
