@@ -33,11 +33,14 @@ private:
     // Le fragment des fiches
     VueFragment* fragment;
 
-    /**
-     * @brief requeteFiches
-     * La requête utilisée pour peupler les fiches
-     */
-    const QString* requeteFiches;
+    // Assigne les commandes SQL
+    void definirCommandes();
+
+    // La commande SQL utilisée pour sélectionner les fiches
+    const QString* commandeFiches;
+
+    // La commande SQL utilisée pour chercher des fiches
+    const QString* commandeFiltrerFiches;
 
 public slots:
 
@@ -58,6 +61,14 @@ public slots:
      * Lance la visualisation de la fiche sélectionnée
      */
     void voirFiche();
+
+
+    /**
+     * @brief filtrerFiches
+     * Filtre les fiches affichées selon la correspondance avec une chaîne
+     * @param filtre Critère de filtre à utiliser
+     */
+    void filtrerFiches(QString filtre);
 };
 
 #endif // CONTROLEURFICHES_H

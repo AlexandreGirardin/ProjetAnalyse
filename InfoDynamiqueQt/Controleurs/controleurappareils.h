@@ -33,8 +33,14 @@ private:
     // Le fragment des appareils
     VueFragment* fragment;
 
-    // La requête utilisée pour peupler les fiches
-    const QString* requeteAppareils;
+    // La commande SQL utilisée pour sélectionner les appareils
+    const QString* commandeAppareils;
+
+    // La commande SQL utilisée pour chercher des appareils
+    const QString* commandeFiltrerAppareils;
+
+    // Assigne les commandes SQL
+    void definirCommandes();
 
 public slots:
 
@@ -55,6 +61,13 @@ public slots:
      * Lance la visualisation de l'appareil sélectionné
      */
     void voirAppareil();
+
+    /**
+     * @brief filtrerAppareils
+     * Filtre les appareils affichés selon la correspondance avec une chaîne
+     * @param filtre Critère de filtre à utiliser
+     */
+    void filtrerAppareils(QString filtre);
 };
 
 #endif // CONTROLEURAPPAREILS_H
