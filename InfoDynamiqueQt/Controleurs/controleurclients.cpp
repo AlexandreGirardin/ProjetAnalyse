@@ -16,7 +16,7 @@ ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* pare
     configurerFragmentClients();
     configurerFragmentAppareils();
     configurerFragmentFiches();
-    definirRequetes();
+    definirCommandes();
 }
 
 void ControleurClients::configurerFragmentClients() {
@@ -54,8 +54,8 @@ void ControleurClients::configurerFragmentFiches() {
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
 }
 
-void ControleurClients::definirRequetes() {
-    requeteClients = new QString(
+void ControleurClients::definirCommandes() {
+    commandeClients = new QString(
                 "SELECT\
                       c.id AS '#',\
                       COALESCE(a.nb,0) AS 'Nb. appareils',\
@@ -67,18 +67,20 @@ void ControleurClients::definirRequetes() {
                       (select idClient, count(id) as 'nb' from appareils group by idClient) a\
                  ON\
                       c.id = a.idClient");
-    requeteFiltreClients = new QString (*requeteClients +
+    commandeFiltreClients = new QString (*commandeClients +
                                         QString(" WHERE c.id LIKE :filtre\
                                                 OR c.nom LIKE :filtre\
                                                 OR c.telephone LIKE :filtre\
                                                 OR c.adresse LIKE :filtre"));
+    commandeAppareils = new QString ("SELECT * FROM appareils WHERE idClient=:idClient");
+    commandeFiches = new QString("SELECT * FROM fiches WHERE idAppareil=:idAppareil");
 }
 
 void ControleurClients::peuplerClients() {
     ongletDejaCharge = true;
     QSqlQueryModel* clients = new QSqlQueryModel(this);
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    clients->setQuery(*requeteClients, bd);
+    clients->setQuery(*commandeClients, bd);
     fragmentClients->peuplerTableau(clients);
 }
 
@@ -108,18 +110,20 @@ void ControleurClients::voirClient() {
 
 void ControleurClients::filtrerClients(QString filtre) {
     QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
-    requete.prepare(*requeteFiltreClients);
-    QString* metacaractere = new QString("%");
-    requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);
+    requete.prepare(*commandeFiltreClients);
+    const QString* meta = ControleurBD::meta();
+    requete.bindValue(":filtre", *meta + filtre + *meta);
     requete.exec();
     QSqlQueryModel* resultats = new QSqlQueryModel(this);
     resultats->setQuery(requete);
     fragmentClients->peuplerTableau(resultats);
 }
 
+// Requêtes SQL
+
 QSqlQuery ControleurClients::requeteAppareils(int idClient) const {
     QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
-    requete.prepare("SELECT * FROM appareils WHERE idClient=:idClient");
+    requete.prepare(*commandeAppareils);
     requete.bindValue(":idClient", idClient);
     requete.exec();
     return requete;
@@ -127,7 +131,7 @@ QSqlQuery ControleurClients::requeteAppareils(int idClient) const {
 
 QSqlQuery ControleurClients::requeteFiches(int idAppareil) const {
     QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
-    requete.prepare("SELECT * FROM fiches WHERE idAppareil=:idAppareil");
+    requete.prepare(*commandeFiches);
     requete.bindValue(":idAppareil", idAppareil);
     requete.exec();
     return requete;

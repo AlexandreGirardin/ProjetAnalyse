@@ -76,14 +76,20 @@ private:
      */
     void configurerFragmentFiches();
 
-    // Assigne les valeurs aux attributs requêtes
-    void definirRequetes();
+    // Assigne les commandes SQL
+    void definirCommandes();
 
-    // La requête utilisée pour peupler les clients
-    const QString* requeteClients;
+    // La commande SQL utilisée pour sélectionner les clients
+    const QString* commandeClients;
+
+    // La commande SQL utilisée pour sélectionner les appareils
+    const QString* commandeAppareils;
+
+    // La commande SQL utilisée pour sélectionner les fiches
+    const QString* commandeFiches;
 
     // La requête utilisée pour chercher des clients
-    const QString* requeteFiltreClients;
+    const QString* commandeFiltreClients;
 
     /**
      * @brief requeteAppareils
