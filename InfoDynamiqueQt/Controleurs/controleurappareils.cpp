@@ -12,6 +12,7 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
     fragment->getCaseCocher()->hide();
     vuePrincipale->getUi()->ongletAppareils->layout()->addWidget(fragment);
     definirCommandes();
+    QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
 }
 
 void ControleurAppareils::definirCommandes() {
@@ -32,12 +33,9 @@ void ControleurAppareils::definirCommandes() {
             ON\
                 a.id = fi.idAppareil");
     commandeFiltrerAppareils = new QString(*commandeAppareils +
-                                           QString(" WHERE id LIKE :filtre\
-                                                   OR idAppareil LIKE :filtre\
-                                                   OR priorite LIKE :filtre\
-                                                   OR idTechnicien LIKE :filtre\
-                                                   OR idStatut LIKE :filtre\
-                                                   OR commentaire LIKE :filtre"));
+                                           QString(" WHERE a.id LIKE :filtre\
+                                                   OR f.nom LIKE :filtre\
+                                                   OR a.description LIKE :filtre"));
 }
 
 void ControleurAppareils::peuplerAppareils() {
@@ -55,13 +53,17 @@ void ControleurAppareils::voirAppareil() {
 }
 
 void ControleurAppareils::filtrerAppareils(QString filtre) {
-    QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
-    requete.prepare(*commandeFiltrerAppareils);
-    const QString* meta = ControleurBD::meta();
-    requete.bindValue(":filtre", *meta + filtre + *meta);
-    requete.exec();
-    QSqlQueryModel* resultats = new QSqlQueryModel(this);
-    resultats->setQuery(requete);
-    fragment->peuplerTableau(resultats);
+    if (filtre.isEmpty()) {
+        peuplerAppareils();
+    } else {
+        QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+        requete.prepare(*commandeFiltrerAppareils);
+        const QString* meta = ControleurBD::meta();
+        requete.bindValue(":filtre", *meta + filtre + *meta);
+        requete.exec();
+        QSqlQueryModel* resultats = new QSqlQueryModel(this);
+        resultats->setQuery(requete);
+        fragment->peuplerTableau(resultats);
+    }
 }
 

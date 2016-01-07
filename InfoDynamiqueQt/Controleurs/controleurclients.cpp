@@ -109,14 +109,18 @@ void ControleurClients::voirClient() {
 }
 
 void ControleurClients::filtrerClients(QString filtre) {
-    QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
-    requete.prepare(*commandeFiltreClients);
-    const QString* meta = ControleurBD::meta();
-    requete.bindValue(":filtre", *meta + filtre + *meta);
-    requete.exec();
-    QSqlQueryModel* resultats = new QSqlQueryModel(this);
-    resultats->setQuery(requete);
-    fragmentClients->peuplerTableau(resultats);
+    if (filtre.isEmpty()) {
+        peuplerClients();
+    } else {
+        QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+        requete.prepare(*commandeFiltreClients);
+        const QString* meta = ControleurBD::meta();
+        requete.bindValue(":filtre", *meta + filtre + *meta);
+        requete.exec();
+        QSqlQueryModel* resultats = new QSqlQueryModel(this);
+        resultats->setQuery(requete);
+        fragmentClients->peuplerTableau(resultats);
+    }
 }
 
 // Requêtes SQL

@@ -41,13 +41,17 @@ void ControleurFiches::voirFiche() {
 }
 
 void ControleurFiches::filtrerFiches(QString filtre) {
-    QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
-    requete.prepare(*commandeFiltrerFiches);
-    QString* metacaractere = new QString("%");
-    requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);
-    requete.exec();
-    QSqlQueryModel* resultats = new QSqlQueryModel(this);
-    resultats->setQuery(requete);
-    fragment->peuplerTableau(resultats);
+    if (filtre.isEmpty()) {
+        peuplerFiches();
+    } else {
+        QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+        requete.prepare(*commandeFiltrerFiches);
+        QString* metacaractere = new QString("%");
+        requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);
+        requete.exec();
+        QSqlQueryModel* resultats = new QSqlQueryModel(this);
+        resultats->setQuery(requete);
+        fragment->peuplerTableau(resultats);
+    }
 }
 
