@@ -22,6 +22,10 @@ private:
     // Le type de l'appareil
     TypeAppareil* type;
 
+    QString motDePasse;
+
+    QString description;
+
 public:
 
     /**
@@ -60,6 +64,8 @@ public:
      */
     TypeAppareil* getType() const;
 
+    QString getNomType() const;
+
     /**
      * @brief setType
      * @param value Le type à assigner à l'appareil
@@ -72,6 +78,10 @@ public:
      */
     QString out();
 
+    QString getMotDePasse() const;
+    void setMotDePasse(const QString &value);
+    QString getDescription() const;
+    void setDescription(const QString &value);
 };
 
 #endif // APPAREIL_H

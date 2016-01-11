@@ -27,7 +27,7 @@ public:
      * @param id Le numéro du type d'appareil à mapper
      * @return Le type d'appareil si il existe, NULL autremeent
      */
-    TypeAppareil* getTypeAppareil(int id);
+    TypeAppareil* getTypeAppareil(int idType);
 
     /**
      * @brief getTypesAppareil

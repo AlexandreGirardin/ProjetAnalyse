@@ -20,11 +20,11 @@ public:
 
     /**
      * @brief TypeAppareil
-     * @param a_id L'id à assigner au type
-     * @param a_nom Le nom à assigner au nom
      * @param parent
      */
-    explicit TypeAppareil(int a_id, QString a_nom, QObject* parent = 0);
+    explicit TypeAppareil(QObject* parent = 0);
+
+    explicit TypeAppareil(int a_id, QString a_nom, QObject *parent = 0);
 
     /**
      * @brief getId

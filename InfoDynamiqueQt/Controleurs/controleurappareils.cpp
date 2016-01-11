@@ -4,6 +4,7 @@
 #include "Controleurs/controleurbd.h"
 
 #include <QSqlQueryModel>
+#include <QDebug>
 
 ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent)
     : QObject(parent) {
@@ -13,6 +14,9 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
     vuePrincipale->getUi()->ongletAppareils->layout()->addWidget(fragment);
     definirCommandes();
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
+    QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
+    QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
+    mappeur = new MappeurAppareils(&bd);
 }
 
 void ControleurAppareils::definirCommandes() {
@@ -50,6 +54,24 @@ void ControleurAppareils::modifierAppareil() {
 }
 
 void ControleurAppareils::voirAppareil() {
+    if (fragment->getIdModele() != -1) {
+        VueAppareil* vue = new VueAppareil();
+        Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
+        assignerAppareil(vue, appareil);
+        vue->setWindowModality(Qt::NonModal);
+        vue->show();
+    }
+}
+
+void ControleurAppareils::assignerAppareil(VueAppareil* vue, Appareil* appareil) {
+    vue->getChampType()->setText(appareil->getNomType());
+    vue->getChampDescription()->setText(appareil->getDescription());
+//    vue->getChampMotDePasse()->setText(appareil->getMotDePasse());
+//    vue.getChampPrenom()->setText(client->getPrenom());
+//    vue->getChampNom()->setText(client->getNom());
+//    vue->getChampCourriel()->setText(client->getAdresse());
+//    vue->getChampTelephone()->setText(client->getTelephone());
+//    qDebug() << client->out();
 }
 
 void ControleurAppareils::filtrerAppareils(QString filtre) {

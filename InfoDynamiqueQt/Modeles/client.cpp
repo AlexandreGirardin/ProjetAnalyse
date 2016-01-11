@@ -11,7 +11,7 @@ void Client::setPrenom(const QString &value)
     prenom = value;
 }
 Client::Client(QObject* parent) :
-    QObject(parent) {
+    ModeleBD(parent) {
 }
 
 QString Client::getNom() const
@@ -54,15 +54,6 @@ void Client::setAppareils(const QList<Appareil*> &value)
     *appareils = value;
 }
 
-int Client::getId() const
-{
-    return id;
-}
-
-void Client::setId(int value)
-{
-    id = value;
-}
-
 QString Client::out() {
+    return ModeleBD::out();
 }

@@ -49,7 +49,10 @@ SOURCES += main.cpp\
     Modeles/typeappareil.cpp \
     Modeles/piece.cpp \
     Mappeurs/mappeurclients.cpp \
-    Modeles/ensembleactions.cpp
+    Modeles/ensembleactions.cpp \
+    Modeles/modelebd.cpp \
+    Mappeurs/mappeurappareils.cpp \
+    Vues/vueappareil.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -88,7 +91,10 @@ HEADERS  += \
     Modeles/typeappareil.h \
     Modeles/piece.h \
     Mappeurs/mappeurclients.h \
-    Modeles/ensembleactions.h
+    Modeles/ensembleactions.h \
+    Modeles/modelebd.h \
+    Mappeurs/mappeurappareils.h \
+    Vues/vueappareil.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
@@ -100,4 +106,5 @@ FORMS    += \
 	Vues/vuegestionfiche.ui \
 	Vues/vuegestionpiece.ui \
 	Vues/vuegestiontache.ui \
-	Vues/vueprincipale.ui
+	Vues/vueprincipale.ui \
+    Vues/vueappareil.ui

@@ -1,11 +1,10 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include <QObject>
-
+#include <Modeles/modelebd.h>
 #include "Modeles/appareil.h"
 
-class Client : public QObject {
+class Client : public ModeleBD {
     Q_OBJECT
 
     // Personne qui fait affaire avec l'entreprise
@@ -38,18 +37,6 @@ public:
      * @param parent
      */
     explicit Client(QObject* parent = 0);
-
-    /**
-     * @brief getId
-     * @return L'id du client
-     */
-    int getId() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner au client
-     */
-    void setId(int value);
 
     /**
      * @brief getPrenom

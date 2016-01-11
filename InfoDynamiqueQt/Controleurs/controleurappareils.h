@@ -5,6 +5,9 @@
 
 #include "Vues/vueprincipale.h"
 #include "Vues/vuefragment.h"
+#include "Mappeurs/mappeurappareils.h"
+#include "Vues/vuegestionappareil.h"
+#include "Vues/vueappareil.h"
 
 class ControleurAppareils : public QObject
 {
@@ -41,6 +44,13 @@ private:
 
     // Assigne les commandes SQL
     void definirCommandes();
+
+    /**
+     * @brief mappeur
+     */
+    MappeurAppareils* mappeur;
+
+    void assignerAppareil(VueAppareil* vue, Appareil* appareil);
 
 public slots:
 
