@@ -19,3 +19,4 @@ DELETE FROM appareils;
 DELETE FROM clients;
 DELETE FROM fabricants;
 DELETE FROM types;
+DELETE FROM fiches;
