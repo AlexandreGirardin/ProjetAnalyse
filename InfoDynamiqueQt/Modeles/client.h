@@ -11,10 +11,6 @@ class Client : public ModeleBD {
 
 private:
 
-    // L'id du client
-    // Correspond normalement à son numéro de téléphone
-    int id;
-
     // Prénom du client
     QString prenom;
 

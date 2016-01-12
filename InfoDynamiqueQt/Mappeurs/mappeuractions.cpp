@@ -2,6 +2,7 @@
 
 #include <QVariant>
 #include <QtSql/QSqlQuery>
+#include <QDebug>
 
 MappeurActions::MappeurActions(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {
@@ -10,32 +11,37 @@ MappeurActions::MappeurActions(QSqlDatabase* a_bd, QObject* parent) :
 
 Action* MappeurActions::getAction(int id) {
     Action* action = NULL;
-    QString requete = "SELECT * FROM actions WHERE id="+QString::number(id);
-    QSqlQuery* commande = new QSqlQuery(requete,* bd);
-    if (commande->next()) {
-        action = mapper(commande->record());
+    QSqlQuery requete = QSqlQuery(*bd);
+    requete.prepare("SELECT * FROM actions WHERE id=:id");
+    requete.bindValue(":id", id);
+    requete.exec();
+    if (requete.next()) {
+        action = mapper(requete.record());
     }
     return action;
 }
 
 Action* MappeurActions::mapper(QSqlRecord ligne) {
-    return new Action(ligne.value("id").toInt(),
-                     ligne.value("nom").toString(),
-                     ligne.value("description").toString(), this);
+    Action* action = new Action(this);
+    action->setId(ligne.value("id").toInt());
+    action->setNom(ligne.value("nom").toString());
+    action->setDescription(ligne.value("description").toString());
+    return action;
 }
 
 QList<Action*>* MappeurActions::getActions() {
     QList<Action*>* liste = new QList<Action*>();
-    QString requete = "SELECT * FROM actions";
-    QSqlQuery* commande = new QSqlQuery(requete,* bd);
+    QSqlQuery* commande = new QSqlQuery("SELECT * FROM actions",*bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
     int colDesc = ligne.indexOf("description");
     while (commande->next()) {
-        Action* action = new Action(ligne.value(colId).toInt(),
-                                    ligne.value(colNom).toString(),
-                                    ligne.value(colDesc).toString(), this);
+        ligne = commande->record();
+        Action* action = new Action(this);
+        action->setId(ligne.value(colId).toInt());
+        action->setNom(ligne.value(colNom).toString());
+        action->setDescription(ligne.value(colDesc).toString());
         liste->append(action);
     }
     return liste;

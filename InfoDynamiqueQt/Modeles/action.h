@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-class Action {
+class Action: public QObject {
 
     // Définition d'une action effectuée sur un appareil par un technicien
 
@@ -21,16 +21,10 @@ private:
 public:
 
     /**
-     * @brief Action Constructeur d'action
-     * @param parent
-     */
-    explicit Action(QObject* parent = 0);
-
-    /**
      * @brief Action Constructeur d'Action
      * @param parent
      */
-    Action(int, QString, QString, QObject* parent = 0);
+    explicit Action(QObject* parent = 0);
 
     /**
      * @brief getId

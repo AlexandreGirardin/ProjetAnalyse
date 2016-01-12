@@ -37,7 +37,6 @@ void Application::debug()
     QList<Action*>* listeActions = actions->getActions();
     for (int i = 0; i < listeActions->length(); ++i)
     {
-        qDebug() << listeActions->at(i)->getId();
-        qDebug() << listeActions->at(i)->getNom();
+        qDebug() << listeActions->at(i)->out();
     }
 }

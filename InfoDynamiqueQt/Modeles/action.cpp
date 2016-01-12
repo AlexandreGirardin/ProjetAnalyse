@@ -1,5 +1,8 @@
 #include "Modeles/action.h"
 
+Action::Action(QObject* parent): QObject(parent) {
+}
+
 
 int Action::getId() const
 {
@@ -34,11 +37,4 @@ void Action::setDescription(const QString &value)
 QString Action::out()
 {
     return QString::number(id) + " " + nom + " " + description;
-}
-
-Action::Action(int a_id, QString a_nom, QString a_description, QObject* parent)
-{
-    id = a_id;
-    nom = a_nom;
-    description = a_description;
 }

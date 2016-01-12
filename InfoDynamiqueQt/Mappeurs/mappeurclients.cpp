@@ -9,7 +9,7 @@ MappeurClients::MappeurClients(QSqlDatabase* a_bd, QObject* parent) :
 
 Client* MappeurClients::getClient(int id) {
     Client* client = NULL;
-    QSqlQuery requete = QSqlQuery(QSqlDatabase::database("dossiers"));
+    QSqlQuery requete = QSqlQuery(*bd);
     requete.prepare("SELECT * FROM clients WHERE id=:id");
     requete.bindValue(":id", id);
     requete.exec();
