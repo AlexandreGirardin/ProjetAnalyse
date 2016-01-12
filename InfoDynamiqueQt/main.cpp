@@ -1,4 +1,4 @@
-#include <QApplication>
+#include "Controleurs/application.h"
 #include <QDebug>
 
 #include <Vues/vuegestionpiece.h>
@@ -9,12 +9,7 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-
-    ControleurBD *db = new ControleurBD();
-    db->connecterDossiers();
-    ControleurApplication* ca = new ControleurApplication();
-    ca->executer();
-
-    return a.exec();
+    Application application(argc, argv);
+    application.demarrer();
+    return application.exec();
 }

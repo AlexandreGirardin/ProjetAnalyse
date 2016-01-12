@@ -77,7 +77,6 @@ void ControleurClients::definirCommandes() {
 }
 
 void ControleurClients::peuplerClients() {
-    ongletDejaCharge = true;
     QSqlQueryModel* clients = new QSqlQueryModel(this);
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     clients->setQuery(*commandeClients, bd);

@@ -52,7 +52,8 @@ SOURCES += main.cpp\
     Modeles/ensembleactions.cpp \
     Modeles/modelebd.cpp \
     Mappeurs/mappeurappareils.cpp \
-    Vues/vueappareil.cpp
+    Vues/vueappareil.cpp \
+    Controleurs/application.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -94,7 +95,8 @@ HEADERS  += \
     Modeles/ensembleactions.h \
     Modeles/modelebd.h \
     Mappeurs/mappeurappareils.h \
-    Vues/vueappareil.h
+    Vues/vueappareil.h \
+    Controleurs/application.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \

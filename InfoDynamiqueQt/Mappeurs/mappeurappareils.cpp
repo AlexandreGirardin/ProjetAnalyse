@@ -1,12 +1,12 @@
 #include "mappeurappareils.h"
-
+#include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
 #include <QDebug>
 
 MappeurAppareils::MappeurAppareils(QSqlDatabase *a_bd, QObject *parent) :
     QObject(parent){
     bd = a_bd;
-    mappeurType = new MappeurTypeAppareils(bd, this);
+//    mappeurType = new MappeurTypeAppareils(bd, this);
 }
 
 Appareil *MappeurAppareils::getAppareil(int id) {
@@ -30,6 +30,6 @@ Appareil *MappeurAppareils::mapper(QSqlRecord ligne) {
     Appareil* appareil = new Appareil();
     appareil->setId(ligne.value("id").toInt());
     appareil->setDescription(ligne.value("description").toString());
-    appareil->setType(mappeurType->getTypeAppareil(ligne.value("idType").toInt()));
+    appareil->setType(Application::getInstance()->typesAppareils->getTypeAppareil(ligne.value("idType").toInt()));
     return appareil;
 }

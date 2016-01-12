@@ -35,14 +35,26 @@ private:
     // Le contrôleur de la vue des clients
     ControleurClients* controleurClients;
 
+    bool clientsCharges;
+
     // Le contrôleur de la vue des fiches
     ControleurFiches* controleurFiches;
+
+    bool fichesChargees;
 
     // Le contrôleur de la vue des appareils
     ControleurAppareils* controleurAppareils;
 
+    bool appareilsCharges;
+
     // Le contrôleur de la vue des actions
     ControleurActions* controleurActions;
+
+    bool actionsChargees;
+
+    QMetaObject::Connection paresseux;
+
+    void verifierParesseux();
 
 public slots:
 

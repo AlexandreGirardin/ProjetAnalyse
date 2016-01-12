@@ -42,7 +42,7 @@ private:
     QSqlDatabase* bd;
 
     // Le mappeur utilisé pour fabriquer les objets Type des appareils
-    MappeurTypeAppareils* mappeurType;
+//    MappeurTypeAppareils* mappeurType;
 
     /**
      * @brief mapper

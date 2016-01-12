@@ -14,25 +14,40 @@ ControleurApplication::ControleurApplication(QObject* parent) :
     controleurFiches = new ControleurFiches(vuePrincipale, this);
     controleurAppareils = new ControleurAppareils(vuePrincipale, this);
     controleurActions = new ControleurActions(vuePrincipale, this);
-    QObject::connect(vuePrincipale->getUi()->onglets, SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
+    paresseux = QObject::connect(vuePrincipale->getUi()->onglets, SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
 }
 
 void ControleurApplication::executer() {
+    clientsCharges = false;
+    fichesChargees = false;
+    appareilsCharges = false;
+    actionsChargees = false;
     chargerOnglet();
     vuePrincipale->show();
 }
 
 void ControleurApplication::chargerOnglet() {
     QWidget* onglet = vuePrincipale->getUi()->onglets->currentWidget();
-    if (onglet == vuePrincipale->getUi()->ongletClients && !controleurClients->ongletDejaCharge) {
+    if (onglet == vuePrincipale->getUi()->ongletClients && !clientsCharges) {
         controleurClients->peuplerClients();
-    } else if (onglet == vuePrincipale->getUi()->ongletFiches && !controleurFiches->ongletDejaCharge) {
+        clientsCharges = true;
+    } else if (onglet == vuePrincipale->getUi()->ongletFiches && !fichesChargees) {
         controleurFiches->peuplerFiches();
-    } else if (onglet == vuePrincipale->getUi()->ongletAppareils && !controleurAppareils->ongletDejaCharge) {
+        fichesChargees = true;
+    } else if (onglet == vuePrincipale->getUi()->ongletAppareils && !appareilsCharges) {
         controleurAppareils->peuplerAppareils();
-    } else if (onglet == vuePrincipale->getUi()->ongletActions && !controleurActions->ongletDejaCharge) {
+        appareilsCharges = true;
+    } else if (onglet == vuePrincipale->getUi()->ongletActions && !actionsChargees) {
         controleurActions->peuplerActions();
         controleurActions->peuplerEnsembles();
+        actionsChargees = true;
+    }
+    verifierParesseux();
+}
+
+void ControleurApplication::verifierParesseux() {
+    if (clientsCharges && fichesChargees && appareilsCharges && actionsChargees) {
+        QObject::disconnect(paresseux);
     }
 }
 

@@ -5,6 +5,7 @@
 
 #include <QSqlQueryModel>
 #include <QDebug>
+#include "Controleurs/application.h"
 
 ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent)
     : QObject(parent) {
@@ -16,7 +17,7 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    mappeur = new MappeurAppareils(&bd);
+    mappeur = Application::getInstance()->appareils;
 }
 
 void ControleurAppareils::definirCommandes() {
