@@ -95,8 +95,8 @@ void ControleurActions::filtrerActions(QString filtre) {
 
 void ControleurActions::voirAction() {
     if (fragmentActions->getIdModele() != -1) {
-        Action* action = Application::getInstance()->actions->getAction(fragmentActions->getIdModele());
-        qDebug() << action->out();
+        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
+//        qDebug() << action->out();
 //        VueAction* vue = new VueAction();
 //        Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
 //        assignerAppareil(vue, appareil);

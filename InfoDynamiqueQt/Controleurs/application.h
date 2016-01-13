@@ -26,18 +26,20 @@ class Application : public QApplication
 public:
 
     explicit Application(int &argc, char **argv);
-    static Application *getInstance();
 
-    QSqlDatabase* bd;
-    ControleurBD* controleurBD;
-    MappeurActions* actions;
-    MappeurAppareils* appareils;
-    MappeurClients* clients;
-    MappeurFabricants* fabricants;
-    MappeurPieces* pieces;
-    MappeurStatuts* statuts;
-    MappeurTechniciens* techniciens;
-    MappeurTypeAppareils* typesAppareils;
+    static Application* getInstance();
+    static VuePrincipale* getVuePrincipale();
+
+    static QSqlDatabase* bd;
+    static ControleurBD* controleurBD;
+    static MappeurActions* actions;
+    static MappeurAppareils* appareils;
+    static MappeurClients* clients;
+    static MappeurFabricants* fabricants;
+    static MappeurPieces* pieces;
+    static MappeurStatuts* statuts;
+    static MappeurTechniciens* techniciens;
+    static MappeurTypeAppareils* typesAppareils;
 
     void demarrer();
     void debug();
@@ -47,7 +49,7 @@ private:
     static Application *m_instance;
 
     // La vue principale de l'application
-    VuePrincipale* vuePrincipale;
+    static VuePrincipale* vuePrincipale;
 
     // Le contrôleur de la vue des clients
     ControleurClients* controleurClients;
@@ -74,6 +76,7 @@ private:
     void verifierParesseux();
 
     void creerFenetre();
+
 signals:
 
     /**

@@ -26,6 +26,17 @@ Application::Application(int &argc, char **argv) :
 }
 
 Application* Application::m_instance = NULL;
+VuePrincipale* Application::vuePrincipale = NULL;
+QSqlDatabase* Application::bd = NULL;
+ControleurBD* Application::controleurBD = NULL;
+MappeurActions* Application::actions = NULL;
+MappeurAppareils* Application::appareils = NULL;
+MappeurClients* Application::clients = NULL;
+MappeurFabricants* Application::fabricants = NULL;
+MappeurPieces* Application::pieces = NULL;
+MappeurStatuts* Application::statuts = NULL;
+MappeurTechniciens* Application::techniciens = NULL;
+MappeurTypeAppareils* Application::typesAppareils = NULL;
 
 Application* Application::getInstance()
 {
@@ -46,6 +57,11 @@ void Application::debug()
     {
         qDebug() << (*i)->out();
     }
+}
+
+VuePrincipale *Application::getVuePrincipale()
+{
+    return vuePrincipale;
 }
 
 void Application::creerFenetre() {

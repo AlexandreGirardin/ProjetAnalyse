@@ -4,7 +4,7 @@
 #include "Vues/vuegestionclient.h"
 
 ControleurGestionClient::ControleurGestionClient(QObject* parent) : QObject(parent) {
-    mappeur = Application::getInstance()->clients;
+    mappeur = Application::clients;
 }
 
 void ControleurGestionClient::ajouterClient() {

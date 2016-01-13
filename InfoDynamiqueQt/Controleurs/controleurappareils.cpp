@@ -19,7 +19,7 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(fragment, SIGNAL(clicCreer()), this, SLOT(nouvelAppareil()));
     QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    mappeur = Application::getInstance()->appareils;
+    mappeur = Application::appareils;
 }
 
 void ControleurAppareils::definirCommandes() {
@@ -53,11 +53,11 @@ void ControleurAppareils::peuplerAppareils() {
 }
 
 void ControleurAppareils::modifierAppareil() {
-    Appareil* appareil = Application::getInstance()->appareils->getAppareil(fragment->getIdModele());
+    Appareil* appareil = Application::appareils->getAppareil(fragment->getIdModele());
     if (appareil != NULL) {
-        VueGestionAppareil* vue = new VueGestionAppareil(fragment);
-        vue->setTypes(Application::getInstance()->typesAppareils->getTypesAppareil(), appareil->getNomType());
-        vue->setFabricants(Application::getInstance()->fabricants->getFabricants(), appareil->getNomFabricant());
+        VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
+        vue->setTypes(Application::typesAppareils->getTypesAppareil(), appareil->getNomType());
+        vue->setFabricants(Application::fabricants->getFabricants(), appareil->getNomFabricant());
         vue->setMotDePasse(appareil->getMotDePasse());
         vue->setDescription(appareil->getDescription());
         vue->exec();
@@ -70,9 +70,9 @@ void ControleurAppareils::modifierAppareil() {
 }
 
 void ControleurAppareils::nouvelAppareil() {
-    VueGestionAppareil* vue = new VueGestionAppareil(fragment);
-    vue->setTypes(Application::getInstance()->typesAppareils->getTypesAppareil());
-    vue->setFabricants(Application::getInstance()->fabricants->getFabricants());
+    VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
+    vue->setTypes(Application::typesAppareils->getTypesAppareil());
+    vue->setFabricants(Application::fabricants->getFabricants());
     vue->exec();
     Appareil* nouveau = new Appareil(fragment);
     nouveau->setMotDePasse(vue->getMotDePasse());
@@ -84,7 +84,7 @@ void ControleurAppareils::nouvelAppareil() {
 
 void ControleurAppareils::voirAppareil() {
     if (fragment->getIdModele() != -1) {
-        VueAppareil* vue = new VueAppareil();
+        VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
         Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
         vue->getChampFabricant()->setText(appareil->getNomFabricant());
         vue->getChampType()->setText(appareil->getNomType());

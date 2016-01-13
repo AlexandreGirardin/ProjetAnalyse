@@ -30,7 +30,7 @@ Appareil *MappeurAppareils::mapper(QSqlRecord ligne) {
     appareil->setId(ligne.value("id").toInt());
     appareil->setDescription(ligne.value("description").toString());
     appareil->setMotDePasse(ligne.value("motDePasse").toString());
-    appareil->setType(Application::getInstance()->typesAppareils->getTypeAppareil(ligne.value("idType").toInt()));
-    appareil->setFabricant(Application::getInstance()->fabricants->getFabricant(ligne.value("idFabricant").toInt()));
+    appareil->setType(Application::typesAppareils->getTypeAppareil(ligne.value("idType").toInt()));
+    appareil->setFabricant(Application::fabricants->getFabricant(ligne.value("idFabricant").toInt()));
     return appareil;
 }
