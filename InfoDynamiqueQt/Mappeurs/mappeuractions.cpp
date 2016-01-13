@@ -25,6 +25,7 @@ Action* MappeurActions::mapper(QSqlRecord ligne) {
     action->setId(ligne.value("id").toInt());
     action->setNom(ligne.value("nom").toString());
     action->setDescription(ligne.value("description").toString());
+    action->setEtat(ligne.value("etat").toInt());
     return action;
 }
 
