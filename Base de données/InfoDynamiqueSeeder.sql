@@ -75,16 +75,16 @@ VALUES
 INSERT INTO `InfoDynamiqueDossiers`.`actions`
 	(`id`, `nom`, `description`, `etat`)
 VALUES
-	(NULL, 'CCleaner', 'Supprimer les fichiers temporaires et nettoyer le registre.', '1'),
-	(NULL, 'Combofix', 'On sais pas trop.', '0'),
-	(NULL, 'WD Health Diagnostic', 'Tester le disque dur.', '1'),
-	(NULL, 'Spybot', 'Supprimer les logiciels espions.', '1'),
-	(NULL, 'Roguekiller', 'Nettoyer le registre, les barres d''outils inutiles et autres.', '1'),
-	(NULL, 'Memtest', 'Tester mémoire RAM.', '0'),
-	(NULL, 'Graver Driver', 'Télécharger les drivers de l''ordinateur et les graver sur DVD.', '1'),
-	(NULL, 'Sauvegarder données', 'Faire une sauvegarde des données sur un disque externe.', '0'),
-	(NULL, 'Nouvelle installation', 'Réinstaller le système d''exploitation.', '0'),
-	(NULL, 'Cloner', 'cloner le disque dur vers un autre.', '1');
+	(NULL, 'CCleaner', 'Supprimer les fichiers temporaires et nettoyer le registre.', 1),
+	(NULL, 'Combofix', 'On sais pas trop.', 0),
+	(NULL, 'WD Health Diagnostic', 'Tester le disque dur.', 1),
+	(NULL, 'Spybot', 'Supprimer les logiciels espions.', 1),
+	(NULL, 'Roguekiller', 'Nettoyer le registre, les barres d''outils inutiles et autres.', 1),
+	(NULL, 'Memtest', 'Tester mémoire RAM.', 0),
+	(NULL, 'Graver Driver', 'Télécharger les drivers de l''ordinateur et les graver sur DVD.', 1),
+	(NULL, 'Sauvegarder données', 'Faire une sauvegarde des données sur un disque externe.', 0),
+	(NULL, 'Nouvelle installation', 'Réinstaller le système d''exploitation.', 0),
+	(NULL, 'Cloner', 'cloner le disque dur vers un autre.', 1);
 
 -- ------------------------------------------------------------
 

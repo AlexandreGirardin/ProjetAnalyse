@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `actions` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `etat` tinyint NOT NULL DEFAULT 1
+  `etat` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
