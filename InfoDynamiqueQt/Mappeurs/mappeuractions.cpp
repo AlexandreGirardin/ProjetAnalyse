@@ -35,14 +35,14 @@ QList<Action*>* MappeurActions::getActions() {
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
     int colDesc = ligne.indexOf("description");
-    int colEtat = ligne.indexOf("active");
+    int colEtat = ligne.indexOf("etat");
     while (commande->next()) {
         ligne = commande->record();
         Action* action = new Action(this);
         action->setId(ligne.value(colId).toInt());
         action->setNom(ligne.value(colNom).toString());
         action->setDescription(ligne.value(colDesc).toString());
-        action->setEtat(ligne.value(colEtat).toBool());
+        action->setEtat(ligne.value(colEtat).toInt());
         liste->append(action);
     }
     return liste;
