@@ -58,9 +58,9 @@ void ControleurClients::definirCommandes() {
     commandeClients = new QString(
                 "SELECT\
                       c.id AS '#',\
+                      c.telephone AS 'Téléphone',\
                       COALESCE(a.nb,0) AS 'Nb. appareils',\
-                      c.nom AS 'Nom',\
-                      c.telephone AS 'Téléphone'\
+                      c.nom AS 'Nom'\
                  FROM\
                       clients c\
                  LEFT OUTER JOIN\
@@ -81,6 +81,7 @@ void ControleurClients::peuplerClients() {
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     clients->setQuery(*commandeClients, bd);
     fragmentClients->peuplerTableau(clients);
+    fragmentClients->getTableau()->hideColumn(0);
 }
 
 void ControleurClients::peuplerAppareils(int idClient) {
@@ -119,6 +120,7 @@ void ControleurClients::filtrerClients(QString filtre) {
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentClients->peuplerTableau(resultats);
+        fragmentClients->getTableau()->hideColumn(0);
     }
 }
 

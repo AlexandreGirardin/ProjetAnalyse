@@ -1,9 +1,11 @@
 #include "controleuractions.h"
 #include "ui_vueprincipale.h"
 
+#include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
 
 #include <QSqlQueryModel>
+#include <QDebug>
 
 ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* parent)
     : QObject(parent) {
@@ -13,9 +15,8 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
     configurerFragmentActions();
     configurerFragmentEnsembles();
 
-    requeteToutesActions = new QString("SELECT * FROM actions");
-    requeteActionsActives = new QString("SELECT * FROM actions WHERE etat = 1");
-    requeteActions = requeteActionsActives;
+    requeteToutesActions = new QString("SELECT id, nom as 'Action', description as 'Description', IF (etat < 1, '', '✓') as 'Activée' FROM actions");
+    requeteActionsActives = new QString("SELECT id, nom as 'Action', description as 'Description' FROM actions WHERE etat = 1");
     requeteToutesActionsFiltre = new QString(*requeteToutesActions
                                              + QString(" WHERE id LIKE :filtre\
                                                        OR nom LIKE :filtre\
@@ -24,14 +25,16 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
                                              + QString(" HAVING id LIKE :filtre\
                                                        OR nom LIKE :filtre\
                                                        OR description LIKE :filtre"));
-    requeteActionsFiltre = requeteToutesActionsFiltre;
 
-    requeteEnsembles = new QString("SELECT * FROM ensembles");
+    requeteEnsembles = new QString("SELECT id, nom as 'Ensemble', description as 'Description' FROM ensembles");
 
-    QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(activerCritereActions()));
-    QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(desactiverCritereActions()));
-            QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
-    fragmentActions->getCaseCocher()->setChecked(true);
+    requeteActions = requeteActionsActives;
+    requeteActionsFiltre = requeteActionsActivesFiltre;
+
+    QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(desactiverCritereActions()));
+    QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
+    QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
+    QObject::connect(fragmentActions, SIGNAL(clicVoir()), this, SLOT(voirAction()));
 }
 
 void ControleurActions::configurerFragmentActions() {
@@ -51,6 +54,7 @@ void ControleurActions::peuplerActions() {
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     actions->setQuery(*requeteActions, bd);
     fragmentActions->peuplerTableau(actions);
+    fragmentActions->getTableau()->hideColumn(0);
 }
 
 void ControleurActions::peuplerEnsembles() {
@@ -58,6 +62,7 @@ void ControleurActions::peuplerEnsembles() {
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     ensembles->setQuery(*requeteEnsembles, bd);
     fragmentEnsembles->peuplerTableau(ensembles);
+    fragmentEnsembles->getTableau()->hideColumn(0);
 }
 
 void ControleurActions::activerCritereActions() {
@@ -84,6 +89,19 @@ void ControleurActions::filtrerActions(QString filtre) {
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentActions->peuplerTableau(resultats);
+        fragmentActions->getTableau()->hideColumn(0);
+    }
+}
+
+void ControleurActions::voirAction() {
+    if (fragmentActions->getIdModele() != -1) {
+        Action* action = Application::getInstance()->actions->getAction(fragmentActions->getIdModele());
+        qDebug() << action->out();
+//        VueAction* vue = new VueAction();
+//        Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
+//        assignerAppareil(vue, appareil);
+//        vue->setWindowModality(Qt::NonModal);
+//        vue->show();
     }
 }
 

@@ -85,6 +85,8 @@ public slots:
 
     void filtrerActions(QString filtre);
 
+    void voirAction();
+
 };
 
 #endif // CONTROLEURACTIONS_H
