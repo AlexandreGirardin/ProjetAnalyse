@@ -72,9 +72,8 @@ void VueFragment::peuplerTableau(QAbstractTableModel* valeurs) {
 }
 
 int VueFragment::getId(QModelIndex index) {
-    int colonne = colonneId;
     int rangee = index.row();
-    QModelIndex caseId = ui->tableau->model()->index(rangee, colonne);
+    QModelIndex caseId = ui->tableau->model()->index(rangee, colonneId);
     return ui->tableau->model()->data(caseId).toInt();
 }
 int VueFragment::getIdModele() const {
