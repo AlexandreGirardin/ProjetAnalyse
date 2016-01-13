@@ -4,11 +4,13 @@
 #include <QtSql/QSqlQuery>
 
 MappeurFabricants::MappeurFabricants(QSqlDatabase* a_bd, QObject* parent) :
-    QObject(parent) {
+    QObject(parent)
+{
     bd = a_bd;
 }
 
-Fabricant* MappeurFabricants::getFabricant(int id) {
+Fabricant* MappeurFabricants::getFabricant(int id)
+{
     Fabricant* fabricant = NULL;
     QString requete = "SELECT * FROM fabricants WHERE id="+QString::number(id);
     QSqlQuery* commande = new QSqlQuery(requete,* bd);
@@ -18,12 +20,16 @@ Fabricant* MappeurFabricants::getFabricant(int id) {
     return fabricant;
 }
 
-Fabricant* MappeurFabricants::mapper(QSqlRecord ligne) {
-    return new Fabricant(ligne.value("id").toInt(),
-                     ligne.value("nom").toString(), this);
+Fabricant* MappeurFabricants::mapper(QSqlRecord ligne)
+{
+    Fabricant* fabricant = new Fabricant(this);
+    fabricant->setId(ligne.value("id").toInt());
+    fabricant->setNom(ligne.value("nom").toString());
+    return fabricant;
 }
 
-QList<Fabricant*>* MappeurFabricants::getFabricants() {
+QList<Fabricant*>* MappeurFabricants::getFabricants()
+{
     QList<Fabricant*>* liste = new QList<Fabricant*>();
     QString requete = "SELECT * FROM fabricants";
     QSqlQuery* commande = new QSqlQuery(requete,* bd);
@@ -32,8 +38,9 @@ QList<Fabricant*>* MappeurFabricants::getFabricants() {
     int colNom = ligne.indexOf("nom");
     while (commande->next()) {
         ligne = commande->record();
-        Fabricant* fabricant = new Fabricant(ligne.value(colId).toInt(),
-                                             ligne.value(colNom).toString(), this);
+        Fabricant* fabricant = new Fabricant(this);
+        fabricant->setId(ligne.value(colId).toInt());
+        fabricant->setNom(ligne.value(colNom).toString());
         liste->append(fabricant);
     }
     return liste;

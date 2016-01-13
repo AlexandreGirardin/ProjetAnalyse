@@ -43,8 +43,6 @@ private:
      */
     MappeurAppareils* mappeur;
 
-    void assignerAppareil(VueAppareil* vue, Appareil* appareil);
-
 public slots:
 
     /**
@@ -52,6 +50,8 @@ public slots:
      * Peuple la table du fragment avec tous les appareils
      */
     void peuplerAppareils();
+
+    void nouvelAppareil();
 
     /**
      * @brief modifierAppareil

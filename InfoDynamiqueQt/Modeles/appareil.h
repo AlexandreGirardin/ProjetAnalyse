@@ -52,6 +52,8 @@ public:
      */
     Fabricant* getFabricant() const;
 
+    QString getNomFabricant() const;
+
     /**
      * @brief setFabricant
      * @param value Le fabricant à assigner à l'appareil

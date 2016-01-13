@@ -16,6 +16,8 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
     definirCommandes();
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
+    QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
+    QObject::connect(fragment, SIGNAL(clicCreer()), this, SLOT(nouvelAppareil()));
     QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     mappeur = Application::getInstance()->appareils;
 }
@@ -51,28 +53,45 @@ void ControleurAppareils::peuplerAppareils() {
 }
 
 void ControleurAppareils::modifierAppareil() {
+    Appareil* appareil = Application::getInstance()->appareils->getAppareil(fragment->getIdModele());
+    if (appareil != NULL) {
+        VueGestionAppareil* vue = new VueGestionAppareil(fragment);
+        vue->setTypes(Application::getInstance()->typesAppareils->getTypesAppareil(), appareil->getNomType());
+        vue->setFabricants(Application::getInstance()->fabricants->getFabricants(), appareil->getNomFabricant());
+        vue->setMotDePasse(appareil->getMotDePasse());
+        vue->setDescription(appareil->getDescription());
+        vue->exec();
+        appareil->setMotDePasse(vue->getMotDePasse());
+        appareil->setType(vue->getType());
+        appareil->setFabricant(vue->getFabricant());
+        appareil->setDescription(vue->getDescription());
+        qDebug() << appareil->out() << " " << appareil->getMotDePasse();
+    }
+}
 
+void ControleurAppareils::nouvelAppareil() {
+    VueGestionAppareil* vue = new VueGestionAppareil(fragment);
+    vue->setTypes(Application::getInstance()->typesAppareils->getTypesAppareil());
+    vue->setFabricants(Application::getInstance()->fabricants->getFabricants());
+    vue->exec();
+    Appareil* nouveau = new Appareil(fragment);
+    nouveau->setMotDePasse(vue->getMotDePasse());
+    nouveau->setType(vue->getType());
+    nouveau->setFabricant(vue->getFabricant());
+    nouveau->setDescription(vue->getDescription());
+    qDebug() << nouveau->out() << " " << nouveau->getMotDePasse();
 }
 
 void ControleurAppareils::voirAppareil() {
     if (fragment->getIdModele() != -1) {
         VueAppareil* vue = new VueAppareil();
         Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
-        assignerAppareil(vue, appareil);
-        vue->setWindowModality(Qt::NonModal);
+        vue->getChampFabricant()->setText(appareil->getNomFabricant());
+        vue->getChampType()->setText(appareil->getNomType());
+        vue->getChampDescription()->setText(appareil->getDescription());
+        vue->getChampMotDePasse()->setText(appareil->getMotDePasse());
         vue->show();
     }
-}
-
-void ControleurAppareils::assignerAppareil(VueAppareil* vue, Appareil* appareil) {
-    vue->getChampType()->setText(appareil->getNomType());
-    vue->getChampDescription()->setText(appareil->getDescription());
-//    vue->getChampMotDePasse()->setText(appareil->getMotDePasse());
-//    vue.getChampPrenom()->setText(client->getPrenom());
-//    vue->getChampNom()->setText(client->getNom());
-//    vue->getChampCourriel()->setText(client->getAdresse());
-//    vue->getChampTelephone()->setText(client->getTelephone());
-//    qDebug() << client->out();
 }
 
 void ControleurAppareils::filtrerAppareils(QString filtre) {

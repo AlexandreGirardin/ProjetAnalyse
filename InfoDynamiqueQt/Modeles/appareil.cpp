@@ -3,6 +3,8 @@
 Appareil::Appareil(QObject* parent) :
     QObject(parent)
 {
+    setFabricant(NULL);
+    setType(NULL);
 }
 
 int Appareil::getId() const
@@ -18,6 +20,15 @@ void Appareil::setId(int value)
 Fabricant* Appareil::getFabricant() const
 {
     return fabricant;
+}
+
+QString Appareil::getNomFabricant() const
+{
+    if (fabricant != NULL) {
+        return fabricant->getNom();
+    } else {
+        return QString("");
+    }
 }
 
 void Appareil::setFabricant(Fabricant* value)
@@ -66,5 +77,17 @@ void Appareil::setDescription(const QString &value)
 
 QString Appareil::out()
 {
-    return QString::number(id) + " " + fabricant->getNom() + " " + type->getNom();
+    QString out = QString::number(id) + " ";
+    if (fabricant != NULL) {
+        out.append(fabricant->getNom() + " ");
+    } else {
+        out.append("fabricant indéfini ");
+    }
+    if (type != NULL) {
+        out.append(type->getNom() + " ");
+    } else {
+        out.append("type indéfini ");
+    }
+    out.append(description);
+    return out;
 }
