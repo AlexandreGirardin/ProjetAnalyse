@@ -1,10 +1,12 @@
 #include "Modeles/ensembleactions.h"
 
 EnsembleActions::EnsembleActions(QObject* parent) :
-    QObject(parent) {
+    QObject(parent)
+{
 }
 
-QString EnsembleActions::out() {
+QString EnsembleActions::out()
+{
 
 }
 

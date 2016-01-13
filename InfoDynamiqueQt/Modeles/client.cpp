@@ -1,5 +1,9 @@
 #include "Modeles/client.h"
 
+Client::Client(QObject* parent) :
+    ModeleBD(parent)
+{
+}
 
 QString Client::getPrenom() const
 {
@@ -9,9 +13,6 @@ QString Client::getPrenom() const
 void Client::setPrenom(const QString &value)
 {
     prenom = value;
-}
-Client::Client(QObject* parent) :
-    ModeleBD(parent) {
 }
 
 QString Client::getNom() const
@@ -54,6 +55,7 @@ void Client::setAppareils(const QList<Appareil*> &value)
     *appareils = value;
 }
 
-QString Client::out() {
+QString Client::out()
+{
     return ModeleBD::out();
 }

@@ -1,29 +1,36 @@
 #include "Modeles/action.h"
 
-Action::Action(QObject* parent): ModeleBD(parent) {
+Action::Action(QObject* parent): ModeleBD(parent)
+{
 }
 
-int Action::getId() const {
+int Action::getId() const
+{
     return id;
 }
 
-void Action::setId(int value) {
+void Action::setId(int value)
+{
     id = value;
 }
 
-QString Action::getNom() const {
+QString Action::getNom() const
+{
     return nom;
 }
 
-void Action::setNom(const QString &value) {
+void Action::setNom(const QString &value)
+{
     nom = value;
 }
 
-QString Action::getDescription() const {
+QString Action::getDescription() const
+{
     return description;
 }
 
-void Action::setDescription(const QString &value) {
+void Action::setDescription(const QString &value)
+{
     description = value;
 }
 
@@ -37,6 +44,16 @@ void Action::setEtat(bool value)
     etat = value;
 }
 
-QString Action::out() {
-    return QString::number(id) + " " + nom + " " + description + " " + QString::number(etat);
+QString Action::etatOut()
+{
+    if (etat) {
+        return QString("activée");
+    } else {
+        return QString("désactivée");
+    }
+}
+
+QString Action::out()
+{
+    return QString::number(id) + " " + nom + " " + description + " " + etatOut();
 }

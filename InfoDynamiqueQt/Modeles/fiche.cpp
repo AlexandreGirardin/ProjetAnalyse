@@ -1,5 +1,9 @@
 #include "Modeles/fiche.h"
 
+Fiche::Fiche(QObject* parent) :
+    QObject(parent)
+{
+}
 
 int Fiche::getId() const
 {
@@ -74,8 +78,4 @@ QList<Technicien* > Fiche::getTechniciens() const
 void Fiche::setTechniciens(const QList<Technicien* > &value)
 {
     techniciens = value;
-}
-Fiche::Fiche(QObject* parent) :
-    QObject(parent)
-{
 }

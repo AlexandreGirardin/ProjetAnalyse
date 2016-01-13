@@ -1,5 +1,9 @@
 #include "Modeles/tache.h"
 
+Tache::Tache(QObject* parent) :
+    QObject(parent)
+{
+}
 
 int Tache::getId() const
 {
@@ -34,8 +38,4 @@ void Tache::setStatut(Statut* value)
 QString Tache::out()
 {
     return QString::number(id) + " " + action->getNom() + " " + statut->getNom();
-}
-Tache::Tache(QObject* parent) :
-    QObject(parent)
-{
 }

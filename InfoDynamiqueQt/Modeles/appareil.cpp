@@ -1,5 +1,9 @@
 #include "Modeles/appareil.h"
 
+Appareil::Appareil(QObject* parent) :
+    QObject(parent)
+{
+}
 
 int Appareil::getId() const
 {
@@ -31,17 +35,13 @@ void Appareil::setType(TypeAppareil* value)
     type = value;
 }
 
-QString Appareil::getNomType() const {
+QString Appareil::getNomType() const
+{
     if (type != NULL) {
         return type->getNom();
     } else {
         return QString("");
     }
-}
-
-QString Appareil::out()
-{
-    return QString::number(id) + " " + fabricant->getNom() + " " + type->getNom();
 }
 
 QString Appareil::getMotDePasse() const
@@ -63,7 +63,8 @@ void Appareil::setDescription(const QString &value)
 {
     description = value;
 }
-Appareil::Appareil(QObject* parent) :
-    QObject(parent)
+
+QString Appareil::out()
 {
+    return QString::number(id) + " " + fabricant->getNom() + " " + type->getNom();
 }

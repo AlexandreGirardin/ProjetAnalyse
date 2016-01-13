@@ -73,6 +73,7 @@ public:
 
     bool getEtat() const;
     void setEtat(bool value);
+    QString etatOut();
 };
 
 #endif // ACTION_H
