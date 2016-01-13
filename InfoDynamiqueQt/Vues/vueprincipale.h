@@ -19,6 +19,12 @@ public:
 
     Ui::VuePrincipale* getUi() const;
 
+    QTabWidget* getOnglets() const;
+
+    QWidget *getOngletActions() const;
+    QWidget *getOngletAppareils() const;
+    QWidget *getOngletClients() const;
+    QWidget *getOngletFiches() const;
 private:
     Ui::VuePrincipale* ui;
 };

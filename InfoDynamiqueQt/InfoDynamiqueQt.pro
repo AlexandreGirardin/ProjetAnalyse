@@ -23,7 +23,6 @@ SOURCES += main.cpp\
     Vues/vuegestionappareil.cpp \
     Vues/vuefragment.cpp \
     Vues/vueeditionfiche.cpp \
-    Controleurs/controleurapplication.cpp \
     Controleurs/controleurclients.cpp \
     Controleurs/controleurfiches.cpp \
     Controleurs/controleurappareils.cpp \
@@ -66,7 +65,6 @@ HEADERS  += \
     Vues/vuegestionappareil.h \
     Vues/vuefragment.h \
     Vues/vueeditionfiche.h \
-    Controleurs/controleurapplication.h \
     Controleurs/controleurclients.h \
     Controleurs/controleurfiches.h \
     Controleurs/controleurappareils.h \

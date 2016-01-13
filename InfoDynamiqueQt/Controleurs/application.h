@@ -3,7 +3,12 @@
 
 #include <QApplication>
 
+#include "Controleurs/controleuractions.h"
+#include "Controleurs/controleurappareils.h"
 #include "Controleurs/controleurbd.h"
+#include "Controleurs/controleurclients.h"
+#include "Controleurs/controleurfiches.h"
+
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurappareils.h"
 #include "Mappeurs/mappeurclients.h"
@@ -34,14 +39,52 @@ public:
     MappeurTechniciens* techniciens;
     MappeurTypeAppareils* typesAppareils;
 
-    void demarrer(); 
+    void demarrer();
     void debug();
+
 private:
+
     static Application *m_instance;
 
+    // La vue principale de l'application
+    VuePrincipale* vuePrincipale;
+
+    // Le contrôleur de la vue des clients
+    ControleurClients* controleurClients;
+
+    bool clientsCharges;
+
+    // Le contrôleur de la vue des fiches
+    ControleurFiches* controleurFiches;
+
+    bool fichesChargees;
+
+    // Le contrôleur de la vue des appareils
+    ControleurAppareils* controleurAppareils;
+
+    bool appareilsCharges;
+
+    // Le contrôleur de la vue des actions
+    ControleurActions* controleurActions;
+
+    bool actionsChargees;
+
+    QMetaObject::Connection paresseux;
+
+    void verifierParesseux();
+
+    void creerFenetre();
 signals:
 
+    /**
+     * @brief executer
+     * Lance l'exécution de l'application
+     */
+    void executer();
+
 public slots:
+
+    void chargerOnglet();
 
 };
 
