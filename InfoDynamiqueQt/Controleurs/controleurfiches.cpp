@@ -1,21 +1,23 @@
 #include "Controleurs/controleurfiches.h"
-#include "ui_vueprincipale.h"
 
-#include "Controleurs/controleurbd.h"
+#include "Controleurs/application.h"
 
+#include <QLayout>
 #include <QSqlQueryModel>
 
 ControleurFiches::ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent)
-    : QObject(parent) {
+    : QObject(parent)
+{
     fragment = new VueFragment();
     fragment->getEtiquette()->setText(tr("Fiches"));
     fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
-    vuePrincipale->getUi()->ongletFiches->layout()->addWidget(fragment);
+    vuePrincipale->getOngletFiches()->layout()->addWidget(fragment);
     definirCommandes();
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
 }
 
-void ControleurFiches::definirCommandes() {
+void ControleurFiches::definirCommandes()
+{
     commandeFiches = new QString("SELECT * FROM fiches");
     commandeFiltrerFiches = new QString(*commandeFiches +
                                         QString(" WHERE id LIKE :filtre\
@@ -26,25 +28,28 @@ void ControleurFiches::definirCommandes() {
                                                 OR commentaire LIKE :filtre"));
 }
 
-void ControleurFiches::peuplerFiches() {
+void ControleurFiches::peuplerFiches()
+{
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    fiches->setQuery(*commandeFiches, bd);
+    fiches->setQuery(*commandeFiches, *Application::bd);
     fragment->peuplerTableau(fiches);
 }
 
-void ControleurFiches::modifierFiche() {
+void ControleurFiches::modifierFiche()
+{
 
 }
 
-void ControleurFiches::voirFiche() {
+void ControleurFiches::voirFiche()
+{
 }
 
-void ControleurFiches::filtrerFiches(QString filtre) {
+void ControleurFiches::filtrerFiches(QString filtre)
+{
     if (filtre.isEmpty()) {
         peuplerFiches();
     } else {
-        QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+        QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*commandeFiltrerFiches);
         QString* metacaractere = new QString("%");
         requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);

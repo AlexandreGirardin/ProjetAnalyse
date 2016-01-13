@@ -2,6 +2,7 @@
 #define CONTROLEURCONNEXION_H
 
 #include <QObject>
+
 #include <QtSql/QSql>
 #include <QtSql/QSqlDriver>
 #include <QtSql/QSqlQuery>

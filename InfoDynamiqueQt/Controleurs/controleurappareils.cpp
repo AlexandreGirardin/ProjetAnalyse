@@ -8,7 +8,8 @@
 #include "Controleurs/application.h"
 
 ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent)
-    : QObject(parent) {
+    : QObject(parent)
+{
     fragment = new VueFragment();
     fragment->getEtiquette()->setText(tr("Appareils"));
     fragment->getCaseCocher()->hide();
@@ -22,7 +23,8 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
     mappeur = Application::appareils;
 }
 
-void ControleurAppareils::definirCommandes() {
+void ControleurAppareils::definirCommandes()
+{
     commandeAppareils = new QString(
             "SELECT\
                 a.id AS '#',\
@@ -45,14 +47,16 @@ void ControleurAppareils::definirCommandes() {
                                                    OR a.description LIKE :filtre"));
 }
 
-void ControleurAppareils::peuplerAppareils() {
+void ControleurAppareils::peuplerAppareils()
+{
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     appareils->setQuery(*commandeAppareils, bd);
     fragment->peuplerTableau(appareils);
 }
 
-void ControleurAppareils::modifierAppareil() {
+void ControleurAppareils::modifierAppareil()
+{
     Appareil* appareil = Application::appareils->getAppareil(fragment->getIdModele());
     if (appareil != NULL) {
         VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
@@ -69,7 +73,8 @@ void ControleurAppareils::modifierAppareil() {
     }
 }
 
-void ControleurAppareils::nouvelAppareil() {
+void ControleurAppareils::nouvelAppareil()
+{
     VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
     vue->setTypes(Application::typesAppareils->getTypesAppareil());
     vue->setFabricants(Application::fabricants->getFabricants());
@@ -82,7 +87,8 @@ void ControleurAppareils::nouvelAppareil() {
     qDebug() << nouveau->out() << " " << nouveau->getMotDePasse();
 }
 
-void ControleurAppareils::voirAppareil() {
+void ControleurAppareils::voirAppareil()
+{
     if (fragment->getIdModele() != -1) {
         VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
         Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
@@ -94,7 +100,8 @@ void ControleurAppareils::voirAppareil() {
     }
 }
 
-void ControleurAppareils::filtrerAppareils(QString filtre) {
+void ControleurAppareils::filtrerAppareils(QString filtre)
+{
     if (filtre.isEmpty()) {
         peuplerAppareils();
     } else {

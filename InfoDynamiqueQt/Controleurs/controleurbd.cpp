@@ -1,17 +1,20 @@
 #include "Controleurs/controleurbd.h"
 
-#include <QtSql/QSqlDatabase>
 #include <QDebug>
+#include <QtSql/QSqlDatabase>
 
 ControleurBD::ControleurBD(QObject* parent) :
-    QObject(parent) {
+    QObject(parent)
+{
 }
 
-QSqlDatabase* ControleurBD::getBd() {
+QSqlDatabase* ControleurBD::getBd()
+{
     return &bd;
 }
 
-void ControleurBD::connecterDossiers() {
+void ControleurBD::connecterDossiers()
+{
     bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd());
     bd.setHostName("localhost");
     bd.setDatabaseName("InfoDynamiqueDossiers");
@@ -22,10 +25,12 @@ void ControleurBD::connecterDossiers() {
     }
 }
 
-const QString ControleurBD::nomBd() {
+const QString ControleurBD::nomBd()
+{
     return QString("dossiers");
 }
 
-const QString* ControleurBD::meta() {
+const QString* ControleurBD::meta()
+{
     return new QString("%");
 }

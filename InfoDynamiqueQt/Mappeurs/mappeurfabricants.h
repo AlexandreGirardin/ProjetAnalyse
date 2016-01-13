@@ -2,10 +2,11 @@
 #define MAPPEURFABRICANTS_H
 
 #include <QObject>
-#include <QSqlDatabase>
-#include <QSqlRecord>
 
 #include "Modeles/fabricant.h"
+
+#include <QSqlDatabase>
+#include <QSqlRecord>
 
 class MappeurFabricants : public QObject
 {

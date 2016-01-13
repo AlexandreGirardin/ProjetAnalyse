@@ -8,7 +8,8 @@
 #include <QDebug>
 
 ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* parent)
-    : QObject(parent) {
+    : QObject(parent)
+{
     splitter = new QSplitter(Qt::Vertical, vuePrincipale->getUi()->ongletActions);
     vuePrincipale->getUi()->ongletActions->layout()->addWidget(splitter);
 
@@ -37,19 +38,22 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
     QObject::connect(fragmentActions, SIGNAL(clicVoir()), this, SLOT(voirAction()));
 }
 
-void ControleurActions::configurerFragmentActions() {
+void ControleurActions::configurerFragmentActions()
+{
     fragmentActions = new VueFragment(splitter);
     fragmentActions->getEtiquette()->setText(tr("Actions"));
     fragmentActions->getCaseCocher()->setText(tr("Afficher toutes les actions"));
 }
 
-void ControleurActions::configurerFragmentEnsembles() {
+void ControleurActions::configurerFragmentEnsembles()
+{
     fragmentEnsembles = new VueFragment(splitter);
     fragmentEnsembles->getEtiquette()->setText(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
 }
 
-void ControleurActions::peuplerActions() {
+void ControleurActions::peuplerActions()
+{
     QSqlQueryModel* actions = new QSqlQueryModel(this);
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     actions->setQuery(*requeteActions, bd);
@@ -57,7 +61,8 @@ void ControleurActions::peuplerActions() {
     fragmentActions->getTableau()->hideColumn(0);
 }
 
-void ControleurActions::peuplerEnsembles() {
+void ControleurActions::peuplerEnsembles()
+{
     QSqlQueryModel* ensembles = new QSqlQueryModel(this);
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     ensembles->setQuery(*requeteEnsembles, bd);
@@ -65,7 +70,8 @@ void ControleurActions::peuplerEnsembles() {
     fragmentEnsembles->getTableau()->hideColumn(0);
 }
 
-void ControleurActions::activerCritereActions() {
+void ControleurActions::activerCritereActions()
+{
     requeteActions = requeteActionsActives;
     requeteActionsFiltre = requeteActionsActivesFiltre;
     filtrerActions(fragmentActions->getChamp()->text());
@@ -77,7 +83,8 @@ void ControleurActions::desactiverCritereActions() {
     filtrerActions(fragmentActions->getChamp()->text());
 }
 
-void ControleurActions::filtrerActions(QString filtre) {
+void ControleurActions::filtrerActions(QString filtre)
+{
     if (filtre.isEmpty()) {
         peuplerActions();
     } else {
@@ -93,7 +100,8 @@ void ControleurActions::filtrerActions(QString filtre) {
     }
 }
 
-void ControleurActions::voirAction() {
+void ControleurActions::voirAction()
+{
     if (fragmentActions->getIdModele() != -1) {
         Action* action = Application::actions->getAction(fragmentActions->getIdModele());
 //        qDebug() << action->out();

@@ -2,10 +2,11 @@
 #define MAPPEURACTIONS_H
 
 #include <QObject>
-#include <QSqlDatabase>
-#include <QSqlRecord>
 
 #include "Modeles/action.h"
+
+#include <QSqlDatabase>
+#include <QSqlRecord>
 
 class MappeurActions : public QObject
 {

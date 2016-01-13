@@ -4,11 +4,13 @@
 #include <QDebug>
 
 MappeurAppareils::MappeurAppareils(QSqlDatabase *a_bd, QObject *parent) :
-    QObject(parent){
+    QObject(parent)
+{
     bd = a_bd;
 }
 
-Appareil *MappeurAppareils::getAppareil(int id) {
+Appareil *MappeurAppareils::getAppareil(int id)
+{
     Appareil* appareil = NULL;
     QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
     requete.prepare("SELECT * FROM appareils WHERE id=:id");
@@ -20,12 +22,14 @@ Appareil *MappeurAppareils::getAppareil(int id) {
     return appareil;
 }
 
-QList<Appareil *> *MappeurAppareils::appareilsPourClient(Client *client) {
+QList<Appareil *> *MappeurAppareils::appareilsPourClient(Client *client)
+{
     QList<Appareil *> * liste = new QList<Appareil*>;
     return liste;
 }
 
-Appareil *MappeurAppareils::mapper(QSqlRecord ligne) {
+Appareil *MappeurAppareils::mapper(QSqlRecord ligne)
+{
     Appareil* appareil = new Appareil();
     appareil->setId(ligne.value("id").toInt());
     appareil->setDescription(ligne.value("description").toString());

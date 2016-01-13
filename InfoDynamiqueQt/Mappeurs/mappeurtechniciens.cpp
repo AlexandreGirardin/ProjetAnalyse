@@ -4,7 +4,8 @@
 #include <QtSql/QSqlQuery>
 
 MappeurTechniciens::MappeurTechniciens(QSqlDatabase* a_bd, QObject* parent) :
-    QObject(parent) {
+    QObject(parent)
+{
     bd = a_bd;
 }
 
@@ -19,12 +20,14 @@ Technicien* MappeurTechniciens::getTechnicien(int a_id)
     return technicien;
 }
 
-Technicien* MappeurTechniciens::mapper(QSqlRecord ligne) {
+Technicien* MappeurTechniciens::mapper(QSqlRecord ligne)
+{
     return new Technicien(ligne.value("id").toInt(),
                      ligne.value("nom").toString(), this);
 }
 
-QList<Technicien*>* MappeurTechniciens::getTechniciens(void) {
+QList<Technicien*>* MappeurTechniciens::getTechniciens(void)
+{
     QList<Technicien*>* liste = new QList<Technicien*>;
     QString requete = "SELECT * FROM techniciens";
     QSqlQuery* commande = new QSqlQuery(requete,* bd);

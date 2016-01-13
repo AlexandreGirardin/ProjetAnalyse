@@ -2,11 +2,12 @@
 #define CONTROLEURACTIONS_H
 
 #include <QObject>
+
+#include "Vues/vuefragment.h"
+#include "Vues/vueprincipale.h"
+
 #include <QSqlQuery>
 #include <QSplitter>
-
-#include "Vues/vueprincipale.h"
-#include "Vues/vuefragment.h"
 
 class ControleurActions : public QObject
 {

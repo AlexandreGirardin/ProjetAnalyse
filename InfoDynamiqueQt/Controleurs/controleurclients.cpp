@@ -1,14 +1,15 @@
 #include "Controleurs/controleurclients.h"
-#include "ui_vueprincipale.h"
 
-#include "Controleurs/controleurbd.h"
+#include "Controleurs/application.h"
 
+#include <QLayout>
 #include <QSqlQueryModel>
 
 ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* parent)
-    : QObject(parent) {
-    splitter = new QSplitter(Qt::Vertical, vuePrincipale->getUi()->ongletClients);
-    vuePrincipale->getUi()->ongletClients->layout()->addWidget(splitter);
+    : QObject(parent)
+{
+    splitter = new QSplitter(Qt::Vertical, vuePrincipale->getOngletClients());
+    vuePrincipale->getOngletClients()->layout()->addWidget(splitter);
     splitter->setChildrenCollapsible(false);
     controleurGestionClient = new ControleurGestionClient();
     controleurGestionAppareil = new ControleurGestionAppareil();
@@ -19,7 +20,8 @@ ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* pare
     definirCommandes();
 }
 
-void ControleurClients::configurerFragmentClients() {
+void ControleurClients::configurerFragmentClients()
+{
     fragmentClients = new VueFragment(splitter);
     fragmentClients->getEtiquette()->setText(tr("Clients"));
     fragmentClients->getCaseCocher()->hide();
@@ -30,7 +32,8 @@ void ControleurClients::configurerFragmentClients() {
 
 }
 
-void ControleurClients::configurerFragmentAppareils() {
+void ControleurClients::configurerFragmentAppareils()
+{
     fragmentAppareils = new VueFragment(splitter);
     fragmentAppareils->getEtiquette()->setText(tr("Appareils"));
     fragmentAppareils->getCaseCocher()->hide();
@@ -42,7 +45,8 @@ void ControleurClients::configurerFragmentAppareils() {
     QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(hide()));
 }
 
-void ControleurClients::configurerFragmentFiches() {
+void ControleurClients::configurerFragmentFiches()
+{
     fragmentFiches = new VueFragment(splitter);
     fragmentFiches->getEtiquette()->setText(tr("Fiches"));
     fragmentFiches->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
@@ -54,7 +58,8 @@ void ControleurClients::configurerFragmentFiches() {
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
 }
 
-void ControleurClients::definirCommandes() {
+void ControleurClients::definirCommandes()
+{
     commandeClients = new QString(
                 "SELECT\
                       c.id AS '#',\
@@ -76,43 +81,48 @@ void ControleurClients::definirCommandes() {
     commandeFiches = new QString("SELECT * FROM fiches WHERE idAppareil=:idAppareil");
 }
 
-void ControleurClients::peuplerClients() {
+void ControleurClients::peuplerClients()
+{
     QSqlQueryModel* clients = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    clients->setQuery(*commandeClients, bd);
+    clients->setQuery(*commandeClients, *Application::bd);
     fragmentClients->peuplerTableau(clients);
     fragmentClients->getTableau()->hideColumn(0);
 }
 
-void ControleurClients::peuplerAppareils(int idClient) {
+void ControleurClients::peuplerAppareils(int idClient)
+{
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(requeteAppareils(idClient));
     fragmentAppareils->peuplerTableau(appareils);
 }
 
-void ControleurClients::peuplerFiches(int idAppareil) {
+void ControleurClients::peuplerFiches(int idAppareil)
+{
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(requeteFiches(idAppareil));
     fragmentFiches->peuplerTableau(fiches);
 }
 
-void ControleurClients::modifierClient() {
+void ControleurClients::modifierClient()
+{
     if (fragmentClients->getIdModele() != -1) {
         controleurGestionClient->modifierClient(fragmentClients->getIdModele());
     }
 }
 
-void ControleurClients::voirClient() {
+void ControleurClients::voirClient()
+{
     if (fragmentClients->getIdModele() != -1) {
         controleurGestionClient->voirClient(fragmentClients->getIdModele());
     }
 }
 
-void ControleurClients::filtrerClients(QString filtre) {
+void ControleurClients::filtrerClients(QString filtre)
+{
     if (filtre.isEmpty()) {
         peuplerClients();
     } else {
-        QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+        QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*commandeFiltreClients);
         const QString* meta = ControleurBD::meta();
         requete.bindValue(":filtre", *meta + filtre + *meta);
@@ -126,16 +136,18 @@ void ControleurClients::filtrerClients(QString filtre) {
 
 // Requêtes SQL
 
-QSqlQuery ControleurClients::requeteAppareils(int idClient) const {
-    QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+QSqlQuery ControleurClients::requeteAppareils(int idClient) const
+{
+    QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare(*commandeAppareils);
     requete.bindValue(":idClient", idClient);
     requete.exec();
     return requete;
 }
 
-QSqlQuery ControleurClients::requeteFiches(int idAppareil) const {
-    QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+QSqlQuery ControleurClients::requeteFiches(int idAppareil) const
+{
+    QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare(*commandeFiches);
     requete.bindValue(":idAppareil", idAppareil);
     requete.exec();

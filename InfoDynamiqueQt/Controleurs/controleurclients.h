@@ -2,14 +2,16 @@
 #define CONTROLEURCLIENTS_H
 
 #include <QObject>
-#include <QSqlQuery>
-#include <QSplitter>
 
 #include "Controleurs/controleurgestionappareil.h"
 #include "Controleurs/controleurgestionclient.h"
 #include "Controleurs/controleurgestionfiche.h"
+
 #include "Vues/vuefragment.h"
 #include "Vues/vueprincipale.h"
+
+#include <QSqlQuery>
+#include <QSplitter>
 
 class ControleurClients : public QObject
 {

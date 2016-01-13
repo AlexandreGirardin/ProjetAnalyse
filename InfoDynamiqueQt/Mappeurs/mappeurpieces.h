@@ -2,10 +2,11 @@
 #define MAPPEURPIECES_H
 
 #include <QObject>
-#include <QSqlDatabase>
-#include <QSqlRecord>
 
 #include "Modeles/piece.h"
+
+#include <QSqlDatabase>
+#include <QSqlRecord>
 
 class MappeurPieces : public QObject
 {

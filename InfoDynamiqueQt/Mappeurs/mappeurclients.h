@@ -2,11 +2,12 @@
 #define MAPPEURCLIENTS_H
 
 #include <QObject>
+
+#include "Modeles/client.h"
+
 #include <QSqlDatabase>
 #include <QSqlRecord>
 #include <QVariant>
-
-#include "Modeles/client.h"
 
 
 class MappeurClients : public QObject

@@ -4,11 +4,13 @@
 #include <QtSql/QSqlQuery>
 
 MappeurActions::MappeurActions(QSqlDatabase* a_bd, QObject* parent) :
-    QObject(parent) {
+    QObject(parent)
+{
     bd = a_bd;
 }
 
-Action* MappeurActions::getAction(int id) {
+Action* MappeurActions::getAction(int id)
+{
     Action* action = NULL;
     QSqlQuery requete = QSqlQuery(*bd);
     requete.prepare("SELECT * FROM actions WHERE id=:id");
@@ -20,7 +22,8 @@ Action* MappeurActions::getAction(int id) {
     return action;
 }
 
-Action* MappeurActions::mapper(QSqlRecord ligne) {
+Action* MappeurActions::mapper(QSqlRecord ligne)
+{
     Action* action = new Action(this);
     action->setId(ligne.value("id").toInt());
     action->setNom(ligne.value("nom").toString());
@@ -29,7 +32,8 @@ Action* MappeurActions::mapper(QSqlRecord ligne) {
     return action;
 }
 
-QList<Action*>* MappeurActions::getActions() {
+QList<Action*>* MappeurActions::getActions()
+{
     QList<Action*>* liste = new QList<Action*>();
     QSqlQuery* commande = new QSqlQuery("SELECT * FROM actions",*bd);
     QSqlRecord ligne = commande->record();

@@ -77,8 +77,6 @@ private:
 
     void creerFenetre();
 
-signals:
-
     /**
      * @brief executer
      * Lance l'exécution de l'application

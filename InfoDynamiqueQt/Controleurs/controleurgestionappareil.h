@@ -2,6 +2,7 @@
 #define CONTROLEURGESTIONAPPAREIL_H
 
 #include <QObject>
+
 #include "Vues/vuegestionappareil.h"
 
 class ControleurGestionAppareil : public QObject

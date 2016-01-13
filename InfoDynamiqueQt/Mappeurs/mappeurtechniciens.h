@@ -2,10 +2,11 @@
 #define MAPPEURTECHNICIENS_H
 
 #include <QObject>
-#include <QSqlDatabase>
-#include <QSqlRecord>
 
 #include "Modeles/technicien.h"
+
+#include <QSqlDatabase>
+#include <QSqlRecord>
 
 class MappeurTechniciens : public QObject
 {

@@ -3,11 +3,13 @@
 #include <QtSql/QSqlQuery>
 
 MappeurClients::MappeurClients(QSqlDatabase* a_bd, QObject* parent) :
-    QObject(parent) {
+    QObject(parent)
+{
     bd = a_bd;
 }
 
-Client* MappeurClients::getClient(int id) {
+Client* MappeurClients::getClient(int id)
+{
     Client* client = NULL;
     QSqlQuery requete = QSqlQuery(*bd);
     requete.prepare("SELECT * FROM clients WHERE id=:id");
@@ -19,7 +21,8 @@ Client* MappeurClients::getClient(int id) {
     return client;
 }
 
-Client* MappeurClients::mapper(QSqlRecord ligne) {
+Client* MappeurClients::mapper(QSqlRecord ligne)
+{
     Client* client = new Client(this);
     client->setId(ligne.value("id").toInt());
     client->setPrenom(ligne.value("prenom").toString());

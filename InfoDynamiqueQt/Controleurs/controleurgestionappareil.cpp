@@ -1,10 +1,12 @@
 #include "Controleurs/controleurgestionappareil.h"
 
 ControleurGestionAppareil::ControleurGestionAppareil(QObject* parent) :
-    QObject(parent) {
+    QObject(parent)
+{
     vueGestionAppareil = new VueGestionAppareil();
 }
 
-void ControleurGestionAppareil::ajouterAppareil() {
+void ControleurGestionAppareil::ajouterAppareil()
+{
     vueGestionAppareil->exec();
 }

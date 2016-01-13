@@ -8,22 +8,27 @@ VueAppareil::VueAppareil(QWidget *parent) :
     ui->setupUi(this);
 }
 
-VueAppareil::~VueAppareil() {
+VueAppareil::~VueAppareil()
+{
     delete ui;
 }
 
-QLineEdit *VueAppareil::getChampType() const {
+QLineEdit *VueAppareil::getChampType() const
+{
     return ui->champType;
 }
 
-QLineEdit *VueAppareil::getChampFabricant() const {
+QLineEdit *VueAppareil::getChampFabricant() const
+{
     return ui->champFabricant;
 }
 
-QLineEdit *VueAppareil::getChampMotDePasse() const {
+QLineEdit *VueAppareil::getChampMotDePasse() const
+{
     return ui->champMDP;
 }
 
-QTextEdit *VueAppareil::getChampDescription() const {
+QTextEdit *VueAppareil::getChampDescription() const
+{
     return ui->champDescription;
 }

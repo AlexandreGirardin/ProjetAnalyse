@@ -2,10 +2,11 @@
 #define MAPPEURTYPEAPPAREILS_H
 
 #include <QObject>
-#include <QSqlDatabase>
-#include <QSqlRecord>
 
 #include "Modeles/typeappareil.h"
+
+#include <QSqlDatabase>
+#include <QSqlRecord>
 
 class MappeurTypeAppareils : public QObject
 {

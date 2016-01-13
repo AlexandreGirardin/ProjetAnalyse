@@ -11,7 +11,8 @@ MappeurTypeAppareils::MappeurTypeAppareils(QSqlDatabase* a_bd, QObject* parent) 
     bd = a_bd;
 }
 
-TypeAppareil* MappeurTypeAppareils::getTypeAppareil(int idType) {
+TypeAppareil* MappeurTypeAppareils::getTypeAppareil(int idType)
+{
     TypeAppareil* type = NULL;
     QSqlQuery* commande = new QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
     commande->prepare("SELECT * FROM types WHERE id=:idType");
@@ -25,14 +26,16 @@ TypeAppareil* MappeurTypeAppareils::getTypeAppareil(int idType) {
     return type;
 }
 
-TypeAppareil* MappeurTypeAppareils::mapper(QSqlRecord ligne) {
+TypeAppareil* MappeurTypeAppareils::mapper(QSqlRecord ligne)
+{
     TypeAppareil* type = new TypeAppareil();
     type->setId(ligne.value("id").toInt());
     type->setNom(ligne.value("nom").toString());
     return type;
 }
 
-QList<TypeAppareil*>* MappeurTypeAppareils::getTypesAppareil(void) {
+QList<TypeAppareil*>* MappeurTypeAppareils::getTypesAppareil(void)
+{
     QList<TypeAppareil*>* liste = new QList<TypeAppareil*>();
     QString requete = "SELECT * FROM types";
     QSqlQuery* commande = new QSqlQuery(requete, QSqlDatabase::database(ControleurBD::nomBd()));

@@ -1,12 +1,7 @@
 #include "application.h"
+#include "Vues/vueprincipale.h"
 
 #include <QDebug>
-
-#include "Controleurs/controleuractions.h"
-#include "Controleurs/controleurappareils.h"
-#include "Controleurs/controleurclients.h"
-#include "Controleurs/controleurfiches.h"
-#include "Vues/vueprincipale.h"
 
 Application::Application(int &argc, char **argv) :
     QApplication(argc, argv)
@@ -64,7 +59,8 @@ VuePrincipale *Application::getVuePrincipale()
     return vuePrincipale;
 }
 
-void Application::creerFenetre() {
+void Application::creerFenetre()
+{
     vuePrincipale = new VuePrincipale();
     controleurClients = new ControleurClients(vuePrincipale, this);
     controleurFiches = new ControleurFiches(vuePrincipale, this);
@@ -77,7 +73,8 @@ void Application::creerFenetre() {
     paresseux = QObject::connect(vuePrincipale->getOnglets(), SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
 }
 
-void Application::chargerOnglet() {
+void Application::chargerOnglet()
+{
     QWidget* onglet = vuePrincipale->getOnglets()->currentWidget();
     if (onglet == vuePrincipale->getOngletClients() && !clientsCharges) {
         controleurClients->peuplerClients();
@@ -96,7 +93,8 @@ void Application::chargerOnglet() {
     verifierParesseux();
 }
 
-void Application::verifierParesseux() {
+void Application::verifierParesseux()
+{
     if (clientsCharges && fichesChargees && appareilsCharges && actionsChargees) {
         QObject::disconnect(paresseux);
     }
