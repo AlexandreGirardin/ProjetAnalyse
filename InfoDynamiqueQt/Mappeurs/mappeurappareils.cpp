@@ -6,7 +6,6 @@
 MappeurAppareils::MappeurAppareils(QSqlDatabase *a_bd, QObject *parent) :
     QObject(parent){
     bd = a_bd;
-//    mappeurType = new MappeurTypeAppareils(bd, this);
 }
 
 Appareil *MappeurAppareils::getAppareil(int id) {

@@ -13,8 +13,25 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
     configurerFragmentActions();
     configurerFragmentEnsembles();
 
-    requeteActions = new QString("select * from actions");
-    requeteEnsembles = new QString("select * from ensembles");
+    requeteToutesActions = new QString("SELECT * FROM actions");
+    requeteActionsActives = new QString("SELECT * FROM actions WHERE etat = 1");
+    requeteActions = requeteActionsActives;
+    requeteToutesActionsFiltre = new QString(*requeteToutesActions
+                                             + QString(" WHERE id LIKE :filtre\
+                                                       OR nom LIKE :filtre\
+                                                       OR description LIKE :filtre"));
+    requeteActionsActivesFiltre = new QString(*requeteActionsActives
+                                             + QString(" HAVING id LIKE :filtre\
+                                                       OR nom LIKE :filtre\
+                                                       OR description LIKE :filtre"));
+    requeteActionsFiltre = requeteToutesActionsFiltre;
+
+    requeteEnsembles = new QString("SELECT * FROM ensembles");
+
+    QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(activerCritereActions()));
+    QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(desactiverCritereActions()));
+            QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
+    fragmentActions->getCaseCocher()->setChecked(true);
 }
 
 void ControleurActions::configurerFragmentActions() {
@@ -41,5 +58,32 @@ void ControleurActions::peuplerEnsembles() {
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     ensembles->setQuery(*requeteEnsembles, bd);
     fragmentEnsembles->peuplerTableau(ensembles);
+}
+
+void ControleurActions::activerCritereActions() {
+    requeteActions = requeteActionsActives;
+    requeteActionsFiltre = requeteActionsActivesFiltre;
+    filtrerActions(fragmentActions->getChamp()->text());
+}
+
+void ControleurActions::desactiverCritereActions() {
+    requeteActions = requeteToutesActions;
+    requeteActionsFiltre = requeteToutesActionsFiltre;
+    filtrerActions(fragmentActions->getChamp()->text());
+}
+
+void ControleurActions::filtrerActions(QString filtre) {
+    if (filtre.isEmpty()) {
+        peuplerActions();
+    } else {
+        QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+        requete.prepare(*requeteActionsFiltre);
+        const QString* meta = ControleurBD::meta();
+        requete.bindValue(":filtre", *meta + filtre + *meta);
+        requete.exec();
+        QSqlQueryModel* resultats = new QSqlQueryModel(this);
+        resultats->setQuery(requete);
+        fragmentActions->peuplerTableau(resultats);
+    }
 }
 

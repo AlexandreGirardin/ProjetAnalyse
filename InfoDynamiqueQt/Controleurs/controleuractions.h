@@ -46,10 +46,23 @@ private:
      */
     void configurerFragmentEnsembles();
 
-    // La requête utilisée pour peupler les actions
     const QString* requeteActions;
 
-    // La requête utilisée pour peupler les ensembles
+    const QString* requeteActionsFiltre;
+
+    // La requête utilisée pour sélectionner les actions actives et inactives
+    const QString* requeteToutesActions;
+
+    // La requête utilisée pour sélectionner les actions actives uniquement
+    const QString* requeteActionsActives;
+
+    // La requête utilisée pour sélectionner les actions actives et inactives qui correspondent à une sous-chaîne
+    const QString* requeteToutesActionsFiltre;
+
+    // La requête utilisée pour sélectionner les actions actives uniquement qui correspondent à une sous-chaîne
+    const QString* requeteActionsActivesFiltre;
+
+    // La requête utilisée pour sélectionner les ensembles
     const QString* requeteEnsembles;
 
 public slots:
@@ -65,6 +78,12 @@ public slots:
      * Peuple la table de fragmentEnsembles avec tous les ensembles
      */
     void peuplerEnsembles();
+
+    void activerCritereActions();
+
+    void desactiverCritereActions();
+
+    void filtrerActions(QString filtre);
 
 };
 
