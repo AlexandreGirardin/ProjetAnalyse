@@ -2,7 +2,6 @@
 
 #include <QVariant>
 #include <QtSql/QSqlQuery>
-#include <QDebug>
 
 MappeurActions::MappeurActions(QSqlDatabase* a_bd, QObject* parent) :
     QObject(parent) {
@@ -36,12 +35,14 @@ QList<Action*>* MappeurActions::getActions() {
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
     int colDesc = ligne.indexOf("description");
+    int colEtat = ligne.indexOf("active");
     while (commande->next()) {
         ligne = commande->record();
         Action* action = new Action(this);
         action->setId(ligne.value(colId).toInt());
         action->setNom(ligne.value(colNom).toString());
         action->setDescription(ligne.value(colDesc).toString());
+        action->setEtat(ligne.value(colEtat).toBool());
         liste->append(action);
     }
     return liste;

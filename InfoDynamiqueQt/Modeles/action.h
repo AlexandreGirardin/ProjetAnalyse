@@ -1,9 +1,9 @@
 #ifndef ACTION_H
 #define ACTION_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
-class Action: public QObject {
+class Action: public ModeleBD {
 
     // Définition d'une action effectuée sur un appareil par un technicien
 
@@ -17,6 +17,9 @@ private:
 
     // La description de l'Action
     QString description;
+
+    // Si l'Action est pratiquée par l'entreprise
+    bool etat;
 
 public:
 
@@ -68,6 +71,8 @@ public:
      */
     QString out();
 
+    bool getEtat() const;
+    void setEtat(bool value);
 };
 
 #endif // ACTION_H
