@@ -52,7 +52,8 @@ SOURCES += main.cpp\
     Modeles/modelebd.cpp \
     Mappeurs/mappeurappareils.cpp \
     Vues/vueappareil.cpp \
-    Controleurs/application.cpp
+    Controleurs/application.cpp \
+    Controleurs/requetessql.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -94,7 +95,8 @@ HEADERS  += \
     Modeles/modelebd.h \
     Mappeurs/mappeurappareils.h \
     Vues/vueappareil.h \
-    Controleurs/application.h
+    Controleurs/application.h \
+    Controleurs/requetessql.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \

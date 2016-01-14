@@ -129,17 +129,31 @@ public slots:
     void modifierClient();
 
     /**
+     * @brief filtrerClients
+     * Filtre les clients affichés selon la correspondance avec une chaîne
+     * @param filtre Critère de filtre à utiliser
+     */
+    void filtrerClients(QString filtre);
+
+private slots:
+
+    /**
      * @brief modifierClient
      * Lance la visualisation du client sélectionné
      */
     void voirClient();
 
     /**
-     * @brief filtrerClients
-     * Filtre les clients affichés selon la correspondance avec une chaîne
-     * @param filtre Critère de filtre à utiliser
+     * @brief modifierAppareil
+     * Lance la visualisation de l'appareil sélectionné
      */
-    void filtrerClients(QString filtre);
+    void voirAppareil();
+
+    /**
+     * @brief modifierFiche
+     * Lance la visualisation de la fiche sélectionnée
+     */
+    void voirFiche();
 };
 
 #endif // CONTROLEURCLIENTS_H

@@ -115,9 +115,6 @@
          <height>16777215</height>
         </size>
        </property>
-       <property name="text">
-        <string/>
-       </property>
        <property name="placeholderText">
         <string>Recherche</string>
        </property>

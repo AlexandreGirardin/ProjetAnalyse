@@ -51,21 +51,6 @@ private:
 
     const QString* requeteActionsFiltre;
 
-    // La requête utilisée pour sélectionner les actions actives et inactives
-    const QString* requeteToutesActions;
-
-    // La requête utilisée pour sélectionner les actions actives uniquement
-    const QString* requeteActionsActives;
-
-    // La requête utilisée pour sélectionner les actions actives et inactives qui correspondent à une sous-chaîne
-    const QString* requeteToutesActionsFiltre;
-
-    // La requête utilisée pour sélectionner les actions actives uniquement qui correspondent à une sous-chaîne
-    const QString* requeteActionsActivesFiltre;
-
-    // La requête utilisée pour sélectionner les ensembles
-    const QString* requeteEnsembles;
-
 public slots:
 
     /**

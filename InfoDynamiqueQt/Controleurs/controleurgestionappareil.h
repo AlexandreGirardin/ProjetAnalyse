@@ -29,6 +29,8 @@ public slots:
      */
     void ajouterAppareil();
 
+    void voirAppareil(int idAppareil);
+
 };
 
 #endif // CONTROLEURGESTIONAPPAREIL_H

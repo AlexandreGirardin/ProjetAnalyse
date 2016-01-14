@@ -8,6 +8,7 @@
 #include "Controleurs/controleurbd.h"
 #include "Controleurs/controleurclients.h"
 #include "Controleurs/controleurfiches.h"
+#include "Controleurs/requetessql.h"
 
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurappareils.h"
@@ -32,6 +33,7 @@ public:
 
     static QSqlDatabase* bd;
     static ControleurBD* controleurBD;
+    static RequetesSQL* sql;
     static MappeurActions* actions;
     static MappeurAppareils* appareils;
     static MappeurClients* clients;

@@ -10,6 +10,7 @@ VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragm
     ui->setupUi(this);
     ui->tableau->horizontalHeader()->setStretchLastSection(true);
     ui->tableau->horizontalHeader()->setSectionsMovable(true);
+    ui->champ->setClearButtonEnabled(true);
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
     QObject::connect(ui->boutonModifier, SIGNAL(clicked()), this, SIGNAL(clicEditer()));
     QObject::connect(ui->boutonVoir, SIGNAL(clicked()), this, SIGNAL(clicVoir()));

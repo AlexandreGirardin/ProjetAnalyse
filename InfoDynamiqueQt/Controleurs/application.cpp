@@ -10,6 +10,7 @@ Application::Application(int &argc, char **argv) :
     controleurBD = new ControleurBD(this);
     controleurBD->connecterDossiers();
     bd = controleurBD->getBd();
+    sql = new RequetesSQL(this);
     actions = new MappeurActions(bd, this);
     appareils = new MappeurAppareils(this);
     clients = new MappeurClients(bd, this);
@@ -24,6 +25,7 @@ Application* Application::m_instance = NULL;
 VuePrincipale* Application::vuePrincipale = NULL;
 QSqlDatabase* Application::bd = NULL;
 ControleurBD* Application::controleurBD = NULL;
+RequetesSQL* Application::sql = NULL;
 MappeurActions* Application::actions = NULL;
 MappeurAppareils* Application::appareils = NULL;
 MappeurClients* Application::clients = NULL;

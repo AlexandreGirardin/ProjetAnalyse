@@ -3,31 +3,30 @@
 #include "Controleurs/application.h"
 #include "Vues/vuegestionclient.h"
 
-ControleurGestionClient::ControleurGestionClient(QObject* parent) : QObject(parent)
+ControleurGestionClient::ControleurGestionClient(QObject* parent)
+    : QObject(parent)
 {
-    mappeur = Application::clients;
 }
 
 void ControleurGestionClient::ajouterClient()
 {
-    VueGestionClient* vue = new VueGestionClient();
+    VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
     vue->exec();
 }
 
 void ControleurGestionClient::modifierClient(int idClient)
 {
-    VueGestionClient* vue = new VueGestionClient();
-    Client* client = mappeur->getClient(idClient);
+    VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
+    Client* client = Application::clients->getClient(idClient);
     assignerClient(vue, client);
     vue->exec();
 }
 
 void ControleurGestionClient::voirClient(int idClient)
 {
-    VueGestionClient* vue = new VueGestionClient();
-    Client* client = mappeur->getClient(idClient);
+    VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
+    Client* client = Application::clients->getClient(idClient);
     assignerClient(vue, client);
-    vue->setWindowModality(Qt::NonModal);
     vue->setLectureSeule();
     vue->show();
 }

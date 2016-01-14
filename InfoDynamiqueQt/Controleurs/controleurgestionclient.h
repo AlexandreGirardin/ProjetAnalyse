@@ -22,17 +22,20 @@ public:
 private:
 
     /**
-     * @brief mappeur
-     */
-    MappeurClients* mappeur;
-
-    /**
      * @brief assignerClient
      * Insère les informations d'un client dans les champs d'une fiche de gestion
      * @param vue La vue cible
-     * @param client Le client cible
+     * @param client Le client source
      */
     void assignerClient(VueGestionClient* vue, Client* client);
+
+    /**
+     * @brief lireClient
+     * Insère la valeur des champs d'une fiche de gestion dans un client
+     * @param client Le client cible
+     * @param vue La vue source
+     */
+    void lireClient(Client* client, VueGestionClient* vue);
 
 public slots:
 

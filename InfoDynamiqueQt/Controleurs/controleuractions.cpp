@@ -11,26 +11,14 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
     : QObject(parent)
 {
     splitter = new QSplitter(Qt::Vertical, vuePrincipale->getUi()->ongletActions);
+    splitter->setChildrenCollapsible(false);
     vuePrincipale->getUi()->ongletActions->layout()->addWidget(splitter);
 
     configurerFragmentActions();
     configurerFragmentEnsembles();
 
-    requeteToutesActions = new QString("SELECT id, nom as 'Action', description as 'Description', IF (etat < 1, '', '✓') as 'Activée' FROM actions");
-    requeteActionsActives = new QString("SELECT id, nom as 'Action', description as 'Description' FROM actions WHERE etat = 1");
-    requeteToutesActionsFiltre = new QString(*requeteToutesActions
-                                             + QString(" WHERE id LIKE :filtre\
-                                                       OR nom LIKE :filtre\
-                                                       OR description LIKE :filtre"));
-    requeteActionsActivesFiltre = new QString(*requeteActionsActives
-                                             + QString(" HAVING id LIKE :filtre\
-                                                       OR nom LIKE :filtre\
-                                                       OR description LIKE :filtre"));
-
-    requeteEnsembles = new QString("SELECT id, nom as 'Ensemble', description as 'Description' FROM ensembles");
-
-    requeteActions = requeteActionsActives;
-    requeteActionsFiltre = requeteActionsActivesFiltre;
+    requeteActions = Application::sql->afficherActionsActives;
+    requeteActionsFiltre = Application::sql->filtrerActionsActives;
 
     QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(desactiverCritereActions()));
     QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
@@ -55,8 +43,7 @@ void ControleurActions::configurerFragmentEnsembles()
 void ControleurActions::peuplerActions()
 {
     QSqlQueryModel* actions = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    actions->setQuery(*requeteActions, bd);
+    actions->setQuery(*requeteActions, *Application::bd);
     fragmentActions->peuplerTableau(actions);
     fragmentActions->getTableau()->hideColumn(0);
 }
@@ -64,22 +51,21 @@ void ControleurActions::peuplerActions()
 void ControleurActions::peuplerEnsembles()
 {
     QSqlQueryModel* ensembles = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    ensembles->setQuery(*requeteEnsembles, bd);
+    ensembles->setQuery(*Application::sql->afficherEnsembles, *Application::bd);
     fragmentEnsembles->peuplerTableau(ensembles);
     fragmentEnsembles->getTableau()->hideColumn(0);
 }
 
 void ControleurActions::activerCritereActions()
 {
-    requeteActions = requeteActionsActives;
-    requeteActionsFiltre = requeteActionsActivesFiltre;
+    requeteActions = Application::sql->afficherActionsActives;
+    requeteActionsFiltre = Application::sql->filtrerActionsActives;
     filtrerActions(fragmentActions->getChamp()->text());
 }
 
 void ControleurActions::desactiverCritereActions() {
-    requeteActions = requeteToutesActions;
-    requeteActionsFiltre = requeteToutesActionsFiltre;
+    requeteActions = Application::sql->afficherToutesActions;
+    requeteActionsFiltre = Application::sql->filtrerToutesActions;
     filtrerActions(fragmentActions->getChamp()->text());
 }
 
@@ -88,7 +74,7 @@ void ControleurActions::filtrerActions(QString filtre)
     if (filtre.isEmpty()) {
         peuplerActions();
     } else {
-        QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+        QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*requeteActionsFiltre);
         const QString* meta = ControleurBD::meta();
         requete.bindValue(":filtre", *meta + filtre + *meta);
@@ -102,14 +88,14 @@ void ControleurActions::filtrerActions(QString filtre)
 
 void ControleurActions::voirAction()
 {
-    if (fragmentActions->getIdModele() != -1) {
-        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
+//    if (fragmentActions->getIdModele() != -1) {
+//        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
 //        qDebug() << action->out();
 //        VueAction* vue = new VueAction();
 //        Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
 //        assignerAppareil(vue, appareil);
 //        vue->setWindowModality(Qt::NonModal);
 //        vue->show();
-    }
+//    }
 }
 

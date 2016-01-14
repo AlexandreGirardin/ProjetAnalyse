@@ -3,9 +3,10 @@
 
 #include <QObject>
 
+#include "Mappeurs/mappeurappareils.h"
+
 #include "Vues/vueprincipale.h"
 #include "Vues/vuefragment.h"
-#include "Mappeurs/mappeurappareils.h"
 #include "Vues/vuegestionappareil.h"
 #include "Vues/vueappareil.h"
 
@@ -29,20 +30,6 @@ private:
     // Le fragment des appareils
     VueFragment* fragment;
 
-    // La commande SQL utilisée pour sélectionner les appareils
-    const QString* commandeAppareils;
-
-    // La commande SQL utilisée pour chercher des appareils
-    const QString* commandeFiltrerAppareils;
-
-    // Assigne les commandes SQL
-    void definirCommandes();
-
-    /**
-     * @brief mappeur
-     */
-    MappeurAppareils* mappeur;
-
 public slots:
 
     /**
@@ -50,8 +37,6 @@ public slots:
      * Peuple la table du fragment avec tous les appareils
      */
     void peuplerAppareils();
-
-//    void nouvelAppareil();
 
     /**
      * @brief modifierAppareil

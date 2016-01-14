@@ -11,59 +11,21 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
     : QObject(parent)
 {
     fragment = new VueFragment();
-    fragment->getEtiquette()->setText(tr("Appareils"));
+    fragment->getEtiquette()->hide();
     fragment->getBoutonAjouter()->hide();
     fragment->getCaseCocher()->hide();
     vuePrincipale->getUi()->ongletAppareils->layout()->addWidget(fragment);
-    definirCommandes();
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-//    QObject::connect(fragment, SIGNAL(clicCreer()), this, SLOT(nouvelAppareil()));
     QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
     QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    mappeur = Application::appareils;
-}
-
-void ControleurAppareils::definirCommandes()
-{
-    commandeAppareils = new QString(
-            "SELECT\
-                a.id AS '#',\
-                c.telephone AS 'Client',\
-                t.nom as 'Type',\
-                f.nom AS 'Fabricant',\
-                COALESCE(fi.nbO, 0) as 'Fiches',\
-                a.description AS 'Description'\
-            FROM\
-                appareils a\
-            LEFT OUTER JOIN\
-                (select id, nom from fabricants) f\
-            ON\
-                a.idFabricant = f.id\
-            LEFT OUTER JOIN\
-                (select idAppareil, count(id) as 'nbO' from fiches group by idAppareil) fi\
-            ON\
-                a.id = fi.idAppareil\
-            LEFT OUTER JOIN\
-                (select id, telephone from clients) c\
-            ON\
-                a.idClient = c.id\
-            LEFT OUTER JOIN\
-                (select id, nom from types) t\
-            ON\
-                a.idType = t.id");
-    commandeFiltrerAppareils = new QString(*commandeAppareils +
-                                           QString(" WHERE a.id LIKE :filtre\
-                                                   OR f.nom LIKE :filtre\
-                                                   OR a.description LIKE :filtre"));
 }
 
 void ControleurAppareils::peuplerAppareils()
 {
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
-    const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
-    appareils->setQuery(*commandeAppareils, bd);
+    appareils->setQuery(*Application::sql->afficherAppareils, *Application::bd);
     fragment->peuplerTableau(appareils);
     fragment->getTableau()->hideColumn(0);
 }
@@ -91,30 +53,11 @@ void ControleurAppareils::modifierAppareil()
     }
 }
 
-//void ControleurAppareils::nouvelAppareil()
-//{
-//    VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
-//    vue->setTypes(Application::typesAppareils->getTypesAppareil());
-//    vue->setFabricants(Application::fabricants->getFabricants());
-//    vue->exec();
-//    Appareil* nouveau = new Appareil(fragment);
-//    nouveau->setMotDePasse(vue->getMotDePasse());
-//    nouveau->setType(vue->getType());
-//    nouveau->setFabricant(vue->getFabricant());
-//    nouveau->setDescription(vue->getDescription());
-//    bool succes = Application::appareils->mettreAJour(appareil);
-//    if (succes) {
-//        emit donneesModifiees();
-//    } else {
-//        qDebug() << "Pas marché: " << appareil->out();
-//    }
-//}
-
 void ControleurAppareils::voirAppareil()
 {
     if (fragment->getIdModele() != -1) {
         VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
-        Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
+        Appareil* appareil = Application::appareils->getAppareil(fragment->getIdModele());
         vue->getChampFabricant()->setText(appareil->getNomFabricant());
         vue->getChampType()->setText(appareil->getNomType());
         vue->getChampDescription()->setText(appareil->getDescription());
@@ -128,8 +71,8 @@ void ControleurAppareils::filtrerAppareils(QString filtre)
     if (filtre.isEmpty()) {
         peuplerAppareils();
     } else {
-        QSqlQuery requete = QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
-        requete.prepare(*commandeFiltrerAppareils);
+        QSqlQuery requete = QSqlQuery(*Application::bd);
+        requete.prepare(*Application::sql->filtrerAppareils);
         const QString* meta = ControleurBD::meta();
         requete.bindValue(":filtre", *meta + filtre + *meta);
         requete.exec();
