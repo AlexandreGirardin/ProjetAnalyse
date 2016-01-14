@@ -2,7 +2,6 @@
 #include <QDebug>
 
 #include <Vues/vuegestionpiece.h>
-#include "Controleurs/controleurapplication.h"
 #include "Controleurs/controleurbd.h"
 #include "Mappeurs/mappeurpieces.h"
 #include "Modeles/piece.h"
@@ -10,6 +9,7 @@
 int main(int argc, char *argv[])
 {
     Application application(argc, argv);
-    application.debug();
+    application.demarrer();
+//    application.debug();
     return application.exec();
 }

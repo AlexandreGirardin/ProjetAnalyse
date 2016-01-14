@@ -1,5 +1,15 @@
 #include "Modeles/appareil.h"
 
+
+int Appareil::getIdClient() const
+{
+    return idClient;
+}
+
+void Appareil::setIdClient(int value)
+{
+    idClient = value;
+}
 Appareil::Appareil(QObject* parent) :
     QObject(parent)
 {
@@ -77,17 +87,17 @@ void Appareil::setDescription(const QString &value)
 
 QString Appareil::out()
 {
-    QString out = QString::number(id) + " ";
+    QString out = QString("#") + QString::number(id) + " @"+QString::number(idClient) + " ";
     if (fabricant != NULL) {
         out.append(fabricant->getNom() + " ");
     } else {
-        out.append("fabricant indéfini ");
+        out.append("?fabricant? ");
     }
     if (type != NULL) {
         out.append(type->getNom() + " ");
     } else {
-        out.append("type indéfini ");
+        out.append("?type? ");
     }
-    out.append(description);
+    out.append(motDePasse + " " + description);
     return out;
 }

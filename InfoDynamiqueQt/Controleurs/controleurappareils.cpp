@@ -12,13 +12,15 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
 {
     fragment = new VueFragment();
     fragment->getEtiquette()->setText(tr("Appareils"));
+    fragment->getBoutonAjouter()->hide();
     fragment->getCaseCocher()->hide();
     vuePrincipale->getUi()->ongletAppareils->layout()->addWidget(fragment);
     definirCommandes();
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-    QObject::connect(fragment, SIGNAL(clicCreer()), this, SLOT(nouvelAppareil()));
+//    QObject::connect(fragment, SIGNAL(clicCreer()), this, SLOT(nouvelAppareil()));
+    QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
     QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     mappeur = Application::appareils;
 }
@@ -28,6 +30,8 @@ void ControleurAppareils::definirCommandes()
     commandeAppareils = new QString(
             "SELECT\
                 a.id AS '#',\
+                c.telephone AS 'Client',\
+                t.nom as 'Type',\
                 f.nom AS 'Fabricant',\
                 COALESCE(fi.nbO, 0) as 'Fiches',\
                 a.description AS 'Description'\
@@ -40,7 +44,15 @@ void ControleurAppareils::definirCommandes()
             LEFT OUTER JOIN\
                 (select idAppareil, count(id) as 'nbO' from fiches group by idAppareil) fi\
             ON\
-                a.id = fi.idAppareil");
+                a.id = fi.idAppareil\
+            LEFT OUTER JOIN\
+                (select id, telephone from clients) c\
+            ON\
+                a.idClient = c.id\
+            LEFT OUTER JOIN\
+                (select id, nom from types) t\
+            ON\
+                a.idType = t.id");
     commandeFiltrerAppareils = new QString(*commandeAppareils +
                                            QString(" WHERE a.id LIKE :filtre\
                                                    OR f.nom LIKE :filtre\
@@ -53,6 +65,7 @@ void ControleurAppareils::peuplerAppareils()
     const QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
     appareils->setQuery(*commandeAppareils, bd);
     fragment->peuplerTableau(appareils);
+    fragment->getTableau()->hideColumn(0);
 }
 
 void ControleurAppareils::modifierAppareil()
@@ -69,23 +82,33 @@ void ControleurAppareils::modifierAppareil()
         appareil->setType(vue->getType());
         appareil->setFabricant(vue->getFabricant());
         appareil->setDescription(vue->getDescription());
-        qDebug() << appareil->out() << " " << appareil->getMotDePasse();
+        bool succes = Application::appareils->mettreAJour(appareil);
+        if (succes) {
+            emit donneesModifiees();
+        } else {
+            qDebug() << "Pas marché: " << appareil->out();
+        }
     }
 }
 
-void ControleurAppareils::nouvelAppareil()
-{
-    VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
-    vue->setTypes(Application::typesAppareils->getTypesAppareil());
-    vue->setFabricants(Application::fabricants->getFabricants());
-    vue->exec();
-    Appareil* nouveau = new Appareil(fragment);
-    nouveau->setMotDePasse(vue->getMotDePasse());
-    nouveau->setType(vue->getType());
-    nouveau->setFabricant(vue->getFabricant());
-    nouveau->setDescription(vue->getDescription());
-    qDebug() << nouveau->out() << " " << nouveau->getMotDePasse();
-}
+//void ControleurAppareils::nouvelAppareil()
+//{
+//    VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
+//    vue->setTypes(Application::typesAppareils->getTypesAppareil());
+//    vue->setFabricants(Application::fabricants->getFabricants());
+//    vue->exec();
+//    Appareil* nouveau = new Appareil(fragment);
+//    nouveau->setMotDePasse(vue->getMotDePasse());
+//    nouveau->setType(vue->getType());
+//    nouveau->setFabricant(vue->getFabricant());
+//    nouveau->setDescription(vue->getDescription());
+//    bool succes = Application::appareils->mettreAJour(appareil);
+//    if (succes) {
+//        emit donneesModifiees();
+//    } else {
+//        qDebug() << "Pas marché: " << appareil->out();
+//    }
+//}
 
 void ControleurAppareils::voirAppareil()
 {
@@ -113,6 +136,12 @@ void ControleurAppareils::filtrerAppareils(QString filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
+        fragment->getTableau()->hideColumn(0);
     }
+}
+
+void ControleurAppareils::recharger()
+{
+    filtrerAppareils(fragment->getChamp()->text());
 }
 

@@ -26,6 +26,8 @@ private:
 
     QString description;
 
+    int idClient;
+
 public:
 
     /**
@@ -84,6 +86,8 @@ public:
     void setMotDePasse(const QString &value);
     QString getDescription() const;
     void setDescription(const QString &value);
+    int getIdClient() const;
+    void setIdClient(int value);
 };
 
 #endif // APPAREIL_H

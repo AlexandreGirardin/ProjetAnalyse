@@ -51,7 +51,7 @@ public slots:
      */
     void peuplerAppareils();
 
-    void nouvelAppareil();
+//    void nouvelAppareil();
 
     /**
      * @brief modifierAppareil
@@ -71,6 +71,13 @@ public slots:
      * @param filtre Critère de filtre à utiliser
      */
     void filtrerAppareils(QString filtre);
+
+    void recharger();
+
+signals:
+
+    void donneesModifiees();
+
 };
 
 #endif // CONTROLEURAPPAREILS_H

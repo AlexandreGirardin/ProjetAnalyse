@@ -11,7 +11,7 @@ Application::Application(int &argc, char **argv) :
     controleurBD->connecterDossiers();
     bd = controleurBD->getBd();
     actions = new MappeurActions(bd, this);
-    appareils = new MappeurAppareils(bd, this);
+    appareils = new MappeurAppareils(this);
     clients = new MappeurClients(bd, this);
     fabricants = new MappeurFabricants(bd, this);
     pieces = new MappeurPieces(bd, this);
