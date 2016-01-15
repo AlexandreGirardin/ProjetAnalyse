@@ -1,17 +1,18 @@
 #include "Mappeurs/mappeurclients.h"
 
+#include "Controleurs/application.h"
+
 #include <QtSql/QSqlQuery>
 
-MappeurClients::MappeurClients(QSqlDatabase* a_bd, QObject* parent) :
+MappeurClients::MappeurClients(QObject* parent) :
     QObject(parent)
 {
-    bd = a_bd;
 }
 
 Client* MappeurClients::getClient(int id)
 {
     Client* client = NULL;
-    QSqlQuery requete = QSqlQuery(*bd);
+    QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare("SELECT * FROM clients WHERE id=:id");
     requete.bindValue(":id", id);
     requete.exec();

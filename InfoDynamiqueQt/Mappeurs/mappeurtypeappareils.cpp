@@ -1,20 +1,20 @@
 #include "Mappeurs/mappeurtypeappareils.h"
-#include "Controleurs/controleurbd.h"
+
+#include "Controleurs/application.h"
 
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 #include <QDebug>
 
-MappeurTypeAppareils::MappeurTypeAppareils(QSqlDatabase* a_bd, QObject* parent) :
+MappeurTypeAppareils::MappeurTypeAppareils(QObject* parent) :
     QObject(parent)
 {
-    bd = a_bd;
 }
 
 TypeAppareil* MappeurTypeAppareils::getTypeAppareil(int idType)
 {
     TypeAppareil* type = NULL;
-    QSqlQuery* commande = new QSqlQuery(QSqlDatabase::database(ControleurBD::nomBd()));
+    QSqlQuery* commande = new QSqlQuery(*Application::bd);
     commande->prepare("SELECT * FROM types WHERE id=:idType");
     commande->bindValue(":idType", idType);
     commande->exec();
@@ -38,7 +38,7 @@ QList<TypeAppareil*>* MappeurTypeAppareils::getTypesAppareil(void)
 {
     QList<TypeAppareil*>* liste = new QList<TypeAppareil*>();
     QString requete = "SELECT * FROM types";
-    QSqlQuery* commande = new QSqlQuery(requete, QSqlDatabase::database(ControleurBD::nomBd()));
+    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");

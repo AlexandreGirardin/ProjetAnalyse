@@ -21,7 +21,7 @@ public:
      * @param a_bd La base de données à utiliser
      * @param parent
      */
-    explicit MappeurActions(QSqlDatabase* a_bd, QObject* parent = 0);
+    explicit MappeurActions(QObject* parent = 0);
 
     /**
      * @brief getAction
@@ -37,11 +37,6 @@ public:
     QList<Action*>* getActions();
 
 private:
-
-    /**
-     * @brief bd la base de donnéessource
-     */
-    QSqlDatabase* bd;
 
     /**
      * @brief mapper

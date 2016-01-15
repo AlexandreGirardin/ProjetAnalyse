@@ -3,17 +3,18 @@
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurPieces::MappeurPieces(QSqlDatabase* a_bd, QObject* parent) :
+#include "Controleurs/application.h"
+
+MappeurPieces::MappeurPieces(QObject* parent) :
     QObject(parent)
 {
-    bd = a_bd;
 }
 
 Piece* MappeurPieces::getPiece(int id)
 {
     Piece* piece = NULL;
     QString requete = "SELECT * FROM pieces WHERE id="+QString::number(id);
-    QSqlQuery* commande = new QSqlQuery(requete, *bd);
+    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
     if (commande->next()) {
         piece = mapper(commande->record());
     }
@@ -32,7 +33,7 @@ QList<Piece*>* MappeurPieces::getPieces(void)
 {
     QList<Piece*>* liste = new QList<Piece*>();
     QString requete = "SELECT * FROM pieces";
-    QSqlQuery* commande = new QSqlQuery(requete, *bd);
+    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");

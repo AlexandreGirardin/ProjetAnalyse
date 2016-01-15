@@ -1,19 +1,20 @@
 #include "Mappeurs/mappeurtechniciens.h"
 
+#include "Controleurs/application.h"
+
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurTechniciens::MappeurTechniciens(QSqlDatabase* a_bd, QObject* parent) :
+MappeurTechniciens::MappeurTechniciens(QObject* parent) :
     QObject(parent)
 {
-    bd = a_bd;
 }
 
 Technicien* MappeurTechniciens::getTechnicien(int a_id)
 {
     Technicien* technicien = NULL;
     QString requete = "SELECT * FROM techniciens WHERE id="+QString::number(a_id);
-    QSqlQuery* commande = new QSqlQuery(requete,* bd);
+    QSqlQuery* commande = new QSqlQuery(requete,*Application::bd);
     if (commande->next()) {
         technicien = mapper(commande->record());
     }
@@ -30,7 +31,7 @@ QList<Technicien*>* MappeurTechniciens::getTechniciens(void)
 {
     QList<Technicien*>* liste = new QList<Technicien*>;
     QString requete = "SELECT * FROM techniciens";
-    QSqlQuery* commande = new QSqlQuery(requete,* bd);
+    QSqlQuery* commande = new QSqlQuery(requete,*Application::bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");

@@ -23,7 +23,7 @@ public:
      * @param a_bd La base de données à utiliser
      * @param parent
      */
-    explicit MappeurClients(QSqlDatabase* a_bd, QObject* parent = 0);
+    explicit MappeurClients(QObject* parent = 0);
 
     /**
      * @brief getClient
@@ -33,11 +33,6 @@ public:
     Client* getClient(int id);
 
 private:
-
-    /**
-     * @brief bd La base de données source
-     */
-    QSqlDatabase* bd;
 
     /**
      * @brief mapper

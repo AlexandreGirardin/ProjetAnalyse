@@ -1,19 +1,20 @@
 #include "Mappeurs/mappeurfabricants.h"
 
+#include "Controleurs/application.h"
+
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurFabricants::MappeurFabricants(QSqlDatabase* a_bd, QObject* parent) :
+MappeurFabricants::MappeurFabricants(QObject* parent) :
     QObject(parent)
 {
-    bd = a_bd;
 }
 
 Fabricant* MappeurFabricants::getFabricant(int id)
 {
     Fabricant* fabricant = NULL;
     QString requete = "SELECT * FROM fabricants WHERE id="+QString::number(id);
-    QSqlQuery* commande = new QSqlQuery(requete,* bd);
+    QSqlQuery* commande = new QSqlQuery(requete,*Application::bd);
     if (commande->next()) {
         fabricant = mapper(commande->record());
     }
@@ -32,7 +33,7 @@ QList<Fabricant*>* MappeurFabricants::getFabricants()
 {
     QList<Fabricant*>* liste = new QList<Fabricant*>();
     QString requete = "SELECT * FROM fabricants";
-    QSqlQuery* commande = new QSqlQuery(requete,* bd);
+    QSqlQuery* commande = new QSqlQuery(requete,*Application::bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");

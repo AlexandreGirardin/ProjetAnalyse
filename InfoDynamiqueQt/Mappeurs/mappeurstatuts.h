@@ -21,7 +21,7 @@ public:
      * @param a_bd La base de données à utiliser
      * @param parent
      */
-    explicit MappeurStatuts(QSqlDatabase* a_bd, QObject* parent = 0);
+    explicit MappeurStatuts(QObject* parent = 0);
 
     /**
      * @brief getStatutFiche
@@ -50,11 +50,6 @@ public:
     QList<Statut*>* getStatutsAction(void);
 
 private:
-
-    /**
-     * @brief bd La base de données source
-     */
-    QSqlDatabase* bd;
 
     /**
      * @brief mapper

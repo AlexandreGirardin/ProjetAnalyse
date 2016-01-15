@@ -21,7 +21,7 @@ public:
      * @param a_bd La base de données à utiliser
      * @param parent
      */
-    explicit MappeurTechniciens(QSqlDatabase* a_bd, QObject* parent = 0);
+    explicit MappeurTechniciens(QObject* parent = 0);
 
     /**
      * @brief getTechnicien
@@ -37,11 +37,6 @@ public:
     QList<Technicien*>* getTechniciens();
 
 private:
-
-    /**
-     * @brief bd La base de données source
-     */
-    QSqlDatabase* bd;
 
     /**
      * @brief mapper

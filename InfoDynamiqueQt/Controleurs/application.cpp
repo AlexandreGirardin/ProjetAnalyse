@@ -10,14 +10,14 @@ Application::Application(int &argc, char **argv) :
     controleurBD = new ControleurBD(this);
     controleurBD->connecterDossiers();
     bd = controleurBD->getBd();
-    actions = new MappeurActions(bd, this);
+    actions = new MappeurActions(this);
     appareils = new MappeurAppareils(this);
-    clients = new MappeurClients(bd, this);
-    fabricants = new MappeurFabricants(bd, this);
-    pieces = new MappeurPieces(bd, this);
-    statuts = new MappeurStatuts(bd, this);
-    techniciens = new MappeurTechniciens(bd, this);
-    typesAppareils = new MappeurTypeAppareils(bd, this);
+    clients = new MappeurClients(this);
+    fabricants = new MappeurFabricants(this);
+    pieces = new MappeurPieces(this);
+    statuts = new MappeurStatuts(this);
+    techniciens = new MappeurTechniciens(this);
+    typesAppareils = new MappeurTypeAppareils(this);
 }
 
 const Application* Application::m_instance = NULL;

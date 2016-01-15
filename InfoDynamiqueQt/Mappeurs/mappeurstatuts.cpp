@@ -1,19 +1,20 @@
 #include "Mappeurs/mappeurstatuts.h"
 
+#include "Controleurs/application.h"
+
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurStatuts::MappeurStatuts(QSqlDatabase* a_bd, QObject* parent)
+MappeurStatuts::MappeurStatuts(QObject* parent)
     : QObject(parent)
 {
-    bd = a_bd;
 }
 
 Statut* MappeurStatuts::getStatutFiche(int id)
 {
     Statut* statut = NULL;
     QString requete = "SELECT * FROM statutsFiche WHERE id="+QString::number(id);
-    QSqlQuery* commande = new QSqlQuery(requete, *bd);
+    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
     if (commande->next()) {
         statut = mapper(commande->record());
     }
@@ -24,7 +25,7 @@ QList<Statut*>* MappeurStatuts::getStatutsFiche(void)
 {
     QList<Statut*>* liste = new QList<Statut*>();
     QString requete = "SELECT * FROM statutsFiche";
-    QSqlQuery* commande = new QSqlQuery(requete, *bd);
+    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
@@ -41,7 +42,7 @@ Statut* MappeurStatuts::getStatutAction(int id)
 {
     Statut* statut = NULL;
     QString requete = "SELECT * FROM statutsAction WHERE id="+QString::number(id);
-    QSqlQuery* commande = new QSqlQuery(requete, *bd);
+    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
     if (commande->next()) {
         statut = mapper(commande->record());
     }
@@ -51,7 +52,7 @@ Statut* MappeurStatuts::getStatutAction(int id)
 QList<Statut*>* MappeurStatuts::getStatutsAction(void) {
     QList<Statut*>* liste = new QList<Statut*>();
     QString requete = "SELECT * FROM statutsAction";
-    QSqlQuery* commande = new QSqlQuery(requete, *bd);
+    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");

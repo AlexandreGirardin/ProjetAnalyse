@@ -21,7 +21,7 @@ public:
      * @param a_bd La base de données à utiliser
      * @param parent
      */
-    explicit MappeurTypeAppareils(QSqlDatabase* a_bd, QObject* parent = 0);
+    explicit MappeurTypeAppareils(QObject* parent = 0);
 
     /**
      * @brief getTypeAppareil
@@ -37,11 +37,6 @@ public:
     QList<TypeAppareil*>* getTypesAppareil();
 
 private:
-
-    /**
-     * @brief bd La base de données source
-     */
-    QSqlDatabase* bd;
 
     /**
      * @brief MappeurPieces::mapper

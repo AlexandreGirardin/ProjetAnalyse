@@ -5,6 +5,8 @@
 
 #include "Modeles/piece.h"
 
+//#include "Controleurs/application.h"
+
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
@@ -21,7 +23,7 @@ public:
      * @param a_bd La base de données à utiliser
      * @param parent
      */
-    explicit MappeurPieces(QSqlDatabase* a_bd, QObject* parent = 0);
+    explicit MappeurPieces(QObject* parent = 0);
 
     /**
      * @brief MappeurPieces::getPiece
@@ -37,11 +39,6 @@ public:
     QList<Piece*>* getPieces();
 
 private:
-
-    /**
-     * @brief bd La base de données source
-     */
-    QSqlDatabase* bd;
 
     /**
      * @brief MappeurPieces::mapper

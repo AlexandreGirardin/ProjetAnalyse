@@ -1,18 +1,19 @@
 #include "Mappeurs/mappeuractions.h"
 
+#include "Controleurs/application.h"
+
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurActions::MappeurActions(QSqlDatabase* a_bd, QObject* parent) :
+MappeurActions::MappeurActions(QObject* parent) :
     QObject(parent)
 {
-    bd = a_bd;
 }
 
 Action* MappeurActions::getAction(int id)
 {
     Action* action = NULL;
-    QSqlQuery requete = QSqlQuery(*bd);
+    QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare("SELECT * FROM actions WHERE id=:id");
     requete.bindValue(":id", id);
     requete.exec();
@@ -35,7 +36,7 @@ Action* MappeurActions::mapper(QSqlRecord ligne)
 QList<Action*>* MappeurActions::getActions()
 {
     QList<Action*>* liste = new QList<Action*>();
-    QSqlQuery* commande = new QSqlQuery("SELECT * FROM actions",*bd);
+    QSqlQuery* commande = new QSqlQuery("SELECT * FROM actions",*Application::bd);
     QSqlRecord ligne = commande->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
