@@ -10,7 +10,6 @@ Application::Application(int &argc, char **argv) :
     controleurBD = new ControleurBD(this);
     controleurBD->connecterDossiers();
     bd = controleurBD->getBd();
-    sql = new RequetesSQL(this);
     actions = new MappeurActions(bd, this);
     appareils = new MappeurAppareils(this);
     clients = new MappeurClients(bd, this);
@@ -21,11 +20,10 @@ Application::Application(int &argc, char **argv) :
     typesAppareils = new MappeurTypeAppareils(bd, this);
 }
 
-Application* Application::m_instance = NULL;
+const Application* Application::m_instance = NULL;
 VuePrincipale* Application::vuePrincipale = NULL;
 QSqlDatabase* Application::bd = NULL;
 ControleurBD* Application::controleurBD = NULL;
-RequetesSQL* Application::sql = NULL;
 MappeurActions* Application::actions = NULL;
 MappeurAppareils* Application::appareils = NULL;
 MappeurClients* Application::clients = NULL;
@@ -35,7 +33,7 @@ MappeurStatuts* Application::statuts = NULL;
 MappeurTechniciens* Application::techniciens = NULL;
 MappeurTypeAppareils* Application::typesAppareils = NULL;
 
-Application* Application::getInstance()
+const Application* Application::getInstance()
 {
     return m_instance;
 }

@@ -12,27 +12,15 @@ ControleurFiches::ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent
     fragment->getEtiquette()->setText(tr("Fiches"));
     fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     vuePrincipale->getOngletFiches()->layout()->addWidget(fragment);
-    definirCommandes();
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
-}
-
-void ControleurFiches::definirCommandes()
-{
-    commandeFiches = new QString("SELECT * FROM fiches");
-    commandeFiltrerFiches = new QString(*commandeFiches +
-                                        QString(" WHERE id LIKE :filtre\
-                                                OR idAppareil LIKE :filtre\
-                                                OR priorite LIKE :filtre\
-                                                OR idTechnicien LIKE :filtre\
-                                                OR idStatut LIKE :filtre\
-                                                OR commentaire LIKE :filtre"));
 }
 
 void ControleurFiches::peuplerFiches()
 {
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
-    fiches->setQuery(*commandeFiches, *Application::bd);
+    fiches->setQuery(*RequetesSQL::afficherFiches, *Application::bd);
     fragment->peuplerTableau(fiches);
+    fragment->getTableau()->hideColumn(0);
 }
 
 void ControleurFiches::modifierFiche()
@@ -50,13 +38,14 @@ void ControleurFiches::filtrerFiches(QString filtre)
         peuplerFiches();
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
-        requete.prepare(*commandeFiltrerFiches);
+        requete.prepare(*RequetesSQL::filtrerFiches);
         QString* metacaractere = new QString("%");
         requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
+        fragment->getTableau()->hideColumn(0);
     }
 }
 

@@ -2,6 +2,7 @@
 
 #include "Controleurs/application.h"
 
+#include <QDebug>
 #include <QLayout>
 #include <QSqlQueryModel>
 
@@ -17,7 +18,6 @@ ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* pare
     configurerFragmentClients();
     configurerFragmentAppareils();
     configurerFragmentFiches();
-    definirCommandes();
 }
 
 // Configuration
@@ -52,36 +52,17 @@ void ControleurClients::configurerFragmentFiches()
 {
     fragmentFiches = new VueFragment(splitter);
     fragmentFiches->getEtiquette()->setText(tr("Fiches"));
+    fragmentFiches->getCaseCocher()->setChecked(true);
     fragmentFiches->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     fragmentFiches->getChamp()->hide();
+    commandeFiches = RequetesSQL::toutesFichesPourAppareil;
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), controleurGestionFiche, SLOT(ajouterFiche()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
-}
-
-void ControleurClients::definirCommandes()
-{
-    commandeClients = new QString(
-                "SELECT\
-                      c.id AS '#',\
-                      c.telephone AS 'Téléphone',\
-                      COALESCE(a.nb,0) AS 'Nb. appareils',\
-                      c.nom AS 'Nom'\
-                 FROM\
-                      clients c\
-                 LEFT OUTER JOIN\
-                      (select idClient, count(id) as 'nb' from appareils group by idClient) a\
-                 ON\
-                      c.id = a.idClient");
-    commandeFiltreClients = new QString (*commandeClients +
-                                        QString(" WHERE c.id LIKE :filtre\
-                                                OR c.nom LIKE :filtre\
-                                                OR c.telephone LIKE :filtre\
-                                                OR c.adresse LIKE :filtre"));
-    commandeAppareils = new QString ("SELECT * FROM appareils WHERE idClient=:idClient");
-    commandeFiches = new QString("SELECT * FROM fiches WHERE idAppareil=:idAppareil");
+    QObject::connect(fragmentFiches, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
+    QObject::connect(fragmentFiches, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
 }
 
 // Clients
@@ -89,7 +70,7 @@ void ControleurClients::definirCommandes()
 void ControleurClients::peuplerClients()
 {
     QSqlQueryModel* clients = new QSqlQueryModel(this);
-    clients->setQuery(*commandeClients, *Application::bd);
+    clients->setQuery(*RequetesSQL::afficherClients, *Application::bd);
     fragmentClients->peuplerTableau(clients);
     fragmentClients->getTableau()->hideColumn(0);
 }
@@ -114,7 +95,7 @@ void ControleurClients::filtrerClients(QString filtre)
         peuplerClients();
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
-        requete.prepare(*commandeFiltreClients);
+        requete.prepare(*RequetesSQL::filtrerClients);
         const QString* meta = ControleurBD::meta();
         requete.bindValue(":filtre", *meta + filtre + *meta);
         requete.exec();
@@ -132,11 +113,11 @@ void ControleurClients::peuplerAppareils(int idClient)
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(requeteAppareils(idClient));
     fragmentAppareils->peuplerTableau(appareils);
+    fragmentAppareils->getTableau()->hideColumn(0);
 }
 
 void ControleurClients::voirAppareil()
 {
-
     if (fragmentAppareils->getIdModele() != -1) {
         controleurGestionAppareil->voirAppareil(fragmentAppareils->getIdModele());
     }
@@ -145,7 +126,7 @@ void ControleurClients::voirAppareil()
 QSqlQuery ControleurClients::requeteAppareils(int idClient) const
 {
     QSqlQuery requete = QSqlQuery(*Application::bd);
-    requete.prepare(*commandeAppareils);
+    requete.prepare(*RequetesSQL::appareilsPourClient);
     requete.bindValue(":idClient", idClient);
     requete.exec();
     return requete;
@@ -158,11 +139,26 @@ void ControleurClients::peuplerFiches(int idAppareil)
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(requeteFiches(idAppareil));
     fragmentFiches->peuplerTableau(fiches);
+    fragmentFiches->getTableau()->hideColumn(0);
 }
 
 void ControleurClients::voirFiche()
 {
 
+}
+
+void ControleurClients::activerCritereFiches()
+{
+    commandeFiches = RequetesSQL::fichesActivesPourAppareil;
+    peuplerFiches(fragmentAppareils->getIdModele());
+//    qDebug() << *commandeFiches;
+}
+
+void ControleurClients::desactiverCritereFiches()
+{
+    commandeFiches = RequetesSQL::toutesFichesPourAppareil;
+//    qDebug() << *commandeFiches;
+    peuplerFiches(fragmentAppareils->getIdModele());
 }
 
 QSqlQuery ControleurClients::requeteFiches(int idAppareil) const

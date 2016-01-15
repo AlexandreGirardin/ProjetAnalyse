@@ -28,12 +28,11 @@ public:
 
     explicit Application(int &argc, char **argv);
 
-    static Application* getInstance();
-    static VuePrincipale* getVuePrincipale();
+    static const Application *getInstance();
+    static VuePrincipale *getVuePrincipale();
 
     static QSqlDatabase* bd;
     static ControleurBD* controleurBD;
-    static RequetesSQL* sql;
     static MappeurActions* actions;
     static MappeurAppareils* appareils;
     static MappeurClients* clients;
@@ -48,7 +47,7 @@ public:
 
 private:
 
-    static Application *m_instance;
+    static const Application *m_instance;
 
     // La vue principale de l'application
     static VuePrincipale* vuePrincipale;

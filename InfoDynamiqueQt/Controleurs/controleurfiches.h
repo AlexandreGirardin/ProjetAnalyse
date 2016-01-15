@@ -26,15 +26,6 @@ private:
     // Le fragment des fiches
     VueFragment* fragment;
 
-    // Assigne les commandes SQL
-    void definirCommandes();
-
-    // La commande SQL utilisée pour sélectionner les fiches
-    const QString* commandeFiches;
-
-    // La commande SQL utilisée pour chercher des fiches
-    const QString* commandeFiltrerFiches;
-
 public slots:
 
     /**

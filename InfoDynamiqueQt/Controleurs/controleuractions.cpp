@@ -17,8 +17,8 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
     configurerFragmentActions();
     configurerFragmentEnsembles();
 
-    requeteActions = Application::sql->afficherActionsActives;
-    requeteActionsFiltre = Application::sql->filtrerActionsActives;
+    requeteActions = RequetesSQL::afficherActionsActives;
+    requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
 
     QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(desactiverCritereActions()));
     QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
@@ -51,21 +51,21 @@ void ControleurActions::peuplerActions()
 void ControleurActions::peuplerEnsembles()
 {
     QSqlQueryModel* ensembles = new QSqlQueryModel(this);
-    ensembles->setQuery(*Application::sql->afficherEnsembles, *Application::bd);
+    ensembles->setQuery(*RequetesSQL::afficherEnsembles, *Application::bd);
     fragmentEnsembles->peuplerTableau(ensembles);
     fragmentEnsembles->getTableau()->hideColumn(0);
 }
 
 void ControleurActions::activerCritereActions()
 {
-    requeteActions = Application::sql->afficherActionsActives;
-    requeteActionsFiltre = Application::sql->filtrerActionsActives;
+    requeteActions = RequetesSQL::afficherActionsActives;
+    requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
     filtrerActions(fragmentActions->getChamp()->text());
 }
 
 void ControleurActions::desactiverCritereActions() {
-    requeteActions = Application::sql->afficherToutesActions;
-    requeteActionsFiltre = Application::sql->filtrerToutesActions;
+    requeteActions = RequetesSQL::afficherToutesActions;
+    requeteActionsFiltre = RequetesSQL::filtrerToutesActions;
     filtrerActions(fragmentActions->getChamp()->text());
 }
 

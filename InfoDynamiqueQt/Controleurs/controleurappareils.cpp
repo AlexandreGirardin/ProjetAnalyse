@@ -25,7 +25,7 @@ ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* 
 void ControleurAppareils::peuplerAppareils()
 {
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
-    appareils->setQuery(*Application::sql->afficherAppareils, *Application::bd);
+    appareils->setQuery(*RequetesSQL::afficherAppareils, *Application::bd);
     fragment->peuplerTableau(appareils);
     fragment->getTableau()->hideColumn(0);
 }
@@ -72,7 +72,7 @@ void ControleurAppareils::filtrerAppareils(QString filtre)
         peuplerAppareils();
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
-        requete.prepare(*Application::sql->filtrerAppareils);
+        requete.prepare(*RequetesSQL::filtrerAppareils);
         const QString* meta = ControleurBD::meta();
         requete.bindValue(":filtre", *meta + filtre + *meta);
         requete.exec();

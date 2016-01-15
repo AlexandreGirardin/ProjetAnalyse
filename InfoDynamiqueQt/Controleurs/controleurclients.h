@@ -71,21 +71,6 @@ private:
      */
     void configurerFragmentFiches();
 
-    // Assigne les commandes SQL
-    void definirCommandes();
-
-    // La commande SQL utilisée pour sélectionner les clients
-    const QString* commandeClients;
-
-    // La commande SQL utilisée pour sélectionner les appareils
-    const QString* commandeAppareils;
-
-    // La commande SQL utilisée pour sélectionner les fiches
-    const QString* commandeFiches;
-
-    // La requête utilisée pour chercher des clients
-    const QString* commandeFiltreClients;
-
     /**
      * @brief requeteAppareils
      * @param idClient Le client dont on souhaite afficher les appareils
@@ -99,6 +84,8 @@ private:
      * @return La requête utilisée pour peupler les fiches
      */
     QSqlQuery requeteFiches(int idAppareil) const;
+
+    const QString* commandeFiches;
 
 public slots:
 
@@ -154,6 +141,10 @@ private slots:
      * Lance la visualisation de la fiche sélectionnée
      */
     void voirFiche();
+
+    void activerCritereFiches();
+
+    void desactiverCritereFiches();
 };
 
 #endif // CONTROLEURCLIENTS_H
