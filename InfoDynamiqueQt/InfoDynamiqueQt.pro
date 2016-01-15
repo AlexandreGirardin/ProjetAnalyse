@@ -53,7 +53,8 @@ SOURCES += main.cpp\
     Mappeurs/mappeurappareils.cpp \
     Vues/vueappareil.cpp \
     Controleurs/application.cpp \
-    Controleurs/requetessql.cpp
+    Controleurs/requetessql.cpp \
+    Vues/vuegestionaction.cpp
 
 HEADERS  += \
     Vues/vueauthentification.h \
@@ -96,7 +97,8 @@ HEADERS  += \
     Mappeurs/mappeurappareils.h \
     Vues/vueappareil.h \
     Controleurs/application.h \
-    Controleurs/requetessql.h
+    Controleurs/requetessql.h \
+    Vues/vuegestionaction.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
@@ -109,4 +111,5 @@ FORMS    += \
 	Vues/vuegestionpiece.ui \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
-    Vues/vueappareil.ui
+    Vues/vueappareil.ui \
+    Vues/vuegestionaction.ui

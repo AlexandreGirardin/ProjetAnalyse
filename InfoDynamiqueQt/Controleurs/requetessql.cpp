@@ -6,7 +6,7 @@ const QString* RequetesSQL::afficherClients =
                   c.id as '#',\
                   c.telephone as 'Téléphone',\
                   COALESCE(a.nb,0) as 'Nb. appareils',\
-                  c.nom as 'Nom'\
+                  CONCAT(c.nom, ', ', c.prenom) as 'Nom'\
              FROM\
                   clients c\
              LEFT OUTER JOIN\
@@ -42,7 +42,9 @@ const QString* RequetesSQL::appareilsPourClient =
             LEFT OUTER JOIN\
                 (select id, nom from types) t\
             ON\
-                a.idType = t.id");
+                a.idType = t.id\
+            WHERE\
+                a.idClient = :idClient");
 
 const QString* RequetesSQL::toutesFichesPourAppareil =
         new QString("SELECT\
@@ -174,9 +176,7 @@ const QString* RequetesSQL::afficherFiches =
 
 const QString* RequetesSQL::filtrerFiches =
         new QString(*afficherFiches +
-                    QString(" WHERE id LIKE :filtre\
-                                OR idAppareil LIKE :filtre\
-                                OR priorite LIKE :filtre\
-                                OR idTechnicien LIKE :filtre\
-                                OR idStatut LIKE :filtre\
-                                OR commentaire LIKE :filtre"));
+                    QString(" WHERE c.telephone LIKE :filtre\
+                                OR f.priorite LIKE :filtre\
+                                OR s.nom LIKE :filtre\
+                                OR f.commentaire LIKE :filtre"));
