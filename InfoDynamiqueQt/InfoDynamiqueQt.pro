@@ -11,94 +11,95 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = InfoDynamiqueQt
 TEMPLATE = app
 
+RC_ICONS = Toolbox.ico
 
 SOURCES += main.cpp\
-    Vues/vueauthentification.cpp \
-    Vues/vueprincipale.cpp \
-    Vues/vuegestiontache.cpp \
-    Vues/vuegestionpiece.cpp \
-    Vues/vuegestionfiche.cpp \
-    Vues/vuegestionensemble.cpp \
-    Vues/vuegestionclient.cpp \
-    Vues/vuegestionappareil.cpp \
-    Vues/vuefragment.cpp \
-    Vues/vueeditionfiche.cpp \
-    Controleurs/controleurclients.cpp \
-    Controleurs/controleurfiches.cpp \
-    Controleurs/controleurappareils.cpp \
-    Controleurs/controleuractions.cpp \
-    Controleurs/controleurgestionclient.cpp \
-    Controleurs/controleurbd.cpp \
-    Controleurs/controleurgestionappareil.cpp \
-    Controleurs/controleurgestionfiche.cpp \
-    Mappeurs/mappeurpieces.cpp \
-    Mappeurs/mappeuractions.cpp \
-    Mappeurs/mappeurfabricants.cpp \
-    Mappeurs/mappeurstatuts.cpp \
-    Mappeurs/mappeurtypeappareils.cpp \
-    Mappeurs/mappeurtechniciens.cpp\
-    Modeles/action.cpp \
-    Modeles/appareil.cpp \
-    Modeles/client.cpp \
-    Modeles/fabricant.cpp \
-    Modeles/fiche.cpp \
-    Modeles/statut.cpp \
-    Modeles/tache.cpp \
-    Modeles/technicien.cpp \
-    Modeles/typeappareil.cpp \
-    Modeles/piece.cpp \
-    Mappeurs/mappeurclients.cpp \
-    Modeles/ensembleactions.cpp \
-    Modeles/modelebd.cpp \
-    Mappeurs/mappeurappareils.cpp \
-    Vues/vueappareil.cpp \
-    Controleurs/application.cpp \
-    Controleurs/requetessql.cpp \
-    Vues/vuegestionaction.cpp
+	Vues/vueauthentification.cpp \
+	Vues/vueprincipale.cpp \
+	Vues/vuegestiontache.cpp \
+	Vues/vuegestionpiece.cpp \
+	Vues/vuegestionfiche.cpp \
+	Vues/vuegestionensemble.cpp \
+	Vues/vuegestionclient.cpp \
+	Vues/vuegestionappareil.cpp \
+	Vues/vuefragment.cpp \
+	Vues/vueeditionfiche.cpp \
+	Controleurs/controleurclients.cpp \
+	Controleurs/controleurfiches.cpp \
+	Controleurs/controleurappareils.cpp \
+	Controleurs/controleuractions.cpp \
+	Controleurs/controleurgestionclient.cpp \
+	Controleurs/controleurbd.cpp \
+	Controleurs/controleurgestionappareil.cpp \
+	Controleurs/controleurgestionfiche.cpp \
+	Mappeurs/mappeurpieces.cpp \
+	Mappeurs/mappeuractions.cpp \
+	Mappeurs/mappeurfabricants.cpp \
+	Mappeurs/mappeurstatuts.cpp \
+	Mappeurs/mappeurtypeappareils.cpp \
+	Mappeurs/mappeurtechniciens.cpp\
+	Modeles/action.cpp \
+	Modeles/appareil.cpp \
+	Modeles/client.cpp \
+	Modeles/fabricant.cpp \
+	Modeles/fiche.cpp \
+	Modeles/statut.cpp \
+	Modeles/tache.cpp \
+	Modeles/technicien.cpp \
+	Modeles/typeappareil.cpp \
+	Modeles/piece.cpp \
+	Mappeurs/mappeurclients.cpp \
+	Modeles/ensembleactions.cpp \
+	Modeles/modelebd.cpp \
+	Mappeurs/mappeurappareils.cpp \
+	Vues/vueappareil.cpp \
+	Controleurs/application.cpp \
+	Controleurs/requetessql.cpp \
+	Vues/vuegestionaction.cpp
 
 HEADERS  += \
-    Vues/vueauthentification.h \
-    Vues/vueprincipale.h \
-    Vues/vuegestiontache.h \
-    Vues/vuegestionpiece.h \
-    Vues/vuegestionfiche.h \
-    Vues/vuegestionensemble.h \
-    Vues/vuegestionclient.h \
-    Vues/vuegestionappareil.h \
-    Vues/vuefragment.h \
-    Vues/vueeditionfiche.h \
-    Controleurs/controleurclients.h \
-    Controleurs/controleurfiches.h \
-    Controleurs/controleurappareils.h \
-    Controleurs/controleuractions.h \
-    Controleurs/controleurgestionclient.h \
-    Controleurs/controleurgestionappareil.h \
-    Controleurs/controleurgestionfiche.h \
-    Controleurs/controleurbd.h \
-    Mappeurs/mappeurpieces.h \
-    Mappeurs/mappeuractions.h \
-    Mappeurs/mappeurfabricants.h \
-    Mappeurs/mappeurstatuts.h \
-    Mappeurs/mappeurtypeappareils.h \
-    Mappeurs/mappeurtechniciens.h \
-    Modeles/action.h \
-    Modeles/appareil.h \
-    Modeles/client.h \
-    Modeles/fabricant.h \
-    Modeles/fiche.h \
-    Modeles/statut.h \
-    Modeles/tache.h \
-    Modeles/technicien.h \
-    Modeles/typeappareil.h \
-    Modeles/piece.h \
-    Mappeurs/mappeurclients.h \
-    Modeles/ensembleactions.h \
-    Modeles/modelebd.h \
-    Mappeurs/mappeurappareils.h \
-    Vues/vueappareil.h \
-    Controleurs/application.h \
-    Controleurs/requetessql.h \
-    Vues/vuegestionaction.h
+	Vues/vueauthentification.h \
+	Vues/vueprincipale.h \
+	Vues/vuegestiontache.h \
+	Vues/vuegestionpiece.h \
+	Vues/vuegestionfiche.h \
+	Vues/vuegestionensemble.h \
+	Vues/vuegestionclient.h \
+	Vues/vuegestionappareil.h \
+	Vues/vuefragment.h \
+	Vues/vueeditionfiche.h \
+	Controleurs/controleurclients.h \
+	Controleurs/controleurfiches.h \
+	Controleurs/controleurappareils.h \
+	Controleurs/controleuractions.h \
+	Controleurs/controleurgestionclient.h \
+	Controleurs/controleurgestionappareil.h \
+	Controleurs/controleurgestionfiche.h \
+	Controleurs/controleurbd.h \
+	Mappeurs/mappeurpieces.h \
+	Mappeurs/mappeuractions.h \
+	Mappeurs/mappeurfabricants.h \
+	Mappeurs/mappeurstatuts.h \
+	Mappeurs/mappeurtypeappareils.h \
+	Mappeurs/mappeurtechniciens.h \
+	Modeles/action.h \
+	Modeles/appareil.h \
+	Modeles/client.h \
+	Modeles/fabricant.h \
+	Modeles/fiche.h \
+	Modeles/statut.h \
+	Modeles/tache.h \
+	Modeles/technicien.h \
+	Modeles/typeappareil.h \
+	Modeles/piece.h \
+	Mappeurs/mappeurclients.h \
+	Modeles/ensembleactions.h \
+	Modeles/modelebd.h \
+	Mappeurs/mappeurappareils.h \
+	Vues/vueappareil.h \
+	Controleurs/application.h \
+	Controleurs/requetessql.h \
+	Vues/vuegestionaction.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
@@ -111,5 +112,5 @@ FORMS    += \
 	Vues/vuegestionpiece.ui \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
-    Vues/vueappareil.ui \
-    Vues/vuegestionaction.ui
+	Vues/vueappareil.ui \
+	Vues/vuegestionaction.ui
