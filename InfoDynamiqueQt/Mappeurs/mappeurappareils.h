@@ -5,6 +5,7 @@
 
 #include "Mappeurs/mappeurtypeappareils.h"
 
+#include "Modeles/action.h"
 #include "Modeles/appareil.h"
 #include "Modeles/client.h"
 
@@ -40,6 +41,8 @@ public:
 
     bool inserer(const Appareil* appareil);
 
+    bool mettreAJour(const Action *action);
+
 private:
 
     // Le mappeur utilisé pour fabriquer les objets Type des appareils
@@ -53,8 +56,6 @@ private:
     Appareil* mapper(const QSqlRecord ligne);
 
     QSqlQuery* preparerRequete(const Appareil* appareil, const QString* commande);
-
-    bool executer(QSqlQuery* requete);
 
 signals:
 

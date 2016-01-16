@@ -51,10 +51,19 @@ QList<Appareil*>* MappeurAppareils::appareilsPourClient(const Client *client)
     return liste;
 }
 
-bool MappeurAppareils::executer(QSqlQuery* requete)
+bool MappeurAppareils::mettreAJour(const Appareil *appareil)
 {
     QSqlDatabase* bd = Application::bd;
     bd->transaction();
+    QString* commande = new QString(
+                "UPDATE appareils\
+                SET\
+                    description=:description,\
+                    motDePasse=:motDePasse,\
+                    idType=:idType,\
+                    idFabricant=:idFabricant\
+                WHERE id=:idAppareil");
+    QSqlQuery* requete = preparerRequete(appareil, commande);
     bool succes = requete->exec();
     if (succes) {
         bd->commit();
@@ -65,29 +74,24 @@ bool MappeurAppareils::executer(QSqlQuery* requete)
     return succes;
 }
 
-bool MappeurAppareils::mettreAJour(const Appareil *appareil)
-{
-    QString* commande = new QString(
-                "UPDATE appareils\
-                SET\
-                    description=:description,\
-                    motDePasse=:motDePasse,\
-                    idType=:idType,\
-                    idFabricant=:idFabricant\
-                WHERE id=:idAppareil");
-    QSqlQuery* requete = preparerRequete(appareil, commande);
-    return executer(requete);
-}
-
 bool MappeurAppareils::inserer(const Appareil *appareil)
 {
+    QSqlDatabase* bd = Application::bd;
+    bd->transaction();
     QString* commande = new QString(
                 "INSERT INTO appareils\
                     (idType, idFabricant, idClient, description, motDePasse)\
                 VALUES\
                     (:idType, :idFabricant, :idClient, :description, :motDePasse)");
     QSqlQuery* requete = preparerRequete(appareil, commande);
-    return executer(requete);
+    bool succes = requete->exec();
+    if (succes) {
+        bd->commit();
+    } else {
+        qDebug() << requete->lastError();
+        bd->rollback();
+    }
+    return succes;
 }
 
 Appareil* MappeurAppareils::mapper(const QSqlRecord ligne)
