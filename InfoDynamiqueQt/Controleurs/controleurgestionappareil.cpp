@@ -18,9 +18,9 @@ void ControleurGestionAppareil::voirAppareil(int idAppareil)
 {
     VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
     Appareil* appareil = Application::appareils->getAppareil(idAppareil);
-    vue->getChampFabricant()->setText(appareil->getNomFabricant());
-    vue->getChampType()->setText(appareil->getNomType());
-    vue->getChampDescription()->setText(appareil->getDescription());
-    vue->getChampMotDePasse()->setText(appareil->getMotDePasse());
+    vue->setType(appareil->getNomType());
+    vue->setFabricant(appareil->getNomFabricant());
+    vue->setMotDePasse(appareil->getMotDePasse());
+    vue->setDescription(appareil->getDescription());
     vue->show();
 }

@@ -58,10 +58,10 @@ void ControleurAppareils::voirAppareil()
     if (fragment->getIdModele() != -1) {
         VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
         Appareil* appareil = Application::appareils->getAppareil(fragment->getIdModele());
-        vue->getChampFabricant()->setText(appareil->getNomFabricant());
-        vue->getChampType()->setText(appareil->getNomType());
-        vue->getChampDescription()->setText(appareil->getDescription());
-        vue->getChampMotDePasse()->setText(appareil->getMotDePasse());
+        vue->setType(appareil->getNomType());
+        vue->setFabricant(appareil->getNomFabricant());
+        vue->setMotDePasse(appareil->getMotDePasse());
+        vue->setDescription(appareil->getDescription());
         vue->show();
     }
 }

@@ -17,10 +17,15 @@ public:
     explicit VueAppareil(QWidget *parent = 0);
     ~VueAppareil();
 
-    QLineEdit* getChampType() const;
-    QLineEdit* getChampFabricant() const;
-    QLineEdit* getChampMotDePasse() const;
-    QTextEdit* getChampDescription() const;
+    QString getType();
+    QString getFabricant();
+    QString getMotDePasse();
+    QString getDescription();
+
+    void setType(QString value);
+    void setFabricant(QString value);
+    void setMotDePasse(QString value);
+    void setDescription(QString value);
 
 private:
     Ui::VueAppareil *ui;

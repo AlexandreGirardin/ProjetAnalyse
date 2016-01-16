@@ -13,22 +13,42 @@ VueAppareil::~VueAppareil()
     delete ui;
 }
 
-QLineEdit *VueAppareil::getChampType() const
+QString VueAppareil::getType()
 {
-    return ui->champType;
+    return ui->champType->text();
 }
 
-QLineEdit *VueAppareil::getChampFabricant() const
+QString VueAppareil::getFabricant()
 {
-    return ui->champFabricant;
+    return ui->champFabricant->text();
 }
 
-QLineEdit *VueAppareil::getChampMotDePasse() const
+QString VueAppareil::getMotDePasse()
 {
-    return ui->champMDP;
+    return ui->champMDP->text();
 }
 
-QTextEdit *VueAppareil::getChampDescription() const
+QString VueAppareil::getDescription()
 {
-    return ui->champDescription;
+    return ui->champDescription->document()->toPlainText();
+}
+
+void VueAppareil::setType(QString value)
+{
+    ui->champType->setText(value);
+}
+
+void VueAppareil::setFabricant(QString value)
+{
+    ui->champFabricant->setText(value);
+}
+
+void VueAppareil::setMotDePasse(QString value)
+{
+    ui->champMDP->setText(value);
+}
+
+void VueAppareil::setDescription(QString value)
+{
+    ui->champDescription->setText(value);
 }
