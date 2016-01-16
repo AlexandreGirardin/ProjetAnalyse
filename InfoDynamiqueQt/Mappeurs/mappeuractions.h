@@ -36,6 +36,8 @@ public:
      */
     QList<Action*>* getActions();
 
+    bool mettreAJour(const Action* action);
+
 private:
 
     /**
@@ -45,6 +47,7 @@ private:
      */
     Action* mapper(QSqlRecord);
 
+    QSqlQuery* preparerRequete(const Action* action, const QString* commande);
 };
 
 #endif // MAPPEURACTIONS_H

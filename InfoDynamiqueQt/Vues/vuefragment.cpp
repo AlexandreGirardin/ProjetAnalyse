@@ -55,6 +55,13 @@ QPushButton* VueFragment::getBoutonVoir() const
     return ui->boutonVoir;
 }
 
+QPushButton* VueFragment::ajouterBouton(int index)
+{
+    QPushButton* bouton = new QPushButton(this);
+    ui->horizontalLayout->insertWidget(index, bouton);
+    return bouton;
+}
+
 QCheckBox* VueFragment::getCaseCocher() const
 {
     return ui->caseCocher;
@@ -112,12 +119,14 @@ void VueFragment::activerBoutonsModele()
 {
     ui->boutonModifier->setEnabled(true);
     ui->boutonVoir->setEnabled(true);
+    emit boutonsActives(true);
 }
 
 void VueFragment::desactiverBoutonsModele()
 {
     ui->boutonModifier->setEnabled(false);
     ui->boutonVoir->setEnabled(false);
+    emit boutonsActives(false);
 }
 
 void VueFragment::selectionnerModele(QModelIndex index)

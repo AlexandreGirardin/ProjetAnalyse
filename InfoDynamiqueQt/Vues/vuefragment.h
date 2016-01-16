@@ -68,6 +68,13 @@ public:
     QPushButton* getBoutonVoir() const;
 
     /**
+     * @brief ajouterBouton
+     * Ajoute un bouton d'action au fragment
+     * @param bouton Le bouton à ajouter
+     */
+    QPushButton *ajouterBouton(int index);
+
+    /**
      * @brief getCaseCocher
      * @return La case à cocher du fragment
      */
@@ -218,6 +225,8 @@ signals:
      * Émis lorsque le modèle actuel est relaché
      */
     void modeleRelache();
+
+    void boutonsActives(bool);
 
 };
 #endif // FRAGMENT_H

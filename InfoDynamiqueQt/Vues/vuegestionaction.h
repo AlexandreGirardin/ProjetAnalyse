@@ -4,19 +4,30 @@
 #include <QDialog>
 
 namespace Ui {
-class vuegestionaction;
+class VueGestionAction;
 }
 
-class vuegestionaction : public QDialog
+class VueGestionAction : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit vuegestionaction(QWidget *parent = 0);
-    ~vuegestionaction();
+    explicit VueGestionAction(QWidget *parent = 0);
+    ~VueGestionAction();
+
+    void setLectureSeule(const bool value);
+
+    QString getNom() const;
+    void setNom(const QString &value);
+
+    QString getDescription() const;
+    void setDescription(const QString &value);
+
+    bool getEtat() const;
+    void setEtat(const bool &value);
 
 private:
-    Ui::vuegestionaction *ui;
+    Ui::VueGestionAction *ui;
 };
 
 #endif // VUEGESTIONACTION_H

@@ -20,10 +20,19 @@ ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* pare
     requeteActions = RequetesSQL::afficherActionsActives;
     requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
 
+    QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
+    boutonEtat->setText(tr("Changer l'état"));
+    boutonEtat->setIcon(QIcon::fromTheme("reverse"));
+    boutonEtat->setEnabled(false);
+
     QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(desactiverCritereActions()));
     QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
-    QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
     QObject::connect(fragmentActions, SIGNAL(clicVoir()), this, SLOT(voirAction()));
+    QObject::connect(fragmentActions, SIGNAL(clicEditer()), this, SLOT(modifierAction()));
+    QObject::connect(boutonEtat, SIGNAL(clicked()), this, SLOT(changerEtat()));
+    QObject::connect(fragmentActions, SIGNAL(boutonsActives(bool)), boutonEtat, SLOT(setEnabled(bool)));
+    QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
+    QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
 }
 
 void ControleurActions::configurerFragmentActions()
@@ -38,6 +47,13 @@ void ControleurActions::configurerFragmentEnsembles()
     fragmentEnsembles = new VueFragment(splitter);
     fragmentEnsembles->getEtiquette()->setText(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
+}
+
+void ControleurActions::assignerAction(VueGestionAction *vue, Action *action) const
+{
+    vue->setNom(action->getNom());
+    vue->setDescription(action->getDescription());
+    vue->setEtat(action->getEtat());
 }
 
 void ControleurActions::peuplerActions()
@@ -86,16 +102,48 @@ void ControleurActions::filtrerActions(QString filtre)
     }
 }
 
+void ControleurActions::modifierAction()
+{
+    Action* action = Application::actions->getAction(fragmentActions->getIdModele());
+    if (action != NULL) {
+        VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
+        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
+        assignerAction(vue, action);
+        vue->exec();
+        action->setNom(vue->getNom());
+        action->setDescription(vue->getDescription());
+        action->setEtat(vue->getEtat());
+        if (Application::actions->mettreAJour(action)) {
+            emit donneesModifiees();
+        }
+    }
+}
+
 void ControleurActions::voirAction()
 {
-//    if (fragmentActions->getIdModele() != -1) {
-//        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
-//        qDebug() << action->out();
-//        VueAction* vue = new VueAction();
-//        Appareil* appareil = mappeur->getAppareil(fragment->getIdModele());
-//        assignerAppareil(vue, appareil);
-//        vue->setWindowModality(Qt::NonModal);
-//        vue->show();
-//    }
+    Action* action = Application::actions->getAction(fragmentActions->getIdModele());
+    if (action != NULL) {
+        VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
+        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
+        assignerAction(vue, action);
+        vue->setLectureSeule(true);
+        vue->show();
+        }
+}
+
+void ControleurActions::changerEtat()
+{
+    Action* action = Application::actions->getAction(fragmentActions->getIdModele());
+    if (action != NULL) {
+        action->setEtat(!action->getEtat());
+        if (Application::actions->mettreAJour(action)) {
+            emit donneesModifiees();
+        }
+    }
+}
+
+void ControleurActions::recharger()
+{
+    filtrerActions(fragmentActions->getChamp()->text());
 }
 

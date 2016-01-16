@@ -3,6 +3,9 @@
 
 #include <QObject>
 
+#include "Modeles/action.h"
+
+#include "Vues/vuegestionaction.h"
 #include "Vues/vuefragment.h"
 #include "Vues/vueprincipale.h"
 
@@ -23,7 +26,6 @@ public:
      * @param parent
      */
     explicit ControleurActions(VuePrincipale* vuePrincipale, QObject* parent = 0);
-
 private:
 
     // Le séparateur redimensionnable contenant les fragments
@@ -51,6 +53,8 @@ private:
 
     const QString* requeteActionsFiltre;
 
+    void assignerAction(VueGestionAction* vue, Action* action) const;
+
 public slots:
 
     /**
@@ -71,7 +75,17 @@ public slots:
 
     void filtrerActions(QString filtre);
 
+    void modifierAction();
+
     void voirAction();
+
+    void changerEtat();
+
+    void recharger();
+
+signals:
+
+    void donneesModifiees();
 
 };
 
