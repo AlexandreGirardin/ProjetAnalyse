@@ -19,7 +19,7 @@ QString Action::getNom() const
     return nom;
 }
 
-void Action::setNom(const QString &value)
+void Action::setNom(const QString value)
 {
     nom = value;
 }

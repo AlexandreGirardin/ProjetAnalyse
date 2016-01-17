@@ -18,9 +18,9 @@ QString VueGestionPiece::getNom() const
     return ui->champNom->text();
 }
 
-void VueGestionPiece::setNom(const QString &valeur)
+void VueGestionPiece::setNom(const QString& nom)
 {
-    ui->champNom->setText(valeur);
+    ui->champNom->setText(nom);
 }
 
 QString VueGestionPiece::getDescription() const
@@ -28,9 +28,9 @@ QString VueGestionPiece::getDescription() const
     return ui->champDescription->toPlainText();
 }
 
-void VueGestionPiece::setDescription(const QString &valeur)
+void VueGestionPiece::setDescription(const QString& description)
 {
-    ui->champDescription->setPlainText(valeur);
+    ui->champDescription->setPlainText(description);
 }
 
 double VueGestionPiece::getPrix() const
@@ -38,7 +38,7 @@ double VueGestionPiece::getPrix() const
     return ui->champPrix->value();
 }
 
-void VueGestionPiece::setPrix(double valeur)
+void VueGestionPiece::setPrix(double& prix)
 {
-    ui->champPrix->setValue(valeur);
+    ui->champPrix->setValue(prix);
 }

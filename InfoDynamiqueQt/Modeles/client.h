@@ -72,13 +72,13 @@ public:
 
     /**
      * @brief getAdresse
-     * @return L'adresse du client
+     * @return L'adresse courriel du client
      */
     QString getCourriel() const;
 
     /**
      * @brief setAdresse
-     * @param value L'adresse à assigner au client
+     * @param value L'adresse courriel à assigner au client
      */
     void setCourriel(const QString &value);
 

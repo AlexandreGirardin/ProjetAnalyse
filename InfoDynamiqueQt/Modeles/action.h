@@ -51,7 +51,7 @@ public:
      * @brief setNom
      * @param value Le nom à assigner à l'action
      */
-    void setNom(const QString &value);
+    void setNom(const QString value);
 
     /**
      * @brief getDescription

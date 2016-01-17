@@ -25,15 +25,36 @@ public:
 
     /**
      * @brief setNom
-     * Assigne un nom
+     * Assigne un nom à la pièce
+     * @param nom Le nom à assigner
      */
-    void setNom(const QString &);
+    void setNom(const QString& nom);
 
+    /**
+     * @brief getDescription
+     * @return La description de la pièce
+     */
     QString getDescription() const;
-    void setDescription(const QString &);
 
+    /**
+     * @brief setDescription
+     * Assigne une description à la pièce
+     * @param description La description à assigner
+     */
+    void setDescription(const QString& description);
+
+    /**
+     * @brief getPrix
+     * @return Le prix de la pièce, en dollars
+     */
     double getPrix() const;
-    void setPrix(double);
+
+    /**
+     * @brief setPrix
+     * Assigne un prix à la pièce
+     * @param prix Le prix à assigner
+     */
+    void setPrix(double& prix);
 
 private:
     Ui::VueGestionPiece* ui;

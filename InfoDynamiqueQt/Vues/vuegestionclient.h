@@ -19,14 +19,57 @@ public:
     explicit VueGestionClient(QWidget* parent = 0);
     ~VueGestionClient();
 
+    /**
+     * @brief getPrenom
+     * @return Le prénom du client
+     */
     QString getPrenom() const;
-    void setPrenom(QString);
+
+    /**
+     * @brief setPrenom
+     * Assigne un prénom au client
+     * @param prenom Le prénom à assigner
+     */
+    void setPrenom(QString prenom);
+
+    /**
+     * @brief getNom
+     * @return Le nom du client
+     */
     QString getNom() const;
-    void setNom(QString);
+
+    /**
+     * @brief setNom
+     * Assigne un nom au client
+     * @param nom Le nom à assigner
+     */
+    void setNom(QString nom);
+
+    /**
+     * @brief getTelephone
+     * @return Le numéro de téléphone du client
+     */
     QString getTelephone() const;
-    void setTelephone(QString);
+
+    /**
+     * @brief setTelephone
+     * Assigne un numéro de téléphone au client
+     * @param telephone Le numéro de téléphone à assigner
+     */
+    void setTelephone(QString telephone);
+
+    /**
+     * @brief getCourriel
+     * @return L'adresse courriel du client
+     */
     QString getCourriel() const;
-    void setCourriel(QString);
+
+    /**
+     * @brief setCourriel
+     * Assigne une adresse courriel au client
+     * @param courriel L'adresse courriel à assigner
+     */
+    void setCourriel(QString courriel);
 
 public slots:
 
