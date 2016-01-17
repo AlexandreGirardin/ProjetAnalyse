@@ -11,7 +11,6 @@
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
-#include <QVariant>
 
 class MappeurAppareils : public QObject
 {
@@ -35,18 +34,31 @@ public:
      */
     Appareil* getAppareil(const int id);
 
+    /**
+     * @brief appareilsPourClient
+     * Trouve les appareils appartenant à un client
+     * @param client Le client cible
+     * @return La liste des appareils appartenant au client
+     */
     QList<Appareil*>* appareilsPourClient(const Client* client);
 
+    /**
+     * @brief mettreAJour
+     * Met à jour un appareil dans la base de données
+     * @param appareil L'appareil à mettre à jour
+     * @return Succès
+     */
     bool mettreAJour(const Appareil* appareil);
 
+    /**
+     * @brief inserer
+     * Insère un nouvel appareil dans la base de données
+     * @param appareil L'appareil à ajouter
+     * @return Succès
+     */
     bool inserer(const Appareil* appareil);
 
-    bool mettreAJour(const Action *action);
-
 private:
-
-    // Le mappeur utilisé pour fabriquer les objets Type des appareils
-//    MappeurTypeAppareils* mappeurType;
 
     /**
      * @brief mapper
@@ -55,11 +67,13 @@ private:
      */
     Appareil* mapper(const QSqlRecord ligne);
 
+    /**
+     * @brief preparerRequete Assigne les valeurs d'un appareil à une requête préparée
+     * @param appareil L'appareil source
+     * @param commande La commande SQL à préparer
+     * @return La commande préparée
+     */
     QSqlQuery* preparerRequete(const Appareil* appareil, const QString* commande);
-
-signals:
-
-public slots:
 
 };
 

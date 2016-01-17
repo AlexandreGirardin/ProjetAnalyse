@@ -22,10 +22,13 @@ private:
     // Le type de l'appareil
     TypeAppareil* type;
 
+    // Le mot de passe de l'appareil
     QString motDePasse;
 
+    // La description de l'appareil
     QString description;
 
+    // Le propriétaire de l'appareil
     int idClient;
 
 public:
@@ -54,6 +57,11 @@ public:
      */
     Fabricant* getFabricant() const;
 
+    /**
+     * @brief getNomFabricant
+     * Le nom du fabricant, s'il est défini
+     * @return Le nom du fabricant ou une chaîne vide
+     */
     QString getNomFabricant() const;
 
     /**
@@ -68,26 +76,64 @@ public:
      */
     TypeAppareil* getType() const;
 
+    /**
+     * @brief getNomType
+     * Le nom du type, s'il est défini
+     * @return Le nom du type ou une chaîne vide
+     */
     QString getNomType() const;
 
     /**
      * @brief setType
+     * Assigne un type à l'appareil
      * @param value Le type à assigner à l'appareil
      */
     void setType(TypeAppareil* value);
+
+    /**
+     * @brief getMotDePasse
+     * @return Le mot de passe de l'appareil
+     */
+    QString getMotDePasse() const;
+
+    /**
+     * @brief setMotDePasse
+     * Assigne un mot de passe à l'appareil
+     * @param value Le mot de passe à assigner
+     */
+    void setMotDePasse(const QString &value);
+
+    /**
+     * @brief getDescription
+     * @return La description de l'appareil
+     */
+    QString getDescription() const;
+
+    /**
+     * @brief setDescription
+     * Assigne une description à l'appareil
+     * @param value La description à assigner
+     */
+    void setDescription(const QString &value);
+
+    /**
+     * @brief getIdClient
+     * @return L'id du propriétaire de l'appareil
+     */
+    int getIdClient() const;
+
+    /**
+     * @brief setIdClient
+     * Assigne l'id du propriétaire de l'appareil
+     * @param value L'id du propriétaire à assigner à l'appareil
+     */
+    void setIdClient(int value);
 
     /**
      * @brief out
      * @return Représentation textuelle de l'appareil
      */
     QString out();
-
-    QString getMotDePasse() const;
-    void setMotDePasse(const QString &value);
-    QString getDescription() const;
-    void setDescription(const QString &value);
-    int getIdClient() const;
-    void setIdClient(int value);
 };
 
 #endif // APPAREIL_H

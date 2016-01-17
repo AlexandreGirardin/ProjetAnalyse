@@ -39,8 +39,16 @@ public:
      */
     void connecterDossiers();
 
+    /**
+     * @brief nomBd
+     * @return Le nom de la base de données
+     */
     static const QString nomBd();
 
+    /**
+     * @brief meta
+     * @return Le méta-caractère de la base de données
+     */
     static const QString* meta();
 
 };

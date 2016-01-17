@@ -12,13 +12,13 @@ private:
     // Le numéro de l'action
     int id;
 
-    // Le nom de l'Action
+    // Le nom de l'action
     QString nom;
 
-    // La description de l'Action
+    // La description de l'action
     QString description;
 
-    // Si l'Action est pratiquée par l'entreprise
+    // Si l'action est pratiquée par l'entreprise
     bool etat;
 
 public:
@@ -71,8 +71,22 @@ public:
      */
     QString out();
 
+    /**
+     * @brief getEtat Si l'action est pratiquée par l'entreprise
+     * @return L'état de l'action
+     */
     bool getEtat() const;
+
+    /**
+     * @brief setEtat Définit l'état de l'action
+     * @param value L'était à assigner
+     */
     void setEtat(bool value);
+
+    /**
+     * @brief etatOut Chaîne affichable correspondant à l'état
+     * @return 'Vrai' ou 'faux'
+     */
     QString etatOut();
 };
 

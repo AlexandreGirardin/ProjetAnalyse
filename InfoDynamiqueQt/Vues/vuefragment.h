@@ -34,11 +34,36 @@ private:
     // L'index de la colonne des id des modèles dans le tableau
     int colonneId;
 
+    /**
+     * @brief configurerBoutonAjouter
+     * Connecte le bouton Ajouter
+     */
     void configurerBoutonAjouter();
+
+    /**
+     * @brief configurerBoutonModifier
+     * Connecte le bouton Modifier
+     */
     void configurerBoutonModifier();
+
+    /**
+     * @brief configurerBoutonVoir
+     * Connecte le bouton Voir
+     */
     void configurerBoutonVoir();
+
+    /**
+     * @brief configurerCase
+     * Connecte la case à cocher
+     */
     void configurerCase();
+
+    /**
+     * @brief configurerChamp
+     * Connecte le champ de recherche
+     */
     void configurerChamp();
+
 public:
 
     /**
@@ -116,7 +141,17 @@ public:
      */
     void setIdModele(int value);
 
+    /**
+     * @brief getColonneId
+     * @return Le numéro de la colonne du tableau contenant les id des modèles
+     */
     int getColonneId() const;
+
+    /**
+     * @brief setColonneId
+     * Assigne le numéro de la colonne du tableau contenant les id des modèles
+     * @param value Le numéro à assigner
+     */
     void setColonneId(int value);
 
 public slots:
@@ -128,18 +163,6 @@ public slots:
      * S'assure que le modèle est triable et réinitialise le tri.
      */
     void peuplerTableau(QAbstractTableModel* valeurs);
-
-    /**
-     * @brief activerBoutonsModele
-     * Active boutonModifier et boutonVoir
-     */
-//    void activerBoutonsModele();
-
-//    /**
-//     * @brief desactiverBoutonsModele
-//     * Désactive boutonModifier et boutonVoir
-//     */
-//    void desactiverBoutonsModele();
 
     /**
      * @brief selectionnerModele
@@ -175,6 +198,10 @@ private slots:
 
 signals:
 
+    /**
+     * @brief selectionValide
+     * Informe d'un changement de modèle sélectionné
+     */
     void selectionValide(bool);
 
     /**
@@ -233,6 +260,10 @@ signals:
      */
     void modeleRelache();
 
+    /**
+     * @brief boutonsActives
+     * Indique un changement de l'état des boutons (activés ou désactivés)
+     */
     void boutonsActives(bool);
 
 };

@@ -33,10 +33,6 @@ public:
      */
     QString out();
 
-signals:
-
-public slots:
-
 };
 
 #endif // MODELEBD_H

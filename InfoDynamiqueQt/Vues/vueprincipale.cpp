@@ -12,11 +12,6 @@ VuePrincipale::~VuePrincipale()
     delete ui;
 }
 
-Ui::VuePrincipale* VuePrincipale::getUi() const
-{
-    return ui;
-}
-
 QTabWidget* VuePrincipale::getOnglets() const
 {
     return ui->onglets;

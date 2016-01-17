@@ -3,7 +3,6 @@
 
 #include <QObject>
 
-#include "Vues/vueprincipale.h"
 #include "Vues/vuefragment.h"
 
 class ControleurFiches : public QObject

@@ -5,9 +5,8 @@
 
 #include "Modeles/action.h"
 
-#include "Vues/vuegestionaction.h"
 #include "Vues/vuefragment.h"
-#include "Vues/vueprincipale.h"
+#include "Vues/vuegestionaction.h"
 
 #include <QSqlQuery>
 #include <QSplitter>
@@ -26,6 +25,7 @@ public:
      * @param parent
      */
     explicit ControleurActions(QWidget* conteneur);
+
 private:
 
     // Le séparateur redimensionnable contenant les fragments
@@ -49,10 +49,18 @@ private:
      */
     void configurerFragmentEnsembles();
 
+    // La requête SQL actuelle pour actions sans filtre de recherche
     const QString* requeteActions;
 
+    // La requête SQL actuelle pour actions avec filtre de recherche
     const QString* requeteActionsFiltre;
 
+    /**
+     * @brief assignerAction
+     * Assigne les informations de l'action dans les champs de la vue
+     * @param vue La vue cible
+     * @param action L'action source
+     */
     void assignerAction(VueGestionAction* vue, Action* action) const;
 
 public slots:
@@ -69,22 +77,55 @@ public slots:
      */
     void peuplerEnsembles();
 
+    /**
+     * @brief activerCritereActions
+     * Réassigne les commandes SQL pour n'afficher que les actions actives
+     */
     void activerCritereActions();
 
+    /**
+     * @brief activerCritereActions
+     * Réassigne les commandes SQL pour afficher toutes les actions
+     */
     void desactiverCritereActions();
 
+    /**
+     * @brief filtrerActions
+     * Peuple le tableau avec les actions qui correspondent à un critère de recherche
+     * @param filtre Le critère de recherche
+     */
     void filtrerActions(QString filtre);
 
+    /**
+     * @brief modifierAction
+     * Lance la modification de l'action sélectionnée
+     */
     void modifierAction();
 
+    /**
+     * @brief voirAction
+     * Lance la visualisation de l'action sélectionnée
+     */
     void voirAction();
 
+    /**
+     * @brief changerEtat
+     * Inverse l'état actuel de l'action sélectionnée
+     */
     void changerEtat();
 
+    /**
+     * @brief recharger
+     * Repeuple le tableau avec filtre de recherche au besoin
+     */
     void recharger();
 
 signals:
 
+    /**
+     * @brief donneesModifiees
+     * Lancé lorsque les valeurs du tableau ont été modifiées
+     */
     void donneesModifiees();
 
 };

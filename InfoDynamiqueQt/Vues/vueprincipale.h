@@ -17,8 +17,6 @@ public:
     explicit VuePrincipale(QWidget* parent = 0);
     ~VuePrincipale();
 
-    Ui::VuePrincipale* getUi() const;
-
     QTabWidget* getOnglets() const;
 
     QWidget* getOngletActions() const;

@@ -7,7 +7,6 @@
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
-#include <QVariant>
 
 
 class MappeurClients : public QObject

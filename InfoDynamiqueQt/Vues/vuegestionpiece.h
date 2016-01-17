@@ -17,7 +17,16 @@ public:
     explicit VueGestionPiece(QWidget* parent = 0);
     ~VueGestionPiece();
 
+    /**
+     * @brief getNom
+     * @return Le nom actuel
+     */
     QString getNom() const;
+
+    /**
+     * @brief setNom
+     * Assigne un nom
+     */
     void setNom(const QString &);
 
     QString getDescription() const;

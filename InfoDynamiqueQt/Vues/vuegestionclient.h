@@ -15,6 +15,7 @@ class VueGestionClient : public QDialog
     // Vue servant à créer, visualiser et modifier un client
 
 public:
+
     explicit VueGestionClient(QWidget* parent = 0);
     ~VueGestionClient();
 
@@ -23,14 +24,22 @@ public:
     QLineEdit* getChampTelephone() const;
     QLineEdit* getChampCourriel() const;
 
-private slots:
-
 public slots:
+
+    /**
+     * @brief setLectureSeule
+     * Rend la vue non éditable
+     */
     void setLectureSeule();
 
+    /**
+     * @brief setEditable
+     * Rend la vue éditable
+     */
     void setEditable();
 
 private:
+
     Ui::VueGestionClient* ui;
 };
 

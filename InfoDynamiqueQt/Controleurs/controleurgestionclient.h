@@ -7,6 +7,7 @@
 #include "Vues/vuegestionclient.h"
 
 class ControleurGestionClient : public QObject{
+
     Q_OBJECT
 
     // Contrôle l'exécution de la création, de la lecture et de la mise à jour des clients

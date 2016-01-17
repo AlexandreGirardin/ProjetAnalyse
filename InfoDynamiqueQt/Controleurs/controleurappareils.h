@@ -5,10 +5,9 @@
 
 #include "Mappeurs/mappeurappareils.h"
 
-#include "Vues/vueprincipale.h"
+#include "Vues/vueappareil.h"
 #include "Vues/vuefragment.h"
 #include "Vues/vuegestionappareil.h"
-#include "Vues/vueappareil.h"
 
 class ControleurAppareils : public QObject
 {
@@ -57,10 +56,18 @@ public slots:
      */
     void filtrerAppareils(QString filtre);
 
+    /**
+     * @brief recharger
+     * Repeuple le tableau avec filtre de recherche au besoin
+     */
     void recharger();
 
 signals:
 
+    /**
+     * @brief donneesModifiees
+     * Lancé lorsque les valeurs du tableau ont été modifiées
+     */
     void donneesModifiees();
 
 };

@@ -8,7 +8,6 @@
 #include "Controleurs/controleurgestionfiche.h"
 
 #include "Vues/vuefragment.h"
-#include "Vues/vueprincipale.h"
 
 #include <QSqlQuery>
 #include <QSplitter>
@@ -142,8 +141,16 @@ private slots:
      */
     void voirFiche();
 
+    /**
+     * @brief activerCritereActions
+     * Réassigne les commandes SQL pour n'afficher que les fiches actives
+     */
     void activerCritereFiches();
 
+    /**
+     * @brief activerCritereActions
+     * Réassigne les commandes SQL pour afficher toutes les fiches
+     */
     void desactiverCritereFiches();
 };
 

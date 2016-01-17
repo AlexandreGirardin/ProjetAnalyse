@@ -25,10 +25,15 @@ public:
 public slots:
 
     /**
-     * @brief ajouterAppareil Lance la création d'un nouvel appareil
+     * @brief ajouterAppareil
+     * Lance la création d'un nouvel appareil
      */
     void ajouterAppareil();
 
+    /**
+     * @brief voirAppareil
+     * @param idAppareil L'id de l'appareil à visualiser
+     */
     void voirAppareil(int idAppareil);
 
 };

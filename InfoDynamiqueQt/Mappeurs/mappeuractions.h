@@ -36,17 +36,29 @@ public:
      */
     QList<Action*>* getActions();
 
+    /**
+     * @brief mettreAJour
+     * Met à jour une action dans la base de données
+     * @param action L'action à mettre à jour
+     * @return Succès
+     */
     bool mettreAJour(const Action* action);
 
 private:
 
     /**
-     * @brief mapper
+     * @brief mapper Transfert les données d'une entrée de bd dans une action
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return l'Action
      */
     Action* mapper(QSqlRecord);
 
+    /**
+     * @brief preparerRequete Assigne les valeurs d'une action à une requête préparée
+     * @param action L'action source
+     * @param commande La commande SQL à préparer
+     * @return La commande préparée
+     */
     QSqlQuery* preparerRequete(const Action* action, const QString* commande);
 };
 

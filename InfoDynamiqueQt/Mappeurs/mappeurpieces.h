@@ -5,8 +5,6 @@
 
 #include "Modeles/piece.h"
 
-//#include "Controleurs/application.h"
-
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
