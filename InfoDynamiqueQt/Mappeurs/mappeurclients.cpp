@@ -29,6 +29,6 @@ Client* MappeurClients::mapper(QSqlRecord ligne)
     client->setPrenom(ligne.value("prenom").toString());
     client->setNom(ligne.value("nom").toString());
     client->setTelephone(ligne.value("telephone").toString());
-    client->setAdresse(ligne.value("adresse").toString());
+    client->setCourriel(ligne.value("adresse").toString());
     return client;
 }

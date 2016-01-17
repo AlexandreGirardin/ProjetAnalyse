@@ -74,13 +74,13 @@ public:
      * @brief getAdresse
      * @return L'adresse du client
      */
-    QString getAdresse() const;
+    QString getCourriel() const;
 
     /**
      * @brief setAdresse
      * @param value L'adresse à assigner au client
      */
-    void setAdresse(const QString &value);
+    void setCourriel(const QString &value);
 
     /**
      * @brief getAppareils

@@ -19,10 +19,14 @@ public:
     explicit VueGestionClient(QWidget* parent = 0);
     ~VueGestionClient();
 
-    QLineEdit* getChampPrenom() const;
-    QLineEdit* getChampNom() const;
-    QLineEdit* getChampTelephone() const;
-    QLineEdit* getChampCourriel() const;
+    QString getPrenom() const;
+    void setPrenom(QString);
+    QString getNom() const;
+    void setNom(QString);
+    QString getTelephone() const;
+    void setTelephone(QString);
+    QString getCourriel() const;
+    void setCourriel(QString);
 
 public slots:
 

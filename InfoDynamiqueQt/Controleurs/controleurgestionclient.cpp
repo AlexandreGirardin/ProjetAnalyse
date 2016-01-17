@@ -33,9 +33,9 @@ void ControleurGestionClient::voirClient(int idClient)
 
 void ControleurGestionClient::assignerClient(VueGestionClient* vue, Client* client)
 {
-    vue->getChampPrenom()->setText(client->getPrenom());
-    vue->getChampNom()->setText(client->getNom());
-    vue->getChampCourriel()->setText(client->getAdresse());
-    vue->getChampTelephone()->setText(client->getTelephone());
+    vue->setPrenom(client->getPrenom());
+    vue->setNom(client->getNom());
+    vue->setCourriel(client->getCourriel());
+    vue->setTelephone(client->getTelephone());
 }
 

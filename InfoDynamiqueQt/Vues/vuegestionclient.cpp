@@ -13,24 +13,44 @@ VueGestionClient::~VueGestionClient()
     delete ui;
 }
 
-QLineEdit* VueGestionClient::getChampPrenom() const
+QString VueGestionClient::getPrenom() const
 {
-    return ui->champPrenom;
+    return ui->champPrenom->text();
 }
 
-QLineEdit* VueGestionClient::getChampNom() const
+void VueGestionClient::setPrenom(QString prenom)
 {
-    return ui->champNom;
+    ui->champPrenom->setText(prenom);
 }
 
-QLineEdit* VueGestionClient::getChampTelephone() const
+QString VueGestionClient::getNom() const
 {
-    return ui->champTelephone;
+    return ui->champNom->text();
 }
 
-QLineEdit* VueGestionClient::getChampCourriel() const
+void VueGestionClient::setNom(QString nom)
 {
-    return ui->champCourriel;
+    ui->champNom->setText(nom);
+}
+
+QString VueGestionClient::getTelephone() const
+{
+    return ui->champTelephone->text();
+}
+
+void VueGestionClient::setTelephone(QString telephone)
+{
+    ui->champTelephone->setText(telephone);
+}
+
+QString VueGestionClient::getCourriel() const
+{
+    return ui->champCourriel->text();
+}
+
+void VueGestionClient::setCourriel(QString courriel)
+{
+    ui->champCourriel->setText(courriel);
 }
 
 void VueGestionClient::setLectureSeule()
