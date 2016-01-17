@@ -25,7 +25,7 @@ public:
      * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
-    explicit ControleurActions(VuePrincipale* vuePrincipale, QObject* parent = 0);
+    explicit ControleurActions(QWidget* conteneur, QObject* parent = 0);
 private:
 
     // Le séparateur redimensionnable contenant les fragments

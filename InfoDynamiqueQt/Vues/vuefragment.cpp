@@ -11,17 +11,45 @@ VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragm
     ui->tableau->horizontalHeader()->setStretchLastSection(true);
     ui->tableau->horizontalHeader()->setSectionsMovable(true);
     ui->champ->setClearButtonEnabled(true);
-    QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
-    QObject::connect(ui->boutonModifier, SIGNAL(clicked()), this, SIGNAL(clicEditer()));
-    QObject::connect(ui->boutonVoir, SIGNAL(clicked()), this, SIGNAL(clicVoir()));
-    QObject::connect(ui->caseCocher, SIGNAL(toggled(bool)), this, SLOT(signalerCase(bool)));
+    configurerBoutonAjouter();
+    configurerBoutonModifier();
+    configurerBoutonVoir();
+    configurerCase();
+    configurerChamp();
     QObject::connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
-    QObject::connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(rechercher(QString)));
 }
 
 VueFragment::~VueFragment()
 {
     delete ui;
+}
+
+void VueFragment::configurerBoutonAjouter()
+{
+    QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
+    QObject::connect(this, SIGNAL(selectionValide(bool)), ui->boutonAjouter, SLOT(setEnabled(bool)));
+}
+
+void VueFragment::configurerBoutonModifier()
+{
+    QObject::connect(ui->boutonModifier, SIGNAL(clicked()), this, SIGNAL(clicEditer()));
+    QObject::connect(this, SIGNAL(selectionValide(bool)), ui->boutonModifier, SLOT(setEnabled(bool)));
+}
+
+void VueFragment::configurerBoutonVoir()
+{
+    QObject::connect(ui->boutonVoir, SIGNAL(clicked()), this, SIGNAL(clicVoir()));
+    QObject::connect(this, SIGNAL(selectionValide(bool)), ui->boutonVoir, SLOT(setEnabled(bool)));
+}
+
+void VueFragment::configurerCase()
+{
+    QObject::connect(ui->caseCocher, SIGNAL(toggled(bool)), this, SLOT(signalerCase(bool)));
+}
+
+void VueFragment::configurerChamp()
+{
+    QObject::connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(rechercher(QString)));
 }
 
 int VueFragment::getColonneId() const
@@ -59,6 +87,7 @@ QPushButton* VueFragment::ajouterBouton(int index)
 {
     QPushButton* bouton = new QPushButton(this);
     ui->horizontalLayout->insertWidget(index, bouton);
+    QObject::connect(this, SIGNAL(selectionValide(bool)), bouton, SLOT(setEnabled(bool)));
     return bouton;
 }
 
@@ -110,29 +139,15 @@ void VueFragment::setIdModele(int value)
 void VueFragment::relacherModele()
 {
     ui->tableau->clearSelection();
-    desactiverBoutonsModele();
     idModele = -1;
+    emit selectionValide(false);
     emit modeleRelache();
-}
-
-void VueFragment::activerBoutonsModele()
-{
-    ui->boutonModifier->setEnabled(true);
-    ui->boutonVoir->setEnabled(true);
-    emit boutonsActives(true);
-}
-
-void VueFragment::desactiverBoutonsModele()
-{
-    ui->boutonModifier->setEnabled(false);
-    ui->boutonVoir->setEnabled(false);
-    emit boutonsActives(false);
 }
 
 void VueFragment::selectionnerModele(QModelIndex index)
 {
-    activerBoutonsModele();
     idModele = getId(index);
+    emit selectionValide(true);
     emit modeleSelectionne(idModele);
 }
 

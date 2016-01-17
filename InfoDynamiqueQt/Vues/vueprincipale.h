@@ -21,10 +21,10 @@ public:
 
     QTabWidget* getOnglets() const;
 
-    QWidget *getOngletActions() const;
-    QWidget *getOngletAppareils() const;
-    QWidget *getOngletClients() const;
-    QWidget *getOngletFiches() const;
+    QWidget* getOngletActions() const;
+    QWidget* getOngletAppareils() const;
+    QWidget* getOngletClients() const;
+    QWidget* getOngletFiches() const;
 private:
     Ui::VuePrincipale* ui;
 };

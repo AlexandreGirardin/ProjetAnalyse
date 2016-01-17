@@ -34,6 +34,11 @@ private:
     // L'index de la colonne des id des modèles dans le tableau
     int colonneId;
 
+    void configurerBoutonAjouter();
+    void configurerBoutonModifier();
+    void configurerBoutonVoir();
+    void configurerCase();
+    void configurerChamp();
 public:
 
     /**
@@ -128,13 +133,13 @@ public slots:
      * @brief activerBoutonsModele
      * Active boutonModifier et boutonVoir
      */
-    void activerBoutonsModele();
+//    void activerBoutonsModele();
 
-    /**
-     * @brief desactiverBoutonsModele
-     * Désactive boutonModifier et boutonVoir
-     */
-    void desactiverBoutonsModele();
+//    /**
+//     * @brief desactiverBoutonsModele
+//     * Désactive boutonModifier et boutonVoir
+//     */
+//    void desactiverBoutonsModele();
 
     /**
      * @brief selectionnerModele
@@ -169,6 +174,8 @@ private slots:
     void signalerSelection(QModelIndex nouveau, QModelIndex ancien);
 
 signals:
+
+    void selectionValide(bool);
 
     /**
      * @brief clicCreer

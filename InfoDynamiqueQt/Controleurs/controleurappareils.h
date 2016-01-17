@@ -23,7 +23,7 @@ public:
      * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
-    explicit ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent = 0);
+    explicit ControleurAppareils(QWidget *vue, QObject* parent = 0);
 
 private:
 

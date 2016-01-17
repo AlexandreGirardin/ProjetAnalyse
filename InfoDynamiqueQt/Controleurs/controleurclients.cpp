@@ -26,7 +26,7 @@ void ControleurClients::configurerFragmentClients()
 {
     fragmentClients = new VueFragment(splitter);
     fragmentClients->getEtiquette()->setText(tr("Clients"));
-    fragmentClients->getCaseCocher()->hide();
+    fragmentClients->getCaseCocher()->deleteLater();
     QObject::connect(fragmentClients, SIGNAL(clicCreer()), controleurGestionClient, SLOT(ajouterClient()));
     QObject::connect(fragmentClients, SIGNAL(clicEditer()), this, SLOT(modifierClient()));
     QObject::connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
@@ -38,8 +38,8 @@ void ControleurClients::configurerFragmentAppareils()
 {
     fragmentAppareils = new VueFragment(splitter);
     fragmentAppareils->getEtiquette()->setText(tr("Appareils"));
-    fragmentAppareils->getCaseCocher()->hide();
-    fragmentAppareils->getChamp()->hide();
+    fragmentAppareils->getCaseCocher()->deleteLater();
+    fragmentAppareils->getChamp()->deleteLater();
     QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), controleurGestionAppareil, SLOT(ajouterAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
@@ -54,7 +54,7 @@ void ControleurClients::configurerFragmentFiches()
     fragmentFiches->getEtiquette()->setText(tr("Fiches"));
     fragmentFiches->getCaseCocher()->setChecked(true);
     fragmentFiches->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
-    fragmentFiches->getChamp()->hide();
+    fragmentFiches->getChamp()->deleteLater();
     commandeFiches = RequetesSQL::toutesFichesPourAppareil;
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), controleurGestionFiche, SLOT(ajouterFiche()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));

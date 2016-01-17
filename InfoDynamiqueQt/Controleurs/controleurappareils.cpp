@@ -7,14 +7,14 @@
 #include <QDebug>
 #include "Controleurs/application.h"
 
-ControleurAppareils::ControleurAppareils(VuePrincipale* vuePrincipale, QObject* parent)
+ControleurAppareils::ControleurAppareils(QWidget* vue, QObject* parent)
     : QObject(parent)
 {
-    fragment = new VueFragment();
-    fragment->getEtiquette()->hide();
-    fragment->getBoutonAjouter()->hide();
-    fragment->getCaseCocher()->hide();
-    vuePrincipale->getUi()->ongletAppareils->layout()->addWidget(fragment);
+    fragment = new VueFragment(vue);
+    fragment->getEtiquette()->deleteLater();
+    fragment->getBoutonAjouter()->deleteLater();
+    fragment->getCaseCocher()->deleteLater();
+    vue->layout()->addWidget(fragment);
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));

@@ -7,32 +7,18 @@
 #include <QSqlQueryModel>
 #include <QDebug>
 
-ControleurActions::ControleurActions(VuePrincipale* vuePrincipale, QObject* parent)
+ControleurActions::ControleurActions(QWidget* vue, QObject* parent)
     : QObject(parent)
 {
-    splitter = new QSplitter(Qt::Vertical, vuePrincipale->getUi()->ongletActions);
+    splitter = new QSplitter(Qt::Vertical, vue);
     splitter->setChildrenCollapsible(false);
-    vuePrincipale->getUi()->ongletActions->layout()->addWidget(splitter);
+    vue->layout()->addWidget(splitter);
 
     configurerFragmentActions();
     configurerFragmentEnsembles();
 
     requeteActions = RequetesSQL::afficherActionsActives;
     requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
-
-    QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
-    boutonEtat->setText(tr("Changer l'état"));
-    boutonEtat->setIcon(QIcon::fromTheme("reverse"));
-    boutonEtat->setEnabled(false);
-
-    QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(desactiverCritereActions()));
-    QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
-    QObject::connect(fragmentActions, SIGNAL(clicVoir()), this, SLOT(voirAction()));
-    QObject::connect(fragmentActions, SIGNAL(clicEditer()), this, SLOT(modifierAction()));
-    QObject::connect(boutonEtat, SIGNAL(clicked()), this, SLOT(changerEtat()));
-    QObject::connect(fragmentActions, SIGNAL(boutonsActives(bool)), boutonEtat, SLOT(setEnabled(bool)));
-    QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
-    QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
 }
 
 void ControleurActions::configurerFragmentActions()
@@ -40,6 +26,18 @@ void ControleurActions::configurerFragmentActions()
     fragmentActions = new VueFragment(splitter);
     fragmentActions->getEtiquette()->setText(tr("Actions"));
     fragmentActions->getCaseCocher()->setText(tr("Afficher toutes les actions"));
+
+    QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
+    boutonEtat->setText(tr("Changer l'état"));
+    boutonEtat->setIcon(QIcon::fromTheme("reverse"));
+    boutonEtat->setEnabled(false);
+
+    QObject::connect(fragmentActions, SIGNAL(clicEditer()), this, SLOT(modifierAction()));
+    QObject::connect(fragmentActions, SIGNAL(clicVoir()), this, SLOT(voirAction()));
+    QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(desactiverCritereActions()));
+    QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
+    QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
+    QObject::connect(boutonEtat, SIGNAL(clicked()), this, SLOT(changerEtat()));
 }
 
 void ControleurActions::configurerFragmentEnsembles()
@@ -47,6 +45,7 @@ void ControleurActions::configurerFragmentEnsembles()
     fragmentEnsembles = new VueFragment(splitter);
     fragmentEnsembles->getEtiquette()->setText(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
+    QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
 }
 
 void ControleurActions::assignerAction(VueGestionAction *vue, Action *action) const
@@ -109,12 +108,13 @@ void ControleurActions::modifierAction()
         VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
         Action* action = Application::actions->getAction(fragmentActions->getIdModele());
         assignerAction(vue, action);
-        vue->exec();
-        action->setNom(vue->getNom());
-        action->setDescription(vue->getDescription());
-        action->setEtat(vue->getEtat());
-        if (Application::actions->mettreAJour(action)) {
-            emit donneesModifiees();
+        if (vue->exec()) {
+            action->setNom(vue->getNom());
+            action->setDescription(vue->getDescription());
+            action->setEtat(vue->getEtat());
+            if (Application::actions->mettreAJour(action)) {
+                emit donneesModifiees();
+            }
         }
     }
 }
@@ -128,7 +128,7 @@ void ControleurActions::voirAction()
         assignerAction(vue, action);
         vue->setLectureSeule(true);
         vue->show();
-        }
+    }
 }
 
 void ControleurActions::changerEtat()
