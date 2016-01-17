@@ -6,11 +6,11 @@
 #include <QLayout>
 #include <QSqlQueryModel>
 
-ControleurClients::ControleurClients(VuePrincipale* vuePrincipale, QObject* parent)
-    : QObject(parent)
+ControleurClients::ControleurClients(QWidget* vue)
+    : QObject(vue)
 {
-    splitter = new QSplitter(Qt::Vertical, vuePrincipale->getOngletClients());
-    vuePrincipale->getOngletClients()->layout()->addWidget(splitter);
+    splitter = new QSplitter(Qt::Vertical, vue);
+    vue->layout()->addWidget(splitter);
     splitter->setChildrenCollapsible(false);
     controleurGestionClient = new ControleurGestionClient();
     controleurGestionAppareil = new ControleurGestionAppareil();

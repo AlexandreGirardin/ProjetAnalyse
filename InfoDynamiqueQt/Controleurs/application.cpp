@@ -54,7 +54,7 @@ void Application::debug()
     }
 }
 
-VuePrincipale *Application::getVuePrincipale()
+VuePrincipale* Application::getVuePrincipale()
 {
     return vuePrincipale;
 }
@@ -62,10 +62,10 @@ VuePrincipale *Application::getVuePrincipale()
 void Application::creerFenetre()
 {
     vuePrincipale = new VuePrincipale();
-    controleurClients = new ControleurClients(vuePrincipale, this);
-    controleurFiches = new ControleurFiches(vuePrincipale, this);
-    controleurAppareils = new ControleurAppareils(vuePrincipale->getOngletAppareils(), this);
-    controleurActions = new ControleurActions(vuePrincipale->getOngletActions(), this);
+    controleurClients = new ControleurClients(vuePrincipale->getOngletClients());
+    controleurFiches = new ControleurFiches(vuePrincipale->getOngletFiches());
+    controleurAppareils = new ControleurAppareils(vuePrincipale->getOngletAppareils());
+    controleurActions = new ControleurActions(vuePrincipale->getOngletActions());
     clientsCharges = false;
     fichesChargees = false;
     appareilsCharges = false;

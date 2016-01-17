@@ -5,13 +5,13 @@
 #include <QLayout>
 #include <QSqlQueryModel>
 
-ControleurFiches::ControleurFiches(VuePrincipale* vuePrincipale, QObject* parent)
-    : QObject(parent)
+ControleurFiches::ControleurFiches(QWidget* vue)
+    : QObject(vue)
 {
     fragment = new VueFragment();
     fragment->getEtiquette()->setText(tr("Fiches"));
     fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
-    vuePrincipale->getOngletFiches()->layout()->addWidget(fragment);
+    vue->layout()->addWidget(fragment);
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
 }
 

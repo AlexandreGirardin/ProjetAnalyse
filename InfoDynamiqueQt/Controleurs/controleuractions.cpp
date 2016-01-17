@@ -7,8 +7,8 @@
 #include <QSqlQueryModel>
 #include <QDebug>
 
-ControleurActions::ControleurActions(QWidget* vue, QObject* parent)
-    : QObject(parent)
+ControleurActions::ControleurActions(QWidget* vue)
+    : QObject(vue)
 {
     splitter = new QSplitter(Qt::Vertical, vue);
     splitter->setChildrenCollapsible(false);

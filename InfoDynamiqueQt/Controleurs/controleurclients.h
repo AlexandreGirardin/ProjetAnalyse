@@ -26,7 +26,7 @@ public:
      * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
-    explicit ControleurClients(VuePrincipale* vuePrincipale, QObject* parent = 0);
+    explicit ControleurClients(QWidget* vue);
 
 private:
 

@@ -7,8 +7,8 @@
 #include <QDebug>
 #include "Controleurs/application.h"
 
-ControleurAppareils::ControleurAppareils(QWidget* vue, QObject* parent)
-    : QObject(parent)
+ControleurAppareils::ControleurAppareils(QWidget* vue)
+    : QObject(vue)
 {
     fragment = new VueFragment(vue);
     fragment->getEtiquette()->deleteLater();
