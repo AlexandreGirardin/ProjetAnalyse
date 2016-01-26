@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="yes"?>
+<UCTDataSet xmlns="http://serliosoft.com/UCTData.xsd">
+  <VersionInfo>
+    <Version>5.0</Version>
+    <SavedWith>10.0.5767</SavedWith>
+    <CreatedWith>10.0.5606</CreatedWith>
+  </VersionInfo>
+  <TopLevelElement>
+    <RefID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</RefID>
+  </TopLevelElement>
+  <Package>
+    <UniqueID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</UniqueID>
+    <ExternalParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ExternalParentID>
+    <Name>US-Appareils</Name>
+    <Sequence>-1</Sequence>
+  </Package>
+  <Story>
+    <UniqueID>S-661cfd38-aea5-448d-a39e-8c1d25b57a17</UniqueID>
+    <UserID>S-10-2</UserID>
+    <ParentID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</ParentID>
+    <Name>Créer un dossier d'appareil</Name>
+    <Description>Lorsqu'un service doit être effectué sur un nouvel appareil, l'employé crée un dossier pour l'appareil, s'il n'a pas déjà été créé, afin de pouvoir regrouper ses informations. Ainsi, toutes les tâches effectuées sur l'appareil seront conservées dans les archives</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Lorsqu'\cf1 un service doit \'eatre effectu\'e9 sur un nouvel \cf2\ul appareil\cf1\ulnone , l'employ\'e9 cr\'e9e un dossier pour l'\cf2\ul appareil\cf1\ulnone , s'il n'a pas d\'e9j\'e0 \'e9t\'e9 cr\'e9\'e9, afin de pouvoir regrouper ses informations. Ainsi, toutes les \cf2\ul t\'e2ches\cf1\ulnone  effectu\'e9es sur l'\cf2\ul appareil\cf1\ulnone  seront conserv\'e9es dans les archives\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T09:47:42.796218-04:00</DateAdded>
+    <DateModified>2015-12-17T16:13:23.6901934-05:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-8aceabb7-ca3b-4028-b1e1-344edbd8354d</UniqueID>
+    <UserID>S-12-1</UserID>
+    <ParentID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</ParentID>
+    <Name>Consulter le dossier d'un appareil</Name>
+    <Description>Un technicien peut consulter les informations d'un appareil (les tâches à faire, les tâches ayant été effectuées par le passé, les informations de son propriétaire).</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1\ul technicien\cf2\ulnone  peut consulter les informations d'un \cf3\ul appareil\cf2\ulnone  (les \cf3\ul t\'e2ches\cf2\ulnone  \'e0 faire, les \cf3\ul t\'e2ches\cf2\ulnone  ayant \'e9t\'e9 effectu\'e9es par le pass\'e9, les informations de son propri\'e9taire).\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T10:16:09.659216-04:00</DateAdded>
+    <DateModified>2015-11-16T08:56:14.5255771-05:00</DateModified>
+  </Story>
+  <Story>
+    <UniqueID>S-28313edc-3c5d-4cd9-a820-dcb113c436f5</UniqueID>
+    <UserID>S-12-2</UserID>
+    <ParentID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</ParentID>
+    <Name>Modifier le dossier d'un appareil</Name>
+    <Description>Un dossier d'appareil peut être mis à jour par le technicien après avoir été créé par celui-ci ou sur l'interface web.
+Pour satisfaire les règles d'affaires, un dossier d'appareil ne peut pas être effacé.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs20 Un \cf1 dossier\cf2  d'\cf1\ul appareil\cf2\ulnone  peut \'eatre mis \'e0 jour par le \cf3\ul technicien\cf2\ulnone  apr\'e8s avoir \'e9t\'e9 cr\'e9\'e9 par celui-ci ou sur l'interface web.\par
+Pour satisfaire les r\'e8gles d'affaires, un \cf1 dossier\cf2  d'\cf1\ul appareil\cf2\ulnone  ne peut pas \'eatre effac\'e9.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <Priority>Must</Priority>
+    <Size />
+    <AssignedTo />
+    <Status />
+    <DateAdded>2015-09-17T10:17:46.0049852-04:00</DateAdded>
+    <DateModified>2015-12-18T13:28:04.2172631-05:00</DateModified>
+  </Story>
+  <UserID>
+    <DefaultPrefix>UC-12-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>A-12-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>REQ-12-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>DEF-12-</DefaultPrefix>
+    <NextValue>1</NextValue>
+  </UserID>
+  <UserID>
+    <DefaultPrefix>S-12-</DefaultPrefix>
+    <NextValue>3</NextValue>
+  </UserID>
+</UCTDataSet>
