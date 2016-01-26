@@ -57,6 +57,14 @@ public slots:
      * Lance la modification d'un client
      */
     void voirClient(int idClient);
+
+signals:
+
+    /**
+     * @brief donneesModifiees
+     * Lancé lorsque les valeurs du tableau ont été modifiées
+     */
+    void donneesModifiees();
 };
 
 #endif // CONTROLEURGESTIONCLIENT_H

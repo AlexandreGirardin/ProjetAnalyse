@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+clients-- phpMyAdmin SQL Dump
 -- version 4.4.15
 -- http://www.phpmyadmin.net
 --
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `id` int(10) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
-  `telephone` BIGINT(14) NOT NULL,
+  `telephone` varchar(255) NOT NULL,
   `adresse` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

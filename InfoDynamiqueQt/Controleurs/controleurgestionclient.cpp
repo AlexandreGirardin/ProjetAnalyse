@@ -1,7 +1,11 @@
 #include "Controleurs/controleurgestionclient.h"
 
 #include "Controleurs/application.h"
+#include "Controleurs/controleurbd.h"
+
 #include "Vues/vuegestionclient.h"
+#include <QSqlQueryModel>
+#include <QDebug>
 
 ControleurGestionClient::ControleurGestionClient(QObject* parent)
     : QObject(parent)
@@ -11,7 +15,18 @@ ControleurGestionClient::ControleurGestionClient(QObject* parent)
 void ControleurGestionClient::ajouterClient()
 {
     VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
-    vue->exec();
+    if (vue->exec() == vue->Accepted) {
+        Client* client = new Client();
+        client->setNom(vue->getNom());
+        client->setPrenom(vue->getPrenom());
+        client->setTelephone(vue->getTelephone());
+        client->setAdresse(vue->getAdresse());
+        if (Application::clients->inserer(client)) {
+            emit donneesModifiees();
+        } else {
+            qDebug() << "Pas marché: " << client->out();
+        }
+    }
 }
 
 void ControleurGestionClient::modifierClient(int idClient)
@@ -35,7 +50,7 @@ void ControleurGestionClient::assignerClient(VueGestionClient* vue, Client* clie
 {
     vue->setPrenom(client->getPrenom());
     vue->setNom(client->getNom());
-    vue->setCourriel(client->getCourriel());
+    vue->setAdresse(client->getAdresse());
     vue->setTelephone(client->getTelephone());
 }
 
