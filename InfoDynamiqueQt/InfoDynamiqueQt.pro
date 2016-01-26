@@ -15,6 +15,7 @@ RC_ICONS = Toolbox.ico
 
 SOURCES += main.cpp\
 	Vues/vueauthentification.cpp \
+        Vues/vueconnexion.cpp \
 	Vues/vueprincipale.cpp \
 	Vues/vuegestiontache.cpp \
 	Vues/vuegestionpiece.cpp \
@@ -60,6 +61,7 @@ SOURCES += main.cpp\
 
 HEADERS  += \
 	Vues/vueauthentification.h \
+        Vues/vueconnexion.h \
 	Vues/vueprincipale.h \
 	Vues/vuegestiontache.h \
 	Vues/vuegestionpiece.h \
@@ -105,7 +107,8 @@ HEADERS  += \
 
 FORMS    += \
 	Vues/vueauthentification.ui \
-	Vues/vueeditionfiche.ui \
+        Vues/vueconnexion.ui \
+        Vues/vueeditionfiche.ui \
 	Vues/vuefragment.ui \
 	Vues/vuegestionappareil.ui \
 	Vues/vuegestionclient.ui \
