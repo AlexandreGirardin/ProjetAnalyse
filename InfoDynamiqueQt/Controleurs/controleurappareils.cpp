@@ -39,16 +39,16 @@ void ControleurAppareils::modifierAppareil()
         vue->setFabricants(Application::fabricants->getFabricants(), appareil->getNomFabricant());
         vue->setMotDePasse(appareil->getMotDePasse());
         vue->setDescription(appareil->getDescription());
-        vue->exec();
-        appareil->setMotDePasse(vue->getMotDePasse());
-        appareil->setType(vue->getType());
-        appareil->setFabricant(vue->getFabricant());
-        appareil->setDescription(vue->getDescription());
-        bool succes = Application::appareils->mettreAJour(appareil);
-        if (succes) {
-            emit donneesModifiees();
-        } else {
-            qDebug() << "Pas marché: " << appareil->out();
+        if (vue->exec() == vue->Accepted) {
+            appareil->setMotDePasse(vue->getMotDePasse());
+            appareil->setType(vue->getType());
+            appareil->setFabricant(vue->getFabricant());
+            appareil->setDescription(vue->getDescription());
+            if (Application::appareils->mettreAJour(appareil)) {
+                emit donneesModifiees();
+            } else {
+                qDebug() << "Pas marché: " << appareil->out();
+            }
         }
     }
 }
