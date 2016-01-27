@@ -1,6 +1,8 @@
 #ifndef GESTIONENSEMBLE_H
 #define GESTIONENSEMBLE_H
 
+#include "Modeles/ensembleactions.h"
+
 #include <QDialog>
 
 namespace Ui {
@@ -16,6 +18,8 @@ class VueGestionEnsemble : public QDialog
 public:
     explicit VueGestionEnsemble(QWidget* parent = 0);
     ~VueGestionEnsemble();
+
+    void setActionsExistantes(QList<Action*>* actions);
 
 private:
     Ui::VueGestionEnsemble* ui;

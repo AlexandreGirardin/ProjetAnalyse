@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "Controleurs/controleurgestionensemble.h"
+
 #include "Modeles/action.h"
 
 #include "Vues/vuefragment.h"
@@ -62,6 +64,8 @@ private:
      * @param action L'action source
      */
     void assignerAction(VueGestionAction* vue, Action* action) const;
+
+    ControleurGestionEnsemble* controleurEnsemble;
 
 public slots:
 

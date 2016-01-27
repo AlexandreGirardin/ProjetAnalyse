@@ -13,6 +13,7 @@ Application::Application(int &argc, char **argv) :
     actions = new MappeurActions(this);
     appareils = new MappeurAppareils(this);
     clients = new MappeurClients(this);
+    ensembles = new MappeurEnsembles(this);
     fabricants = new MappeurFabricants(this);
     pieces = new MappeurPieces(this);
     statuts = new MappeurStatuts(this);
@@ -27,6 +28,7 @@ ControleurBD* Application::controleurBD = NULL;
 MappeurActions* Application::actions = NULL;
 MappeurAppareils* Application::appareils = NULL;
 MappeurClients* Application::clients = NULL;
+MappeurEnsembles* Application::ensembles = NULL;
 MappeurFabricants* Application::fabricants = NULL;
 MappeurPieces* Application::pieces = NULL;
 MappeurStatuts* Application::statuts = NULL;
@@ -91,6 +93,21 @@ void Application::chargerOnglet()
         actionsChargees = true;
     }
     verifierParesseux();
+}
+
+void Application::fermer()
+{
+    m_instance = NULL;
+    controleurBD->deleteLater();
+    actions->deleteLater();
+    appareils->deleteLater();
+    clients->deleteLater();
+    ensembles->deleteLater();
+    fabricants->deleteLater();
+    pieces->deleteLater();
+    statuts->deleteLater();
+    techniciens->deleteLater();
+    typesAppareils->deleteLater();
 }
 
 void Application::verifierParesseux()

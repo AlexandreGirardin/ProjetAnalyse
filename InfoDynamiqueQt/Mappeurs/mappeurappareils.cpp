@@ -14,7 +14,7 @@ MappeurAppareils::MappeurAppareils(QObject* parent) :
 Appareil* MappeurAppareils::getAppareil(const int id)
 {
     Appareil* appareil = NULL;
-    QSqlQuery requete = QSqlQuery(*Application::bd);
+    QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM appareils WHERE id=:id");
     requete.bindValue(":id", id);
     requete.exec();
@@ -24,74 +24,13 @@ Appareil* MappeurAppareils::getAppareil(const int id)
     return appareil;
 }
 
-QList<Appareil*>* MappeurAppareils::appareilsPourClient(const Client *client)
+QList<Appareil*>* MappeurAppareils::appareilsPourClient(const int idClient)
 {
-    QList<Appareil*>* liste = new QList<Appareil*>;
-    QSqlQuery requete = QSqlQuery(*Application::bd);
+    QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM appareils WHERE idClient=:idClient");
-    requete.bindValue(":idClient", client->getId());
+    requete.bindValue(":idClient", idClient);
     requete.exec();
-    QSqlRecord ligne = requete.record();
-    int colId = ligne.indexOf("id");
-    int colDesc = ligne.indexOf("description");
-    int colMDP = ligne.indexOf("motDePasse");
-    int colType = ligne.indexOf("type");
-    int colFab = ligne.indexOf("idFabricant");
-    while (requete.next()) {
-        ligne = requete.record();
-        Appareil* appareil = new Appareil(this);
-        appareil->setId(ligne.value(colId).toInt());
-        appareil->setDescription(ligne.value(colDesc).toString());
-        appareil->setMotDePasse(ligne.value(colMDP).toString());
-        appareil->setType(Application::typesAppareils->getTypeAppareil(ligne.value(colType).toInt()));
-        appareil->setFabricant(Application::fabricants->getFabricant(ligne.value(colFab).toInt()));
-        appareil->setIdClient(client->getId());
-        liste->append(appareil);
-    }
-    return liste;
-}
-
-bool MappeurAppareils::mettreAJour(const Appareil *appareil)
-{
-    QSqlDatabase* bd = Application::bd;
-    bd->transaction();
-    QString* commande = new QString(
-                "UPDATE appareils\
-                SET\
-                    description=:description,\
-                    motDePasse=:motDePasse,\
-                    idType=:idType,\
-                    idFabricant=:idFabricant\
-                WHERE id=:idAppareil");
-    QSqlQuery* requete = preparerRequete(appareil, commande);
-    bool succes = requete->exec();
-    if (succes) {
-        bd->commit();
-    } else {
-        qDebug() << requete->lastError();
-        bd->rollback();
-    }
-    return succes;
-}
-
-bool MappeurAppareils::inserer(const Appareil *appareil)
-{
-    QSqlDatabase* bd = Application::bd;
-    bd->transaction();
-    QString* commande = new QString(
-                "INSERT INTO appareils\
-                    (idType, idFabricant, idClient, description, motDePasse)\
-                VALUES\
-                    (:idType, :idFabricant, :idClient, :description, :motDePasse)");
-    QSqlQuery* requete = preparerRequete(appareil, commande);
-    bool succes = requete->exec();
-    if (succes) {
-        bd->commit();
-    } else {
-        qDebug() << requete->lastError();
-        bd->rollback();
-    }
-    return succes;
+    return mapper(&requete);
 }
 
 Appareil* MappeurAppareils::mapper(const QSqlRecord ligne)
@@ -106,6 +45,53 @@ Appareil* MappeurAppareils::mapper(const QSqlRecord ligne)
     return appareil;
 }
 
+QList<Appareil*>* MappeurAppareils::mapper(QSqlQuery* requete)
+{
+    QList<Appareil*>* liste = new QList<Appareil*>;
+    QSqlRecord ligne = requete->record();
+    int colId = ligne.indexOf("id");
+    int colClient = ligne.indexOf("idClient");
+    int colDesc = ligne.indexOf("description");
+    int colMDP = ligne.indexOf("motDePasse");
+    int colType = ligne.indexOf("type");
+    int colFab = ligne.indexOf("idFabricant");
+    while (requete->next()) {
+        ligne = requete->record();
+        Appareil* appareil = new Appareil(this);
+        appareil->setId(ligne.value(colId).toInt());
+        appareil->setDescription(ligne.value(colDesc).toString());
+        appareil->setMotDePasse(ligne.value(colMDP).toString());
+        appareil->setType(Application::typesAppareils->getTypeAppareil(ligne.value(colType).toInt()));
+        appareil->setFabricant(Application::fabricants->getFabricant(ligne.value(colFab).toInt()));
+        appareil->setIdClient(ligne.value(colClient).toInt());
+        liste->append(appareil);
+    }
+    return liste;
+}
+
+bool MappeurAppareils::mettreAJour(const Appareil *appareil)
+{
+    QString commande("UPDATE appareils\
+                        SET\
+                            description=:description,\
+                            motDePasse=:motDePasse,\
+                            idType=:idType,\
+                            idFabricant=:idFabricant\
+                        WHERE id=:idAppareil");
+    bool succes = ecrire(appareil, &commande);
+    return succes;
+}
+
+bool MappeurAppareils::inserer(const Appareil *appareil)
+{
+    QString commande("INSERT INTO appareils\
+                        (idType, idFabricant, idClient, description, motDePasse)\
+                    VALUES\
+                        (:idType, :idFabricant, :idClient, :description, :motDePasse)");
+    bool succes = ecrire(appareil, &commande);
+    return succes;
+}
+
 QSqlQuery* MappeurAppareils::preparerRequete(const Appareil* appareil, const QString* commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
@@ -117,4 +103,20 @@ QSqlQuery* MappeurAppareils::preparerRequete(const Appareil* appareil, const QSt
     requete->bindValue(":idType", appareil->getType()->getId());
     requete->bindValue(":idFabricant", appareil->getFabricant()->getId());
     return requete;
+}
+
+bool MappeurAppareils::ecrire(const Appareil* appareil, const QString* commande)
+{
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    QSqlQuery* requete = preparerRequete(appareil, commande);
+    bool succes = requete->exec();
+    if (succes) {
+        bd.commit();
+    } else {
+        qDebug() << requete->lastError();
+        bd.rollback();
+    }
+    delete requete;
+    return succes;
 }

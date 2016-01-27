@@ -10,6 +10,9 @@
 ControleurActions::ControleurActions(QWidget* vue)
     : QObject(vue)
 {
+
+    controleurEnsemble = new ControleurGestionEnsemble(this);
+
     splitter = new QSplitter(Qt::Vertical, vue);
     splitter->setChildrenCollapsible(false);
     vue->layout()->addWidget(splitter);
@@ -46,6 +49,7 @@ void ControleurActions::configurerFragmentEnsembles()
     fragmentEnsembles->getEtiquette()->setText(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
     QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsemble, SLOT(modifierEnsemble()));
 }
 
 void ControleurActions::assignerAction(VueGestionAction *vue, Action *action) const

@@ -43,14 +43,14 @@ void VueGestionClient::setTelephone(QString telephone)
     ui->champTelephone->setText(telephone);
 }
 
-QString VueGestionClient::getCourriel() const
+QString VueGestionClient::getAdresse() const
 {
-    return ui->champCourriel->text();
+    return ui->champAdresse->text();
 }
 
-void VueGestionClient::setCourriel(QString courriel)
+void VueGestionClient::setAdresse(QString adresse)
 {
-    ui->champCourriel->setText(courriel);
+    ui->champAdresse->setText(adresse);
 }
 
 void VueGestionClient::setLectureSeule()
@@ -58,7 +58,7 @@ void VueGestionClient::setLectureSeule()
     ui->champPrenom->setReadOnly(true);
     ui->champNom->setReadOnly(true);
     ui->champTelephone->setReadOnly(true);
-    ui->champCourriel->setReadOnly(true);
+    ui->champAdresse->setReadOnly(true);
 }
 
 void VueGestionClient::setEditable()
@@ -66,5 +66,5 @@ void VueGestionClient::setEditable()
     ui->champPrenom->setReadOnly(false);
     ui->champNom->setReadOnly(false);
     ui->champTelephone->setReadOnly(false);
-    ui->champCourriel->setReadOnly(false);
+    ui->champAdresse->setReadOnly(false);
 }

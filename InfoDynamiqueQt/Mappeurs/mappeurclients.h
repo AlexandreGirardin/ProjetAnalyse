@@ -25,6 +25,13 @@ public:
     explicit MappeurClients(QObject* parent = 0);
 
     /**
+     * @brief inserer
+     * @param client Le client a insérer dans la base de donnée
+     * @return succes
+     */
+    bool inserer(const Client* client);
+
+    /**
      * @brief getClient
      * @param id Le numéro du client à mapper
      * @return Le client s'il existe, NULL autrement
@@ -40,6 +47,13 @@ private:
      */
     Client* mapper(QSqlRecord ligne);
 
+    /**
+     * @brief preparerRequete Assigne les valeurs d'un client à une requête préparée
+     * @param appareil Le client source
+     * @param commande La commande SQL à préparer
+     * @return La commande préparée
+     */
+    QSqlQuery* preparerRequete(const Client* client, const QString* commande);
 };
 
 #endif // MAPPEURCLIENTS_H
