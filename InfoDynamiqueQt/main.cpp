@@ -7,6 +7,4 @@ int main(int argc, char *argv[])
     int retour = application.exec();
     application.fermer();
     return retour;
-//    application.debug();
-//    return application.exec();
 }

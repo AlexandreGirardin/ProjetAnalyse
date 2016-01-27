@@ -17,15 +17,14 @@ public:
 
     EnsembleActions* getEnsemble(const int id);
     QList<EnsembleActions*>* getEnsembles();
-    QSqlQuery* preparerRequete(const EnsembleActions* ensemble, const QString* commande);
     bool mettreAJour(const EnsembleActions* ensemble);
 
 private:
 
-    bool ecrire(const EnsembleActions* ensemble, const QString* commande);
-
     EnsembleActions* mapper(const QSqlRecord ligne);
     QList<EnsembleActions*>* mapper(QSqlQuery *requete);
+    bool ecrire(const EnsembleActions* ensemble, const QString* commande);
+    QSqlQuery* preparerRequete(const EnsembleActions* ensemble, const QString* commande);
 };
 
 #endif // MAPPEURENSEMBLES_H

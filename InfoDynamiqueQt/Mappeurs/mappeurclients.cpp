@@ -30,7 +30,7 @@ bool MappeurClients::inserer(const Client* client)
     return succes;
 }
 
-Client* MappeurClients::getClient(int id)
+Client* MappeurClients::getClient(const int id)
 {
     Client* client = NULL;
     QSqlQuery requete = QSqlQuery(*Application::bd);
@@ -43,7 +43,7 @@ Client* MappeurClients::getClient(int id)
     return client;
 }
 
-Client* MappeurClients::mapper(QSqlRecord ligne)
+Client* MappeurClients::mapper(const QSqlRecord ligne)
 {
     Client* client = new Client(this);
     client->setId(ligne.value("id").toInt());

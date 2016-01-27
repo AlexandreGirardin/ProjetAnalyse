@@ -28,7 +28,7 @@ public:
      * @param id Le numéro du fabricant à mapper
      * @return le fabricant s'il existe, NULL autrement
      */
-    Fabricant* getFabricant(int id);
+    Fabricant* getFabricant(const int id);
 
     /**
      * @brief getFabricants
@@ -43,7 +43,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return Le fabricant
      */
-    Fabricant* mapper(QSqlRecord);
+    Fabricant* mapper(const QSqlRecord ligne);
 
 };
 
