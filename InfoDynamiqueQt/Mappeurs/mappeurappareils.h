@@ -40,7 +40,7 @@ public:
      * @param client Le client cible
      * @return La liste des appareils appartenant au client
      */
-    QList<Appareil*>* appareilsPourClient(const Client* client);
+    QList<Appareil*>* appareilsPourClient(const int idClient);
 
     /**
      * @brief mettreAJour
@@ -74,6 +74,10 @@ private:
      * @return La commande préparée
      */
     QSqlQuery* preparerRequete(const Appareil* appareil, const QString* commande);
+
+    QList<Appareil*>* mapper(QSqlQuery* requete);
+
+    bool ecrire(const Appareil* appareil, const QString* commande);
 
 };
 

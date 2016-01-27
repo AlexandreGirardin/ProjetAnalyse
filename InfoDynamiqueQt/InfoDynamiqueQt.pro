@@ -57,7 +57,8 @@ SOURCES += main.cpp\
 	Controleurs/application.cpp \
 	Controleurs/requetessql.cpp \
 	Vues/vuegestionaction.cpp \
-    Controleurs/controleurgestionensemble.cpp
+    Controleurs/controleurgestionensemble.cpp \
+    Mappeurs/mappeurensembles.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -103,7 +104,8 @@ HEADERS  += \
 	Controleurs/application.h \
 	Controleurs/requetessql.h \
 	Vues/vuegestionaction.h \
-    Controleurs/controleurgestionensemble.h
+    Controleurs/controleurgestionensemble.h \
+    Mappeurs/mappeurensembles.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \

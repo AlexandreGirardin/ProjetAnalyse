@@ -12,10 +12,10 @@ MappeurActions::MappeurActions(QObject* parent) :
 {
 }
 
-Action* MappeurActions::getAction(int id)
+Action* MappeurActions::getAction(const int id)
 {
     Action* action = NULL;
-    QSqlQuery requete = QSqlQuery(*Application::bd);
+    QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM actions WHERE id=:id");
     requete.bindValue(":id", id);
     requete.exec();
@@ -25,7 +25,13 @@ Action* MappeurActions::getAction(int id)
     return action;
 }
 
-Action* MappeurActions::mapper(QSqlRecord ligne)
+QList<Action*>* MappeurActions::getActions()
+{
+    QSqlQuery requete("SELECT * FROM actions", *Application::bd);
+    return mapper(&requete);
+}
+
+Action* MappeurActions::mapper(const QSqlRecord ligne)
 {
     Action* action = new Action(this);
     action->setId(ligne.value("id").toInt());
@@ -35,17 +41,16 @@ Action* MappeurActions::mapper(QSqlRecord ligne)
     return action;
 }
 
-QList<Action*>* MappeurActions::getActions()
+QList<Action*>* MappeurActions::mapper(QSqlQuery* requete)
 {
     QList<Action*>* liste = new QList<Action*>();
-    QSqlQuery* commande = new QSqlQuery("SELECT * FROM actions",*Application::bd);
-    QSqlRecord ligne = commande->record();
+    QSqlRecord ligne = requete->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
     int colDesc = ligne.indexOf("description");
     int colEtat = ligne.indexOf("etat");
-    while (commande->next()) {
-        ligne = commande->record();
+    while (requete->next()) {
+        ligne = requete->record();
         Action* action = new Action(this);
         action->setId(ligne.value(colId).toInt());
         action->setNom(ligne.value(colNom).toString());
@@ -54,6 +59,28 @@ QList<Action*>* MappeurActions::getActions()
         liste->append(action);
     }
     return liste;
+}
+
+QList<Action*>* MappeurActions::actionsPourEnsemble(const int idEnsemble)
+{
+    QSqlQuery requete(*Application::bd);
+    requete.prepare("SELECT * FROM actions a INNER JOIN ensemblesActions ea\
+                     ON a.id = ea.idAction WHERE ea.idEnsemble=:idEnsemble");
+    requete.bindValue(":id", idEnsemble);
+    return mapper(&requete);
+}
+
+bool MappeurActions::mettreAJour(const Action* action)
+{
+    const QString commande(
+                "UPDATE actions\
+                SET\
+                    nom=:nom,\
+                    description=:description,\
+                    etat=:etat\
+                WHERE id=:idAction");
+    bool succes = ecrire(action, &commande);
+    return succes;
 }
 
 QSqlQuery* MappeurActions::preparerRequete(const Action* action, const QString* commande)
@@ -67,24 +94,18 @@ QSqlQuery* MappeurActions::preparerRequete(const Action* action, const QString* 
     return requete;
 }
 
-bool MappeurActions::mettreAJour(const Action* action)
+bool MappeurActions::ecrire(const Action *action, const QString *commande)
 {
-    QSqlDatabase* bd = Application::bd;
-    bd->transaction();
-    const QString* commande = new QString(
-                "UPDATE actions\
-                SET\
-                    nom=:nom,\
-                    description=:description,\
-                    etat=:etat\
-                WHERE id=:idAction");
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
     QSqlQuery* requete = preparerRequete(action, commande);
     bool succes = requete->exec();
     if (succes) {
-        bd->commit();
+        bd.commit();
     } else {
         qDebug() << requete->lastError();
-        bd->rollback();
+        bd.rollback();
     }
+    delete requete;
     return succes;
 }
