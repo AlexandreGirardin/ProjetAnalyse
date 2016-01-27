@@ -145,8 +145,6 @@ public slots:
      */
     void chargerOnglet();
 
-    void fermer();
-
 };
 
 #endif // APPLICATION_H

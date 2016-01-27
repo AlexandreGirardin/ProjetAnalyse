@@ -17,7 +17,7 @@ const QString* RequetesSQL::afficherClients =
 const QString* RequetesSQL::filtrerClients =
         new QString (*afficherClients +
                         QString(" WHERE c.id LIKE :filtre\
-                                OR c.nom LIKE :filtre\
+                                OR CONCAT(c.nom, ', ', c.prenom) LIKE :filtre\
                                 OR c.telephone LIKE :filtre\
                                 OR c.adresse LIKE :filtre"));
 

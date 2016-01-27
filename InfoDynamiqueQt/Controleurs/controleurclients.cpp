@@ -96,8 +96,8 @@ void ControleurClients::filtrerClients(QString filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*RequetesSQL::filtrerClients);
-        const QString* meta = ControleurBD::meta();
-        requete.bindValue(":filtre", *meta + filtre + *meta);
+        const QString meta = *ControleurBD::meta;
+        requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
@@ -151,17 +151,15 @@ void ControleurClients::activerCritereFiches()
 {
     commandeFiches = RequetesSQL::fichesActivesPourAppareil;
     peuplerFiches(fragmentAppareils->getIdModele());
-//    qDebug() << *commandeFiches;
 }
 
 void ControleurClients::desactiverCritereFiches()
 {
     commandeFiches = RequetesSQL::toutesFichesPourAppareil;
-//    qDebug() << *commandeFiches;
     peuplerFiches(fragmentAppareils->getIdModele());
 }
 
-QSqlQuery ControleurClients::requeteFiches(int idAppareil) const
+QSqlQuery ControleurClients::requeteFiches(const int idAppareil) const
 {
     QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare(*commandeFiches);

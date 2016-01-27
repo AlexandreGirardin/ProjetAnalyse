@@ -29,7 +29,7 @@ void ControleurGestionClient::ajouterClient()
     }
 }
 
-void ControleurGestionClient::modifierClient(int idClient)
+void ControleurGestionClient::modifierClient(const int idClient)
 {
     VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
     Client* client = Application::clients->getClient(idClient);
@@ -37,7 +37,7 @@ void ControleurGestionClient::modifierClient(int idClient)
     vue->exec();
 }
 
-void ControleurGestionClient::voirClient(int idClient)
+void ControleurGestionClient::voirClient(const int idClient)
 {
     VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
     Client* client = Application::clients->getClient(idClient);
@@ -46,7 +46,7 @@ void ControleurGestionClient::voirClient(int idClient)
     vue->show();
 }
 
-void ControleurGestionClient::assignerClient(VueGestionClient* vue, Client* client)
+void ControleurGestionClient::assignerClient(VueGestionClient* vue, const Client* client)
 {
     vue->setPrenom(client->getPrenom());
     vue->setNom(client->getNom());

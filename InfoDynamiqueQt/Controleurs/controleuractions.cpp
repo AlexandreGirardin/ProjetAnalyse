@@ -95,7 +95,7 @@ void ControleurActions::filtrerActions(QString filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*requeteActionsFiltre);
-        const QString meta = *ControleurBD::meta();
+        const QString meta = *ControleurBD::meta;
         requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);

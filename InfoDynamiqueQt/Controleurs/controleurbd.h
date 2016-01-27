@@ -49,7 +49,7 @@ public:
      * @brief meta
      * @return Le méta-caractère de la base de données
      */
-    static const QString* meta();
+    static const QString* meta;
 
 };
 

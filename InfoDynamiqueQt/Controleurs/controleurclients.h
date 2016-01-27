@@ -82,7 +82,7 @@ private:
      * @param idAppareil L'appareil dont on souhaite afficher les fiches
      * @return La requête utilisée pour peupler les fiches
      */
-    QSqlQuery requeteFiches(int idAppareil) const;
+    QSqlQuery requeteFiches(const int idAppareil) const;
 
     const QString* commandeFiches;
 
