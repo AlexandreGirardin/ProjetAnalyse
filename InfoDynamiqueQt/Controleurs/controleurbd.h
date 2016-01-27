@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "Vues/vueconnexion.h"
+
 #include <QtSql/QSql>
 #include <QtSql/QSqlDriver>
 #include <QtSql/QSqlQuery>

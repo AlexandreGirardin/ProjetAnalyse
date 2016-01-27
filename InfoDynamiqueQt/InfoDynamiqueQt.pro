@@ -56,7 +56,8 @@ SOURCES += main.cpp\
 	Vues/vueappareil.cpp \
 	Controleurs/application.cpp \
 	Controleurs/requetessql.cpp \
-	Vues/vuegestionaction.cpp
+	Vues/vuegestionaction.cpp \
+    Vues/vuefragmentconnexion.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -101,7 +102,8 @@ HEADERS  += \
 	Vues/vueappareil.h \
 	Controleurs/application.h \
 	Controleurs/requetessql.h \
-	Vues/vuegestionaction.h
+	Vues/vuegestionaction.h \
+    Vues/vuefragmentconnexion.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
@@ -116,4 +118,5 @@ FORMS    += \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
 	Vues/vueappareil.ui \
-	Vues/vuegestionaction.ui
+	Vues/vuegestionaction.ui \
+    Vues/vuefragmentconnexion.ui

@@ -1,5 +1,8 @@
 #include "Controleurs/controleurbd.h"
 
+#include "ui_vueconnexion.h"
+
+#include "Controleurs/application.h"
 #include <QDebug>
 #include <QtSql/QSqlDatabase>
 
@@ -15,14 +18,17 @@ QSqlDatabase* ControleurBD::getBd()
 
 void ControleurBD::connecterDossiers()
 {
-    bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd());
-    bd.setHostName("localhost");
-    bd.setDatabaseName("InfoDynamiqueDossiers");
-    bd.setPort(3307);
-    bd.setUserName("root");
-    bd.setPassword("patate");
-    if (!bd.open()) {
-        qDebug() << "Database error occurred";
+    VueConnexion* vue = new VueConnexion(Application::getVuePrincipale());
+    if (vue->exec() == vue->Accepted) {
+        bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd());
+        bd.setHostName(vue->getHote());
+        bd.setDatabaseName("InfoDynamiqueDossiers");
+        bd.setPort(vue->getPort());
+        bd.setUserName(vue->getUsager());
+        bd.setPassword(vue->getMotDePasse());
+        if (!bd.open()) {
+            qDebug() << "Database error occurred";
+        }
     }
 }
 

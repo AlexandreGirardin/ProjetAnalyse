@@ -17,7 +17,15 @@ public:
     explicit VueConnexion(QWidget *parent = 0);
     ~VueConnexion();
 
+    QString getHote();
+    int getPort();
+    QString getUsager();
+    QString getMotDePasse();
 
+    void setHote(QString value);
+    void setPort(int value);
+    void setUsager(QString value);
+    void setMotDePasse(QString value);
 private:
     Ui::VueConnexion *ui;
 };
