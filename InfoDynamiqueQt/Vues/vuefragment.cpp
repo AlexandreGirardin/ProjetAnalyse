@@ -27,7 +27,6 @@ VueFragment::~VueFragment()
 void VueFragment::configurerBoutonAjouter()
 {
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
-    QObject::connect(this, SIGNAL(selectionValide(bool)), ui->boutonAjouter, SLOT(setEnabled(bool)));
 }
 
 void VueFragment::configurerBoutonModifier()
