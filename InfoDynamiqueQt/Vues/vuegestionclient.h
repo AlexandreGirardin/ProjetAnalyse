@@ -59,17 +59,17 @@ public:
     void setTelephone(QString telephone);
 
     /**
-     * @brief getCourriel
-     * @return L'adresse courriel du client
+     * @brief getAdresse
+     * @return L'adresse résidentielle du client
      */
-    QString getCourriel() const;
+    QString getAdresse() const;
 
     /**
      * @brief setCourriel
-     * Assigne une adresse courriel au client
-     * @param courriel L'adresse courriel à assigner
+     * Assigne une adresse résidentielle au client
+     * @param adresse L'adresse résidentielle à assigner
      */
-    void setCourriel(QString courriel);
+    void setAdresse(QString courriel);
 
 public slots:
 

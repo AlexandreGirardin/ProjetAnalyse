@@ -35,12 +35,12 @@ void Client::setTelephone(const QString &value)
     telephone = value;
 }
 
-QString Client::getCourriel() const
+QString Client::getAdresse() const
 {
     return adresse;
 }
 
-void Client::setCourriel(const QString &value)
+void Client::setAdresse(const QString &value)
 {
     adresse = value;
 }
