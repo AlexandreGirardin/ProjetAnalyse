@@ -30,18 +30,12 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="champNom"/>
-     </item>
      <item row="2" column="0">
       <widget class="QLabel" name="etiquetteTelephone">
        <property name="text">
         <string>Téléphone:</string>
        </property>
       </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="champTelephone"/>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="etiquetteAdresse">

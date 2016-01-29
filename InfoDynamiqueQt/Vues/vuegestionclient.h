@@ -58,7 +58,7 @@ public:
      * Assigne un numéro de téléphone au client
      * @param telephone Le numéro de téléphone à assigner
      */
-    void setTelephone(QString telephone);
+    void setTelephone(QString texte);
 
     /**
      * @brief getAdresse
@@ -87,11 +87,23 @@ public slots:
      */
     void setEditable();
 
+private slots:
+
+    void verifierPrenom();
+
+    void verifierNom();
+
+    void verifierTelephone();
+
 private:
 
     Ui::VueGestionClient* ui;
 
     ChampFormulaire* prenom;
+
+    ChampFormulaire* nom;
+
+    ChampFormulaire* telephone;
 
 };
 

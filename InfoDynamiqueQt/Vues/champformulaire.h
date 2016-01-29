@@ -12,7 +12,7 @@ class ChampFormulaire : public QWidget
     Q_OBJECT
 
 public:
-    explicit ChampFormulaire(QWidget *parent = 0);
+    explicit ChampFormulaire(const QString& raison, QWidget *parent = 0);
     ~ChampFormulaire();
 
     QString getTexte() const;
@@ -21,6 +21,15 @@ public:
 
 private:
     Ui::ChampFormulaire *ui;
+
+signals:
+
+    void valeurChangee();
+
+public slots:
+
+    void setValide(bool valeur);
+
 };
 
 #endif // CHAMPFORMULAIRE_H

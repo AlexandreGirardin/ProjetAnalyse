@@ -10,9 +10,15 @@ VueGestionClient::VueGestionClient(QWidget* parent) :
     ui(new Ui::VueGestionClient)
 {
     ui->setupUi(this);
-    prenom = new ChampFormulaire(this);
+    prenom = new ChampFormulaire(tr("Ce champ est requis"), this);
     ui->formLayout->setWidget(0,QFormLayout::FieldRole, prenom);
-//    ui->conteneurPrenom->
+    QObject::connect(prenom, SIGNAL(valeurChangee()), this, SLOT(verifierPrenom()));
+    nom = new ChampFormulaire(tr("Ce champ est requis"), this);
+    ui->formLayout->setWidget(1,QFormLayout::FieldRole, nom);
+    QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
+    telephone = new ChampFormulaire(tr("Chiffres uniquement"), this);
+    ui->formLayout->setWidget(2,QFormLayout::FieldRole, telephone);
+    QObject::connect(telephone, SIGNAL(valeurChangee()), this, SLOT(verifierTelephone()));
 }
 
 VueGestionClient::~VueGestionClient()
@@ -32,22 +38,22 @@ void VueGestionClient::setPrenom(QString texte)
 
 QString VueGestionClient::getNom() const
 {
-    return ui->champNom->text();
+    return nom->getTexte();
 }
 
-void VueGestionClient::setNom(QString nom)
+void VueGestionClient::setNom(QString texte)
 {
-    ui->champNom->setText(nom);
+    nom->setTexte(texte);
 }
 
 QString VueGestionClient::getTelephone() const
 {
-    return ui->champTelephone->text();
+    return telephone->getTexte();
 }
 
-void VueGestionClient::setTelephone(QString telephone)
+void VueGestionClient::setTelephone(QString texte)
 {
-    ui->champTelephone->setText(telephone);
+    telephone->setTexte(texte);
 }
 
 QString VueGestionClient::getAdresse() const
@@ -63,15 +69,28 @@ void VueGestionClient::setAdresse(QString adresse)
 void VueGestionClient::setLectureSeule()
 {
     prenom->setLectureSeule(true);
-    ui->champNom->setReadOnly(true);
-    ui->champTelephone->setReadOnly(true);
+    nom->setLectureSeule(true);
+    telephone->setLectureSeule(true);
     ui->champAdresse->setReadOnly(true);
 }
 
 void VueGestionClient::setEditable()
 {
     prenom->setLectureSeule(false);
-    ui->champNom->setReadOnly(false);
-    ui->champTelephone->setReadOnly(false);
+    nom->setLectureSeule(false);
+    telephone->setLectureSeule(false);
     ui->champAdresse->setReadOnly(false);
+}
+
+void VueGestionClient::verifierPrenom() {
+    prenom->setValide(!prenom->getTexte().isEmpty());
+}
+
+void VueGestionClient::verifierNom() {
+    nom->setValide(!nom->getTexte().isEmpty());
+}
+
+void VueGestionClient::verifierTelephone() {
+
+    telephone->setValide(!telephone->getTexte().isEmpty());
 }
