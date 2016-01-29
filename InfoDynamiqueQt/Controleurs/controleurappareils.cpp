@@ -11,9 +11,9 @@ ControleurAppareils::ControleurAppareils(QWidget* vue)
     : QObject(vue)
 {
     fragment = new VueFragment(vue);
-    fragment->getEtiquette()->deleteLater();
+    fragment->retirerEtiquette();
     fragment->getBoutonAjouter()->deleteLater();
-    fragment->getCaseCocher()->deleteLater();
+    fragment->retirerCaseCocher();
     vue->layout()->addWidget(fragment);
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
@@ -87,6 +87,6 @@ void ControleurAppareils::filtrerAppareils(QString filtre)
 
 void ControleurAppareils::recharger()
 {
-    filtrerAppareils(fragment->getChamp()->text());
+    filtrerAppareils(fragment->getFiltre());
 }
 

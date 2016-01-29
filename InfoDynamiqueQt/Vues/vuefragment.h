@@ -77,7 +77,11 @@ public:
      * @brief getEtiquette
      * @return L'étiquette du fragment
      */
-    QLabel* getEtiquette() const;
+//    QLabel* getEtiquette() const;
+
+    void retirerEtiquette() const;
+
+    void setEtiquette(const QString etiquette) const;
 
     /**
      * @brief getBoutonAjouter
@@ -111,10 +115,22 @@ public:
     QCheckBox* getCaseCocher() const;
 
     /**
-     * @brief getChamp
-     * @return Le champ de recherche du fragment
+     * @brief retirerCaseCocher
+     * Retire la case à cocher de la vue
      */
-    QLineEdit* getChamp() const;
+    void retirerCaseCocher() const;
+
+    /**
+     * @brief retirerChamp
+     * Retire le champ de recherche de la vue
+     */
+    void retirerChamp() const;
+
+    /**
+     * @brief getFiltre
+     * @return Le filtre de recherche actuel
+     */
+    QString getFiltre() const;
 
     /**
      * @brief getTableau

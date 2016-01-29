@@ -24,6 +24,16 @@ VueFragment::~VueFragment()
     delete ui;
 }
 
+void VueFragment::retirerEtiquette() const
+{
+    ui->etiquette->deleteLater();
+}
+
+void VueFragment::setEtiquette(const QString etiquette) const
+{
+    ui->etiquette->setText(etiquette);
+}
+
 void VueFragment::configurerBoutonAjouter()
 {
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
@@ -62,10 +72,10 @@ void VueFragment::setColonneId(int value)
 }
 
 
-QLabel* VueFragment::getEtiquette() const
-{
-    return ui->etiquette;
-}
+//QLabel* VueFragment::getEtiquette() const
+//{
+//    return ui->etiquette;
+//}
 
 QPushButton* VueFragment::getBoutonAjouter() const
 {
@@ -95,9 +105,24 @@ QCheckBox* VueFragment::getCaseCocher() const
     return ui->caseCocher;
 }
 
-QLineEdit* VueFragment::getChamp() const
+void VueFragment::retirerCaseCocher() const
 {
-    return ui->champ;
+    ui->caseCocher->deleteLater();
+}
+
+void VueFragment::retirerChamp() const
+{
+    ui->champ->deleteLater();
+}
+
+//QLineEdit* VueFragment::getChamp() const
+//{
+//    return ui->champ;
+//}
+
+QString VueFragment::getFiltre() const
+{
+    return ui->champ->text();
 }
 
 QTableView* VueFragment::getTableau() const

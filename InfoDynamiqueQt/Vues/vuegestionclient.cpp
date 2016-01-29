@@ -1,6 +1,8 @@
 #include "Vues/vuegestionclient.h"
 #include "ui_vuegestionclient.h"
 
+#include <QPushButton>
+
 VueGestionClient::VueGestionClient(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionClient)

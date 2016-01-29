@@ -9,7 +9,7 @@ ControleurFiches::ControleurFiches(QWidget* vue)
     : QObject(vue)
 {
     fragment = new VueFragment();
-    fragment->getEtiquette()->deleteLater();
+    fragment->retirerEtiquette();
     fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     vue->layout()->addWidget(fragment);
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));

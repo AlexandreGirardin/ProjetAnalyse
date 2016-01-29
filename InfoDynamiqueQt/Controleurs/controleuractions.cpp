@@ -27,7 +27,7 @@ ControleurActions::ControleurActions(QWidget* vue)
 void ControleurActions::configurerFragmentActions()
 {
     fragmentActions = new VueFragment(splitter);
-    fragmentActions->getEtiquette()->setText(tr("Actions"));
+    fragmentActions->setEtiquette(tr("Actions"));
     fragmentActions->getCaseCocher()->setText(tr("Afficher toutes les actions"));
 
     QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
@@ -46,7 +46,7 @@ void ControleurActions::configurerFragmentActions()
 void ControleurActions::configurerFragmentEnsembles()
 {
     fragmentEnsembles = new VueFragment(splitter);
-    fragmentEnsembles->getEtiquette()->setText(tr("Ensembles"));
+    fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
     QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsemble, SLOT(modifierEnsemble()));
@@ -79,13 +79,13 @@ void ControleurActions::activerCritereActions()
 {
     requeteActions = RequetesSQL::afficherActionsActives;
     requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
 }
 
 void ControleurActions::desactiverCritereActions() {
     requeteActions = RequetesSQL::afficherToutesActions;
     requeteActionsFiltre = RequetesSQL::filtrerToutesActions;
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
 }
 
 void ControleurActions::filtrerActions(QString filtre)
@@ -149,6 +149,6 @@ void ControleurActions::changerEtat()
 
 void ControleurActions::recharger()
 {
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
 }
 
