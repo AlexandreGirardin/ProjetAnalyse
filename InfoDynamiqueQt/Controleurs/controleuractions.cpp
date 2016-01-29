@@ -52,7 +52,7 @@ void ControleurActions::configurerFragmentEnsembles()
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsemble, SLOT(modifierEnsemble()));
 }
 
-void ControleurActions::assignerAction(VueGestionAction *vue, Action *action) const
+void ControleurActions::assignerAction(VueGestionAction* vue, Action* action) const
 {
     vue->setNom(action->getNom());
     vue->setDescription(action->getDescription());
@@ -95,8 +95,8 @@ void ControleurActions::filtrerActions(QString filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*requeteActionsFiltre);
-        const QString* meta = ControleurBD::meta();
-        requete.bindValue(":filtre", *meta + filtre + *meta);
+        const QString meta = *ControleurBD::meta;
+        requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
@@ -110,7 +110,6 @@ void ControleurActions::modifierAction()
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
-        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
         assignerAction(vue, action);
         if (vue->exec()) {
             action->setNom(vue->getNom());
@@ -121,6 +120,7 @@ void ControleurActions::modifierAction()
             }
         }
     }
+    action->deleteLater();
 }
 
 void ControleurActions::voirAction()
@@ -128,11 +128,11 @@ void ControleurActions::voirAction()
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
-        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
         assignerAction(vue, action);
         vue->setLectureSeule(true);
         vue->show();
     }
+    action->deleteLater();
 }
 
 void ControleurActions::changerEtat()
@@ -144,6 +144,7 @@ void ControleurActions::changerEtat()
             emit donneesModifiees();
         }
     }
+    action->deleteLater();
 }
 
 void ControleurActions::recharger()

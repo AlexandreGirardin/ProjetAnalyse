@@ -28,26 +28,26 @@ public:
      * @param id Le numéro du statutFiche à mapper
      * @return Le statut si elle existe. NULL autrement
      */
-    Statut* getStatutFiche(int id);
+    Statut* getStatutFiche(const int idStatut);
 
     /**
      * @brief getStatutsFiche
      * @return La liste de tous les statuts des fiches
      */
-    QList<Statut*>* getStatutsFiche(void);
+    QList<Statut*>* getStatutsFiche();
 
     /**
      * @brief getStatutAction
      * @param id Le numéro du statutAction à mapper
      * @return Le statut s'il existe, NULL autrement
      */
-    Statut* getStatutAction(int id);
+    Statut* getStatutAction(const int idStatut);
 
     /**
      * @brief getStatutsAction
      * @return La liste de tous les statuts des actions
      */
-    QList<Statut*>* getStatutsAction(void);
+    QList<Statut*>* getStatutsAction();
 
 private:
 
@@ -56,8 +56,9 @@ private:
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return La pièce
      */
-    Statut* mapper(QSqlRecord);
+    Statut* mapper(const QSqlRecord ligne);
 
+    QList<Statut*>* mapper(QSqlQuery* requete);
 };
 
 #endif // MAPPEURSTATUTS_H

@@ -36,7 +36,7 @@ public:
      * @param id Le numéro du client à mapper
      * @return Le client s'il existe, NULL autrement
      */
-    Client* getClient(int id);
+    Client* getClient(const int id);
 
 private:
 
@@ -45,7 +45,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en client
      * @return Le client
      */
-    Client* mapper(QSqlRecord ligne);
+    Client* mapper(const QSqlRecord ligne);
 
     /**
      * @brief preparerRequete Assigne les valeurs d'un client à une requête préparée

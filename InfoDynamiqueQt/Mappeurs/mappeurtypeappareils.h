@@ -28,7 +28,7 @@ public:
      * @param id Le numéro du type d'appareil à mapper
      * @return Le type d'appareil si il existe, NULL autremeent
      */
-    TypeAppareil* getTypeAppareil(int idType);
+    TypeAppareil* getTypeAppareil(const int idType);
 
     /**
      * @brief getTypesAppareil
@@ -43,8 +43,9 @@ private:
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return La pièce
      */
-    TypeAppareil* mapper(QSqlRecord);
+    TypeAppareil* mapper(const QSqlRecord ligne);
 
+    QList<TypeAppareil*>* mapper(QSqlQuery* requete);
 };
 
 #endif // MAPPEURTYPEAPPAREILS_H

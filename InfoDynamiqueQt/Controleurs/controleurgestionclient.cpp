@@ -26,27 +26,31 @@ void ControleurGestionClient::ajouterClient()
         } else {
             qDebug() << "Pas marché: " << client->out();
         }
+        vue->deleteLater();
+        client->deleteLater();
     }
 }
 
-void ControleurGestionClient::modifierClient(int idClient)
+void ControleurGestionClient::modifierClient(const int idClient)
 {
     VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
     Client* client = Application::clients->getClient(idClient);
     assignerClient(vue, client);
     vue->exec();
+    vue->deleteLater();
 }
 
-void ControleurGestionClient::voirClient(int idClient)
+void ControleurGestionClient::voirClient(const int idClient)
 {
     VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
     Client* client = Application::clients->getClient(idClient);
     assignerClient(vue, client);
     vue->setLectureSeule();
+    QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
     vue->show();
 }
 
-void ControleurGestionClient::assignerClient(VueGestionClient* vue, Client* client)
+void ControleurGestionClient::assignerClient(VueGestionClient* vue, const Client* client)
 {
     vue->setPrenom(client->getPrenom());
     vue->setNom(client->getNom());

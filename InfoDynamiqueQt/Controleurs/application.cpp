@@ -95,21 +95,6 @@ void Application::chargerOnglet()
     verifierParesseux();
 }
 
-void Application::fermer()
-{
-    m_instance = NULL;
-    controleurBD->deleteLater();
-    actions->deleteLater();
-    appareils->deleteLater();
-    clients->deleteLater();
-    ensembles->deleteLater();
-    fabricants->deleteLater();
-    pieces->deleteLater();
-    statuts->deleteLater();
-    techniciens->deleteLater();
-    typesAppareils->deleteLater();
-}
-
 void Application::verifierParesseux()
 {
     if (clientsCharges && fichesChargees && appareilsCharges && actionsChargees) {

@@ -14,7 +14,7 @@ void ControleurGestionAppareil::ajouterAppareil()
     vueGestionAppareil->exec();
 }
 
-void ControleurGestionAppareil::voirAppareil(int idAppareil)
+void ControleurGestionAppareil::voirAppareil(const int idAppareil)
 {
     VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
     Appareil* appareil = Application::appareils->getAppareil(idAppareil);

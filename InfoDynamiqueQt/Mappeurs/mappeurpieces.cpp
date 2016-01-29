@@ -10,41 +10,48 @@ MappeurPieces::MappeurPieces(QObject* parent) :
 {
 }
 
-Piece* MappeurPieces::getPiece(int id)
+Piece* MappeurPieces::getPiece(const int id)
 {
     Piece* piece = NULL;
     QString requete = "SELECT * FROM pieces WHERE id="+QString::number(id);
-    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
-    if (commande->next()) {
-        piece = mapper(commande->record());
+    QSqlQuery commande(requete, *Application::bd);
+    if (commande.next()) {
+        piece = mapper(commande.record());
     }
     return piece;
 }
 
-Piece* MappeurPieces::mapper(QSqlRecord ligne)
+QList<Piece*>* MappeurPieces::getPieces()
 {
-    return new Piece(ligne.value("id").toInt(),
-                     ligne.value("nom").toString(),
-                     ligne.value("description").toString(),
-                     ligne.value("prix").toInt(), this);
+    QSqlQuery requete(QSqlQuery("SELECT * FROM pieces", *Application::bd));
+    return mapper(&requete);
 }
 
-QList<Piece*>* MappeurPieces::getPieces(void)
+Piece* MappeurPieces::mapper(const QSqlRecord ligne)
 {
-    QList<Piece*>* liste = new QList<Piece*>();
-    QString requete = "SELECT * FROM pieces";
-    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
-    QSqlRecord ligne = commande->record();
+    Piece* piece = new Piece(this);
+    piece->setId(ligne.value("id").toInt());
+    piece->setNom(ligne.value("nom").toString());
+    piece->setDescription(ligne.value("description").toString());
+    piece->setPrix(ligne.value("prix").toInt());
+    return piece;
+}
+
+QList<Piece*>* MappeurPieces::mapper(QSqlQuery* requete)
+{
+    QList<Piece*>* liste = new QList<Piece*>;
+    QSqlRecord ligne = requete->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
     int colDesc = ligne.indexOf("description");
     int colPrix = ligne.indexOf("prix");
-    while (commande->next()) {
-        ligne = commande->record();
-        Piece* piece = new Piece(ligne.value(colId).toInt(),
-                                 ligne.value(colNom).toString(),
-                                 ligne.value(colDesc).toString(),
-                                 ligne.value(colPrix).toInt(), this);
+    while (requete->next()) {
+        ligne = requete->record();
+        Piece* piece = new Piece(this);
+        piece->setId(ligne.value(colId).toInt());
+        piece->setNom(ligne.value(colNom).toString());
+        piece->setDescription(ligne.value(colDesc).toString());
+        piece->setPrix(ligne.value(colPrix).toInt());
         liste->append(piece);
     }
     return liste;

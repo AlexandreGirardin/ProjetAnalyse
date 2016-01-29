@@ -28,7 +28,7 @@ private:
      * @param vue La vue cible
      * @param client Le client source
      */
-    void assignerClient(VueGestionClient* vue, Client* client);
+    void assignerClient(VueGestionClient* vue, const Client* client);
 
     /**
      * @brief lireClient
@@ -50,13 +50,13 @@ public slots:
      * @brief modifierClient
      * Lance la modification d'un client
      */
-    void modifierClient(int idClient);
+    void modifierClient(const int idClient);
 
     /**
      * @brief modifierClient
      * Lance la modification d'un client
      */
-    void voirClient(int idClient);
+    void voirClient(const int idClient);
 
 signals:
 

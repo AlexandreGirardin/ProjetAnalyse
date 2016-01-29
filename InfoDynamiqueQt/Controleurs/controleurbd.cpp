@@ -37,7 +37,4 @@ const QString ControleurBD::nomBd()
     return QString("dossiers");
 }
 
-const QString* ControleurBD::meta()
-{
-    return new QString("%");
-}
+const QString* ControleurBD::meta = new QString("%");

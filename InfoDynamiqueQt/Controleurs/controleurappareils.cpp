@@ -51,19 +51,21 @@ void ControleurAppareils::modifierAppareil()
             }
         }
     }
+    appareil->deleteLater();
 }
 
 void ControleurAppareils::voirAppareil()
 {
-    if (fragment->getIdModele() != -1) {
+    Appareil* appareil = Application::appareils->getAppareil(fragment->getIdModele());
+    if (appareil != NULL) {
         VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
-        Appareil* appareil = Application::appareils->getAppareil(fragment->getIdModele());
         vue->setType(appareil->getNomType());
         vue->setFabricant(appareil->getNomFabricant());
         vue->setMotDePasse(appareil->getMotDePasse());
         vue->setDescription(appareil->getDescription());
         vue->show();
     }
+    appareil->deleteLater();
 }
 
 void ControleurAppareils::filtrerAppareils(QString filtre)
@@ -73,8 +75,8 @@ void ControleurAppareils::filtrerAppareils(QString filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*RequetesSQL::filtrerAppareils);
-        const QString* meta = ControleurBD::meta();
-        requete.bindValue(":filtre", *meta + filtre + *meta);
+        const QString meta = *ControleurBD::meta;
+        requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
