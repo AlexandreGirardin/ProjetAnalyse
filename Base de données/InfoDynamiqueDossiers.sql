@@ -1,4 +1,4 @@
-clients-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.4.15
 -- http://www.phpmyadmin.net
 --
