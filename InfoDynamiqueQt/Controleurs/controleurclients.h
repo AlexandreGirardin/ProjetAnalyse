@@ -152,6 +152,11 @@ private slots:
      * Réassigne les commandes SQL pour afficher toutes les fiches
      */
     void desactiverCritereFiches();
+
+    /**
+     * @brief rechargerClients
+     */
+    void rechargerClients();
 };
 
 #endif // CONTROLEURCLIENTS_H

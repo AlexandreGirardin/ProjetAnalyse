@@ -25,6 +25,13 @@ public:
     explicit MappeurClients(QObject* parent = 0);
 
     /**
+     * @brief getClient
+     * @param id Le numéro du client à mapper
+     * @return Le client s'il existe, NULL autrement
+     */
+    Client* getClient(int id);
+
+    /**
      * @brief inserer
      * @param client Le client a insérer dans la base de donnée
      * @return succes
@@ -32,11 +39,12 @@ public:
     bool inserer(const Client* client);
 
     /**
-     * @brief getClient
-     * @param id Le numéro du client à mapper
-     * @return Le client s'il existe, NULL autrement
+     * @brief mettreAJour
+     * Met à jour un client dans la base de données
+     * @param client Le client à mettre à jour
+     * @return Succès
      */
-    Client* getClient(int id);
+    bool mettreAJour(const Client* client);
 
 private:
 

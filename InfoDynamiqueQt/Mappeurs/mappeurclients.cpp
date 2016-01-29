@@ -9,27 +9,6 @@ MappeurClients::MappeurClients(QObject* parent) :
     QObject(parent)
 {
 }
-
-bool MappeurClients::inserer(const Client* client)
-{
-    QSqlDatabase* bd = Application::bd;
-    bd->transaction();
-    QString* commande = new QString(
-                "INSERT INTO clients\
-                    (id, nom, prenom, telephone, adresse)\
-                VALUES\
-                    (:id, :nom, :prenom, :telephone, :adresse)");
-    QSqlQuery* requete = preparerRequete(client, commande);
-    bool succes = requete->exec();
-    if (succes) {
-        bd->commit();
-    } else {
-        qDebug() << requete->lastError();
-        bd->rollback();
-    }
-    return succes;
-}
-
 Client* MappeurClients::getClient(int id)
 {
     Client* client = NULL;
@@ -41,6 +20,49 @@ Client* MappeurClients::getClient(int id)
         client = mapper(requete.record());
     }
     return client;
+}
+
+bool MappeurClients::inserer(const Client* client)
+{
+    QSqlDatabase* bd = Application::bd;
+    bd->transaction();
+    QString* commande = new QString(
+                "INSERT INTO clients\
+                    (id, nom, prenom, telephone, adresse)\
+                VALUES\
+                    (:id, :prenom, :nom, :telephone, :adresse)");
+    QSqlQuery* requete = preparerRequete(client, commande);
+    bool succes = requete->exec();
+    if (succes) {
+        bd->commit();
+    } else {
+        qDebug() << requete->lastError();
+        bd->rollback();
+    }
+    return succes;
+}
+
+bool MappeurClients::mettreAJour(const Client *client)
+{
+    QSqlDatabase* bd = Application::bd;
+    bd->transaction();
+    QString* commande = new QString(
+                "UPDATE clients\
+                SET\
+                    prenom=:prenom,\
+                    nom=:nom,\
+                    telephone=:telephone,\
+                    adresse=:adresse\
+                WHERE id=:id");
+    QSqlQuery* requete = preparerRequete(client, commande);
+    bool succes = requete->exec();
+    if (succes) {
+        bd->commit();
+    } else {
+        qDebug() << requete->lastError();
+        bd->rollback();
+    }
+    return succes;
 }
 
 Client* MappeurClients::mapper(QSqlRecord ligne)
