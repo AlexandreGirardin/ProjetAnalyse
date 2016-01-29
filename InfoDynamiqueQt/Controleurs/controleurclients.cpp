@@ -32,6 +32,7 @@ void ControleurClients::configurerFragmentClients()
     QObject::connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
     QObject::connect(fragmentClients, SIGNAL(rechercher(QString)), this, SLOT(filtrerClients(QString)));
     QObject::connect(controleurGestionClient, SIGNAL(donneesModifiees()), this, SLOT(rechargerClients()));
+    QObject::connect(fragmentClients, SIGNAL(doubleClicModele()), this, SLOT(modifierClient()));
 }
 
 void ControleurClients::configurerFragmentAppareils()

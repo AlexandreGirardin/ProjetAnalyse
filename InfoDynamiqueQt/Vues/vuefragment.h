@@ -212,6 +212,8 @@ private slots:
      */
     void signalerSelection(QModelIndex nouveau, QModelIndex ancien);
 
+    void doubleClicTableau();
+
 signals:
 
     /**
@@ -281,6 +283,8 @@ signals:
      * Indique un changement de l'état des boutons (activés ou désactivés)
      */
     void boutonsActives(bool);
+
+    void doubleClicModele();
 
 };
 #endif // FRAGMENT_H

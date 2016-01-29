@@ -17,6 +17,7 @@ VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragm
     configurerCase();
     configurerChamp();
     QObject::connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
+    QObject::connect(ui->tableau, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(doubleClicTableau()));
 }
 
 VueFragment::~VueFragment()
@@ -176,4 +177,9 @@ void VueFragment::signalerCase(bool etat)
 void VueFragment::signalerSelection(QModelIndex nouvelle, QModelIndex)
 {
     emit nouvelleSelection(nouvelle);
+}
+
+void VueFragment::doubleClicTableau()
+{
+    emit doubleClicModele();
 }

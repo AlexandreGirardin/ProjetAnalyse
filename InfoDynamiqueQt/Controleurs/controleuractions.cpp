@@ -32,7 +32,7 @@ void ControleurActions::configurerFragmentActions()
 
     QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
     boutonEtat->setText(tr("Changer l'état"));
-    boutonEtat->setIcon(QIcon::fromTheme("reverse"));
+    boutonEtat->setIcon(QIcon(":/Images/reverse"));
     boutonEtat->setEnabled(false);
 
     QObject::connect(fragmentActions, SIGNAL(clicEditer()), this, SLOT(modifierAction()));
