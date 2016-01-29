@@ -93,8 +93,6 @@ private slots:
 
     void verifierNom();
 
-    void verifierTelephone();
-
 private:
 
     Ui::VueGestionClient* ui;
@@ -102,8 +100,6 @@ private:
     ChampFormulaire* prenom;
 
     ChampFormulaire* nom;
-
-    ChampFormulaire* telephone;
 
 };
 

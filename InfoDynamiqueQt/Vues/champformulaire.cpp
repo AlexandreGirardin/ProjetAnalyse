@@ -6,8 +6,8 @@ ChampFormulaire::ChampFormulaire(const QString& raison, QWidget *parent) :
     ui(new Ui::ChampFormulaire)
 {
     ui->setupUi(this);
-    QObject::connect(ui->lineEdit, SIGNAL(textChanged(QString)), this, SIGNAL(valeurChangee()));
-    ui->pushButton->setToolTip(raison);
+    QObject::connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(valeurChangee()));
+    ui->iconeStatut->setToolTip(raison);
 }
 
 ChampFormulaire::~ChampFormulaire()
@@ -16,24 +16,24 @@ ChampFormulaire::~ChampFormulaire()
 }
 QString ChampFormulaire::getTexte() const
 {
-    return ui->lineEdit->text();
+    return ui->champ->text();
 }
 
 void ChampFormulaire::setTexte(const QString &value)
 {
-    ui->lineEdit->setText(value);
+    ui->champ->setText(value);
 }
 
 void ChampFormulaire::setLectureSeule(bool valeur)
 {
-    ui->lineEdit->setReadOnly(valeur);
+    ui->champ->setReadOnly(valeur);
     if (valeur) {
-        ui->pushButton->hide();
+        ui->champ->hide();
     }
 }
 
 void ChampFormulaire::setValide(bool valeur)
 {
-    ui->pushButton->setVisible(!valeur);
+    ui->iconeStatut->setVisible(!valeur);
 }
 

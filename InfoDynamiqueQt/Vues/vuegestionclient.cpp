@@ -16,9 +16,6 @@ VueGestionClient::VueGestionClient(QWidget* parent) :
     nom = new ChampFormulaire(tr("Ce champ est requis"), this);
     ui->formLayout->setWidget(1,QFormLayout::FieldRole, nom);
     QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
-    telephone = new ChampFormulaire(tr("Chiffres uniquement"), this);
-    ui->formLayout->setWidget(2,QFormLayout::FieldRole, telephone);
-    QObject::connect(telephone, SIGNAL(valeurChangee()), this, SLOT(verifierTelephone()));
 }
 
 VueGestionClient::~VueGestionClient()
@@ -48,12 +45,12 @@ void VueGestionClient::setNom(QString texte)
 
 QString VueGestionClient::getTelephone() const
 {
-    return telephone->getTexte();
+    return ui->champTelephone->text();
 }
 
 void VueGestionClient::setTelephone(QString texte)
 {
-    telephone->setTexte(texte);
+    ui->champTelephone->setText(texte);
 }
 
 QString VueGestionClient::getAdresse() const
@@ -70,7 +67,7 @@ void VueGestionClient::setLectureSeule()
 {
     prenom->setLectureSeule(true);
     nom->setLectureSeule(true);
-    telephone->setLectureSeule(true);
+    ui->champTelephone->setReadOnly(true);
     ui->champAdresse->setReadOnly(true);
 }
 
@@ -78,7 +75,7 @@ void VueGestionClient::setEditable()
 {
     prenom->setLectureSeule(false);
     nom->setLectureSeule(false);
-    telephone->setLectureSeule(false);
+    ui->champTelephone->setReadOnly(false);
     ui->champAdresse->setReadOnly(false);
 }
 
@@ -88,9 +85,4 @@ void VueGestionClient::verifierPrenom() {
 
 void VueGestionClient::verifierNom() {
     nom->setValide(!nom->getTexte().isEmpty());
-}
-
-void VueGestionClient::verifierTelephone() {
-
-    telephone->setValide(!telephone->getTexte().isEmpty());
 }
