@@ -44,7 +44,11 @@ public:
      * @param client Le client à mettre à jour
      * @return Succès
      */
+<<<<<<< HEAD
     bool mettreAJour(const Client* client);
+=======
+    Client* getClient(const int id);
+>>>>>>> 45d7d11832c9fc05d5ca2bc845a62be9588290fd
 
 private:
 
@@ -53,7 +57,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en client
      * @return Le client
      */
-    Client* mapper(QSqlRecord ligne);
+    Client* mapper(const QSqlRecord ligne);
 
     /**
      * @brief preparerRequete Assigne les valeurs d'un client à une requête préparée

@@ -10,7 +10,7 @@ MappeurFabricants::MappeurFabricants(QObject* parent) :
 {
 }
 
-Fabricant* MappeurFabricants::getFabricant(int id)
+Fabricant* MappeurFabricants::getFabricant(const int id)
 {
     Fabricant* fabricant = NULL;
     QString requete = "SELECT * FROM fabricants WHERE id="+QString::number(id);
@@ -21,7 +21,7 @@ Fabricant* MappeurFabricants::getFabricant(int id)
     return fabricant;
 }
 
-Fabricant* MappeurFabricants::mapper(QSqlRecord ligne)
+Fabricant* MappeurFabricants::mapper(const QSqlRecord ligne)
 {
     Fabricant* fabricant = new Fabricant(this);
     fabricant->setId(ligne.value("id").toInt());

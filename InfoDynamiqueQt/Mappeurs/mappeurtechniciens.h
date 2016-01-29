@@ -18,7 +18,6 @@ public:
 
     /**
      * @brief MappeurTechnicien
-     * @param a_bd La base de données à utiliser
      * @param parent
      */
     explicit MappeurTechniciens(QObject* parent = 0);
@@ -26,9 +25,9 @@ public:
     /**
      * @brief getTechnicien
      * @param id Le numéro du technicien à mapper
-     * @return La pièce si elle existe, NULL autrement
+     * @return Le technicien s'il existe, NULL autrement
      */
-    Technicien* getTechnicien(int id);
+    Technicien* getTechnicien(const int id);
 
     /**
      * @brief getTechniciens
@@ -40,11 +39,12 @@ private:
 
     /**
      * @brief mapper
-     * @param ligne La ligne de la base de données à mapper en pièce
+     * @param ligne La ligne de la base de données à mapper en technicien
      * @return Le technicien
      */
-    Technicien* mapper(QSqlRecord);
+    Technicien* mapper(const QSqlRecord);
 
+    QList<Technicien*>* mapper(QSqlQuery* requete);
 };
 
 #endif // MAPPEURTECHNICIENS_H

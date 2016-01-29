@@ -10,6 +10,17 @@ class EnsembleActions : public QObject {
 
     // Regroupement prédéfini de tâches permettant une création de fiches simplifiée
 
+private:
+
+    int id;
+
+    QString nom;
+
+    QString description;
+
+    // La liste des tâches faisant partie de l'ensemble
+    QList<Action*>* actions;
+
 public:
 
     /**
@@ -18,12 +29,17 @@ public:
      */
     explicit EnsembleActions(QObject* parent = 0);
 
-    // La liste des tâches faisant partie de l'ensemble
-    QList<Action*> actions;
+    QList<Action*>* getActions() const;
+    void setActions(QList<Action*>* value);
 
     // Représentation textuelle de l'ensemble de tâches
     QString out();
-
+    QString getNom() const;
+    void setNom(const QString &value);
+    QString getDescription() const;
+    void setDescription(const QString &value);
+    int getId() const;
+    void setId(int value);
 };
 
 #endif // ENSEMBLEACTIONS_H

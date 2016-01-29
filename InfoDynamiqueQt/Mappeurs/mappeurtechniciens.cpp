@@ -10,35 +10,44 @@ MappeurTechniciens::MappeurTechniciens(QObject* parent) :
 {
 }
 
-Technicien* MappeurTechniciens::getTechnicien(int a_id)
+Technicien* MappeurTechniciens::getTechnicien(const int id)
 {
     Technicien* technicien = NULL;
-    QString requete = "SELECT * FROM techniciens WHERE id="+QString::number(a_id);
-    QSqlQuery* commande = new QSqlQuery(requete,*Application::bd);
-    if (commande->next()) {
-        technicien = mapper(commande->record());
+    QSqlQuery commande(QSqlQuery(*Application::bd));
+    commande.prepare("SELECT * FROM techniciens WHERE id=:id");
+    commande.bindValue(":id", id);
+    commande.exec();
+    if (commande.next()) {
+        technicien = mapper(commande.record());
     }
     return technicien;
 }
 
-Technicien* MappeurTechniciens::mapper(QSqlRecord ligne)
+Technicien* MappeurTechniciens::mapper(const QSqlRecord ligne)
 {
-    return new Technicien(ligne.value("id").toInt(),
-                     ligne.value("nom").toString(), this);
+    Technicien* technicien = new Technicien(this);
+    technicien->setId(ligne.value("id").toInt());
+    technicien->setNom(ligne.value("nom").toString());
+    return technicien;
 }
 
-QList<Technicien*>* MappeurTechniciens::getTechniciens(void)
+QList<Technicien*>* MappeurTechniciens::getTechniciens()
+{
+    QSqlQuery requete(QSqlQuery("SELECT * FROM techniciens",*Application::bd));
+    return mapper(&requete);
+}
+
+QList<Technicien*>* MappeurTechniciens::mapper(QSqlQuery* requete)
 {
     QList<Technicien*>* liste = new QList<Technicien*>;
-    QString requete = "SELECT * FROM techniciens";
-    QSqlQuery* commande = new QSqlQuery(requete,*Application::bd);
-    QSqlRecord ligne = commande->record();
+    QSqlRecord ligne = requete->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
-    while (commande->next()) {
-        ligne = commande->record();
-        Technicien* technicien = new Technicien(ligne.value(colId).toInt(),
-                                 ligne.value(colNom).toString(), this);
+    while (requete->next()) {
+        ligne = requete->record();
+        Technicien* technicien = new Technicien(this);
+        technicien->setId(ligne.value(colId).toInt());
+        technicien->setNom(ligne.value(colNom).toString());
         liste->append(technicien);
     }
     return liste;

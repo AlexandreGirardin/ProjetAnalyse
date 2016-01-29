@@ -11,22 +11,20 @@ MappeurTypeAppareils::MappeurTypeAppareils(QObject* parent) :
 {
 }
 
-TypeAppareil* MappeurTypeAppareils::getTypeAppareil(int idType)
+TypeAppareil* MappeurTypeAppareils::getTypeAppareil(const int idType)
 {
     TypeAppareil* type = NULL;
-    QSqlQuery* commande = new QSqlQuery(*Application::bd);
-    commande->prepare("SELECT * FROM types WHERE id=:idType");
-    commande->bindValue(":idType", idType);
-    commande->exec();
-    if (commande->next()) {
-        type = mapper(commande->record());
-    } else {
-        type = new TypeAppareil(-1, tr("Indéfini"));
+    QSqlQuery commande(*Application::bd);
+    commande.prepare("SELECT * FROM types WHERE id=:idType");
+    commande.bindValue(":idType", idType);
+    commande.exec();
+    if (commande.next()) {
+        type = mapper(commande.record());
     }
     return type;
 }
 
-TypeAppareil* MappeurTypeAppareils::mapper(QSqlRecord ligne)
+TypeAppareil* MappeurTypeAppareils::mapper(const QSqlRecord ligne)
 {
     TypeAppareil* type = new TypeAppareil();
     type->setId(ligne.value("id").toInt());
@@ -36,15 +34,19 @@ TypeAppareil* MappeurTypeAppareils::mapper(QSqlRecord ligne)
 
 QList<TypeAppareil*>* MappeurTypeAppareils::getTypesAppareil(void)
 {
-    QList<TypeAppareil*>* liste = new QList<TypeAppareil*>();
-    QString requete = "SELECT * FROM types";
-    QSqlQuery* commande = new QSqlQuery(requete, *Application::bd);
-    QSqlRecord ligne = commande->record();
+    QSqlQuery requete("SELECT * FROM types", *Application::bd);
+    return mapper(&requete);
+}
+
+QList<TypeAppareil*>* MappeurTypeAppareils::mapper(QSqlQuery* requete)
+{
+    QList<TypeAppareil*>* liste = new QList<TypeAppareil*>;
+    QSqlRecord ligne = requete->record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
-    while (commande->next()) {
-        ligne = commande->record();
-        TypeAppareil* type = new TypeAppareil();
+    while (requete->next()) {
+        ligne = requete->record();
+        TypeAppareil* type = new TypeAppareil(this);
         type->setId(ligne.value(colId).toInt());
         type->setNom(ligne.value(colNom).toString());
         liste->append(type);

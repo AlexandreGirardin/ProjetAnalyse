@@ -56,7 +56,10 @@ SOURCES += main.cpp\
 	Vues/vueappareil.cpp \
 	Controleurs/application.cpp \
 	Controleurs/requetessql.cpp \
-	Vues/vuegestionaction.cpp
+	Vues/vuegestionaction.cpp \
+    Controleurs/controleurgestionensemble.cpp \
+    Mappeurs/mappeurensembles.cpp \
+    Vues/champformulaire.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -101,7 +104,10 @@ HEADERS  += \
 	Vues/vueappareil.h \
 	Controleurs/application.h \
 	Controleurs/requetessql.h \
-	Vues/vuegestionaction.h
+	Vues/vuegestionaction.h \
+    Controleurs/controleurgestionensemble.h \
+    Mappeurs/mappeurensembles.h \
+    Vues/champformulaire.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
@@ -116,4 +122,5 @@ FORMS    += \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
 	Vues/vueappareil.ui \
-	Vues/vuegestionaction.ui
+	Vues/vuegestionaction.ui \
+    Vues/champformulaire.ui

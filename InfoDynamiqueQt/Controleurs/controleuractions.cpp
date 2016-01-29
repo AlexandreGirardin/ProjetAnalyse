@@ -10,6 +10,9 @@
 ControleurActions::ControleurActions(QWidget* vue)
     : QObject(vue)
 {
+
+    controleurEnsemble = new ControleurGestionEnsemble(this);
+
     splitter = new QSplitter(Qt::Vertical, vue);
     splitter->setChildrenCollapsible(false);
     vue->layout()->addWidget(splitter);
@@ -24,7 +27,7 @@ ControleurActions::ControleurActions(QWidget* vue)
 void ControleurActions::configurerFragmentActions()
 {
     fragmentActions = new VueFragment(splitter);
-    fragmentActions->getEtiquette()->setText(tr("Actions"));
+    fragmentActions->setEtiquette(tr("Actions"));
     fragmentActions->getCaseCocher()->setText(tr("Afficher toutes les actions"));
 
     QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
@@ -43,12 +46,13 @@ void ControleurActions::configurerFragmentActions()
 void ControleurActions::configurerFragmentEnsembles()
 {
     fragmentEnsembles = new VueFragment(splitter);
-    fragmentEnsembles->getEtiquette()->setText(tr("Ensembles"));
+    fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
     QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsemble, SLOT(modifierEnsemble()));
 }
 
-void ControleurActions::assignerAction(VueGestionAction *vue, Action *action) const
+void ControleurActions::assignerAction(VueGestionAction* vue, Action* action) const
 {
     vue->setNom(action->getNom());
     vue->setDescription(action->getDescription());
@@ -75,13 +79,13 @@ void ControleurActions::activerCritereActions()
 {
     requeteActions = RequetesSQL::afficherActionsActives;
     requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
 }
 
 void ControleurActions::desactiverCritereActions() {
     requeteActions = RequetesSQL::afficherToutesActions;
     requeteActionsFiltre = RequetesSQL::filtrerToutesActions;
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
 }
 
 void ControleurActions::filtrerActions(QString filtre)
@@ -91,8 +95,8 @@ void ControleurActions::filtrerActions(QString filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*requeteActionsFiltre);
-        const QString* meta = ControleurBD::meta();
-        requete.bindValue(":filtre", *meta + filtre + *meta);
+        const QString meta = *ControleurBD::meta;
+        requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
@@ -106,7 +110,6 @@ void ControleurActions::modifierAction()
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
-        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
         assignerAction(vue, action);
         if (vue->exec()) {
             action->setNom(vue->getNom());
@@ -117,6 +120,7 @@ void ControleurActions::modifierAction()
             }
         }
     }
+    action->deleteLater();
 }
 
 void ControleurActions::voirAction()
@@ -124,11 +128,11 @@ void ControleurActions::voirAction()
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
-        Action* action = Application::actions->getAction(fragmentActions->getIdModele());
         assignerAction(vue, action);
         vue->setLectureSeule(true);
         vue->show();
     }
+    action->deleteLater();
 }
 
 void ControleurActions::changerEtat()
@@ -140,10 +144,11 @@ void ControleurActions::changerEtat()
             emit donneesModifiees();
         }
     }
+    action->deleteLater();
 }
 
 void ControleurActions::recharger()
 {
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
 }
 
