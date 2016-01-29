@@ -108,7 +108,7 @@ void ControleurClients::filtrerClients(QString filtre)
 
 void ControleurClients::rechargerClients()
 {
-    filtrerClients(fragmentClients->getChamp()->text());
+    filtrerClients(fragmentClients->getFiltre());
 }
 
 // Appareils

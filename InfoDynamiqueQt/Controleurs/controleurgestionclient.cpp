@@ -34,7 +34,6 @@ void ControleurGestionClient::ajouterClient()
 void ControleurGestionClient::modifierClient(const int idClient)
 {
     Client* client = Application::clients->getClient(idClient);
-<<<<<<< HEAD
     if (client != NULL) {
         VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
         assignerClient(vue, client);
@@ -49,12 +48,8 @@ void ControleurGestionClient::modifierClient(const int idClient)
                 qDebug() << "Pas marché" << client->out();
             }
         }
+        vue->deleteLater();
     }
-=======
-    assignerClient(vue, client);
-    vue->exec();
-    vue->deleteLater();
->>>>>>> 45d7d11832c9fc05d5ca2bc845a62be9588290fd
 }
 
 void ControleurGestionClient::voirClient(const int idClient)

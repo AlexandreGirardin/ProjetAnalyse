@@ -44,11 +44,7 @@ public:
      * @param client Le client à mettre à jour
      * @return Succès
      */
-<<<<<<< HEAD
     bool mettreAJour(const Client* client);
-=======
-    Client* getClient(const int id);
->>>>>>> 45d7d11832c9fc05d5ca2bc845a62be9588290fd
 
 private:
 

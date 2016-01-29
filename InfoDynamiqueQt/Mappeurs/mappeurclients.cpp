@@ -42,11 +42,7 @@ bool MappeurClients::inserer(const Client* client)
     return succes;
 }
 
-<<<<<<< HEAD
 bool MappeurClients::mettreAJour(const Client *client)
-=======
-Client* MappeurClients::getClient(const int id)
->>>>>>> 45d7d11832c9fc05d5ca2bc845a62be9588290fd
 {
     QSqlDatabase* bd = Application::bd;
     bd->transaction();
