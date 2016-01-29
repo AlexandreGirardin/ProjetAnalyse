@@ -1,6 +1,8 @@
 #ifndef GESTIONCLIENT_H
 #define GESTIONCLIENT_H
 
+#include "champformulaire.h"
+
 #include <QDialog>
 #include <QLineEdit>
 
@@ -30,7 +32,7 @@ public:
      * Assigne un prénom au client
      * @param prenom Le prénom à assigner
      */
-    void setPrenom(QString prenom);
+    void setPrenom(QString texte);
 
     /**
      * @brief getNom
@@ -88,6 +90,9 @@ public slots:
 private:
 
     Ui::VueGestionClient* ui;
+
+    ChampFormulaire* prenom;
+
 };
 
 #endif // GESTIONCLIENT_H

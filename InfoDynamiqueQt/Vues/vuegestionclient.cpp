@@ -3,11 +3,16 @@
 
 #include <QPushButton>
 
+#include "champformulaire.h"
+
 VueGestionClient::VueGestionClient(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionClient)
 {
     ui->setupUi(this);
+    prenom = new ChampFormulaire(this);
+    ui->formLayout->setWidget(0,QFormLayout::FieldRole, prenom);
+//    ui->conteneurPrenom->
 }
 
 VueGestionClient::~VueGestionClient()
@@ -17,12 +22,12 @@ VueGestionClient::~VueGestionClient()
 
 QString VueGestionClient::getPrenom() const
 {
-    return ui->champPrenom->text();
+    return prenom->getTexte();
 }
 
-void VueGestionClient::setPrenom(QString prenom)
+void VueGestionClient::setPrenom(QString texte)
 {
-    ui->champPrenom->setText(prenom);
+    prenom->setTexte(texte);
 }
 
 QString VueGestionClient::getNom() const
@@ -57,7 +62,7 @@ void VueGestionClient::setAdresse(QString adresse)
 
 void VueGestionClient::setLectureSeule()
 {
-    ui->champPrenom->setReadOnly(true);
+    prenom->setLectureSeule(true);
     ui->champNom->setReadOnly(true);
     ui->champTelephone->setReadOnly(true);
     ui->champAdresse->setReadOnly(true);
@@ -65,7 +70,7 @@ void VueGestionClient::setLectureSeule()
 
 void VueGestionClient::setEditable()
 {
-    ui->champPrenom->setReadOnly(false);
+    prenom->setLectureSeule(false);
     ui->champNom->setReadOnly(false);
     ui->champTelephone->setReadOnly(false);
     ui->champAdresse->setReadOnly(false);

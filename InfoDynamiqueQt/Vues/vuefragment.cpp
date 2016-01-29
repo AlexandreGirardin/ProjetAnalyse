@@ -71,12 +71,6 @@ void VueFragment::setColonneId(int value)
     colonneId = value;
 }
 
-
-//QLabel* VueFragment::getEtiquette() const
-//{
-//    return ui->etiquette;
-//}
-
 QPushButton* VueFragment::getBoutonAjouter() const
 {
     return ui->boutonAjouter;
@@ -114,11 +108,6 @@ void VueFragment::retirerChamp() const
 {
     ui->champ->deleteLater();
 }
-
-//QLineEdit* VueFragment::getChamp() const
-//{
-//    return ui->champ;
-//}
 
 QString VueFragment::getFiltre() const
 {
