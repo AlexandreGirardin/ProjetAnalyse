@@ -13,42 +13,42 @@ VueAppareil::~VueAppareil()
     delete ui;
 }
 
-QString VueAppareil::getType()
+QString VueAppareil::getType() const
 {
     return ui->champType->text();
 }
 
-QString VueAppareil::getFabricant()
+QString VueAppareil::getFabricant() const
 {
     return ui->champFabricant->text();
 }
 
-QString VueAppareil::getMotDePasse()
+QString VueAppareil::getMotDePasse() const
 {
     return ui->champMDP->text();
 }
 
-QString VueAppareil::getDescription()
+QString VueAppareil::getDescription() const
 {
     return ui->champDescription->document()->toPlainText();
 }
 
-void VueAppareil::setType(QString value)
+void VueAppareil::setType(const QString value)
 {
     ui->champType->setText(value);
 }
 
-void VueAppareil::setFabricant(QString value)
+void VueAppareil::setFabricant(const QString value)
 {
     ui->champFabricant->setText(value);
 }
 
-void VueAppareil::setMotDePasse(QString value)
+void VueAppareil::setMotDePasse(const QString value)
 {
     ui->champMDP->setText(value);
 }
 
-void VueAppareil::setDescription(QString value)
+void VueAppareil::setDescription(const QString value)
 {
     ui->champDescription->setText(value);
 }

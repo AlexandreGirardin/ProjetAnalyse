@@ -106,7 +106,7 @@ public:
      * Ajoute un bouton d'action au fragment
      * @param bouton Le bouton à ajouter
      */
-    QPushButton *ajouterBouton(int index);
+    QPushButton *ajouterBouton(const int index);
 
     /**
      * @brief getCaseCocher
@@ -178,7 +178,7 @@ public slots:
      * Peuple le tableau avec les valeurs du modèle donné.
      * S'assure que le modèle est triable et réinitialise le tri.
      */
-    void peuplerTableau(QAbstractTableModel* valeurs);
+    void peuplerTableau(QAbstractTableModel *valeurs);
 
     /**
      * @brief selectionnerModele
@@ -186,7 +186,7 @@ public slots:
      * @param index L'entrée du tableau dont l'id doit être assigné à idModele
      * Émet modeleSelectionne();
      */
-    void selectionnerModele(QModelIndex index);
+    void selectionnerModele(const QModelIndex index);
 
     /**
      * @brief relacherModele
@@ -203,14 +203,14 @@ private slots:
      * Indique un changement d'état de la case de filtre
      * @param etat Le nouvel état de la case à cocher
      */
-    void signalerCase(bool etat);
+    void signalerCase(const bool etat);
 
     /**
      * @brief signalerSelection
      * @param nouveau La nouvelle sélection du tableau
      * @param ancien L'ancienne sélection du tableau
      */
-    void signalerSelection(QModelIndex nouveau, QModelIndex ancien);
+    void signalerSelection(const QModelIndex nouveau, const QModelIndex ancien);
 
     void doubleClicTableau();
 

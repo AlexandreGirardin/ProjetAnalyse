@@ -62,7 +62,7 @@ void ControleurGestionClient::voirClient(const int idClient)
     vue->show();
 }
 
-void ControleurGestionClient::assignerClient(VueGestionClient* vue, const Client* client)
+void ControleurGestionClient::assignerClient(VueGestionClient *vue, const Client* client)
 {
     vue->setPrenom(client->getPrenom());
     vue->setNom(client->getNom());

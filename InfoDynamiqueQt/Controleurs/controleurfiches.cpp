@@ -28,11 +28,11 @@ void ControleurFiches::modifierFiche()
 
 }
 
-void ControleurFiches::voirFiche()
+void ControleurFiches::voirFiche() const
 {
 }
 
-void ControleurFiches::filtrerFiches(QString filtre)
+void ControleurFiches::filtrerFiches(const QString filtre)
 {
     if (filtre.isEmpty()) {
         peuplerFiches();

@@ -123,7 +123,7 @@ void ControleurActions::modifierAction()
     action->deleteLater();
 }
 
-void ControleurActions::voirAction()
+void ControleurActions::voirAction() const
 {
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {

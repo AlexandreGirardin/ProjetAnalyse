@@ -17,15 +17,15 @@ public:
     explicit VueAppareil(QWidget *parent = 0);
     ~VueAppareil();
 
-    QString getType();
-    QString getFabricant();
-    QString getMotDePasse();
-    QString getDescription();
+    QString getType() const;
+    QString getFabricant() const;
+    QString getMotDePasse() const;
+    QString getDescription() const;
 
-    void setType(QString value);
-    void setFabricant(QString value);
-    void setMotDePasse(QString value);
-    void setDescription(QString value);
+    void setType(const QString value);
+    void setFabricant(const QString value);
+    void setMotDePasse(const QString value);
+    void setDescription(const QString value);
 
 private:
     Ui::VueAppareil *ui;

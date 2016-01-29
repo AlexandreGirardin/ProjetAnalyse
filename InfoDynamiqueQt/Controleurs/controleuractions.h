@@ -110,7 +110,7 @@ public slots:
      * @brief voirAction
      * Lance la visualisation de l'action sélectionnée
      */
-    void voirAction();
+    void voirAction() const;
 
     /**
      * @brief changerEtat

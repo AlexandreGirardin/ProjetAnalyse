@@ -87,7 +87,7 @@ QPushButton* VueFragment::getBoutonVoir() const
     return ui->boutonVoir;
 }
 
-QPushButton* VueFragment::ajouterBouton(int index)
+QPushButton* VueFragment::ajouterBouton(const int index)
 {
     QPushButton* bouton = new QPushButton(this);
     ui->horizontalLayout->insertWidget(index, bouton);
@@ -158,14 +158,14 @@ void VueFragment::relacherModele()
     emit modeleRelache();
 }
 
-void VueFragment::selectionnerModele(QModelIndex index)
+void VueFragment::selectionnerModele(const QModelIndex index)
 {
     idModele = getId(index);
     emit selectionValide(true);
     emit modeleSelectionne(idModele);
 }
 
-void VueFragment::signalerCase(bool etat)
+void VueFragment::signalerCase(const bool etat)
 {
     if (etat) {
         emit caseCochee();
@@ -174,7 +174,7 @@ void VueFragment::signalerCase(bool etat)
     }
 }
 
-void VueFragment::signalerSelection(QModelIndex nouvelle, QModelIndex)
+void VueFragment::signalerSelection(const QModelIndex nouvelle, const QModelIndex)
 {
     emit nouvelleSelection(nouvelle);
 }
