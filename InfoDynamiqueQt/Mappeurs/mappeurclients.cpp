@@ -9,6 +9,18 @@ MappeurClients::MappeurClients(QObject* parent) :
     QObject(parent)
 {
 }
+Client* MappeurClients::getClient(int id)
+{
+    Client* client = NULL;
+    QSqlQuery requete = QSqlQuery(*Application::bd);
+    requete.prepare("SELECT * FROM clients WHERE id=:id");
+    requete.bindValue(":id", id);
+    requete.exec();
+    if (requete.next()) {
+        client = mapper(requete.record());
+    }
+    return client;
+}
 
 bool MappeurClients::inserer(const Client* client)
 {
@@ -18,7 +30,7 @@ bool MappeurClients::inserer(const Client* client)
                 "INSERT INTO clients\
                     (id, nom, prenom, telephone, adresse)\
                 VALUES\
-                    (:id, :nom, :prenom, :telephone, :adresse)");
+                    (:id, :prenom, :nom, :telephone, :adresse)");
     QSqlQuery* requete = preparerRequete(client, commande);
     bool succes = requete->exec();
     if (succes) {
@@ -30,17 +42,27 @@ bool MappeurClients::inserer(const Client* client)
     return succes;
 }
 
-Client* MappeurClients::getClient(const int id)
+bool MappeurClients::mettreAJour(const Client *client)
 {
-    Client* client = NULL;
-    QSqlQuery requete = QSqlQuery(*Application::bd);
-    requete.prepare("SELECT * FROM clients WHERE id=:id");
-    requete.bindValue(":id", id);
-    requete.exec();
-    if (requete.next()) {
-        client = mapper(requete.record());
+    QSqlDatabase* bd = Application::bd;
+    bd->transaction();
+    QString* commande = new QString(
+                "UPDATE clients\
+                SET\
+                    prenom=:prenom,\
+                    nom=:nom,\
+                    telephone=:telephone,\
+                    adresse=:adresse\
+                WHERE id=:id");
+    QSqlQuery* requete = preparerRequete(client, commande);
+    bool succes = requete->exec();
+    if (succes) {
+        bd->commit();
+    } else {
+        qDebug() << requete->lastError();
+        bd->rollback();
     }
-    return client;
+    return succes;
 }
 
 Client* MappeurClients::mapper(const QSqlRecord ligne)

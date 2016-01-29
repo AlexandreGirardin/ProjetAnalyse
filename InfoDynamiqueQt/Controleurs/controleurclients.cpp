@@ -31,7 +31,7 @@ void ControleurClients::configurerFragmentClients()
     QObject::connect(fragmentClients, SIGNAL(clicEditer()), this, SLOT(modifierClient()));
     QObject::connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
     QObject::connect(fragmentClients, SIGNAL(rechercher(QString)), this, SLOT(filtrerClients(QString)));
-
+    QObject::connect(controleurGestionClient, SIGNAL(donneesModifiees()), this, SLOT(rechargerClients()));
 }
 
 void ControleurClients::configurerFragmentAppareils()
@@ -104,6 +104,11 @@ void ControleurClients::filtrerClients(QString filtre)
         fragmentClients->peuplerTableau(resultats);
         fragmentClients->getTableau()->hideColumn(0);
     }
+}
+
+void ControleurClients::rechargerClients()
+{
+    filtrerClients(fragmentClients->getFiltre());
 }
 
 // Appareils
