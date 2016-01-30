@@ -54,7 +54,7 @@ public slots:
      * Filtre les appareils affichés selon la correspondance avec une chaîne
      * @param filtre Critère de filtre à utiliser
      */
-    void filtrerAppareils(const QString filtre);
+    void filtrerAppareils(const QString &filtre);
 
     /**
      * @brief recharger

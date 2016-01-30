@@ -3,8 +3,6 @@
 
 #include <QPushButton>
 
-#include "champformulaire.h"
-
 VueGestionClient::VueGestionClient(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionClient)
@@ -28,7 +26,7 @@ QString VueGestionClient::getPrenom() const
     return prenom->getTexte();
 }
 
-void VueGestionClient::setPrenom(QString texte)
+void VueGestionClient::setPrenom(const QString &texte)
 {
     prenom->setTexte(texte);
 }
@@ -38,7 +36,7 @@ QString VueGestionClient::getNom() const
     return nom->getTexte();
 }
 
-void VueGestionClient::setNom(QString texte)
+void VueGestionClient::setNom(const QString &texte)
 {
     nom->setTexte(texte);
 }
@@ -48,7 +46,7 @@ QString VueGestionClient::getTelephone() const
     return ui->champTelephone->text();
 }
 
-void VueGestionClient::setTelephone(QString texte)
+void VueGestionClient::setTelephone(const QString &texte)
 {
     ui->champTelephone->setText(texte);
 }
@@ -58,7 +56,7 @@ QString VueGestionClient::getAdresse() const
     return ui->champAdresse->text();
 }
 
-void VueGestionClient::setAdresse(QString adresse)
+void VueGestionClient::setAdresse(const QString &adresse)
 {
     ui->champAdresse->setText(adresse);
 }

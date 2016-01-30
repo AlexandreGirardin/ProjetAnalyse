@@ -30,7 +30,7 @@ void VueFragment::retirerEtiquette() const
     ui->etiquette->deleteLater();
 }
 
-void VueFragment::setEtiquette(const QString etiquette) const
+void VueFragment::setEtiquette(const QString &etiquette) const
 {
     ui->etiquette->setText(etiquette);
 }
@@ -67,7 +67,7 @@ int VueFragment::getColonneId() const
     return colonneId;
 }
 
-void VueFragment::setColonneId(int value)
+void VueFragment::setColonneId(const int &value)
 {
     colonneId = value;
 }
@@ -87,7 +87,7 @@ QPushButton* VueFragment::getBoutonVoir() const
     return ui->boutonVoir;
 }
 
-QPushButton* VueFragment::ajouterBouton(const int index)
+QPushButton* VueFragment::ajouterBouton(const int &index)
 {
     QPushButton* bouton = new QPushButton(this);
     ui->horizontalLayout->insertWidget(index, bouton);
@@ -120,7 +120,7 @@ QTableView* VueFragment::getTableau() const
     return ui->tableau;
 }
 
-void VueFragment::peuplerTableau(QAbstractTableModel* valeurs)
+void VueFragment::peuplerTableau(QAbstractTableModel *valeurs)
 {
     QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->tableau);
     modeleTriable->setSourceModel(valeurs);
@@ -133,7 +133,7 @@ void VueFragment::peuplerTableau(QAbstractTableModel* valeurs)
     relacherModele();
 }
 
-int VueFragment::getId(QModelIndex index)
+int VueFragment::getId(const QModelIndex &index)
 {
     int rangee = index.row();
     QModelIndex caseId = ui->tableau->model()->index(rangee, colonneId);
@@ -145,7 +145,7 @@ int VueFragment::getIdModele() const
     return idModele;
 }
 
-void VueFragment::setIdModele(int value)
+void VueFragment::setIdModele(const int &value)
 {
     idModele = value;
 }
@@ -158,14 +158,14 @@ void VueFragment::relacherModele()
     emit modeleRelache();
 }
 
-void VueFragment::selectionnerModele(const QModelIndex index)
+void VueFragment::selectionnerModele(const QModelIndex &index)
 {
     idModele = getId(index);
     emit selectionValide(true);
     emit modeleSelectionne(idModele);
 }
 
-void VueFragment::signalerCase(const bool etat)
+void VueFragment::signalerCase(const bool &etat)
 {
     if (etat) {
         emit caseCochee();
@@ -174,7 +174,7 @@ void VueFragment::signalerCase(const bool etat)
     }
 }
 
-void VueFragment::signalerSelection(const QModelIndex nouvelle, const QModelIndex)
+void VueFragment::signalerSelection(const QModelIndex &nouvelle, const QModelIndex&)
 {
     emit nouvelleSelection(nouvelle);
 }

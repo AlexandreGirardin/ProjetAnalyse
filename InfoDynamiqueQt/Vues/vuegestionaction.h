@@ -22,7 +22,7 @@ public:
      * Rend les champs de la vue non éditables
      * @param value
      */
-    void setLectureSeule(const bool value);
+    void setLectureSeule(const bool &value);
 
     /**
      * @brief getNom

@@ -22,10 +22,10 @@ public:
     QString getMotDePasse() const;
     QString getDescription() const;
 
-    void setType(const QString value);
-    void setFabricant(const QString value);
-    void setMotDePasse(const QString value);
-    void setDescription(const QString value);
+    void setType(const QString &value);
+    void setFabricant(const QString &value);
+    void setMotDePasse(const QString &value);
+    void setDescription(const QString &value);
 
 private:
     Ui::VueAppareil *ui;

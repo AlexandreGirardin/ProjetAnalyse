@@ -27,7 +27,7 @@ public:
      * Assigne la liste des types d'appareil
      * @param a_types La liste des types à présenter
      */
-    void setTypes(QList<TypeAppareil*>* a_types);
+    void setTypes(QList<TypeAppareil*>* &a_types);
 
     /**
      * @brief setTypes
@@ -35,14 +35,14 @@ public:
      * @param a_types La liste des types à présenter
      * @param a_type Le nom du type à sélectionner initialement
      */
-    void setTypes(QList<TypeAppareil*>* a_types, QString a_type);
+    void setTypes(QList<TypeAppareil*>* a_types, const QString &a_type);
 
     /**
      * @brief setType
      * Sélectionne un type
      * @param a_type Le nom du type à sélectionner initialement
      */
-    void setType(QString a_type);
+    void setType(const QString &a_type);
 
     /**
      * @brief getType
@@ -55,7 +55,7 @@ public:
      * Assigne la liste des fabricants
      * @param a_fabricants La liste des fabricant à présenter
      */
-    void setFabricants(QList<Fabricant*>* a_fabricants);
+    void setFabricants(QList<Fabricant*>* &a_fabricants);
 
     /**
      * @brief setFabricants
@@ -70,7 +70,7 @@ public:
      * Sélectionne un fabricant
      * @param a_fabricant
      */
-    void setFabricant(QString a_fabricant);
+    void setFabricant(QString &a_fabricant);
 
     /**
      * @brief getFabricant

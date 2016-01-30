@@ -33,22 +33,22 @@ QString VueAppareil::getDescription() const
     return ui->champDescription->document()->toPlainText();
 }
 
-void VueAppareil::setType(const QString value)
+void VueAppareil::setType(const QString &value)
 {
     ui->champType->setText(value);
 }
 
-void VueAppareil::setFabricant(const QString value)
+void VueAppareil::setFabricant(const QString &value)
 {
     ui->champFabricant->setText(value);
 }
 
-void VueAppareil::setMotDePasse(const QString value)
+void VueAppareil::setMotDePasse(const QString &value)
 {
     ui->champMDP->setText(value);
 }
 
-void VueAppareil::setDescription(const QString value)
+void VueAppareil::setDescription(const QString &value)
 {
     ui->champDescription->setText(value);
 }

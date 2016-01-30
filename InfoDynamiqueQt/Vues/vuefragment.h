@@ -81,7 +81,7 @@ public:
 
     void retirerEtiquette() const;
 
-    void setEtiquette(const QString etiquette) const;
+    void setEtiquette(const QString &etiquette) const;
 
     /**
      * @brief getBoutonAjouter
@@ -106,7 +106,7 @@ public:
      * Ajoute un bouton d'action au fragment
      * @param bouton Le bouton à ajouter
      */
-    QPushButton *ajouterBouton(const int index);
+    QPushButton *ajouterBouton(const int &index);
 
     /**
      * @brief getCaseCocher
@@ -143,7 +143,7 @@ public:
      * @param index L'entrée du tableau duquel on souhaite connaître l'id du modèle
      * @return L'id du modèle
      */
-    int getId(QModelIndex index);
+    int getId(const QModelIndex &index);
 
     /**
      * @brief getIdModele
@@ -155,7 +155,7 @@ public:
      * @brief setIdModele
      * @param value L'id de modèle à assigner au fragment
      */
-    void setIdModele(int value);
+    void setIdModele(const int &value);
 
     /**
      * @brief getColonneId
@@ -168,7 +168,7 @@ public:
      * Assigne le numéro de la colonne du tableau contenant les id des modèles
      * @param value Le numéro à assigner
      */
-    void setColonneId(int value);
+    void setColonneId(const int &value);
 
 public slots:
 
@@ -186,7 +186,7 @@ public slots:
      * @param index L'entrée du tableau dont l'id doit être assigné à idModele
      * Émet modeleSelectionne();
      */
-    void selectionnerModele(const QModelIndex index);
+    void selectionnerModele(const QModelIndex &index);
 
     /**
      * @brief relacherModele
@@ -203,14 +203,14 @@ private slots:
      * Indique un changement d'état de la case de filtre
      * @param etat Le nouvel état de la case à cocher
      */
-    void signalerCase(const bool etat);
+    void signalerCase(const bool &etat);
 
     /**
      * @brief signalerSelection
      * @param nouveau La nouvelle sélection du tableau
      * @param ancien L'ancienne sélection du tableau
      */
-    void signalerSelection(const QModelIndex nouveau, const QModelIndex ancien);
+    void signalerSelection(const QModelIndex &nouveau, const QModelIndex &ancien);
 
     void doubleClicTableau();
 

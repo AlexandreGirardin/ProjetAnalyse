@@ -13,7 +13,7 @@ VueGestionAppareil::~VueGestionAppareil()
     delete ui;
 }
 
-void VueGestionAppareil::setTypes(QList<TypeAppareil*>* a_types)
+void VueGestionAppareil::setTypes(QList<TypeAppareil*>* &a_types)
 {
     types = a_types;
     QList<TypeAppareil*>::const_iterator i;
@@ -23,13 +23,13 @@ void VueGestionAppareil::setTypes(QList<TypeAppareil*>* a_types)
     ui->comboType->adjustSize();
 }
 
-void VueGestionAppareil::setTypes(QList<TypeAppareil *> *a_types, QString a_type)
+void VueGestionAppareil::setTypes(QList<TypeAppareil*>* a_types, const QString &a_type)
 {
     setTypes(a_types);
     setType(a_type);
 }
 
-void VueGestionAppareil::setType(QString a_type)
+void VueGestionAppareil::setType(const QString &a_type)
 {
     ui->comboType->setCurrentText(a_type);
 }
@@ -46,7 +46,7 @@ TypeAppareil* VueGestionAppareil::getType()
     return type;
 }
 
-void VueGestionAppareil::setFabricants(QList<Fabricant*>* a_fabricants)
+void VueGestionAppareil::setFabricants(QList<Fabricant*>* &a_fabricants)
 {
     fabricants = a_fabricants;
     QList<Fabricant*>::const_iterator i;
@@ -56,13 +56,13 @@ void VueGestionAppareil::setFabricants(QList<Fabricant*>* a_fabricants)
     ui->comboType->adjustSize();
 }
 
-void VueGestionAppareil::setFabricants(QList<Fabricant *> *a_fabricants, QString a_fabricant)
+void VueGestionAppareil::setFabricants(QList<Fabricant*>* a_fabricants, QString a_fabricant)
 {
     setFabricants(a_fabricants);
     setFabricant(a_fabricant);
 }
 
-void VueGestionAppareil::setFabricant(QString a_fabricant)
+void VueGestionAppareil::setFabricant(QString &a_fabricant)
 {
     ui->comboFabricant->setCurrentText(a_fabricant);
 }

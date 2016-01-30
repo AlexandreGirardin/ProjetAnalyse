@@ -68,7 +68,7 @@ void ControleurAppareils::voirAppareil()
     appareil->deleteLater();
 }
 
-void ControleurAppareils::filtrerAppareils(const QString filtre)
+void ControleurAppareils::filtrerAppareils(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerAppareils();
