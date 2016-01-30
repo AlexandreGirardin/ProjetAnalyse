@@ -16,8 +16,9 @@ public:
     ~ChampFormulaire();
 
     QString getTexte() const;
-    void setTexte(const QString &value);
-    void setLectureSeule(bool valeur);
+    void setTexte(const QString &valeur);
+    void setLectureSeule(const bool &valeur);
+    void setTexteDefaut(const QString &valeur);
 
 private:
     Ui::ChampFormulaire *ui;
@@ -28,7 +29,7 @@ signals:
 
 public slots:
 
-    void setValide(bool valeur);
+    void setValide(const bool &valeur);
 
 };
 

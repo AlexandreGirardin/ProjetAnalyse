@@ -19,20 +19,25 @@ QString ChampFormulaire::getTexte() const
     return ui->champ->text();
 }
 
-void ChampFormulaire::setTexte(const QString &value)
+void ChampFormulaire::setTexte(const QString &valeur)
 {
-    ui->champ->setText(value);
+    ui->champ->setText(valeur);
 }
 
-void ChampFormulaire::setLectureSeule(bool valeur)
+void ChampFormulaire::setLectureSeule(const bool &valeur)
 {
     ui->champ->setReadOnly(valeur);
     if (valeur) {
-        ui->champ->hide();
+        ui->iconeStatut->hide();
     }
 }
 
-void ChampFormulaire::setValide(bool valeur)
+void ChampFormulaire::setTexteDefaut(const QString &valeur)
+{
+    ui->champ->setPlaceholderText(valeur);
+}
+
+void ChampFormulaire::setValide(const bool &valeur)
 {
     ui->iconeStatut->setVisible(!valeur);
 }
