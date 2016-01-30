@@ -51,7 +51,7 @@ public slots:
      * Filtre les fiches affichées selon la correspondance avec une chaîne
      * @param filtre Critère de filtre à utiliser
      */
-    void filtrerFiches(const QString filtre);
+    void filtrerFiches(const QString &filtre);
 };
 
 #endif // CONTROLEURFICHES_H

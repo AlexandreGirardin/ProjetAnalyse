@@ -32,14 +32,14 @@ void ControleurFiches::voirFiche() const
 {
 }
 
-void ControleurFiches::filtrerFiches(const QString filtre)
+void ControleurFiches::filtrerFiches(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerFiches();
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*RequetesSQL::filtrerFiches);
-        QString* metacaractere = new QString("%");
+        const QString* metacaractere = new QString("%");
         requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);

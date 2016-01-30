@@ -52,7 +52,7 @@ void ControleurActions::configurerFragmentEnsembles()
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsemble, SLOT(modifierEnsemble()));
 }
 
-void ControleurActions::assignerAction(VueGestionAction* vue, Action* action) const
+void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const
 {
     vue->setNom(action->getNom());
     vue->setDescription(action->getDescription());
@@ -88,7 +88,7 @@ void ControleurActions::desactiverCritereActions() {
     filtrerActions(fragmentActions->getFiltre());
 }
 
-void ControleurActions::filtrerActions(QString filtre)
+void ControleurActions::filtrerActions(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerActions();
@@ -130,6 +130,7 @@ void ControleurActions::voirAction() const
         VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
         assignerAction(vue, action);
         vue->setLectureSeule(true);
+        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
     action->deleteLater();

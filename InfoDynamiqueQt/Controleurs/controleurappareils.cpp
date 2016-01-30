@@ -4,6 +4,7 @@
 #include "Controleurs/controleurbd.h"
 
 #include <QSqlQueryModel>
+
 #include <QDebug>
 #include "Controleurs/application.h"
 
@@ -63,6 +64,7 @@ void ControleurAppareils::voirAppareil()
         vue->setFabricant(appareil->getNomFabricant());
         vue->setMotDePasse(appareil->getMotDePasse());
         vue->setDescription(appareil->getDescription());
+        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
     appareil->deleteLater();

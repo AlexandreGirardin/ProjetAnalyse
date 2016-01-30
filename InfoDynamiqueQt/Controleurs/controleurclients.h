@@ -75,14 +75,14 @@ private:
      * @param idClient Le client dont on souhaite afficher les appareils
      * @return La requête utilisée pour peupler les appareils
      */
-    QSqlQuery requeteAppareils(const int idClient) const;
+    QSqlQuery requeteAppareils(const int &idClient) const;
 
     /**
      * @brief requeteFiches
      * @param idAppareil L'appareil dont on souhaite afficher les fiches
      * @return La requête utilisée pour peupler les fiches
      */
-    QSqlQuery requeteFiches(const int idAppareil) const;
+    QSqlQuery requeteFiches(const int &idAppareil) const;
 
     const QString* commandeFiches;
 
@@ -99,14 +99,14 @@ public slots:
      * Peuple la table de fragmentAppareils avec tous les appareils du client donné
      * @param int L'id du client
      */
-    void peuplerAppareils(const int idClient);
+    void peuplerAppareils(const int &idClient);
 
     /**
      * @brief peuplerFiches
      * Peuple la table de fragmentFiches avec toutes les fiches de l'appareil donné
      * @param int L'id de l'appareil
      */
-    void peuplerFiches(const int idAppareil);
+    void peuplerFiches(const int &idAppareil);
 
     /**
      * @brief modifierClient
@@ -119,7 +119,7 @@ public slots:
      * Filtre les clients affichés selon la correspondance avec une chaîne
      * @param filtre Critère de filtre à utiliser
      */
-    void filtrerClients(const QString filtre);
+    void filtrerClients(const QString &filtre);
 
 private slots:
 

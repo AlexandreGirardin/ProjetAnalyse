@@ -42,13 +42,13 @@ public slots:
      * @brief modifierClient
      * Lance la modification d'un client
      */
-    void modifierClient(const int idClient);
+    void modifierClient(const int &idClient);
 
     /**
      * @brief modifierClient
      * Lance la modification d'un client
      */
-    void voirClient(const int idClient);
+    void voirClient(const int &idClient);
 
 signals:
 

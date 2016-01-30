@@ -3,12 +3,15 @@
 
 #include <QPushButton>
 
+#include <QDebug>
+
 VueGestionClient::VueGestionClient(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionClient)
 {
     ui->setupUi(this);
     prenom = new ChampFormulaire(tr("Ce champ est requis"), this);
+    prenom->setFocus();
     ui->formLayout->setWidget(0,QFormLayout::FieldRole, prenom);
     QObject::connect(prenom, SIGNAL(valeurChangee()), this, SLOT(verifierPrenom()));
     nom = new ChampFormulaire(tr("Ce champ est requis"), this);

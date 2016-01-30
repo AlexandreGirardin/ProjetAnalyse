@@ -90,7 +90,7 @@ void ControleurClients::voirClient() const
     }
 }
 
-void ControleurClients::filtrerClients(const QString filtre)
+void ControleurClients::filtrerClients(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerClients();
@@ -114,7 +114,7 @@ void ControleurClients::rechargerClients()
 
 // Appareils
 
-void ControleurClients::peuplerAppareils(int idClient)
+void ControleurClients::peuplerAppareils(const int &idClient)
 {
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(requeteAppareils(idClient));
@@ -129,7 +129,7 @@ void ControleurClients::voirAppareil() const
     }
 }
 
-QSqlQuery ControleurClients::requeteAppareils(const int idClient) const
+QSqlQuery ControleurClients::requeteAppareils(const int &idClient) const
 {
     QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare(*RequetesSQL::appareilsPourClient);
@@ -140,7 +140,7 @@ QSqlQuery ControleurClients::requeteAppareils(const int idClient) const
 
 // Fiches
 
-void ControleurClients::peuplerFiches(const int idAppareil)
+void ControleurClients::peuplerFiches(const int &idAppareil)
 {
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(requeteFiches(idAppareil));
@@ -165,7 +165,7 @@ void ControleurClients::desactiverCritereFiches()
     peuplerFiches(fragmentAppareils->getIdModele());
 }
 
-QSqlQuery ControleurClients::requeteFiches(const int idAppareil) const
+QSqlQuery ControleurClients::requeteFiches(const int &idAppareil) const
 {
     QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare(*commandeFiches);

@@ -18,7 +18,7 @@ VueGestionEnsemble::~VueGestionEnsemble()
     delete ui;
 }
 
-void VueGestionEnsemble::setActionsExistantes(QList<Action*>* actions)
+void VueGestionEnsemble::setActionsExistantes(const QList<Action*>* actions)
 {
     QStandardItemModel* modele = new QStandardItemModel(this);
     for (QList<Action*>::const_iterator i = actions->constBegin(); i != actions->constEnd(); ++i) {

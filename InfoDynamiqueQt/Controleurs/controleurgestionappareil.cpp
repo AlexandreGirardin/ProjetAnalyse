@@ -14,13 +14,14 @@ void ControleurGestionAppareil::ajouterAppareil()
     vueGestionAppareil->exec();
 }
 
-void ControleurGestionAppareil::voirAppareil(const int idAppareil)
+void ControleurGestionAppareil::voirAppareil(const int &idAppareil)
 {
     VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
-    Appareil* appareil = Application::appareils->getAppareil(idAppareil);
+    const Appareil* appareil = Application::appareils->getAppareil(idAppareil);
     vue->setType(appareil->getNomType());
     vue->setFabricant(appareil->getNomFabricant());
     vue->setMotDePasse(appareil->getMotDePasse());
     vue->setDescription(appareil->getDescription());
+    QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
     vue->show();
 }

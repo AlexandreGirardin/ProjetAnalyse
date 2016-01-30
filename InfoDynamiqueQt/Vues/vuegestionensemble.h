@@ -19,7 +19,7 @@ public:
     explicit VueGestionEnsemble(QWidget* parent = 0);
     ~VueGestionEnsemble();
 
-    void setActionsExistantes(QList<Action*>* actions);
+    void setActionsExistantes(const QList<Action*>* actions);
 
 private:
     Ui::VueGestionEnsemble* ui;

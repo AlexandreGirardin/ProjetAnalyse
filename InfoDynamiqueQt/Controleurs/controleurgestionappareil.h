@@ -34,7 +34,7 @@ public slots:
      * @brief voirAppareil
      * @param idAppareil L'id de l'appareil à visualiser
      */
-    void voirAppareil(const int idAppareil);
+    void voirAppareil(const int &idAppareil);
 
 };
 
