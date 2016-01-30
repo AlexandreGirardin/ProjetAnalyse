@@ -9,7 +9,7 @@ MappeurClients::MappeurClients(QObject* parent) :
     QObject(parent)
 {
 }
-Client* MappeurClients::getClient(int id)
+Client* MappeurClients::getClient(const int &id)
 {
     Client* client = NULL;
     QSqlQuery requete = QSqlQuery(*Application::bd);
@@ -22,17 +22,17 @@ Client* MappeurClients::getClient(int id)
     return client;
 }
 
-bool MappeurClients::inserer(const Client* client)
+bool MappeurClients::inserer(const Client* client) const
 {
     QSqlDatabase* bd = Application::bd;
     bd->transaction();
-    QString* commande = new QString(
+    const QString commande(
                 "INSERT INTO clients\
                     (id, nom, prenom, telephone, adresse)\
                 VALUES\
                     (:id, :prenom, :nom, :telephone, :adresse)");
     QSqlQuery* requete = preparerRequete(client, commande);
-    bool succes = requete->exec();
+    const bool succes = requete->exec();
     if (succes) {
         bd->commit();
     } else {
@@ -42,11 +42,11 @@ bool MappeurClients::inserer(const Client* client)
     return succes;
 }
 
-bool MappeurClients::mettreAJour(const Client *client)
+bool MappeurClients::mettreAJour(const Client *client) const
 {
     QSqlDatabase* bd = Application::bd;
     bd->transaction();
-    QString* commande = new QString(
+    const QString commande(
                 "UPDATE clients\
                 SET\
                     prenom=:prenom,\
@@ -55,7 +55,7 @@ bool MappeurClients::mettreAJour(const Client *client)
                     adresse=:adresse\
                 WHERE id=:id");
     QSqlQuery* requete = preparerRequete(client, commande);
-    bool succes = requete->exec();
+    const bool succes = requete->exec();
     if (succes) {
         bd->commit();
     } else {
@@ -65,7 +65,7 @@ bool MappeurClients::mettreAJour(const Client *client)
     return succes;
 }
 
-Client* MappeurClients::mapper(const QSqlRecord ligne)
+Client* MappeurClients::mapper(const QSqlRecord &ligne)
 {
     Client* client = new Client(this);
     client->setId(ligne.value("id").toInt());
@@ -76,10 +76,10 @@ Client* MappeurClients::mapper(const QSqlRecord ligne)
     return client;
 }
 
-QSqlQuery* MappeurClients::preparerRequete(const Client* client, const QString* commande)
+QSqlQuery* MappeurClients::preparerRequete(const Client* client, const QString &commande) const
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
-    requete->prepare(*commande);
+    requete->prepare(commande);
     requete->bindValue(":id", client->getId());
     requete->bindValue(":nom", client->getNom());
     requete->bindValue(":prenom", client->getPrenom());

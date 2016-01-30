@@ -51,6 +51,7 @@ void ControleurAppareils::modifierAppareil()
                 qDebug() << "Pas marché: " << appareil->out();
             }
         }
+        vue->deleteLater();
     }
     appareil->deleteLater();
 }

@@ -10,7 +10,7 @@ MappeurPieces::MappeurPieces(QObject* parent) :
 {
 }
 
-Piece* MappeurPieces::getPiece(const int id)
+Piece* MappeurPieces::getPiece(const int &id)
 {
     Piece* piece = NULL;
     QString requete = "SELECT * FROM pieces WHERE id="+QString::number(id);
@@ -24,10 +24,10 @@ Piece* MappeurPieces::getPiece(const int id)
 QList<Piece*>* MappeurPieces::getPieces()
 {
     QSqlQuery requete(QSqlQuery("SELECT * FROM pieces", *Application::bd));
-    return mapper(&requete);
+    return mapper(requete);
 }
 
-Piece* MappeurPieces::mapper(const QSqlRecord ligne)
+Piece* MappeurPieces::mapper(const QSqlRecord &ligne)
 {
     Piece* piece = new Piece(this);
     piece->setId(ligne.value("id").toInt());
@@ -37,16 +37,16 @@ Piece* MappeurPieces::mapper(const QSqlRecord ligne)
     return piece;
 }
 
-QList<Piece*>* MappeurPieces::mapper(QSqlQuery* requete)
+QList<Piece*>* MappeurPieces::mapper(QSqlQuery &requete)
 {
     QList<Piece*>* liste = new QList<Piece*>;
-    QSqlRecord ligne = requete->record();
+    QSqlRecord ligne = requete.record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
     int colDesc = ligne.indexOf("description");
     int colPrix = ligne.indexOf("prix");
-    while (requete->next()) {
-        ligne = requete->record();
+    while (requete.next()) {
+        ligne = requete.record();
         Piece* piece = new Piece(this);
         piece->setId(ligne.value(colId).toInt());
         piece->setNom(ligne.value(colNom).toString());

@@ -120,7 +120,7 @@ QTableView* VueFragment::getTableau() const
     return ui->tableau;
 }
 
-void VueFragment::peuplerTableau(QAbstractTableModel *valeurs)
+void VueFragment::peuplerTableau(QAbstractTableModel* valeurs)
 {
     QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->tableau);
     modeleTriable->setSourceModel(valeurs);

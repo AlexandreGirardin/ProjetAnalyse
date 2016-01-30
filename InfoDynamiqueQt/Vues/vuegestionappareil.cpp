@@ -1,6 +1,8 @@
 #include "Vues/vuegestionappareil.h"
 #include "ui_vuegestionappareil.h"
 
+#include <QDebug>
+
 VueGestionAppareil::VueGestionAppareil(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionAppareil)
@@ -11,9 +13,13 @@ VueGestionAppareil::VueGestionAppareil(QWidget* parent) :
 VueGestionAppareil::~VueGestionAppareil()
 {
     delete ui;
+    qDeleteAll(*types);
+    delete types;
+    qDeleteAll(*fabricants);
+    delete fabricants;
 }
 
-void VueGestionAppareil::setTypes(QList<TypeAppareil*>* &a_types)
+void VueGestionAppareil::setTypes(QList<TypeAppareil*>* a_types)
 {
     types = a_types;
     QList<TypeAppareil*>::const_iterator i;
@@ -34,14 +40,12 @@ void VueGestionAppareil::setType(const QString &a_type)
     ui->comboType->setCurrentText(a_type);
 }
 
-TypeAppareil* VueGestionAppareil::getType()
+TypeAppareil* VueGestionAppareil::getType() const
 {
-    TypeAppareil* type;
+    TypeAppareil* type = NULL;
     int index = ui->comboType->currentIndex();
     if (index > -1 && index < types->length()) {
         type = types->at(index);
-    } else {
-        type = NULL;
     }
     return type;
 }
@@ -49,53 +53,50 @@ TypeAppareil* VueGestionAppareil::getType()
 void VueGestionAppareil::setFabricants(QList<Fabricant*>* &a_fabricants)
 {
     fabricants = a_fabricants;
-    QList<Fabricant*>::const_iterator i;
-    for (i = fabricants->constBegin(); i != fabricants->constEnd(); ++i) {
+    for (QList<Fabricant*>::const_iterator i = fabricants->constBegin(); i != fabricants->constEnd(); ++i) {
         ui->comboFabricant->addItem((*i)->getNom());
     }
     ui->comboType->adjustSize();
 }
 
-void VueGestionAppareil::setFabricants(QList<Fabricant*>* a_fabricants, QString a_fabricant)
+void VueGestionAppareil::setFabricants(QList<Fabricant*>* a_fabricants, const QString &a_fabricant)
 {
     setFabricants(a_fabricants);
     setFabricant(a_fabricant);
 }
 
-void VueGestionAppareil::setFabricant(QString &a_fabricant)
+void VueGestionAppareil::setFabricant(const QString &a_fabricant)
 {
     ui->comboFabricant->setCurrentText(a_fabricant);
 }
 
-Fabricant* VueGestionAppareil::getFabricant()
+Fabricant* VueGestionAppareil::getFabricant() const
 {
-    Fabricant* fabricant;
+    Fabricant* fabricant = NULL;
     int index = ui->comboFabricant->currentIndex();
     if (index > -1 && index < fabricants->length()) {
         fabricant = fabricants->at(index);
-    } else {
-        fabricant = NULL;
     }
     return fabricant;
 }
 
-void VueGestionAppareil::setMotDePasse(QString a_motDePasse)
+void VueGestionAppareil::setMotDePasse(const QString &a_motDePasse)
 {
     ui->champMDP->setText(a_motDePasse);
 }
 
-QString VueGestionAppareil::getMotDePasse()
+QString VueGestionAppareil::getMotDePasse() const
 {
     return ui->champMDP->text();
 }
 
-void VueGestionAppareil::setDescription(QString a_description)
+void VueGestionAppareil::setDescription(const QString &a_description)
 {
     ui->champDescription->clear();
     ui->champDescription->appendPlainText(a_description);
 }
 
-QString VueGestionAppareil::getDescription()
+QString VueGestionAppareil::getDescription() const
 {
     return ui->champDescription->document()->toPlainText();
 }

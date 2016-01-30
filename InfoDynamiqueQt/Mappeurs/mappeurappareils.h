@@ -32,7 +32,7 @@ public:
      * @param id Le numéro de l'appareil à mapper
      * @return L'appareil s'il existe, NULL autrement
      */
-    Appareil* getAppareil(const int id);
+    Appareil* getAppareil(const int &id);
 
     /**
      * @brief appareilsPourClient
@@ -40,7 +40,7 @@ public:
      * @param client Le client cible
      * @return La liste des appareils appartenant au client
      */
-    QList<Appareil*>* appareilsPourClient(const int idClient);
+    QList<Appareil*>* appareilsPourClient(const int &idClient);
 
     /**
      * @brief mettreAJour
@@ -48,7 +48,7 @@ public:
      * @param appareil L'appareil à mettre à jour
      * @return Succès
      */
-    bool mettreAJour(const Appareil* appareil);
+    bool mettreAJour(const Appareil* appareil) const;
 
     /**
      * @brief inserer
@@ -56,7 +56,7 @@ public:
      * @param appareil L'appareil à ajouter
      * @return Succès
      */
-    bool inserer(const Appareil* appareil);
+    bool inserer(const Appareil* appareil) const;
 
 private:
 
@@ -65,7 +65,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en appareil
      * @return L'appareil
      */
-    Appareil* mapper(const QSqlRecord ligne);
+    Appareil* mapper(const QSqlRecord &ligne);
 
     /**
      * @brief preparerRequete Assigne les valeurs d'un appareil à une requête préparée
@@ -73,11 +73,11 @@ private:
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
-    QSqlQuery* preparerRequete(const Appareil* appareil, const QString* commande);
+    QSqlQuery* preparerRequete(const Appareil* appareil, const QString &commande) const;
 
-    QList<Appareil*>* mapper(QSqlQuery* requete);
+    QList<Appareil*>* mapper(QSqlQuery &requete);
 
-    bool ecrire(const Appareil* appareil, const QString* commande);
+    bool ecrire(const Appareil* appareil, const QString &commande) const;
 
 };
 

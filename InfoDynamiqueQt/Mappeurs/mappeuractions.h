@@ -29,7 +29,7 @@ public:
      * @param id Le numéro de l'action à mapper
      * @return L'action si elle existe. NULL autrement
      */
-    Action* getAction(const int id);
+    Action* getAction(const int &id);
 
     /**
      * @brief getActions
@@ -43,9 +43,9 @@ public:
      * @param action L'action à mettre à jour
      * @return Succès
      */
-    bool mettreAJour(const Action* action);
+    bool mettreAJour(const Action* action) const;
 
-    QList<Action*>* actionsPourEnsemble(const int idEnsemble);
+    QList<Action*>* actionsPourEnsemble(const int &idEnsemble);
 
 private:
 
@@ -54,9 +54,9 @@ private:
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return l'Action
      */
-    Action* mapper(const QSqlRecord ligne);
+    Action* mapper(const QSqlRecord &ligne);
 
-    QList<Action*>* mapper(QSqlQuery* requete);
+    QList<Action*>* mapper(QSqlQuery &requete);
 
     /**
      * @brief preparerRequete Assigne les valeurs d'une action à une requête préparée
@@ -64,9 +64,9 @@ private:
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
-    QSqlQuery* preparerRequete(const Action* action, const QString* commande);
+    QSqlQuery* preparerRequete(const Action* action, const QString &commande) const;
 
-    bool ecrire(const Action* action, const QString* commande);
+    bool ecrire(const Action* action, const QString &commande) const;
 
 };
 

@@ -15,6 +15,10 @@ signals:
 
 public slots:
 
+    /**
+     * @brief modifierEnsemble
+     * Lance l'édition de l'ensemble actuellement sélectionné
+     */
     void modifierEnsemble();
 
 };

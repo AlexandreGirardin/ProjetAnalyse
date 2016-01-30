@@ -12,7 +12,7 @@ MappeurEnsembles::MappeurEnsembles(QObject* parent) :
 {
 }
 
-EnsembleActions* MappeurEnsembles::getEnsemble(const int id)
+EnsembleActions* MappeurEnsembles::getEnsemble(const int &id)
 {
     EnsembleActions* ensemble = NULL;
     QSqlQuery requete(*Application::bd);
@@ -28,10 +28,10 @@ EnsembleActions* MappeurEnsembles::getEnsemble(const int id)
 QList<EnsembleActions*>* MappeurEnsembles::getEnsembles()
 {
     QSqlQuery requete("SELECT * FROM ensembles", *Application::bd);
-    return mapper(&requete);
+    return mapper(requete);
 }
 
-EnsembleActions* MappeurEnsembles::mapper(const QSqlRecord ligne)
+EnsembleActions* MappeurEnsembles::mapper(const QSqlRecord &ligne)
 {
     EnsembleActions* ensemble = new EnsembleActions(this);
     ensemble->setId(ligne.value("id").toInt());
@@ -41,15 +41,15 @@ EnsembleActions* MappeurEnsembles::mapper(const QSqlRecord ligne)
     return ensemble;
 }
 
-QList<EnsembleActions*>* MappeurEnsembles::mapper(QSqlQuery* requete)
+QList<EnsembleActions*>* MappeurEnsembles::mapper(QSqlQuery &requete)
 {
     QList<EnsembleActions*>* liste = new QList<EnsembleActions*>();
-    QSqlRecord ligne = requete->record();
+    QSqlRecord ligne = requete.record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
     int colDesc = ligne.indexOf("description");
-    while (requete->next()) {
-        ligne = requete->record();
+    while (requete.next()) {
+        ligne = requete.record();
         EnsembleActions* ensemble = new EnsembleActions(this);
         ensemble->setId(ligne.value(colId).toInt());
         ensemble->setNom(ligne.value(colNom).toString());
@@ -59,35 +59,34 @@ QList<EnsembleActions*>* MappeurEnsembles::mapper(QSqlQuery* requete)
     return liste;
 }
 
-bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble)
+bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble) const
 {
-    const QString commande(
-                            "UPDATE actions\
+    const QString commande("UPDATE actions\
                             SET\
                                 nom=:nom,\
                                 description=:description,\
                                 etat=:etat\
                             WHERE id=:idEnsemble");
-    bool succes = ecrire(ensemble, &commande);
+    const bool succes = ecrire(ensemble, commande);
     return succes;
 }
 
-QSqlQuery* MappeurEnsembles::preparerRequete(const EnsembleActions* ensemble, const QString* commande)
+QSqlQuery* MappeurEnsembles::preparerRequete(const EnsembleActions* ensemble, const QString &commande) const
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
-    requete->prepare(*commande);
+    requete->prepare(commande);
     requete->bindValue(":idEnsemble", ensemble->getId());
     requete->bindValue(":nom", ensemble->getNom());
     requete->bindValue(":description", ensemble->getDescription());
     return requete;
 }
 
-bool MappeurEnsembles::ecrire(const EnsembleActions* ensemble, const QString* commande)
+bool MappeurEnsembles::ecrire(const EnsembleActions* ensemble, const QString &commande) const
 {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();
     QSqlQuery* requete = preparerRequete(ensemble, commande);
-    bool succes = requete->exec();
+    const bool succes = requete->exec();
     if (succes) {
         bd.commit();
     } else {

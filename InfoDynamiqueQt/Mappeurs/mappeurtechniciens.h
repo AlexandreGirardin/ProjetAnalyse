@@ -27,7 +27,7 @@ public:
      * @param id Le numéro du technicien à mapper
      * @return Le technicien s'il existe, NULL autrement
      */
-    Technicien* getTechnicien(const int id);
+    Technicien* getTechnicien(const int &id);
 
     /**
      * @brief getTechniciens
@@ -42,9 +42,9 @@ private:
      * @param ligne La ligne de la base de données à mapper en technicien
      * @return Le technicien
      */
-    Technicien* mapper(const QSqlRecord);
+    Technicien* mapper(const QSqlRecord &ligne);
 
-    QList<Technicien*>* mapper(QSqlQuery* requete);
+    QList<Technicien*>* mapper(QSqlQuery &requete);
 };
 
 #endif // MAPPEURTECHNICIENS_H

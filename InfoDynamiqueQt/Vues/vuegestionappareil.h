@@ -27,7 +27,7 @@ public:
      * Assigne la liste des types d'appareil
      * @param a_types La liste des types à présenter
      */
-    void setTypes(QList<TypeAppareil*>* &a_types);
+    void setTypes(QList<TypeAppareil*>* a_types);
 
     /**
      * @brief setTypes
@@ -48,7 +48,7 @@ public:
      * @brief getType
      * @return Le type actuellement sélectionné
      */
-    TypeAppareil* getType();
+    TypeAppareil* getType() const;
 
     /**
      * @brief setFabricants
@@ -63,46 +63,46 @@ public:
      * @param a_fabricants La liste des fabricants à présenter
      * @param a_fabricant Le nom du fabricant à sélectionner initialement
      */
-    void setFabricants(QList<Fabricant*>* a_fabricants, QString a_fabricant);
+    void setFabricants(QList<Fabricant*>* a_fabricants, const QString &a_fabricant);
 
     /**
      * @brief setFabricant
      * Sélectionne un fabricant
      * @param a_fabricant
      */
-    void setFabricant(QString &a_fabricant);
+    void setFabricant(const QString &a_fabricant);
 
     /**
      * @brief getFabricant
      * @return Le fabricant actuellement sélectionné
      */
-    Fabricant *getFabricant();
+    Fabricant* getFabricant() const;
 
     /**
      * @brief setMotDePasse
      * Assigne un mot de passe
      * @param a_motDePasse Le mot de passe à assigner
      */
-    void setMotDePasse(QString a_motDePasse);
+    void setMotDePasse(const QString &a_motDePasse);
 
     /**
      * @brief getMotDePasse
      * @return Le mot de passe actuel
      */
-    QString getMotDePasse();
+    QString getMotDePasse() const;
 
     /**
      * @brief setDescription
      * Assigne une description
      * @param a_description La description à assigner
      */
-    void setDescription(QString a_description);
+    void setDescription(const QString &a_description);
 
     /**
      * @brief getDescription
      * @return La description actuelle
      */
-    QString getDescription();
+    QString getDescription() const;
 
 private:
 

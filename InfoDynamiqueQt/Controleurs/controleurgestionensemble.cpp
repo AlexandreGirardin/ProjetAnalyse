@@ -16,6 +16,5 @@ void ControleurGestionEnsemble::modifierEnsemble()
     vue->setActionsExistantes(toutesActions);
     qDeleteAll(*toutesActions);
     delete toutesActions;
-    QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
     vue->exec();
 }
