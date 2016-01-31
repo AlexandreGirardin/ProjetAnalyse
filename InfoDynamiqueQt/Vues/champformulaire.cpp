@@ -5,6 +5,7 @@ ChampFormulaire::ChampFormulaire(const QString& raison, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ChampFormulaire)
 {
+    valide = false;
     ui->setupUi(this);
     QObject::connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(valeurChangee()));
     ui->iconeStatut->setToolTip(raison);
@@ -39,6 +40,14 @@ void ChampFormulaire::setTexteDefaut(const QString &valeur)
 
 void ChampFormulaire::setValide(const bool &valeur)
 {
-    ui->iconeStatut->setVisible(!valeur);
+    if (valeur != valide) {
+        valide = valeur;
+        ui->iconeStatut->setVisible(!valeur);
+        emit validiteChangee();
+    }
+}
+
+bool ChampFormulaire::estValide() {
+    return valide;
 }
 

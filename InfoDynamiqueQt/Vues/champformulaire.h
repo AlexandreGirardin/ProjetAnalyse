@@ -20,12 +20,17 @@ public:
     void setLectureSeule(const bool &valeur);
     void setTexteDefaut(const QString &valeur);
 
+    bool estValide();
 private:
     Ui::ChampFormulaire *ui;
+
+    bool valide;
 
 signals:
 
     void valeurChangee();
+
+    void validiteChangee();
 
 public slots:
 

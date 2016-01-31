@@ -10,13 +10,34 @@ VueGestionClient::VueGestionClient(QWidget* parent) :
     ui(new Ui::VueGestionClient)
 {
     ui->setupUi(this);
-    prenom = new ChampFormulaire(tr("Ce champ est requis"), this);
+    configurerPrenom();
+    configurerNom();
+    configurerBoutonOk();
     prenom->setFocus();
+}
+
+void VueGestionClient::configurerPrenom()
+{
+    prenom = new ChampFormulaire(tr("Ce champ est requis"), this);
     ui->formLayout->setWidget(0,QFormLayout::FieldRole, prenom);
     QObject::connect(prenom, SIGNAL(valeurChangee()), this, SLOT(verifierPrenom()));
+}
+
+void VueGestionClient::configurerNom()
+{
     nom = new ChampFormulaire(tr("Ce champ est requis"), this);
     ui->formLayout->setWidget(1,QFormLayout::FieldRole, nom);
     QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
+}
+
+void VueGestionClient::configurerBoutonOk()
+{
+    boutonOk = new QPushButton(tr("Ok"), this);
+    boutonOk->setEnabled(false);
+    ui->buttonBox->addButton(boutonOk, QDialogButtonBox::AcceptRole);
+    QObject::connect(prenom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    QObject::connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    QObject::connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));
 }
 
 VueGestionClient::~VueGestionClient()
@@ -86,4 +107,9 @@ void VueGestionClient::verifierPrenom() {
 
 void VueGestionClient::verifierNom() {
     nom->setValide(!nom->getTexte().isEmpty());
+}
+
+void VueGestionClient::verifierOk()
+{
+    emit champsRequisModifies(prenom->estValide() && nom->estValide());
 }

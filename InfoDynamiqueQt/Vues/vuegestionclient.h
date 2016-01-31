@@ -93,13 +93,27 @@ private slots:
 
     void verifierNom();
 
+    void verifierOk();
+
+signals:
+
+    void champsRequisModifies(bool);
+
 private:
 
     Ui::VueGestionClient* ui;
 
+    QPushButton* boutonOk;
+
     ChampFormulaire* prenom;
 
     ChampFormulaire* nom;
+
+    void configurerPrenom();
+
+    void configurerNom();
+
+    void configurerBoutonOk();
 
 };
 
