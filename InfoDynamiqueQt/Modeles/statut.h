@@ -1,9 +1,9 @@
 #ifndef STATUT_H
 #define STATUT_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
-class Statut : public QObject
+class Statut : public ModeleBD
 {
     Q_OBJECT
 
@@ -43,7 +43,7 @@ public:
      * @brief setId
      * @param value L'id à assigner pour le statut
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getNom

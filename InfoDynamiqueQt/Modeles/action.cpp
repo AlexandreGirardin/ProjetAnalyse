@@ -1,8 +1,6 @@
 #include "Modeles/action.h"
 
-Action::Action(QObject* parent): ModeleBD(parent)
-{
-}
+Action::Action(QObject* parent): ModeleBD(parent) {}
 
 int Action::getId() const
 {

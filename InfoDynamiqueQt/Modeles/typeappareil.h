@@ -1,9 +1,10 @@
 #ifndef TYPEAPPAREIL_H
 #define TYPEAPPAREIL_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
-class TypeAppareil : public QObject {
+class TypeAppareil : public ModeleBD {
+
     Q_OBJECT
 
     // Type d'un appareil (ex. portable, bureau)
@@ -36,7 +37,7 @@ public:
      * @brief setId
      * @param value L'id à assigner au type d'appareil
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getNom

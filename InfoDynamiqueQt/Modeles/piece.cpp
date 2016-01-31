@@ -1,12 +1,9 @@
 #include "Modeles/piece.h"
 
-Piece::Piece(QObject* parent) :
-    QObject(parent)
-{
-}
+Piece::Piece(QObject* parent) : ModeleBD(parent) {}
 
 Piece::Piece(int a_id, QString a_nom, QString a_description, int a_prix, QObject* parent):
-    QObject(parent)
+    ModeleBD(parent)
 {
     setId(a_id);
     setNom(a_nom);
@@ -19,7 +16,7 @@ int Piece::getId() const
     return id;
 }
 
-void Piece::setId(int value)
+void Piece::setId(const int &value)
 {
     id = value;
 }
@@ -54,7 +51,7 @@ int Piece::getPrixInt() const
     return prix;
 }
 
-void Piece::setPrix(int value)
+void Piece::setPrix(const int &value)
 {
     prix = value;
 }

@@ -1,20 +1,20 @@
 #include "Modeles/appareil.h"
 
+Appareil::Appareil(QObject* parent) :
+    ModeleBD(parent)
+{
+    setFabricant(NULL);
+    setType(NULL);
+}
 
 int Appareil::getIdClient() const
 {
     return idClient;
 }
 
-void Appareil::setIdClient(int value)
+void Appareil::setIdClient(const int &value)
 {
     idClient = value;
-}
-Appareil::Appareil(QObject* parent) :
-    QObject(parent)
-{
-    setFabricant(NULL);
-    setType(NULL);
 }
 
 int Appareil::getId() const
@@ -22,7 +22,7 @@ int Appareil::getId() const
     return id;
 }
 
-void Appareil::setId(int value)
+void Appareil::setId(const int &value)
 {
     id = value;
 }
@@ -43,6 +43,9 @@ QString Appareil::getNomFabricant() const
 
 void Appareil::setFabricant(Fabricant* value)
 {
+    if (value != NULL) {
+        value->setParent(this);
+    }
     fabricant = value;
 }
 
@@ -53,6 +56,9 @@ TypeAppareil* Appareil::getType() const
 
 void Appareil::setType(TypeAppareil* value)
 {
+    if (value != NULL) {
+        value->setParent(this);
+    }
     type = value;
 }
 

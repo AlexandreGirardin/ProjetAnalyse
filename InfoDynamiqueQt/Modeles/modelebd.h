@@ -25,13 +25,13 @@ public:
      * @brief setId
      * @param value La valeur à assigner à id
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief out
      * @return Représentation textuelle du client
      */
-    QString out();
+    QString out() const;
 
 };
 

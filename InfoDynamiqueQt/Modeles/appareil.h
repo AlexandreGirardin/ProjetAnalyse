@@ -1,12 +1,12 @@
 #ifndef APPAREIL_H
 #define APPAREIL_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
 #include "Modeles/fabricant.h"
 #include "Modeles/typeappareil.h"
 
-class Appareil : public QObject {
+class Appareil : public ModeleBD {
     Q_OBJECT
 
     // Appareil électronique d'un client
@@ -49,7 +49,7 @@ public:
      * @brief setId
      * @param value L'id à assigner à l'appareil
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getFabricant
@@ -127,7 +127,7 @@ public:
      * Assigne l'id du propriétaire de l'appareil
      * @param value L'id du propriétaire à assigner à l'appareil
      */
-    void setIdClient(int value);
+    void setIdClient(const int &value);
 
     /**
      * @brief out

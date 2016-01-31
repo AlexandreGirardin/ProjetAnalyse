@@ -1,12 +1,12 @@
 #ifndef TACHE_H
 #define TACHE_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
 #include "Modeles/action.h"
 #include "Modeles/statut.h"
 
-class Tache : public QObject
+class Tache : public ModeleBD
 {
     Q_OBJECT
 
@@ -41,7 +41,7 @@ public:
      * @brief setId
      * @param value L'id à assigner à la tâche
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getAction

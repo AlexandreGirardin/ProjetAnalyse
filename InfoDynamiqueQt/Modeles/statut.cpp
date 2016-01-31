@@ -1,12 +1,9 @@
 #include "Modeles/statut.h"
 
-Statut::Statut(QObject* parent) :
-    QObject(parent)
-{
-}
+Statut::Statut(QObject* parent) : ModeleBD(parent) {}
 
 Statut::Statut(int a_id, QString a_nom, QObject* parent) :
-    QObject(parent)
+    ModeleBD(parent)
 {
     setId(a_id);
     setNom(a_nom);
@@ -17,7 +14,7 @@ int Statut::getId() const
     return id;
 }
 
-void Statut::setId(int value)
+void Statut::setId(const int &value)
 {
     id = value;
 }

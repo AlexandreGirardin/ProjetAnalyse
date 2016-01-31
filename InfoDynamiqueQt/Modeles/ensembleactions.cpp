@@ -1,9 +1,6 @@
 #include "Modeles/ensembleactions.h"
 
-EnsembleActions::EnsembleActions(QObject* parent) :
-    QObject(parent)
-{
-}
+EnsembleActions::EnsembleActions(QObject* parent) : ModeleBD(parent) {}
 
 QString EnsembleActions::getNom() const
 {

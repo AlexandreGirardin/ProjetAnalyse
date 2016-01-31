@@ -1,11 +1,9 @@
 #ifndef ENSEMBLEACTIONS_H
 #define ENSEMBLEACTIONS_H
 
-#include <QObject>
-
 #include "Modeles/action.h"
 
-class EnsembleActions : public QObject {
+class EnsembleActions : public ModeleBD {
     Q_OBJECT
 
     // Regroupement prédéfini de tâches permettant une création de fiches simplifiée

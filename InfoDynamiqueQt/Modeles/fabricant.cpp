@@ -1,11 +1,8 @@
 #include "Modeles/fabricant.h"
 
-Fabricant::Fabricant(QObject* parent) :
-    QObject(parent)
-{
-}
+Fabricant::Fabricant(QObject* parent) : ModeleBD(parent) {}
 
-Fabricant::Fabricant(int a_id, QString a_nom, QObject* parent): QObject(parent)
+Fabricant::Fabricant(int a_id, QString a_nom, QObject* parent): ModeleBD(parent)
 {
     id = a_id;
     nom = a_nom;
@@ -16,7 +13,7 @@ int Fabricant::getId() const
     return id;
 }
 
-void Fabricant::setId(int value)
+void Fabricant::setId(const int &value)
 {
     id = value;
 }
