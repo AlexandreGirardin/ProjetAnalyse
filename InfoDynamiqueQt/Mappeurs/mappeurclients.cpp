@@ -26,9 +26,9 @@ bool MappeurClients::inserer(const Client* client) const
     bd->transaction();
     const QString commande(
                 "INSERT INTO clients\
-                    (id, nom, prenom, telephone, adresse)\
+                    (prenom, nom, telephone, adresse)\
                 VALUES\
-                    (:id, :prenom, :nom, :telephone, :adresse)");
+                    (:prenom, :nom, :telephone, :adresse)");
     QSqlQuery* requete = preparerRequete(client, commande);
     const bool succes = requete->exec();
     if (succes) {
