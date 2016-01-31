@@ -5,10 +5,7 @@
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurStatuts::MappeurStatuts(QObject* parent)
-    : QObject(parent)
-{
-}
+MappeurStatuts::MappeurStatuts(QObject* parent) : QObject(parent) {}
 
 Statut* MappeurStatuts::getStatutFiche(const int &idStatut)
 {

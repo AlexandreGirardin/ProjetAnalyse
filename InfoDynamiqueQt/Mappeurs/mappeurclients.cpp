@@ -5,10 +5,8 @@
 #include <QDebug>
 #include <QSqlError>
 
-MappeurClients::MappeurClients(QObject* parent) :
-    QObject(parent)
-{
-}
+MappeurClients::MappeurClients(QObject* parent) : QObject(parent) {}
+
 Client* MappeurClients::getClient(const int &id)
 {
     Client* client = NULL;
@@ -39,6 +37,7 @@ bool MappeurClients::inserer(const Client* client) const
         qDebug() << requete->lastError();
         bd->rollback();
     }
+    delete requete;
     return succes;
 }
 
@@ -62,6 +61,7 @@ bool MappeurClients::mettreAJour(const Client *client) const
         qDebug() << requete->lastError();
         bd->rollback();
     }
+    delete requete;
     return succes;
 }
 
@@ -73,6 +73,7 @@ Client* MappeurClients::mapper(const QSqlRecord &ligne)
     client->setNom(ligne.value("nom").toString());
     client->setTelephone(ligne.value("telephone").toString());
     client->setAdresse(ligne.value("adresse").toString());
+    client->setAppareils(Application::appareils->appareilsPourClient(client->getId()));
     return client;
 }
 

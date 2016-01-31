@@ -1,22 +1,19 @@
 #include "Mappeurs/mappeurpieces.h"
 
-#include <QVariant>
-#include <QtSql/QSqlQuery>
-
 #include "Controleurs/application.h"
 
-MappeurPieces::MappeurPieces(QObject* parent) :
-    QObject(parent)
-{
-}
+MappeurPieces::MappeurPieces(QObject* parent) : QObject(parent) {}
 
 Piece* MappeurPieces::getPiece(const int &id)
 {
     Piece* piece = NULL;
-    QString requete = "SELECT * FROM pieces WHERE id="+QString::number(id);
-    QSqlQuery commande(requete, *Application::bd);
-    if (commande.next()) {
-        piece = mapper(commande.record());
+    QString commande("SELECT * FROM pieces WHERE id=:id");
+    QSqlQuery requete(*Application::bd);
+    requete.prepare(commande);
+    requete.bindValue(":id", id);
+    requete.exec();
+    if (requete.next()) {
+        piece = mapper(requete.record());
     }
     return piece;
 }

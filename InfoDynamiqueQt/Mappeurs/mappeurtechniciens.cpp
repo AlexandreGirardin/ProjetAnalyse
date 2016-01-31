@@ -5,10 +5,7 @@
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurTechniciens::MappeurTechniciens(QObject* parent) :
-    QObject(parent)
-{
-}
+MappeurTechniciens::MappeurTechniciens(QObject* parent) : QObject(parent) {}
 
 Technicien* MappeurTechniciens::getTechnicien(const int &id)
 {

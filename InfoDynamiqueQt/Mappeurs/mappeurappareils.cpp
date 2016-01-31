@@ -6,10 +6,7 @@
 #include <QDebug>
 #include <QSqlError>
 
-MappeurAppareils::MappeurAppareils(QObject* parent) :
-    QObject(parent)
-{
-}
+MappeurAppareils::MappeurAppareils(QObject* parent) : QObject(parent) {}
 
 Appareil* MappeurAppareils::getAppareil(const int &id)
 {
