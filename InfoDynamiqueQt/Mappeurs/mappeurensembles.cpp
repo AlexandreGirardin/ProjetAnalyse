@@ -34,7 +34,7 @@ EnsembleActions* MappeurEnsembles::mapper(const QSqlRecord &ligne)
     ensemble->setId(ligne.value("id").toInt());
     ensemble->setNom(ligne.value("nom").toString());
     ensemble->setDescription(ligne.value("description").toString());
-    ensemble->setActions(Application::actions->actionsPourEnsemble(ensemble->getId()));
+    ensemble->setActions(Application::actions->actionsDansEnsemble(ensemble->getId()));
     return ensemble;
 }
 
@@ -51,9 +51,20 @@ QList<EnsembleActions*>* MappeurEnsembles::mapper(QSqlQuery &requete)
         ensemble->setId(ligne.value(colId).toInt());
         ensemble->setNom(ligne.value(colNom).toString());
         ensemble->setDescription(ligne.value(colDesc).toString());
+        ensemble->setActions(Application::actions->actionsDansEnsemble(ensemble->getId()));
         liste->append(ensemble);
     }
     return liste;
+}
+
+bool MappeurEnsembles::inserer(const EnsembleActions *ensemble) const
+{
+    const QString commande(
+                "INSERT INTO ensembles\
+                    (nom, description)\
+                VALUES\
+                    (:nom, :description)");
+    return ecrire(ensemble, commande);
 }
 
 bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble) const

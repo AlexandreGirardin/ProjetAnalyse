@@ -25,7 +25,7 @@ public:
      */
     explicit TypeAppareil(QObject* parent = 0);
 
-    explicit TypeAppareil(int a_id, QString a_nom, QObject *parent = 0);
+    explicit TypeAppareil(const int &a_id, const QString &a_nom, QObject *parent = 0);
 
     /**
      * @brief getId

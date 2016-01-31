@@ -3,6 +3,7 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
+#include "Vues/vuegestionensemble.h"
 
 #include <QSqlQueryModel>
 #include <QDebug>
@@ -48,8 +49,8 @@ void ControleurActions::configurerFragmentEnsembles()
     fragmentEnsembles = new VueFragment(splitter);
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
-    QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
-    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsemble, SLOT(modifierEnsemble()));
+    QObject::connect(this, SIGNAL(actionsModifiees()), this, SLOT(recharger()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
 }
 
 void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const
@@ -116,11 +117,16 @@ void ControleurActions::modifierAction()
             action->setDescription(vue->getDescription());
             action->setEtat(vue->getEtat());
             if (Application::actions->mettreAJour(action)) {
-                emit donneesModifiees();
+                emit actionsModifiees();
             }
         }
     }
     action->deleteLater();
+}
+
+void ControleurActions::modifierEnsemble()
+{
+
 }
 
 void ControleurActions::voirAction() const
@@ -142,7 +148,7 @@ void ControleurActions::changerEtat()
     if (action != NULL) {
         action->setEtat(!action->getEtat());
         if (Application::actions->mettreAJour(action)) {
-            emit donneesModifiees();
+            emit actionsModifiees();
         }
     }
     action->deleteLater();
@@ -151,5 +157,22 @@ void ControleurActions::changerEtat()
 void ControleurActions::recharger()
 {
     filtrerActions(fragmentActions->getFiltre());
+}
+
+void ControleurActions::creerEnsemble()
+{
+    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
+    QList<Action*>* actionsHorsEnsemble = Application::actions->getActions();
+    vue->setActionsHorsEnsemble(actionsHorsEnsemble);
+    if (vue->exec() == vue->Accepted) {
+        EnsembleActions* ensemble = new EnsembleActions(vue);
+        ensemble->setActions(vue->getActionsDansEnsemble());
+        if (Application::ensembles->inserer(ensemble)) {
+            emit ensemblesModifies();
+        } else {
+            qDebug() << "Pas marché :(";
+        }
+        vue->deleteLater();
+    }
 }
 

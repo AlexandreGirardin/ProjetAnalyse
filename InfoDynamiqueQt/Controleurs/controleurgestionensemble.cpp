@@ -11,10 +11,10 @@ ControleurGestionEnsemble::ControleurGestionEnsemble(QObject *parent) :
 
 void ControleurGestionEnsemble::modifierEnsemble()
 {
-    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
-    QList<Action*>* toutesActions = Application::actions->getActions();
-    vue->setActionsExistantes(toutesActions);
-    qDeleteAll(*toutesActions);
-    delete toutesActions;
-    vue->exec();
+//    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
+//    QList<Action*>* toutesActions = Application::actions->getActions();
+//    vue->setActionsExistantes(toutesActions);
+//    qDeleteAll(*toutesActions);
+//    delete toutesActions;
+//    vue->exec();
 }

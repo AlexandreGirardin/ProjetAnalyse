@@ -45,7 +45,9 @@ public:
      */
     bool mettreAJour(const Action* action) const;
 
-    QList<Action*>* actionsPourEnsemble(const int &idEnsemble);
+    QList<Action*>* actionsDansEnsemble(const int &idEnsemble);
+
+    QList<Action*>* actionsHorsEnsemble(const int &idEnsemble);
 
 private:
 

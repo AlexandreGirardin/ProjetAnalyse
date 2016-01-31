@@ -24,7 +24,7 @@ Action* MappeurActions::getAction(const int &id)
 
 QList<Action*>* MappeurActions::getActions()
 {
-    QSqlQuery requete("SELECT * FROM actions", *Application::bd);
+    QSqlQuery requete("SELECT * FROM actions ORDER BY nom ASC", *Application::bd);
     return mapper(requete);
 }
 
@@ -58,12 +58,29 @@ QList<Action*>* MappeurActions::mapper(QSqlQuery &requete)
     return liste;
 }
 
-QList<Action*>* MappeurActions::actionsPourEnsemble(const int &idEnsemble)
+QList<Action*>* MappeurActions::actionsDansEnsemble(const int &idEnsemble)
 {
     QSqlQuery requete(*Application::bd);
-    requete.prepare("SELECT * FROM actions a INNER JOIN ensemblesActions ea\
-                     ON a.id = ea.idAction WHERE ea.idEnsemble=:idEnsemble");
+    requete.prepare("SELECT * FROM actions a\
+                    INNER JOIN ensemblesActions ea\
+                    ON a.id = ea.idAction\
+                    WHERE ea.idEnsemble=:idEnsemble\
+                    ORDER BY a.nom ASC");
     requete.bindValue(":id", idEnsemble);
+    return mapper(requete);
+}
+
+QList<Action*>* MappeurActions::actionsHorsEnsemble(const int &idEnsemble)
+{
+    QSqlQuery requete(*Application::bd);
+    requete.prepare("SELECT * FROM actions a\
+                    WHERE a.id NOT IN\
+                        (SELECT idAction FROM ensemblesActions ea\
+                         WHERE ea.idEnsemble=:idEnsemble)\
+                    WHERE a.etat=true\
+                    ORDER BY a.nom ASC");
+    requete.bindValue(":idEnsemble", idEnsemble);
+    requete.exec();
     return mapper(requete);
 }
 

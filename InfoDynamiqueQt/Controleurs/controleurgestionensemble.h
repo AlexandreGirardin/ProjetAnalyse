@@ -7,6 +7,10 @@ class ControleurGestionEnsemble : public QObject
 {
     Q_OBJECT
 
+private:
+
+//    VueFragment
+
 public:
 
     explicit ControleurGestionEnsemble(QObject* parent = 0);

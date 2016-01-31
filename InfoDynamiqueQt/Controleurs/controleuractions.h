@@ -106,6 +106,10 @@ public slots:
      */
     void modifierAction();
 
+    void modifierEnsemble();
+
+    void creerEnsemble();
+
     /**
      * @brief voirAction
      * Lance la visualisation de l'action sélectionnée
@@ -130,7 +134,9 @@ signals:
      * @brief donneesModifiees
      * Lancé lorsque les valeurs du tableau ont été modifiées
      */
-    void donneesModifiees();
+    void actionsModifiees();
+
+    void ensemblesModifies();
 
 };
 
