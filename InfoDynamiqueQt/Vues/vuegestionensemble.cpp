@@ -27,14 +27,28 @@ VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
 VueGestionEnsemble::~VueGestionEnsemble()
 {
     delete ui;
+    delete actionsHorsEnsemble;
+    delete actionsDansEnsemble;
 }
 
-void VueGestionEnsemble::setActionsHorsEnsemble(QList<Action*>* actions)
+void VueGestionEnsemble::setNom(const QString &valeur)
 {
-    qDeleteAll(*actionsHorsEnsemble);
-    delete actionsHorsEnsemble;
-    actionsHorsEnsemble = actions;
-    peuplerHorsEnsemble();
+    nom->setTexte(valeur);
+}
+
+QString VueGestionEnsemble::getNom() const
+{
+    return nom->getTexte();
+}
+
+void VueGestionEnsemble::setDescription(const QString &valeur)
+{
+    ui->champDescription->setText(valeur);
+}
+
+QString VueGestionEnsemble::getDescription() const
+{
+    return ui->champDescription->text();
 }
 
 QList<Action*>* VueGestionEnsemble::getActionsHorsEnsemble()
@@ -47,11 +61,23 @@ QList<Action*>* VueGestionEnsemble::getActionsDansEnsemble()
     return actionsDansEnsemble;
 }
 
-void VueGestionEnsemble::setActionsDansEnsemble(QList<Action*>* actions)
+void VueGestionEnsemble::setActionsHorsEnsemble(QList<Action*>* actions)
+{
+    qDeleteAll(*actionsHorsEnsemble);
+    actionsHorsEnsemble->clear();
+    for (QList<Action*>::const_iterator i = actions->constBegin(); i != actions->constEnd(); ++i) {
+        actionsHorsEnsemble->append(*i);
+    }
+    peuplerHorsEnsemble();
+}
+
+void VueGestionEnsemble::setActionsDansEnsemble(const QList<Action*>* actions)
 {
     qDeleteAll(*actionsDansEnsemble);
-    delete actionsDansEnsemble;
-    actionsDansEnsemble = actions;
+    actionsDansEnsemble->clear();
+    for (QList<Action*>::const_iterator i = actions->constBegin(); i != actions->constEnd(); ++i) {
+        actionsDansEnsemble->append(*i);
+    }
     peuplerDansEnsemble();
 }
 

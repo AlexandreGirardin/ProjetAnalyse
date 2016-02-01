@@ -62,11 +62,12 @@ QList<Action*>* MappeurActions::actionsDansEnsemble(const int &idEnsemble)
 {
     QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM actions a\
-                    INNER JOIN ensemblesActions ea\
-                    ON a.id = ea.idAction\
-                    WHERE ea.idEnsemble=:idEnsemble\
+                    WHERE a.id IN\
+                        (SELECT idAction FROM ensemblesActions ea\
+                         WHERE ea.idEnsemble=:idEnsemble)\
                     ORDER BY a.nom ASC");
     requete.bindValue(":id", idEnsemble);
+    requete.exec();
     return mapper(requete);
 }
 
@@ -77,7 +78,6 @@ QList<Action*>* MappeurActions::actionsHorsEnsemble(const int &idEnsemble)
                     WHERE a.id NOT IN\
                         (SELECT idAction FROM ensemblesActions ea\
                          WHERE ea.idEnsemble=:idEnsemble)\
-                    WHERE a.etat=true\
                     ORDER BY a.nom ASC");
     requete.bindValue(":idEnsemble", idEnsemble);
     requete.exec();
@@ -86,13 +86,12 @@ QList<Action*>* MappeurActions::actionsHorsEnsemble(const int &idEnsemble)
 
 bool MappeurActions::mettreAJour(const Action* action) const
 {
-    const QString commande(
-                "UPDATE actions\
-                    SET\
-                        nom=:nom,\
-                        description=:description,\
-                        etat=:etat\
-                    WHERE id=:idAction");
+    const QString commande("UPDATE actions\
+                            SET\
+                                nom=:nom,\
+                                description=:description,\
+                                etat=:etat\
+                            WHERE id=:idAction");
     const bool succes = ecrire(action, commande);
     return succes;
 }

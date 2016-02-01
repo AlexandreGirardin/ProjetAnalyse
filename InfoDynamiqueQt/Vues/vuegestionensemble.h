@@ -25,9 +25,17 @@ public:
 
     QList<Action*>* getActionsHorsEnsemble();
 
-    void setActionsDansEnsemble(QList<Action*>* actions);
+    void setActionsDansEnsemble(const QList<Action *> *actions);
 
     QList<Action*>* getActionsDansEnsemble();
+
+    void setNom(const QString& valeur);
+
+    QString getNom() const;
+
+    void setDescription(const QString& valeur);
+
+    QString getDescription() const;
 
 private slots:
 

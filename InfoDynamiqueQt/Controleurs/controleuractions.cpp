@@ -49,8 +49,10 @@ void ControleurActions::configurerFragmentEnsembles()
     fragmentEnsembles = new VueFragment(splitter);
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
+    QObject::connect(this, SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
     QObject::connect(this, SIGNAL(actionsModifiees()), this, SLOT(recharger()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
 }
 
 void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const
@@ -124,11 +126,6 @@ void ControleurActions::modifierAction()
     action->deleteLater();
 }
 
-void ControleurActions::modifierEnsemble()
-{
-
-}
-
 void ControleurActions::voirAction() const
 {
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
@@ -164,10 +161,37 @@ void ControleurActions::creerEnsemble()
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
     QList<Action*>* actionsHorsEnsemble = Application::actions->getActions();
     vue->setActionsHorsEnsemble(actionsHorsEnsemble);
+    delete actionsHorsEnsemble;
     if (vue->exec() == vue->Accepted) {
         EnsembleActions* ensemble = new EnsembleActions(vue);
+        ensemble->setNom(vue->getNom());
+        ensemble->setDescription(vue->getDescription());
         ensemble->setActions(vue->getActionsDansEnsemble());
         if (Application::ensembles->inserer(ensemble)) {
+            emit ensemblesModifies();
+        } else {
+            qDebug() << "Pas marché :(";
+        }
+        vue->deleteLater();
+    }
+}
+
+void ControleurActions::modifierEnsemble()
+{
+    EnsembleActions* ensemble = Application::ensembles->getEnsemble(fragmentEnsembles->getIdModele());
+    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
+    QList<Action*>* actionsHorsEnsemble = Application::actions->actionsHorsEnsemble(ensemble->getId());
+    vue->setActionsHorsEnsemble(actionsHorsEnsemble);
+    vue->setActionsDansEnsemble(ensemble->getActions());
+    vue->setNom(ensemble->getNom());
+    vue->setDescription(ensemble->getDescription());
+    delete actionsHorsEnsemble;
+    if (vue->exec() == vue->Accepted) {
+        EnsembleActions* ensemble = new EnsembleActions(vue);
+        ensemble->setNom(vue->getNom());
+        ensemble->setDescription(vue->getDescription());
+        ensemble->setActions(vue->getActionsDansEnsemble());
+        if (Application::ensembles->mettreAJour(ensemble)) {
             emit ensemblesModifies();
         } else {
             qDebug() << "Pas marché :(";

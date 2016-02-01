@@ -23,6 +23,16 @@
        </property>
       </widget>
      </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="etiquetteDescription">
+       <property name="text">
+        <string>Description:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="champDescription"/>
+     </item>
     </layout>
    </item>
    <item>
