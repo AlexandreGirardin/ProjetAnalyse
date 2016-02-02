@@ -8,6 +8,7 @@
 #include "Vues/vueappareil.h"
 #include "Vues/vuefragment.h"
 #include "Vues/vuegestionappareil.h"
+#include "Controleurs/controleurgestionappareil.h"
 
 class ControleurAppareils : public QObject
 {
@@ -26,6 +27,9 @@ public:
 
 private:
 
+    // Le contrôleur de gestion d'appareils
+    ControleurGestionAppareil* controleurGestionAppareil;
+
     // Le fragment des appareils
     VueFragment* fragment;
 
@@ -41,13 +45,13 @@ public slots:
      * @brief modifierAppareil
      * Lance la modification de l'appareil sélectionné
      */
-    void modifierAppareil();
+    void modifierAppareil() const;
 
     /**
      * @brief modifierAppareil
      * Lance la visualisation de l'appareil sélectionné
      */
-    void voirAppareil();
+    void voirAppareil() const;
 
     /**
      * @brief filtrerAppareils

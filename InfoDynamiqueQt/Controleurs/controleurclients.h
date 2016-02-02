@@ -115,11 +115,25 @@ public slots:
     void modifierClient() const;
 
     /**
+     * @brief modifierAppareil
+     * Lance la modification de l'appareil sélectionné
+     */
+    void modifierAppareil() const;
+
+    /**
      * @brief filtrerClients
      * Filtre les clients affichés selon la correspondance avec une chaîne
      * @param filtre Critère de filtre à utiliser
      */
     void filtrerClients(const QString &filtre);
+
+
+    /**
+     * @brief filtrerAppareils
+     * Filtre les appareils affichés selon la correspondance avec une chaîne
+     * @param filtre Critère de filtre à utiliser
+     */
+    void filtrerAppareils(const QString &filtre);
 
 private slots:
 
@@ -157,6 +171,11 @@ private slots:
      * @brief rechargerClients
      */
     void rechargerClients();
+
+    /**
+     * @brief rechargerAppareils
+     */
+    void rechargerAppareils();
 };
 
 #endif // CONTROLEURCLIENTS_H

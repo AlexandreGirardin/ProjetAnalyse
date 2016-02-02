@@ -50,6 +50,7 @@ void ControleurGestionClient::modifierClient(const int &idClient)
         }
         vue->deleteLater();
     }
+    client->deleteLater();
 }
 
 void ControleurGestionClient::voirClient(const int &idClient)

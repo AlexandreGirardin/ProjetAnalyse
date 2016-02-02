@@ -42,7 +42,9 @@ void ControleurClients::configurerFragmentAppareils()
     fragmentAppareils->retirerCaseCocher();
     fragmentAppareils->retirerChamp();
     QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), controleurGestionAppareil, SLOT(ajouterAppareil()));
+    QObject::connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
+    QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(rechargerAppareils()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
     QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
@@ -122,6 +124,13 @@ void ControleurClients::peuplerAppareils(const int &idClient)
     fragmentAppareils->getTableau()->hideColumn(0);
 }
 
+void ControleurClients::modifierAppareil() const
+{
+    if (fragmentAppareils->getIdModele() != -1) {
+        controleurGestionAppareil->modifierAppareil(fragmentAppareils->getIdModele());
+    }
+}
+
 void ControleurClients::voirAppareil() const
 {
     if (fragmentAppareils->getIdModele() != -1) {
@@ -136,6 +145,28 @@ QSqlQuery ControleurClients::requeteAppareils(const int &idClient) const
     requete.bindValue(":idClient", idClient);
     requete.exec();
     return requete;
+}
+
+void ControleurClients::filtrerAppareils(const QString &filtre)
+{
+    if (filtre.isEmpty()) {
+        peuplerAppareils(fragmentClients->getIdModele());
+    } else {
+        QSqlQuery requete = QSqlQuery(*Application::bd);
+        requete.prepare(*RequetesSQL::filtrerAppareils);
+        const QString meta = *ControleurBD::meta;
+        requete.bindValue(":filtre", meta + filtre + meta);
+        requete.exec();
+        QSqlQueryModel* resultats = new QSqlQueryModel(this);
+        resultats->setQuery(requete);
+        fragmentAppareils->peuplerTableau(resultats);
+        fragmentAppareils->getTableau()->hideColumn(0);
+    }
+}
+
+void ControleurClients::rechargerAppareils()
+{
+    filtrerAppareils("");
 }
 
 // Fiches

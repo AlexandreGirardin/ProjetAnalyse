@@ -31,11 +31,24 @@ public slots:
     void ajouterAppareil();
 
     /**
+     * @brief modifierAppareil
+     * @param idAppareil L'id de l'appareil à modifier
+     */
+    void modifierAppareil(const int &idAppareil);
+
+    /**
      * @brief voirAppareil
      * @param idAppareil L'id de l'appareil à visualiser
      */
     void voirAppareil(const int &idAppareil);
 
+signals:
+
+    /**
+     * @brief donneesModifiees
+     * Lancé lorsque les valeurs du tableau ont été modifiées
+     */
+    void donneesModifiees();
 };
 
 #endif // CONTROLEURGESTIONAPPAREIL_H
