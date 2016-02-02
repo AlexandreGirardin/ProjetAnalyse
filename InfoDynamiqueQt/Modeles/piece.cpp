@@ -2,7 +2,7 @@
 
 Piece::Piece(QObject* parent) : ModeleBD(parent) {}
 
-Piece::Piece(int a_id, QString a_nom, QString a_description, int a_prix, QObject* parent):
+Piece::Piece(const int &a_id, const QString &a_nom, const QString &a_description, const int &a_prix, QObject* parent):
     ModeleBD(parent)
 {
     setId(a_id);

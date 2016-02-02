@@ -2,7 +2,7 @@
 
 Technicien::Technicien(QObject* parent) : ModeleBD(parent) {}
 
-Technicien::Technicien(int a_id, QString a_nom, QObject* parent):
+Technicien::Technicien(const int &a_id, const QString &a_nom, QObject* parent):
     ModeleBD(parent)
 {
     setId(a_id);

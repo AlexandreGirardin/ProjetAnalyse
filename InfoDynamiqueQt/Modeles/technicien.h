@@ -31,7 +31,7 @@ public:
      * @param a_nom Le nom à assigner au technicien
      * @param parent
      */
-    Technicien(int a_id, QString a_nom, QObject* parent = 0);
+    Technicien(const int &a_id, const QString &a_nom, QObject* parent = 0);
 
     /**
      * @brief getId

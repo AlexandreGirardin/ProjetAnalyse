@@ -2,7 +2,7 @@
 
 Statut::Statut(QObject* parent) : ModeleBD(parent) {}
 
-Statut::Statut(int a_id, QString a_nom, QObject* parent) :
+Statut::Statut(const int &a_id, const QString &a_nom, QObject* parent) :
     ModeleBD(parent)
 {
     setId(a_id);

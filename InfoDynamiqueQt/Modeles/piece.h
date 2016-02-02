@@ -39,7 +39,7 @@ public:
      * @param a_prix Le prix à donner à la pièce
      * @param parent
      */
-    Piece(int a_id, QString a_nom, QString a_description, int a_prix, QObject* parent = 0);
+    Piece(const int &a_id, const QString &a_nom, const QString &a_description, const int &a_prix, QObject* parent = 0);
 
     /**
      * @brief getId

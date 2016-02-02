@@ -27,7 +27,7 @@ int EnsembleActions::getId() const
     return id;
 }
 
-void EnsembleActions::setId(int value)
+void EnsembleActions::setId(const int &value)
 {
     id = value;
 }

@@ -31,13 +31,13 @@ public:
     void setActions(QList<Action*>* value);
 
     // Représentation textuelle de l'ensemble de tâches
-    QString out();
     QString getNom() const;
     void setNom(const QString &value);
     QString getDescription() const;
     void setDescription(const QString &value);
     int getId() const;
-    void setId(int value);
+    void setId(const int &value);
+    QString out();
 };
 
 #endif // ENSEMBLEACTIONS_H

@@ -39,7 +39,7 @@ public:
      * @brief setId
      * @param value L'id à assigner à l'action
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getNom
@@ -51,7 +51,7 @@ public:
      * @brief setNom
      * @param value Le nom à assigner à l'action
      */
-    void setNom(const QString value);
+    void setNom(const QString &value);
 
     /**
      * @brief getDescription
@@ -81,7 +81,7 @@ public:
      * @brief setEtat Définit l'état de l'action
      * @param value L'était à assigner
      */
-    void setEtat(bool value);
+    void setEtat(const bool &value);
 
     /**
      * @brief etatOut Chaîne affichable correspondant à l'état

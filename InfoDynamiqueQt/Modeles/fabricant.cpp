@@ -2,7 +2,7 @@
 
 Fabricant::Fabricant(QObject* parent) : ModeleBD(parent) {}
 
-Fabricant::Fabricant(int a_id, QString a_nom, QObject* parent): ModeleBD(parent)
+Fabricant::Fabricant(const int &a_id, const QString &a_nom, QObject* parent): ModeleBD(parent)
 {
     id = a_id;
     nom = a_nom;

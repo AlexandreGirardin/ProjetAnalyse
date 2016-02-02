@@ -31,7 +31,7 @@ public:
      * @param a_nom Le nom du statut
      * @param parent
      */
-    explicit Statut(int a_id, QString a_nom, QObject* parent = 0);
+    explicit Statut(const int &a_id, const QString &a_nom, QObject* parent = 0);
 
     /**
      * @brief getId

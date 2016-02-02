@@ -30,7 +30,7 @@ public:
      * @param a_nom Le nom à assigner au fabricant
      * @param parent
      */
-    explicit Fabricant(int a_id, QString a_nom, QObject* parent = 0);
+    explicit Fabricant(const int &a_id, const QString &a_nom, QObject* parent = 0);
 
     /**
      * @brief getId
