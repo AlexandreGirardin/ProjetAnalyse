@@ -57,7 +57,6 @@ SOURCES += main.cpp\
 	Controleurs/application.cpp \
 	Controleurs/requetessql.cpp \
 	Vues/vuegestionaction.cpp \
-    Vues/vuefragmentconnexion.cpp\
     Controleurs/controleurgestionensemble.cpp \
     Mappeurs/mappeurensembles.cpp
 
@@ -105,7 +104,6 @@ HEADERS  += \
 	Controleurs/application.h \
 	Controleurs/requetessql.h \
 	Vues/vuegestionaction.h \
-    Vues/vuefragmentconnexion.h \
     Controleurs/controleurgestionensemble.h \
     Mappeurs/mappeurensembles.h
 
@@ -122,5 +120,4 @@ FORMS    += \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
 	Vues/vueappareil.ui \
-	Vues/vuegestionaction.ui \
-    Vues/vuefragmentconnexion.ui
+	Vues/vuegestionaction.ui

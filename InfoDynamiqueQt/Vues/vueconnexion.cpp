@@ -1,11 +1,16 @@
 #include "vueconnexion.h"
 #include "ui_vueconnexion.h"
 
+#include <QDebug>
+#include <QSortFilterProxyModel>
+#include "controleurbd.h"
+
 VueConnexion::VueConnexion(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::VueConnexion)
 {
     ui->setupUi(this);
+    QObject::connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
 }
 
 VueConnexion::~VueConnexion()
@@ -33,6 +38,11 @@ QString VueConnexion::getMotDePasse()
     return ui->champMDP->text();
 }
 
+QDialogButtonBox* VueConnexion::getButtonBox()
+{
+    return ui->buttonBox;
+}
+
 void VueConnexion::setHote(QString value)
 {
     ui->champHote->setText(value);
@@ -51,4 +61,16 @@ void VueConnexion::setUsager(QString value)
 void VueConnexion::setMotDePasse(QString value)
 {
     ui->champMDP->setText(value);
+}
+
+void VueConnexion::peuplerTableau(QAbstractTableModel* valeurs)
+{
+    QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->listeBd);
+    modeleTriable->setSourceModel(valeurs);
+    ui->listeBd->setModel(modeleTriable);
+}
+
+void VueConnexion::signalerSelection(QModelIndex nouveau, QModelIndex ancien)
+{
+    emit nouvelleSelection(nouvelle);
 }

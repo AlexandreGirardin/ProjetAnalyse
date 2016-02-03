@@ -180,3 +180,6 @@ const QString* RequetesSQL::filtrerFiches =
                                 OR f.priorite LIKE :filtre\
                                 OR s.nom LIKE :filtre\
                                 OR f.commentaire LIKE :filtre"));
+
+const QString* RequetesSQL::listerBD =
+        new QString("show databases");

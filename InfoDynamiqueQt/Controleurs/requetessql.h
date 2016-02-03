@@ -40,6 +40,9 @@ public:
     static const QString* afficherFiches;
     // Requête permettant d'afficher les fiches correspondant à :filtre
     static const QString* filtrerFiches;
+
+    // Requête permettant de lister toutes les base de données d'un serveur
+    static const QString* listerBD;
 };
 
 #endif // REQUETESSQL_H

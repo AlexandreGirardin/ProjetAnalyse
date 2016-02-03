@@ -53,6 +53,33 @@ public:
      */
     static const QString* meta;
 
+private:
+
+    /**
+     * @brief configurerBoutonConnecter
+     * Connecte le bouton Connecter
+     */
+    void configurerBoutonConnecter();
+
+    /**
+     * @brief vueConnexion
+     */
+    VueConnexion* vue;
+
+public slots:
+
+    /**
+     * @brief peuplerBd
+     * peuple la table de la vueConnexion avec toutes les BD du serveur.
+     */
+    void peuplerBd();
+
+    /**
+     * @brief clicConnecter
+     * Informe lors de la demande de connexion
+     */
+    void clicConnecter();
+
 };
 
 #endif // CONTROLEURCONNEXION_H

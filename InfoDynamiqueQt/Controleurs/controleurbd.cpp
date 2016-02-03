@@ -5,6 +5,7 @@
 #include "Controleurs/application.h"
 #include <QDebug>
 #include <QtSql/QSqlDatabase>
+#include <QSqlQueryModel>
 
 ControleurBD::ControleurBD(QObject* parent) :
     QObject(parent)
@@ -18,23 +19,40 @@ QSqlDatabase* ControleurBD::getBd()
 
 void ControleurBD::connecterDossiers()
 {
-    VueConnexion* vue = new VueConnexion(Application::getVuePrincipale());
+    vue = new VueConnexion(Application::getVuePrincipale());
+    configurerBoutonConnecter();
     if (vue->exec() == vue->Accepted) {
-        bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd());
-        bd.setHostName(vue->getHote());
-        bd.setDatabaseName("InfoDynamiqueDossiers");
-        bd.setPort(vue->getPort());
-        bd.setUserName(vue->getUsager());
-        bd.setPassword(vue->getMotDePasse());
-        if (!bd.open()) {
-            qDebug() << "Database error occurred";
-        }
     }
 }
 
 const QString ControleurBD::nomBd()
 {
     return QString("dossiers");
+}
+
+void ControleurBD::clicConnecter()
+{
+    bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd());
+    bd.setHostName(vue->getHote());
+    bd.setPort(vue->getPort());
+    bd.setUserName(vue->getUsager());
+    bd.setPassword(vue->getMotDePasse());
+    if (!bd.open()) {
+        qDebug() << "Database error occurred";
+    }
+    peuplerBd();
+}
+
+void ControleurBD::configurerBoutonConnecter()
+{
+    QObject::connect(vue->getButtonBox(), SIGNAL(accepted()), this, SLOT(clicConnecter()));
+}
+
+void ControleurBD::peuplerBd()
+{
+    QSqlQueryModel* baseDeDonnees = new QSqlQueryModel(this);
+    baseDeDonnees->setQuery(*RequetesSQL::listerBD, bd);
+    vue->peuplerTableau(baseDeDonnees);
 }
 
 const QString* ControleurBD::meta = new QString("%");

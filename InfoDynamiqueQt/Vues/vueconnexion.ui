@@ -65,6 +65,20 @@
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
+      <set>QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTableView" name="listeBd"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox_2">
+     <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
@@ -74,14 +88,14 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>buttonBox_2</sender>
    <signal>accepted()</signal>
    <receiver>VueConnexion</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>199</x>
-     <y>277</y>
+     <x>169</x>
+     <y>274</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>
@@ -90,14 +104,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>buttonBox_2</sender>
    <signal>rejected()</signal>
    <receiver>VueConnexion</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>199</x>
-     <y>277</y>
+     <x>169</x>
+     <y>274</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>
