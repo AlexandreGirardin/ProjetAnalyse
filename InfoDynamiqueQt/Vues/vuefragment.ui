@@ -48,9 +48,8 @@
         <string>Ajouter</string>
        </property>
        <property name="icon">
-        <iconset theme="list-add">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/list-add.svg</normaloff>:/Images/list-add.svg</iconset>
        </property>
       </widget>
      </item>
@@ -63,9 +62,8 @@
         <string>Modifier</string>
        </property>
        <property name="icon">
-        <iconset theme="document-edit">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/document-edit.svg</normaloff>:/Images/document-edit.svg</iconset>
        </property>
       </widget>
      </item>
@@ -75,9 +73,8 @@
         <string>Visualiser</string>
        </property>
        <property name="icon">
-        <iconset theme="documentinfo">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/help-about.svg</normaloff>:/Images/help-about.svg</iconset>
        </property>
       </widget>
      </item>
@@ -143,6 +140,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../ressources.qrc"/>
+ </resources>
  <connections/>
 </ui>

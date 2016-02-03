@@ -3,6 +3,7 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
+#include "Vues/vuegestionensemble.h"
 
 #include <QSqlQueryModel>
 #include <QDebug>
@@ -27,12 +28,12 @@ ControleurActions::ControleurActions(QWidget* vue)
 void ControleurActions::configurerFragmentActions()
 {
     fragmentActions = new VueFragment(splitter);
-    fragmentActions->getEtiquette()->setText(tr("Actions"));
+    fragmentActions->setEtiquette(tr("Actions"));
     fragmentActions->getCaseCocher()->setText(tr("Afficher toutes les actions"));
 
     QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
     boutonEtat->setText(tr("Changer l'état"));
-    boutonEtat->setIcon(QIcon::fromTheme("reverse"));
+    boutonEtat->setIcon(QIcon(":/Images/reverse"));
     boutonEtat->setEnabled(false);
 
     QObject::connect(fragmentActions, SIGNAL(clicEditer()), this, SLOT(modifierAction()));
@@ -46,13 +47,15 @@ void ControleurActions::configurerFragmentActions()
 void ControleurActions::configurerFragmentEnsembles()
 {
     fragmentEnsembles = new VueFragment(splitter);
-    fragmentEnsembles->getEtiquette()->setText(tr("Ensembles"));
+    fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
-    QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
-    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsemble, SLOT(modifierEnsemble()));
+    QObject::connect(this, SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
+    QObject::connect(this, SIGNAL(actionsModifiees()), this, SLOT(recharger()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
 }
 
-void ControleurActions::assignerAction(VueGestionAction* vue, Action* action) const
+void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const
 {
     vue->setNom(action->getNom());
     vue->setDescription(action->getDescription());
@@ -79,16 +82,16 @@ void ControleurActions::activerCritereActions()
 {
     requeteActions = RequetesSQL::afficherActionsActives;
     requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
 }
 
 void ControleurActions::desactiverCritereActions() {
     requeteActions = RequetesSQL::afficherToutesActions;
     requeteActionsFiltre = RequetesSQL::filtrerToutesActions;
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
 }
 
-void ControleurActions::filtrerActions(QString filtre)
+void ControleurActions::filtrerActions(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerActions();
@@ -116,20 +119,21 @@ void ControleurActions::modifierAction()
             action->setDescription(vue->getDescription());
             action->setEtat(vue->getEtat());
             if (Application::actions->mettreAJour(action)) {
-                emit donneesModifiees();
+                emit actionsModifiees();
             }
         }
     }
     action->deleteLater();
 }
 
-void ControleurActions::voirAction()
+void ControleurActions::voirAction() const
 {
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
         assignerAction(vue, action);
         vue->setLectureSeule(true);
+        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
     action->deleteLater();
@@ -141,7 +145,7 @@ void ControleurActions::changerEtat()
     if (action != NULL) {
         action->setEtat(!action->getEtat());
         if (Application::actions->mettreAJour(action)) {
-            emit donneesModifiees();
+            emit actionsModifiees();
         }
     }
     action->deleteLater();
@@ -149,6 +153,50 @@ void ControleurActions::changerEtat()
 
 void ControleurActions::recharger()
 {
-    filtrerActions(fragmentActions->getChamp()->text());
+    filtrerActions(fragmentActions->getFiltre());
+}
+
+void ControleurActions::creerEnsemble()
+{
+    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
+    QList<Action*>* actionsHorsEnsemble = Application::actions->getActions();
+    vue->setActionsHorsEnsemble(actionsHorsEnsemble);
+    delete actionsHorsEnsemble;
+    if (vue->exec() == vue->Accepted) {
+        EnsembleActions* ensemble = new EnsembleActions(vue);
+        ensemble->setNom(vue->getNom());
+        ensemble->setDescription(vue->getDescription());
+        ensemble->setActions(vue->getActionsDansEnsemble());
+        if (Application::ensembles->inserer(ensemble)) {
+            emit ensemblesModifies();
+        } else {
+            qDebug() << "Pas marché :(";
+        }
+        vue->deleteLater();
+    }
+}
+
+void ControleurActions::modifierEnsemble()
+{
+    EnsembleActions* ensemble = Application::ensembles->getEnsemble(fragmentEnsembles->getIdModele());
+    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
+    QList<Action*>* actionsHorsEnsemble = Application::actions->actionsHorsEnsemble(ensemble->getId());
+    vue->setActionsHorsEnsemble(actionsHorsEnsemble);
+    vue->setActionsDansEnsemble(ensemble->getActions());
+    vue->setNom(ensemble->getNom());
+    vue->setDescription(ensemble->getDescription());
+    delete actionsHorsEnsemble;
+    if (vue->exec() == vue->Accepted) {
+        EnsembleActions* ensemble = new EnsembleActions(vue);
+        ensemble->setNom(vue->getNom());
+        ensemble->setDescription(vue->getDescription());
+        ensemble->setActions(vue->getActionsDansEnsemble());
+        if (Application::ensembles->mettreAJour(ensemble)) {
+            emit ensemblesModifies();
+        } else {
+            qDebug() << "Pas marché :(";
+        }
+        vue->deleteLater();
+    }
 }
 

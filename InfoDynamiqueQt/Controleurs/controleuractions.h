@@ -63,7 +63,7 @@ private:
      * @param vue La vue cible
      * @param action L'action source
      */
-    void assignerAction(VueGestionAction* vue, Action* action) const;
+    void assignerAction(VueGestionAction* vue, const Action *action) const;
 
     ControleurGestionEnsemble* controleurEnsemble;
 
@@ -98,7 +98,7 @@ public slots:
      * Peuple le tableau avec les actions qui correspondent à un critère de recherche
      * @param filtre Le critère de recherche
      */
-    void filtrerActions(QString filtre);
+    void filtrerActions(const QString &filtre);
 
     /**
      * @brief modifierAction
@@ -106,11 +106,15 @@ public slots:
      */
     void modifierAction();
 
+    void modifierEnsemble();
+
+    void creerEnsemble();
+
     /**
      * @brief voirAction
      * Lance la visualisation de l'action sélectionnée
      */
-    void voirAction();
+    void voirAction() const;
 
     /**
      * @brief changerEtat
@@ -130,7 +134,9 @@ signals:
      * @brief donneesModifiees
      * Lancé lorsque les valeurs du tableau ont été modifiées
      */
-    void donneesModifiees();
+    void actionsModifiees();
+
+    void ensemblesModifies();
 
 };
 

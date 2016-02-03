@@ -1,14 +1,14 @@
 #ifndef FICHE_H
 #define FICHE_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
 #include "Modeles/piece.h"
 #include "Modeles/statut.h"
 #include "Modeles/tache.h"
 #include "Modeles/technicien.h"
 
-class Fiche : public QObject
+class Fiche : public ModeleBD
 {
     Q_OBJECT
 
@@ -29,13 +29,13 @@ private:
     Statut* statut;
 
     // La liste des tâches de la fiche
-    QList<Tache*> taches;
+    QList<Tache*>* taches;
 
     // La liste des pièces utilisées pour la fiche
-    QList<Piece*> pieces;
+    QList<Piece*>* pieces;
 
     // La liste des techniciens ayant travaillé sur la fiche
-    QList<Technicien*> techniciens;
+    QList<Technicien*>* techniciens;
 
 public:
 
@@ -55,7 +55,7 @@ public:
      * @brief setId
      * @param value L'id à assigner à la fiche
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getPriorite
@@ -67,7 +67,7 @@ public:
      * @brief setPriorite
      * @param value La priorité à assigner à la fiche
      */
-    void setPriorite(int value);
+    void setPriorite(const int &value);
 
     /**
      * @brief getCommentaire
@@ -97,37 +97,37 @@ public:
      * @brief getTaches
      * @return La liste des tâches de la fiche
      */
-    QList<Tache*> getTaches() const;
+    QList<Tache*>* getTaches() const;
 
     /**
      * @brief setTaches
      * @param value La liste des tâches à assigner à la fiche
      */
-    void setTaches(const QList<Tache*> &value);
+    void setTaches(QList<Tache*>* value);
 
     /**
      * @brief getPieces
      * @return La liste de pièces de la fiche
      */
-    QList<Piece*> getPieces() const;
+    QList<Piece*>* getPieces() const;
 
     /**
      * @brief setPieces
      * @param value La liste de pièces à assigner à la fiche
      */
-    void setPieces(const QList<Piece*> &value);
+    void setPieces(QList<Piece*>* value);
 
     /**
      * @brief getTechniciens
      * @return La liste des techniciens associés à la fiche
      */
-    QList<Technicien*> getTechniciens() const;
+    QList<Technicien*>* getTechniciens() const;
 
     /**
      * @brief setTechniciens
      * @param value La liste de techniciens à assigner à la fiche
      */
-    void setTechniciens(const QList<Technicien*> &value);
+    void setTechniciens(QList<Technicien*>* value);
 
     /**
      * @brief out

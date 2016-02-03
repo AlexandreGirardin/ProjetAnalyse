@@ -13,7 +13,7 @@ VueGestionAction::~VueGestionAction()
     delete ui;
 }
 
-void VueGestionAction::setLectureSeule(const bool value)
+void VueGestionAction::setLectureSeule(const bool &value)
 {
     ui->caseActivee->setCheckable(!value);
     ui->champDesc->setReadOnly(value);

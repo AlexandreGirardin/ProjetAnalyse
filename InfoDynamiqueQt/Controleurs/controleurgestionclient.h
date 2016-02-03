@@ -30,14 +30,6 @@ private:
      */
     void assignerClient(VueGestionClient* vue, const Client* client);
 
-    /**
-     * @brief lireClient
-     * Insère la valeur des champs d'une fiche de gestion dans un client
-     * @param client Le client cible
-     * @param vue La vue source
-     */
-    void lireClient(Client* client, VueGestionClient* vue);
-
 public slots:
 
     /**
@@ -50,13 +42,13 @@ public slots:
      * @brief modifierClient
      * Lance la modification d'un client
      */
-    void modifierClient(const int idClient);
+    void modifierClient(const int &idClient);
 
     /**
      * @brief modifierClient
      * Lance la modification d'un client
      */
-    void voirClient(const int idClient);
+    void voirClient(const int &idClient);
 
 signals:
 

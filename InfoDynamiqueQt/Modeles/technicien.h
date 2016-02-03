@@ -1,9 +1,9 @@
 #ifndef TECHNICIEN_H
 #define TECHNICIEN_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
-class Technicien : public QObject
+class Technicien : public ModeleBD
 {
     Q_OBJECT
 
@@ -31,7 +31,7 @@ public:
      * @param a_nom Le nom à assigner au technicien
      * @param parent
      */
-    Technicien(int a_id, QString a_nom, QObject* parent = 0);
+    Technicien(const int &a_id, const QString &a_nom, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -43,7 +43,7 @@ public:
      * @brief setId
      * @param value L'id à assigner au technicien
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getNom

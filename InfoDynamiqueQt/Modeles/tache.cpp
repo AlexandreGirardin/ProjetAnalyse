@@ -1,16 +1,13 @@
 #include "Modeles/tache.h"
 
-Tache::Tache(QObject* parent) :
-    QObject(parent)
-{
-}
+Tache::Tache(QObject* parent) : ModeleBD(parent) {}
 
 int Tache::getId() const
 {
     return id;
 }
 
-void Tache::setId(int value)
+void Tache::setId(const int &value)
 {
     id = value;
 }

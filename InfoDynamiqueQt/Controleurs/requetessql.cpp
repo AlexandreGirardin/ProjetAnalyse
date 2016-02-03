@@ -1,6 +1,6 @@
 #include "requetessql.h"
 
-const QString* RequetesSQL::afficherClients =
+QString const * const RequetesSQL::afficherClients =
         new QString(
             "SELECT\
                   c.id as '#',\
@@ -14,14 +14,14 @@ const QString* RequetesSQL::afficherClients =
              ON\
                   c.id = a.idClient");
 
-const QString* RequetesSQL::filtrerClients =
+QString const * const RequetesSQL::filtrerClients =
         new QString (*afficherClients +
                         QString(" WHERE c.id LIKE :filtre\
                                 OR CONCAT(c.nom, ', ', c.prenom) LIKE :filtre\
                                 OR c.telephone LIKE :filtre\
                                 OR c.adresse LIKE :filtre"));
 
-const QString* RequetesSQL::appareilsPourClient =
+QString const * const RequetesSQL::appareilsPourClient =
         new QString(
             "SELECT\
                 a.id AS '#',\
@@ -46,7 +46,7 @@ const QString* RequetesSQL::appareilsPourClient =
             WHERE\
                 a.idClient = :idClient");
 
-const QString* RequetesSQL::toutesFichesPourAppareil =
+QString const * const RequetesSQL::toutesFichesPourAppareil =
         new QString("SELECT\
                         f.id,\
                         f.priorite as 'Priorité',\
@@ -65,11 +65,11 @@ const QString* RequetesSQL::toutesFichesPourAppareil =
                         f.idStatut = s.id\
                     WHERE f.idAppareil=:idAppareil");
 
-const QString* RequetesSQL::fichesActivesPourAppareil =
+QString const * const RequetesSQL::fichesActivesPourAppareil =
         new QString(*toutesFichesPourAppareil +
                     QString(" AND f.idStatut <> 5"));
 
-const QString* RequetesSQL::afficherAppareils =
+QString const * const RequetesSQL::afficherAppareils =
         new QString(
             "SELECT\
                 a.id AS '#',\
@@ -97,14 +97,14 @@ const QString* RequetesSQL::afficherAppareils =
             ON\
                 a.idType = t.id");
 
-const QString* RequetesSQL::filtrerAppareils =
+QString const * const RequetesSQL::filtrerAppareils =
         new QString(*afficherAppareils +
                      QString(" WHERE c.telephone LIKE :filtre\
                              OR t.nom LIKE :filtre\
                              OR f.nom LIKE :filtre\
                              OR a.description LIKE :filtre"));
 
-const QString* RequetesSQL::afficherToutesActions =
+QString const * const RequetesSQL::afficherToutesActions =
         new QString("SELECT\
                         id,\
                         nom as 'Action',\
@@ -112,7 +112,7 @@ const QString* RequetesSQL::afficherToutesActions =
                         IF (etat < 1, '', '✓') as 'Activée'\
                     FROM actions");
 
-const QString* RequetesSQL::afficherActionsActives =
+QString const * const RequetesSQL::afficherActionsActives =
         new QString("SELECT\
                          id,\
                          nom as 'Action',\
@@ -120,19 +120,19 @@ const QString* RequetesSQL::afficherActionsActives =
                      FROM actions\
                      WHERE etat = 1");
 
-const QString* RequetesSQL::filtrerToutesActions =
+QString const * const RequetesSQL::filtrerToutesActions =
         new QString(*afficherToutesActions
                       + QString(" WHERE id LIKE :filtre\
                                     OR nom LIKE :filtre\
                                     OR description LIKE :filtre"));
 
-const QString* RequetesSQL::filtrerActionsActives =
+QString const * const RequetesSQL::filtrerActionsActives =
         new QString(*afficherActionsActives
                       + QString(" HAVING id LIKE :filtre\
                                     OR nom LIKE :filtre\
                                     OR description LIKE :filtre"));
 
-const QString* RequetesSQL::afficherEnsembles =
+QString const * const RequetesSQL::afficherEnsembles =
         new QString("SELECT\
                         e.id,\
                         a.nb as 'Nb. actions',\
@@ -152,7 +152,7 @@ const QString* RequetesSQL::afficherEnsembles =
                     ON\
                         a.id = e.id");
 
-const QString* RequetesSQL::afficherFiches =
+QString const * const RequetesSQL::afficherFiches =
         new QString("SELECT\
                         f.id,\
                         c.telephone as 'Client',\
@@ -174,7 +174,7 @@ const QString* RequetesSQL::afficherFiches =
                     ON\
                         a.idClient = c.id");
 
-const QString* RequetesSQL::filtrerFiches =
+QString const * const RequetesSQL::filtrerFiches =
         new QString(*afficherFiches +
                     QString(" WHERE c.telephone LIKE :filtre\
                                 OR f.priorite LIKE :filtre\

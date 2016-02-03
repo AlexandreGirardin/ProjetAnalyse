@@ -77,7 +77,11 @@ public:
      * @brief getEtiquette
      * @return L'étiquette du fragment
      */
-    QLabel* getEtiquette() const;
+//    QLabel* getEtiquette() const;
+
+    void retirerEtiquette() const;
+
+    void setEtiquette(const QString &etiquette) const;
 
     /**
      * @brief getBoutonAjouter
@@ -102,7 +106,7 @@ public:
      * Ajoute un bouton d'action au fragment
      * @param bouton Le bouton à ajouter
      */
-    QPushButton *ajouterBouton(int index);
+    QPushButton* ajouterBouton(const int &index);
 
     /**
      * @brief getCaseCocher
@@ -111,10 +115,22 @@ public:
     QCheckBox* getCaseCocher() const;
 
     /**
-     * @brief getChamp
-     * @return Le champ de recherche du fragment
+     * @brief retirerCaseCocher
+     * Retire la case à cocher de la vue
      */
-    QLineEdit* getChamp() const;
+    void retirerCaseCocher() const;
+
+    /**
+     * @brief retirerChamp
+     * Retire le champ de recherche de la vue
+     */
+    void retirerChamp() const;
+
+    /**
+     * @brief getFiltre
+     * @return Le filtre de recherche actuel
+     */
+    QString getFiltre() const;
 
     /**
      * @brief getTableau
@@ -127,7 +143,7 @@ public:
      * @param index L'entrée du tableau duquel on souhaite connaître l'id du modèle
      * @return L'id du modèle
      */
-    int getId(QModelIndex index);
+    int getId(const QModelIndex &index);
 
     /**
      * @brief getIdModele
@@ -139,7 +155,7 @@ public:
      * @brief setIdModele
      * @param value L'id de modèle à assigner au fragment
      */
-    void setIdModele(int value);
+    void setIdModele(const int &value);
 
     /**
      * @brief getColonneId
@@ -152,7 +168,7 @@ public:
      * Assigne le numéro de la colonne du tableau contenant les id des modèles
      * @param value Le numéro à assigner
      */
-    void setColonneId(int value);
+    void setColonneId(const int &value);
 
 public slots:
 
@@ -170,7 +186,7 @@ public slots:
      * @param index L'entrée du tableau dont l'id doit être assigné à idModele
      * Émet modeleSelectionne();
      */
-    void selectionnerModele(QModelIndex index);
+    void selectionnerModele(const QModelIndex &index);
 
     /**
      * @brief relacherModele
@@ -187,14 +203,16 @@ private slots:
      * Indique un changement d'état de la case de filtre
      * @param etat Le nouvel état de la case à cocher
      */
-    void signalerCase(bool etat);
+    void signalerCase(const bool &etat);
 
     /**
      * @brief signalerSelection
      * @param nouveau La nouvelle sélection du tableau
      * @param ancien L'ancienne sélection du tableau
      */
-    void signalerSelection(QModelIndex nouveau, QModelIndex ancien);
+    void signalerSelection(const QModelIndex &nouveau, const QModelIndex &ancien);
+
+    void doubleClicTableau();
 
 signals:
 
@@ -202,7 +220,7 @@ signals:
      * @brief selectionValide
      * Informe d'un changement de modèle sélectionné
      */
-    void selectionValide(bool);
+    void selectionValide(const bool &valide);
 
     /**
      * @brief clicCreer
@@ -238,21 +256,21 @@ signals:
      * @brief rechercher
      * Émis lorsque le champ de recherche est utilisé
      */
-    void rechercher(QString);
+    void rechercher(const QString &filtre);
 
     /**
      * @brief nouvelleSelection
      * Émis lorsqu'une nouvelle entrée du tableau est sélectionnée
      * @param nouveau La nouvelle sélection
      */
-    void nouvelleSelection(QModelIndex nouveau);
+    void nouvelleSelection(const QModelIndex &nouveau);
 
     /**
      * @brief modeleSelectionne
      * Émis lorsqu'un nouveau modèle est sélectionné
      * @param idModele L'id du nouveau modèle sélectionné
      */
-    void modeleSelectionne(int idModele);
+    void modeleSelectionne(const int &idModele);
 
     /**
      * @brief modeleRelache
@@ -264,7 +282,9 @@ signals:
      * @brief boutonsActives
      * Indique un changement de l'état des boutons (activés ou désactivés)
      */
-    void boutonsActives(bool);
+    void boutonsActives(bool &etat);
+
+    void doubleClicModele();
 
 };
 #endif // FRAGMENT_H

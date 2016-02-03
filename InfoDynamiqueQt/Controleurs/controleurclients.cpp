@@ -25,23 +25,26 @@ ControleurClients::ControleurClients(QWidget* vue)
 void ControleurClients::configurerFragmentClients()
 {
     fragmentClients = new VueFragment(splitter);
-    fragmentClients->getEtiquette()->setText(tr("Clients"));
-    fragmentClients->getCaseCocher()->deleteLater();
+    fragmentClients->setEtiquette(tr("Clients"));
+    fragmentClients->retirerCaseCocher();
     QObject::connect(fragmentClients, SIGNAL(clicCreer()), controleurGestionClient, SLOT(ajouterClient()));
     QObject::connect(fragmentClients, SIGNAL(clicEditer()), this, SLOT(modifierClient()));
     QObject::connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
     QObject::connect(fragmentClients, SIGNAL(rechercher(QString)), this, SLOT(filtrerClients(QString)));
-
+    QObject::connect(controleurGestionClient, SIGNAL(donneesModifiees()), this, SLOT(rechargerClients()));
+    QObject::connect(fragmentClients, SIGNAL(doubleClicModele()), this, SLOT(modifierClient()));
 }
 
 void ControleurClients::configurerFragmentAppareils()
 {
     fragmentAppareils = new VueFragment(splitter);
-    fragmentAppareils->getEtiquette()->setText(tr("Appareils"));
-    fragmentAppareils->getCaseCocher()->deleteLater();
-    fragmentAppareils->getChamp()->deleteLater();
+    fragmentAppareils->setEtiquette(tr("Appareils"));
+    fragmentAppareils->retirerCaseCocher();
+    fragmentAppareils->retirerChamp();
     QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), controleurGestionAppareil, SLOT(ajouterAppareil()));
+    QObject::connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
+    QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(rechargerAppareils()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
     QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
@@ -51,10 +54,10 @@ void ControleurClients::configurerFragmentAppareils()
 void ControleurClients::configurerFragmentFiches()
 {
     fragmentFiches = new VueFragment(splitter);
-    fragmentFiches->getEtiquette()->setText(tr("Fiches"));
+    fragmentFiches->setEtiquette(tr("Fiches"));
     fragmentFiches->getCaseCocher()->setChecked(true);
     fragmentFiches->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
-    fragmentFiches->getChamp()->deleteLater();
+    fragmentFiches->retirerChamp();
     commandeFiches = RequetesSQL::toutesFichesPourAppareil;
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), controleurGestionFiche, SLOT(ajouterFiche()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
@@ -75,21 +78,21 @@ void ControleurClients::peuplerClients()
     fragmentClients->getTableau()->hideColumn(0);
 }
 
-void ControleurClients::modifierClient()
+void ControleurClients::modifierClient() const
 {
     if (fragmentClients->getIdModele() != -1) {
         controleurGestionClient->modifierClient(fragmentClients->getIdModele());
     }
 }
 
-void ControleurClients::voirClient()
+void ControleurClients::voirClient() const
 {
     if (fragmentClients->getIdModele() != -1) {
         controleurGestionClient->voirClient(fragmentClients->getIdModele());
     }
 }
 
-void ControleurClients::filtrerClients(QString filtre)
+void ControleurClients::filtrerClients(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerClients();
@@ -106,9 +109,14 @@ void ControleurClients::filtrerClients(QString filtre)
     }
 }
 
+void ControleurClients::rechargerClients()
+{
+    filtrerClients(fragmentClients->getFiltre());
+}
+
 // Appareils
 
-void ControleurClients::peuplerAppareils(int idClient)
+void ControleurClients::peuplerAppareils(const int &idClient)
 {
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(requeteAppareils(idClient));
@@ -116,14 +124,21 @@ void ControleurClients::peuplerAppareils(int idClient)
     fragmentAppareils->getTableau()->hideColumn(0);
 }
 
-void ControleurClients::voirAppareil()
+void ControleurClients::modifierAppareil() const
+{
+    if (fragmentAppareils->getIdModele() != -1) {
+        controleurGestionAppareil->modifierAppareil(fragmentAppareils->getIdModele());
+    }
+}
+
+void ControleurClients::voirAppareil() const
 {
     if (fragmentAppareils->getIdModele() != -1) {
         controleurGestionAppareil->voirAppareil(fragmentAppareils->getIdModele());
     }
 }
 
-QSqlQuery ControleurClients::requeteAppareils(int idClient) const
+QSqlQuery ControleurClients::requeteAppareils(const int &idClient) const
 {
     QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare(*RequetesSQL::appareilsPourClient);
@@ -132,9 +147,31 @@ QSqlQuery ControleurClients::requeteAppareils(int idClient) const
     return requete;
 }
 
+void ControleurClients::filtrerAppareils(const QString &filtre)
+{
+    if (filtre.isEmpty()) {
+        peuplerAppareils(fragmentClients->getIdModele());
+    } else {
+        QSqlQuery requete = QSqlQuery(*Application::bd);
+        requete.prepare(*RequetesSQL::filtrerAppareils);
+        const QString meta = *ControleurBD::meta;
+        requete.bindValue(":filtre", meta + filtre + meta);
+        requete.exec();
+        QSqlQueryModel* resultats = new QSqlQueryModel(this);
+        resultats->setQuery(requete);
+        fragmentAppareils->peuplerTableau(resultats);
+        fragmentAppareils->getTableau()->hideColumn(0);
+    }
+}
+
+void ControleurClients::rechargerAppareils()
+{
+    filtrerAppareils("");
+}
+
 // Fiches
 
-void ControleurClients::peuplerFiches(int idAppareil)
+void ControleurClients::peuplerFiches(const int &idAppareil)
 {
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(requeteFiches(idAppareil));
@@ -142,7 +179,7 @@ void ControleurClients::peuplerFiches(int idAppareil)
     fragmentFiches->getTableau()->hideColumn(0);
 }
 
-void ControleurClients::voirFiche()
+void ControleurClients::voirFiche() const
 {
 
 }
@@ -159,7 +196,7 @@ void ControleurClients::desactiverCritereFiches()
     peuplerFiches(fragmentAppareils->getIdModele());
 }
 
-QSqlQuery ControleurClients::requeteFiches(const int idAppareil) const
+QSqlQuery ControleurClients::requeteFiches(const int &idAppareil) const
 {
     QSqlQuery requete = QSqlQuery(*Application::bd);
     requete.prepare(*commandeFiches);

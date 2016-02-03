@@ -10,37 +10,37 @@ class RequetesSQL : public QObject
 public:
 
     // Requête permettant d'afficher les appareils
-    static const QString* afficherAppareils;
+    static QString const * const afficherAppareils;
     // Requête permettant d'afficher les appareils correspondant à :filtre
-    static const QString* filtrerAppareils;
+    static QString const * const filtrerAppareils;
 
     // Requête permettant d'afficher toutes les actions
-    static const QString* afficherToutesActions;
+    static QString const * const afficherToutesActions;
     // Requête permettant d'afficher les actions actives
-    static const QString* afficherActionsActives;
+    static QString const * const afficherActionsActives;
     // Requête permettant d'afficher toutes les actions correspondant à :filtre
-    static const QString* filtrerToutesActions;
+    static QString const * const filtrerToutesActions;
     // Requête permettant d'afficher les actions actives correspondant à :filtre
-    static const QString* filtrerActionsActives;
+    static QString const * const filtrerActionsActives;
     // Requête permettant d'afficher les ensembles d'actions
-    static const QString* afficherEnsembles;
+    static QString const * const afficherEnsembles;
 
     // Requête permettant d'afficher les clients
-    static const QString* afficherClients;
+    static QString const * const afficherClients;
     // Requête permettant d'afficher les clients correspondant à :filtre
-    static const QString* filtrerClients;
+    static QString const * const filtrerClients;
     // Requête permettant d'afficher les appareils ayant un :idClient
-    static const QString* appareilsPourClient;
+    static QString const * const appareilsPourClient;
     // Requête permettant d'afficher les fiches actives ayant un :idAppareil
-    static const QString* toutesFichesPourAppareil;
+    static QString const * const toutesFichesPourAppareil;
     // Requête permettant d'afficher toutes les fiches ayant un :idAppareil
-    static const QString* fichesActivesPourAppareil;
+    static QString const * const fichesActivesPourAppareil;
 
     // Requête permettant d'afficher toutes les fiches
-    static const QString* afficherFiches;
-    // Requête permettant d'afficher les fiches correspondant à :filtre
-    static const QString* filtrerFiches;
-
+    static QString const * const afficherFiches;
+    // Requête permettant d'afficher les fiches correspondant à :filtre	
+    static QString const * const filtrerFiches;
+	
     // Requête permettant de lister toutes les base de données d'un serveur
     static const QString* listerBD;
 };

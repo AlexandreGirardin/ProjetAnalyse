@@ -1,9 +1,9 @@
 #ifndef STATUT_H
 #define STATUT_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
-class Statut : public QObject
+class Statut : public ModeleBD
 {
     Q_OBJECT
 
@@ -31,7 +31,7 @@ public:
      * @param a_nom Le nom du statut
      * @param parent
      */
-    explicit Statut(int a_id, QString a_nom, QObject* parent = 0);
+    explicit Statut(const int &a_id, const QString &a_nom, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -43,7 +43,7 @@ public:
      * @brief setId
      * @param value L'id à assigner pour le statut
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getNom

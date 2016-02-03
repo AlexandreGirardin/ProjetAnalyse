@@ -17,11 +17,22 @@ VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragm
     configurerCase();
     configurerChamp();
     QObject::connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
+    QObject::connect(ui->tableau, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(doubleClicTableau()));
 }
 
 VueFragment::~VueFragment()
 {
     delete ui;
+}
+
+void VueFragment::retirerEtiquette() const
+{
+    ui->etiquette->deleteLater();
+}
+
+void VueFragment::setEtiquette(const QString &etiquette) const
+{
+    ui->etiquette->setText(etiquette);
 }
 
 void VueFragment::configurerBoutonAjouter()
@@ -56,15 +67,9 @@ int VueFragment::getColonneId() const
     return colonneId;
 }
 
-void VueFragment::setColonneId(int value)
+void VueFragment::setColonneId(const int &value)
 {
     colonneId = value;
-}
-
-
-QLabel* VueFragment::getEtiquette() const
-{
-    return ui->etiquette;
 }
 
 QPushButton* VueFragment::getBoutonAjouter() const
@@ -82,7 +87,7 @@ QPushButton* VueFragment::getBoutonVoir() const
     return ui->boutonVoir;
 }
 
-QPushButton* VueFragment::ajouterBouton(int index)
+QPushButton* VueFragment::ajouterBouton(const int &index)
 {
     QPushButton* bouton = new QPushButton(this);
     ui->horizontalLayout->insertWidget(index, bouton);
@@ -95,9 +100,19 @@ QCheckBox* VueFragment::getCaseCocher() const
     return ui->caseCocher;
 }
 
-QLineEdit* VueFragment::getChamp() const
+void VueFragment::retirerCaseCocher() const
 {
-    return ui->champ;
+    ui->caseCocher->deleteLater();
+}
+
+void VueFragment::retirerChamp() const
+{
+    ui->champ->deleteLater();
+}
+
+QString VueFragment::getFiltre() const
+{
+    return ui->champ->text();
 }
 
 QTableView* VueFragment::getTableau() const
@@ -118,7 +133,7 @@ void VueFragment::peuplerTableau(QAbstractTableModel* valeurs)
     relacherModele();
 }
 
-int VueFragment::getId(QModelIndex index)
+int VueFragment::getId(const QModelIndex &index)
 {
     int rangee = index.row();
     QModelIndex caseId = ui->tableau->model()->index(rangee, colonneId);
@@ -130,7 +145,7 @@ int VueFragment::getIdModele() const
     return idModele;
 }
 
-void VueFragment::setIdModele(int value)
+void VueFragment::setIdModele(const int &value)
 {
     idModele = value;
 }
@@ -143,14 +158,14 @@ void VueFragment::relacherModele()
     emit modeleRelache();
 }
 
-void VueFragment::selectionnerModele(QModelIndex index)
+void VueFragment::selectionnerModele(const QModelIndex &index)
 {
     idModele = getId(index);
     emit selectionValide(true);
     emit modeleSelectionne(idModele);
 }
 
-void VueFragment::signalerCase(bool etat)
+void VueFragment::signalerCase(const bool &etat)
 {
     if (etat) {
         emit caseCochee();
@@ -159,7 +174,12 @@ void VueFragment::signalerCase(bool etat)
     }
 }
 
-void VueFragment::signalerSelection(QModelIndex nouvelle, QModelIndex)
+void VueFragment::signalerSelection(const QModelIndex &nouvelle, const QModelIndex&)
 {
     emit nouvelleSelection(nouvelle);
+}
+
+void VueFragment::doubleClicTableau()
+{
+    emit doubleClicModele();
 }

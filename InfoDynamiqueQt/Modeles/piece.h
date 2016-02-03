@@ -1,9 +1,9 @@
 #ifndef PIECE_H
 #define PIECE_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
-class Piece : public QObject
+class Piece : public ModeleBD
 {
     Q_OBJECT
 
@@ -39,7 +39,7 @@ public:
      * @param a_prix Le prix à donner à la pièce
      * @param parent
      */
-    Piece(int a_id, QString a_nom, QString a_description, int a_prix, QObject* parent = 0);
+    Piece(const int &a_id, const QString &a_nom, const QString &a_description, const int &a_prix, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -51,7 +51,7 @@ public:
      * @brief setId
      * @param value L'id à assigner à la pièce
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getNom
@@ -93,7 +93,7 @@ public:
      * @brief setPrix
      * @param value Le prix à assigner à la pièce, en sous
      */
-    void setPrix(int value);
+    void setPrix(const int &value);
 
     /**
      * @brief out

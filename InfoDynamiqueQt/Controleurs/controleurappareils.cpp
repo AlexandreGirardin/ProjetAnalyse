@@ -4,6 +4,7 @@
 #include "Controleurs/controleurbd.h"
 
 #include <QSqlQueryModel>
+
 #include <QDebug>
 #include "Controleurs/application.h"
 
@@ -11,14 +12,17 @@ ControleurAppareils::ControleurAppareils(QWidget* vue)
     : QObject(vue)
 {
     fragment = new VueFragment(vue);
-    fragment->getEtiquette()->deleteLater();
+    fragment->retirerEtiquette();
     fragment->getBoutonAjouter()->deleteLater();
-    fragment->getCaseCocher()->deleteLater();
+    fragment->retirerCaseCocher();
     vue->layout()->addWidget(fragment);
+
+    controleurGestionAppareil = new ControleurGestionAppareil();
+
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-    QObject::connect(this, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
+    QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
     QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
 }
 
@@ -30,45 +34,21 @@ void ControleurAppareils::peuplerAppareils()
     fragment->getTableau()->hideColumn(0);
 }
 
-void ControleurAppareils::modifierAppareil()
+void ControleurAppareils::modifierAppareil() const
 {
-    Appareil* appareil = Application::appareils->getAppareil(fragment->getIdModele());
-    if (appareil != NULL) {
-        VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
-        vue->setTypes(Application::typesAppareils->getTypesAppareil(), appareil->getNomType());
-        vue->setFabricants(Application::fabricants->getFabricants(), appareil->getNomFabricant());
-        vue->setMotDePasse(appareil->getMotDePasse());
-        vue->setDescription(appareil->getDescription());
-        if (vue->exec() == vue->Accepted) {
-            appareil->setMotDePasse(vue->getMotDePasse());
-            appareil->setType(vue->getType());
-            appareil->setFabricant(vue->getFabricant());
-            appareil->setDescription(vue->getDescription());
-            if (Application::appareils->mettreAJour(appareil)) {
-                emit donneesModifiees();
-            } else {
-                qDebug() << "Pas marché: " << appareil->out();
-            }
-        }
+    if (fragment->getIdModele() != -1) {
+        controleurGestionAppareil->modifierAppareil(fragment->getIdModele());
     }
-    appareil->deleteLater();
 }
 
-void ControleurAppareils::voirAppareil()
+void ControleurAppareils::voirAppareil() const
 {
-    Appareil* appareil = Application::appareils->getAppareil(fragment->getIdModele());
-    if (appareil != NULL) {
-        VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
-        vue->setType(appareil->getNomType());
-        vue->setFabricant(appareil->getNomFabricant());
-        vue->setMotDePasse(appareil->getMotDePasse());
-        vue->setDescription(appareil->getDescription());
-        vue->show();
+    if (fragment->getIdModele() != -1) {
+        controleurGestionAppareil->voirAppareil(fragment->getIdModele());
     }
-    appareil->deleteLater();
 }
 
-void ControleurAppareils::filtrerAppareils(QString filtre)
+void ControleurAppareils::filtrerAppareils(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerAppareils();
@@ -87,6 +67,6 @@ void ControleurAppareils::filtrerAppareils(QString filtre)
 
 void ControleurAppareils::recharger()
 {
-    filtrerAppareils(fragment->getChamp()->text());
+    filtrerAppareils(fragment->getFiltre());
 }
 

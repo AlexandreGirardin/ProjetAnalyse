@@ -92,7 +92,7 @@ public:
      * @brief setAppareils
      * @param value La liste d'appareils à assigner au client
      */
-    void setAppareils(const QList<Appareil*> &value);
+    void setAppareils(QList<Appareil*>* value);
 
     /**
      * @brief out

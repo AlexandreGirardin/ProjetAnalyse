@@ -1,9 +1,9 @@
 #ifndef FABRICANT_H
 #define FABRICANT_H
 
-#include <QObject>
+#include "Modeles/modelebd.h"
 
-class Fabricant : public QObject {
+class Fabricant : public ModeleBD {
     Q_OBJECT
 
     // Marque du constructeur d'un appareil permettant de l'identifier
@@ -30,7 +30,7 @@ public:
      * @param a_nom Le nom à assigner au fabricant
      * @param parent
      */
-    explicit Fabricant(int a_id, QString a_nom, QObject* parent = 0);
+    explicit Fabricant(const int &a_id, const QString &a_nom, QObject* parent = 0);
 
     /**
      * @brief getId
@@ -42,7 +42,7 @@ public:
      * @brief setId
      * @param value L'id à assigner au fabricant
      */
-    void setId(int value);
+    void setId(const int &value);
 
     /**
      * @brief getNom

@@ -5,12 +5,9 @@
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurTechniciens::MappeurTechniciens(QObject* parent) :
-    QObject(parent)
-{
-}
+MappeurTechniciens::MappeurTechniciens(QObject* parent) : QObject(parent) {}
 
-Technicien* MappeurTechniciens::getTechnicien(const int id)
+Technicien* MappeurTechniciens::getTechnicien(const int &id)
 {
     Technicien* technicien = NULL;
     QSqlQuery commande(QSqlQuery(*Application::bd));
@@ -23,7 +20,7 @@ Technicien* MappeurTechniciens::getTechnicien(const int id)
     return technicien;
 }
 
-Technicien* MappeurTechniciens::mapper(const QSqlRecord ligne)
+Technicien* MappeurTechniciens::mapper(const QSqlRecord &ligne)
 {
     Technicien* technicien = new Technicien(this);
     technicien->setId(ligne.value("id").toInt());
@@ -34,17 +31,17 @@ Technicien* MappeurTechniciens::mapper(const QSqlRecord ligne)
 QList<Technicien*>* MappeurTechniciens::getTechniciens()
 {
     QSqlQuery requete(QSqlQuery("SELECT * FROM techniciens",*Application::bd));
-    return mapper(&requete);
+    return mapper(requete);
 }
 
-QList<Technicien*>* MappeurTechniciens::mapper(QSqlQuery* requete)
+QList<Technicien*>* MappeurTechniciens::mapper(QSqlQuery &requete)
 {
     QList<Technicien*>* liste = new QList<Technicien*>;
-    QSqlRecord ligne = requete->record();
+    QSqlRecord ligne = requete.record();
     int colId = ligne.indexOf("id");
     int colNom = ligne.indexOf("nom");
-    while (requete->next()) {
-        ligne = requete->record();
+    while (requete.next()) {
+        ligne = requete.record();
         Technicien* technicien = new Technicien(this);
         technicien->setId(ligne.value(colId).toInt());
         technicien->setNom(ligne.value(colNom).toString());

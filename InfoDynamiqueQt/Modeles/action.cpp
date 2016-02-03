@@ -1,15 +1,13 @@
 #include "Modeles/action.h"
 
-Action::Action(QObject* parent): ModeleBD(parent)
-{
-}
+Action::Action(QObject* parent): ModeleBD(parent) {}
 
 int Action::getId() const
 {
     return id;
 }
 
-void Action::setId(int value)
+void Action::setId(const int &value)
 {
     id = value;
 }
@@ -19,7 +17,7 @@ QString Action::getNom() const
     return nom;
 }
 
-void Action::setNom(const QString value)
+void Action::setNom(const QString &value)
 {
     nom = value;
 }
@@ -39,7 +37,7 @@ bool Action::getEtat() const
     return etat;
 }
 
-void Action::setEtat(bool value)
+void Action::setEtat(const bool &value)
 {
     etat = value;
 }

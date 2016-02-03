@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+	<qresource>
+		<file>Images/flag-red.svg</file>
+		<file>Images/document-edit.svg</file>
+		<file>Images/help-about.svg</file>
+		<file>Images/list-add.svg</file>
+		<file>Images/reverse.svg</file>
+	</qresource>
+</RCC>

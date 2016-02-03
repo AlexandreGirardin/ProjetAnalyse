@@ -1,12 +1,9 @@
 #include "Modeles/technicien.h"
 
-Technicien::Technicien(QObject* parent) :
-    QObject(parent)
-{
-}
+Technicien::Technicien(QObject* parent) : ModeleBD(parent) {}
 
-Technicien::Technicien(int a_id, QString a_nom, QObject* parent):
-    QObject(parent)
+Technicien::Technicien(const int &a_id, const QString &a_nom, QObject* parent):
+    ModeleBD(parent)
 {
     setId(a_id);
     setNom(a_nom);
@@ -17,7 +14,7 @@ int Technicien::getId() const
     return id;
 }
 
-void Technicien::setId(int value)
+void Technicien::setId(const int &value)
 {
     id = value;
 }

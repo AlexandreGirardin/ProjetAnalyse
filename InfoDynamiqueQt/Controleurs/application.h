@@ -36,14 +36,14 @@ public:
      * Retourne l'instance de l'application en singleton
      * @return
      */
-    static const Application *getInstance();
+    static const Application* getInstance();
 
     /**
      * @brief getVuePrincipale
      * Retourne la fenêtre principale de l'application
      * @return
      */
-    static VuePrincipale *getVuePrincipale();
+    static VuePrincipale* getVuePrincipale();
 
     // La base de donnée de l'application
     static QSqlDatabase* bd;

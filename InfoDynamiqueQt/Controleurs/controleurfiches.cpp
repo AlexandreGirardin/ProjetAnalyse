@@ -9,7 +9,7 @@ ControleurFiches::ControleurFiches(QWidget* vue)
     : QObject(vue)
 {
     fragment = new VueFragment();
-    fragment->getEtiquette()->deleteLater();
+    fragment->retirerEtiquette();
     fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     vue->layout()->addWidget(fragment);
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
@@ -28,18 +28,18 @@ void ControleurFiches::modifierFiche()
 
 }
 
-void ControleurFiches::voirFiche()
+void ControleurFiches::voirFiche() const
 {
 }
 
-void ControleurFiches::filtrerFiches(QString filtre)
+void ControleurFiches::filtrerFiches(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerFiches();
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*RequetesSQL::filtrerFiches);
-        QString* metacaractere = new QString("%");
+        const QString* metacaractere = new QString("%");
         requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);

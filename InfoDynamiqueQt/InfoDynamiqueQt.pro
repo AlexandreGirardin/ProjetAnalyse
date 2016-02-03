@@ -11,11 +11,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = InfoDynamiqueQt
 TEMPLATE = app
 
+RESOURCES = ressources.qrc
+
 RC_ICONS = Toolbox.ico
 
 SOURCES += main.cpp\
 	Vues/vueauthentification.cpp \
-        Vues/vueconnexion.cpp \
+		Vues/vueconnexion.cpp \
 	Vues/vueprincipale.cpp \
 	Vues/vuegestiontache.cpp \
 	Vues/vuegestionpiece.cpp \
@@ -57,12 +59,13 @@ SOURCES += main.cpp\
 	Controleurs/application.cpp \
 	Controleurs/requetessql.cpp \
 	Vues/vuegestionaction.cpp \
-    Controleurs/controleurgestionensemble.cpp \
-    Mappeurs/mappeurensembles.cpp
+	Controleurs/controleurgestionensemble.cpp \
+	Mappeurs/mappeurensembles.cpp \
+	Vues/champformulaire.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
-        Vues/vueconnexion.h \
+		Vues/vueconnexion.h \
 	Vues/vueprincipale.h \
 	Vues/vuegestiontache.h \
 	Vues/vuegestionpiece.h \
@@ -104,13 +107,14 @@ HEADERS  += \
 	Controleurs/application.h \
 	Controleurs/requetessql.h \
 	Vues/vuegestionaction.h \
-    Controleurs/controleurgestionensemble.h \
-    Mappeurs/mappeurensembles.h
+	Controleurs/controleurgestionensemble.h \
+	Mappeurs/mappeurensembles.h \
+	Vues/champformulaire.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
-        Vues/vueconnexion.ui \
-        Vues/vueeditionfiche.ui \
+		Vues/vueconnexion.ui \
+		Vues/vueeditionfiche.ui \
 	Vues/vuefragment.ui \
 	Vues/vuegestionappareil.ui \
 	Vues/vuegestionclient.ui \
@@ -120,4 +124,5 @@ FORMS    += \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
 	Vues/vueappareil.ui \
-	Vues/vuegestionaction.ui
+	Vues/vuegestionaction.ui \
+	Vues/champformulaire.ui
