@@ -93,12 +93,12 @@ QSqlQuery* MappeurAppareils::preparerRequete(const Appareil* appareil, const QSt
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
-    requete->bindValue(":idAppareil", appareil->getId());
-    requete->bindValue(":idClient", appareil->getIdClient());
-    requete->bindValue(":description", appareil->getDescription());
-    requete->bindValue(":motDePasse", appareil->getMotDePasse());
-    requete->bindValue(":idType", appareil->getType()->getId());
-    requete->bindValue(":idFabricant", appareil->getFabricant()->getId());
+    requete->bindValue(":idAppareil", appareil->id());
+    requete->bindValue(":idClient", appareil->idClient());
+    requete->bindValue(":description", appareil->description());
+    requete->bindValue(":motDePasse", appareil->motDePasse());
+    requete->bindValue(":idType", appareil->type()->id());
+    requete->bindValue(":idFabricant", appareil->fabricant()->id());
     return requete;
 }
 

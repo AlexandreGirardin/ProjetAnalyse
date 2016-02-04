@@ -20,10 +20,10 @@ void ControleurGestionAppareil::modifierAppareil(const int &idAppareil)
     Appareil* appareil = Application::appareils->getAppareil(idAppareil);
     if (appareil != NULL) {
         VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
-        vue->setTypes(Application::typesAppareils->getTypesAppareil(), appareil->getNomType());
-        vue->setFabricants(Application::fabricants->getFabricants(), appareil->getNomFabricant());
-        vue->setMotDePasse(appareil->getMotDePasse());
-        vue->setDescription(appareil->getDescription());
+        vue->setTypes(Application::typesAppareils->getTypesAppareil(), appareil->nomType());
+        vue->setFabricants(Application::fabricants->getFabricants(), appareil->nomFabricant());
+        vue->setMotDePasse(appareil->motDePasse());
+        vue->setDescription(appareil->description());
         if (vue->exec() == vue->Accepted) {
             appareil->setMotDePasse(vue->getMotDePasse());
             appareil->setType(vue->getType());
@@ -45,10 +45,10 @@ void ControleurGestionAppareil::voirAppareil(const int &idAppareil)
     Appareil* appareil = Application::appareils->getAppareil(idAppareil);
     if (appareil != NULL) {
         VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
-        vue->setType(appareil->getNomType());
-        vue->setFabricant(appareil->getNomFabricant());
-        vue->setMotDePasse(appareil->getMotDePasse());
-        vue->setDescription(appareil->getDescription());
+        vue->setType(appareil->nomType());
+        vue->setFabricant(appareil->nomFabricant());
+        vue->setMotDePasse(appareil->motDePasse());
+        vue->setDescription(appareil->description());
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }

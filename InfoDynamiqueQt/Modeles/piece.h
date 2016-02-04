@@ -12,16 +12,16 @@ class Piece : public ModeleBD
 private:
 
     // L'identifiant unique de la pièce
-    int id;
+    int m_id;
 
     // Le nom de la pièce
-    QString nom;
+    QString m_nom;
 
     // La description de la pièce
-    QString description;
+    QString m_description;
 
     // Le prix de la pièce, en sous
-    int prix;
+    int m_prix;
 
 public:
 
@@ -45,7 +45,7 @@ public:
      * @brief getId
      * @return L'id de la pièce
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -57,7 +57,7 @@ public:
      * @brief getNom
      * @return Le nom de la pièce
      */
-    QString getNom() const;
+    QString nom() const;
 
     /**
      * @brief setNom
@@ -69,7 +69,7 @@ public:
      * @brief getDescription
      * @return La description de la pièce
      */
-    QString getDescription() const;
+    QString description() const;
 
     /**
      * @brief setDescription
@@ -81,13 +81,13 @@ public:
      * @brief getPrixInt
      * @return Le prix de la pièce, en sous
      */
-    int getPrixInt() const;
+    int prixInt() const;
 
     /**
      * @brief getPrixDouble
      * @return Le prix de la pièce, en dollars et sous
      */
-    double getPrixDouble() const;
+    double prixDouble() const;
 
     /**
      * @brief setPrix

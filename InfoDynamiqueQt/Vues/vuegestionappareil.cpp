@@ -24,7 +24,7 @@ void VueGestionAppareil::setTypes(QList<TypeAppareil*>* a_types)
     types = a_types;
     QList<TypeAppareil*>::const_iterator i;
     for (i = types->constBegin(); i != types->constEnd(); ++i) {
-        ui->comboType->addItem((*i)->getNom());
+        ui->comboType->addItem((*i)->nom());
     }
     ui->comboType->adjustSize();
 }
@@ -54,7 +54,7 @@ void VueGestionAppareil::setFabricants(QList<Fabricant*>* &a_fabricants)
 {
     fabricants = a_fabricants;
     for (QList<Fabricant*>::const_iterator i = fabricants->constBegin(); i != fabricants->constEnd(); ++i) {
-        ui->comboFabricant->addItem((*i)->getNom());
+        ui->comboFabricant->addItem((*i)->nom());
     }
     ui->comboType->adjustSize();
 }

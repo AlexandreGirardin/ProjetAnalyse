@@ -117,7 +117,7 @@ void VueGestionEnsemble::peuplerHorsEnsemble()
 {
     horsEnsemble = new QStandardItemModel(ui->listeExistantes);
     for (QList<Action*>::const_iterator i = actionsHorsEnsemble->constBegin(); i != actionsHorsEnsemble->constEnd(); ++i) {
-        horsEnsemble->appendRow(new QStandardItem((*i)->getNom()));
+        horsEnsemble->appendRow(new QStandardItem((*i)->nom()));
     }
     ui->listeExistantes->setModel(horsEnsemble);
     ui->boutonAjouter->setEnabled(false);
@@ -127,7 +127,7 @@ void VueGestionEnsemble::peuplerDansEnsemble()
 {
     dansEnsemble = new QStandardItemModel(ui->listeExistantes);
     for (QList<Action*>::const_iterator i = actionsDansEnsemble->constBegin(); i != actionsDansEnsemble->constEnd(); ++i) {
-        dansEnsemble->appendRow(new QStandardItem((*i)->getNom()));
+        dansEnsemble->appendRow(new QStandardItem((*i)->nom()));
     }
     ui->listeSelectionnees->setModel(dansEnsemble);
     ui->boutonRetirer->setEnabled(false);

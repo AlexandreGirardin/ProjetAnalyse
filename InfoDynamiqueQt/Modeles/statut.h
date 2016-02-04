@@ -12,10 +12,10 @@ class Statut : public ModeleBD
 private:
 
     // L'identifiant unique du statut
-    int id;
+    int m_id;
 
     // Le nom du statut
-    QString nom;
+    QString m_nom;
 
 public:
 
@@ -37,7 +37,7 @@ public:
      * @brief getId
      * @return L'id du statut
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -49,7 +49,7 @@ public:
      * @brief getNom
      * @return Le nom du Statut
      */
-    QString getNom() const;
+    QString nom() const;
 
     /**
      * @brief setNom

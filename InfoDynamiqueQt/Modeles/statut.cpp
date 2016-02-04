@@ -9,27 +9,27 @@ Statut::Statut(const int &a_id, const QString &a_nom, QObject* parent) :
     setNom(a_nom);
 }
 
-int Statut::getId() const
+int Statut::id() const
 {
-    return id;
+    return m_id;
 }
 
 void Statut::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 
-QString Statut::getNom() const
+QString Statut::nom() const
 {
-    return nom;
+    return m_nom;
 }
 
 void Statut::setNom(const QString &value)
 {
-    nom = value;
+    m_nom = value;
 }
 
 QString Statut::out() const
 {
-    return QString::number(id) + " " + nom;
+    return QString::number(m_id) + " " + m_nom;
 }

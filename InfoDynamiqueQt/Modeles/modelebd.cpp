@@ -2,17 +2,17 @@
 
 ModeleBD::ModeleBD(QObject *parent) : QObject(parent) {}
 
-int ModeleBD::getId() const
+int ModeleBD::id() const
 {
-    return id;
+    return m_id;
 }
 
 void ModeleBD::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 
 QString ModeleBD::out() const
 {
-    return QString("id: "+QString::number(id));
+    return QString("id: "+QString::number(m_id));
 }

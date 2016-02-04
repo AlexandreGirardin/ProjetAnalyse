@@ -10,14 +10,14 @@ class EnsembleActions : public ModeleBD {
 
 private:
 
-    int id;
+    int m_id;
 
-    QString nom;
+    QString m_nom;
 
-    QString description;
+    QString m_description;
 
     // La liste des tâches faisant partie de l'ensemble
-    QList<Action*>* actions;
+    QList<Action*>* m_actions;
 
 public:
 
@@ -31,11 +31,11 @@ public:
     void setActions(QList<Action*>* value);
 
     // Représentation textuelle de l'ensemble de tâches
-    QString getNom() const;
+    QString nom() const;
     void setNom(const QString &value);
-    QString getDescription() const;
+    QString description() const;
     void setDescription(const QString &value);
-    int getId() const;
+    int id() const;
     void setId(const int &value);
     QString out() const;
 };

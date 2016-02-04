@@ -10,16 +10,16 @@ class Action: public ModeleBD {
 private:
 
     // Le numéro de l'action
-    int id;
+    int m_id;
 
     // Le nom de l'action
-    QString nom;
+    QString m_nom;
 
     // La description de l'action
-    QString description;
+    QString m_description;
 
     // Si l'action est pratiquée par l'entreprise
-    bool etat;
+    bool m_etat;
 
 public:
 
@@ -33,7 +33,7 @@ public:
      * @brief getId
      * @return L'id de l'action
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -45,7 +45,7 @@ public:
      * @brief getNom
      * @return Le nom de l'action
      */
-    QString getNom() const;
+    QString nom() const;
 
     /**
      * @brief setNom
@@ -57,7 +57,7 @@ public:
      * @brief getDescription
      * @return La description de l'action
      */
-    QString getDescription() const;
+    QString description() const;
 
     /**
      * @brief setDescription
@@ -66,16 +66,10 @@ public:
     void setDescription(const QString &value);
 
     /**
-     * @brief out
-     * @return Représentation textuelle de l'action
-     */
-    QString out() const;
-
-    /**
      * @brief getEtat Si l'action est pratiquée par l'entreprise
      * @return L'état de l'action
      */
-    bool getEtat() const;
+    bool etat() const;
 
     /**
      * @brief setEtat Définit l'état de l'action
@@ -88,6 +82,12 @@ public:
      * @return 'Vrai' ou 'faux'
      */
     QString etatOut() const;
+
+    /**
+     * @brief out
+     * @return Représentation textuelle de l'action
+     */
+    QString out() const;
 };
 
 #endif // ACTION_H

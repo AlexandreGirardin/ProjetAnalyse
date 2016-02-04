@@ -2,77 +2,77 @@
 
 Fiche::Fiche(QObject* parent) : ModeleBD(parent) {}
 
-int Fiche::getId() const
+int Fiche::id() const
 {
-    return id;
+    return m_id;
 }
 
 void Fiche::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 
-int Fiche::getPriorite() const
+int Fiche::priorite() const
 {
-    return priorite;
+    return m_priorite;
 }
 
 void Fiche::setPriorite(const int &value)
 {
-    priorite = value;
+    m_priorite = value;
 }
 
-QString Fiche::getCommentaire() const
+QString Fiche::commentaire() const
 {
-    return commentaire;
+    return m_commentaire;
 }
 
 void Fiche::setCommentaire(const QString &value)
 {
-    commentaire = value;
+    m_commentaire = value;
 }
 
-Statut* Fiche::getStatut() const
+Statut* Fiche::statut() const
 {
-    return statut;
+    return m_statut;
 }
 
 void Fiche::setStatut(Statut* value)
 {
-    statut = value;
+    m_statut = value;
 }
 
 QString Fiche::out() const
 {
-    return QString::number(id) + " " + QString::number(priorite) + " " + commentaire + " " + statut->getNom();
+    return QString::number(m_id) + " " + QString::number(m_priorite) + " " + m_commentaire + " " + m_statut->nom();
 }
 
-QList<Tache*>* Fiche::getTaches() const
+QList<Tache*>* Fiche::taches() const
 {
-    return taches;
+    return m_taches;
 }
 
 void Fiche::setTaches(QList<Tache*>* value)
 {
-    taches = value;
+    m_taches = value;
 }
 
-QList<Piece*>* Fiche::getPieces() const
+QList<Piece*>* Fiche::pieces() const
 {
-    return pieces;
+    return m_pieces;
 }
 
 void Fiche::setPieces(QList<Piece*>* value)
 {
-    pieces = value;
+    m_pieces = value;
 }
 
-QList<Technicien*>* Fiche::getTechniciens() const
+QList<Technicien*>* Fiche::techniciens() const
 {
-    return techniciens;
+    return m_techniciens;
 }
 
 void Fiche::setTechniciens(QList<Technicien*>* value)
 {
-    techniciens = value;
+    m_techniciens = value;
 }

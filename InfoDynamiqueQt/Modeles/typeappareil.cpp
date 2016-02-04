@@ -9,28 +9,28 @@ TypeAppareil::TypeAppareil(const int &a_id, const QString &a_nom, QObject *paren
     setNom(a_nom);
 }
 
-int TypeAppareil::getId() const
+int TypeAppareil::id() const
 {
-    return id;
+    return m_id;
 }
 
 void TypeAppareil::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 
-QString TypeAppareil::getNom() const
+QString TypeAppareil::nom() const
 {
-    return nom;
+    return m_nom;
 }
 
 void TypeAppareil::setNom(const QString &value)
 {
-    nom = value;
+    m_nom = value;
 }
 
 QString TypeAppareil::out() const
 {
-    return QString::number(id) + " " + nom;
+    return QString::number(m_id) + " " + m_nom;
 }
 

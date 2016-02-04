@@ -10,7 +10,7 @@ class ModeleBD : public QObject
 private:
 
     // L'identifiant unique du modèle dans une table de la BD
-    int id;
+    int m_id;
 
 public:
     explicit ModeleBD(QObject *parent = 0);
@@ -19,7 +19,7 @@ public:
      * @brief getId
      * @return L'identifiant unique du modèle dans une table de la BD
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
