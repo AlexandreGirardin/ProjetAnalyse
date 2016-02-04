@@ -42,7 +42,7 @@ void Fiche::setStatut(Statut* value)
     statut = value;
 }
 
-QString Fiche::out()
+QString Fiche::out() const
 {
     return QString::number(id) + " " + QString::number(priorite) + " " + commentaire + " " + statut->getNom();
 }

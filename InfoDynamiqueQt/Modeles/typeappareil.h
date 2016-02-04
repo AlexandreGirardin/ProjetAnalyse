@@ -55,7 +55,7 @@ public:
      * @brief out
      * @return Représentation textuelle du type d'appareil
      */
-    QString out();
+    QString out() const;
 
 };
 

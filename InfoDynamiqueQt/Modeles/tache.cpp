@@ -32,7 +32,7 @@ void Tache::setStatut(Statut* value)
     statut = value;
 }
 
-QString Tache::out()
+QString Tache::out() const
 {
     return QString::number(id) + " " + action->getNom() + " " + statut->getNom();
 }

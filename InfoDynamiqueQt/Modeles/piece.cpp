@@ -56,7 +56,7 @@ void Piece::setPrix(const int &value)
     prix = value;
 }
 
-QString Piece::out()
+QString Piece::out() const
 {
     return QString::number(id) + " " + nom + " " + description + " " + QString::number(prix);
 }

@@ -69,7 +69,7 @@ public:
      * @brief out
      * @return Représentation textuelle de l'action
      */
-    QString out();
+    QString out() const;
 
     /**
      * @brief getEtat Si l'action est pratiquée par l'entreprise
@@ -87,7 +87,7 @@ public:
      * @brief etatOut Chaîne affichable correspondant à l'état
      * @return 'Vrai' ou 'faux'
      */
-    QString etatOut();
+    QString etatOut() const;
 };
 
 #endif // ACTION_H

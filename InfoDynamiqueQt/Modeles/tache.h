@@ -71,7 +71,7 @@ public:
      * @brief out
      * @return Représentation textuelle de la tâche
      */
-    QString out();
+    QString out() const;
 
 };
 

@@ -42,7 +42,7 @@ void EnsembleActions::setActions(QList<Action*>* value)
 }
 
 
-QString EnsembleActions::out()
+QString EnsembleActions::out() const
 {
     return QString::number(id) + " : " + description;
 }

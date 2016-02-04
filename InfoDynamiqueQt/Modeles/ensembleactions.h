@@ -37,7 +37,7 @@ public:
     void setDescription(const QString &value);
     int getId() const;
     void setId(const int &value);
-    QString out();
+    QString out() const;
 };
 
 #endif // ENSEMBLEACTIONS_H

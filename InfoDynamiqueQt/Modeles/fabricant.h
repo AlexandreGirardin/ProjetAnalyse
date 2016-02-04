@@ -60,7 +60,7 @@ public:
      * @brief out
      * @return Représentation textuelle du fabricant
      */
-    QString out();
+    QString out() const;
 
 };
 

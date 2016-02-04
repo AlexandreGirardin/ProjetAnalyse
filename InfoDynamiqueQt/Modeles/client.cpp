@@ -56,7 +56,7 @@ void Client::setAppareils(QList<Appareil*>* value)
     appareils = value;
 }
 
-QString Client::out()
+QString Client::out() const
 {
     return ModeleBD::out();
 }

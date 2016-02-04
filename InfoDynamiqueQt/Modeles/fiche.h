@@ -133,7 +133,7 @@ public:
      * @brief out
      * @return Représentation textuelle de la fiche
      */
-    QString out();
+    QString out() const;
 
 };
 

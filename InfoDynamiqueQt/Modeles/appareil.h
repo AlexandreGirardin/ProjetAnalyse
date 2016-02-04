@@ -133,7 +133,7 @@ public:
      * @brief out
      * @return Représentation textuelle de l'appareil
      */
-    QString out();
+    QString out() const;
 };
 
 #endif // APPAREIL_H

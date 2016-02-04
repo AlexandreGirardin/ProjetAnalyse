@@ -61,7 +61,7 @@ public:
      * @brief out
      * @return Représentation textuelle du technicien
      */
-    QString out();
+    QString out() const;
 
 };
 

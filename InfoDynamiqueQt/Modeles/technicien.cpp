@@ -29,7 +29,7 @@ void Technicien::setNom(const QString &value)
     nom = value;
 }
 
-QString Technicien::out()
+QString Technicien::out() const
 {
     return QString::number(id) + " " + nom;
 }

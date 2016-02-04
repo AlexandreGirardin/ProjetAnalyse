@@ -99,7 +99,7 @@ public:
      * @brief out
      * @return La chaîne imprimable correspondant à la pièce
      */
-    QString out();
+    QString out() const;
 
 };
 

@@ -42,7 +42,7 @@ void Action::setEtat(const bool &value)
     etat = value;
 }
 
-QString Action::etatOut()
+QString Action::etatOut() const
 {
     if (etat) {
         return QString("activée");
@@ -51,7 +51,7 @@ QString Action::etatOut()
     }
 }
 
-QString Action::out()
+QString Action::out() const
 {
     return QString::number(id) + " " + nom + " " + description + " " + etatOut();
 }

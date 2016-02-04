@@ -91,7 +91,7 @@ void Appareil::setDescription(const QString &value)
     description = value;
 }
 
-QString Appareil::out()
+QString Appareil::out() const
 {
     QString out = QString("#") + QString::number(id) + " @"+QString::number(idClient) + " ";
     if (fabricant != NULL) {

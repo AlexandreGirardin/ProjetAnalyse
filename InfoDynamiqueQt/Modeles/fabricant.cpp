@@ -28,7 +28,7 @@ void Fabricant::setNom(const QString &value)
     nom = value;
 }
 
-QString Fabricant::out()
+QString Fabricant::out() const
 {
     return QString::number(id) + " " + nom;
 }

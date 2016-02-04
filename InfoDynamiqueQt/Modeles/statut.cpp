@@ -29,7 +29,7 @@ void Statut::setNom(const QString &value)
     nom = value;
 }
 
-QString Statut::out()
+QString Statut::out() const
 {
     return QString::number(id) + " " + nom;
 }

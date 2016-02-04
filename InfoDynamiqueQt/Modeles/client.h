@@ -98,7 +98,7 @@ public:
      * @brief out
      * @return Représentation textuelle du client
      */
-    QString out();
+    QString out() const;
 
 };
 
