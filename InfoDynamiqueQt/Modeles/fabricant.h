@@ -11,10 +11,10 @@ class Fabricant : public ModeleBD {
 private:
 
     // L'id du fabricant
-    int id;
+    int m_id;
 
     // Le nom du fabricant
-    QString nom;
+    QString m_nom;
 
 public:
 
@@ -36,7 +36,7 @@ public:
      * @brief getId
      * @return L'id du fabricant
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -48,7 +48,7 @@ public:
      * @brief getNom
      * @return Le nom du fabricant
      */
-    QString getNom() const;
+    QString nom() const;
 
     /**
      * @brief setNom
@@ -60,7 +60,7 @@ public:
      * @brief out
      * @return Représentation textuelle du fabricant
      */
-    QString out();
+    QString out() const;
 
 };
 

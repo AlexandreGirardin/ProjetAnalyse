@@ -57,9 +57,9 @@ void ControleurActions::configurerFragmentEnsembles()
 
 void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const
 {
-    vue->setNom(action->getNom());
-    vue->setDescription(action->getDescription());
-    vue->setEtat(action->getEtat());
+    vue->setNom(action->nom());
+    vue->setDescription(action->description());
+    vue->setEtat(action->etat());
 }
 
 void ControleurActions::peuplerActions()
@@ -143,7 +143,7 @@ void ControleurActions::changerEtat()
 {
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
-        action->setEtat(!action->getEtat());
+        action->setEtat(!action->etat());
         if (Application::actions->mettreAJour(action)) {
             emit actionsModifiees();
         }
@@ -180,14 +180,13 @@ void ControleurActions::modifierEnsemble()
 {
     EnsembleActions* ensemble = Application::ensembles->getEnsemble(fragmentEnsembles->getIdModele());
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
-    QList<Action*>* actionsHorsEnsemble = Application::actions->actionsHorsEnsemble(ensemble->getId());
+    QList<Action*>* actionsHorsEnsemble = Application::actions->actionsHorsEnsemble(ensemble->id());
     vue->setActionsHorsEnsemble(actionsHorsEnsemble);
     vue->setActionsDansEnsemble(ensemble->getActions());
-    vue->setNom(ensemble->getNom());
-    vue->setDescription(ensemble->getDescription());
+    vue->setNom(ensemble->nom());
+    vue->setDescription(ensemble->description());
     delete actionsHorsEnsemble;
     if (vue->exec() == vue->Accepted) {
-        EnsembleActions* ensemble = new EnsembleActions(vue);
         ensemble->setNom(vue->getNom());
         ensemble->setDescription(vue->getDescription());
         ensemble->setActions(vue->getActionsDansEnsemble());

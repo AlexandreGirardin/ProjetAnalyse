@@ -12,10 +12,10 @@ class Technicien : public ModeleBD
 private:
 
     // L'id du technicien
-    int id;
+    int m_id;
 
     // Le nom du technicien
-    QString nom;
+    QString m_nom;
 
 public:
 
@@ -37,7 +37,7 @@ public:
      * @brief getId
      * @return L'id du technicien
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -49,7 +49,7 @@ public:
      * @brief getNom
      * @return Le nom du technicien
      */
-    QString getNom() const;
+    QString nom() const;
 
     /**
      * @brief setNom
@@ -61,7 +61,7 @@ public:
      * @brief out
      * @return Représentation textuelle du technicien
      */
-    QString out();
+    QString out() const;
 
 };
 

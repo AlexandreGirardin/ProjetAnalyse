@@ -12,10 +12,10 @@ class TypeAppareil : public ModeleBD {
 private:
 
     // L'id du type d'appareil
-    int id;
+    int m_id;
 
     // Le nom du type d'appareil
-    QString nom;
+    QString m_nom;
 
 public:
 
@@ -31,7 +31,7 @@ public:
      * @brief getId
      * @return L'id du type d'appareil
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -43,7 +43,7 @@ public:
      * @brief getNom
      * @return Le nom du type d'appareil
      */
-    QString getNom() const;
+    QString nom() const;
 
     /**
      * @brief setNom
@@ -55,7 +55,7 @@ public:
      * @brief out
      * @return Représentation textuelle du type d'appareil
      */
-    QString out();
+    QString out() const;
 
 };
 

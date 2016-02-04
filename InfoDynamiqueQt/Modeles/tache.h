@@ -15,13 +15,13 @@ class Tache : public ModeleBD
 private:
 
     // L'id de la tâche
-    int id;
+    int m_id;
 
     // L'action à accomplir
-    Action* action;
+    Action* m_action;
 
     // Le statut de la tâche
-    Statut* statut;
+    Statut* m_statut;
 
 public:
 
@@ -35,7 +35,7 @@ public:
      * @brief getId
      * @return L'id de la tâche
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -47,7 +47,7 @@ public:
      * @brief getAction
      * @return L'action à accomplir
      */
-    Action* getAction() const;
+    Action* action() const;
 
     /**
      * @brief setAction
@@ -59,7 +59,7 @@ public:
      * @brief getStatut
      * @return Le statut de la tâche
      */
-    Statut* getStatut() const;
+    Statut* statut() const;
 
     /**
      * @brief setStatut
@@ -71,7 +71,7 @@ public:
      * @brief out
      * @return Représentation textuelle de la tâche
      */
-    QString out();
+    QString out() const;
 
 };
 

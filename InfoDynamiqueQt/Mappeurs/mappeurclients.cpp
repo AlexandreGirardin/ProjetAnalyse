@@ -73,7 +73,7 @@ Client* MappeurClients::mapper(const QSqlRecord &ligne)
     client->setNom(ligne.value("nom").toString());
     client->setTelephone(ligne.value("telephone").toString());
     client->setAdresse(ligne.value("adresse").toString());
-    client->setAppareils(Application::appareils->appareilsPourClient(client->getId()));
+    client->setAppareils(Application::appareils->appareilsPourClient(client->id()));
     return client;
 }
 
@@ -81,10 +81,10 @@ QSqlQuery* MappeurClients::preparerRequete(const Client* client, const QString &
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
-    requete->bindValue(":id", client->getId());
-    requete->bindValue(":nom", client->getNom());
-    requete->bindValue(":prenom", client->getPrenom());
-    requete->bindValue(":telephone", client->getTelephone());
-    requete->bindValue(":adresse", client->getAdresse());
+    requete->bindValue(":id", client->id());
+    requete->bindValue(":nom", client->nom());
+    requete->bindValue(":prenom", client->prenom());
+    requete->bindValue(":telephone", client->telephone());
+    requete->bindValue(":adresse", client->adresse());
     return requete;
 }

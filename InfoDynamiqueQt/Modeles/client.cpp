@@ -2,49 +2,49 @@
 
 Client::Client(QObject* parent) : ModeleBD(parent) {}
 
-QString Client::getPrenom() const
+QString Client::prenom() const
 {
-    return prenom;
+    return m_prenom;
 }
 
 void Client::setPrenom(const QString &value)
 {
-    prenom = value;
+    m_prenom = value;
 }
 
-QString Client::getNom() const
+QString Client::nom() const
 {
-    return nom;
+    return m_nom;
 }
 
 void Client::setNom(const QString &value)
 {
-    nom = value;
+    m_nom = value;
 }
 
-QString Client::getTelephone() const
+QString Client::telephone() const
 {
-    return telephone;
+    return m_telephone;
 }
 
 void Client::setTelephone(const QString &value)
 {
-    telephone = value;
+    m_telephone = value;
 }
 
-QString Client::getAdresse() const
+QString Client::adresse() const
 {
-    return adresse;
+    return m_adresse;
 }
 
 void Client::setAdresse(const QString &value)
 {
-    adresse = value;
+    m_adresse = value;
 }
 
-QList<Appareil*>* Client::getAppareils() const
+QList<Appareil*>* Client::appareils() const
 {
-    return appareils;
+    return m_appareils;
 }
 
 void Client::setAppareils(QList<Appareil*>* value)
@@ -53,10 +53,10 @@ void Client::setAppareils(QList<Appareil*>* value)
 //        qDeleteAll(*appareils);
 //        delete appareils;
 //    }
-    appareils = value;
+    m_appareils = value;
 }
 
-QString Client::out()
+QString Client::out() const
 {
     return ModeleBD::out();
 }

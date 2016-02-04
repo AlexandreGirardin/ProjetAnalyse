@@ -18,15 +18,17 @@ public:
     EnsembleActions* getEnsemble(const int &id);
     QList<EnsembleActions*>* getEnsembles();
 
-    bool inserer(const EnsembleActions *ensemble) const;
-    bool mettreAJour(const EnsembleActions* ensemble) const;
+    bool inserer(EnsembleActions *ensemble) const;
+    bool mettreAJour(const EnsembleActions *ensemble) const;
 
 private:
 
     EnsembleActions* mapper(const QSqlRecord &ligne);
     QList<EnsembleActions*>* mapper(QSqlQuery &requete);
     bool ecrire(const EnsembleActions* ensemble, const QString &commande) const;
+    bool ecrireActions(const EnsembleActions* ensemble, const QString &commande) const;
     QSqlQuery* preparerRequete(const EnsembleActions* ensemble, const QString &commande) const;
+    int derniereInsertion() const;
 };
 
 #endif // MAPPEURENSEMBLES_H

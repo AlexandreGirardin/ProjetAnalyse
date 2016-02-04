@@ -9,27 +9,27 @@ Technicien::Technicien(const int &a_id, const QString &a_nom, QObject* parent):
     setNom(a_nom);
 }
 
-int Technicien::getId() const
+int Technicien::id() const
 {
-    return id;
+    return m_id;
 }
 
 void Technicien::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 
-QString Technicien::getNom() const
+QString Technicien::nom() const
 {
-    return nom;
+    return m_nom;
 }
 
 void Technicien::setNom(const QString &value)
 {
-    nom = value;
+    m_nom = value;
 }
 
-QString Technicien::out()
+QString Technicien::out() const
 {
-    return QString::number(id) + " " + nom;
+    return QString::number(m_id) + " " + m_nom;
 }

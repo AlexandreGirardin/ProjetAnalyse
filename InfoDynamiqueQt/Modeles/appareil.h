@@ -14,22 +14,22 @@ class Appareil : public ModeleBD {
 private:
 
     // L'id de l'appareil
-    int id;
+    int m_id;
 
     // Le frabricant de l'appareil
-    Fabricant* fabricant;
+    Fabricant* m_fabricant;
 
     // Le type de l'appareil
-    TypeAppareil* type;
+    TypeAppareil* m_type;
 
     // Le mot de passe de l'appareil
-    QString motDePasse;
+    QString m_motDePasse;
 
     // La description de l'appareil
-    QString description;
+    QString m_description;
 
     // Le propriétaire de l'appareil
-    int idClient;
+    int m_idClient;
 
 public:
 
@@ -43,7 +43,7 @@ public:
      * @brief getId
      * @return L'id de l'appareil
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -55,14 +55,14 @@ public:
      * @brief getFabricant
      * @return Le fabricant de l'appareil
      */
-    Fabricant* getFabricant() const;
+    Fabricant* fabricant() const;
 
     /**
      * @brief getNomFabricant
      * Le nom du fabricant, s'il est défini
      * @return Le nom du fabricant ou une chaîne vide
      */
-    QString getNomFabricant() const;
+    QString nomFabricant() const;
 
     /**
      * @brief setFabricant
@@ -74,14 +74,14 @@ public:
      * @brief getType
      * @return Le type de l'appareil
      */
-    TypeAppareil* getType() const;
+    TypeAppareil* type() const;
 
     /**
      * @brief getNomType
      * Le nom du type, s'il est défini
      * @return Le nom du type ou une chaîne vide
      */
-    QString getNomType() const;
+    QString nomType() const;
 
     /**
      * @brief setType
@@ -94,7 +94,7 @@ public:
      * @brief getMotDePasse
      * @return Le mot de passe de l'appareil
      */
-    QString getMotDePasse() const;
+    QString motDePasse() const;
 
     /**
      * @brief setMotDePasse
@@ -107,7 +107,7 @@ public:
      * @brief getDescription
      * @return La description de l'appareil
      */
-    QString getDescription() const;
+    QString description() const;
 
     /**
      * @brief setDescription
@@ -120,7 +120,7 @@ public:
      * @brief getIdClient
      * @return L'id du propriétaire de l'appareil
      */
-    int getIdClient() const;
+    int idClient() const;
 
     /**
      * @brief setIdClient
@@ -133,7 +133,7 @@ public:
      * @brief out
      * @return Représentation textuelle de l'appareil
      */
-    QString out();
+    QString out() const;
 };
 
 #endif // APPAREIL_H

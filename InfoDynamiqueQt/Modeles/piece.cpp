@@ -11,52 +11,52 @@ Piece::Piece(const int &a_id, const QString &a_nom, const QString &a_description
     setPrix(a_prix);
 }
 
-int Piece::getId() const
+int Piece::id() const
 {
-    return id;
+    return m_id;
 }
 
 void Piece::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 
-QString Piece::getNom() const
+QString Piece::nom() const
 {
-    return nom;
+    return m_nom;
 }
 
 void Piece::setNom(const QString &value)
 {
-    nom = value;
+    m_nom = value;
 }
 
-QString Piece::getDescription() const
+QString Piece::description() const
 {
-    return description;
+    return m_description;
 }
 
 void Piece::setDescription(const QString &value)
 {
-    description = value;
+    m_description = value;
 }
 
-double Piece::getPrixDouble() const
+double Piece::prixDouble() const
 {
-    return ((double) prix) / 100;
+    return ((double) m_prix) / 100;
 }
 
-int Piece::getPrixInt() const
+int Piece::prixInt() const
 {
-    return prix;
+    return m_prix;
 }
 
 void Piece::setPrix(const int &value)
 {
-    prix = value;
+    m_prix = value;
 }
 
-QString Piece::out()
+QString Piece::out() const
 {
-    return QString::number(id) + " " + nom + " " + description + " " + QString::number(prix);
+    return QString::number(m_id) + " " + m_nom + " " + m_description + " " + QString::number(m_prix);
 }

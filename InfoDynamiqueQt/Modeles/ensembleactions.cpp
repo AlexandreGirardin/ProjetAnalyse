@@ -2,48 +2,48 @@
 
 EnsembleActions::EnsembleActions(QObject* parent) : ModeleBD(parent) {}
 
-QString EnsembleActions::getNom() const
+QString EnsembleActions::nom() const
 {
-    return nom;
+    return m_nom;
 }
 
 void EnsembleActions::setNom(const QString &value)
 {
-    nom = value;
+    m_nom = value;
 }
 
-QString EnsembleActions::getDescription() const
+QString EnsembleActions::description() const
 {
-    return description;
+    return m_description;
 }
 
 void EnsembleActions::setDescription(const QString &value)
 {
-    description = value;
+    m_description = value;
 }
 
-int EnsembleActions::getId() const
+int EnsembleActions::id() const
 {
-    return id;
+    return m_id;
 }
 
 void EnsembleActions::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 QList<Action*>* EnsembleActions::getActions() const
 {
-    return actions;
+    return m_actions;
 }
 
 void EnsembleActions::setActions(QList<Action*>* value)
 {
-    actions = value;
+    m_actions = value;
 }
 
 
-QString EnsembleActions::out()
+QString EnsembleActions::out() const
 {
-    return QString::number(id) + " : " + description;
+    return QString::number(m_id) + " : " + m_description;
 }
 

@@ -65,9 +65,9 @@ void ControleurGestionClient::voirClient(const int &idClient)
 
 void ControleurGestionClient::assignerClient(VueGestionClient* vue, const Client* client)
 {
-    vue->setPrenom(client->getPrenom());
-    vue->setNom(client->getNom());
-    vue->setTelephone(client->getTelephone());
-    vue->setAdresse(client->getAdresse());
+    vue->setPrenom(client->prenom());
+    vue->setNom(client->nom());
+    vue->setTelephone(client->telephone());
+    vue->setAdresse(client->adresse());
 }
 

@@ -17,25 +17,25 @@ class Fiche : public ModeleBD
 private:
 
     // L'id de la fiche
-    int id;
+    int m_id;
 
     // La priorité de la fiche
-    int priorite;
+    int m_priorite;
 
     // Le commentaire facultatif sur la fiche
-    QString commentaire;
+    QString m_commentaire;
 
     // Le statut de la fiche
-    Statut* statut;
+    Statut* m_statut;
 
     // La liste des tâches de la fiche
-    QList<Tache*>* taches;
+    QList<Tache*>* m_taches;
 
     // La liste des pièces utilisées pour la fiche
-    QList<Piece*>* pieces;
+    QList<Piece*>* m_pieces;
 
     // La liste des techniciens ayant travaillé sur la fiche
-    QList<Technicien*>* techniciens;
+    QList<Technicien*>* m_techniciens;
 
 public:
 
@@ -49,7 +49,7 @@ public:
      * @brief getId
      * @return L'id de la fiche
      */
-    int getId() const;
+    int id() const;
 
     /**
      * @brief setId
@@ -61,7 +61,7 @@ public:
      * @brief getPriorite
      * @return La priorité de la fiche
      */
-    int getPriorite() const;
+    int priorite() const;
 
     /**
      * @brief setPriorite
@@ -73,7 +73,7 @@ public:
      * @brief getCommentaire
      * @return Le commentaire de la fiche
      */
-    QString getCommentaire() const;
+    QString commentaire() const;
 
     /**
      * @brief setCommentaire
@@ -85,7 +85,7 @@ public:
      * @brief getStatut
      * @return Le statut de la fiche
      */
-    Statut *getStatut() const;
+    Statut* statut() const;
 
     /**
      * @brief setStatut
@@ -97,7 +97,7 @@ public:
      * @brief getTaches
      * @return La liste des tâches de la fiche
      */
-    QList<Tache*>* getTaches() const;
+    QList<Tache*>* taches() const;
 
     /**
      * @brief setTaches
@@ -109,7 +109,7 @@ public:
      * @brief getPieces
      * @return La liste de pièces de la fiche
      */
-    QList<Piece*>* getPieces() const;
+    QList<Piece*>* pieces() const;
 
     /**
      * @brief setPieces
@@ -121,7 +121,7 @@ public:
      * @brief getTechniciens
      * @return La liste des techniciens associés à la fiche
      */
-    QList<Technicien*>* getTechniciens() const;
+    QList<Technicien*>* techniciens() const;
 
     /**
      * @brief setTechniciens
@@ -133,7 +133,7 @@ public:
      * @brief out
      * @return Représentation textuelle de la fiche
      */
-    QString out();
+    QString out() const;
 
 };
 
