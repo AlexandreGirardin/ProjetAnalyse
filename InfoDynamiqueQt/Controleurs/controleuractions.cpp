@@ -187,7 +187,6 @@ void ControleurActions::modifierEnsemble()
     vue->setDescription(ensemble->getDescription());
     delete actionsHorsEnsemble;
     if (vue->exec() == vue->Accepted) {
-        EnsembleActions* ensemble = new EnsembleActions(vue);
         ensemble->setNom(vue->getNom());
         ensemble->setDescription(vue->getDescription());
         ensemble->setActions(vue->getActionsDansEnsemble());

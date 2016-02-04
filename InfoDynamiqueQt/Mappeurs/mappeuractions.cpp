@@ -66,7 +66,7 @@ QList<Action*>* MappeurActions::actionsDansEnsemble(const int &idEnsemble)
                         (SELECT idAction FROM ensemblesActions ea\
                          WHERE ea.idEnsemble=:idEnsemble)\
                     ORDER BY a.nom ASC");
-    requete.bindValue(":id", idEnsemble);
+    requete.bindValue(":idEnsemble", idEnsemble);
     requete.exec();
     return mapper(requete);
 }

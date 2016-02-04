@@ -35,6 +35,7 @@ EnsembleActions* MappeurEnsembles::mapper(const QSqlRecord &ligne)
     ensemble->setNom(ligne.value("nom").toString());
     ensemble->setDescription(ligne.value("description").toString());
     ensemble->setActions(Application::actions->actionsDansEnsemble(ensemble->getId()));
+    qDebug() << ensemble->getId();
     return ensemble;
 }
 
@@ -57,25 +58,61 @@ QList<EnsembleActions*>* MappeurEnsembles::mapper(QSqlQuery &requete)
     return liste;
 }
 
-bool MappeurEnsembles::inserer(const EnsembleActions *ensemble) const
+bool MappeurEnsembles::inserer(EnsembleActions *ensemble) const
 {
-    const QString commande(
-                "INSERT INTO ensembles\
-                    (nom, description)\
-                VALUES\
-                    (:nom, :description)");
-    return ecrire(ensemble, commande);
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    const QString commandeEnsemble("INSERT INTO ensembles\
+                                        (nom, description)\
+                                    VALUES\
+                                        (:nom, :description)\
+                                    ");
+    bool ecritureEnsemble = ecrire(ensemble, commandeEnsemble);
+    ensemble->setId(derniereInsertion());
+    const QString commandeActions("INSERT INTO ensemblesActions\
+                                        (idEnsemble, idAction)\
+                                    VALUES\
+                                        (:idEnsemble, :idAction)"
+                                    );
+    bool ecritureActions = ecrireActions(ensemble, commandeActions);
+    bool succes = ecritureEnsemble && ecritureActions;
+    if (succes) {
+        bd.commit();
+    } else {
+        bd.rollback();
+    }
+    return succes;
 }
 
 bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble) const
 {
-    const QString commande("UPDATE actions\
-                            SET\
-                                nom=:nom,\
-                                description=:description,\
-                                etat=:etat\
-                            WHERE id=:idEnsemble");
-    const bool succes = ecrire(ensemble, commande);
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    const QString commandeEnsemble("UPDATE ensembles\
+                                    SET\
+                                        nom=:nom,\
+                                        description=:description\
+                                    WHERE id=:idEnsemble");
+    bool succes = ecrire(ensemble, commandeEnsemble);
+    qDebug() << ensemble->out();
+    if (succes) {
+        const QString commandeViderActions("DELETE FROM ensemblesActions\
+                                           WHERE idEnsemble=:idEnsemble");
+        succes = ecrire(ensemble, commandeViderActions);
+        if (succes) {
+            const QString commandeActions("INSERT INTO ensemblesActions\
+                                                (idEnsemble, idAction)\
+                                            VALUES\
+                                                (:idEnsemble, :idAction)"
+                                            );
+            succes = ecrireActions(ensemble, commandeActions);
+        }
+    }
+    if (succes) {
+        bd.commit();
+    } else {
+        bd.rollback();
+    }
     return succes;
 }
 
@@ -89,17 +126,43 @@ QSqlQuery* MappeurEnsembles::preparerRequete(const EnsembleActions* ensemble, co
     return requete;
 }
 
+int MappeurEnsembles::derniereInsertion() const
+{
+    int id = -1;
+    QSqlQuery* requete = new QSqlQuery("SELECT LAST_INSERT_ID() as id",*Application::bd);
+    if (requete->next()) {
+        id = requete->record().value("id").toInt();
+        qDebug() << "id!! > " << id;
+    }
+    return id;
+}
+
 bool MappeurEnsembles::ecrire(const EnsembleActions* ensemble, const QString &commande) const
 {
-    QSqlDatabase bd = *Application::bd;
-    bd.transaction();
     QSqlQuery* requete = preparerRequete(ensemble, commande);
+    requete->bindValue(":idEnsemble", ensemble->getId());
     const bool succes = requete->exec();
-    if (succes) {
-        bd.commit();
-    } else {
+    if (!succes) {
         qDebug() << requete->lastError();
-        bd.rollback();
+    }
+    delete requete;
+    return succes;
+}
+
+bool MappeurEnsembles::ecrireActions(const EnsembleActions *ensemble, const QString &commande) const
+{
+    QSqlQuery* requete = preparerRequete(ensemble, commande);
+    requete->bindValue(":idEnsemble", ensemble->getId());
+    QList<Action*>* actions = ensemble->getActions();
+    bool succes = true;
+    for (QList<Action*>::const_iterator i = actions->constBegin(); succes && i != actions->constEnd(); ++i) {
+        requete->bindValue(":idAction", (*i)->getId());
+        succes = succes && requete->exec();
+    }
+    if (!succes) {
+        qDebug() << ensemble->getId();
+        qDebug() << requete->lastQuery();
+        qDebug() << requete->lastError();
     }
     delete requete;
     return succes;
