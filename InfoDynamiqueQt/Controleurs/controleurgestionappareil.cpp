@@ -7,12 +7,16 @@
 ControleurGestionAppareil::ControleurGestionAppareil(QObject* parent) :
     QObject(parent)
 {
-    vueGestionAppareil = new VueGestionAppareil();
 }
 
 void ControleurGestionAppareil::ajouterAppareil()
 {
-    vueGestionAppareil->exec();
+    VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
+    vue->setTypes(Application::typesAppareils->getTypesAppareil());
+    vue->setFabricants(Application::fabricants->getFabricants());
+    if (vue->exec() == vue->Accepted) {
+
+    }
 }
 
 void ControleurGestionAppareil::modifierAppareil(const int &idAppareil)

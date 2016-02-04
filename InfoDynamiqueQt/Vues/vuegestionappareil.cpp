@@ -50,7 +50,7 @@ TypeAppareil* VueGestionAppareil::getType() const
     return type;
 }
 
-void VueGestionAppareil::setFabricants(QList<Fabricant*>* &a_fabricants)
+void VueGestionAppareil::setFabricants(QList<Fabricant*>* a_fabricants)
 {
     fabricants = a_fabricants;
     for (QList<Fabricant*>::const_iterator i = fabricants->constBegin(); i != fabricants->constEnd(); ++i) {

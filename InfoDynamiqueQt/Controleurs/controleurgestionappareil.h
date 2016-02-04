@@ -19,9 +19,6 @@ public:
      */
     explicit ControleurGestionAppareil(QObject* parent = 0);
 
-    // La vue utilisée pour modifier un appareil
-    VueGestionAppareil* vueGestionAppareil;
-
 public slots:
 
     /**

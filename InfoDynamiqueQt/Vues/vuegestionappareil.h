@@ -55,7 +55,7 @@ public:
      * Assigne la liste des fabricants
      * @param a_fabricants La liste des fabricant à présenter
      */
-    void setFabricants(QList<Fabricant*>* &a_fabricants);
+    void setFabricants(QList<Fabricant *> *a_fabricants);
 
     /**
      * @brief setFabricants
