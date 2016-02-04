@@ -35,7 +35,6 @@ EnsembleActions* MappeurEnsembles::mapper(const QSqlRecord &ligne)
     ensemble->setNom(ligne.value("nom").toString());
     ensemble->setDescription(ligne.value("description").toString());
     ensemble->setActions(Application::actions->actionsDansEnsemble(ensemble->id()));
-    qDebug() << ensemble->id();
     return ensemble;
 }
 

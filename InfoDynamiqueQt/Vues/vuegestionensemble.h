@@ -53,10 +53,15 @@ private slots:
 
     void verifierNom();
 
+    void verifierOk();
+
 private:
+
     Ui::VueGestionEnsemble* ui;
 
     ChampFormulaire* nom;
+
+    QPushButton* boutonOk;
 
     QStandardItemModel *horsEnsemble, *dansEnsemble;
 
@@ -64,6 +69,11 @@ private:
 
     int selectionHorsEnsemble, selectionDansEnsemble;
 
+    void configurerBoutonOk();
+
+signals:
+
+    void champsRequisModifies(bool);
 };
 
 #endif // GESTIONENSEMBLE_H

@@ -11,7 +11,6 @@
 ControleurActions::ControleurActions(QWidget* vue)
     : QObject(vue)
 {
-
     controleurEnsemble = new ControleurGestionEnsemble(this);
 
     splitter = new QSplitter(Qt::Vertical, vue);
@@ -53,6 +52,7 @@ void ControleurActions::configurerFragmentEnsembles()
     QObject::connect(this, SIGNAL(actionsModifiees()), this, SLOT(recharger()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
+    QObject::connect(fragmentEnsembles, SIGNAL(doubleClicModele()), this, SLOT(modifierEnsemble()));
 }
 
 void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const

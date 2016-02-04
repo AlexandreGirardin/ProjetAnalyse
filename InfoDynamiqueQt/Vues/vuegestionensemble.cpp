@@ -13,6 +13,7 @@ VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
     nom = new ChampFormulaire(tr("Ce champ est requis"), this);
     nom->setFocus();
     ui->formLayout->setWidget(0,QFormLayout::FieldRole, nom);
+    configurerBoutonOk();
     QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
     ui->boutonAjouter->setEnabled(false);
     ui->boutonRetirer->setEnabled(false);
@@ -29,6 +30,15 @@ VueGestionEnsemble::~VueGestionEnsemble()
     delete ui;
     delete actionsHorsEnsemble;
     delete actionsDansEnsemble;
+}
+
+void VueGestionEnsemble::configurerBoutonOk()
+{
+    boutonOk = new QPushButton(tr("Ok"), this);
+    boutonOk->setEnabled(false);
+    ui->buttonBox->addButton(boutonOk, QDialogButtonBox::AcceptRole);
+    QObject::connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    QObject::connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));
 }
 
 void VueGestionEnsemble::setNom(const QString &valeur)
@@ -136,4 +146,9 @@ void VueGestionEnsemble::peuplerDansEnsemble()
 void VueGestionEnsemble::verifierNom()
 {
     nom->setValide(!nom->getTexte().isEmpty());
+}
+
+void VueGestionEnsemble::verifierOk()
+{
+    emit champsRequisModifies(nom->estValide());
 }
