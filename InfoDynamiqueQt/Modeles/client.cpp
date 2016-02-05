@@ -58,8 +58,6 @@ QList<Appareil*>* Client::appareils() const
 
 void Client::setAppareils(QList<Appareil*>* value)
 {
-    qDeleteAll(*m_appareils);
-    delete m_appareils;
     m_appareils = value;
 }
 

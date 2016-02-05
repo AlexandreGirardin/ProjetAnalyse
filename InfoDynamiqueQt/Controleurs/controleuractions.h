@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurgestionensemble.h"
+#include "Controleurs/controleurensembles.h"
 
 #include "Modeles/action.h"
 
@@ -30,33 +30,6 @@ public:
 
 private:
 
-    // Le séparateur redimensionnable contenant les fragments
-    QSplitter* splitter;
-
-    // Le fragment des actions
-    VueFragment* fragmentActions;
-
-    // Le fragment des ensembles
-    VueFragment* fragmentEnsembles;
-
-    /**
-     * @brief configurerFragmentActions
-     * Configure fragmentActions
-     */
-    void configurerFragmentActions();
-
-    /**
-     * @brief configurerFragmentEnsembles
-     * Configure fragmentEnsembles
-     */
-    void configurerFragmentEnsembles();
-
-    // La requête SQL actuelle pour actions sans filtre de recherche
-    const QString* requeteActions;
-
-    // La requête SQL actuelle pour actions avec filtre de recherche
-    const QString* requeteActionsFiltre;
-
     /**
      * @brief assignerAction
      * Assigne les informations de l'action dans les champs de la vue
@@ -65,81 +38,25 @@ private:
      */
     void assignerAction(VueGestionAction* vue, const Action *action) const;
 
-    ControleurGestionEnsemble* controleurEnsemble;
-
 public slots:
-
-    /**
-     * @brief peuplerActions
-     * Peuple la table du fragmentActions avec toutes les actions
-     */
-    void peuplerActions();
-
-    /**
-     * @brief peuplerEnsembles
-     * Peuple la table de fragmentEnsembles avec tous les ensembles
-     */
-    void peuplerEnsembles();
-
-    /**
-     * @brief activerCritereActions
-     * Réassigne les commandes SQL pour n'afficher que les actions actives
-     */
-    void activerCritereActions();
-
-    /**
-     * @brief activerCritereActions
-     * Réassigne les commandes SQL pour afficher toutes les actions
-     */
-    void desactiverCritereActions();
-
-    /**
-     * @brief filtrerActions
-     * Peuple le tableau avec les actions qui correspondent à un critère de recherche
-     * @param filtre Le critère de recherche
-     */
-    void filtrerActions(const QString &filtre);
 
     /**
      * @brief modifierAction
      * Lance la modification de l'action sélectionnée
      */
-    void modifierAction();
-
-    void modifierEnsemble();
-
-    void voirEnsemble();
-
-    void creerEnsemble();
-
-    void supprimerEnsemble();
+    void modifierAction(const int &idAction);
 
     /**
      * @brief voirAction
      * Lance la visualisation de l'action sélectionnée
      */
-    void voirAction() const;
+    void voirAction(const int &idAction) const;
 
     /**
      * @brief changerEtat
      * Inverse l'état actuel de l'action sélectionnée
      */
-    void changerEtat();
-
-    /**
-     * @brief recharger
-     * Repeuple le tableau avec filtre de recherche au besoin
-     */
-    void rechargerActions();
-
-private slots:
-
-    /**
-     * @brief rechargerEnsembles
-     */
-    void rechargerEnsembles();
-
-    void filtrerEnsembles(const QString &filtre);
+    void changerEtat(const int &idAction);
 
 signals:
 
@@ -149,7 +66,7 @@ signals:
      */
     void actionsModifiees();
 
-    void ensemblesModifies();
+//    void ensemblesModifies();
 
 };
 

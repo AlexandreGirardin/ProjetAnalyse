@@ -34,15 +34,13 @@ void EnsembleActions::setId(const int &value)
 {
     m_id = value;
 }
-QList<Action*>* EnsembleActions::getActions() const
+QList<Action*>* EnsembleActions::actions() const
 {
     return m_actions;
 }
 
 void EnsembleActions::setActions(QList<Action*>* value)
 {
-    qDeleteAll(*m_actions);
-    delete m_actions;
     m_actions = value;
 }
 
