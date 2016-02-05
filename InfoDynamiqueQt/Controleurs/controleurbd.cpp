@@ -22,6 +22,9 @@ void ControleurBD::connecterDossiers()
     vue = new VueConnexion(Application::getVuePrincipale());
     configurerBoutonConnecter();
     if (vue->exec() == vue->Accepted) {
+        if (!bd.open()) {
+            qDebug() << "Erreur d'ouverture de la base de données";
+        }
     }
 }
 
@@ -38,7 +41,7 @@ void ControleurBD::clicConnecter()
     bd.setUserName(vue->getUsager());
     bd.setPassword(vue->getMotDePasse());
     if (!bd.open()) {
-        qDebug() << "Database error occurred";
+        qDebug() << "Erreur de connexion à la base de données";
     }
     peuplerBd();
 }

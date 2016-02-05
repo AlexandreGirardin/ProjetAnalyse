@@ -44,6 +44,13 @@ public slots:
     void peuplerTableau(QAbstractTableModel* valeurs);
 
     /**
+     * @brief modeleSelectionne
+     * Émis lorsqu'un nouveau modèle est sélectionné
+     * @param idModele L'id du nouveau modèle sélectionné
+     */
+    void selectionnerModele(const QModelIndex &index);
+
+    /**
      * @brief signalerSelection
      * @param nouveau La nouvelle sélection du tableau
      * @param ancien L'ancienne sélection du tableau
@@ -58,6 +65,13 @@ signals:
      * @param nouveau La nouvelle sélection
      */
     void nouvelleSelection(QModelIndex nouveau);
+
+    /**
+     * @brief modeleSelectionne
+     * Émis lorsqu'un nouveau modèle est sélectionné
+     * @param idModele L'id du nouveau modèle sélectionné
+     */
+    void modeleSelectionne(const int &idModele);
 
 private:
     Ui::VueConnexion *ui;

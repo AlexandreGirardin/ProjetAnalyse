@@ -3,7 +3,7 @@
 
 #include <QDebug>
 #include <QSortFilterProxyModel>
-#include "controleurbd.h"
+#include "Controleurs/controleurbd.h"
 
 VueConnexion::VueConnexion(QWidget *parent) :
     QDialog(parent),
@@ -72,5 +72,5 @@ void VueConnexion::peuplerTableau(QAbstractTableModel* valeurs)
 
 void VueConnexion::signalerSelection(QModelIndex nouveau, QModelIndex ancien)
 {
-    emit nouvelleSelection(nouvelle);
+    emit nouvelleSelection(nouveau);
 }
