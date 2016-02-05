@@ -41,7 +41,7 @@ void ControleurClients::configurerFragmentAppareils()
     fragmentAppareils->setEtiquette(tr("Appareils"));
     fragmentAppareils->retirerCaseCocher();
     fragmentAppareils->retirerChamp();
-    QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), controleurGestionAppareil, SLOT(ajouterAppareil()));
+    QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), this, SLOT(ajouterAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(rechargerAppareils()));
@@ -59,7 +59,7 @@ void ControleurClients::configurerFragmentFiches()
     fragmentFiches->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     fragmentFiches->retirerChamp();
     commandeFiches = RequetesSQL::toutesFichesPourAppareil;
-    QObject::connect(fragmentFiches, SIGNAL(clicCreer()), controleurGestionFiche, SLOT(ajouterFiche()));
+    QObject::connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
@@ -124,6 +124,13 @@ void ControleurClients::peuplerAppareils(const int &idClient)
     fragmentAppareils->getTableau()->hideColumn(fragmentAppareils->getColonneId());
 }
 
+void ControleurClients::ajouterAppareil() const
+{
+    if (fragmentClients->getIdModele() != -1) {
+        controleurGestionAppareil->ajouterAppareil(fragmentClients->getIdModele());
+    }
+}
+
 void ControleurClients::modifierAppareil() const
 {
     if (fragmentAppareils->getIdModele() != -1) {
@@ -179,9 +186,25 @@ void ControleurClients::peuplerFiches(const int &idAppareil)
     fragmentFiches->getTableau()->hideColumn(fragmentFiches->getColonneId());
 }
 
+void ControleurClients::ajouterFiche() const
+{
+    if (fragmentAppareils->getIdModele() != -1) {
+        controleurGestionFiche->ajouterFiche(fragmentAppareils->getIdModele());
+    }
+}
+
+void ControleurClients::modifierFiche() const
+{
+    if (fragmentFiches->getIdModele() != -1) {
+        controleurGestionFiche->modifierFiche(fragmentFiches->getIdModele());
+    }
+}
+
 void ControleurClients::voirFiche() const
 {
-
+    if (fragmentFiches->getIdModele() != -1) {
+        controleurGestionFiche->modifierFiche(fragmentFiches->getIdModele());
+    }
 }
 
 void ControleurClients::activerCritereFiches()

@@ -54,7 +54,7 @@ TypeAppareil* VueGestionAppareil::getType() const
     return type;
 }
 
-void VueGestionAppareil::setFabricants(QList<Fabricant*>* &a_fabricants)
+void VueGestionAppareil::setFabricants(QList<Fabricant*>* a_fabricants)
 {
     qDeleteAll(*fabricants);
     delete fabricants;

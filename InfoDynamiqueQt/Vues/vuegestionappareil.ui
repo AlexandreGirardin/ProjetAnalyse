@@ -33,6 +33,13 @@
        </property>
       </widget>
      </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="etiquetteFabricant">
+       <property name="text">
+        <string>Fabricant:</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="1">
       <widget class="QComboBox" name="comboFabricant">
        <property name="sizePolicy">
@@ -40,13 +47,6 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="etiquetteFabricant">
-       <property name="text">
-        <string>Fabriquant:</string>
        </property>
       </widget>
      </item>

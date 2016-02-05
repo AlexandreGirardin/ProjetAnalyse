@@ -112,8 +112,12 @@ HEADERS  += \
 	Mappeurs/mappeurensembles.h \
 	Vues/champformulaire.h \
 	Vues/vueensemble.h \
+<<<<<<< HEAD
+    Mappeurs/mappeurfiches.h
+=======
     Controleurs/controleurongletactions.h \
     Controleurs/controleurensembles.h
+>>>>>>> 75c5d8966b11c844e402bdfb24351f9c385a72ea
 
 FORMS    += \
 	Vues/vueauthentification.ui \

@@ -109,6 +109,20 @@ public slots:
     void peuplerFiches(const int &idAppareil);
 
     /**
+     * @brief ajouterAppareil
+     * Lance la création d'un appareil pour un client
+     * @param idClient L'id du client
+     */
+    void ajouterAppareil() const;
+
+    /**
+     * @brief ajouterFiche
+     * Lance la création d'une fiche pour un appareil
+     * @param idAppareil
+     */
+    void ajouterFiche() const;
+
+    /**
      * @brief modifierClient
      * Lance la modification du client sélectionné
      */
@@ -119,6 +133,12 @@ public slots:
      * Lance la modification de l'appareil sélectionné
      */
     void modifierAppareil() const;
+
+    /**
+     * @brief modifierFiche
+     * Lance la modifiction de la fiche sélectionné
+     */
+    void modifierFiche() const;
 
     /**
      * @brief filtrerClients
