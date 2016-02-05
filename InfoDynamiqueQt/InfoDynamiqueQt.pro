@@ -62,12 +62,12 @@ SOURCES += main.cpp\
 	Mappeurs/mappeurensembles.cpp \
 	Vues/champformulaire.cpp \
 	Vues/vueensemble.cpp \
-    Controleurs/controleurongletactions.cpp \
-    Controleurs/controleurensembles.cpp
+	Controleurs/controleurongletactions.cpp \
+	Controleurs/controleurensembles.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
-		Vues/vueconnexion.h \
+	Vues/vueconnexion.h \
 	Vues/vueprincipale.h \
 	Vues/vuegestiontache.h \
 	Vues/vuegestionpiece.h \
@@ -84,7 +84,7 @@ HEADERS  += \
 	Controleurs/controleurgestionclient.h \
 	Controleurs/controleurgestionappareil.h \
 	Controleurs/controleurgestionfiche.h \
-        Controleurs/controleurbd.h \
+	Controleurs/controleurbd.h \
 	Mappeurs/mappeurpieces.h \
 	Mappeurs/mappeuractions.h \
 	Mappeurs/mappeurfabricants.h \
@@ -112,12 +112,9 @@ HEADERS  += \
 	Mappeurs/mappeurensembles.h \
 	Vues/champformulaire.h \
 	Vues/vueensemble.h \
-<<<<<<< HEAD
-    Mappeurs/mappeurfiches.h
-=======
-    Controleurs/controleurongletactions.h \
-    Controleurs/controleurensembles.h
->>>>>>> 75c5d8966b11c844e402bdfb24351f9c385a72ea
+	Mappeurs/mappeurfiches.h \
+	Controleurs/controleurongletactions.h \
+	Controleurs/controleurensembles.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
