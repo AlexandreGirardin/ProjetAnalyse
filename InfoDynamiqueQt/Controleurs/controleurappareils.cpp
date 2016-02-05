@@ -17,7 +17,7 @@ ControleurAppareils::ControleurAppareils(QWidget* vue)
     fragment->retirerCaseCocher();
     vue->layout()->addWidget(fragment);
 
-    controleurGestionAppareil = new ControleurGestionAppareil();
+    controleurGestionAppareil = new ControleurGestionAppareil(this);
 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));

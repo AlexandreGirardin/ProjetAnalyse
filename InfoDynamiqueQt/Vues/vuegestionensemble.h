@@ -25,7 +25,7 @@ public:
 
     QList<Action*>* getActionsHorsEnsemble();
 
-    void setActionsDansEnsemble(const QList<Action *> *actions);
+    void setActionsDansEnsemble(QList<Action *> *actions);
 
     QList<Action*>* getActionsDansEnsemble();
 
@@ -63,13 +63,15 @@ private:
 
     QPushButton* boutonOk;
 
-    QStandardItemModel *horsEnsemble, *dansEnsemble;
+//    QStandardItemModel *horsEnsemble, *dansEnsemble;
 
     QList<Action*> *actionsHorsEnsemble, *actionsDansEnsemble;
 
     int selectionHorsEnsemble, selectionDansEnsemble;
 
     void configurerBoutonOk();
+
+    QStandardItemModel* listeVersModele(QList<Action*>* liste);
 
 signals:
 

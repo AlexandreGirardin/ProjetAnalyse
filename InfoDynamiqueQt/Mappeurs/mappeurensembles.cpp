@@ -114,6 +114,24 @@ bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble) const
     return succes;
 }
 
+bool MappeurEnsembles::supprimer(EnsembleActions *ensemble) const
+{
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    const QString commandeViderActions("DELETE FROM ensemblesActions WHERE idEnsemble=:idEnsemble");
+    bool succes = ecrire(ensemble, commandeViderActions);
+    if (succes) {
+        const QString commandeEnsemble("DELETE FROM ensembles WHERE id=:idEnsemble");
+        succes = ecrire(ensemble, commandeEnsemble);
+    }
+    if (succes) {
+        bd.commit();
+    } else {
+        bd.rollback();
+    }
+    return succes;
+}
+
 QSqlQuery* MappeurEnsembles::preparerRequete(const EnsembleActions* ensemble, const QString &commande) const
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);

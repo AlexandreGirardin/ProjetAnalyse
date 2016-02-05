@@ -14,7 +14,7 @@ ControleurGestionClient::ControleurGestionClient(QObject* parent)
 
 void ControleurGestionClient::ajouterClient()
 {
-    VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
+    VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
     if (vue->exec() == vue->Accepted) {
         Client* client = new Client();
         client->setPrenom(vue->getPrenom());
@@ -35,7 +35,7 @@ void ControleurGestionClient::modifierClient(const int &idClient)
 {
     Client* client = Application::clients->getClient(idClient);
     if (client != NULL) {
-        VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
+        VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
         assignerClient(vue, client);
         if (vue->exec() == vue->Accepted) {
             client->setNom(vue->getNom());
@@ -55,7 +55,7 @@ void ControleurGestionClient::modifierClient(const int &idClient)
 
 void ControleurGestionClient::voirClient(const int &idClient)
 {
-    VueGestionClient* vue = new VueGestionClient(Application::getVuePrincipale());
+    VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
     const Client* client = Application::clients->getClient(idClient);
     assignerClient(vue, client);
     vue->setLectureSeule();
