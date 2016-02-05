@@ -49,6 +49,8 @@ public:
 
     QList<Action*>* actionsHorsEnsemble(const int &idEnsemble);
 
+    bool inserer(const Action *action) const;
+
 private:
 
     /**

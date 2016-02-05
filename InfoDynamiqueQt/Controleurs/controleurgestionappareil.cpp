@@ -12,6 +12,7 @@ ControleurGestionAppareil::ControleurGestionAppareil(QObject* parent) :
 void ControleurGestionAppareil::ajouterAppareil(const int &idClient)
 {
     VueGestionAppareil* vue = new VueGestionAppareil(Application::vuePrincipale());
+    vue->setWindowTitle(tr("Créer un nouvel appareil"));
     vue->setTypes(Application::typesAppareils->getTypesAppareil());
     vue->setFabricants(Application::fabricants->getFabricants());
     if (vue->exec() == vue->Accepted) {
@@ -35,6 +36,7 @@ void ControleurGestionAppareil::modifierAppareil(const int &idAppareil)
     Appareil* appareil = Application::appareils->getAppareil(idAppareil);
     if (appareil != NULL) {
         VueGestionAppareil* vue = new VueGestionAppareil(Application::vuePrincipale());
+        vue->setWindowTitle(tr("Modifier un appareil"));
         vue->setTypes(Application::typesAppareils->getTypesAppareil(), appareil->nomType());
         vue->setFabricants(Application::fabricants->getFabricants(), appareil->nomFabricant());
         vue->setMotDePasse(appareil->motDePasse());
@@ -60,6 +62,7 @@ void ControleurGestionAppareil::voirAppareil(const int &idAppareil)
     Appareil* appareil = Application::appareils->getAppareil(idAppareil);
     if (appareil != NULL) {
         VueAppareil* vue = new VueAppareil(Application::vuePrincipale());
+        vue->setWindowTitle(tr("Appareil"));
         vue->setType(appareil->nomType());
         vue->setFabricant(appareil->nomFabricant());
         vue->setMotDePasse(appareil->motDePasse());

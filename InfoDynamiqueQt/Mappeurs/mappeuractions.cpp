@@ -84,6 +84,14 @@ QList<Action*>* MappeurActions::actionsHorsEnsemble(const int &idEnsemble)
     return mapper(requete);
 }
 
+bool MappeurActions::inserer(const Action* action) const
+{
+    const QString commande("INSERT INTO actions (nom, description, etat)\
+                            VALUES (:nom, :description, :etat)");
+    const bool succes = ecrire(action, commande);
+    return succes;
+}
+
 bool MappeurActions::mettreAJour(const Action* action) const
 {
     const QString commande("UPDATE actions\

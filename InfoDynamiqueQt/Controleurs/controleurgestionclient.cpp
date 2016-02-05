@@ -15,6 +15,7 @@ ControleurGestionClient::ControleurGestionClient(QObject* parent)
 void ControleurGestionClient::ajouterClient()
 {
     VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
+    vue->setWindowTitle(tr("Créer un nouveau client"));
     if (vue->exec() == vue->Accepted) {
         Client* client = new Client(vue);
         client->setPrenom(vue->getPrenom());
@@ -35,6 +36,7 @@ void ControleurGestionClient::modifierClient(const int &idClient)
     Client* client = Application::clients->getClient(idClient);
     if (client != NULL) {
         VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
+        vue->setWindowTitle(tr("Modifier un client"));
         assignerClient(vue, client);
         if (vue->exec() == vue->Accepted) {
             client->setNom(vue->getNom());
@@ -57,6 +59,7 @@ void ControleurGestionClient::voirClient(const int &idClient)
     const Client* client = Application::clients->getClient(idClient);
     if (client != NULL) {
         VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
+        vue->setWindowTitle(tr("Informations d'un client"));
         assignerClient(vue, client);
         vue->setLectureSeule();
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));

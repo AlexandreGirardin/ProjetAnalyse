@@ -19,11 +19,29 @@ void ControleurActions::assignerAction(VueGestionAction* vue, const Action *acti
     vue->setEtat(action->etat());
 }
 
+void ControleurActions::creerAction()
+{
+    VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
+    vue->setWindowTitle(tr("Créer une nouvelle action"));
+    vue->setEtat(true);
+    if (vue->exec() == vue->Accepted) {
+        Action* action = new Action(vue);
+        action->setNom(vue->getNom());
+        action->setDescription(vue->getDescription());
+        action->setEtat(vue->getEtat());
+        if (Application::actions->inserer(action)) {
+            emit actionsModifiees();
+        }
+    }
+    vue->deleteLater();
+}
+
 void ControleurActions::modifierAction(const int &idAction)
 {
     Action* action = Application::actions->getAction(idAction);
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
+        vue->setWindowTitle(tr("Modifier une action"));
         assignerAction(vue, action);
         if (vue->exec()) {
             action->setNom(vue->getNom());
@@ -42,6 +60,7 @@ void ControleurActions::voirAction(const int &idAction) const
     Action* action = Application::actions->getAction(idAction);
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
+        vue->setWindowTitle(tr("Action"));
         assignerAction(vue, action);
         vue->setLectureSeule(true);
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));

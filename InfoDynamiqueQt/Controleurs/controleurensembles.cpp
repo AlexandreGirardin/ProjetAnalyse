@@ -17,6 +17,7 @@ ControleurGestionEnsemble::ControleurGestionEnsemble(QObject *parent) :
 void ControleurGestionEnsemble::creerEnsemble()
 {
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
+    vue->setWindowTitle(tr("Créer un nouvel ensemble de tâches"));
     vue->setActionsHorsEnsemble(Application::actions->getActions());
     if (vue->exec() == vue->Accepted) {
         EnsembleActions* ensemble = new EnsembleActions(vue);
@@ -36,6 +37,7 @@ void ControleurGestionEnsemble::modifierEnsemble(const int &idEnsemble)
 {
     EnsembleActions* ensemble = Application::ensembles->getEnsemble(idEnsemble);
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
+    vue->setWindowTitle(tr("Modifier un ensemble de tâches"));
     QList<Action*>* actionsHorsEnsemble = Application::actions->actionsHorsEnsemble(ensemble->id());
     vue->setActionsHorsEnsemble(actionsHorsEnsemble);
     vue->setActionsDansEnsemble(ensemble->actions());
@@ -57,6 +59,7 @@ void ControleurGestionEnsemble::modifierEnsemble(const int &idEnsemble)
 void ControleurGestionEnsemble::voirEnsemble(const int &idEnsemble)
 {
     VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
+    vue->setWindowTitle(tr("Ensemble de tâches"));
     EnsembleActions* ensemble = Application::ensembles->getEnsemble(idEnsemble);
     QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
     vue->setNom(ensemble->nom());

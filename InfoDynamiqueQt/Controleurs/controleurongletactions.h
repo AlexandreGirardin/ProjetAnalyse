@@ -47,7 +47,6 @@ public slots:
     void rechargerEnsembles();
     void peuplerEnsembles();
     void filtrerEnsembles(const QString &filtre);
-    void creerEnsemble();
     void modifierEnsemble();
     void voirEnsemble();
     void supprimerEnsemble();

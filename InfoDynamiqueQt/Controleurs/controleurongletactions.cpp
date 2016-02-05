@@ -31,6 +31,7 @@ void ControleurOngletActions::configurerFragmentActions()
     boutonEtat->setEnabled(false);
 
     QObject::connect(fragmentActions, SIGNAL(clicEditer()), this, SLOT(modifierAction()));
+    QObject::connect(fragmentActions, SIGNAL(clicCreer()), controleurActions, SLOT(creerAction()));
     QObject::connect(fragmentActions, SIGNAL(clicVoir()), this, SLOT(voirAction()));
     QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(desactiverCritereActions()));
     QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
@@ -116,7 +117,7 @@ void ControleurOngletActions::configurerFragmentEnsembles()
     boutonSupprimer->setIcon(QIcon(":/Images/edit-delete"));
     QObject::connect(controleurEnsembles, SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
     QObject::connect(controleurActions, SIGNAL(actionsModifiees()), this, SLOT(rechargerActions()));
-    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsembles, SLOT(creerEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(doubleClicModele()), this, SLOT(voirEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicVoir()), this, SLOT(voirEnsemble()));
@@ -147,11 +148,6 @@ void ControleurOngletActions::filtrerEnsembles(const QString &filtre)
         fragmentEnsembles->peuplerTableau(resultats);
         fragmentEnsembles->getTableau()->hideColumn(0);
     }
-}
-
-void ControleurOngletActions::creerEnsemble()
-{
-    controleurEnsembles->creerEnsemble();
 }
 
 void ControleurOngletActions::modifierEnsemble()

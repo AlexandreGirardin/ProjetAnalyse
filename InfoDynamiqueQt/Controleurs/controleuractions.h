@@ -27,7 +27,6 @@ public:
      * @param parent
      */
     explicit ControleurActions(QWidget* conteneur);
-
 private:
 
     /**
@@ -39,6 +38,8 @@ private:
     void assignerAction(VueGestionAction* vue, const Action *action) const;
 
 public slots:
+
+    void creerAction();
 
     /**
      * @brief modifierAction

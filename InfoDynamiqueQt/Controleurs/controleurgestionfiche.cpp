@@ -11,12 +11,14 @@ ControleurGestionFiche::ControleurGestionFiche(QObject* parent) :
 void ControleurGestionFiche::ajouterFiche(const int &idAppareil)
 {
     VueGestionFiche* vue = new VueGestionFiche();
+    vue->setWindowTitle(tr("Créer une nouvelle fiche"));
     vue->exec();
 }
 
 void ControleurGestionFiche::modifierFiche(const int &idFiche)
 {
     VueGestionFiche* vue = new VueGestionFiche();
+    vue->setWindowTitle(tr("Modifier une fiche"));
     vue->exec();
 }
 
