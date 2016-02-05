@@ -7,6 +7,12 @@ Appareil::Appareil(QObject* parent) :
     setType(NULL);
 }
 
+Appareil::~Appareil()
+{
+    m_fabricant->deleteLater();
+    m_type->deleteLater();
+}
+
 int Appareil::idClient() const
 {
     return m_idClient;

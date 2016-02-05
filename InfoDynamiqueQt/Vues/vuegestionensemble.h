@@ -23,11 +23,11 @@ public:
 
     void setActionsHorsEnsemble(QList<Action*>* actions);
 
-    QList<Action*>* getActionsHorsEnsemble();
+    QList<Action*>* getActionsHorsEnsemble() const;
 
     void setActionsDansEnsemble(QList<Action *> *actions);
 
-    QList<Action*>* getActionsDansEnsemble();
+    QList<Action*>* getActionsDansEnsemble() const;
 
     void setNom(const QString& valeur);
 
@@ -71,7 +71,7 @@ private:
 
     void configurerBoutonOk();
 
-    QStandardItemModel* listeVersModele(QList<Action*>* liste);
+    QStandardItemModel* listeVersModele(const QList<Action *> *liste);
 
 signals:
 

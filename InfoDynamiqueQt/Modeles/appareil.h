@@ -39,6 +39,8 @@ public:
      */
     explicit Appareil(QObject* parent = 0);
 
+     ~Appareil();
+
     /**
      * @brief getId
      * @return L'id de l'appareil

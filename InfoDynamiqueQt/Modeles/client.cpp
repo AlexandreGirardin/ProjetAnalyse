@@ -1,6 +1,15 @@
 #include "Modeles/client.h"
 
-Client::Client(QObject* parent) : ModeleBD(parent) {}
+Client::Client(QObject* parent) : ModeleBD(parent)
+{
+    m_appareils = new QList<Appareil*>();
+}
+
+Client::~Client()
+{
+    qDeleteAll(*m_appareils);
+    delete m_appareils;
+}
 
 QString Client::prenom() const
 {
@@ -49,10 +58,6 @@ QList<Appareil*>* Client::appareils() const
 
 void Client::setAppareils(QList<Appareil*>* value)
 {
-//    if (*appareils != *value) {
-//        qDeleteAll(*appareils);
-//        delete appareils;
-//    }
     m_appareils = value;
 }
 
