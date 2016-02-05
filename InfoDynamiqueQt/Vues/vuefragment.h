@@ -73,12 +73,6 @@ public:
     explicit VueFragment(QWidget* parent = 0);
     ~VueFragment();
 
-    /**
-     * @brief getEtiquette
-     * @return L'étiquette du fragment
-     */
-//    QLabel* getEtiquette() const;
-
     void retirerEtiquette() const;
 
     void setEtiquette(const QString &etiquette) const;
