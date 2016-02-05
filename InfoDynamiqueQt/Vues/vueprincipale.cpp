@@ -12,27 +12,27 @@ VuePrincipale::~VuePrincipale()
     delete ui;
 }
 
-QTabWidget* VuePrincipale::getOnglets() const
+QTabWidget* VuePrincipale::onglets() const
 {
     return ui->onglets;
 }
 
-QWidget* VuePrincipale::getOngletActions() const
+QWidget* VuePrincipale::ongletActions() const
 {
     return ui->ongletActions;
 }
 
-QWidget* VuePrincipale::getOngletAppareils() const
+QWidget* VuePrincipale::ongletAppareils() const
 {
     return ui->ongletAppareils;
 }
 
-QWidget* VuePrincipale::getOngletClients() const
+QWidget* VuePrincipale::ongletClients() const
 {
     return ui->ongletClients;
 }
 
-QWidget* VuePrincipale::getOngletFiches() const
+QWidget* VuePrincipale::ongletFiches() const
 {
     return ui->ongletFiches;
 }

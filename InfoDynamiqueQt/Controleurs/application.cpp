@@ -22,7 +22,7 @@ Application::Application(int &argc, char **argv) :
 }
 
 const Application* Application::m_instance = NULL;
-VuePrincipale* Application::vuePrincipale = NULL;
+VuePrincipale* Application::m_vuePrincipale = NULL;
 QSqlDatabase* Application::bd = NULL;
 ControleurBD* Application::controleurBD = NULL;
 MappeurActions* Application::actions = NULL;
@@ -44,7 +44,7 @@ void Application::demarrer()
 {
     creerFenetre();
     chargerOnglet();
-    vuePrincipale->show();
+    m_vuePrincipale->show();
 }
 
 void Application::debug()
@@ -56,38 +56,38 @@ void Application::debug()
     }
 }
 
-VuePrincipale* Application::getVuePrincipale()
+VuePrincipale* Application::vuePrincipale()
 {
-    return vuePrincipale;
+    return m_vuePrincipale;
 }
 
 void Application::creerFenetre()
 {
-    vuePrincipale = new VuePrincipale();
-    controleurClients = new ControleurClients(vuePrincipale->getOngletClients());
-    controleurFiches = new ControleurFiches(vuePrincipale->getOngletFiches());
-    controleurAppareils = new ControleurAppareils(vuePrincipale->getOngletAppareils());
-    controleurActions = new ControleurActions(vuePrincipale->getOngletActions());
+    m_vuePrincipale = new VuePrincipale();
+    controleurClients = new ControleurClients(m_vuePrincipale->ongletClients());
+    controleurFiches = new ControleurFiches(m_vuePrincipale->ongletFiches());
+    controleurAppareils = new ControleurAppareils(m_vuePrincipale->ongletAppareils());
+    controleurActions = new ControleurActions(m_vuePrincipale->ongletActions());
     clientsCharges = false;
     fichesChargees = false;
     appareilsCharges = false;
     actionsChargees = false;
-    paresseux = QObject::connect(vuePrincipale->getOnglets(), SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
+    paresseux = QObject::connect(m_vuePrincipale->onglets(), SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
 }
 
 void Application::chargerOnglet()
 {
-    QWidget* onglet = vuePrincipale->getOnglets()->currentWidget();
-    if (onglet == vuePrincipale->getOngletClients() && !clientsCharges) {
+    QWidget* onglet = m_vuePrincipale->onglets()->currentWidget();
+    if (onglet == m_vuePrincipale->ongletClients() && !clientsCharges) {
         controleurClients->peuplerClients();
         clientsCharges = true;
-    } else if (onglet == vuePrincipale->getOngletFiches() && !fichesChargees) {
+    } else if (onglet == m_vuePrincipale->ongletFiches() && !fichesChargees) {
         controleurFiches->peuplerFiches();
         fichesChargees = true;
-    } else if (onglet == vuePrincipale->getOngletAppareils() && !appareilsCharges) {
+    } else if (onglet == m_vuePrincipale->ongletAppareils() && !appareilsCharges) {
         controleurAppareils->peuplerAppareils();
         appareilsCharges = true;
-    } else if (onglet == vuePrincipale->getOngletActions() && !actionsChargees) {
+    } else if (onglet == m_vuePrincipale->ongletActions() && !actionsChargees) {
         controleurActions->peuplerActions();
         controleurActions->peuplerEnsembles();
         actionsChargees = true;

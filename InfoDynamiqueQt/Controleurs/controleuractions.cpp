@@ -3,15 +3,16 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
+#include "Vues/vueensemble.h"
 #include "Vues/vuegestionensemble.h"
 
+#include <QMessageBox>
 #include <QSqlQueryModel>
 #include <QDebug>
 
 ControleurActions::ControleurActions(QWidget* vue)
     : QObject(vue)
 {
-
     controleurEnsemble = new ControleurGestionEnsemble(this);
 
     splitter = new QSplitter(Qt::Vertical, vue);
@@ -49,17 +50,23 @@ void ControleurActions::configurerFragmentEnsembles()
     fragmentEnsembles = new VueFragment(splitter);
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->getCaseCocher()->setHidden(true);
+    QPushButton* boutonSupprimer = fragmentEnsembles->ajouterBouton(4);
+    boutonSupprimer->setText(tr("Supprimer"));
+    boutonSupprimer->setIcon(QIcon(":/Images/edit-delete"));
     QObject::connect(this, SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
     QObject::connect(this, SIGNAL(actionsModifiees()), this, SLOT(recharger()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
+    QObject::connect(fragmentEnsembles, SIGNAL(doubleClicModele()), this, SLOT(modifierEnsemble()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicVoir()), this, SLOT(voirEnsemble()));
+    QObject::connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimerEnsemble()));
 }
 
 void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const
 {
-    vue->setNom(action->getNom());
-    vue->setDescription(action->getDescription());
-    vue->setEtat(action->getEtat());
+    vue->setNom(action->nom());
+    vue->setDescription(action->description());
+    vue->setEtat(action->etat());
 }
 
 void ControleurActions::peuplerActions()
@@ -112,7 +119,7 @@ void ControleurActions::modifierAction()
 {
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
-        VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
+        VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
         assignerAction(vue, action);
         if (vue->exec()) {
             action->setNom(vue->getNom());
@@ -130,7 +137,7 @@ void ControleurActions::voirAction() const
 {
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
-        VueGestionAction* vue = new VueGestionAction(Application::getVuePrincipale());
+        VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
         assignerAction(vue, action);
         vue->setLectureSeule(true);
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
@@ -143,7 +150,7 @@ void ControleurActions::changerEtat()
 {
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
     if (action != NULL) {
-        action->setEtat(!action->getEtat());
+        action->setEtat(!action->etat());
         if (Application::actions->mettreAJour(action)) {
             emit actionsModifiees();
         }
@@ -158,7 +165,7 @@ void ControleurActions::recharger()
 
 void ControleurActions::creerEnsemble()
 {
-    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
+    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
     QList<Action*>* actionsHorsEnsemble = Application::actions->getActions();
     vue->setActionsHorsEnsemble(actionsHorsEnsemble);
     delete actionsHorsEnsemble;
@@ -176,18 +183,33 @@ void ControleurActions::creerEnsemble()
     }
 }
 
+void ControleurActions::supprimerEnsemble()
+{
+    EnsembleActions* ensemble = Application::ensembles->getEnsemble(fragmentEnsembles->getIdModele());
+    QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
+                    tr("Confirmation de la suppression"),
+                    tr("Supprimer l'ensemble «") + ensemble->nom()+"» ?",
+                    QMessageBox::Apply | QMessageBox::Cancel);
+    if (confirmation->exec() == confirmation->Apply) {
+        if (Application::ensembles->supprimer(ensemble)) {
+            emit ensemblesModifies();
+        }
+    }
+    confirmation->deleteLater();
+    ensemble->deleteLater();
+}
+
 void ControleurActions::modifierEnsemble()
 {
     EnsembleActions* ensemble = Application::ensembles->getEnsemble(fragmentEnsembles->getIdModele());
-    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::getVuePrincipale());
-    QList<Action*>* actionsHorsEnsemble = Application::actions->actionsHorsEnsemble(ensemble->getId());
+    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
+    QList<Action*>* actionsHorsEnsemble = Application::actions->actionsHorsEnsemble(ensemble->id());
     vue->setActionsHorsEnsemble(actionsHorsEnsemble);
     vue->setActionsDansEnsemble(ensemble->getActions());
-    vue->setNom(ensemble->getNom());
-    vue->setDescription(ensemble->getDescription());
+    vue->setNom(ensemble->nom());
+    vue->setDescription(ensemble->description());
     delete actionsHorsEnsemble;
     if (vue->exec() == vue->Accepted) {
-        EnsembleActions* ensemble = new EnsembleActions(vue);
         ensemble->setNom(vue->getNom());
         ensemble->setDescription(vue->getDescription());
         ensemble->setActions(vue->getActionsDansEnsemble());
@@ -198,5 +220,12 @@ void ControleurActions::modifierEnsemble()
         }
         vue->deleteLater();
     }
+}
+
+void ControleurActions::voirEnsemble()
+{
+    VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
+    QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
+    vue->show();
 }
 

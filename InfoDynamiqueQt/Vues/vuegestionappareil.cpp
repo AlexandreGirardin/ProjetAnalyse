@@ -8,6 +8,8 @@ VueGestionAppareil::VueGestionAppareil(QWidget* parent) :
     ui(new Ui::VueGestionAppareil)
 {
     ui->setupUi(this);
+    types = new QList<TypeAppareil*>;
+    fabricants = new QList<Fabricant*>;
 }
 
 VueGestionAppareil::~VueGestionAppareil()
@@ -21,10 +23,12 @@ VueGestionAppareil::~VueGestionAppareil()
 
 void VueGestionAppareil::setTypes(QList<TypeAppareil*>* a_types)
 {
+    qDeleteAll(*types);
+    delete types;
+    ui->comboType->clear();
     types = a_types;
-    QList<TypeAppareil*>::const_iterator i;
-    for (i = types->constBegin(); i != types->constEnd(); ++i) {
-        ui->comboType->addItem((*i)->getNom());
+    for (QList<TypeAppareil*>::const_iterator i = types->constBegin(); i != types->constEnd(); ++i) {
+        ui->comboType->addItem((*i)->nom());
     }
     ui->comboType->adjustSize();
 }
@@ -52,9 +56,11 @@ TypeAppareil* VueGestionAppareil::getType() const
 
 void VueGestionAppareil::setFabricants(QList<Fabricant*>* &a_fabricants)
 {
+    qDeleteAll(*fabricants);
+    delete fabricants;
     fabricants = a_fabricants;
     for (QList<Fabricant*>::const_iterator i = fabricants->constBegin(); i != fabricants->constEnd(); ++i) {
-        ui->comboFabricant->addItem((*i)->getNom());
+        ui->comboFabricant->addItem((*i)->nom());
     }
     ui->comboType->adjustSize();
 }

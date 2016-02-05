@@ -12,9 +12,9 @@ ControleurClients::ControleurClients(QWidget* vue)
     splitter = new QSplitter(Qt::Vertical, vue);
     vue->layout()->addWidget(splitter);
     splitter->setChildrenCollapsible(false);
-    controleurGestionClient = new ControleurGestionClient();
-    controleurGestionAppareil = new ControleurGestionAppareil();
-    controleurGestionFiche = new ControleurGestionFiche();
+    controleurGestionClient = new ControleurGestionClient(this);
+    controleurGestionAppareil = new ControleurGestionAppareil(this);
+    controleurGestionFiche = new ControleurGestionFiche(this);
     configurerFragmentClients();
     configurerFragmentAppareils();
     configurerFragmentFiches();

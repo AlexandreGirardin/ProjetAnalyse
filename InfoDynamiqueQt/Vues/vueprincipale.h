@@ -21,31 +21,31 @@ public:
      * @brief getOnglets
      * @return La barre d'onglets de la vue principale
      */
-    QTabWidget* getOnglets() const;
+    QTabWidget* onglets() const;
 
     /**
      * @brief getOngletActions
      * @return L'onglet de gestion des actions
      */
-    QWidget* getOngletActions() const;
+    QWidget* ongletActions() const;
 
     /**
      * @brief getOngletAppareils
      * @return L'onglet de gestion des appareils
      */
-    QWidget* getOngletAppareils() const;
+    QWidget* ongletAppareils() const;
 
     /**
      * @brief getOngletClients
      * @return L'onglet de gestion des clients
      */
-    QWidget* getOngletClients() const;
+    QWidget* ongletClients() const;
 
     /**
      * @brief getOngletFiches
      * @return L'onglet de gestion des fiches
      */
-    QWidget* getOngletFiches() const;
+    QWidget* ongletFiches() const;
 
 private:
     Ui::VuePrincipale* ui;

@@ -2,56 +2,56 @@
 
 Action::Action(QObject* parent): ModeleBD(parent) {}
 
-int Action::getId() const
+int Action::id() const
 {
-    return id;
+    return m_id;
 }
 
 void Action::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 
-QString Action::getNom() const
+QString Action::nom() const
 {
-    return nom;
+    return m_nom;
 }
 
 void Action::setNom(const QString &value)
 {
-    nom = value;
+    m_nom = value;
 }
 
-QString Action::getDescription() const
+QString Action::description() const
 {
-    return description;
+    return m_description;
 }
 
 void Action::setDescription(const QString &value)
 {
-    description = value;
+    m_description = value;
 }
 
-bool Action::getEtat() const
+bool Action::etat() const
 {
-    return etat;
+    return m_etat;
 }
 
 void Action::setEtat(const bool &value)
 {
-    etat = value;
+    m_etat = value;
 }
 
-QString Action::etatOut()
+QString Action::etatOut() const
 {
-    if (etat) {
+    if (m_etat) {
         return QString("activée");
     } else {
         return QString("désactivée");
     }
 }
 
-QString Action::out()
+QString Action::out() const
 {
-    return QString::number(id) + " " + nom + " " + description + " " + etatOut();
+    return QString::number(m_id) + " " + m_nom + " " + m_description + " " + etatOut();
 }

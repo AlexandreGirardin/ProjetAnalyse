@@ -13,7 +13,7 @@ TEMPLATE = app
 
 RESOURCES = ressources.qrc
 
-RC_ICONS = Toolbox.ico
+RC_ICONS = Images/Toolbox.ico
 
 SOURCES += main.cpp\
 	Vues/vueauthentification.cpp \
@@ -61,7 +61,8 @@ SOURCES += main.cpp\
 	Vues/vuegestionaction.cpp \
 	Controleurs/controleurgestionensemble.cpp \
 	Mappeurs/mappeurensembles.cpp \
-	Vues/champformulaire.cpp
+	Vues/champformulaire.cpp \
+	Vues/vueensemble.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -109,7 +110,8 @@ HEADERS  += \
 	Vues/vuegestionaction.h \
 	Controleurs/controleurgestionensemble.h \
 	Mappeurs/mappeurensembles.h \
-	Vues/champformulaire.h
+	Vues/champformulaire.h \
+	Vues/vueensemble.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
@@ -125,4 +127,5 @@ FORMS    += \
 	Vues/vueprincipale.ui \
 	Vues/vueappareil.ui \
 	Vues/vuegestionaction.ui \
-	Vues/champformulaire.ui
+	Vues/champformulaire.ui \
+	Vues/vueensemble.ui

@@ -12,19 +12,19 @@ class Client : public ModeleBD {
 private:
 
     // Prénom du client
-    QString prenom;
+    QString m_prenom;
 
     // Nom de famille du client
-    QString nom;
+    QString m_nom;
 
     // Numéro de téléphone du client
-    QString telephone;
+    QString m_telephone;
 
     // Adresse du client
-    QString adresse;
+    QString m_adresse;
 
     // Liste des appareils du client
-    QList<Appareil*>* appareils;
+    QList<Appareil*>* m_appareils;
 
 public:
 
@@ -38,7 +38,7 @@ public:
      * @brief getPrenom
      * @return Le prénom du client
      */
-    QString getPrenom() const;
+    QString prenom() const;
 
     /**
      * @brief setPrenom
@@ -50,7 +50,7 @@ public:
      * @brief getNom
      * @return Le nom du client
      */
-    QString getNom() const;
+    QString nom() const;
 
     /**
      * @brief setNom
@@ -62,7 +62,7 @@ public:
      * @brief getTelephone
      * @return Le numéro de téléphone du client
      */
-    QString getTelephone() const;
+    QString telephone() const;
 
     /**
      * @brief setTelephone
@@ -74,7 +74,7 @@ public:
      * @brief getAdresse
      * @return L'adresse résidentielle du client
      */
-    QString getAdresse() const;
+    QString adresse() const;
 
     /**
      * @brief setAdresse
@@ -86,7 +86,7 @@ public:
      * @brief getAppareils
      * @return La liste des appareils du client
      */
-    QList<Appareil*>* getAppareils() const;
+    QList<Appareil*>* appareils() const;
 
     /**
      * @brief setAppareils
@@ -98,7 +98,7 @@ public:
      * @brief out
      * @return Représentation textuelle du client
      */
-    QString out();
+    QString out() const;
 
 };
 

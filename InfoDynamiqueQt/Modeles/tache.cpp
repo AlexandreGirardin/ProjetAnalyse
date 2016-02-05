@@ -2,37 +2,37 @@
 
 Tache::Tache(QObject* parent) : ModeleBD(parent) {}
 
-int Tache::getId() const
+int Tache::id() const
 {
-    return id;
+    return m_id;
 }
 
 void Tache::setId(const int &value)
 {
-    id = value;
+    m_id = value;
 }
 
-Action* Tache::getAction() const
+Action* Tache::action() const
 {
-    return action;
+    return m_action;
 }
 
 void Tache::setAction(Action* value)
 {
-    action = value;
+    m_action = value;
 }
 
-Statut* Tache::getStatut() const
+Statut* Tache::statut() const
 {
-    return statut;
+    return m_statut;
 }
 
 void Tache::setStatut(Statut* value)
 {
-    statut = value;
+    m_statut = value;
 }
 
-QString Tache::out()
+QString Tache::out() const
 {
-    return QString::number(id) + " " + action->getNom() + " " + statut->getNom();
+    return QString::number(m_id) + " " + m_action->nom() + " " + m_statut->nom();
 }

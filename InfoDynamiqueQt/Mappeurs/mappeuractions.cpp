@@ -66,7 +66,7 @@ QList<Action*>* MappeurActions::actionsDansEnsemble(const int &idEnsemble)
                         (SELECT idAction FROM ensemblesActions ea\
                          WHERE ea.idEnsemble=:idEnsemble)\
                     ORDER BY a.nom ASC");
-    requete.bindValue(":id", idEnsemble);
+    requete.bindValue(":idEnsemble", idEnsemble);
     requete.exec();
     return mapper(requete);
 }
@@ -100,10 +100,10 @@ QSqlQuery* MappeurActions::preparerRequete(const Action* action, const QString &
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
-    requete->bindValue(":idAction", action->getId());
-    requete->bindValue(":nom", action->getNom());
-    requete->bindValue(":description", action->getDescription());
-    requete->bindValue(":etat", action->getEtat());
+    requete->bindValue(":idAction", action->id());
+    requete->bindValue(":nom", action->nom());
+    requete->bindValue(":description", action->description());
+    requete->bindValue(":etat", action->etat());
     return requete;
 }
 

@@ -25,7 +25,7 @@ public:
 
     QList<Action*>* getActionsHorsEnsemble();
 
-    void setActionsDansEnsemble(const QList<Action *> *actions);
+    void setActionsDansEnsemble(QList<Action *> *actions);
 
     QList<Action*>* getActionsDansEnsemble();
 
@@ -53,17 +53,29 @@ private slots:
 
     void verifierNom();
 
+    void verifierOk();
+
 private:
+
     Ui::VueGestionEnsemble* ui;
 
     ChampFormulaire* nom;
 
-    QStandardItemModel *horsEnsemble, *dansEnsemble;
+    QPushButton* boutonOk;
+
+//    QStandardItemModel *horsEnsemble, *dansEnsemble;
 
     QList<Action*> *actionsHorsEnsemble, *actionsDansEnsemble;
 
     int selectionHorsEnsemble, selectionDansEnsemble;
 
+    void configurerBoutonOk();
+
+    QStandardItemModel* listeVersModele(QList<Action*>* liste);
+
+signals:
+
+    void champsRequisModifies(bool);
 };
 
 #endif // GESTIONENSEMBLE_H
