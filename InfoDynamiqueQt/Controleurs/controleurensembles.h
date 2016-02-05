@@ -7,20 +7,16 @@ class ControleurGestionEnsemble : public QObject
 {
     Q_OBJECT
 
-private:
-
-//    VueFragment
-
 public:
 
     explicit ControleurGestionEnsemble(QObject* parent = 0);
 
-signals:
-
-    void ensemblesModifies();
-
 public slots:
 
+    /**
+     * @brief creerEnsemble
+     * Lance la création d'un nouvel ensemble
+     */
     void creerEnsemble();
 
     /**
@@ -29,9 +25,27 @@ public slots:
      */
     void modifierEnsemble(const int &idEnsemble);
 
-    void voirEnsemble(const int &idEnsemble);
+    /**
+     * @brief voirEnsemble
+     * Lance la visualisation de l'ensemble donné
+     * @param idEnsemble L'id de l'ensemble à afficher
+     */
+    void voirEnsemble(const int &idEnsemble) const;
 
+    /**
+     * @brief supprimerEnsemble
+     * Lance la suppression de l'ensemble donné
+     * @param idEnsemble L'id de l'ensemble à supprimer
+     */
     void supprimerEnsemble(const int &idEnsemble);
+
+signals:
+
+    /**
+     * @brief ensemblesModifies
+     * Émis lorsqu'il y a eu une modification dans la base de données
+     */
+    void ensemblesModifies();
 
 };
 

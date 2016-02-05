@@ -34,10 +34,16 @@ public slots:
     void peuplerFiches();
 
     /**
+     * @brief creerFiche
+     * Lance la création d'une nouvelle fiche
+     */
+    void creerFiche() const;
+
+    /**
      * @brief modifierFiche
      * Lance la modification de la fiche sélectionnée
      */
-    void modifierFiche();
+    void modifierFiche() const;
 
     /**
      * @brief modifierFiche

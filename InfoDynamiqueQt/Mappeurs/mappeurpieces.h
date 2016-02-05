@@ -45,6 +45,12 @@ private:
      */
     Piece* mapper(const QSqlRecord &ligne);
 
+    /**
+     * @brief mapper
+     * Construit toutes les pieces se retrouvant dans les résulats d'une requête SQL
+     * @param requete La requête à mapper
+     * @return Les pièces présentes dans la requête
+     */
     QList<Piece*>* mapper(QSqlQuery &requete);
 };
 

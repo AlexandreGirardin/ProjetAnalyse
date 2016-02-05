@@ -37,17 +37,17 @@ public:
     QList<Statut*>* getStatutsFiche();
 
     /**
-     * @brief getStatutAction
+     * @brief getStatutTache
      * @param id Le numéro du statutAction à mapper
      * @return Le statut s'il existe, NULL autrement
      */
-    Statut* getStatutAction(const int &idStatut);
+    Statut* getStatutTache(const int &idStatut);
 
     /**
-     * @brief getStatutsAction
+     * @brief getStatutsTache
      * @return La liste de tous les statuts des actions
      */
-    QList<Statut*>* getStatutsAction();
+    QList<Statut*>* getStatutsTache();
 
 private:
 
@@ -58,8 +58,22 @@ private:
      */
     Statut* mapper(const QSqlRecord &ligne);
 
+    /**
+     * @brief mapper
+     * Construit tous les statuts se retrouvant dans les résulats d'une requête SQL
+     * @param requete La requête à mapper
+     * @return Les statuts présents dans la requête
+     */
     QList<Statut*>* mapper(QSqlQuery &requete);
-    Statut *getStatut(const int &idStatut, const QString &commande);
+
+    /**
+     * @brief getStatut
+     * Fonction interne retournant un statut générique
+     * @param idStatut L'id du statut à construire
+     * @param commande La commande permettant d'obtenir le statut
+     * @return Le statut (tâches ou fiches)
+     */
+    Statut* getStatut(const int &idStatut, const QString &commande);
 };
 
 #endif // MAPPEURSTATUTS_H

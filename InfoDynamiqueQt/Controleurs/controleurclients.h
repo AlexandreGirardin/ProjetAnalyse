@@ -52,6 +52,9 @@ private:
     // Le fragment des fiches
     VueFragment* fragmentFiches;
 
+    // La commande SQL actuelle servant à peupler le fragmentFiches
+    const QString* commandeFiches;
+
     /**
      * @brief configurerFragmentClients
      * Configure fragmentClients
@@ -83,8 +86,6 @@ private:
      * @return La requête utilisée pour peupler les fiches
      */
     QSqlQuery requeteFiches(const int &idAppareil) const;
-
-    const QString* commandeFiches;
 
 public slots:
 
@@ -136,7 +137,7 @@ public slots:
 
     /**
      * @brief modifierFiche
-     * Lance la modifiction de la fiche sélectionné
+     * Lance la modification de la fiche sélectionné
      */
     void modifierFiche() const;
 
@@ -194,6 +195,7 @@ private slots:
 
     /**
      * @brief rechargerAppareils
+     * Repeuple le fragmentAppareils en tenant compte du filtre actuel
      */
     void rechargerAppareils();
 };

@@ -56,7 +56,7 @@ void ControleurGestionEnsemble::modifierEnsemble(const int &idEnsemble)
     }
 }
 
-void ControleurGestionEnsemble::voirEnsemble(const int &idEnsemble)
+void ControleurGestionEnsemble::voirEnsemble(const int &idEnsemble) const
 {
     VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
     vue->setWindowTitle(tr("Ensemble de tâches"));

@@ -32,7 +32,7 @@ void ControleurAppareils::peuplerAppareils()
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(*RequetesSQL::afficherAppareils, *Application::bd);
     fragment->peuplerTableau(appareils);
-    fragment->getTableau()->hideColumn(0);
+    fragment->getTableau()->hideColumn(fragment->getColonneId());
 }
 
 void ControleurAppareils::modifierAppareil() const
@@ -62,7 +62,7 @@ void ControleurAppareils::filtrerAppareils(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
-        fragment->getTableau()->hideColumn(0);
+        fragment->getTableau()->hideColumn(fragment->getColonneId());
     }
 }
 

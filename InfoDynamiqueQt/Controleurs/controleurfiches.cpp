@@ -27,7 +27,12 @@ void ControleurFiches::peuplerFiches()
     fragment->getTableau()->hideColumn(0);
 }
 
-void ControleurFiches::modifierFiche()
+void ControleurFiches::creerFiche() const
+{
+
+}
+
+void ControleurFiches::modifierFiche() const
 {
 
 }

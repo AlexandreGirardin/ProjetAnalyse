@@ -44,6 +44,12 @@ private:
      */
     Technicien* mapper(const QSqlRecord &ligne);
 
+    /**
+     * @brief mapper
+     * Construit tous les techniciens se retrouvant dans les résulats d'une requête SQL
+     * @param requete La requête à mapper
+     * @return Les techniciens présents dans la requête
+     */
     QList<Technicien*>* mapper(QSqlQuery &requete);
 };
 

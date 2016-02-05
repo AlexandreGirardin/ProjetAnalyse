@@ -67,6 +67,15 @@ private:
      */
     Appareil* mapper(const QSqlRecord &ligne);
 
+
+    /**
+     * @brief mapper
+     * Construit tous les appareils se retrouvant dans les résulats d'une requête SQL
+     * @param requete La requête à mapper
+     * @return Les appareils présents dans la requête
+     */
+    QList<Appareil*>* mapper(QSqlQuery &requete);
+
     /**
      * @brief preparerRequete Assigne les valeurs d'un appareil à une requête préparée
      * @param appareil L'appareil source
@@ -75,8 +84,14 @@ private:
      */
     QSqlQuery* preparerRequete(const Appareil* appareil, const QString &commande) const;
 
-    QList<Appareil*>* mapper(QSqlQuery &requete);
-
+    /**
+     * @brief ecrire
+     * Effectue une opération SQL à l'intérieur d'une transaction
+     * La transaction est annulée si l'opération échoue et validée autrement
+     * @param appareil L'appareil à inclure dans l'opération SQL
+     * @param commande La commande à exécuter
+     * @return Succès de l'opération
+     */
     bool ecrire(const Appareil* appareil, const QString &commande) const;
 
 };

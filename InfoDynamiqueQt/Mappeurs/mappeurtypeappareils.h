@@ -45,6 +45,12 @@ private:
      */
     TypeAppareil* mapper(const QSqlRecord &ligne);
 
+    /**
+     * @brief mapper
+     * Construit tous les typesAppareil se retrouvant dans les résulats d'une requête SQL
+     * @param requete La requête à mapper
+     * @return Les typesAppareil présents dans la requête
+     */
     QList<TypeAppareil*>* mapper(QSqlQuery &requete);
 };
 
