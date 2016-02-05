@@ -23,7 +23,7 @@ void ControleurGestionAppareil::modifierAppareil(const int &idAppareil)
 {
     Appareil* appareil = Application::appareils->getAppareil(idAppareil);
     if (appareil != NULL) {
-        VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
+        VueGestionAppareil* vue = new VueGestionAppareil(Application::vuePrincipale());
         vue->setTypes(Application::typesAppareils->getTypesAppareil(), appareil->nomType());
         vue->setFabricants(Application::fabricants->getFabricants(), appareil->nomFabricant());
         vue->setMotDePasse(appareil->motDePasse());
@@ -45,10 +45,10 @@ void ControleurGestionAppareil::modifierAppareil(const int &idAppareil)
 }
 
 void ControleurGestionAppareil::voirAppareil(const int &idAppareil)
-{    
+{
     Appareil* appareil = Application::appareils->getAppareil(idAppareil);
     if (appareil != NULL) {
-        VueAppareil* vue = new VueAppareil(Application::getVuePrincipale());
+        VueAppareil* vue = new VueAppareil(Application::vuePrincipale());
         vue->setType(appareil->nomType());
         vue->setFabricant(appareil->nomFabricant());
         vue->setMotDePasse(appareil->motDePasse());

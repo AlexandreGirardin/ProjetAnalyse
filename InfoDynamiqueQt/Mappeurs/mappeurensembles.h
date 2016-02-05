@@ -18,8 +18,9 @@ public:
     EnsembleActions* getEnsemble(const int &id);
     QList<EnsembleActions*>* getEnsembles();
 
-    bool inserer(EnsembleActions *ensemble) const;
-    bool mettreAJour(const EnsembleActions *ensemble) const;
+    bool inserer(EnsembleActions* ensemble) const;
+    bool mettreAJour(const EnsembleActions* ensemble) const;
+    bool supprimer(EnsembleActions* ensemble) const;
 
 private:
 

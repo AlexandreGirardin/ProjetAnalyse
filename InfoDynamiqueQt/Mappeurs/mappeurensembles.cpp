@@ -35,7 +35,6 @@ EnsembleActions* MappeurEnsembles::mapper(const QSqlRecord &ligne)
     ensemble->setNom(ligne.value("nom").toString());
     ensemble->setDescription(ligne.value("description").toString());
     ensemble->setActions(Application::actions->actionsDansEnsemble(ensemble->id()));
-    qDebug() << ensemble->id();
     return ensemble;
 }
 
@@ -106,6 +105,24 @@ bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble) const
                                             );
             succes = ecrireActions(ensemble, commandeActions);
         }
+    }
+    if (succes) {
+        bd.commit();
+    } else {
+        bd.rollback();
+    }
+    return succes;
+}
+
+bool MappeurEnsembles::supprimer(EnsembleActions *ensemble) const
+{
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    const QString commandeViderActions("DELETE FROM ensemblesActions WHERE idEnsemble=:idEnsemble");
+    bool succes = ecrire(ensemble, commandeViderActions);
+    if (succes) {
+        const QString commandeEnsemble("DELETE FROM ensembles WHERE id=:idEnsemble");
+        succes = ecrire(ensemble, commandeEnsemble);
     }
     if (succes) {
         bd.commit();

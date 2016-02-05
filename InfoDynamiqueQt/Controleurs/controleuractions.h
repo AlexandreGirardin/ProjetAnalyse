@@ -108,7 +108,11 @@ public slots:
 
     void modifierEnsemble();
 
+    void voirEnsemble();
+
     void creerEnsemble();
+
+    void supprimerEnsemble();
 
     /**
      * @brief voirAction

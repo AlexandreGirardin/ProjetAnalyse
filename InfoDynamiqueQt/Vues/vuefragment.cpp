@@ -124,9 +124,8 @@ void VueFragment::peuplerTableau(QAbstractTableModel* valeurs)
 {
     QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->tableau);
     modeleTriable->setSourceModel(valeurs);
-    QItemSelectionModel* vieilleSelection = ui->tableau->selectionModel();
+    delete ui->tableau->selectionModel();
     ui->tableau->setModel(modeleTriable);
-    delete vieilleSelection;
     QObject::connect(ui->tableau->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(signalerSelection(QModelIndex, QModelIndex)));
     ui->tableau->resizeColumnsToContents();
     ui->tableau->sortByColumn(0, Qt::AscendingOrder);

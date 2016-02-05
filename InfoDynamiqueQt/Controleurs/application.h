@@ -43,7 +43,7 @@ public:
      * Retourne la fenêtre principale de l'application
      * @return
      */
-    static VuePrincipale* getVuePrincipale();
+    static VuePrincipale* vuePrincipale();
 
     // La base de donnée de l'application
     static QSqlDatabase* bd;
@@ -90,7 +90,7 @@ private:
     static const Application* m_instance;
 
     // La vue principale de l'application
-    static VuePrincipale* vuePrincipale;
+    static VuePrincipale* m_vuePrincipale;
 
     // Le contrôleur de la vue des clients
     ControleurClients* controleurClients;
