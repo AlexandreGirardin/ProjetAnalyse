@@ -23,6 +23,7 @@ ControleurAppareils::ControleurAppareils(QWidget* vue)
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
+    QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
 }
 

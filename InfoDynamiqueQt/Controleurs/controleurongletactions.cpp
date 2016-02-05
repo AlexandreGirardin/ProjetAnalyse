@@ -36,6 +36,7 @@ void ControleurOngletActions::configurerFragmentActions()
     QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
     QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
     QObject::connect(boutonEtat, SIGNAL(clicked()), this, SLOT(changerEtatAction()));
+    QObject::connect(fragmentActions, SIGNAL(doubleClicModele()), this, SLOT(voirAction()));
 }
 
 void ControleurOngletActions::peuplerActions()
@@ -117,7 +118,7 @@ void ControleurOngletActions::configurerFragmentEnsembles()
     QObject::connect(controleurActions, SIGNAL(actionsModifiees()), this, SLOT(rechargerActions()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
-    QObject::connect(fragmentEnsembles, SIGNAL(doubleClicModele()), this, SLOT(modifierEnsemble()));
+    QObject::connect(fragmentEnsembles, SIGNAL(doubleClicModele()), this, SLOT(voirEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicVoir()), this, SLOT(voirEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(rechercher(QString)), this, SLOT(filtrerEnsembles(QString)));
     QObject::connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimerEnsemble()));

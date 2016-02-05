@@ -10,10 +10,7 @@
 #include <QSqlQueryModel>
 #include <QDebug>
 
-ControleurActions::ControleurActions(QWidget* vue)
-    : QObject(vue)
-{
-}
+ControleurActions::ControleurActions(QWidget* vue) : QObject(vue) {}
 
 void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const
 {

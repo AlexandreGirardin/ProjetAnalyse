@@ -13,6 +13,10 @@ ControleurFiches::ControleurFiches(QWidget* vue)
     fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
     vue->layout()->addWidget(fragment);
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
+    QObject::connect(fragment, SIGNAL(clicCreer()), this, SLOT(creerFiche()));
+    QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
+    QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirFiche()));
+    QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
 }
 
 void ControleurFiches::peuplerFiches()
