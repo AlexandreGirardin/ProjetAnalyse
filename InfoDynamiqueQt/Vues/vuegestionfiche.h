@@ -19,6 +19,10 @@ public:
 
 private:
     Ui::VueGestionFiche* ui;
+
+public slots:
+
+    void setLectureSeule();
 };
 
 #endif // GESTIONFICHE_H

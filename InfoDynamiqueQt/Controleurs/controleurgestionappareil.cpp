@@ -9,13 +9,24 @@ ControleurGestionAppareil::ControleurGestionAppareil(QObject* parent) :
 {
 }
 
-void ControleurGestionAppareil::ajouterAppareil()
+void ControleurGestionAppareil::ajouterAppareil(const int &idClient)
 {
-    VueGestionAppareil* vue = new VueGestionAppareil(Application::getVuePrincipale());
+    VueGestionAppareil* vue = new VueGestionAppareil(Application::vuePrincipale());
     vue->setTypes(Application::typesAppareils->getTypesAppareil());
     vue->setFabricants(Application::fabricants->getFabricants());
     if (vue->exec() == vue->Accepted) {
-
+        Appareil* appareil = new Appareil(vue);
+        appareil->setIdClient(idClient);
+        appareil->setType(vue->getType());
+        appareil->setFabricant(vue->getFabricant());
+        appareil->setMotDePasse(vue->getMotDePasse());
+        appareil->setDescription(vue->getDescription());
+        if (Application::appareils->inserer(appareil)) {
+            emit donneesModifiees();
+        } else {
+            qDebug() << "Pas marché: " << appareil->out();
+        }
+        vue->deleteLater();
     }
 }
 

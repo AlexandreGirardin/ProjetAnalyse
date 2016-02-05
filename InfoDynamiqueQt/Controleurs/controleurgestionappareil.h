@@ -24,17 +24,20 @@ public slots:
     /**
      * @brief ajouterAppareil
      * Lance la création d'un nouvel appareil
+     * @param idClient L'id du client
      */
-    void ajouterAppareil();
+    void ajouterAppareil(const int &idClient);
 
     /**
      * @brief modifierAppareil
+     * Lance la modification de l'appareil
      * @param idAppareil L'id de l'appareil à modifier
      */
     void modifierAppareil(const int &idAppareil);
 
     /**
      * @brief voirAppareil
+     * Lance la visualisation de l'appareil
      * @param idAppareil L'id de l'appareil à visualiser
      */
     void voirAppareil(const int &idAppareil);

@@ -46,7 +46,7 @@ public slots:
 
     /**
      * @brief modifierClient
-     * Lance la modification d'un client
+     * Lance la visualisation d'un client
      */
     void voirClient(const int &idClient);
 

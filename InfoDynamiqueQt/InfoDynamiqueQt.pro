@@ -111,7 +111,8 @@ HEADERS  += \
 	Controleurs/controleurgestionensemble.h \
 	Mappeurs/mappeurensembles.h \
 	Vues/champformulaire.h \
-	Vues/vueensemble.h
+	Vues/vueensemble.h \
+    Mappeurs/mappeurfiches.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \

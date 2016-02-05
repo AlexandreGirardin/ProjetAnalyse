@@ -3,6 +3,7 @@
 
 #include <QObject>
 
+#include "Mappeurs/mappeurfiches.h"
 #include "Vues/vuegestionfiche.h"
 
 class ControleurGestionFiche : public QObject
@@ -19,16 +20,38 @@ public:
      */
     explicit ControleurGestionFiche(QObject* parent = 0);
 
-    // La vue utilisée pour editer une fiche
-    VueGestionFiche* vueGestionFiche;
+private:
+
+    /**
+     * @brief assignerFiche
+     * Insère les informations d'une fiche dans les champs d'une fiche de gestion
+     * @param vue La vue cible
+     * @param fiche La fiche source
+     */
+    void assignerFiche(VueGestionFiche* vue, const Fiche* fiche);
 
 public slots:
 
     /**
      * @brief ajouterFiche
-     * Lance la création d'une nouvelle fiche
+     * Lance la création d'une nouvelle fiche pour un appareil sélectionné
+     * @param idAppareil L'id de l'appareil
      */
-    void ajouterFiche();
+    void ajouterFiche(const int &idAppareil);
+
+    /**
+     * @brief modifierFiche
+     * Lance la modification d'une fiche
+     * @param idFiche L'id de la fiche
+     */
+    void modifierFiche(const int &idFiche);
+
+    /**
+     * @brief voirFiche
+     * Lance la visualisation d'une fiche
+     * @param idFiche L'id de la fiche
+     */
+    void voirFiche(const int &idFiche);
 
 };
 

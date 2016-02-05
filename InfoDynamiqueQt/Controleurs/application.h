@@ -15,6 +15,7 @@
 #include "Mappeurs/mappeurensembles.h"
 #include "Mappeurs/mappeurclients.h"
 #include "Mappeurs/mappeurfabricants.h"
+#include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurpieces.h"
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
@@ -65,6 +66,9 @@ public:
 
     // Mappeur de fabricants de l'application
     static MappeurFabricants* fabricants;
+
+    //Mappeur de fiches de l'application
+    static MappeurFiches* fiches;
 
     // Mappeur de pièces de l'application
     static MappeurPieces* pieces;
