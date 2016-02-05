@@ -130,7 +130,16 @@ public slots:
      * @brief recharger
      * Repeuple le tableau avec filtre de recherche au besoin
      */
-    void recharger();
+    void rechargerActions();
+
+private slots:
+
+    /**
+     * @brief rechargerEnsembles
+     */
+    void rechargerEnsembles();
+
+    void filtrerEnsembles(const QString &filtre);
 
 signals:
 

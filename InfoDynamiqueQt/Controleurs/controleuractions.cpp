@@ -54,11 +54,12 @@ void ControleurActions::configurerFragmentEnsembles()
     boutonSupprimer->setText(tr("Supprimer"));
     boutonSupprimer->setIcon(QIcon(":/Images/edit-delete"));
     QObject::connect(this, SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
-    QObject::connect(this, SIGNAL(actionsModifiees()), this, SLOT(recharger()));
+    QObject::connect(this, SIGNAL(actionsModifiees()), this, SLOT(rechargerActions()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(doubleClicModele()), this, SLOT(modifierEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicVoir()), this, SLOT(voirEnsemble()));
+    QObject::connect(fragmentEnsembles, SIGNAL(rechercher(QString)), this, SLOT(filtrerEnsembles(QString)));
     QObject::connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimerEnsemble()));
 }
 
@@ -115,6 +116,23 @@ void ControleurActions::filtrerActions(const QString &filtre)
     }
 }
 
+void ControleurActions::filtrerEnsembles(const QString &filtre)
+{
+    if (filtre.isEmpty()) {
+        peuplerEnsembles();
+    } else {
+        QSqlQuery requete = QSqlQuery(*Application::bd);
+        requete.prepare(*RequetesSQL::filtrerEnsembles);
+        const QString meta = *ControleurBD::meta;
+        requete.bindValue(":filtre", meta + filtre + meta);
+        requete.exec();
+        QSqlQueryModel* resultats = new QSqlQueryModel(this);
+        resultats->setQuery(requete);
+        fragmentEnsembles->peuplerTableau(resultats);
+        fragmentEnsembles->getTableau()->hideColumn(0);
+    }
+}
+
 void ControleurActions::modifierAction()
 {
     Action* action = Application::actions->getAction(fragmentActions->getIdModele());
@@ -158,17 +176,20 @@ void ControleurActions::changerEtat()
     action->deleteLater();
 }
 
-void ControleurActions::recharger()
+void ControleurActions::rechargerActions()
 {
     filtrerActions(fragmentActions->getFiltre());
+}
+
+void ControleurActions::rechargerEnsembles()
+{
+    filtrerEnsembles(fragmentEnsembles->getFiltre());
 }
 
 void ControleurActions::creerEnsemble()
 {
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
-    QList<Action*>* actionsHorsEnsemble = Application::actions->getActions();
-    vue->setActionsHorsEnsemble(actionsHorsEnsemble);
-    delete actionsHorsEnsemble;
+    vue->setActionsHorsEnsemble(Application::actions->getActions());
     if (vue->exec() == vue->Accepted) {
         EnsembleActions* ensemble = new EnsembleActions(vue);
         ensemble->setNom(vue->getNom());
@@ -181,22 +202,6 @@ void ControleurActions::creerEnsemble()
         }
         vue->deleteLater();
     }
-}
-
-void ControleurActions::supprimerEnsemble()
-{
-    EnsembleActions* ensemble = Application::ensembles->getEnsemble(fragmentEnsembles->getIdModele());
-    QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
-                    tr("Confirmation de la suppression"),
-                    tr("Supprimer l'ensemble «") + ensemble->nom()+"» ?",
-                    QMessageBox::Apply | QMessageBox::Cancel);
-    if (confirmation->exec() == confirmation->Apply) {
-        if (Application::ensembles->supprimer(ensemble)) {
-            emit ensemblesModifies();
-        }
-    }
-    confirmation->deleteLater();
-    ensemble->deleteLater();
 }
 
 void ControleurActions::modifierEnsemble()
@@ -227,5 +232,21 @@ void ControleurActions::voirEnsemble()
     VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
     QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
     vue->show();
+}
+
+void ControleurActions::supprimerEnsemble()
+{
+    EnsembleActions* ensemble = Application::ensembles->getEnsemble(fragmentEnsembles->getIdModele());
+    QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
+                    tr("Confirmation de la suppression"),
+                    tr("Supprimer l'ensemble «") + ensemble->nom()+"» ?",
+                    QMessageBox::Apply | QMessageBox::Cancel);
+    if (confirmation->exec() == confirmation->Apply) {
+        if (Application::ensembles->supprimer(ensemble)) {
+            emit ensemblesModifies();
+        }
+    }
+    confirmation->deleteLater();
+    ensemble->deleteLater();
 }
 

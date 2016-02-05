@@ -17,8 +17,8 @@ VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
     QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
     ui->boutonAjouter->setEnabled(false);
     ui->boutonRetirer->setEnabled(false);
-    actionsDansEnsemble = new QList<Action*>;
     actionsHorsEnsemble = new QList<Action*>;
+    actionsDansEnsemble = new QList<Action*>;
     QObject::connect(ui->listeExistantes, SIGNAL(activated(QModelIndex)), this, SLOT(horsEnsembleSelectionnee(QModelIndex)));
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SLOT(ajouter()));
     QObject::connect(ui->listeSelectionnees, SIGNAL(activated(QModelIndex)), this, SLOT(dansEnsembleSelectionnee(QModelIndex)));
@@ -63,12 +63,12 @@ QString VueGestionEnsemble::getDescription() const
     return ui->champDescription->text();
 }
 
-QList<Action*>* VueGestionEnsemble::getActionsHorsEnsemble()
+QList<Action*>* VueGestionEnsemble::getActionsHorsEnsemble() const
 {
     return actionsHorsEnsemble;
 }
 
-QList<Action*>* VueGestionEnsemble::getActionsDansEnsemble()
+QList<Action*>* VueGestionEnsemble::getActionsDansEnsemble() const
 {
     return actionsDansEnsemble;
 }
@@ -135,7 +135,7 @@ void VueGestionEnsemble::peuplerDansEnsemble()
     ui->boutonRetirer->setEnabled(false);
 }
 
-QStandardItemModel *VueGestionEnsemble::listeVersModele(QList<Action*>* liste)
+QStandardItemModel *VueGestionEnsemble::listeVersModele(const QList<Action*>* liste)
 {
     QStandardItemModel* modele = new QStandardItemModel(this);
     for (QList<Action*>::const_iterator i = liste->constBegin(); i != liste->constEnd(); ++i) {
