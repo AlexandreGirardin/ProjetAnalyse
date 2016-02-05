@@ -27,7 +27,7 @@ public:
      */
     explicit EnsembleActions(QObject* parent = 0);
 
-    QList<Action*>* getActions() const;
+    QList<Action*>* actions() const;
     void setActions(QList<Action*>* value);
 
     // Représentation textuelle de l'ensemble de tâches

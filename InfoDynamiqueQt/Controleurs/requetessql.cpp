@@ -141,16 +141,20 @@ QString const * const RequetesSQL::afficherEnsembles =
                     FROM ensembles e\
                     LEFT OUTER JOIN\
                         (SELECT\
-                            e.id as 'id', count(e.id) as 'nb'\
-                        FROM\
-                            ensembles e\
-                        LEFT OUTER JOIN\
-                            ensemblesActions ea\
-                        ON\
-                            e.id = ea.idEnsemble\
+                         e.id as 'id', count(e.id) as 'nb'\
+                         FROM\
+                         ensembles e\
+                         LEFT OUTER JOIN\
+                         ensemblesActions ea\
+                         ON\
+                         e.id = ea.idEnsemble\
                         GROUP BY e.id) a\
-                    ON\
-                        a.id = e.id");
+                    ON a.id = e.id");
+
+QString const * const RequetesSQL::filtrerEnsembles =
+        new QString(*afficherEnsembles +
+                    " WHERE nom LIKE :filtre\
+                    OR description LIKE :filtre");
 
 QString const * const RequetesSQL::afficherFiches =
         new QString("SELECT\
@@ -176,7 +180,7 @@ QString const * const RequetesSQL::afficherFiches =
 
 QString const * const RequetesSQL::filtrerFiches =
         new QString(*afficherFiches +
-                    QString(" WHERE c.telephone LIKE :filtre\
-                                OR f.priorite LIKE :filtre\
-                                OR s.nom LIKE :filtre\
-                                OR f.commentaire LIKE :filtre"));
+                    " WHERE c.telephone LIKE :filtre\
+                        OR f.priorite LIKE :filtre\
+                        OR s.nom LIKE :filtre\
+                        OR f.commentaire LIKE :filtre");

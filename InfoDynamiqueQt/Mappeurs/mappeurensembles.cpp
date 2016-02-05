@@ -168,7 +168,7 @@ bool MappeurEnsembles::ecrireActions(const EnsembleActions *ensemble, const QStr
 {
     QSqlQuery* requete = preparerRequete(ensemble, commande);
     requete->bindValue(":idEnsemble", ensemble->id());
-    QList<Action*>* actions = ensemble->getActions();
+    QList<Action*>* actions = ensemble->actions();
     bool succes = true;
     for (QList<Action*>::const_iterator i = actions->constBegin(); succes && i != actions->constEnd(); ++i) {
         requete->bindValue(":idAction", (*i)->id());

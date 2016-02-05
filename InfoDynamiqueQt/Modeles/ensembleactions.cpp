@@ -1,6 +1,9 @@
 #include "Modeles/ensembleactions.h"
 
-EnsembleActions::EnsembleActions(QObject* parent) : ModeleBD(parent) {}
+EnsembleActions::EnsembleActions(QObject* parent) : ModeleBD(parent)
+{
+    m_actions = new QList<Action*>;
+}
 
 QString EnsembleActions::nom() const
 {
@@ -31,7 +34,7 @@ void EnsembleActions::setId(const int &value)
 {
     m_id = value;
 }
-QList<Action*>* EnsembleActions::getActions() const
+QList<Action*>* EnsembleActions::actions() const
 {
     return m_actions;
 }
@@ -40,7 +43,6 @@ void EnsembleActions::setActions(QList<Action*>* value)
 {
     m_actions = value;
 }
-
 
 QString EnsembleActions::out() const
 {

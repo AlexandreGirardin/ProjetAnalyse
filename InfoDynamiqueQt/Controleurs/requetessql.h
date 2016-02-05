@@ -24,6 +24,8 @@ public:
     static QString const * const filtrerActionsActives;
     // Requête permettant d'afficher les ensembles d'actions
     static QString const * const afficherEnsembles;
+    // Requête permettant d'afficher les ensembles correspondant à :filtre
+    static QString const * const filtrerEnsembles;
 
     // Requête permettant d'afficher les clients
     static QString const * const afficherClients;

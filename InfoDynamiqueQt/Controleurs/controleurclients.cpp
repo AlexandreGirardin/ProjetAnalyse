@@ -75,7 +75,7 @@ void ControleurClients::peuplerClients()
     QSqlQueryModel* clients = new QSqlQueryModel(this);
     clients->setQuery(*RequetesSQL::afficherClients, *Application::bd);
     fragmentClients->peuplerTableau(clients);
-    fragmentClients->getTableau()->hideColumn(0);
+    fragmentClients->getTableau()->hideColumn(fragmentClients->getColonneId());
 }
 
 void ControleurClients::modifierClient() const
@@ -105,7 +105,7 @@ void ControleurClients::filtrerClients(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentClients->peuplerTableau(resultats);
-        fragmentClients->getTableau()->hideColumn(0);
+        fragmentClients->getTableau()->hideColumn(fragmentClients->getColonneId());
     }
 }
 
@@ -121,7 +121,7 @@ void ControleurClients::peuplerAppareils(const int &idClient)
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(requeteAppareils(idClient));
     fragmentAppareils->peuplerTableau(appareils);
-    fragmentAppareils->getTableau()->hideColumn(0);
+    fragmentAppareils->getTableau()->hideColumn(fragmentAppareils->getColonneId());
 }
 
 void ControleurClients::ajouterAppareil() const
@@ -167,7 +167,7 @@ void ControleurClients::filtrerAppareils(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentAppareils->peuplerTableau(resultats);
-        fragmentAppareils->getTableau()->hideColumn(0);
+        fragmentAppareils->getTableau()->hideColumn(fragmentAppareils->getColonneId());
     }
 }
 
@@ -183,7 +183,7 @@ void ControleurClients::peuplerFiches(const int &idAppareil)
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(requeteFiches(idAppareil));
     fragmentFiches->peuplerTableau(fiches);
-    fragmentFiches->getTableau()->hideColumn(0);
+    fragmentFiches->getTableau()->hideColumn(fragmentFiches->getColonneId());
 }
 
 void ControleurClients::ajouterFiche() const

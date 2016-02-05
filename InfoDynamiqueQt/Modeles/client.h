@@ -34,6 +34,8 @@ public:
      */
     explicit Client(QObject* parent = 0);
 
+    ~Client();
+
     /**
      * @brief getPrenom
      * @return Le prénom du client

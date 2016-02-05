@@ -3,7 +3,7 @@
 
 #include <QApplication>
 
-#include "Controleurs/controleuractions.h"
+#include "Controleurs/controleurongletactions.h"
 #include "Controleurs/controleurappareils.h"
 #include "Controleurs/controleurbd.h"
 #include "Controleurs/controleurclients.h"
@@ -115,7 +115,7 @@ private:
     bool appareilsCharges;
 
     // Le contrôleur de la vue des actions
-    ControleurActions* controleurActions;
+    ControleurOngletActions* controleurActions;
 
     // Si l'onglet des actions a été chargé
     bool actionsChargees;

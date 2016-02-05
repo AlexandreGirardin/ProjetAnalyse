@@ -17,13 +17,21 @@ public:
 
 signals:
 
+    void ensemblesModifies();
+
 public slots:
+
+    void creerEnsemble();
 
     /**
      * @brief modifierEnsemble
      * Lance l'édition de l'ensemble actuellement sélectionné
      */
-    void modifierEnsemble();
+    void modifierEnsemble(const int &idEnsemble);
+
+    void voirEnsemble(const int &idEnsemble);
+
+    void supprimerEnsemble(const int &idEnsemble);
 
 };
 

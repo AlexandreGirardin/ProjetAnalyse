@@ -67,7 +67,7 @@ void Application::creerFenetre()
     controleurClients = new ControleurClients(m_vuePrincipale->ongletClients());
     controleurFiches = new ControleurFiches(m_vuePrincipale->ongletFiches());
     controleurAppareils = new ControleurAppareils(m_vuePrincipale->ongletAppareils());
-    controleurActions = new ControleurActions(m_vuePrincipale->ongletActions());
+    controleurActions = new ControleurOngletActions(m_vuePrincipale->ongletActions());
     clientsCharges = false;
     fichesChargees = false;
     appareilsCharges = false;
