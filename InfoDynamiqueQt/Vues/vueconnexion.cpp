@@ -10,12 +10,27 @@ VueConnexion::VueConnexion(QWidget *parent) :
     ui(new Ui::VueConnexion)
 {
     ui->setupUi(this);
+    ui->champHote->setText("localhost");
+    ui->champPort->setValue(3307);
+    ui->champUsager->setText("root");
     QObject::connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
 }
 
 VueConnexion::~VueConnexion()
 {
     delete ui;
+}
+
+QString VueConnexion::getNom(const QModelIndex &index)
+{
+    int rangee = index.row();
+    QModelIndex caseId = ui->listeBd->model()->index(rangee, 0);
+    return ui->listeBd->model()->data(caseId).toString();
+}
+
+QString VueConnexion::getNomBD()
+{
+    return nomBD;
 }
 
 QString VueConnexion::getHote()
@@ -68,9 +83,16 @@ void VueConnexion::peuplerTableau(QAbstractTableModel* valeurs)
     QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->listeBd);
     modeleTriable->setSourceModel(valeurs);
     ui->listeBd->setModel(modeleTriable);
+    QObject::connect(ui->listeBd->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(signalerSelection(QModelIndex,QModelIndex)));
 }
 
-void VueConnexion::signalerSelection(QModelIndex nouveau, QModelIndex ancien)
+void VueConnexion::selectionnerModele(const QModelIndex &index)
 {
-    emit nouvelleSelection(nouveau);
+    nomBD = getNom(index);
+    emit selectionValide(true);
+}
+
+void VueConnexion::signalerSelection(const QModelIndex &nouvelle, const QModelIndex&)
+{
+    emit nouvelleSelection(nouvelle);
 }

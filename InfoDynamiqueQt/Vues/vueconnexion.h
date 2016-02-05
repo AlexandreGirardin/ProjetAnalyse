@@ -15,9 +15,31 @@ class VueConnexion : public QDialog
 {
     Q_OBJECT
 
+private:
+
+    // Interface utilisée pour la vue
+    Ui::VueConnexion *ui;
+
+    // String du modèle sélectionné dans le tableau
+    // -1 S'il n'y en a aucun
+    QString nomBD;
+
 public:
     explicit VueConnexion(QWidget *parent = 0);
     ~VueConnexion();
+
+    /**
+     * @brief getNom
+     * @param index L'entrée du tableau duquel on souhaite connaître le nom de la BD
+     * @return Le nom de la BD
+     */
+    QString getNom(const QModelIndex &index);
+
+    /**
+     * @brief getNomBD
+     * @return Le nom de la BD
+     */
+    QString getNomBD();
 
     QString getHote();
     int getPort();
@@ -55,9 +77,16 @@ public slots:
      * @param nouveau La nouvelle sélection du tableau
      * @param ancien L'ancienne sélection du tableau
      */
-    void signalerSelection(QModelIndex nouveau, QModelIndex ancien);
+    void signalerSelection(const QModelIndex &nouveau, const QModelIndex &ancien);
+
 
 signals:
+
+    /**
+     * @brief selectionValide
+     * Informe d'un changement de modèle sélectionné
+     */
+    void selectionValide(const bool &valide);
 
     /**
      * @brief nouvelleSelection
@@ -73,8 +102,6 @@ signals:
      */
     void modeleSelectionne(const int &idModele);
 
-private:
-    Ui::VueConnexion *ui;
 };
 
 #endif // VUECONNEXION_H

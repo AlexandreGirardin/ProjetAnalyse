@@ -19,12 +19,22 @@ QSqlDatabase* ControleurBD::getBd()
 
 void ControleurBD::connecterDossiers()
 {
-    vue = new VueConnexion(Application::getVuePrincipale());
-    configurerBoutonConnecter();
-    if (vue->exec() == vue->Accepted) {
-        if (!bd.open()) {
-            qDebug() << "Erreur d'ouverture de la base de données";
-        }
+//    vue = new VueConnexion(Application::vuePrincipale());
+//    configurerBoutonConnecter();
+//    if (vue->exec() == vue->Accepted) {
+//        bd.setDatabaseName(vue->getNomBD());
+//        if (!bd.open()) {
+//            qDebug() << "Erreur d'ouverture de la base de données";
+//        }
+//    }
+    bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd());
+    bd.setHostName("localhost");
+    bd.setPort(3307);
+    bd.setUserName("root");
+    bd.setPassword("");
+    bd.setDatabaseName("InfoDynamiqueDossiers");
+    if (!bd.open()) {
+        qDebug() << "Erreur d'ouverture de la base de données";
     }
 }
 
