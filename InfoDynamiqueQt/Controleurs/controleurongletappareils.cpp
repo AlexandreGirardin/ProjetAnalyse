@@ -1,4 +1,4 @@
-#include "controleurappareils.h"
+#include "controleurongletappareils.h"
 #include "ui_vueprincipale.h"
 
 #include "Controleurs/controleurbd.h"

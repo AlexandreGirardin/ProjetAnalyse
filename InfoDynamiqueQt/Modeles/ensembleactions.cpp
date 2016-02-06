@@ -25,15 +25,6 @@ void EnsembleActions::setDescription(const QString &value)
     m_description = value;
 }
 
-int EnsembleActions::id() const
-{
-    return m_id;
-}
-
-void EnsembleActions::setId(const int &value)
-{
-    m_id = value;
-}
 QList<Action*>* EnsembleActions::actions() const
 {
     return m_actions;
@@ -41,6 +32,8 @@ QList<Action*>* EnsembleActions::actions() const
 
 void EnsembleActions::setActions(QList<Action*>* value)
 {
+    qDeleteAll(*m_actions);
+    delete m_actions;
     m_actions = value;
 }
 

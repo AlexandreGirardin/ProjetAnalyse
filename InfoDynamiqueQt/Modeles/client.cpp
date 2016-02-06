@@ -2,7 +2,7 @@
 
 Client::Client(QObject* parent) : ModeleBD(parent)
 {
-    m_appareils = new QList<Appareil*>();
+    m_appareils = new QList<Appareil*>;
 }
 
 Client::~Client()

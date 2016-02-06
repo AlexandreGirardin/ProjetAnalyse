@@ -9,9 +9,6 @@ class Action: public ModeleBD {
 
 private:
 
-    // Le numéro de l'action
-    int m_id;
-
     // Le nom de l'action
     QString m_nom;
 
@@ -28,18 +25,6 @@ public:
      * @param parent
      */
     explicit Action(QObject* parent = 0);
-
-    /**
-     * @brief getId
-     * @return L'id de l'action
-     */
-    int id() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner à l'action
-     */
-    void setId(const int &value);
 
     /**
      * @brief getNom

@@ -2,16 +2,6 @@
 
 Fiche::Fiche(QObject* parent) : ModeleBD(parent) {}
 
-int Fiche::id() const
-{
-    return m_id;
-}
-
-void Fiche::setId(const int &value)
-{
-    m_id = value;
-}
-
 int Fiche::priorite() const
 {
     return m_priorite;

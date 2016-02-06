@@ -30,6 +30,14 @@ private:
      */
     void assignerFiche(VueGestionFiche* vue, const Fiche* fiche);
 
+    /**
+     * @brief extraireClient
+     * Transfère la valeur des champs d'une vue dans un client
+     * @param client Le client cible
+     * @param vue La vue source
+     */
+    void extraireFiche(Fiche* fiche, VueGestionFiche const * const vue);
+
 public slots:
 
     /**

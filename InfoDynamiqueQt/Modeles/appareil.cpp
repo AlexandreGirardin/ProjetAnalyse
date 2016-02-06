@@ -3,14 +3,8 @@
 Appareil::Appareil(QObject* parent) :
     ModeleBD(parent)
 {
-    setFabricant(NULL);
-    setType(NULL);
-}
-
-Appareil::~Appareil()
-{
-    m_fabricant->deleteLater();
-    m_type->deleteLater();
+    m_fabricant = new Fabricant(this);
+    m_type = new TypeAppareil(this);
 }
 
 int Appareil::idClient() const
@@ -21,16 +15,6 @@ int Appareil::idClient() const
 void Appareil::setIdClient(const int &value)
 {
     m_idClient = value;
-}
-
-int Appareil::id() const
-{
-    return m_id;
-}
-
-void Appareil::setId(const int &value)
-{
-    m_id = value;
 }
 
 Fabricant* Appareil::fabricant() const
@@ -52,6 +36,7 @@ void Appareil::setFabricant(Fabricant* value)
     if (value != NULL) {
         value->setParent(this);
     }
+    m_fabricant->deleteLater();
     m_fabricant = value;
 }
 
@@ -65,6 +50,7 @@ void Appareil::setType(TypeAppareil* value)
     if (value != NULL) {
         value->setParent(this);
     }
+    m_type->deleteLater();
     m_type = value;
 }
 

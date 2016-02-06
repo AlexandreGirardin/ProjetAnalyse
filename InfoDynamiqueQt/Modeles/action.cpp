@@ -2,16 +2,6 @@
 
 Action::Action(QObject* parent): ModeleBD(parent) {}
 
-int Action::id() const
-{
-    return m_id;
-}
-
-void Action::setId(const int &value)
-{
-    m_id = value;
-}
-
 QString Action::nom() const
 {
     return m_nom;

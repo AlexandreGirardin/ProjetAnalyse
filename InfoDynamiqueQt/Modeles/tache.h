@@ -14,9 +14,6 @@ class Tache : public ModeleBD
 
 private:
 
-    // L'id de la tâche
-    int m_id;
-
     // L'action à accomplir
     Action* m_action;
 
@@ -30,18 +27,6 @@ public:
      * @param parent
      */
     explicit Tache(QObject* parent = 0);
-
-    /**
-     * @brief getId
-     * @return L'id de la tâche
-     */
-    int id() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner à la tâche
-     */
-    void setId(const int &value);
 
     /**
      * @brief getAction

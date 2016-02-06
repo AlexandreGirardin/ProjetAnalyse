@@ -4,10 +4,7 @@
 #include "Controleurs/application.h"
 #include <QDebug>
 
-ControleurGestionAppareil::ControleurGestionAppareil(QObject* parent) :
-    QObject(parent)
-{
-}
+ControleurGestionAppareil::ControleurGestionAppareil(QObject* parent) : QObject(parent) {}
 
 void ControleurGestionAppareil::ajouterAppareil(const int &idClient)
 {

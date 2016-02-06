@@ -16,9 +16,6 @@ class Fiche : public ModeleBD
 
 private:
 
-    // L'id de la fiche
-    int m_id;
-
     // La priorité de la fiche
     int m_priorite;
 
@@ -44,18 +41,6 @@ public:
      * @param parent
      */
     explicit Fiche(QObject* parent = 0);
-
-    /**
-     * @brief getId
-     * @return L'id de la fiche
-     */
-    int id() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner à la fiche
-     */
-    void setId(const int &value);
 
     /**
      * @brief getPriorite

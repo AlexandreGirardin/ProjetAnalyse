@@ -9,16 +9,6 @@ Statut::Statut(const int &a_id, const QString &a_nom, QObject* parent) :
     setNom(a_nom);
 }
 
-int Statut::id() const
-{
-    return m_id;
-}
-
-void Statut::setId(const int &value)
-{
-    m_id = value;
-}
-
 QString Statut::nom() const
 {
     return m_nom;

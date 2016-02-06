@@ -11,9 +11,6 @@ class Piece : public ModeleBD
 
 private:
 
-    // L'identifiant unique de la pièce
-    int m_id;
-
     // Le nom de la pièce
     QString m_nom;
 
@@ -39,19 +36,7 @@ public:
      * @param a_prix Le prix à donner à la pièce
      * @param parent
      */
-    Piece(const int &a_id, const QString &a_nom, const QString &a_description, const int &a_prix, QObject* parent = 0);
-
-    /**
-     * @brief getId
-     * @return L'id de la pièce
-     */
-    int id() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner à la pièce
-     */
-    void setId(const int &value);
+//    Piece(const int &a_id, const QString &a_nom, const QString &a_description, const int &a_prix, QObject* parent = 0);
 
     /**
      * @brief getNom

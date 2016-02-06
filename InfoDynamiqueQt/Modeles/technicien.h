@@ -11,9 +11,6 @@ class Technicien : public ModeleBD
 
 private:
 
-    // L'id du technicien
-    int m_id;
-
     // Le nom du technicien
     QString m_nom;
 
@@ -32,18 +29,6 @@ public:
      * @param parent
      */
     Technicien(const int &a_id, const QString &a_nom, QObject* parent = 0);
-
-    /**
-     * @brief getId
-     * @return L'id du technicien
-     */
-    int id() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner au technicien
-     */
-    void setId(const int &value);
 
     /**
      * @brief getNom

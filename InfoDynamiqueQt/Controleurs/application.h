@@ -3,24 +3,19 @@
 
 #include <QApplication>
 
-#include "Controleurs/controleurongletactions.h"
-#include "Controleurs/controleurappareils.h"
 #include "Controleurs/controleurbd.h"
-#include "Controleurs/controleurclients.h"
-#include "Controleurs/controleurfiches.h"
+#include "Controleurs/controleurongletactions.h"
+#include "Controleurs/controleurongletappareils.h"
+#include "Controleurs/controleurongletclients.h"
+#include "Controleurs/controleurongletfiches.h"
 #include "Controleurs/requetessql.h"
 
 #include "Mappeurs/mappeuractions.h"
-#include "Mappeurs/mappeurappareils.h"
 #include "Mappeurs/mappeurensembles.h"
-#include "Mappeurs/mappeurclients.h"
 #include "Mappeurs/mappeurfabricants.h"
-#include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurpieces.h"
 #include "Mappeurs/mappeurstatuts.h"
-#include "Mappeurs/mappeurtaches.h"
 #include "Mappeurs/mappeurtechniciens.h"
-#include "Mappeurs/mappeurtypeappareils.h"
 
 #include "Vues/vueprincipale.h"
 

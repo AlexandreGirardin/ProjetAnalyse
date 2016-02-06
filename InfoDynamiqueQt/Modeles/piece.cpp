@@ -2,24 +2,14 @@
 
 Piece::Piece(QObject* parent) : ModeleBD(parent) {}
 
-Piece::Piece(const int &a_id, const QString &a_nom, const QString &a_description, const int &a_prix, QObject* parent):
-    ModeleBD(parent)
-{
-    setId(a_id);
-    setNom(a_nom);
-    setDescription(a_description);
-    setPrix(a_prix);
-}
-
-int Piece::id() const
-{
-    return m_id;
-}
-
-void Piece::setId(const int &value)
-{
-    m_id = value;
-}
+//Piece::Piece(const int &a_id, const QString &a_nom, const QString &a_description, const int &a_prix, QObject* parent):
+//    ModeleBD(parent)
+//{
+//    setId(a_id);
+//    setNom(a_nom);
+//    setDescription(a_description);
+//    setPrix(a_prix);
+//}
 
 QString Piece::nom() const
 {

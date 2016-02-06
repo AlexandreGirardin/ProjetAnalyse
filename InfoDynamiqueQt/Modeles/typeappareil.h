@@ -11,9 +11,6 @@ class TypeAppareil : public ModeleBD {
 
 private:
 
-    // L'id du type d'appareil
-    int m_id;
-
     // Le nom du type d'appareil
     QString m_nom;
 
@@ -25,19 +22,7 @@ public:
      */
     explicit TypeAppareil(QObject* parent = 0);
 
-    explicit TypeAppareil(const int &a_id, const QString &a_nom, QObject *parent = 0);
-
-    /**
-     * @brief getId
-     * @return L'id du type d'appareil
-     */
-    int id() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner au type d'appareil
-     */
-    void setId(const int &value);
+//    explicit TypeAppareil(const int &a_id, const QString &a_nom, QObject *parent = 0);
 
     /**
      * @brief getNom

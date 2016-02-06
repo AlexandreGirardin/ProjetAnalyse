@@ -9,10 +9,7 @@
 #include <QMessageBox>
 #include <QSqlQueryModel>
 
-ControleurGestionEnsemble::ControleurGestionEnsemble(QObject *parent) :
-    QObject(parent)
-{
-}
+ControleurGestionEnsemble::ControleurGestionEnsemble(QObject *parent) : QObject(parent) {}
 
 void ControleurGestionEnsemble::creerEnsemble()
 {
@@ -40,7 +37,7 @@ void ControleurGestionEnsemble::modifierEnsemble(const int &idEnsemble)
     vue->setWindowTitle(tr("Modifier un ensemble de tâches"));
     QList<Action*>* actionsHorsEnsemble = Application::actions->actionsHorsEnsemble(ensemble->id());
     vue->setActionsHorsEnsemble(actionsHorsEnsemble);
-    vue->setActionsDansEnsemble(ensemble->actions());
+    vue->setActionsDansEnsemble(Application::actions->actionsDansEnsemble(ensemble->id()));
     vue->setNom(ensemble->nom());
     vue->setDescription(ensemble->description());
     if (vue->exec() == vue->Accepted) {
@@ -66,6 +63,7 @@ void ControleurGestionEnsemble::voirEnsemble(const int &idEnsemble) const
     vue->setDescription(ensemble->description());
     vue->setActions(ensemble->actions());
     vue->show();
+    ensemble->deleteLater();
 }
 
 void ControleurGestionEnsemble::supprimerEnsemble(const int &idEnsemble)

@@ -8,16 +8,6 @@ Fabricant::Fabricant(const int &a_id, const QString &a_nom, QObject* parent): Mo
     m_nom = a_nom;
 }
 
-int Fabricant::id() const
-{
-    return m_id;
-}
-
-void Fabricant::setId(const int &value)
-{
-    m_id = value;
-}
-
 QString Fabricant::nom() const
 {
     return m_nom;

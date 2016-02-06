@@ -32,7 +32,7 @@ QList<Appareil*>* MappeurAppareils::appareilsPourClient(const int &idClient)
 
 Appareil* MappeurAppareils::mapper(const QSqlRecord &ligne)
 {
-    Appareil* appareil = new Appareil();
+    Appareil* appareil = new Appareil(this);
     appareil->setId(ligne.value("id").toInt());
     appareil->setDescription(ligne.value("description").toString());
     appareil->setMotDePasse(ligne.value("motDePasse").toString());
