@@ -3,12 +3,9 @@
 
 #include <QObject>
 
-#include "Mappeurs/mappeurappareils.h"
-
-#include "Vues/vueappareil.h"
-#include "Vues/fragment.h"
-#include "Vues/vuegestionappareil.h"
 #include "Controleurs/controleurgestionappareil.h"
+#include "Mappeurs/mappeurappareils.h"
+#include "Vues/fragment.h"
 
 class ControleurAppareils : public QObject
 {

@@ -19,8 +19,12 @@ public:
     explicit VueEditionFiche(QWidget* parent = 0);
     ~VueEditionFiche();
 
+    void setIdFiche(const int &id);
+
 private:
     Ui::VueEditionFiche* ui;
+
+    int idFiche;
 
     Fragment* fragmentTaches;
 
@@ -28,6 +32,17 @@ private:
 
     void configurerFragmentTaches();
     void configurerFragmentPieces();
+
+public slots:
+
+    void peuplerTaches();
+
+    void peuplerPieces();
+
+signals:
+
+    void nouvelId();
+
 };
 
 #endif // EDITIONFICHE_H

@@ -21,14 +21,14 @@ public:
      * @param id Le numéro de l'ensemble à mapper
      * @return L'ensemble s'il existe, NULL autrement
      */
-    EnsembleActions* getEnsemble(const int &id);
+    static EnsembleActions* getEnsemble(const int &id);
 
     /**
      * @brief getActions
      * Construit tous les ensembles de la base de données
      * @return La liste de tous les ensembles de la base de données.
      */
-    QList<EnsembleActions*>* getEnsembles();
+    static QList<EnsembleActions*>* getEnsembles();
 
     /**
      * @brief inserer
@@ -36,7 +36,7 @@ public:
      * @param ensemble L'ensemble à inscrire
      * @return Succès de l'écriture
      */
-    bool inserer(EnsembleActions* ensemble) const;
+    static bool inserer(EnsembleActions* ensemble);
 
     /**
      * @brief mettreAJour
@@ -44,7 +44,7 @@ public:
      * @param action L'ensemble à mettre à jour
      * @return Succès de l'écriture
      */
-    bool mettreAJour(const EnsembleActions* ensemble) const;
+    static bool mettreAJour(const EnsembleActions* ensemble);
 
     /**
      * @brief supprimer
@@ -52,7 +52,7 @@ public:
      * @param ensemble L'ensemble à effacer
      * @return Succès de la suppression
      */
-    bool supprimer(EnsembleActions* ensemble) const;
+    static bool supprimer(EnsembleActions* ensemble);
 
 private:
 
@@ -62,7 +62,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en ensemble
      * @return L'ensemble
      */
-    EnsembleActions* mapper(const QSqlRecord &ligne);
+    static EnsembleActions* mapper(const QSqlRecord &ligne);
 
     /**
      * @brief mapper
@@ -70,7 +70,7 @@ private:
      * @param requete La requête à mapper
      * @return Les ensembles présents dans la requête
      */
-    QList<EnsembleActions*>* mapper(QSqlQuery &requete);
+    static QList<EnsembleActions*>* mapper(QSqlQuery &requete);
 
     /**
      * @brief preparerRequete Assigne les valeurs d'un ensemble à une requête préparée
@@ -78,7 +78,7 @@ private:
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
-    QSqlQuery* preparerRequete(const EnsembleActions* ensemble, const QString &commande) const;
+    static QSqlQuery* preparerRequete(const EnsembleActions* ensemble, const QString &commande);
 
     /**
      * @brief ecrire
@@ -88,7 +88,7 @@ private:
      * @param commande La commande à exécuter
      * @return Succès de l'opération
      */
-    bool ecrire(const EnsembleActions* ensemble, const QString &commande) const;
+    static bool ecrire(const EnsembleActions* ensemble, const QString &commande);
 
     /**
      * @brief ecrireActions
@@ -97,7 +97,7 @@ private:
      * @param commande L'opération SQL à exécuter sur chacune des actions
      * @return Succès de l'opération
      */
-    bool ecrireActions(const EnsembleActions* ensemble, const QString &commande) const;
+    static bool ecrireActions(const EnsembleActions* ensemble, const QString &commande);
 
     /**
      * @brief derniereInsertion
@@ -105,7 +105,7 @@ private:
      * Permet l'inscription des actions d'un ensemble nouvellement créé
      * @return L'id de la dernière insertion
      */
-    int derniereInsertion() const;
+    static int derniereInsertion();
 };
 
 #endif // MAPPEURENSEMBLES_H

@@ -29,7 +29,7 @@ QList<Fabricant*>* MappeurFabricants::getFabricants()
 
 Fabricant* MappeurFabricants::mapper(const QSqlRecord &ligne)
 {
-    Fabricant* fabricant = new Fabricant(this);
+    Fabricant* fabricant = new Fabricant();
     fabricant->setId(ligne.value("id").toInt());
     fabricant->setNom(ligne.value("nom").toString());
     return fabricant;
@@ -43,7 +43,7 @@ QList<Fabricant*>* MappeurFabricants::mapper(QSqlQuery &requete)
     int colNom = ligne.indexOf("nom");
     while (requete.next()) {
         ligne = requete.record();
-        Fabricant* fabricant = new Fabricant(this);
+        Fabricant* fabricant = new Fabricant();
         fabricant->setId(ligne.value(colId).toInt());
         fabricant->setNom(ligne.value(colNom).toString());
         liste->append(fabricant);

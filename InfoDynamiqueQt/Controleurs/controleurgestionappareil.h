@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "Modeles/appareil.h"
+#include "Vues/vueappareil.h"
 #include "Vues/vuegestionappareil.h"
 
 class ControleurGestionAppareil : public QObject
@@ -18,6 +20,32 @@ public:
      * @param parent
      */
     explicit ControleurGestionAppareil(QObject* parent = 0);
+
+private:
+
+    /**
+     * @brief assignerAppareil
+     * Insère les informations d'un appareil dans les champs d'une fiche de gestion
+     * @param vue La vue cible
+     * @param appareil L'appareil source
+     */
+    void assignerAppareil(VueGestionAppareil* vue, const Appareil* appareil);
+
+    /**
+     * @brief assignerAppareil
+     * Insère les informations d'un appareil dans les champs d'une fiche
+     * @param vue La vue cible
+     * @param appareil L'appareil source
+     */
+    void assignerAppareil(VueAppareil* vue, const Appareil* appareil);
+
+    /**
+     * @brief extraireAppareil
+     * Transfère la valeur des champs d'une vue dans un appareil
+     * @param appareil L'appareil cible
+     * @param vue La vue source
+     */
+    void extraireAppareil(Appareil* appareil, const VueGestionAppareil *vue);
 
 public slots:
 

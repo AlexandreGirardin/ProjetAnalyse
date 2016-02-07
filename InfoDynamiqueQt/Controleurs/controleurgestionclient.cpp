@@ -2,9 +2,8 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
-
 #include "Vues/vueclient.h"
-#include "Vues/vuegestionclient.h"
+
 #include <QSqlQueryModel>
 #include <QDebug>
 
@@ -17,7 +16,7 @@ void ControleurGestionClient::ajouterClient()
     if (vue->exec() == vue->Accepted) {
         Client* client = new Client(vue);
         extraireClient(client, vue);
-        if (Application::clients->inserer(client)) {
+        if (MappeurClients::inserer(client)) {
             emit donneesModifiees();
         } else {
             qDebug() << "Pas marché: " << client->out();
@@ -28,7 +27,7 @@ void ControleurGestionClient::ajouterClient()
 
 void ControleurGestionClient::modifierClient(const int &idClient)
 {
-    Client* client = Application::clients->getClient(idClient);
+    Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
         VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
         client->setParent(vue);
@@ -36,7 +35,7 @@ void ControleurGestionClient::modifierClient(const int &idClient)
         assignerClient(vue, client);
         if (vue->exec() == vue->Accepted) {
             extraireClient(client, vue);
-            if (Application::clients->mettreAJour(client)) {
+            if (MappeurClients::mettreAJour(client)) {
                 emit donneesModifiees();
             } else {
                 qDebug() << "Pas marché" << client->out();
@@ -48,7 +47,7 @@ void ControleurGestionClient::modifierClient(const int &idClient)
 
 void ControleurGestionClient::voirClient(const int &idClient)
 {
-    Client* client = Application::clients->getClient(idClient);
+    Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
         VueClient* vue = new VueClient(Application::vuePrincipale());
         client->setParent(vue);

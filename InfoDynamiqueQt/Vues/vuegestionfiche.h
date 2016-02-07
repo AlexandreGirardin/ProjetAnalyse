@@ -17,6 +17,12 @@ public:
     explicit VueGestionFiche(QWidget* parent = 0);
     ~VueGestionFiche();
 
+    void setDescription(const QString &commentaire);
+
+    QString getDescription() const;
+
+
+
 private:
     Ui::VueGestionFiche* ui;
 

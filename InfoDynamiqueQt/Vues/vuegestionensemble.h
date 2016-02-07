@@ -1,10 +1,11 @@
 #ifndef GESTIONENSEMBLE_H
 #define GESTIONENSEMBLE_H
 
+#include <QDialog>
+
 #include "Modeles/ensembleactions.h"
 #include "Vues/champformulaire.h"
 
-#include <QDialog>
 #include <QStandardItemModel>
 
 namespace Ui {
@@ -62,8 +63,6 @@ private:
     ChampFormulaire* nom;
 
     QPushButton* boutonOk;
-
-//    QStandardItemModel *horsEnsemble, *dansEnsemble;
 
     QList<Action*> *actionsHorsEnsemble, *actionsDansEnsemble;
 

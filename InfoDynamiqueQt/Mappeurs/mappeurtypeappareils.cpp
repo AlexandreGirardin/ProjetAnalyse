@@ -43,7 +43,7 @@ QList<TypeAppareil*>* MappeurTypeAppareils::mapper(QSqlQuery &requete)
     int colNom = ligne.indexOf("nom");
     while (requete.next()) {
         ligne = requete.record();
-        TypeAppareil* type = new TypeAppareil(this);
+        TypeAppareil* type = new TypeAppareil();
         type->setId(ligne.value(colId).toInt());
         type->setNom(ligne.value(colNom).toString());
         liste->append(type);

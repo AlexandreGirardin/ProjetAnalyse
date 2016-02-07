@@ -8,14 +8,6 @@
 #include "Controleurs/controleurongletappareils.h"
 #include "Controleurs/controleurongletclients.h"
 #include "Controleurs/controleurongletfiches.h"
-#include "Controleurs/requetessql.h"
-
-#include "Mappeurs/mappeuractions.h"
-#include "Mappeurs/mappeurensembles.h"
-#include "Mappeurs/mappeurfabricants.h"
-#include "Mappeurs/mappeurpieces.h"
-#include "Mappeurs/mappeurstatuts.h"
-#include "Mappeurs/mappeurtechniciens.h"
 
 #include "Vues/vueprincipale.h"
 
@@ -46,36 +38,6 @@ public:
 
     // Le contrôleur de base de données de l'application
     static ControleurBD* controleurBD;
-
-    // Mappeur d'actions de l'application
-    static MappeurActions* actions;
-
-    // Mappeur d'appareils de l'application
-    static MappeurAppareils* appareils;
-
-    // Mappeur de clients de l'application
-    static MappeurClients* clients;
-
-    // Mappeur d'ensembles d'actions de l'application
-    static MappeurEnsembles* ensembles;
-
-    // Mappeur de fabricants de l'application
-    static MappeurFabricants* fabricants;
-
-    //Mappeur de fiches de l'application
-    static MappeurFiches* fiches;
-
-    // Mappeur de pièces de l'application
-    static MappeurPieces* pieces;
-
-    // Mappeur de statuts de l'application
-    static MappeurStatuts* statuts;
-
-    // Mappeur de techniciens de l'application
-    static MappeurTechniciens* techniciens;
-
-    // Mappeurs de types d'appareil de l'application
-    static MappeurTypeAppareils* typesAppareils;
 
     // Démarre l'application
     void demarrer();

@@ -1,6 +1,7 @@
 #include "Controleurs/controleurongletclients.h"
 
 #include "Controleurs/application.h"
+#include "Controleurs/requetessql.h"
 
 #include <QDebug>
 #include <QLayout>

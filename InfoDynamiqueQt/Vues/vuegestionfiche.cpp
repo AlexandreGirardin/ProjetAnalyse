@@ -13,7 +13,18 @@ VueGestionFiche::~VueGestionFiche()
     delete ui;
 }
 
+void VueGestionFiche::setDescription(const QString &description)
+{
+    ui->champDescription->setText(description);
+}
+
+QString VueGestionFiche::getDescription() const
+{
+    return ui->champDescription->toPlainText();
+}
+
 void VueGestionFiche::setLectureSeule()
 {
 
 }
+

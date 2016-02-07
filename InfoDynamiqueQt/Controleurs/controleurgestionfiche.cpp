@@ -1,6 +1,8 @@
 #include "Controleurs/controleurgestionfiche.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/mappeurfiches.h"
+
 #include <QDebug>
 
 ControleurGestionFiche::ControleurGestionFiche(QObject* parent) : QObject(parent) {}
@@ -9,8 +11,11 @@ void ControleurGestionFiche::ajouterFiche(const int &idAppareil)
 {
     VueGestionFiche* vue = new VueGestionFiche();
     vue->setWindowTitle(tr("Créer une nouvelle fiche"));
+//    Fiche* fiche = MappeurFiches::getFiche(idAppareil);
+//    assignerFiche(vue, fiche);
     vue->exec();
     vue->deleteLater();
+//    fiche->deleteLater();
 }
 
 void ControleurGestionFiche::modifierFiche(const int &idFiche)
@@ -33,5 +38,5 @@ void ControleurGestionFiche::voirFiche(const int &idFiche)
 
 void ControleurGestionFiche::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
 {
-
+//    vue->set
 }

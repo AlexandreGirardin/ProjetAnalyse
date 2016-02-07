@@ -32,7 +32,7 @@ public:
      * @param id Le numéro de l'appareil à mapper
      * @return L'appareil s'il existe, NULL autrement
      */
-    Appareil* getAppareil(const int &id);
+    static Appareil* getAppareil(const int &id);
 
     /**
      * @brief appareilsPourClient
@@ -40,7 +40,7 @@ public:
      * @param client Le client cible
      * @return La liste des appareils appartenant au client
      */
-    QList<Appareil*>* appareilsPourClient(const int &idClient);
+    static QList<Appareil*>* appareilsPourClient(const int &idClient);
 
     /**
      * @brief mettreAJour
@@ -48,7 +48,7 @@ public:
      * @param appareil L'appareil à mettre à jour
      * @return Succès
      */
-    bool mettreAJour(const Appareil* appareil) const;
+    static bool mettreAJour(const Appareil* appareil);
 
     /**
      * @brief inserer
@@ -56,7 +56,7 @@ public:
      * @param appareil L'appareil à ajouter
      * @return Succès
      */
-    bool inserer(const Appareil* appareil) const;
+    static bool inserer(const Appareil* appareil);
 
 private:
 
@@ -65,7 +65,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en appareil
      * @return L'appareil
      */
-    Appareil* mapper(const QSqlRecord &ligne);
+    static Appareil* mapper(const QSqlRecord &ligne);
 
 
     /**
@@ -74,7 +74,7 @@ private:
      * @param requete La requête à mapper
      * @return Les appareils présents dans la requête
      */
-    QList<Appareil*>* mapper(QSqlQuery &requete);
+    static QList<Appareil*>* mapper(QSqlQuery &requete);
 
     /**
      * @brief preparerRequete Assigne les valeurs d'un appareil à une requête préparée
@@ -82,7 +82,7 @@ private:
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
-    QSqlQuery* preparerRequete(const Appareil* appareil, const QString &commande) const;
+    static QSqlQuery* preparerRequete(const Appareil* appareil, const QString &commande);
 
     /**
      * @brief ecrire
@@ -92,7 +92,7 @@ private:
      * @param commande La commande à exécuter
      * @return Succès de l'opération
      */
-    bool ecrire(const Appareil* appareil, const QString &commande) const;
+    static bool ecrire(const Appareil* appareil, const QString &commande);
 
 };
 

@@ -22,7 +22,7 @@ Technicien* MappeurTechniciens::getTechnicien(const int &id)
 
 Technicien* MappeurTechniciens::mapper(const QSqlRecord &ligne)
 {
-    Technicien* technicien = new Technicien(this);
+    Technicien* technicien = new Technicien();
     technicien->setId(ligne.value("id").toInt());
     technicien->setNom(ligne.value("nom").toString());
     return technicien;
@@ -42,7 +42,7 @@ QList<Technicien*>* MappeurTechniciens::mapper(QSqlQuery &requete)
     int colNom = ligne.indexOf("nom");
     while (requete.next()) {
         ligne = requete.record();
-        Technicien* technicien = new Technicien(this);
+        Technicien* technicien = new Technicien();
         technicien->setId(ligne.value(colId).toInt());
         technicien->setNom(ligne.value(colNom).toString());
         liste->append(technicien);

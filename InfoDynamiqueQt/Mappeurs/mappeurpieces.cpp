@@ -26,7 +26,7 @@ QList<Piece*>* MappeurPieces::getPieces()
 
 Piece* MappeurPieces::mapper(const QSqlRecord &ligne)
 {
-    Piece* piece = new Piece(this);
+    Piece* piece = new Piece();
     piece->setId(ligne.value("id").toInt());
     piece->setNom(ligne.value("nom").toString());
     piece->setDescription(ligne.value("description").toString());
@@ -44,7 +44,7 @@ QList<Piece*>* MappeurPieces::mapper(QSqlQuery &requete)
     int colPrix = ligne.indexOf("prix");
     while (requete.next()) {
         ligne = requete.record();
-        Piece* piece = new Piece(this);
+        Piece* piece = new Piece();
         piece->setId(ligne.value(colId).toInt());
         piece->setNom(ligne.value(colNom).toString());
         piece->setDescription(ligne.value(colDesc).toString());

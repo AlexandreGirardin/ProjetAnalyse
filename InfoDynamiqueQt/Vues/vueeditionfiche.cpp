@@ -15,6 +15,14 @@ VueEditionFiche::~VueEditionFiche()
     delete ui;
 }
 
+void VueEditionFiche::setIdFiche(const int &id)
+{
+    if (id != idFiche) {
+        idFiche = id;
+        emit nouvelId();
+    }
+}
+
 void VueEditionFiche::configurerFragmentTaches()
 {
     fragmentTaches = new Fragment(this);
@@ -22,6 +30,7 @@ void VueEditionFiche::configurerFragmentTaches()
     delete fragmentTaches->caseCocher();
     delete fragmentTaches->champ();
     ui->cadreFragmentTaches->addWidget(fragmentTaches);
+    QObject::connect(this, SIGNAL(nouvelId()), this, SLOT(peuplerTaches()));
 }
 
 void VueEditionFiche::configurerFragmentPieces()
@@ -31,4 +40,15 @@ void VueEditionFiche::configurerFragmentPieces()
     delete fragmentPieces->champ();
     fragmentPieces->setEtiquette(tr("Pièces"));
     ui->cadreFragmentPieces->addWidget(fragmentPieces);
+    QObject::connect(this, SIGNAL(nouvelId()), this, SLOT(peuplerPieces()));
+}
+
+void VueEditionFiche::peuplerTaches()
+{
+
+}
+
+void VueEditionFiche::peuplerPieces()
+{
+
 }

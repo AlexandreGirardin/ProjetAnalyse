@@ -1,6 +1,7 @@
 #include "controleurongletactions.h"
 
 #include "Controleurs/application.h"
+#include "Controleurs/requetessql.h"
 
 #include <QLayout>
 #include <QSqlQueryModel>

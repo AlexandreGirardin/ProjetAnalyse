@@ -1,6 +1,7 @@
 #include "Controleurs/controleurongletfiches.h"
 
 #include "Controleurs/application.h"
+#include "Controleurs/requetessql.h"
 #include "Vues/vueeditionfiche.h"
 
 #include <QLayout>

@@ -2,9 +2,9 @@
 #include "ui_vueprincipale.h"
 
 #include "Controleurs/controleurbd.h"
+#include "Controleurs/requetessql.h"
 
 #include <QSqlQueryModel>
-
 #include <QDebug>
 #include "Controleurs/application.h"
 

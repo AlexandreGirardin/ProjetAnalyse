@@ -4,9 +4,7 @@
 #include <QObject>
 
 #include "Controleurs/controleurensembles.h"
-
 #include "Modeles/action.h"
-
 #include "Vues/fragment.h"
 #include "Vues/vuegestionaction.h"
 

@@ -24,13 +24,13 @@ public:
      * @param id Le numéro de l'action à mapper
      * @return L'action si elle existe, NULL autrement
      */
-    Action* getAction(const int &id);
+    static Action* getAction(const int &id);
 
     /**
      * @brief getActions
      * @return La liste de toutes les actions de la base de données.
      */
-    QList<Action*>* getActions();
+    static QList<Action*>* getActions();
 
     /**
      * @brief actionsDansEnsemble
@@ -38,7 +38,7 @@ public:
      * @param idEnsemble L'id de l'ensemble à chercher
      * @return Toutes les actions qui font partie de l'ensemble
      */
-    QList<Action*>* actionsDansEnsemble(const int &idEnsemble);
+    static QList<Action*>* actionsDansEnsemble(const int &idEnsemble);
 
     /**
      * @brief actionsHorsEnsemble
@@ -46,7 +46,7 @@ public:
      * @param idEnsemble L'id de l'ensemble à chercher
      * @return Toutes les actions qui ne font pas partie de l'ensemble
      */
-    QList<Action*>* actionsHorsEnsemble(const int &idEnsemble);
+    static QList<Action*>* actionsHorsEnsemble(const int &idEnsemble);
 
     /**
      * @brief mettreAJour
@@ -54,7 +54,7 @@ public:
      * @param action L'action à mettre à jour
      * @return Succès de l'écriture
      */
-    bool mettreAJour(const Action* action) const;
+    static bool mettreAJour(const Action* action);
 
     /**
      * @brief inserer
@@ -62,7 +62,7 @@ public:
      * @param action L'action à inscrire
      * @return Succès de l'écriture
      */
-    bool inserer(const Action *action) const;
+    static bool inserer(const Action *action);
 
 private:
 
@@ -72,7 +72,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en action
      * @return L'action
      */
-    Action* mapper(const QSqlRecord &ligne);
+    static Action* mapper(const QSqlRecord &ligne);
 
     /**
      * @brief mapper
@@ -80,7 +80,7 @@ private:
      * @param requete La requête à mapper
      * @return Les actions présentes dans la requête
      */
-    QList<Action*>* mapper(QSqlQuery &requete);
+    static QList<Action*>* mapper(QSqlQuery &requete);
 
     /**
      * @brief preparerRequete Assigne les valeurs d'une action à une requête préparée
@@ -88,7 +88,7 @@ private:
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
-    QSqlQuery* preparerRequete(const Action* action, const QString &commande) const;
+    static QSqlQuery* preparerRequete(const Action* action, const QString &commande);
 
     /**
      * @brief ecrire
@@ -98,7 +98,7 @@ private:
      * @param commande La commande à exécuter
      * @return Succès de l'opération
      */
-    bool ecrire(const Action* action, const QString &commande) const;
+    static bool ecrire(const Action* action, const QString &commande);
 
 };
 

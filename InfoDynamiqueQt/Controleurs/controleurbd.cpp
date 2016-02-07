@@ -2,7 +2,8 @@
 
 #include "ui_vueconnexion.h"
 
-#include "Controleurs/application.h"
+#include "Controleurs/requetessql.h"
+
 #include <QDebug>
 #include <QtSql/QSqlDatabase>
 #include <QSqlQueryModel>

@@ -28,13 +28,13 @@ public:
      * @param id Le numéro du fabricant à mapper
      * @return le fabricant s'il existe, NULL autrement
      */
-    Fabricant* getFabricant(const int &id);
+    static Fabricant* getFabricant(const int &id);
 
     /**
      * @brief getFabricants
      * @return La liste de tous les fabricants de la base de données
      */
-    QList<Fabricant*>* getFabricants();
+    static QList<Fabricant*>* getFabricants();
 
 private:
 
@@ -43,7 +43,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return Le fabricant
      */
-    Fabricant* mapper(const QSqlRecord &ligne);
+    static Fabricant* mapper(const QSqlRecord &ligne);
 
     /**
      * @brief ecrire
@@ -53,7 +53,7 @@ private:
      * @param commande La commande à exécuter
      * @return Succès de l'opération
      */
-    QList<Fabricant*>* mapper(QSqlQuery &requete);
+    static QList<Fabricant*>* mapper(QSqlQuery &requete);
 
 };
 

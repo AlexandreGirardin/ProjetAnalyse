@@ -26,7 +26,7 @@ public:
      * @param id Le numéro de la fiche à mapper
      * @return le fabricant s'il existe, NULL autrement
      */
-    Fiche* getFiche(const int &id);
+    static Fiche* getFiche(const int &id);
 
 private:
 
@@ -35,7 +35,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return Le fiche
      */
-    Fiche* mapper(const QSqlRecord &ligne);
+    static Fiche* mapper(const QSqlRecord &ligne);
 
 };
 
