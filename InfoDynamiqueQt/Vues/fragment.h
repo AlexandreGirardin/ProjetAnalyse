@@ -12,7 +12,7 @@ namespace Ui {
 class VueFragment;
 }
 
-class VueFragment : public QWidget
+class Fragment : public QWidget
 {
     Q_OBJECT
 
@@ -70,8 +70,8 @@ public:
      * @brief VueFragment
      * @param parent
      */
-    explicit VueFragment(QWidget* parent = 0);
-    ~VueFragment();
+    explicit Fragment(QWidget* parent = 0);
+    ~Fragment();
 
     void retirerEtiquette() const;
 

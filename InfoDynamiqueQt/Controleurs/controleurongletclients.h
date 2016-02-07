@@ -43,13 +43,13 @@ private:
     ControleurGestionFiche* controleurGestionFiche;
 
     // Le fragment des clients
-    VueFragment* fragmentClients;
+    Fragment* fragmentClients;
 
     // Le fragment des appareils
-    VueFragment* fragmentAppareils;
+    Fragment* fragmentAppareils;
 
     // Le fragment des fiches
-    VueFragment* fragmentFiches;
+    Fragment* fragmentFiches;
 
     // La commande SQL actuelle servant à peupler le fragmentFiches
     const QString* commandeFiches;

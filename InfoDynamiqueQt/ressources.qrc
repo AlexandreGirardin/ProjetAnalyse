@@ -7,5 +7,6 @@
         <file>Images/reverse.svg</file>
         <file>Images/edit-delete.svg</file>
         <file>Images/Toolbox.ico</file>
+        <file>Images/visibility.svg</file>
     </qresource>
 </RCC>

@@ -8,9 +8,8 @@
 ControleurOngletActions::ControleurOngletActions(QWidget* vue)
     : QObject(vue)
 {
-    requeteActions = RequetesSQL::afficherActionsActives;
-    requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
     splitter = new QSplitter(Qt::Vertical, vue);
+    splitter->setChildrenCollapsible(false);
     vue->layout()->addWidget(splitter);
     configurerFragmentActions();
     configurerFragmentEnsembles();
@@ -21,7 +20,9 @@ ControleurOngletActions::ControleurOngletActions(QWidget* vue)
 
 void ControleurOngletActions::configurerFragmentActions()
 {
-    fragmentActions = new VueFragment(splitter);
+    requeteActions = RequetesSQL::afficherActionsActives;
+    requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
+    fragmentActions = new Fragment(splitter);
     controleurActions = new ControleurActions(fragmentActions);
     fragmentActions->setEtiquette(tr("Actions"));
     fragmentActions->caseCocher()->setText(tr("Afficher toutes les actions"));
@@ -63,6 +64,7 @@ void ControleurOngletActions::filtrerActions(const QString &filtre)
         resultats->setQuery(requete);
         fragmentActions->peuplerTableau(resultats);
         fragmentActions->getTableau()->hideColumn(0);
+        fragmentActions->getTableau()->resizeColumnsToContents();
     }
 }
 
@@ -109,7 +111,7 @@ void ControleurOngletActions::desactiverCritereActions() {
 
 void ControleurOngletActions::configurerFragmentEnsembles()
 {
-    fragmentEnsembles = new VueFragment(splitter);
+    fragmentEnsembles = new Fragment(splitter);
     controleurEnsembles = new ControleurGestionEnsemble(fragmentEnsembles);
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->caseCocher()->setHidden(true);

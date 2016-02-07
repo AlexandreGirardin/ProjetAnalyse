@@ -23,7 +23,7 @@ public:
 private:
 
     // Le fragment des fiches
-    VueFragment* fragment;
+    Fragment* fragment;
 
 public slots:
 

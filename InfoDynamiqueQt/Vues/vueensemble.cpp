@@ -28,6 +28,7 @@ void VueEnsemble::setActions(const QList<Action *> *actions)
 {
     delete ui->listeActions->model();
     ui->listeActions->setModel(listeVersModele(actions));
+    adjustSize();
 }
 
 QStandardItemModel *VueEnsemble::listeVersModele(const QList<Action*>* liste)

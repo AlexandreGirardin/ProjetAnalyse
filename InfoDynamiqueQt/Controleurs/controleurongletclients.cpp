@@ -12,9 +12,6 @@ ControleurClients::ControleurClients(QWidget* vue)
     splitter = new QSplitter(Qt::Vertical, vue);
     vue->layout()->addWidget(splitter);
     splitter->setChildrenCollapsible(false);
-    controleurGestionClient = new ControleurGestionClient(this);
-    controleurGestionAppareil = new ControleurGestionAppareil(this);
-    controleurGestionFiche = new ControleurGestionFiche(this);
     configurerFragmentClients();
     configurerFragmentAppareils();
     configurerFragmentFiches();
@@ -25,50 +22,54 @@ ControleurClients::ControleurClients(QWidget* vue)
 
 void ControleurClients::configurerFragmentClients()
 {
-    fragmentClients = new VueFragment(splitter);
+    fragmentClients = new Fragment(splitter);
     fragmentClients->setEtiquette(tr("Clients"));
     fragmentClients->retirerCaseCocher();
+    controleurGestionClient = new ControleurGestionClient(fragmentClients);
     QObject::connect(fragmentClients, SIGNAL(clicCreer()), controleurGestionClient, SLOT(ajouterClient()));
     QObject::connect(fragmentClients, SIGNAL(clicEditer()), this, SLOT(modifierClient()));
     QObject::connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
     QObject::connect(fragmentClients, SIGNAL(rechercher(QString)), this, SLOT(filtrerClients(QString)));
-    QObject::connect(controleurGestionClient, SIGNAL(donneesModifiees()), this, SLOT(rechargerClients()));
     QObject::connect(fragmentClients, SIGNAL(doubleClicModele()), this, SLOT(voirClient()));
+    QObject::connect(controleurGestionClient, SIGNAL(donneesModifiees()), this, SLOT(rechargerClients()));
 }
 
 void ControleurClients::configurerFragmentAppareils()
 {
-    fragmentAppareils = new VueFragment(splitter);
+    fragmentAppareils = new Fragment(splitter);
     fragmentAppareils->setEtiquette(tr("Appareils"));
     fragmentAppareils->retirerCaseCocher();
     fragmentAppareils->retirerChamp();
+    controleurGestionAppareil = new ControleurGestionAppareil(fragmentAppareils);
     QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), this, SLOT(ajouterAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(rechargerAppareils()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
-    QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
+    QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
     QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(hide()));
 }
 
 void ControleurClients::configurerFragmentFiches()
 {
-    fragmentFiches = new VueFragment(splitter);
+    commandeFiches = RequetesSQL::toutesFichesPourAppareil;
+    fragmentFiches = new Fragment(splitter);
     fragmentFiches->setEtiquette(tr("Fiches"));
     fragmentFiches->caseCocher()->setChecked(true);
     fragmentFiches->caseCocher()->setText(tr("Afficher toutes les fiches"));
     fragmentFiches->retirerChamp();
-    commandeFiches = RequetesSQL::toutesFichesPourAppareil;
+    controleurGestionFiche = new ControleurGestionFiche(fragmentFiches);
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));
-    QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
-    QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
-    QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
-    QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
+    QObject::connect(fragmentFiches, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
     QObject::connect(fragmentFiches, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
     QObject::connect(fragmentFiches, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
     QObject::connect(fragmentFiches, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
+    QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
+    QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
+    QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
+    QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
 }
 
 // Clients

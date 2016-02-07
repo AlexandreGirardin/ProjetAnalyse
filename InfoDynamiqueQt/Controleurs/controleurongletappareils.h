@@ -31,7 +31,7 @@ private:
     ControleurGestionAppareil* controleurGestionAppareil;
 
     // Le fragment des appareils
-    VueFragment* fragment;
+    Fragment* fragment;
 
 public slots:
 

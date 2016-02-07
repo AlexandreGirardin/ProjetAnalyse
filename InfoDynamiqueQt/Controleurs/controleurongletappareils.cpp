@@ -11,7 +11,7 @@
 ControleurAppareils::ControleurAppareils(QWidget* vue)
     : QObject(vue)
 {
-    fragment = new VueFragment(vue);
+    fragment = new Fragment(vue);
     fragment->retirerEtiquette();
     fragment->boutonAjouter()->deleteLater();
     fragment->retirerCaseCocher();

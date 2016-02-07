@@ -1,6 +1,7 @@
 #include "Controleurs/controleurongletfiches.h"
 
 #include "Controleurs/application.h"
+#include "Vues/vueeditionfiche.h"
 
 #include <QLayout>
 #include <QSqlQueryModel>
@@ -8,7 +9,7 @@
 ControleurFiches::ControleurFiches(QWidget* vue)
     : QObject(vue)
 {
-    fragment = new VueFragment();
+    fragment = new Fragment();
     fragment->retirerEtiquette();
     fragment->caseCocher()->setText(tr("Afficher toutes les fiches"));
     vue->layout()->addWidget(fragment);
@@ -35,7 +36,9 @@ void ControleurFiches::creerFiche() const
 
 void ControleurFiches::modifierFiche() const
 {
-
+    VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
+    vue->exec();
+    vue->deleteLater();
 }
 
 void ControleurFiches::voirFiche() const

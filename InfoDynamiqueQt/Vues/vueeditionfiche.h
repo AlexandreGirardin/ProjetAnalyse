@@ -1,13 +1,15 @@
 #ifndef EDITIONFICHE_H
 #define EDITIONFICHE_H
 
-#include <QWidget>
+#include <QDialog>
+
+#include "Vues/fragment.h"
 
 namespace Ui {
 class VueEditionFiche;
 }
 
-class VueEditionFiche : public QWidget
+class VueEditionFiche : public QDialog
 {
     Q_OBJECT
 
@@ -19,6 +21,13 @@ public:
 
 private:
     Ui::VueEditionFiche* ui;
+
+    Fragment* fragmentTaches;
+
+    Fragment* fragmentPieces;
+
+    void configurerFragmentTaches();
+    void configurerFragmentPieces();
 };
 
 #endif // EDITIONFICHE_H

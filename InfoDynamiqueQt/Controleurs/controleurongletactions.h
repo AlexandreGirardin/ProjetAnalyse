@@ -42,10 +42,10 @@ public:
     ControleurGestionEnsemble* controleurEnsembles;
 
     // Vue permettant de contrôleur les actions
-    VueFragment* fragmentActions;
+    Fragment* fragmentActions;
 
     // Vue permettant de contrôler les ensembles
-    VueFragment* fragmentEnsembles;
+    Fragment* fragmentEnsembles;
 
     // La requête SQL actuelle pour actions sans filtre de recherche
     const QString* requeteActions;

@@ -101,6 +101,10 @@
        <property name="text">
         <string>PushButton</string>
        </property>
+       <property name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/visibility.svg</normaloff>:/Images/visibility.svg</iconset>
+       </property>
        <property name="checkable">
         <bool>true</bool>
        </property>
