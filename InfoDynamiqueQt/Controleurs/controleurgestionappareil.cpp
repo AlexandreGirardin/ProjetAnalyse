@@ -20,6 +20,7 @@ void ControleurGestionAppareil::ajouterAppareil(const int &idClient)
         extraireAppareil(appareil, vue);
         if (MappeurAppareils::inserer(appareil)) {
             emit donneesModifiees();
+            emit nombreAppareilsChange(idClient);
         } else {
             qDebug() << "Pas marché: " << appareil->out();
         }

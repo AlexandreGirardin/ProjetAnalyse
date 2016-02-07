@@ -39,6 +39,16 @@ void Fragment::setEtiquette(const QString &etiquette) const
     }
 }
 
+
+int Fragment::getDernierIndexSelectionne() const
+{
+    return dernierIndexSelectionne;
+}
+
+void Fragment::setDernierIndexSelectionne(int value)
+{
+    dernierIndexSelectionne = value;
+}
 void Fragment::configurerBoutonAjouter()
 {
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
@@ -127,6 +137,8 @@ QString Fragment::getFiltre() const
 {
     if (ui->champ != NULL) {
         return ui->champ->text();
+    } else {
+        return QString();
     }
 }
 
@@ -174,6 +186,7 @@ void Fragment::relacherModele()
 
 void Fragment::selectionnerModele(const QModelIndex &index)
 {
+    dernierIndexSelectionne = index.row();
     idModele = getId(index);
     emit selectionValide(true);
     emit modeleSelectionne(idModele);

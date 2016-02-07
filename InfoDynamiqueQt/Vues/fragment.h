@@ -34,6 +34,8 @@ private:
     // L'index de la colonne des id des modèles dans le tableau
     int colonneId;
 
+    int dernierIndexSelectionne;
+
     /**
      * @brief configurerBoutonAjouter
      * Connecte le bouton Ajouter
@@ -169,6 +171,9 @@ public:
      * @param value Le numéro à assigner
      */
     void setColonneId(const int &value);
+
+    int getDernierIndexSelectionne() const;
+    void setDernierIndexSelectionne(int value);
 
 public slots:
 

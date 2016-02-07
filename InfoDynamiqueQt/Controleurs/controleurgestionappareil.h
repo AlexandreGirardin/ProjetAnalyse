@@ -77,6 +77,8 @@ signals:
      * Lancé lorsque les valeurs du tableau ont été modifiées
      */
     void donneesModifiees();
+
+    void nombreAppareilsChange(const int&);
 };
 
 #endif // CONTROLEURGESTIONAPPAREIL_H

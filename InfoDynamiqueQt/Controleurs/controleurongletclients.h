@@ -197,6 +197,8 @@ private slots:
      * Repeuple le fragmentAppareils en tenant compte du filtre actuel
      */
     void rechargerAppareils();
+
+    void rechargerNombreAppareils(const int &idClient);
 };
 
 #endif // CONTROLEURCLIENTS_H
