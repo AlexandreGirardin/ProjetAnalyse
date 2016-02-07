@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>340</width>
-    <height>294</height>
+    <height>306</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -89,6 +89,15 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champHote</tabstop>
+  <tabstop>champPort</tabstop>
+  <tabstop>champUsager</tabstop>
+  <tabstop>champMDP</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>listeBd</tabstop>
+  <tabstop>buttonBox_2</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

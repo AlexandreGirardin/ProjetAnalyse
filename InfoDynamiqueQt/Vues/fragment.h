@@ -81,19 +81,19 @@ public:
      * @brief getBoutonAjouter
      * @return  Le bouton d'ajout de modèle du fragment
      */
-    QPushButton* getBoutonAjouter() const;
+    QPushButton* boutonAjouter() const;
 
     /**
      * @brief getBoutonModifier
      * @return Le bouton de modification de modèle du fragment
      */
-    QPushButton* getBoutonModifier() const;
+    QPushButton* boutonModifier() const;
 
     /**
      * @brief getBoutonVoir
      * @return Le bouton de visualisation de modèle du fragment
      */
-    QPushButton* getBoutonVoir() const;
+    QPushButton* boutonVoir() const;
 
     /**
      * @brief ajouterBouton
@@ -106,7 +106,13 @@ public:
      * @brief getCaseCocher
      * @return La case à cocher du fragment
      */
-    QCheckBox* getCaseCocher() const;
+    QPushButton *caseCocher() const;
+
+    /**
+     * @brief champ
+     * @return Le champ de texte servant à la recherche
+     */
+    QLineEdit* champ() const;
 
     /**
      * @brief retirerCaseCocher

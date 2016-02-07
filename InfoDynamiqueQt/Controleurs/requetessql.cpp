@@ -135,20 +135,17 @@ QString const * const RequetesSQL::filtrerActionsActives =
 QString const * const RequetesSQL::afficherEnsembles =
         new QString("SELECT\
                         e.id,\
-                        a.nb as 'Nb. actions',\
+                        COALESCE(a.nb, 0) as 'Nb. actions',\
                         nom as 'Ensemble',\
                         description as 'Description'\
                     FROM ensembles e\
                     LEFT OUTER JOIN\
                         (SELECT\
                          e.id as 'id', count(e.id) as 'nb'\
-                         FROM\
-                         ensembles e\
-                         LEFT OUTER JOIN\
-                         ensemblesActions ea\
-                         ON\
-                         e.id = ea.idEnsemble\
-                        GROUP BY e.id) a\
+                         FROM ensembles e\
+                         INNER JOIN ensemblesActions ea\
+                         ON e.id = ea.idEnsemble\
+                         GROUP BY e.id) a\
                     ON a.id = e.id");
 
 QString const * const RequetesSQL::filtrerEnsembles =

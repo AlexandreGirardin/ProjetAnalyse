@@ -23,13 +23,6 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="champNom">
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="etiquetteDescription">
        <property name="text">
@@ -37,10 +30,17 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="champDescription">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="champNom">
        <property name="readOnly">
         <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPlainTextEdit" name="champDescription">
+       <property name="textInteractionFlags">
+        <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -74,6 +74,12 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champNom</tabstop>
+  <tabstop>champDescription</tabstop>
+  <tabstop>listeActions</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

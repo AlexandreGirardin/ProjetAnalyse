@@ -1,5 +1,5 @@
-#include "Vues/vuefragment.h"
-#include "ui_vuefragment.h"
+#include "Vues/fragment.h"
+#include "ui_fragment.h"
 
 #include <QSortFilterProxyModel>
 
@@ -72,17 +72,17 @@ void VueFragment::setColonneId(const int &value)
     colonneId = value;
 }
 
-QPushButton* VueFragment::getBoutonAjouter() const
+QPushButton* VueFragment::boutonAjouter() const
 {
     return ui->boutonAjouter;
 }
 
-QPushButton* VueFragment::getBoutonModifier() const
+QPushButton* VueFragment::boutonModifier() const
 {
     return ui->boutonModifier;
 }
 
-QPushButton* VueFragment::getBoutonVoir() const
+QPushButton* VueFragment::boutonVoir() const
 {
     return ui->boutonVoir;
 }
@@ -95,9 +95,14 @@ QPushButton* VueFragment::ajouterBouton(const int &index)
     return bouton;
 }
 
-QCheckBox* VueFragment::getCaseCocher() const
+QPushButton* VueFragment::caseCocher() const
 {
     return ui->caseCocher;
+}
+
+QLineEdit *VueFragment::champ() const
+{
+    return ui->champ;
 }
 
 void VueFragment::retirerCaseCocher() const

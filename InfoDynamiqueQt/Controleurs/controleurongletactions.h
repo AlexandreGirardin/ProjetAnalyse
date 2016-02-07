@@ -5,7 +5,7 @@
 
 #include "Controleurs/controleuractions.h"
 #include "Controleurs/controleurensembles.h"
-#include "Vues/vuefragment.h"
+#include "Vues/fragment.h"
 
 #include <QSplitter>
 

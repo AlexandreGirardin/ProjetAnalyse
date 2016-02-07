@@ -6,8 +6,7 @@
 #include "Controleurs/controleurgestionappareil.h"
 #include "Controleurs/controleurgestionclient.h"
 #include "Controleurs/controleurgestionfiche.h"
-
-#include "Vues/vuefragment.h"
+#include "Vues/fragment.h"
 
 #include <QSqlQuery>
 #include <QSplitter>

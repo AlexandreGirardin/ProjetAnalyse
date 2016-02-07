@@ -3,14 +3,12 @@
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
 
+#include "Vues/vueclient.h"
 #include "Vues/vuegestionclient.h"
 #include <QSqlQueryModel>
 #include <QDebug>
 
-ControleurGestionClient::ControleurGestionClient(QObject* parent)
-    : QObject(parent)
-{
-}
+ControleurGestionClient::ControleurGestionClient(QObject* parent) : QObject(parent) {}
 
 void ControleurGestionClient::ajouterClient()
 {
@@ -52,11 +50,13 @@ void ControleurGestionClient::voirClient(const int &idClient)
 {
     Client* client = Application::clients->getClient(idClient);
     if (client != NULL) {
-        VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
+        VueClient* vue = new VueClient(Application::vuePrincipale());
         client->setParent(vue);
         vue->setWindowTitle(tr("Informations d'un client"));
-        assignerClient(vue, client);
-        vue->setLectureSeule();
+        vue->setPrenom(client->prenom());
+        vue->setNom(client->nom());
+        vue->setTelephone(client->telephone());
+        vue->setAdresse(client->adresse());
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }

@@ -98,8 +98,7 @@ QString VueGestionAppareil::getMotDePasse() const
 
 void VueGestionAppareil::setDescription(const QString &a_description)
 {
-    ui->champDescription->clear();
-    ui->champDescription->appendPlainText(a_description);
+    ui->champDescription->setPlainText(a_description);
 }
 
 QString VueGestionAppareil::getDescription() const

@@ -7,7 +7,7 @@
 
 #include "Modeles/action.h"
 
-#include "Vues/vuefragment.h"
+#include "Vues/fragment.h"
 #include "Vues/vuegestionaction.h"
 
 #include <QSqlQuery>

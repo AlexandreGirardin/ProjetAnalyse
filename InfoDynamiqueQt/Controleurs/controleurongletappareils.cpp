@@ -13,7 +13,7 @@ ControleurAppareils::ControleurAppareils(QWidget* vue)
 {
     fragment = new VueFragment(vue);
     fragment->retirerEtiquette();
-    fragment->getBoutonAjouter()->deleteLater();
+    fragment->boutonAjouter()->deleteLater();
     fragment->retirerCaseCocher();
     vue->layout()->addWidget(fragment);
 
@@ -24,7 +24,7 @@ ControleurAppareils::ControleurAppareils(QWidget* vue)
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
-    QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
+    fragment->champ()->setFocus();
 }
 
 void ControleurAppareils::peuplerAppareils()

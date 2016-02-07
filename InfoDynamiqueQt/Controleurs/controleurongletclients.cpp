@@ -18,6 +18,7 @@ ControleurClients::ControleurClients(QWidget* vue)
     configurerFragmentClients();
     configurerFragmentAppareils();
     configurerFragmentFiches();
+    fragmentClients->champ()->setFocus();
 }
 
 // Configuration
@@ -56,8 +57,8 @@ void ControleurClients::configurerFragmentFiches()
 {
     fragmentFiches = new VueFragment(splitter);
     fragmentFiches->setEtiquette(tr("Fiches"));
-    fragmentFiches->getCaseCocher()->setChecked(true);
-    fragmentFiches->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
+    fragmentFiches->caseCocher()->setChecked(true);
+    fragmentFiches->caseCocher()->setText(tr("Afficher toutes les fiches"));
     fragmentFiches->retirerChamp();
     commandeFiches = RequetesSQL::toutesFichesPourAppareil;
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));

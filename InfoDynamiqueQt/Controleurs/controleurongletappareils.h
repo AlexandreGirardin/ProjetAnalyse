@@ -6,7 +6,7 @@
 #include "Mappeurs/mappeurappareils.h"
 
 #include "Vues/vueappareil.h"
-#include "Vues/vuefragment.h"
+#include "Vues/fragment.h"
 #include "Vues/vuegestionappareil.h"
 #include "Controleurs/controleurgestionappareil.h"
 

@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>515</width>
-    <height>118</height>
+    <width>623</width>
+    <height>190</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,22 +23,27 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>3</number>
+   </property>
    <property name="margin">
     <number>0</number>
    </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="topMargin">
+      <number>2</number>
+     </property>
      <item>
       <widget class="QLabel" name="etiquette">
-       <property name="font">
-        <font>
-         <weight>50</weight>
-         <bold>false</bold>
-         <underline>false</underline>
-        </font>
-       </property>
        <property name="text">
         <string>TextLabel</string>
+       </property>
+       <property name="margin">
+        <number>6</number>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::NoTextInteraction</set>
        </property>
       </widget>
      </item>
@@ -92,9 +97,15 @@
       </spacer>
      </item>
      <item>
-      <widget class="QCheckBox" name="caseCocher">
+      <widget class="QPushButton" name="caseCocher">
        <property name="text">
-        <string>CheckBox</string>
+        <string>PushButton</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -140,6 +151,14 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champ</tabstop>
+  <tabstop>boutonAjouter</tabstop>
+  <tabstop>boutonModifier</tabstop>
+  <tabstop>boutonVoir</tabstop>
+  <tabstop>caseCocher</tabstop>
+  <tabstop>tableau</tabstop>
+ </tabstops>
  <resources>
   <include location="../ressources.qrc"/>
  </resources>
