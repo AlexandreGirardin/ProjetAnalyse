@@ -15,6 +15,7 @@ Application::Application(int &argc, char **argv) :
     clients = new MappeurClients(this);
     ensembles = new MappeurEnsembles(this);
     fabricants = new MappeurFabricants(this);
+    fiches = new MappeurFiches(this);
     pieces = new MappeurPieces(this);
     statuts = new MappeurStatuts(this);
     techniciens = new MappeurTechniciens(this);
@@ -30,6 +31,7 @@ MappeurAppareils* Application::appareils = NULL;
 MappeurClients* Application::clients = NULL;
 MappeurEnsembles* Application::ensembles = NULL;
 MappeurFabricants* Application::fabricants = NULL;
+MappeurFiches* Application::fiches = NULL;
 MappeurPieces* Application::pieces = NULL;
 MappeurStatuts* Application::statuts = NULL;
 MappeurTechniciens* Application::techniciens = NULL;

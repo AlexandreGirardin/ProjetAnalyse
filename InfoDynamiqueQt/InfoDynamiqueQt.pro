@@ -63,7 +63,8 @@ SOURCES += main.cpp\
 	Vues/champformulaire.cpp \
 	Vues/vueensemble.cpp \
 	Controleurs/controleurongletactions.cpp \
-	Controleurs/controleurensembles.cpp
+	Controleurs/controleurensembles.cpp \
+    Mappeurs/mappeurfiches.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
