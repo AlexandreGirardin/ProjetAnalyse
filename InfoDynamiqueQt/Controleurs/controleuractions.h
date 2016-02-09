@@ -4,10 +4,8 @@
 #include <QObject>
 
 #include "Controleurs/controleurensembles.h"
-
 #include "Modeles/action.h"
-
-#include "Vues/vuefragment.h"
+#include "Vues/fragment.h"
 #include "Vues/vuegestionaction.h"
 
 #include <QSqlQuery>
@@ -27,6 +25,7 @@ public:
      * @param parent
      */
     explicit ControleurActions(QWidget* conteneur);
+
 private:
 
     /**
@@ -39,6 +38,10 @@ private:
 
 public slots:
 
+    /**
+     * @brief creerAction
+     * Lance la création d'une nouvelle action
+     */
     void creerAction();
 
     /**
@@ -66,8 +69,6 @@ signals:
      * Lancé lorsque les valeurs du tableau ont été modifiées
      */
     void actionsModifiees();
-
-//    void ensemblesModifies();
 
 };
 

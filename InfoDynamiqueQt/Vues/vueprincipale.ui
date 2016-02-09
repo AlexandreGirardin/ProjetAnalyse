@@ -23,21 +23,9 @@
    <iconset>
     <normaloff>../Toolbox.ico</normaloff>../Toolbox.ico</iconset>
   </property>
-  <property name="tabShape">
-   <enum>QTabWidget::Rounded</enum>
-  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
+    <property name="margin">
      <number>0</number>
     </property>
     <item>
@@ -70,28 +58,72 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <attribute name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/im-user.svg</normaloff>:/Images/im-user.svg</iconset>
+       </attribute>
        <attribute name="title">
         <string>Clients</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_2"/>
+       <layout class="QVBoxLayout" name="_2">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>3</number>
+        </property>
+       </layout>
       </widget>
       <widget class="QWidget" name="ongletFiches">
+       <attribute name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/document-new.svg</normaloff>:/Images/document-new.svg</iconset>
+       </attribute>
        <attribute name="title">
         <string>Fiches</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3"/>
+       <layout class="QVBoxLayout" name="_3">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>3</number>
+        </property>
+       </layout>
       </widget>
       <widget class="QWidget" name="ongletAppareils">
+       <attribute name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/computer-laptop.svg</normaloff>:/Images/computer-laptop.svg</iconset>
+       </attribute>
        <attribute name="title">
         <string>Appareils</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_4"/>
+       <layout class="QVBoxLayout" name="_4">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>3</number>
+        </property>
+       </layout>
       </widget>
       <widget class="QWidget" name="ongletActions">
+       <attribute name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/tag.svg</normaloff>:/Images/tag.svg</iconset>
+       </attribute>
        <attribute name="title">
         <string>Actions</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_6"/>
+       <layout class="QVBoxLayout" name="_5">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>3</number>
+        </property>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -103,7 +135,7 @@
      <x>0</x>
      <y>0</y>
      <width>1081</width>
-     <height>20</height>
+     <height>27</height>
     </rect>
    </property>
    <property name="defaultUp">
@@ -133,6 +165,8 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../ressources.qrc"/>
+ </resources>
  <connections/>
 </ui>

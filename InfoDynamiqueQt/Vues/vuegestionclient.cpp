@@ -34,6 +34,7 @@ void VueGestionClient::configurerBoutonOk()
 {
     boutonOk = new QPushButton(tr("Ok"), this);
     boutonOk->setEnabled(false);
+    boutonOk->setIcon(QIcon::fromTheme("dialog-ok-apply"));
     ui->buttonBox->addButton(boutonOk, QDialogButtonBox::AcceptRole);
     QObject::connect(prenom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
     QObject::connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
@@ -83,22 +84,6 @@ QString VueGestionClient::getAdresse() const
 void VueGestionClient::setAdresse(const QString &adresse)
 {
     ui->champAdresse->setText(adresse);
-}
-
-void VueGestionClient::setLectureSeule()
-{
-    prenom->setLectureSeule(true);
-    nom->setLectureSeule(true);
-    ui->champTelephone->setReadOnly(true);
-    ui->champAdresse->setReadOnly(true);
-}
-
-void VueGestionClient::setEditable()
-{
-    prenom->setLectureSeule(false);
-    nom->setLectureSeule(false);
-    ui->champTelephone->setReadOnly(false);
-    ui->champAdresse->setReadOnly(false);
 }
 
 void VueGestionClient::verifierPrenom() {

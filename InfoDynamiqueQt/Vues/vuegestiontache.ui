@@ -50,6 +50,11 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champNom</tabstop>
+  <tabstop>champDescription</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

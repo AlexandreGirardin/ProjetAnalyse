@@ -1,9 +1,9 @@
-#include "Vues/vuefragment.h"
-#include "ui_vuefragment.h"
+#include "Vues/fragment.h"
+#include "ui_fragment.h"
 
 #include <QSortFilterProxyModel>
 
-VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment)
+Fragment::Fragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment)
 {
     colonneId = 0;
     idModele = -1;
@@ -20,74 +20,88 @@ VueFragment::VueFragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragm
     QObject::connect(ui->tableau, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(doubleClicTableau()));
 }
 
-VueFragment::~VueFragment()
+Fragment::~Fragment()
 {
     delete ui;
 }
 
-void VueFragment::retirerEtiquette() const
+void Fragment::retirerEtiquette() const
 {
-    ui->etiquette->deleteLater();
+    if (ui->etiquette != NULL) {
+        ui->etiquette->deleteLater();
+    }
 }
 
-void VueFragment::setEtiquette(const QString &etiquette) const
+void Fragment::setEtiquette(const QString &etiquette) const
 {
-    ui->etiquette->setText(etiquette);
+    if (ui->etiquette != NULL) {
+        ui->etiquette->setText(etiquette);
+    }
 }
 
-void VueFragment::configurerBoutonAjouter()
+
+int Fragment::getDernierIndexSelectionne() const
+{
+    return dernierIndexSelectionne;
+}
+
+void Fragment::setDernierIndexSelectionne(int value)
+{
+    dernierIndexSelectionne = value;
+}
+void Fragment::configurerBoutonAjouter()
 {
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
 }
 
-void VueFragment::configurerBoutonModifier()
+void Fragment::configurerBoutonModifier()
 {
     QObject::connect(ui->boutonModifier, SIGNAL(clicked()), this, SIGNAL(clicEditer()));
     QObject::connect(this, SIGNAL(selectionValide(bool)), ui->boutonModifier, SLOT(setEnabled(bool)));
 }
 
-void VueFragment::configurerBoutonVoir()
+void Fragment::configurerBoutonVoir()
 {
     QObject::connect(ui->boutonVoir, SIGNAL(clicked()), this, SIGNAL(clicVoir()));
     QObject::connect(this, SIGNAL(selectionValide(bool)), ui->boutonVoir, SLOT(setEnabled(bool)));
 }
 
-void VueFragment::configurerCase()
+void Fragment::configurerCase()
 {
     QObject::connect(ui->caseCocher, SIGNAL(toggled(bool)), this, SLOT(signalerCase(bool)));
 }
 
-void VueFragment::configurerChamp()
+void Fragment::configurerChamp()
 {
     QObject::connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(rechercher(QString)));
 }
 
-int VueFragment::getColonneId() const
+int Fragment::getColonneId() const
 {
     return colonneId;
 }
 
-void VueFragment::setColonneId(const int &value)
+void Fragment::setColonneId(const int &value)
 {
     colonneId = value;
 }
 
-QPushButton* VueFragment::getBoutonAjouter() const
+QPushButton* Fragment::boutonAjouter() const
 {
     return ui->boutonAjouter;
 }
 
-QPushButton* VueFragment::getBoutonModifier() const
+QPushButton* Fragment::boutonModifier() const
 {
     return ui->boutonModifier;
 }
 
-QPushButton* VueFragment::getBoutonVoir() const
+QPushButton* Fragment::boutonVoir() const
 {
     return ui->boutonVoir;
 }
 
-QPushButton* VueFragment::ajouterBouton(const int &index)
+QPushButton* Fragment::ajouterBouton(const int &index)
 {
     QPushButton* bouton = new QPushButton(this);
     ui->horizontalLayout->insertWidget(index, bouton);
@@ -95,32 +109,53 @@ QPushButton* VueFragment::ajouterBouton(const int &index)
     return bouton;
 }
 
-QCheckBox* VueFragment::getCaseCocher() const
+QComboBox* Fragment::ajouterCombobox(const int &index)
+{
+    QComboBox* bouton = new QComboBox(this);
+    ui->horizontalLayout->insertWidget(index, bouton);
+    QObject::connect(this, SIGNAL(selectionValide(bool)), bouton, SLOT(setEnabled(bool)));
+    return bouton;
+}
+
+QPushButton* Fragment::caseCocher() const
 {
     return ui->caseCocher;
 }
 
-void VueFragment::retirerCaseCocher() const
+QLineEdit *Fragment::champ() const
 {
-    ui->caseCocher->deleteLater();
+    return ui->champ;
 }
 
-void VueFragment::retirerChamp() const
+void Fragment::retirerCaseCocher() const
 {
-    ui->champ->deleteLater();
+    if (ui->caseCocher != NULL) {
+        ui->caseCocher->deleteLater();
+    }
 }
 
-QString VueFragment::getFiltre() const
+void Fragment::retirerChamp() const
 {
-    return ui->champ->text();
+    if (ui->caseCocher != NULL) {
+        ui->champ->deleteLater();
+    }
 }
 
-QTableView* VueFragment::getTableau() const
+QString Fragment::getFiltre() const
+{
+    if (ui->champ != NULL) {
+        return ui->champ->text();
+    } else {
+        return QString();
+    }
+}
+
+QTableView* Fragment::getTableau() const
 {
     return ui->tableau;
 }
 
-void VueFragment::peuplerTableau(QAbstractTableModel* valeurs)
+void Fragment::peuplerTableau(QAbstractTableModel* valeurs)
 {
     QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->tableau);
     modeleTriable->setSourceModel(valeurs);
@@ -132,24 +167,24 @@ void VueFragment::peuplerTableau(QAbstractTableModel* valeurs)
     relacherModele();
 }
 
-int VueFragment::getId(const QModelIndex &index)
+int Fragment::getId(const QModelIndex &index)
 {
     int rangee = index.row();
     QModelIndex caseId = ui->tableau->model()->index(rangee, colonneId);
     return ui->tableau->model()->data(caseId).toInt();
 }
 
-int VueFragment::getIdModele() const
+int Fragment::getIdModele() const
 {
     return idModele;
 }
 
-void VueFragment::setIdModele(const int &value)
+void Fragment::setIdModele(const int &value)
 {
     idModele = value;
 }
 
-void VueFragment::relacherModele()
+void Fragment::relacherModele()
 {
     ui->tableau->clearSelection();
     idModele = -1;
@@ -157,14 +192,15 @@ void VueFragment::relacherModele()
     emit modeleRelache();
 }
 
-void VueFragment::selectionnerModele(const QModelIndex &index)
+void Fragment::selectionnerModele(const QModelIndex &index)
 {
+    dernierIndexSelectionne = index.row();
     idModele = getId(index);
     emit selectionValide(true);
     emit modeleSelectionne(idModele);
 }
 
-void VueFragment::signalerCase(const bool &etat)
+void Fragment::signalerCase(const bool &etat)
 {
     if (etat) {
         emit caseCochee();
@@ -173,12 +209,12 @@ void VueFragment::signalerCase(const bool &etat)
     }
 }
 
-void VueFragment::signalerSelection(const QModelIndex &nouvelle, const QModelIndex&)
+void Fragment::signalerSelection(const QModelIndex &nouvelle, const QModelIndex&)
 {
     emit nouvelleSelection(nouvelle);
 }
 
-void VueFragment::doubleClicTableau()
+void Fragment::doubleClicTableau()
 {
     emit doubleClicModele();
 }

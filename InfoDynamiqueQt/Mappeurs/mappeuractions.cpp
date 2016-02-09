@@ -30,7 +30,7 @@ QList<Action*>* MappeurActions::getActions()
 
 Action* MappeurActions::mapper(const QSqlRecord &ligne)
 {
-    Action* action = new Action(this);
+    Action* action = new Action();
     action->setId(ligne.value("id").toInt());
     action->setNom(ligne.value("nom").toString());
     action->setDescription(ligne.value("description").toString());
@@ -48,7 +48,7 @@ QList<Action*>* MappeurActions::mapper(QSqlQuery &requete)
     int colEtat = ligne.indexOf("etat");
     while (requete.next()) {
         ligne = requete.record();
-        Action* action = new Action(this);
+        Action* action = new Action();
         action->setId(ligne.value(colId).toInt());
         action->setNom(ligne.value(colNom).toString());
         action->setDescription(ligne.value(colDesc).toString());
@@ -84,7 +84,7 @@ QList<Action*>* MappeurActions::actionsHorsEnsemble(const int &idEnsemble)
     return mapper(requete);
 }
 
-bool MappeurActions::inserer(const Action* action) const
+bool MappeurActions::inserer(const Action* action)
 {
     const QString commande("INSERT INTO actions (nom, description, etat)\
                             VALUES (:nom, :description, :etat)");
@@ -92,7 +92,7 @@ bool MappeurActions::inserer(const Action* action) const
     return succes;
 }
 
-bool MappeurActions::mettreAJour(const Action* action) const
+bool MappeurActions::mettreAJour(const Action* action)
 {
     const QString commande("UPDATE actions\
                             SET\
@@ -104,7 +104,7 @@ bool MappeurActions::mettreAJour(const Action* action) const
     return succes;
 }
 
-QSqlQuery* MappeurActions::preparerRequete(const Action* action, const QString &commande) const
+QSqlQuery* MappeurActions::preparerRequete(const Action* action, const QString &commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
@@ -115,7 +115,7 @@ QSqlQuery* MappeurActions::preparerRequete(const Action* action, const QString &
     return requete;
 }
 
-bool MappeurActions::ecrire(const Action *action, const QString &commande) const
+bool MappeurActions::ecrire(const Action *action, const QString &commande)
 {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();

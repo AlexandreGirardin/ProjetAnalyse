@@ -2,6 +2,7 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
+#include "mappeurfabricants.h"
 
 #include <QDebug>
 #include <QSqlError>
@@ -37,8 +38,8 @@ Appareil* MappeurAppareils::mapper(const QSqlRecord &ligne)
     appareil->setDescription(ligne.value("description").toString());
     appareil->setMotDePasse(ligne.value("motDePasse").toString());
     appareil->setIdClient(ligne.value("idClient").toInt());
-    appareil->setType(Application::typesAppareils->getTypeAppareil(ligne.value("idType").toInt()));
-    appareil->setFabricant(Application::fabricants->getFabricant(ligne.value("idFabricant").toInt()));
+    appareil->setType(MappeurTypeAppareils::getTypeAppareil(ligne.value("idType").toInt()));
+    appareil->setFabricant(MappeurFabricants::getFabricant(ligne.value("idFabricant").toInt()));
     return appareil;
 }
 
@@ -54,19 +55,19 @@ QList<Appareil*>* MappeurAppareils::mapper(QSqlQuery &requete)
     int colFab = ligne.indexOf("idFabricant");
     while (requete.next()) {
         ligne = requete.record();
-        Appareil* appareil = new Appareil(this);
+        Appareil* appareil = new Appareil();
         appareil->setId(ligne.value(colId).toInt());
         appareil->setDescription(ligne.value(colDesc).toString());
         appareil->setMotDePasse(ligne.value(colMDP).toString());
-        appareil->setType(Application::typesAppareils->getTypeAppareil(ligne.value(colType).toInt()));
-        appareil->setFabricant(Application::fabricants->getFabricant(ligne.value(colFab).toInt()));
+        appareil->setType(MappeurTypeAppareils::getTypeAppareil(ligne.value(colType).toInt()));
+        appareil->setFabricant(MappeurFabricants::getFabricant(ligne.value(colFab).toInt()));
         appareil->setIdClient(ligne.value(colClient).toInt());
         liste->append(appareil);
     }
     return liste;
 }
 
-bool MappeurAppareils::mettreAJour(const Appareil *appareil) const
+bool MappeurAppareils::mettreAJour(const Appareil *appareil)
 {
     const QString commande("UPDATE appareils\
                             SET\
@@ -79,7 +80,7 @@ bool MappeurAppareils::mettreAJour(const Appareil *appareil) const
     return succes;
 }
 
-bool MappeurAppareils::inserer(const Appareil *appareil) const
+bool MappeurAppareils::inserer(const Appareil *appareil)
 {
     const QString commande("INSERT INTO appareils\
                                 (idType, idFabricant, idClient, description, motDePasse)\
@@ -89,7 +90,7 @@ bool MappeurAppareils::inserer(const Appareil *appareil) const
     return succes;
 }
 
-QSqlQuery* MappeurAppareils::preparerRequete(const Appareil* appareil, const QString &commande) const
+QSqlQuery* MappeurAppareils::preparerRequete(const Appareil* appareil, const QString &commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
@@ -102,7 +103,7 @@ QSqlQuery* MappeurAppareils::preparerRequete(const Appareil* appareil, const QSt
     return requete;
 }
 
-bool MappeurAppareils::ecrire(const Appareil* appareil, const QString &commande) const
+bool MappeurAppareils::ecrire(const Appareil* appareil, const QString &commande)
 {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();

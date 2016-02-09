@@ -73,20 +73,6 @@ public:
      */
     void setAdresse(const QString &courriel);
 
-public slots:
-
-    /**
-     * @brief setLectureSeule
-     * Rend la vue non éditable
-     */
-    void setLectureSeule();
-
-    /**
-     * @brief setEditable
-     * Rend la vue éditable
-     */
-    void setEditable();
-
 private slots:
 
     void verifierPrenom();

@@ -57,6 +57,12 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champNom</tabstop>
+  <tabstop>champDesc</tabstop>
+  <tabstop>caseActivee</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

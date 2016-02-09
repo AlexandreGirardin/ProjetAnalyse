@@ -2,15 +2,12 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
+#include "Vues/vueclient.h"
 
-#include "Vues/vuegestionclient.h"
 #include <QSqlQueryModel>
 #include <QDebug>
 
-ControleurGestionClient::ControleurGestionClient(QObject* parent)
-    : QObject(parent)
-{
-}
+ControleurGestionClient::ControleurGestionClient(QObject* parent) : QObject(parent) {}
 
 void ControleurGestionClient::ajouterClient()
 {
@@ -18,11 +15,8 @@ void ControleurGestionClient::ajouterClient()
     vue->setWindowTitle(tr("Créer un nouveau client"));
     if (vue->exec() == vue->Accepted) {
         Client* client = new Client(vue);
-        client->setPrenom(vue->getPrenom());
-        client->setNom(vue->getNom());
-        client->setTelephone(vue->getTelephone());
-        client->setAdresse(vue->getAdresse());
-        if (Application::clients->inserer(client)) {
+        extraireClient(client, vue);
+        if (MappeurClients::inserer(client)) {
             emit donneesModifiees();
         } else {
             qDebug() << "Pas marché: " << client->out();
@@ -33,17 +27,15 @@ void ControleurGestionClient::ajouterClient()
 
 void ControleurGestionClient::modifierClient(const int &idClient)
 {
-    Client* client = Application::clients->getClient(idClient);
+    Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
         VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
+        client->setParent(vue);
         vue->setWindowTitle(tr("Modifier un client"));
         assignerClient(vue, client);
         if (vue->exec() == vue->Accepted) {
-            client->setNom(vue->getNom());
-            client->setPrenom(vue->getPrenom());
-            client->setTelephone(vue->getTelephone());
-            client->setAdresse(vue->getAdresse());
-            if (Application::clients->mettreAJour(client)) {
+            extraireClient(client, vue);
+            if (MappeurClients::mettreAJour(client)) {
                 emit donneesModifiees();
             } else {
                 qDebug() << "Pas marché" << client->out();
@@ -51,17 +43,19 @@ void ControleurGestionClient::modifierClient(const int &idClient)
         }
         vue->deleteLater();
     }
-    client->deleteLater();
 }
 
 void ControleurGestionClient::voirClient(const int &idClient)
 {
-    const Client* client = Application::clients->getClient(idClient);
+    Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
-        VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
+        VueClient* vue = new VueClient(Application::vuePrincipale());
+        client->setParent(vue);
         vue->setWindowTitle(tr("Informations d'un client"));
-        assignerClient(vue, client);
-        vue->setLectureSeule();
+        vue->setPrenom(client->prenom());
+        vue->setNom(client->nom());
+        vue->setTelephone(client->telephone());
+        vue->setAdresse(client->adresse());
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
@@ -73,5 +67,13 @@ void ControleurGestionClient::assignerClient(VueGestionClient* vue, const Client
     vue->setNom(client->nom());
     vue->setTelephone(client->telephone());
     vue->setAdresse(client->adresse());
+}
+
+void ControleurGestionClient::extraireClient(Client *client, const VueGestionClient* vue)
+{
+    client->setPrenom(vue->getPrenom());
+    client->setNom(vue->getNom());
+    client->setTelephone(vue->getTelephone());
+    client->setAdresse(vue->getAdresse());
 }
 

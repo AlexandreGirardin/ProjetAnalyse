@@ -84,6 +84,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>comboType</tabstop>
+  <tabstop>comboFabricant</tabstop>
+  <tabstop>champMDP</tabstop>
+  <tabstop>champDescription</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

@@ -1,6 +1,8 @@
-#include "Controleurs/controleurfiches.h"
+#include "Controleurs/controleurongletfiches.h"
 
 #include "Controleurs/application.h"
+#include "Controleurs/requetessql.h"
+#include "Vues/vueeditionfiche.h"
 
 #include <QLayout>
 #include <QSqlQueryModel>
@@ -8,15 +10,16 @@
 ControleurFiches::ControleurFiches(QWidget* vue)
     : QObject(vue)
 {
-    fragment = new VueFragment();
+    fragment = new Fragment();
     fragment->retirerEtiquette();
-    fragment->getCaseCocher()->setText(tr("Afficher toutes les fiches"));
+    fragment->caseCocher()->setText(tr("Afficher toutes les fiches"));
     vue->layout()->addWidget(fragment);
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
     QObject::connect(fragment, SIGNAL(clicCreer()), this, SLOT(creerFiche()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirFiche()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
+    fragment->champ()->setFocus();
 }
 
 void ControleurFiches::peuplerFiches()
@@ -27,9 +30,17 @@ void ControleurFiches::peuplerFiches()
     fragment->getTableau()->hideColumn(0);
 }
 
-void ControleurFiches::modifierFiche()
+void ControleurFiches::creerFiche() const
 {
 
+}
+
+void ControleurFiches::modifierFiche() const
+{
+    VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
+    vue->setIdFiche(1);
+    vue->exec();
+    vue->deleteLater();
 }
 
 void ControleurFiches::voirFiche() const

@@ -11,9 +11,6 @@ class Statut : public ModeleBD
 
 private:
 
-    // L'identifiant unique du statut
-    int m_id;
-
     // Le nom du statut
     QString m_nom;
 
@@ -32,18 +29,6 @@ public:
      * @param parent
      */
     explicit Statut(const int &a_id, const QString &a_nom, QObject* parent = 0);
-
-    /**
-     * @brief getId
-     * @return L'id du statut
-     */
-    int id() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner pour le statut
-     */
-    void setId(const int &value);
 
     /**
      * @brief getNom

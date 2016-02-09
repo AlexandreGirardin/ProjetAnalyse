@@ -7,7 +7,7 @@ class ModeleBD : public QObject
 {
     Q_OBJECT
 
-private:
+protected:
 
     // L'identifiant unique du modèle dans une table de la BD
     int m_id;

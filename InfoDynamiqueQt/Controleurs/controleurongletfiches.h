@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#include "Vues/vuefragment.h"
+#include "Vues/fragment.h"
 
 class ControleurFiches : public QObject
 {
@@ -23,7 +23,7 @@ public:
 private:
 
     // Le fragment des fiches
-    VueFragment* fragment;
+    Fragment* fragment;
 
 public slots:
 
@@ -34,10 +34,16 @@ public slots:
     void peuplerFiches();
 
     /**
+     * @brief creerFiche
+     * Lance la création d'une nouvelle fiche
+     */
+    void creerFiche() const;
+
+    /**
      * @brief modifierFiche
      * Lance la modification de la fiche sélectionnée
      */
-    void modifierFiche();
+    void modifierFiche() const;
 
     /**
      * @brief modifierFiche

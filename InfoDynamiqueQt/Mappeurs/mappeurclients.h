@@ -29,14 +29,14 @@ public:
      * @param id Le numéro du client à mapper
      * @return Le client s'il existe, NULL autrement
      */
-    Client* getClient(const int &id);
+    static Client* getClient(const int &id);
 
     /**
      * @brief inserer
      * @param client Le client a insérer dans la base de donnée
      * @return succes
      */
-    bool inserer(const Client* client) const;
+    static bool inserer(const Client* client);
 
     /**
      * @brief mettreAJour
@@ -44,7 +44,7 @@ public:
      * @param client Le client à mettre à jour
      * @return Succès
      */
-    bool mettreAJour(const Client* client) const;
+    static bool mettreAJour(const Client* client);
 
 private:
 
@@ -53,7 +53,7 @@ private:
      * @param ligne La ligne de la base de données à mapper en client
      * @return Le client
      */
-    Client* mapper(const QSqlRecord &ligne);
+    static Client* mapper(const QSqlRecord &ligne);
 
     /**
      * @brief preparerRequete Assigne les valeurs d'un client à une requête préparée
@@ -61,7 +61,7 @@ private:
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
-    QSqlQuery* preparerRequete(const Client* client, const QString &commande) const;
+    static QSqlQuery* preparerRequete(const Client* client, const QString &commande);
 };
 
 #endif // MAPPEURCLIENTS_H

@@ -7,5 +7,16 @@
         <file>Images/reverse.svg</file>
         <file>Images/edit-delete.svg</file>
         <file>Images/Toolbox.ico</file>
+        <file>Images/visibility.svg</file>
+        <file>Images/document-edit-sign.svg</file>
+        <file>Images/document-new-from-template.svg</file>
+        <file>Images/document-new.svg</file>
+        <file>Images/document-preview-archive.svg</file>
+        <file>Images/im-user.svg</file>
+        <file>Images/list-add-user.svg</file>
+        <file>Images/tag-new.svg</file>
+        <file>Images/tag.svg</file>
+        <file>Images/user-group-properties.svg</file>
+        <file>Images/computer-laptop.svg</file>
     </qresource>
 </RCC>

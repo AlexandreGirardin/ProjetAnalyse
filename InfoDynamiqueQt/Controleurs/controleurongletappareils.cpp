@@ -1,19 +1,19 @@
-#include "controleurappareils.h"
+#include "controleurongletappareils.h"
 #include "ui_vueprincipale.h"
 
 #include "Controleurs/controleurbd.h"
+#include "Controleurs/requetessql.h"
 
 #include <QSqlQueryModel>
-
 #include <QDebug>
 #include "Controleurs/application.h"
 
 ControleurAppareils::ControleurAppareils(QWidget* vue)
     : QObject(vue)
 {
-    fragment = new VueFragment(vue);
+    fragment = new Fragment(vue);
     fragment->retirerEtiquette();
-    fragment->getBoutonAjouter()->deleteLater();
+    fragment->boutonAjouter()->deleteLater();
     fragment->retirerCaseCocher();
     vue->layout()->addWidget(fragment);
 
@@ -24,7 +24,7 @@ ControleurAppareils::ControleurAppareils(QWidget* vue)
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
-    QSqlDatabase bd = QSqlDatabase::database(ControleurBD::nomBd());
+    fragment->champ()->setFocus();
 }
 
 void ControleurAppareils::peuplerAppareils()
@@ -32,7 +32,7 @@ void ControleurAppareils::peuplerAppareils()
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(*RequetesSQL::afficherAppareils, *Application::bd);
     fragment->peuplerTableau(appareils);
-    fragment->getTableau()->hideColumn(0);
+    fragment->getTableau()->hideColumn(fragment->getColonneId());
 }
 
 void ControleurAppareils::modifierAppareil() const
@@ -62,7 +62,7 @@ void ControleurAppareils::filtrerAppareils(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
-        fragment->getTableau()->hideColumn(0);
+        fragment->getTableau()->hideColumn(fragment->getColonneId());
     }
 }
 

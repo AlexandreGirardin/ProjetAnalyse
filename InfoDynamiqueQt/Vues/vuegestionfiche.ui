@@ -63,6 +63,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champDescription</tabstop>
+  <tabstop>comboPriorite</tabstop>
+  <tabstop>comboPreselection</tabstop>
+  <tabstop>tableTaches</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

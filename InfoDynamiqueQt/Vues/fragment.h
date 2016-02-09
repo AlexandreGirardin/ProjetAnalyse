@@ -1,18 +1,20 @@
 #ifndef FRAGMENT_H
 #define FRAGMENT_H
 
+#include <QWidget>
+
 #include <QCheckBox>
+#include <QComboBox>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTableWidget>
-#include <QWidget>
 
 namespace Ui {
 class VueFragment;
 }
 
-class VueFragment : public QWidget
+class Fragment : public QWidget
 {
     Q_OBJECT
 
@@ -33,6 +35,8 @@ private:
 
     // L'index de la colonne des id des modèles dans le tableau
     int colonneId;
+
+    int dernierIndexSelectionne;
 
     /**
      * @brief configurerBoutonAjouter
@@ -70,8 +74,8 @@ public:
      * @brief VueFragment
      * @param parent
      */
-    explicit VueFragment(QWidget* parent = 0);
-    ~VueFragment();
+    explicit Fragment(QWidget* parent = 0);
+    ~Fragment();
 
     void retirerEtiquette() const;
 
@@ -81,19 +85,19 @@ public:
      * @brief getBoutonAjouter
      * @return  Le bouton d'ajout de modèle du fragment
      */
-    QPushButton* getBoutonAjouter() const;
+    QPushButton* boutonAjouter() const;
 
     /**
      * @brief getBoutonModifier
      * @return Le bouton de modification de modèle du fragment
      */
-    QPushButton* getBoutonModifier() const;
+    QPushButton* boutonModifier() const;
 
     /**
      * @brief getBoutonVoir
      * @return Le bouton de visualisation de modèle du fragment
      */
-    QPushButton* getBoutonVoir() const;
+    QPushButton* boutonVoir() const;
 
     /**
      * @brief ajouterBouton
@@ -106,7 +110,13 @@ public:
      * @brief getCaseCocher
      * @return La case à cocher du fragment
      */
-    QCheckBox* getCaseCocher() const;
+    QPushButton *caseCocher() const;
+
+    /**
+     * @brief champ
+     * @return Le champ de texte servant à la recherche
+     */
+    QLineEdit* champ() const;
 
     /**
      * @brief retirerCaseCocher
@@ -163,6 +173,11 @@ public:
      * @param value Le numéro à assigner
      */
     void setColonneId(const int &value);
+
+    int getDernierIndexSelectionne() const;
+    void setDernierIndexSelectionne(int value);
+
+    QComboBox *ajouterCombobox(const int &index);
 
 public slots:
 

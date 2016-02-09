@@ -2,9 +2,8 @@
 #include "ui_vueprincipale.h"
 
 #include "Controleurs/application.h"
-#include "Controleurs/controleurbd.h"
-#include "Vues/vueensemble.h"
-#include "Vues/vuegestionensemble.h"
+#include "Mappeurs/mappeuractions.h"
+#include "Vues/vueaction.h"
 
 #include <QMessageBox>
 #include <QSqlQueryModel>
@@ -29,7 +28,7 @@ void ControleurActions::creerAction()
         action->setNom(vue->getNom());
         action->setDescription(vue->getDescription());
         action->setEtat(vue->getEtat());
-        if (Application::actions->inserer(action)) {
+        if (MappeurActions::inserer(action)) {
             emit actionsModifiees();
         }
     }
@@ -38,7 +37,7 @@ void ControleurActions::creerAction()
 
 void ControleurActions::modifierAction(const int &idAction)
 {
-    Action* action = Application::actions->getAction(idAction);
+    Action* action = MappeurActions::getAction(idAction);
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
         vue->setWindowTitle(tr("Modifier une action"));
@@ -47,7 +46,7 @@ void ControleurActions::modifierAction(const int &idAction)
             action->setNom(vue->getNom());
             action->setDescription(vue->getDescription());
             action->setEtat(vue->getEtat());
-            if (Application::actions->mettreAJour(action)) {
+            if (MappeurActions::mettreAJour(action)) {
                 emit actionsModifiees();
             }
         }
@@ -57,12 +56,12 @@ void ControleurActions::modifierAction(const int &idAction)
 
 void ControleurActions::voirAction(const int &idAction) const
 {
-    Action* action = Application::actions->getAction(idAction);
+    Action* action = MappeurActions::getAction(idAction);
     if (action != NULL) {
-        VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
+        VueAction* vue = new VueAction(Application::vuePrincipale());
+        vue->setNom(action->nom());
+        vue->setDescription(action->description());
         vue->setWindowTitle(tr("Action"));
-        assignerAction(vue, action);
-        vue->setLectureSeule(true);
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
@@ -71,10 +70,10 @@ void ControleurActions::voirAction(const int &idAction) const
 
 void ControleurActions::changerEtat(const int &idAction)
 {
-    Action* action = Application::actions->getAction(idAction);
+    Action* action = MappeurActions::getAction(idAction);
     if (action != NULL) {
         action->setEtat(!action->etat());
-        if (Application::actions->mettreAJour(action)) {
+        if (MappeurActions::mettreAJour(action)) {
             emit actionsModifiees();
         }
     }

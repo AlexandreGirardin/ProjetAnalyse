@@ -2,6 +2,7 @@
 #include "Vues/vueprincipale.h"
 
 #include <QDebug>
+#include "Mappeurs/mappeuractions.h"
 
 Application::Application(int &argc, char **argv) :
     QApplication(argc, argv)
@@ -10,32 +11,12 @@ Application::Application(int &argc, char **argv) :
     controleurBD = new ControleurBD(this);
     controleurBD->connecterDossiers();
     bd = controleurBD->getBd();
-    actions = new MappeurActions(this);
-    appareils = new MappeurAppareils(this);
-    clients = new MappeurClients(this);
-    ensembles = new MappeurEnsembles(this);
-    fabricants = new MappeurFabricants(this);
-    fiches = new MappeurFiches(this);
-    pieces = new MappeurPieces(this);
-    statuts = new MappeurStatuts(this);
-    techniciens = new MappeurTechniciens(this);
-    typesAppareils = new MappeurTypeAppareils(this);
 }
 
 const Application* Application::m_instance = NULL;
 VuePrincipale* Application::m_vuePrincipale = NULL;
 QSqlDatabase* Application::bd = NULL;
 ControleurBD* Application::controleurBD = NULL;
-MappeurActions* Application::actions = NULL;
-MappeurAppareils* Application::appareils = NULL;
-MappeurClients* Application::clients = NULL;
-MappeurEnsembles* Application::ensembles = NULL;
-MappeurFabricants* Application::fabricants = NULL;
-MappeurFiches* Application::fiches = NULL;
-MappeurPieces* Application::pieces = NULL;
-MappeurStatuts* Application::statuts = NULL;
-MappeurTechniciens* Application::techniciens = NULL;
-MappeurTypeAppareils* Application::typesAppareils = NULL;
 
 const Application* Application::getInstance()
 {
@@ -51,7 +32,7 @@ void Application::demarrer()
 
 void Application::debug()
 {
-    QList<Action*>* listeActions = actions->getActions();
+    QList<Action*>* listeActions = MappeurActions::getActions();
     for (QList<Action*>::const_iterator i = listeActions->constBegin(); i != listeActions->constEnd(); ++i)
     {
         qDebug() << (*i)->out();

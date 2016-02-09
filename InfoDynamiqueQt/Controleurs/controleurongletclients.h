@@ -6,8 +6,7 @@
 #include "Controleurs/controleurgestionappareil.h"
 #include "Controleurs/controleurgestionclient.h"
 #include "Controleurs/controleurgestionfiche.h"
-
-#include "Vues/vuefragment.h"
+#include "Vues/fragment.h"
 
 #include <QSqlQuery>
 #include <QSplitter>
@@ -44,13 +43,16 @@ private:
     ControleurGestionFiche* controleurGestionFiche;
 
     // Le fragment des clients
-    VueFragment* fragmentClients;
+    Fragment* fragmentClients;
 
     // Le fragment des appareils
-    VueFragment* fragmentAppareils;
+    Fragment* fragmentAppareils;
 
     // Le fragment des fiches
-    VueFragment* fragmentFiches;
+    Fragment* fragmentFiches;
+
+    // La commande SQL actuelle servant à peupler le fragmentFiches
+    const QString* commandeFiches;
 
     /**
      * @brief configurerFragmentClients
@@ -83,8 +85,6 @@ private:
      * @return La requête utilisée pour peupler les fiches
      */
     QSqlQuery requeteFiches(const int &idAppareil) const;
-
-    const QString* commandeFiches;
 
 public slots:
 
@@ -136,7 +136,7 @@ public slots:
 
     /**
      * @brief modifierFiche
-     * Lance la modifiction de la fiche sélectionné
+     * Lance la modification de la fiche sélectionné
      */
     void modifierFiche() const;
 
@@ -194,8 +194,11 @@ private slots:
 
     /**
      * @brief rechargerAppareils
+     * Repeuple le fragmentAppareils en tenant compte du filtre actuel
      */
     void rechargerAppareils();
+
+    void rechargerNombreAppareils();
 };
 
 #endif // CONTROLEURCLIENTS_H

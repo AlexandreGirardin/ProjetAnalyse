@@ -50,6 +50,13 @@
        </property>
       </widget>
      </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="etiquetteMDP">
+       <property name="text">
+        <string>Mot de passe:</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="champMDP">
        <property name="readOnly">
@@ -57,13 +64,6 @@
        </property>
        <property name="placeholderText">
         <string>Aucun</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="etiquetteMDP">
-       <property name="text">
-        <string>Mot de passe:</string>
        </property>
       </widget>
      </item>
@@ -92,6 +92,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champType</tabstop>
+  <tabstop>champFabricant</tabstop>
+  <tabstop>champMDP</tabstop>
+  <tabstop>champDescription</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

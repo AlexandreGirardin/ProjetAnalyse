@@ -13,9 +13,6 @@ class Appareil : public ModeleBD {
 
 private:
 
-    // L'id de l'appareil
-    int m_id;
-
     // Le frabricant de l'appareil
     Fabricant* m_fabricant;
 
@@ -38,20 +35,6 @@ public:
      * @param parent
      */
     explicit Appareil(QObject* parent = 0);
-
-     ~Appareil();
-
-    /**
-     * @brief getId
-     * @return L'id de l'appareil
-     */
-    int id() const;
-
-    /**
-     * @brief setId
-     * @param value L'id à assigner à l'appareil
-     */
-    void setId(const int &value);
 
     /**
      * @brief getFabricant

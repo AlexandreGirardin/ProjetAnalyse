@@ -78,6 +78,12 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champNom</tabstop>
+  <tabstop>champPrix</tabstop>
+  <tabstop>champDescription</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

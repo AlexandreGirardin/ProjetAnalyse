@@ -18,7 +18,7 @@ QList<Statut*>* MappeurStatuts::getStatutsFiche()
     return mapper(requete);
 }
 
-Statut* MappeurStatuts::getStatutAction(const int &idStatut)
+Statut* MappeurStatuts::getStatutTache(const int &idStatut)
 {
     return getStatut(idStatut, QString("SELECT * FROM statutsActions WHERE id=:idStatut"));
 }
@@ -36,7 +36,7 @@ Statut* MappeurStatuts::getStatut(const int &idStatut, const QString &commande)
     return statut;
 }
 
-QList<Statut*>* MappeurStatuts::getStatutsAction() {
+QList<Statut*>* MappeurStatuts::getStatutsTache() {
     QSqlQuery requete(QSqlQuery("SELECT * FROM statutsAction", *Application::bd));
     return mapper(requete);
 }

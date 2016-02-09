@@ -3,12 +3,9 @@
 
 #include <QObject>
 
-#include "Mappeurs/mappeurappareils.h"
-
-#include "Vues/vueappareil.h"
-#include "Vues/vuefragment.h"
-#include "Vues/vuegestionappareil.h"
 #include "Controleurs/controleurgestionappareil.h"
+#include "Mappeurs/mappeurappareils.h"
+#include "Vues/fragment.h"
 
 class ControleurAppareils : public QObject
 {
@@ -31,7 +28,7 @@ private:
     ControleurGestionAppareil* controleurGestionAppareil;
 
     // Le fragment des appareils
-    VueFragment* fragment;
+    Fragment* fragment;
 
 public slots:
 

@@ -17,7 +17,7 @@ RC_ICONS = Images/Toolbox.ico
 
 SOURCES += main.cpp\
 	Vues/vueauthentification.cpp \
-		Vues/vueconnexion.cpp \
+        Vues/vueconnexion.cpp \
 	Vues/vueprincipale.cpp \
 	Vues/vuegestiontache.cpp \
 	Vues/vuegestionpiece.cpp \
@@ -25,11 +25,7 @@ SOURCES += main.cpp\
 	Vues/vuegestionensemble.cpp \
 	Vues/vuegestionclient.cpp \
 	Vues/vuegestionappareil.cpp \
-	Vues/vuefragment.cpp \
 	Vues/vueeditionfiche.cpp \
-	Controleurs/controleurclients.cpp \
-	Controleurs/controleurfiches.cpp \
-	Controleurs/controleurappareils.cpp \
 	Controleurs/controleuractions.cpp \
 	Controleurs/controleurgestionclient.cpp \
 	Controleurs/controleurbd.cpp \
@@ -63,8 +59,15 @@ SOURCES += main.cpp\
 	Vues/champformulaire.cpp \
 	Vues/vueensemble.cpp \
 	Controleurs/controleurongletactions.cpp \
-	Controleurs/controleurensembles.cpp \
-    Mappeurs/mappeurfiches.cpp
+        Controleurs/controleurensembles.cpp \
+        Mappeurs/mappeurfiches.cpp \
+	Controleurs/controleurongletclients.cpp \
+	Controleurs/controleurongletappareils.cpp \
+	Controleurs/controleurongletfiches.cpp \
+	Vues/fragment.cpp \
+	Vues/vueclient.cpp \
+	Vues/vueaction.cpp \
+        Mappeurs/mappeurtaches.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -76,11 +79,7 @@ HEADERS  += \
 	Vues/vuegestionensemble.h \
 	Vues/vuegestionclient.h \
 	Vues/vuegestionappareil.h \
-	Vues/vuefragment.h \
 	Vues/vueeditionfiche.h \
-	Controleurs/controleurclients.h \
-	Controleurs/controleurfiches.h \
-	Controleurs/controleurappareils.h \
 	Controleurs/controleuractions.h \
 	Controleurs/controleurgestionclient.h \
 	Controleurs/controleurgestionappareil.h \
@@ -115,13 +114,19 @@ HEADERS  += \
 	Vues/vueensemble.h \
 	Mappeurs/mappeurfiches.h \
 	Controleurs/controleurongletactions.h \
-	Controleurs/controleurensembles.h
+	Controleurs/controleurensembles.h \
+	Controleurs/controleurongletclients.h \
+	Controleurs/controleurongletappareils.h \
+	Controleurs/controleurongletfiches.h \
+	Vues/fragment.h \
+	Vues/vueclient.h \
+	Vues/vueaction.h \
+	Mappeurs/mappeurtaches.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
-		Vues/vueconnexion.ui \
-		Vues/vueeditionfiche.ui \
-	Vues/vuefragment.ui \
+        Vues/vueconnexion.ui \
+        Vues/vueeditionfiche.ui \
 	Vues/vuegestionappareil.ui \
 	Vues/vuegestionclient.ui \
 	Vues/vuegestionensemble.ui \
@@ -132,4 +137,7 @@ FORMS    += \
 	Vues/vueappareil.ui \
 	Vues/vuegestionaction.ui \
 	Vues/champformulaire.ui \
-	Vues/vueensemble.ui
+	Vues/vueensemble.ui \
+	Vues/fragment.ui \
+	Vues/vueclient.ui \
+	Vues/vueaction.ui

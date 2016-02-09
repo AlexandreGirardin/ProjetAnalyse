@@ -22,7 +22,7 @@ Client* MappeurClients::getClient(const int &id)
     return client;
 }
 
-bool MappeurClients::inserer(const Client* client) const
+bool MappeurClients::inserer(const Client* client)
 {
     QSqlDatabase* bd = Application::bd;
     bd->transaction();
@@ -43,7 +43,7 @@ bool MappeurClients::inserer(const Client* client) const
     return succes;
 }
 
-bool MappeurClients::mettreAJour(const Client *client) const
+bool MappeurClients::mettreAJour(const Client *client)
 {
     QSqlDatabase* bd = Application::bd;
     bd->transaction();
@@ -69,17 +69,17 @@ bool MappeurClients::mettreAJour(const Client *client) const
 
 Client* MappeurClients::mapper(const QSqlRecord &ligne)
 {
-    Client* client = new Client(this);
+    Client* client = new Client();
     client->setId(ligne.value("id").toInt());
     client->setPrenom(ligne.value("prenom").toString());
     client->setNom(ligne.value("nom").toString());
     client->setTelephone(ligne.value("telephone").toString());
     client->setAdresse(ligne.value("adresse").toString());
-    client->setAppareils(Application::appareils->appareilsPourClient(client->id()));
+    client->setAppareils(MappeurAppareils::appareilsPourClient(client->id()));
     return client;
 }
 
-QSqlQuery* MappeurClients::preparerRequete(const Client* client, const QString &commande) const
+QSqlQuery* MappeurClients::preparerRequete(const Client* client, const QString &commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);

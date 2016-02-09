@@ -30,6 +30,14 @@ private:
      */
     void assignerClient(VueGestionClient* vue, const Client* client);
 
+    /**
+     * @brief extraireClient
+     * Transfère la valeur des champs d'une vue dans un client
+     * @param client Le client cible
+     * @param vue La vue source
+     */
+    void extraireClient(Client* client, const VueGestionClient *vue);
+
 public slots:
 
     /**

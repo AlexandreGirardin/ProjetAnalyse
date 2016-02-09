@@ -1,5 +1,6 @@
 #include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurpieces.h"
+#include "Mappeurs/mappeurstatuts.h"
 
 #include "Controleurs/application.h"
 
@@ -50,7 +51,7 @@ bool MappeurFiches::mettreAJour(const Fiche *fiche) const
 
 Fiche *MappeurFiches::mapper(const QSqlRecord &ligne)
 {
-    Fiche* fiche = new Fiche(this);
+    Fiche* fiche = new Fiche();
     fiche->setId(ligne.value("id").toInt());
     fiche->setIdAppareil(ligne.value("idAppareil").toInt());
     fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
