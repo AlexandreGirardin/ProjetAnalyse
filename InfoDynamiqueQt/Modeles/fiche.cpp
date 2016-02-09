@@ -11,6 +11,15 @@ void Fiche::setId(const int &value)
 {
     m_id = value;
 }
+int Fiche::idAppareil() const
+{
+    return m_idAppareil;
+}
+
+void Fiche::setIdAppareil(int idAppareil)
+{
+    m_idAppareil = idAppareil;
+}
 
 int Fiche::priorite() const
 {

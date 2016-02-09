@@ -42,7 +42,7 @@ QList<Statut*>* MappeurStatuts::getStatutsAction() {
 }
 
 Statut* MappeurStatuts::mapper(const QSqlRecord &ligne) {
-    Statut* statut = new Statut(this);
+    Statut* statut = new Statut();
     statut->setId(ligne.value("id").toInt());
     statut->setNom(ligne.value("nom").toString());
     return statut;
@@ -56,7 +56,7 @@ QList<Statut*>* MappeurStatuts::mapper(QSqlQuery &requete)
     int colNom = ligne.indexOf("nom");
     while (requete.next()) {
         ligne = requete.record();
-        Statut* statut = new Statut(this);
+        Statut* statut = new Statut();
         statut->setId(ligne.value(colId).toInt());
         statut->setNom(ligne.value(colNom).toString());
         liste->append(statut);

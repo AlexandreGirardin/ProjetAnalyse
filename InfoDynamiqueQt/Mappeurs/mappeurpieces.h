@@ -28,13 +28,21 @@ public:
      * @param id Le numéro de la pièce à mapper
      * @return La pièce si elle existe, NULL autrement
      */
-    Piece* getPiece(const int &id);
+    static Piece* getPiece(const int &id);
 
     /**
      * @brief MappeurPieces::getPieces
      * @return La liste de toutes les pièces de la base de données
      */
-    QList<Piece*>* getPieces();
+    static QList<Piece*>* getPieces();
+
+    /**
+     * @brief piecesPourFiche
+     * Trouve les pieces appartenant à une fiche
+     * @param idFche La fiche cible
+     * @return La liste des pieces appartenant à la fiche
+     */
+    static QList<Piece*>* piecesPourFiche(const int &idFiche);
 
 private:
 
@@ -43,9 +51,9 @@ private:
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return La pièce
      */
-    Piece* mapper(const QSqlRecord &ligne);
+    static Piece* mapper(const QSqlRecord &ligne);
 
-    QList<Piece*>* mapper(QSqlQuery &requete);
+    static QList<Piece*>* mapper(QSqlQuery &requete);
 };
 
 #endif // MAPPEURPIECES_H

@@ -28,6 +28,22 @@ public:
      */
     Fiche* getFiche(const int &id);
 
+    /**
+     * @brief inserer
+     * Insère une nouvelle fiche dans la base de données
+     * @param fiche La fiche à ajouter
+     * @return Succès
+     */
+    bool inserer(const Fiche* fiche) const;
+
+    /**
+     * @brief mettreAJour
+     * Met à jour une fiche dans la base de données
+     * @param appareil La fiche à mettre à jour
+     * @return Succès
+     */
+    bool mettreAJour(const Fiche* fiche) const;
+
 private:
 
     /**
@@ -36,6 +52,28 @@ private:
      * @return Le fiche
      */
     Fiche* mapper(const QSqlRecord &ligne);
+
+    /**
+     * @brief preparerRequete Assigne les valeurs d'une fiche à une requête préparée
+     * @param fiche La fiche source
+     * @param commande La commande SQL à préparer
+     * @return La commande préparée
+     */
+    QSqlQuery* preparerRequete(const Fiche* fiche, const QString &commande) const;
+
+    /**
+     * @brief derniereInsertion
+     * @return L'id de la dernière fiche entré
+     */
+    int derniereInsertion() const;
+
+    /**
+     * @brief ecrire
+     * @param fiche
+     * @param commande
+     * @return
+     */
+    bool ecrire(const Fiche* fiche, const QString &commande) const;
 
 };
 
