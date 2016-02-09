@@ -198,7 +198,7 @@ private slots:
      */
     void rechargerAppareils();
 
-    void rechargerNombreAppareils(const int &idClient);
+    void rechargerNombreAppareils();
 };
 
 #endif // CONTROLEURCLIENTS_H

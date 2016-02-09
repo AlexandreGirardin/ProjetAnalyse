@@ -3,6 +3,7 @@
 
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeuractions.h"
+#include "Vues/vueaction.h"
 
 #include <QMessageBox>
 #include <QSqlQueryModel>
@@ -57,10 +58,10 @@ void ControleurActions::voirAction(const int &idAction) const
 {
     Action* action = MappeurActions::getAction(idAction);
     if (action != NULL) {
-        VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
+        VueAction* vue = new VueAction(Application::vuePrincipale());
+        vue->setNom(action->nom());
+        vue->setDescription(action->description());
         vue->setWindowTitle(tr("Action"));
-        assignerAction(vue, action);
-        vue->setLectureSeule(true);
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }

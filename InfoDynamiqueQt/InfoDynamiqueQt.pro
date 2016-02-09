@@ -60,11 +60,13 @@ SOURCES += main.cpp\
 	Vues/vueensemble.cpp \
 	Controleurs/controleurongletactions.cpp \
 	Controleurs/controleurensembles.cpp \
-    Controleurs/controleurongletclients.cpp \
-    Controleurs/controleurongletappareils.cpp \
-    Controleurs/controleurongletfiches.cpp \
-    Vues/fragment.cpp \
-    Vues/vueclient.cpp
+	Controleurs/controleurongletclients.cpp \
+	Controleurs/controleurongletappareils.cpp \
+	Controleurs/controleurongletfiches.cpp \
+	Vues/fragment.cpp \
+	Vues/vueclient.cpp \
+	Vues/vueaction.cpp \
+	Mappeurs/mappeurtaches.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -112,11 +114,13 @@ HEADERS  += \
 	Mappeurs/mappeurfiches.h \
 	Controleurs/controleurongletactions.h \
 	Controleurs/controleurensembles.h \
-    Controleurs/controleurongletclients.h \
-    Controleurs/controleurongletappareils.h \
-    Controleurs/controleurongletfiches.h \
-    Vues/fragment.h \
-    Vues/vueclient.h
+	Controleurs/controleurongletclients.h \
+	Controleurs/controleurongletappareils.h \
+	Controleurs/controleurongletfiches.h \
+	Vues/fragment.h \
+	Vues/vueclient.h \
+	Vues/vueaction.h \
+	Mappeurs/mappeurtaches.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
@@ -133,5 +137,6 @@ FORMS    += \
 	Vues/vuegestionaction.ui \
 	Vues/champformulaire.ui \
 	Vues/vueensemble.ui \
-    Vues/fragment.ui \
-    Vues/vueclient.ui
+	Vues/fragment.ui \
+	Vues/vueclient.ui \
+	Vues/vueaction.ui

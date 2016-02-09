@@ -109,6 +109,14 @@ QPushButton* Fragment::ajouterBouton(const int &index)
     return bouton;
 }
 
+QComboBox* Fragment::ajouterCombobox(const int &index)
+{
+    QComboBox* bouton = new QComboBox(this);
+    ui->horizontalLayout->insertWidget(index, bouton);
+    QObject::connect(this, SIGNAL(selectionValide(bool)), bouton, SLOT(setEnabled(bool)));
+    return bouton;
+}
+
 QPushButton* Fragment::caseCocher() const
 {
     return ui->caseCocher;

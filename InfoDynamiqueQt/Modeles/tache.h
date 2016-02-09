@@ -14,6 +14,9 @@ class Tache : public ModeleBD
 
 private:
 
+    // La fiche à laquelle appartient la tâche
+    int m_idFiche;
+
     // L'action à accomplir
     Action* m_action;
 
@@ -58,6 +61,8 @@ public:
      */
     QString out() const;
 
+    int idFiche() const;
+    void setIdFiche(const int &idFiche);
 };
 
 #endif // TACHE_H

@@ -1,12 +1,14 @@
 #ifndef FRAGMENT_H
 #define FRAGMENT_H
 
+#include <QWidget>
+
 #include <QCheckBox>
+#include <QComboBox>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTableWidget>
-#include <QWidget>
 
 namespace Ui {
 class VueFragment;
@@ -174,6 +176,8 @@ public:
 
     int getDernierIndexSelectionne() const;
     void setDernierIndexSelectionne(int value);
+
+    QComboBox *ajouterCombobox(const int &index);
 
 public slots:
 

@@ -1,6 +1,13 @@
 #include "Vues/vueeditionfiche.h"
 #include "ui_vueeditionfiche.h"
 
+#include "Controleurs/application.h"
+
+#include <QComboBox>
+#include <QDebug>
+#include <QSqlQueryModel>
+#include <QSqlQuery>
+
 VueEditionFiche::VueEditionFiche(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueEditionFiche)
@@ -31,6 +38,7 @@ void VueEditionFiche::configurerFragmentTaches()
     delete fragmentTaches->champ();
     ui->cadreFragmentTaches->addWidget(fragmentTaches);
     QObject::connect(this, SIGNAL(nouvelId()), this, SLOT(peuplerTaches()));
+//    QComboBox* combo = fragmentTaches->ajouterCombobox(4);
 }
 
 void VueEditionFiche::configurerFragmentPieces()
@@ -45,7 +53,9 @@ void VueEditionFiche::configurerFragmentPieces()
 
 void VueEditionFiche::peuplerTaches()
 {
-
+    QSqlQueryModel* modele = new QSqlQueryModel(this);
+    modele->setQuery(QSqlQuery("SELECT * FROM taches", *Application::bd));
+    fragmentTaches->peuplerTableau(modele);
 }
 
 void VueEditionFiche::peuplerPieces()

@@ -38,6 +38,7 @@ void ControleurFiches::creerFiche() const
 void ControleurFiches::modifierFiche() const
 {
     VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
+    vue->setIdFiche(1);
     vue->exec();
     vue->deleteLater();
 }

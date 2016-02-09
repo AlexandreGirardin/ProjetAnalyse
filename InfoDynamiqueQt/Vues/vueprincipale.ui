@@ -58,6 +58,10 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <attribute name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/im-user.svg</normaloff>:/Images/im-user.svg</iconset>
+       </attribute>
        <attribute name="title">
         <string>Clients</string>
        </attribute>
@@ -71,6 +75,10 @@
        </layout>
       </widget>
       <widget class="QWidget" name="ongletFiches">
+       <attribute name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/document-new.svg</normaloff>:/Images/document-new.svg</iconset>
+       </attribute>
        <attribute name="title">
         <string>Fiches</string>
        </attribute>
@@ -84,6 +92,10 @@
        </layout>
       </widget>
       <widget class="QWidget" name="ongletAppareils">
+       <attribute name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/computer-laptop.svg</normaloff>:/Images/computer-laptop.svg</iconset>
+       </attribute>
        <attribute name="title">
         <string>Appareils</string>
        </attribute>
@@ -97,6 +109,10 @@
        </layout>
       </widget>
       <widget class="QWidget" name="ongletActions">
+       <attribute name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/tag.svg</normaloff>:/Images/tag.svg</iconset>
+       </attribute>
        <attribute name="title">
         <string>Actions</string>
        </attribute>
@@ -149,6 +165,8 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../ressources.qrc"/>
+ </resources>
  <connections/>
 </ui>

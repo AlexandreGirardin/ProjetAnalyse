@@ -2,6 +2,16 @@
 
 Tache::Tache(QObject* parent) : ModeleBD(parent) {}
 
+int Tache::idFiche() const
+{
+    return m_idFiche;
+}
+
+void Tache::setIdFiche(const int &idFiche)
+{
+    m_idFiche = idFiche;
+}
+
 Action* Tache::action() const
 {
     return m_action;
