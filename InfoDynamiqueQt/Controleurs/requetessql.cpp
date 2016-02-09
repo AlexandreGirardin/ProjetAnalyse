@@ -50,7 +50,7 @@ QString const * const RequetesSQL::toutesFichesPourAppareil =
         new QString("SELECT\
                         f.id,\
                         f.priorite as 'Priorité',\
-                        t.nom as 'Technicien',\
+                        CONCAT(t.nom, ', ', t.prenom) as 'Technicien',\
                         s.nom as 'Statut',\
                         f.commentaire as 'Commentaire'\
                     FROM\

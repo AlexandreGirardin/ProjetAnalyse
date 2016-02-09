@@ -196,7 +196,6 @@ void ControleurClients::peuplerFiches(const int &idAppareil)
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(requeteFiches(idAppareil));
     fragmentFiches->peuplerTableau(fiches);
-    fragmentFiches->getTableau()->hideColumn(fragmentFiches->getColonneId());
 }
 
 void ControleurClients::ajouterFiche() const
