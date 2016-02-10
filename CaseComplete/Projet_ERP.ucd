@@ -451,4 +451,14 @@
     <Name>Diagrams</Name>
     <AppliesTo>DiagramElement</AppliesTo>
   </Filter>
+  <Filter>
+    <UniqueID>F-e7f6e52a-7c04-49ad-8f24-34644af3bd2c</UniqueID>
+    <Name>Test Scenarios</Name>
+    <AppliesTo>TestScenario</AppliesTo>
+  </Filter>
+  <Filter>
+    <UniqueID>F-35d52c48-1549-455b-b105-3e9222383ba2</UniqueID>
+    <Name>Diagrams</Name>
+    <AppliesTo>DiagramElement</AppliesTo>
+  </Filter>
 </UCTDataSet>
