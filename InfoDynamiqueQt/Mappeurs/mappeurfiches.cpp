@@ -1,6 +1,8 @@
 #include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurpieces.h"
 #include "Mappeurs/mappeurstatuts.h"
+#include "Mappeurs/mappeurtaches.h"
+#include "Mappeurs/mappeurtechniciens.h"
 
 #include "Controleurs/application.h"
 
@@ -57,8 +59,8 @@ Fiche *MappeurFiches::mapper(const QSqlRecord &ligne)
     fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
     fiche->setPriorite(ligne.value("priorite").toInt());
     fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value("idStatut").toInt()));
-//    fiche->setTaches(ligne.value(MappeurTache));
-//    fiche->setTechniciens(MappeurTechniciens::);
+    fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
+//    fiche->setTechniciens(ligne.value("idTechnicien").toInt());
     return fiche;
 }
 

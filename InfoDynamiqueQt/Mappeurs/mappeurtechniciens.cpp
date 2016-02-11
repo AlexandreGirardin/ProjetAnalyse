@@ -34,6 +34,11 @@ QList<Technicien*>* MappeurTechniciens::getTechniciens()
     return mapper(requete);
 }
 
+QList<Technicien*>* MappeurTechniciens::technicienPourFiche(const int &idFiche)
+{
+
+}
+
 QList<Technicien*>* MappeurTechniciens::mapper(QSqlQuery &requete)
 {
     QList<Technicien*>* liste = new QList<Technicien*>;
