@@ -3,9 +3,9 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurgestionappareil.h"
-#include "Controleurs/controleurgestionclient.h"
-#include "Controleurs/controleurgestionfiche.h"
+#include "Controleurs/controleurappareils.h"
+#include "Controleurs/controleurclients.h"
+#include "Controleurs/controleurfiches.h"
 #include "Vues/fragment.h"
 
 #include <QSqlQuery>

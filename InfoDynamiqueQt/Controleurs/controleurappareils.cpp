@@ -1,4 +1,4 @@
-#include "Controleurs/controleurgestionappareil.h"
+#include "Controleurs/controleurappareils.h"
 
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeurfabricants.h"

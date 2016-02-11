@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurgestionappareil.h"
+#include "Controleurs/controleurappareils.h"
 #include "Mappeurs/mappeurappareils.h"
 #include "Vues/fragment.h"
 
