@@ -67,7 +67,7 @@ QString const * const RequetesSQL::toutesFichesPourAppareil =
 
 QString const * const RequetesSQL::fichesActivesPourAppareil =
         new QString(*toutesFichesPourAppareil +
-                    QString(" AND f.idStatut <> 5"));
+                    QString(" AND f.idStatut <> 0"));
 
 QString const * const RequetesSQL::afficherAppareils =
         new QString(
