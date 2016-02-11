@@ -16,6 +16,9 @@ class Fiche : public ModeleBD
 
 private:
 
+    // L'id de l'appareil
+    int m_idAppareil;
+
     // La priorité de la fiche
     int m_priorite;
 
@@ -120,6 +123,8 @@ public:
      */
     QString out() const;
 
+    int idAppareil() const;
+    void setIdAppareil(int idAppareil);
 };
 
 #endif // FICHE_H

@@ -36,6 +36,14 @@ public:
      */
     static QList<Piece*>* getPieces();
 
+    /**
+     * @brief piecesPourFiche
+     * Trouve les pieces appartenant à une fiche
+     * @param idFche La fiche cible
+     * @return La liste des pieces appartenant à la fiche
+     */
+    static QList<Piece*>* piecesPourFiche(const int &idFiche);
+
 private:
 
     /**

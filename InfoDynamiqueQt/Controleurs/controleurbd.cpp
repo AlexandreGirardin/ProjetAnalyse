@@ -32,7 +32,7 @@ void ControleurBD::connecterDossiers()
     bd.setHostName("localhost");
     bd.setPort(3307);
     bd.setUserName("root");
-    bd.setPassword("");
+    bd.setPassword("root");
     bd.setDatabaseName("InfoDynamiqueDossiers");
     if (!bd.open()) {
         qDebug() << "Erreur d'ouverture de la base de données";

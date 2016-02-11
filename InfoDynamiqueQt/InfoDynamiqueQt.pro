@@ -17,7 +17,7 @@ RC_ICONS = Images/Toolbox.ico
 
 SOURCES += main.cpp\
 	Vues/vueauthentification.cpp \
-		Vues/vueconnexion.cpp \
+        Vues/vueconnexion.cpp \
 	Vues/vueprincipale.cpp \
 	Vues/vuegestiontache.cpp \
 	Vues/vuegestionpiece.cpp \
@@ -59,14 +59,15 @@ SOURCES += main.cpp\
 	Vues/champformulaire.cpp \
 	Vues/vueensemble.cpp \
 	Controleurs/controleurongletactions.cpp \
-	Controleurs/controleurensembles.cpp \
+        Controleurs/controleurensembles.cpp \
+        Mappeurs/mappeurfiches.cpp \
 	Controleurs/controleurongletclients.cpp \
 	Controleurs/controleurongletappareils.cpp \
 	Controleurs/controleurongletfiches.cpp \
 	Vues/fragment.cpp \
 	Vues/vueclient.cpp \
 	Vues/vueaction.cpp \
-	Mappeurs/mappeurtaches.cpp
+        Mappeurs/mappeurtaches.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -124,8 +125,8 @@ HEADERS  += \
 
 FORMS    += \
 	Vues/vueauthentification.ui \
-		Vues/vueconnexion.ui \
-		Vues/vueeditionfiche.ui \
+        Vues/vueconnexion.ui \
+        Vues/vueeditionfiche.ui \
 	Vues/vuegestionappareil.ui \
 	Vues/vuegestionclient.ui \
 	Vues/vuegestionensemble.ui \

@@ -5,7 +5,9 @@
 #include <QDebug>
 #include <QSqlError>
 
-MappeurClients::MappeurClients(QObject* parent) : QObject(parent) {}
+MappeurClients::MappeurClients(QObject* parent) : QObject(parent)
+{
+}
 
 Client* MappeurClients::getClient(const int &id)
 {

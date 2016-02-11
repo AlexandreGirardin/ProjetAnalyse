@@ -20,20 +20,25 @@ void ControleurGestionFiche::ajouterFiche(const int &idAppareil)
 
 void ControleurGestionFiche::modifierFiche(const int &idFiche)
 {
-    VueGestionFiche* vue = new VueGestionFiche();
-    vue->setWindowTitle(tr("Modifier une fiche"));
-    vue->exec();
-    vue->deleteLater();
+    Fiche* fiche = MappeurFiches::getFiche(idFiche);
+    if (fiche != NULL) {
+        VueGestionFiche* vue = new VueGestionFiche();
+        vue->setWindowTitle(tr("Modifier une fiche"));
+        vue->exec();
+        vue->deleteLater();
+    }
 }
 
 void ControleurGestionFiche::voirFiche(const int &idFiche)
 {
-//    const Fiche* fiche = Application::fiches->getFiche(idFiche); if (fiche !=
-//    NULL) { VueGestionFiche* vue = new
-//    VueGestionFiche(Application::vuePrincipale()); assignerFiche(vue, fiche);
-//    vue->setLectureSeule(); QObject::connect(vue, SIGNAL(finished(int)), vue,
-//    SLOT(deleteLater())); vue->show();
-//    }
+    const Fiche* fiche = MappeurFiches::getFiche(idFiche);
+    if (fiche != NULL) {
+        VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
+        assignerFiche(vue, fiche);
+        vue->setLectureSeule();
+        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
+        vue->show();
+    }
 }
 
 void ControleurGestionFiche::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)

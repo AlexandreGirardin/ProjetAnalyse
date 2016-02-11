@@ -2,6 +2,16 @@
 
 Fiche::Fiche(QObject* parent) : ModeleBD(parent) {}
 
+int Fiche::idAppareil() const
+{
+    return m_idAppareil;
+}
+
+void Fiche::setIdAppareil(int idAppareil)
+{
+    m_idAppareil = idAppareil;
+}
+
 int Fiche::priorite() const
 {
     return m_priorite;

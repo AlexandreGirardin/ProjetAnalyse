@@ -57,7 +57,7 @@ private:
 
     /**
      * @brief preparerRequete Assigne les valeurs d'un client à une requête préparée
-     * @param appareil Le client source
+     * @param client Le client source
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
