@@ -23,6 +23,7 @@ void ControleurGestionFiche::modifierFiche(const int &idFiche)
     Fiche* fiche = MappeurFiches::getFiche(idFiche);
     if (fiche != NULL) {
         VueGestionFiche* vue = new VueGestionFiche();
+        assignerFiche(vue, fiche);
         vue->setWindowTitle(tr("Modifier une fiche"));
         vue->exec();
         vue->deleteLater();
@@ -43,5 +44,5 @@ void ControleurGestionFiche::voirFiche(const int &idFiche)
 
 void ControleurGestionFiche::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
 {
-//    vue->set
+    vue->setTaches(fiche->taches());
 }

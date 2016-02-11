@@ -40,9 +40,12 @@ public:
 
     // Requête permettant d'afficher toutes les fiches
     static QString const * const afficherFiches;
-    // Requête permettant d'afficher les fiches correspondant à :filtre	
+    // Requête permettant d'afficher les fiches correspondant à :filtre
     static QString const * const filtrerFiches;
-	
+
+    // Requête permettant d'afficher les fiches correspondant à :filtre
+    static QString const * const tachesPourFiche;
+
     // Requête permettant de lister toutes les base de données d'un serveur
     static const QString* listerBD;
 };

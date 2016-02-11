@@ -3,6 +3,7 @@
 #include "Mappeurs/mappeurstatuts.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/mappeurtaches.h"
 
 #include <QDebug>
 #include <QSqlError>
@@ -57,7 +58,8 @@ Fiche *MappeurFiches::mapper(const QSqlRecord &ligne)
     fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
     fiche->setPriorite(ligne.value("priorite").toInt());
     fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value("idStatut").toInt()));
-//    fiche->setTaches(ligne.value(MappeurTache));
+    fiche->setCommentaire(ligne.value("commentaire").toString());
+    fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
 //    fiche->setTechniciens(MappeurTechniciens::);
     return fiche;
 }

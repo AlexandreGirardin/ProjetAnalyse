@@ -25,6 +25,8 @@ private:
     // Le fragment des fiches
     Fragment* fragment;
 
+    QPushButton* boutonTraiter;
+
 public slots:
 
     /**
@@ -44,6 +46,12 @@ public slots:
      * Lance la modification de la fiche sélectionnée
      */
     void modifierFiche() const;
+
+    /**
+     * @brief traiterFiche
+     * Lance le traitement de la fiche sélectionnée
+     */
+    void traiterFiche() const;
 
     /**
      * @brief modifierFiche
