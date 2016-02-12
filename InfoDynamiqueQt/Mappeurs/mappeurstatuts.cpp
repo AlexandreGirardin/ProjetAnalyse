@@ -5,8 +5,6 @@
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurStatuts::MappeurStatuts(QObject* parent) : QObject(parent) {}
-
 Statut* MappeurStatuts::getStatutFiche(const int &idStatut)
 {
     return getStatut(idStatut, QString("SELECT * FROM statutsFiche WHERE id=:idStatut"));

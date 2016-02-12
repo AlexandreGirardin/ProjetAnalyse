@@ -17,13 +17,6 @@ class MappeurPieces : public QObject
 public:
 
     /**
-     * @brief MappeurPieces::MappeurPieces
-     * @param a_bd La base de données à utiliser
-     * @param parent
-     */
-    explicit MappeurPieces(QObject* parent = 0);
-
-    /**
      * @brief MappeurPieces::getPiece
      * @param id Le numéro de la pièce à mapper
      * @return La pièce si elle existe, NULL autrement

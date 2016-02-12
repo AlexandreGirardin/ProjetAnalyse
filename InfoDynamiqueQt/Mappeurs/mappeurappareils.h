@@ -21,13 +21,6 @@ class MappeurAppareils : public QObject
 public:
 
     /**
-     * @brief MappeurAppareils
-     * @param a_bd La base de données à utiliser
-     * @param parent
-     */
-    explicit MappeurAppareils(QObject* parent = 0);
-
-    /**
      * @brief getAppareil
      * @param id Le numéro de l'appareil à mapper
      * @return L'appareil s'il existe, NULL autrement

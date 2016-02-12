@@ -15,13 +15,6 @@ class MappeurFiches : public QObject
 public:
 
     /**
-     * @brief MappeurFiches
-     * @param a_bd La base de données à utiliser
-     * @param parent
-     */
-    explicit MappeurFiches(QObject* parent = 0);
-
-    /**
      * @brief getFiche
      * @param id Le numéro de la fiche à mapper
      * @return le fabricant s'il existe, NULL autrement

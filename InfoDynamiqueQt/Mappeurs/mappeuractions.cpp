@@ -7,8 +7,6 @@
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
 
-MappeurActions::MappeurActions(QObject* parent) : QObject(parent) {}
-
 Action* MappeurActions::getAction(const int &id)
 {
     Action* action = NULL;
