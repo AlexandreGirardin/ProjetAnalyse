@@ -48,7 +48,7 @@ QString const * const RequetesSQL::appareilsPourClient =
 
 QString const * const RequetesSQL::toutesFichesPourAppareil =
         new QString("SELECT\
-                        f.id,\
+                        f.id as '#',\
                         f.priorite as 'Priorité',\
                         CONCAT(t.nom, ', ', t.prenom) as 'Technicien',\
                         s.nom as 'Statut',\
@@ -72,28 +72,28 @@ QString const * const RequetesSQL::fichesActivesPourAppareil =
 QString const * const RequetesSQL::afficherAppareils =
         new QString(
             "SELECT\
-                a.id AS '#',\
-                c.telephone AS 'Client',\
+                a.id as '#',\
+                c.telephone as 'Client',\
                 t.nom as 'Type',\
-                f.nom AS 'Fabricant',\
+                f.nom as 'Fabricant',\
                 COALESCE(fi.nbO, 0) as 'Fiches',\
-                a.description AS 'Description'\
+                a.description as 'Description'\
             FROM\
                 appareils a\
             LEFT OUTER JOIN\
-                (select id, nom from fabricants) f\
+                (SELECT id, nom FROM fabricants) f\
             ON\
                 a.idFabricant = f.id\
             LEFT OUTER JOIN\
-                (select idAppareil, count(id) as 'nbO' from fiches group by idAppareil) fi\
+                (SELECT idAppareil, count(id) as 'nbO' FROM fiches GROUP BY idAppareil) fi\
             ON\
                 a.id = fi.idAppareil\
             LEFT OUTER JOIN\
-                (select id, telephone from clients) c\
+                (SELECT id, telephone FROM clients) c\
             ON\
                 a.idClient = c.id\
             LEFT OUTER JOIN\
-                (select id, nom from types) t\
+                (SELECT id, nom FROM types) t\
             ON\
                 a.idType = t.id");
 
@@ -106,7 +106,7 @@ QString const * const RequetesSQL::filtrerAppareils =
 
 QString const * const RequetesSQL::afficherToutesActions =
         new QString("SELECT\
-                        id,\
+                        id as '#',\
                         nom as 'Action',\
                         description as 'Description',\
                         IF (etat < 1, '', '✓') as 'Activée'\
@@ -114,7 +114,7 @@ QString const * const RequetesSQL::afficherToutesActions =
 
 QString const * const RequetesSQL::afficherActionsActives =
         new QString("SELECT\
-                         id,\
+                         id as '#',\
                          nom as 'Action',\
                          description as 'Description'\
                      FROM actions\
@@ -134,7 +134,7 @@ QString const * const RequetesSQL::filtrerActionsActives =
 
 QString const * const RequetesSQL::afficherEnsembles =
         new QString("SELECT\
-                        e.id,\
+                        e.id as '#',\
                         COALESCE(a.nb, 0) as 'Nb. actions',\
                         nom as 'Ensemble',\
                         description as 'Description'\
@@ -155,7 +155,7 @@ QString const * const RequetesSQL::filtrerEnsembles =
 
 QString const * const RequetesSQL::afficherFiches =
         new QString("SELECT\
-                        f.id,\
+                        f.id as '#',\
                         c.telephone as 'Client',\
                         f.priorite as 'Priorité',\
                         s.nom as 'Statut',\
