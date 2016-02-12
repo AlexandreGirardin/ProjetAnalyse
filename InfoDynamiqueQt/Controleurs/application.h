@@ -108,14 +108,34 @@ public slots:
 
 signals:
 
+    /**
+     * @brief clientsModifies
+     * Émis lorsque les données des clients ont été modifiées
+     */
     void clientsModifies() const;
 
+    /**
+     * @brief appareilsModifies
+     * Émis lorsque les données des appareils ont été modifiées
+     */
     void appareilsModifies() const;
 
+    /**
+     * @brief nombreAppareilsChange
+     * Émis lorsqu'un appareil a été ajouté ou supprimé
+     */
     void nombreAppareilsChange() const;
 
+    /**
+     * @brief actionsModifiees
+     * Émis lorsque les données des actions ont été modifiées
+     */
     void actionsModifiees() const;
 
+    /**
+     * @brief ensemblesModifies
+     * Émis lorsque les données des ensembles ont été modifiées
+     */
     void ensemblesModifies() const;
 
 };
