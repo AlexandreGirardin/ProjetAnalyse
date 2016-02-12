@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurgestionfiche.h"
+#include "Controleurs/controleurfiches.h"
 #include "Mappeurs/mappeurfiches.h"
 #include "Vues/fragment.h"
 

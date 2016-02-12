@@ -70,14 +70,10 @@ Fiche *MappeurFiches::mapper(const QSqlRecord &ligne)
     fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
     fiche->setPriorite(ligne.value("priorite").toInt());
     fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value("idStatut").toInt()));
-<<<<<<< HEAD
-    fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
-//    fiche->setTechniciens(ligne.value("idTechnicien").toInt());
-=======
+
     fiche->setCommentaire(ligne.value("commentaire").toString());
     fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
 //    fiche->setTechniciens(MappeurTechniciens::);
->>>>>>> 59ecd7c17dca9be92a3c4a5dd0557538b353503e
     return fiche;
 }
 

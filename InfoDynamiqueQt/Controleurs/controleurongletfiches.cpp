@@ -41,11 +41,6 @@ void ControleurOngletFiches::peuplerFiches()
     fragment->getTableau()->hideColumn(0);
 }
 
-void ControleurOngletFiches::creerFiche() const
-{
-
-}
-
 void ControleurOngletFiches::modifierFiche() const
 {
     Fiche* fiche = MappeurFiches::getFiche(fragment->getIdModele());
