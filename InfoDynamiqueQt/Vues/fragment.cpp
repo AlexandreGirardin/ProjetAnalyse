@@ -17,7 +17,7 @@ Fragment::Fragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment)
     configurerCase();
     configurerChamp();
     QObject::connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
-    QObject::connect(ui->tableau, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(doubleClicTableau()));
+    QObject::connect(ui->tableau, SIGNAL(doubleClicked(QModelIndex)), this, SIGNAL(doubleClicModele()));
 }
 
 Fragment::~Fragment()
@@ -220,9 +220,4 @@ void Fragment::basculerCase(const bool &etat)
 void Fragment::signalerSelection(const QModelIndex &nouvelle, const QModelIndex&)
 {
     emit nouvelleSelection(nouvelle);
-}
-
-void Fragment::doubleClicTableau()
-{
-    emit doubleClicModele();
 }

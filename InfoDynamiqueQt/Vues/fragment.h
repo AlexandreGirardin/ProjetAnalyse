@@ -224,8 +224,6 @@ private slots:
      */
     void signalerSelection(const QModelIndex &nouveau, const QModelIndex &ancien);
 
-    void doubleClicTableau();
-
 signals:
 
     /**
@@ -296,6 +294,11 @@ signals:
      */
     void boutonsActives(bool &etat);
 
+    /**
+     * @brief doubleClicModele
+     * Émis lors d'un double clic sur un modèle du tableau
+     * Le premier clic sélectionne le modèle, donc getIdModele retourne déjà une valeur valide
+     */
     void doubleClicModele();
 
 };
