@@ -61,6 +61,8 @@ public slots:
      * @param idAppareil L'id de l'appareil à visualiser
      */
     static void voirAppareil(const int &idAppareil);
+
+    static void effacerAppareil(const int &idAppareil);
 };
 
 #endif // CONTROLEURGESTIONAPPAREIL_H

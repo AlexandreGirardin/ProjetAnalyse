@@ -27,9 +27,7 @@ void ControleurOngletActions::configurerFragmentActions()
     fragmentActions->setEtiquette(tr("Actions"));
     fragmentActions->caseCocher()->setText(tr("Afficher toutes les actions"));
 
-    QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
-    boutonEtat->setText(tr("Changer l'état"));
-    boutonEtat->setIcon(QIcon(":/Images/reverse"));
+    QPushButton* boutonEtat = fragmentActions->ajouterBouton(4, tr("Changer l'état"), QIcon(":/Images/reverse"));
     boutonEtat->setEnabled(false);
 
     QObject::connect(fragmentActions, SIGNAL(clicCreer()), this, SLOT(creerAction()));
@@ -119,9 +117,7 @@ void ControleurOngletActions::configurerFragmentEnsembles()
     fragmentEnsembles = new Fragment(splitter);
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->caseCocher()->setHidden(true);
-    QPushButton* boutonSupprimer = fragmentEnsembles->ajouterBouton(4);
-    boutonSupprimer->setText(tr("Supprimer"));
-    boutonSupprimer->setIcon(QIcon(":/Images/edit-delete"));
+    QPushButton* boutonSupprimer = fragmentEnsembles->ajouterBouton(4, tr("Supprimer"), QIcon(":/Images/edit-delete"));
     QObject::connect(Application::getInstance(), SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
     QObject::connect(Application::getInstance(), SIGNAL(actionsModifiees()), this, SLOT(rechargerActions()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));

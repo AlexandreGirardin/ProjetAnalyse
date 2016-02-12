@@ -104,7 +104,9 @@ public:
      * Ajoute un bouton d'action au fragment
      * @param bouton Le bouton à ajouter
      */
-    QPushButton* ajouterBouton(const int &index);
+    QPushButton* ajouterBouton(const int &index, const QString &texte = 0, const QIcon icone = QIcon());
+
+    QPushButton* ajouterBoutonNonConnecte(const int &index, const QString &texte = 0, const QIcon icone = QIcon());
 
     /**
      * @brief getCaseCocher

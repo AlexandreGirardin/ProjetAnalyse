@@ -115,7 +115,7 @@ bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble)
     return succes;
 }
 
-bool MappeurEnsembles::supprimer(EnsembleActions *ensemble)
+bool MappeurEnsembles::supprimer(const EnsembleActions *ensemble)
 {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();

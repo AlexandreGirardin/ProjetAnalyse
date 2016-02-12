@@ -52,7 +52,7 @@ public:
      * @param ensemble L'ensemble à effacer
      * @return Succès de la suppression
      */
-    static bool supprimer(EnsembleActions* ensemble);
+    static bool supprimer(const EnsembleActions* ensemble);
 
 private:
 

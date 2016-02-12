@@ -43,6 +43,8 @@ private:
     // Le fragment des fiches
     Fragment* fragmentFiches;
 
+    QPushButton* boutonEffacerAppareil;
+
     // La commande SQL actuelle servant à peupler le fragmentFiches
     const QString* commandeFiches;
 
@@ -87,34 +89,6 @@ public slots:
     void peuplerClients();
 
     /**
-     * @brief peuplerAppareils
-     * Peuple la table de fragmentAppareils avec tous les appareils du client donné
-     * @param int L'id du client
-     */
-    void peuplerAppareils(const int &idClient);
-
-    /**
-     * @brief peuplerFiches
-     * Peuple la table de fragmentFiches avec toutes les fiches de l'appareil donné
-     * @param int L'id de l'appareil
-     */
-    void peuplerFiches(const int &idAppareil);
-
-    /**
-     * @brief ajouterAppareil
-     * Lance la création d'un appareil pour un client
-     * @param idClient L'id du client
-     */
-    void ajouterAppareil() const;
-
-    /**
-     * @brief ajouterFiche
-     * Lance la création d'une fiche pour un appareil
-     * @param idAppareil
-     */
-    void ajouterFiche() const;
-
-    /**
      * @brief ajouterClient
      * Lance la création d'un nouveau client
      */
@@ -127,10 +101,47 @@ public slots:
     void modifierClient() const;
 
     /**
+     * @brief peuplerAppareils
+     * Peuple la table de fragmentAppareils avec tous les appareils du client donné
+     * @param int L'id du client
+     */
+    void peuplerAppareils(const int &idClient);
+
+    /**
+     * @brief ajouterAppareil
+     * Lance la création d'un appareil pour un client
+     * @param idClient L'id du client
+     */
+    void ajouterAppareil() const;
+
+    /**
      * @brief modifierAppareil
      * Lance la modification de l'appareil sélectionné
      */
     void modifierAppareil() const;
+
+    void activerBoutonEffacerAppareil(const bool &actif) const;
+
+    /**
+     * @brief effacerAppareil
+     * Lance la suppression de l'appareil sélectionné
+     * Ne supprime qu'un appareil qui n'a aucune fiche
+     */
+    void effacerAppareil() const;
+
+    /**
+     * @brief peuplerFiches
+     * Peuple la table de fragmentFiches avec toutes les fiches de l'appareil donné
+     * @param int L'id de l'appareil
+     */
+    void peuplerFiches(const int &idAppareil);
+
+    /**
+     * @brief ajouterFiche
+     * Lance la création d'une fiche pour un appareil
+     * @param idAppareil
+     */
+    void ajouterFiche() const;
 
     /**
      * @brief modifierFiche

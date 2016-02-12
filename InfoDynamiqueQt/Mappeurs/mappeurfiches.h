@@ -28,6 +28,8 @@ public:
      */
     static Fiche* getFiche(const int &id);
 
+    static QList<Fiche*>* fichesPourAppareil(const int &id);
+
     /**
      * @brief inserer
      * Insère une nouvelle fiche dans la base de données
@@ -59,13 +61,13 @@ private:
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
-    QSqlQuery* preparerRequete(const Fiche* fiche, const QString &commande) const;
+    static QSqlQuery* preparerRequete(const Fiche* fiche, const QString &commande);
 
     /**
      * @brief derniereInsertion
      * @return L'id de la dernière fiche entré
      */
-    int derniereInsertion() const;
+    static int derniereInsertion();
 
     /**
      * @brief ecrire
@@ -73,8 +75,9 @@ private:
      * @param commande
      * @return
      */
-    bool ecrire(const Fiche* fiche, const QString &commande) const;
+    static bool ecrire(const Fiche* fiche, const QString &commande);
 
+    static QList<Fiche*>* mapper(QSqlQuery &requete);
 };
 
 #endif // MAPPEURFICHES

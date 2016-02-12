@@ -40,6 +40,9 @@ void ControleurOngletClients::configurerFragmentAppareils()
     fragmentAppareils->setEtiquette(tr("Appareils"));
     fragmentAppareils->retirerCaseCocher();
     fragmentAppareils->retirerChamp();
+    boutonEffacerAppareil = fragmentAppareils->ajouterBoutonNonConnecte(4, tr("Effacer"), QIcon(":/Images/edit-delete"));
+    QObject::connect(boutonEffacerAppareil, SIGNAL(clicked()), this, SLOT(effacerAppareil()));
+    QObject::connect(fragmentAppareils, SIGNAL(selectionValide(bool)), this, SLOT(activerBoutonEffacerAppareil(bool)));
     QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), this, SLOT(ajouterAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
@@ -139,6 +142,22 @@ void ControleurOngletClients::modifierAppareil() const
 {
     if (fragmentAppareils->getIdModele() != -1) {
         ControleurAppareils::modifierAppareil(fragmentAppareils->getIdModele());
+    }
+}
+
+void ControleurOngletClients::activerBoutonEffacerAppareil(const bool &actif) const
+{
+    if (!actif) {
+        boutonEffacerAppareil->setEnabled(false);
+    } else if (MappeurFiches::fichesPourAppareil(fragmentAppareils->getIdModele())->isEmpty()) {
+        boutonEffacerAppareil->setEnabled(true);
+    }
+}
+
+void ControleurOngletClients::effacerAppareil() const
+{
+    if (fragmentAppareils->getIdModele() != -1) {
+        ControleurAppareils::effacerAppareil(fragmentAppareils->getIdModele());
     }
 }
 
