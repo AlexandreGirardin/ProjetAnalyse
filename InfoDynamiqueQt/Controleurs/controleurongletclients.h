@@ -11,7 +11,7 @@
 #include <QSqlQuery>
 #include <QSplitter>
 
-class ControleurClients : public QObject
+class ControleurOngletClients : public QObject
 {
     Q_OBJECT
 
@@ -24,23 +24,15 @@ public:
      * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
-    explicit ControleurClients(QWidget* vue);
+    explicit ControleurOngletClients(QWidget* vue);
 
 private:
 
     // Le séparateur redimensionnable contenant les fragments
     QSplitter* splitter;
 
-    // Si l'onglet contrôlé a déjà été activé
-
-    // Le contrôleur de gestion de clients
-    ControleurGestionClient* controleurGestionClient;
-
-    // Le contrôleur de gestion d'appareils
-    ControleurGestionAppareil* controleurGestionAppareil;
-
     // Le contrôleur de gestion de fiches
-    ControleurGestionFiche* controleurGestionFiche;
+    ControleurFiches* gestionFiche;
 
     // Le fragment des clients
     Fragment* fragmentClients;
@@ -121,6 +113,12 @@ public slots:
      * @param idAppareil
      */
     void ajouterFiche() const;
+
+    /**
+     * @brief ajouterClient
+     * Lance la création d'un nouveau client
+     */
+    void ajouterClient() const;
 
     /**
      * @brief modifierClient

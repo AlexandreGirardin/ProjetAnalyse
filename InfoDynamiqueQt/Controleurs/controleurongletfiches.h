@@ -5,7 +5,7 @@
 
 #include "Vues/fragment.h"
 
-class ControleurFiches : public QObject
+class ControleurOngletFiches : public QObject
 {
     Q_OBJECT
 
@@ -18,7 +18,7 @@ public:
      * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
-    explicit ControleurFiches(QWidget* vue);
+    explicit ControleurOngletFiches(QWidget* vue);
 
 private:
 

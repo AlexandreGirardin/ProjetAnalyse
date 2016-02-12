@@ -6,13 +6,9 @@
 #include "Vues/vueensemble.h"
 #include "Vues/vuegestionensemble.h"
 
-class ControleurGestionEnsemble : public QObject
+class ControleurEnsembles : public QObject
 {
     Q_OBJECT
-
-public:
-
-    explicit ControleurGestionEnsemble(QObject* parent = 0);
 
 private:
 
@@ -22,7 +18,7 @@ private:
      * @param vue La vue cible
      * @param ensemble L'ensemble source
      */
-    void assignerEnsemble(VueGestionEnsemble* vue, const EnsembleActions* ensemble) const;
+    static void assignerEnsemble(VueGestionEnsemble* vue, const EnsembleActions* ensemble);
 
     /**
      * @brief assignerEnsemble
@@ -30,7 +26,7 @@ private:
      * @param vue La vue cible
      * @param ensemble L'ensemble source
      */
-    void assignerEnsemble(VueEnsemble *vue, const EnsembleActions *ensemble) const;
+    static void assignerEnsemble(VueEnsemble *vue, const EnsembleActions *ensemble);
 
     /**
      * @brief extraireEnsemble
@@ -38,43 +34,35 @@ private:
      * @param ensemble L'ensemble cible
      * @param vue La vue source
      */
-    void extraireEnsemble(EnsembleActions* ensemble, const VueGestionEnsemble* vue) const;
+    static void extraireEnsemble(EnsembleActions* ensemble, const VueGestionEnsemble* vue);
 
-public slots:
+public:
 
     /**
      * @brief creerEnsemble
      * Lance la création d'un nouvel ensemble
      */
-    void creerEnsemble();
+    static void creerEnsemble();
 
     /**
      * @brief modifierEnsemble
      * Lance l'édition de l'ensemble actuellement sélectionné
      */
-    void modifierEnsemble(const int &idEnsemble);
+    static void modifierEnsemble(const int &idEnsemble);
 
     /**
      * @brief voirEnsemble
      * Lance la visualisation de l'ensemble donné
      * @param idEnsemble L'id de l'ensemble à afficher
      */
-    void voirEnsemble(const int &idEnsemble) const;
+    static void voirEnsemble(const int &idEnsemble);
 
     /**
      * @brief supprimerEnsemble
      * Lance la suppression de l'ensemble donné
      * @param idEnsemble L'id de l'ensemble à supprimer
      */
-    void supprimerEnsemble(const int &idEnsemble);
-
-signals:
-
-    /**
-     * @brief ensemblesModifies
-     * Émis lorsqu'il y a eu une modification dans la base de données
-     */
-    void ensemblesModifies();
+    static void supprimerEnsemble(const int &idEnsemble);
 
 };
 

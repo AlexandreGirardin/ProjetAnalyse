@@ -8,7 +8,7 @@
 #include <QLayout>
 #include <QSqlQueryModel>
 
-ControleurFiches::ControleurFiches(QWidget* vue)
+ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     : QObject(vue)
 {
     fragment = new Fragment();
@@ -27,7 +27,7 @@ ControleurFiches::ControleurFiches(QWidget* vue)
     fragment->champ()->setFocus();
 }
 
-void ControleurFiches::peuplerFiches()
+void ControleurOngletFiches::peuplerFiches()
 {
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(*RequetesSQL::afficherFiches, *Application::bd);
@@ -35,12 +35,12 @@ void ControleurFiches::peuplerFiches()
     fragment->getTableau()->hideColumn(0);
 }
 
-void ControleurFiches::creerFiche() const
+void ControleurOngletFiches::creerFiche() const
 {
 
 }
 
-void ControleurFiches::modifierFiche() const
+void ControleurOngletFiches::modifierFiche() const
 {
     Fiche* fiche = MappeurFiches::getFiche(fragment->getIdModele());
     if (fiche != NULL) {
@@ -51,7 +51,7 @@ void ControleurFiches::modifierFiche() const
     }
 }
 
-void ControleurFiches::traiterFiche() const
+void ControleurOngletFiches::traiterFiche() const
 {
     Fiche* fiche = MappeurFiches::getFiche(fragment->getIdModele());
     if (fiche != NULL) {
@@ -63,11 +63,11 @@ void ControleurFiches::traiterFiche() const
     }
 }
 
-void ControleurFiches::voirFiche() const
+void ControleurOngletFiches::voirFiche() const
 {
 }
 
-void ControleurFiches::filtrerFiches(const QString &filtre)
+void ControleurOngletFiches::filtrerFiches(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerFiches();

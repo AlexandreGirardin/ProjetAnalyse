@@ -7,19 +7,11 @@
 #include "Vues/vueappareil.h"
 #include "Vues/vuegestionappareil.h"
 
-class ControleurGestionAppareil : public QObject
+class ControleurAppareils : public QObject
 {
     Q_OBJECT
 
     // Contrôle l'exécution de la création, de la lecture et de la mise à jour des appareils
-
-public:
-
-    /**
-     * @brief ControleurGestionAppareil
-     * @param parent
-     */
-    explicit ControleurGestionAppareil(QObject* parent = 0);
 
 private:
 
@@ -29,7 +21,7 @@ private:
      * @param vue La vue cible
      * @param appareil L'appareil source
      */
-    void assignerAppareil(VueGestionAppareil* vue, const Appareil* appareil);
+    static void assignerAppareil(VueGestionAppareil* vue, const Appareil* appareil);
 
     /**
      * @brief assignerAppareil
@@ -37,7 +29,7 @@ private:
      * @param vue La vue cible
      * @param appareil L'appareil source
      */
-    void assignerAppareil(VueAppareil* vue, const Appareil* appareil);
+    static void assignerAppareil(VueAppareil* vue, const Appareil* appareil);
 
     /**
      * @brief extraireAppareil
@@ -45,7 +37,7 @@ private:
      * @param appareil L'appareil cible
      * @param vue La vue source
      */
-    void extraireAppareil(Appareil* appareil, const VueGestionAppareil *vue);
+    static void extraireAppareil(Appareil* appareil, const VueGestionAppareil *vue);
 
 public slots:
 
@@ -54,31 +46,21 @@ public slots:
      * Lance la création d'un nouvel appareil
      * @param idClient L'id du client
      */
-    void ajouterAppareil(const int &idClient);
+    static void ajouterAppareil(const int &idClient);
 
     /**
      * @brief modifierAppareil
      * Lance la modification de l'appareil
      * @param idAppareil L'id de l'appareil à modifier
      */
-    void modifierAppareil(const int &idAppareil);
+    static void modifierAppareil(const int &idAppareil);
 
     /**
      * @brief voirAppareil
      * Lance la visualisation de l'appareil
      * @param idAppareil L'id de l'appareil à visualiser
      */
-    void voirAppareil(const int &idAppareil);
-
-signals:
-
-    /**
-     * @brief donneesModifiees
-     * Lancé lorsque les valeurs du tableau ont été modifiées
-     */
-    void donneesModifiees();
-
-    void nombreAppareilsChange(const int&);
+    static void voirAppareil(const int &idAppareil);
 };
 
 #endif // CONTROLEURGESTIONAPPAREIL_H

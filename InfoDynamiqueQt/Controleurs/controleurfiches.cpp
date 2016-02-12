@@ -5,20 +5,17 @@
 
 #include <QDebug>
 
-ControleurGestionFiche::ControleurGestionFiche(QObject* parent) : QObject(parent) {}
+ControleurFiches::ControleurFiches(QObject* parent) : QObject(parent) {}
 
-void ControleurGestionFiche::ajouterFiche(const int &idAppareil)
+void ControleurFiches::ajouterFiche(const int &idAppareil)
 {
     VueGestionFiche* vue = new VueGestionFiche();
     vue->setWindowTitle(tr("Créer une nouvelle fiche"));
-//    Fiche* fiche = MappeurFiches::getFiche(idAppareil);
-//    assignerFiche(vue, fiche);
     vue->exec();
     vue->deleteLater();
-//    fiche->deleteLater();
 }
 
-void ControleurGestionFiche::modifierFiche(const int &idFiche)
+void ControleurFiches::modifierFiche(const int &idFiche)
 {
     Fiche* fiche = MappeurFiches::getFiche(idFiche);
     if (fiche != NULL) {
@@ -30,7 +27,7 @@ void ControleurGestionFiche::modifierFiche(const int &idFiche)
     }
 }
 
-void ControleurGestionFiche::voirFiche(const int &idFiche)
+void ControleurFiches::voirFiche(const int &idFiche)
 {
     const Fiche* fiche = MappeurFiches::getFiche(idFiche);
     if (fiche != NULL) {
@@ -42,7 +39,7 @@ void ControleurGestionFiche::voirFiche(const int &idFiche)
     }
 }
 
-void ControleurGestionFiche::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
+void ControleurFiches::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
 {
     vue->setTaches(fiche->taches());
 }

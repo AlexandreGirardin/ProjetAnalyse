@@ -54,19 +54,19 @@ private:
     static VuePrincipale* m_vuePrincipale;
 
     // Le contrôleur de la vue des clients
-    ControleurClients* controleurClients;
+    ControleurOngletClients* controleurClients;
 
     // Si l'onglet des clients a été chargé
     bool clientsCharges;
 
     // Le contrôleur de la vue des fiches
-    ControleurFiches* controleurFiches;
+    ControleurOngletFiches* controleurFiches;
 
     // Si l'onglet des fiches a été chargé
     bool fichesChargees;
 
     // Le contrôleur de la vue des appareils
-    ControleurAppareils* controleurAppareils;
+    ControleurOngletAppareils* controleurAppareils;
 
     // Si l'onglet des appareils a été chargé
     bool appareilsCharges;
@@ -105,6 +105,18 @@ public slots:
      * Charge l'onglet sélectionné au besoin
      */
     void chargerOnglet();
+
+signals:
+
+    void clientsModifies() const;
+
+    void appareilsModifies() const;
+
+    void nombreAppareilsChange() const;
+
+    void actionsModifiees() const;
+
+    void ensemblesModifies() const;
 
 };
 
