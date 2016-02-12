@@ -36,8 +36,11 @@ void VueGestionFiche::setTaches(const QList<Tache*>* taches)
     entetes << tr("Tâches") << tr("Statut");
     modele->setHorizontalHeaderLabels(entetes);
     for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd(); ++i) {
-        QStandardItem* item = new QStandardItem((*i)->action()->out());
-        modele->appendRow(item);
+        QList<QStandardItem*> rangee;
+        Tache* tache = (*i);
+        rangee.append(new QStandardItem(tache->action()->nom()));
+        rangee.append(new QStandardItem(tache->statut()->nom()));
+        modele->appendRow(rangee);
     }
     ui->tableTaches->setModel(modele);
     ui->tableTaches->resizeColumnsToContents();

@@ -26,7 +26,8 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirFiche()));
-    QObject::connect(Application::getInstance(), SIGNAL(fichesModifiees()), this, SLOT(recharger()));
+    QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(modifierFiche()));
+//    QObject::connect(Application::getInstance(), SIGNAL(fichesModifiees()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
     fragment->champ()->setFocus();
 }

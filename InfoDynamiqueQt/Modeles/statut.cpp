@@ -1,6 +1,10 @@
 #include "Modeles/statut.h"
 
-Statut::Statut(QObject* parent) : ModeleBD(parent) {}
+Statut::Statut(QObject* parent) : ModeleBD(parent)
+{
+    m_id = -1;
+    m_nom = QString("");
+}
 
 Statut::Statut(const int &a_id, const QString &a_nom, QObject* parent) :
     ModeleBD(parent)
@@ -21,5 +25,6 @@ void Statut::setNom(const QString &value)
 
 QString Statut::out() const
 {
-    return QString::number(m_id) + " " + m_nom;
+    QString texte = QString::number(m_id) + " " + m_nom;
+    return QString("???");
 }

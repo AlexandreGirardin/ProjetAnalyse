@@ -1,6 +1,12 @@
 #include "Modeles/tache.h"
 
-Tache::Tache(QObject* parent) : ModeleBD(parent) {}
+#include <QDebug>
+
+Tache::Tache(QObject* parent) : ModeleBD(parent)
+{
+    m_action = new Action();
+    m_statut = new Statut();
+}
 
 int Tache::idFiche() const
 {
@@ -29,7 +35,9 @@ Statut* Tache::statut() const
 
 void Tache::setStatut(Statut* value)
 {
-    m_statut = value;
+    if (value != NULL) {
+        m_statut = value;
+    }
 }
 
 QString Tache::out() const
