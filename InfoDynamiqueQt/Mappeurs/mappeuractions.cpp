@@ -2,7 +2,6 @@
 
 #include "Controleurs/application.h"
 
-#include <QDebug>
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
@@ -122,7 +121,9 @@ bool MappeurActions::ecrire(const Action *action, const QString &commande)
     if (succes) {
         bd.commit();
     } else {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
         bd.rollback();
     }
     delete requete;

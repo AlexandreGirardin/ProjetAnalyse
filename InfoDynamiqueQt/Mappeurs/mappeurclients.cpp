@@ -32,7 +32,9 @@ bool MappeurClients::inserer(const Client* client)
     if (succes) {
         bd->commit();
     } else {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
         bd->rollback();
     }
     delete requete;
@@ -56,7 +58,9 @@ bool MappeurClients::mettreAJour(const Client *client)
     if (succes) {
         bd->commit();
     } else {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
         bd->rollback();
     }
     delete requete;

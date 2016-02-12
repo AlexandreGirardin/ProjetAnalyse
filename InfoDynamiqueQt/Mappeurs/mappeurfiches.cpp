@@ -1,11 +1,10 @@
 #include "Mappeurs/mappeurfiches.h"
-#include "Mappeurs/mappeurpieces.h"
-#include "Mappeurs/mappeurstatuts.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/mappeurpieces.h"
+#include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
 
-#include <QDebug>
 #include <QSqlError>
 
 Fiche *MappeurFiches::getFiche(const int &id)
@@ -122,7 +121,9 @@ bool MappeurFiches::ecrire(const Fiche *fiche, const QString &commande)
     if (succes) {
         bd.commit();
     } else {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
         bd.rollback();
     }
     delete requete;
