@@ -17,15 +17,6 @@ class ControleurActions : public QObject
 
     // Contrôle l'exécution de l'onglet Actions de la vue principale
 
-public:
-
-    /**
-     * @brief ControleurActions
-     * @param vuePrincipale La vue à laquelle se rattache le contrôleur
-     * @param parent
-     */
-    explicit ControleurActions(QWidget* conteneur);
-
 private:
 
     /**
@@ -34,7 +25,7 @@ private:
      * @param vue La vue cible
      * @param action L'action source
      */
-    void assignerAction(VueGestionAction* vue, const Action *action) const;
+    static void assignerAction(VueGestionAction* vue, const Action *action);
 
 public slots:
 
@@ -42,33 +33,25 @@ public slots:
      * @brief creerAction
      * Lance la création d'une nouvelle action
      */
-    void creerAction();
+    static void creerAction();
 
     /**
      * @brief modifierAction
      * Lance la modification de l'action sélectionnée
      */
-    void modifierAction(const int &idAction);
+    static void modifierAction(const int &idAction);
 
     /**
      * @brief voirAction
      * Lance la visualisation de l'action sélectionnée
      */
-    void voirAction(const int &idAction) const;
+    static void voirAction(const int &idAction);
 
     /**
      * @brief changerEtat
      * Inverse l'état actuel de l'action sélectionnée
      */
-    void changerEtat(const int &idAction);
-
-signals:
-
-    /**
-     * @brief donneesModifiees
-     * Lancé lorsque les valeurs du tableau ont été modifiées
-     */
-    void actionsModifiees();
+    static void changerEtat(const int &idAction);
 
 };
 

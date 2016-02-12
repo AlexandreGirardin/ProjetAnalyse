@@ -18,13 +18,6 @@ class MappeurClients : public QObject
 public:
 
     /**
-     * @brief MappeurClients
-     * @param a_bd La base de données à utiliser
-     * @param parent
-     */
-    explicit MappeurClients(QObject* parent = 0);
-
-    /**
      * @brief getClient
      * @param id Le numéro du client à mapper
      * @return Le client s'il existe, NULL autrement
@@ -62,6 +55,8 @@ private:
      * @return La commande préparée
      */
     static QSqlQuery* preparerRequete(const Client* client, const QString &commande);
+
+    static bool ecrire(const Client *client, const QString &commande);
 };
 
 #endif // MAPPEURCLIENTS_H

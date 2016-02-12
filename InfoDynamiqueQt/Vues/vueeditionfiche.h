@@ -21,6 +21,11 @@ public:
 
     void setIdFiche(const int &id);
 
+    void setCommentaire(const QString &commentaire);
+
+    QString getCommentaire() const;
+
+
 private:
     Ui::VueEditionFiche* ui;
 

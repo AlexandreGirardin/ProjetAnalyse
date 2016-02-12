@@ -9,9 +9,7 @@
 #include <QSqlQueryModel>
 #include <QDebug>
 
-ControleurActions::ControleurActions(QWidget* vue) : QObject(vue) {}
-
-void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action) const
+void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action)
 {
     vue->setNom(action->nom());
     vue->setDescription(action->description());
@@ -29,7 +27,7 @@ void ControleurActions::creerAction()
         action->setDescription(vue->getDescription());
         action->setEtat(vue->getEtat());
         if (MappeurActions::inserer(action)) {
-            emit actionsModifiees();
+            emit Application::getInstance()->actionsModifiees();
         }
     }
     vue->deleteLater();
@@ -47,14 +45,14 @@ void ControleurActions::modifierAction(const int &idAction)
             action->setDescription(vue->getDescription());
             action->setEtat(vue->getEtat());
             if (MappeurActions::mettreAJour(action)) {
-                emit actionsModifiees();
+                emit Application::getInstance()->actionsModifiees();
             }
         }
     }
     action->deleteLater();
 }
 
-void ControleurActions::voirAction(const int &idAction) const
+void ControleurActions::voirAction(const int &idAction)
 {
     Action* action = MappeurActions::getAction(idAction);
     if (action != NULL) {
@@ -74,7 +72,7 @@ void ControleurActions::changerEtat(const int &idAction)
     if (action != NULL) {
         action->setEtat(!action->etat());
         if (MappeurActions::mettreAJour(action)) {
-            emit actionsModifiees();
+            emit Application::getInstance()->actionsModifiees();
         }
     }
     action->deleteLater();

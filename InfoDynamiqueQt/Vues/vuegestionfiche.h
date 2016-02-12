@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+#include "Modeles/ensembleactions.h"
+#include "Modeles/tache.h"
+
 namespace Ui {
 class VueGestionFiche;
 }
@@ -17,9 +20,19 @@ public:
     explicit VueGestionFiche(QWidget* parent = 0);
     ~VueGestionFiche();
 
-    void setDescription(const QString &commentaire);
+    void cacherGestionEnsemble();
 
-    QString getDescription() const;
+    void setCommentaire(const QString &commentaire);
+
+    QString getCommentaire() const;
+
+    void setPriorite(const int &priorite);
+
+    int getPriorite() const;
+
+    void setEnsembles(const QList<EnsembleActions*>* ensembles);
+
+    void setTaches(const QList<Tache*>* taches);
 
 
 

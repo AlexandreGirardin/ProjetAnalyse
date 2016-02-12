@@ -3,9 +3,11 @@
 
 #include <QObject>
 
+#include "Controleurs/controleurfiches.h"
+#include "Mappeurs/mappeurfiches.h"
 #include "Vues/fragment.h"
 
-class ControleurFiches : public QObject
+class ControleurOngletFiches : public QObject
 {
     Q_OBJECT
 
@@ -18,12 +20,13 @@ public:
      * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
-    explicit ControleurFiches(QWidget* vue);
+    explicit ControleurOngletFiches(QWidget* vue);
 
 private:
 
-    // Le fragment des fiches
     Fragment* fragment;
+
+    QPushButton* boutonTraiter;
 
 public slots:
 
@@ -34,16 +37,16 @@ public slots:
     void peuplerFiches();
 
     /**
-     * @brief creerFiche
-     * Lance la création d'une nouvelle fiche
-     */
-    void creerFiche() const;
-
-    /**
      * @brief modifierFiche
      * Lance la modification de la fiche sélectionnée
      */
     void modifierFiche() const;
+
+    /**
+     * @brief traiterFiche
+     * Lance le traitement de la fiche sélectionnée
+     */
+    void traiterFiche() const;
 
     /**
      * @brief modifierFiche

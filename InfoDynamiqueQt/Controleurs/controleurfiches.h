@@ -6,7 +6,7 @@
 #include "Mappeurs/mappeurfiches.h"
 #include "Vues/vuegestionfiche.h"
 
-class ControleurGestionFiche : public QObject
+class ControleurFiches : public QObject
 {
     Q_OBJECT
 
@@ -18,7 +18,7 @@ public:
      * @brief ControleurGestionFiche
      * @param parent
      */
-    explicit ControleurGestionFiche(QObject* parent = 0);
+    explicit ControleurFiches(QObject* parent = 0);
 
 private:
 

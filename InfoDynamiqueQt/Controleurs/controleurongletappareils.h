@@ -3,11 +3,11 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurgestionappareil.h"
+#include "Controleurs/controleurappareils.h"
 #include "Mappeurs/mappeurappareils.h"
 #include "Vues/fragment.h"
 
-class ControleurAppareils : public QObject
+class ControleurOngletAppareils : public QObject
 {
     Q_OBJECT
 
@@ -20,12 +20,9 @@ public:
      * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
-    explicit ControleurAppareils(QWidget *vue);
+    explicit ControleurOngletAppareils(QWidget *vue);
 
 private:
-
-    // Le contrôleur de gestion d'appareils
-    ControleurGestionAppareil* controleurGestionAppareil;
 
     // Le fragment des appareils
     Fragment* fragment;

@@ -4,10 +4,7 @@
 #include "Controleurs/controleurbd.h"
 #include "mappeurfabricants.h"
 
-#include <QDebug>
 #include <QSqlError>
-
-MappeurAppareils::MappeurAppareils(QObject* parent) : QObject(parent) {}
 
 Appareil* MappeurAppareils::getAppareil(const int &id)
 {
@@ -90,6 +87,13 @@ bool MappeurAppareils::inserer(const Appareil *appareil)
     return succes;
 }
 
+bool MappeurAppareils::supprimer(const Appareil *appareil)
+{
+    const QString commande("DELETE FROM appareils WHERE id=:idAppareil");
+    const bool succes = ecrire(appareil, commande);
+    return succes;
+}
+
 QSqlQuery* MappeurAppareils::preparerRequete(const Appareil* appareil, const QString &commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
@@ -112,7 +116,9 @@ bool MappeurAppareils::ecrire(const Appareil* appareil, const QString &commande)
     if (succes) {
         bd.commit();
     } else {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
         bd.rollback();
     }
     delete requete;

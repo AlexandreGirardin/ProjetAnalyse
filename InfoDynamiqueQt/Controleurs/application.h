@@ -8,8 +8,9 @@
 #include "Controleurs/controleurongletappareils.h"
 #include "Controleurs/controleurongletclients.h"
 #include "Controleurs/controleurongletfiches.h"
-
 #include "Vues/vueprincipale.h"
+
+#include <QMessageBox>
 
 class Application : public QApplication
 {
@@ -54,19 +55,19 @@ private:
     static VuePrincipale* m_vuePrincipale;
 
     // Le contrôleur de la vue des clients
-    ControleurClients* controleurClients;
+    ControleurOngletClients* controleurClients;
 
     // Si l'onglet des clients a été chargé
     bool clientsCharges;
 
     // Le contrôleur de la vue des fiches
-    ControleurFiches* controleurFiches;
+    ControleurOngletFiches* controleurFiches;
 
     // Si l'onglet des fiches a été chargé
     bool fichesChargees;
 
     // Le contrôleur de la vue des appareils
-    ControleurAppareils* controleurAppareils;
+    ControleurOngletAppareils* controleurAppareils;
 
     // Si l'onglet des appareils a été chargé
     bool appareilsCharges;
@@ -105,6 +106,46 @@ public slots:
      * Charge l'onglet sélectionné au besoin
      */
     void chargerOnglet();
+
+    static void messageErreur(const QString &titre, const QString &texte, QWidget * parent = 0);
+
+signals:
+
+    /**
+     * @brief clientsModifies
+     * Émis lorsque les données des clients ont été modifiées
+     */
+    void clientsModifies() const;
+
+    /**
+     * @brief appareilsModifies
+     * Émis lorsque les données des appareils ont été modifiées
+     */
+    void appareilsModifies() const;
+
+    /**
+     * @brief fichesModifiees
+     * Émis lorsque les données des fiches ont été modifiées
+     */
+    void fichesModifiees() const;
+
+    /**
+     * @brief nombreAppareilsChange
+     * Émis lorsqu'un appareil a été ajouté ou supprimé
+     */
+    void nombreAppareilsChange() const;
+
+    /**
+     * @brief actionsModifiees
+     * Émis lorsque les données des actions ont été modifiées
+     */
+    void actionsModifiees() const;
+
+    /**
+     * @brief ensemblesModifies
+     * Émis lorsque les données des ensembles ont été modifiées
+     */
+    void ensemblesModifies() const;
 
 };
 

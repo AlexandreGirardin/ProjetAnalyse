@@ -104,7 +104,9 @@ public:
      * Ajoute un bouton d'action au fragment
      * @param bouton Le bouton à ajouter
      */
-    QPushButton* ajouterBouton(const int &index);
+    QPushButton* ajouterBouton(const int &index, const QString &texte = 0, const QIcon &icone = QIcon());
+
+    QPushButton* ajouterBoutonNonConnecte(const int &index, const QString &texte = 0, const QIcon icone = QIcon());
 
     /**
      * @brief getCaseCocher
@@ -175,6 +177,7 @@ public:
     void setColonneId(const int &value);
 
     int getDernierIndexSelectionne() const;
+
     void setDernierIndexSelectionne(int value);
 
     QComboBox *ajouterCombobox(const int &index);
@@ -212,7 +215,7 @@ private slots:
      * Indique un changement d'état de la case de filtre
      * @param etat Le nouvel état de la case à cocher
      */
-    void signalerCase(const bool &etat);
+    void basculerCase(const bool &etat);
 
     /**
      * @brief signalerSelection
@@ -220,8 +223,6 @@ private slots:
      * @param ancien L'ancienne sélection du tableau
      */
     void signalerSelection(const QModelIndex &nouveau, const QModelIndex &ancien);
-
-    void doubleClicTableau();
 
 signals:
 
@@ -293,6 +294,11 @@ signals:
      */
     void boutonsActives(bool &etat);
 
+    /**
+     * @brief doubleClicModele
+     * Émis lors d'un double clic sur un modèle du tableau
+     * Le premier clic sélectionne le modèle, donc getIdModele retourne déjà une valeur valide
+     */
     void doubleClicModele();
 
 };

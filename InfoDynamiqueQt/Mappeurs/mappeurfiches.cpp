@@ -1,15 +1,11 @@
 #include "Mappeurs/mappeurfiches.h"
-#include "Mappeurs/mappeurpieces.h"
-#include "Mappeurs/mappeurstatuts.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/mappeurpieces.h"
+#include "Mappeurs/mappeurstatuts.h"
+#include "Mappeurs/mappeurtaches.h"
 
-#include <QDebug>
 #include <QSqlError>
-
-MappeurFiches::MappeurFiches(QObject* parent) : QObject(parent)
-{
-}
 
 Fiche *MappeurFiches::getFiche(const int &id)
 {
@@ -25,8 +21,17 @@ Fiche *MappeurFiches::getFiche(const int &id)
     return fiche;
 }
 
-bool MappeurFiches::inserer(const Fiche *fiche) const
+QList<Fiche*>* MappeurFiches::fichesPourAppareil(const int &id)
 {
+    const QString commande("SELECT * FROM fiches WHERE idAppareil=:idAppareil");
+    QSqlQuery requete(*Application::bd);
+    requete.prepare(commande);
+    requete.bindValue(":idAppareil", id);
+    requete.exec();
+    return mapper(requete);
+}
+
+bool MappeurFiches::inserer(const Fiche *fiche){
     const QString commande("INSERT INTO fiches\
                                 (idAppareil, priorite, idTechnicien, idStatut, commentaire)\
                             VALUES\
@@ -35,7 +40,7 @@ bool MappeurFiches::inserer(const Fiche *fiche) const
     return succes;
 }
 
-bool MappeurFiches::mettreAJour(const Fiche *fiche) const
+bool MappeurFiches::mettreAJour(const Fiche *fiche)
 {
     const QString commande("UPDATE fiches\
                             SET\
@@ -57,12 +62,38 @@ Fiche *MappeurFiches::mapper(const QSqlRecord &ligne)
     fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
     fiche->setPriorite(ligne.value("priorite").toInt());
     fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value("idStatut").toInt()));
-//    fiche->setTaches(ligne.value(MappeurTache));
+
+    fiche->setCommentaire(ligne.value("commentaire").toString());
+    fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
 //    fiche->setTechniciens(MappeurTechniciens::);
     return fiche;
 }
 
-QSqlQuery *MappeurFiches::preparerRequete(const Fiche *fiche, const QString &commande) const
+QList<Fiche*>* MappeurFiches::mapper(QSqlQuery &requete)
+{
+    QList<Fiche*>* liste = new QList<Fiche*>;
+    QSqlRecord ligne = requete.record();
+    int colId = ligne.indexOf("id");
+    int colAppareil = ligne.indexOf("idAppareil");
+    int colPriorite = ligne.indexOf("priorite");
+    int colStatut = ligne.indexOf("idStatut");
+    int colCommentaire = ligne.indexOf("commentaire");
+    while (requete.next()) {
+        ligne = requete.record();
+        Fiche* fiche = new Fiche();
+        fiche->setId(ligne.value(colId).toInt());
+        fiche->setIdAppareil(ligne.value(colAppareil).toInt());
+        fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
+        fiche->setPriorite(ligne.value(colPriorite).toInt());
+        fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value(colStatut).toInt()));
+        fiche->setCommentaire(ligne.value(colCommentaire).toString());
+        fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
+        liste->append(fiche);
+    }
+    return liste;
+}
+
+QSqlQuery *MappeurFiches::preparerRequete(const Fiche *fiche, const QString &commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
@@ -71,7 +102,7 @@ QSqlQuery *MappeurFiches::preparerRequete(const Fiche *fiche, const QString &com
     return requete;
 }
 
-int MappeurFiches::derniereInsertion() const
+int MappeurFiches::derniereInsertion()
 {
     int id = -1;
     QSqlQuery* requete = new QSqlQuery("SELECT LAST_INSERT_ID() as id",*Application::bd);
@@ -81,7 +112,7 @@ int MappeurFiches::derniereInsertion() const
     return id;
 }
 
-bool MappeurFiches::ecrire(const Fiche *fiche, const QString &commande) const
+bool MappeurFiches::ecrire(const Fiche *fiche, const QString &commande)
 {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();
@@ -90,7 +121,9 @@ bool MappeurFiches::ecrire(const Fiche *fiche, const QString &commande) const
     if (succes) {
         bd.commit();
     } else {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
         bd.rollback();
     }
     delete requete;

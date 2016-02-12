@@ -17,8 +17,6 @@ class MappeurActions : public QObject
 
 public:
 
-    explicit MappeurActions(QObject* parent = 0);
-
     /**
      * @brief getAction
      * @param id Le numéro de l'action à mapper

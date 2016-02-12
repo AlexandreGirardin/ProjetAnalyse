@@ -2,6 +2,7 @@
 #include "ui_vueeditionfiche.h"
 
 #include "Controleurs/application.h"
+#include "Controleurs/requetessql.h"
 
 #include <QComboBox>
 #include <QDebug>
@@ -30,6 +31,11 @@ void VueEditionFiche::setIdFiche(const int &id)
     }
 }
 
+void VueEditionFiche::setCommentaire(const QString &commentaire)
+{
+    ui->champCommentaire->setText(commentaire);
+}
+
 void VueEditionFiche::configurerFragmentTaches()
 {
     fragmentTaches = new Fragment(this);
@@ -54,7 +60,13 @@ void VueEditionFiche::configurerFragmentPieces()
 void VueEditionFiche::peuplerTaches()
 {
     QSqlQueryModel* modele = new QSqlQueryModel(this);
-    modele->setQuery(QSqlQuery("SELECT * FROM taches", *Application::bd));
+    QSqlQuery requete(*Application::bd);
+    QString commande(*RequetesSQL::tachesPourFiche);
+    modele->setQuery(QSqlQuery(*Application::bd));
+    requete.prepare(commande);
+    requete.bindValue(":idFiche", idFiche);
+    requete.exec();
+    modele->setQuery(requete);
     fragmentTaches->peuplerTableau(modele);
 }
 

@@ -13,8 +13,6 @@ class MappeurEnsembles : public QObject
 
 public:
 
-    explicit MappeurEnsembles(QObject *parent = 0);
-
     /**
      * @brief getEnsemble
      * Construit un ensemble donné
@@ -52,7 +50,7 @@ public:
      * @param ensemble L'ensemble à effacer
      * @return Succès de la suppression
      */
-    static bool supprimer(EnsembleActions* ensemble);
+    static bool supprimer(const EnsembleActions* ensemble);
 
 private:
 

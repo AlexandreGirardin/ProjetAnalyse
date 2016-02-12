@@ -15,18 +15,13 @@ class MappeurFiches : public QObject
 public:
 
     /**
-     * @brief MappeurFiches
-     * @param a_bd La base de données à utiliser
-     * @param parent
-     */
-    explicit MappeurFiches(QObject* parent = 0);
-
-    /**
      * @brief getFiche
      * @param id Le numéro de la fiche à mapper
      * @return le fabricant s'il existe, NULL autrement
      */
     static Fiche* getFiche(const int &id);
+
+    static QList<Fiche*>* fichesPourAppareil(const int &id);
 
     /**
      * @brief inserer
@@ -34,7 +29,7 @@ public:
      * @param fiche La fiche à ajouter
      * @return Succès
      */
-    bool inserer(const Fiche* fiche) const;
+    static bool inserer(const Fiche* fiche);
 
     /**
      * @brief mettreAJour
@@ -42,7 +37,7 @@ public:
      * @param appareil La fiche à mettre à jour
      * @return Succès
      */
-    bool mettreAJour(const Fiche* fiche) const;
+    static bool mettreAJour(const Fiche* fiche);
 
 private:
 
@@ -59,13 +54,13 @@ private:
      * @param commande La commande SQL à préparer
      * @return La commande préparée
      */
-    QSqlQuery* preparerRequete(const Fiche* fiche, const QString &commande) const;
+    static QSqlQuery* preparerRequete(const Fiche* fiche, const QString &commande);
 
     /**
      * @brief derniereInsertion
      * @return L'id de la dernière fiche entré
      */
-    int derniereInsertion() const;
+    static int derniereInsertion();
 
     /**
      * @brief ecrire
@@ -73,8 +68,9 @@ private:
      * @param commande
      * @return
      */
-    bool ecrire(const Fiche* fiche, const QString &commande) const;
+    static bool ecrire(const Fiche* fiche, const QString &commande);
 
+    static QList<Fiche*>* mapper(QSqlQuery &requete);
 };
 
 #endif // MAPPEURFICHES

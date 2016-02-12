@@ -5,8 +5,6 @@
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurFabricants::MappeurFabricants(QObject* parent) : QObject(parent) {}
-
 Fabricant* MappeurFabricants::getFabricant(const int &id)
 {
     Fabricant* fabricant = NULL;

@@ -8,7 +8,7 @@
 #include <QDebug>
 #include "Controleurs/application.h"
 
-ControleurAppareils::ControleurAppareils(QWidget* vue)
+ControleurOngletAppareils::ControleurOngletAppareils(QWidget* vue)
     : QObject(vue)
 {
     fragment = new Fragment(vue);
@@ -17,17 +17,15 @@ ControleurAppareils::ControleurAppareils(QWidget* vue)
     fragment->retirerCaseCocher();
     vue->layout()->addWidget(fragment);
 
-    controleurGestionAppareil = new ControleurGestionAppareil(this);
-
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-    QObject::connect(controleurGestionAppareil, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
+    QObject::connect(Application::getInstance(), SIGNAL(appareilsModifies()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     fragment->champ()->setFocus();
 }
 
-void ControleurAppareils::peuplerAppareils()
+void ControleurOngletAppareils::peuplerAppareils()
 {
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(*RequetesSQL::afficherAppareils, *Application::bd);
@@ -35,21 +33,21 @@ void ControleurAppareils::peuplerAppareils()
     fragment->getTableau()->hideColumn(fragment->getColonneId());
 }
 
-void ControleurAppareils::modifierAppareil() const
+void ControleurOngletAppareils::modifierAppareil() const
 {
     if (fragment->getIdModele() != -1) {
-        controleurGestionAppareil->modifierAppareil(fragment->getIdModele());
+        ControleurAppareils::modifierAppareil(fragment->getIdModele());
     }
 }
 
-void ControleurAppareils::voirAppareil() const
+void ControleurOngletAppareils::voirAppareil() const
 {
     if (fragment->getIdModele() != -1) {
-        controleurGestionAppareil->voirAppareil(fragment->getIdModele());
+        ControleurAppareils::voirAppareil(fragment->getIdModele());
     }
 }
 
-void ControleurAppareils::filtrerAppareils(const QString &filtre)
+void ControleurOngletAppareils::filtrerAppareils(const QString &filtre)
 {
     if (filtre.isEmpty()) {
         peuplerAppareils();
@@ -66,7 +64,7 @@ void ControleurAppareils::filtrerAppareils(const QString &filtre)
     }
 }
 
-void ControleurAppareils::recharger()
+void ControleurOngletAppareils::recharger()
 {
     filtrerAppareils(fragment->getFiltre());
 }

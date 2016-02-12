@@ -5,10 +5,6 @@
 #include <QDebug>
 #include <QSqlError>
 
-MappeurClients::MappeurClients(QObject* parent) : QObject(parent)
-{
-}
-
 Client* MappeurClients::getClient(const int &id)
 {
     Client* client = NULL;
@@ -24,29 +20,16 @@ Client* MappeurClients::getClient(const int &id)
 
 bool MappeurClients::inserer(const Client* client)
 {
-    QSqlDatabase* bd = Application::bd;
-    bd->transaction();
     const QString commande(
                 "INSERT INTO clients\
                     (prenom, nom, telephone, adresse)\
                 VALUES\
                     (:prenom, :nom, :telephone, :adresse)");
-    QSqlQuery* requete = preparerRequete(client, commande);
-    const bool succes = requete->exec();
-    if (succes) {
-        bd->commit();
-    } else {
-        qDebug() << requete->lastError();
-        bd->rollback();
-    }
-    delete requete;
-    return succes;
+    return ecrire(client, commande);
 }
 
 bool MappeurClients::mettreAJour(const Client *client)
 {
-    QSqlDatabase* bd = Application::bd;
-    bd->transaction();
     const QString commande(
                 "UPDATE clients\
                 SET\
@@ -55,16 +38,7 @@ bool MappeurClients::mettreAJour(const Client *client)
                     telephone=:telephone,\
                     adresse=:adresse\
                 WHERE id=:id");
-    QSqlQuery* requete = preparerRequete(client, commande);
-    const bool succes = requete->exec();
-    if (succes) {
-        bd->commit();
-    } else {
-        qDebug() << requete->lastError();
-        bd->rollback();
-    }
-    delete requete;
-    return succes;
+    return ecrire(client, commande);
 }
 
 Client* MappeurClients::mapper(const QSqlRecord &ligne)
@@ -89,4 +63,22 @@ QSqlQuery* MappeurClients::preparerRequete(const Client* client, const QString &
     requete->bindValue(":telephone", client->telephone());
     requete->bindValue(":adresse", client->adresse());
     return requete;
+}
+
+bool MappeurClients::ecrire(const Client* client, const QString &commande)
+{
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    QSqlQuery* requete = preparerRequete(client, commande);
+    const bool succes = requete->exec();
+    if (succes) {
+        bd.commit();
+    } else {
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
+        bd.rollback();
+    }
+    delete requete;
+    return succes;
 }

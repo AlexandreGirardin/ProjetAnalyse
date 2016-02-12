@@ -17,13 +17,6 @@ class MappeurFabricants : public QObject
 public:
 
     /**
-     * @brief MappeurFabricants
-     * @param a_bd La base de données à utiliser
-     * @param parent
-     */
-    explicit MappeurFabricants(QObject* parent = 0);
-
-    /**
      * @brief getFabricant
      * @param id Le numéro du fabricant à mapper
      * @return le fabricant s'il existe, NULL autrement

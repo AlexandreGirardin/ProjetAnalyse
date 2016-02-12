@@ -1,11 +1,16 @@
 #include "Vues/vuegestionfiche.h"
 #include "ui_vuegestionfiche.h"
 
+#include <QStandardItemModel>
+#include <QDebug>
+
 VueGestionFiche::VueGestionFiche(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionFiche)
 {
     ui->setupUi(this);
+    ui->tableTaches->horizontalHeader()->setStretchLastSection(true);
+    ui->tableTaches->verticalHeader()->hide();
 }
 
 VueGestionFiche::~VueGestionFiche()
@@ -13,14 +18,54 @@ VueGestionFiche::~VueGestionFiche()
     delete ui;
 }
 
-void VueGestionFiche::setDescription(const QString &description)
+void VueGestionFiche::cacherGestionEnsemble()
 {
-    ui->champDescription->setText(description);
+    if (ui->etiquetteEnsemble != NULL) {
+        ui->etiquetteEnsemble->hide();
+    }
+    if (ui->comboEnsemble != NULL) {
+        ui->comboEnsemble->hide();
+    }
 }
 
-QString VueGestionFiche::getDescription() const
+void VueGestionFiche::setTaches(const QList<Tache*>* taches)
 {
-    return ui->champDescription->toPlainText();
+    delete ui->tableTaches->model();
+    QStandardItemModel* modele = new QStandardItemModel(ui->tableTaches);
+    QStringList entetes;
+    entetes << tr("Tâches") << tr("Statut");
+    modele->setHorizontalHeaderLabels(entetes);
+    for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd(); ++i) {
+        QStandardItem* item = new QStandardItem((*i)->action()->out());
+        modele->appendRow(item);
+    }
+    ui->tableTaches->setModel(modele);
+    ui->tableTaches->resizeColumnsToContents();
+}
+
+void VueGestionFiche::setPriorite(const int &priorite)
+{
+    ui->champPriorite->setValue(priorite);
+}
+
+int VueGestionFiche::getPriorite() const
+{
+    ui->champPriorite->value();
+}
+
+void VueGestionFiche::setEnsembles(const QList<EnsembleActions *> *ensembles)
+{
+    //TODO ui->comboEnsemble;
+}
+
+void VueGestionFiche::setCommentaire(const QString &commentaire)
+{
+    ui->champCommentaire->setPlainText(commentaire);
+}
+
+QString VueGestionFiche::getCommentaire() const
+{
+    return ui->champCommentaire->toPlainText();
 }
 
 void VueGestionFiche::setLectureSeule()

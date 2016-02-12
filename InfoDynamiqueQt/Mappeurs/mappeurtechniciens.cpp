@@ -5,8 +5,6 @@
 #include <QVariant>
 #include <QtSql/QSqlQuery>
 
-MappeurTechniciens::MappeurTechniciens(QObject* parent) : QObject(parent) {}
-
 Technicien* MappeurTechniciens::getTechnicien(const int &id)
 {
     Technicien* technicien = NULL;
@@ -32,6 +30,11 @@ QList<Technicien*>* MappeurTechniciens::getTechniciens()
 {
     QSqlQuery requete(QSqlQuery("SELECT * FROM techniciens",*Application::bd));
     return mapper(requete);
+}
+
+QList<Technicien*>* MappeurTechniciens::technicienPourFiche(const int &idFiche)
+{
+
 }
 
 QList<Technicien*>* MappeurTechniciens::mapper(QSqlQuery &requete)

@@ -17,12 +17,6 @@ class MappeurTechniciens : public QObject
 public:
 
     /**
-     * @brief MappeurTechnicien
-     * @param parent
-     */
-    explicit MappeurTechniciens(QObject* parent = 0);
-
-    /**
      * @brief getTechnicien
      * @param id Le numéro du technicien à mapper
      * @return Le technicien s'il existe, NULL autrement
@@ -34,6 +28,13 @@ public:
      * @return La liste de tous les techniciens de la base de données
      */
     static QList<Technicien*>* getTechniciens();
+
+    /**
+     * @brief technicienPourFiche
+     * @param idFiche
+     * @return
+     */
+    static QList<Technicien*>* technicienPourFiche(const int &idFiche);
 
 private:
 

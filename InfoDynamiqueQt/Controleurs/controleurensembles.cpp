@@ -8,9 +8,7 @@
 #include <QMessageBox>
 #include <QSqlQueryModel>
 
-ControleurGestionEnsemble::ControleurGestionEnsemble(QObject *parent) : QObject(parent) {}
-
-void ControleurGestionEnsemble::creerEnsemble()
+void ControleurEnsembles::creerEnsemble()
 {
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer un nouvel ensemble de tâches"));
@@ -19,7 +17,7 @@ void ControleurGestionEnsemble::creerEnsemble()
         EnsembleActions* ensemble = new EnsembleActions(vue);
         extraireEnsemble(ensemble, vue);
         if (MappeurEnsembles::inserer(ensemble)) {
-            emit ensemblesModifies();
+            emit Application::getInstance()->ensemblesModifies();
         } else {
             qDebug() << "Pas marché :(";
         }
@@ -27,7 +25,7 @@ void ControleurGestionEnsemble::creerEnsemble()
     }
 }
 
-void ControleurGestionEnsemble::modifierEnsemble(const int &idEnsemble)
+void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
 {
     EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
@@ -39,7 +37,7 @@ void ControleurGestionEnsemble::modifierEnsemble(const int &idEnsemble)
     if (vue->exec() == vue->Accepted) {
         extraireEnsemble(ensemble, vue);
         if (MappeurEnsembles::mettreAJour(ensemble)) {
-            emit ensemblesModifies();
+            emit Application::getInstance()->ensemblesModifies();
         } else {
             qDebug() << "Pas marché :(";
         }
@@ -47,7 +45,7 @@ void ControleurGestionEnsemble::modifierEnsemble(const int &idEnsemble)
     }
 }
 
-void ControleurGestionEnsemble::voirEnsemble(const int &idEnsemble) const
+void ControleurEnsembles::voirEnsemble(const int &idEnsemble)
 {
     VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
     vue->setWindowTitle(tr("Ensemble de tâches"));
@@ -59,27 +57,27 @@ void ControleurGestionEnsemble::voirEnsemble(const int &idEnsemble) const
     ensemble->deleteLater();
 }
 
-void ControleurGestionEnsemble::assignerEnsemble(VueGestionEnsemble* vue, const EnsembleActions* ensemble) const
+void ControleurEnsembles::assignerEnsemble(VueGestionEnsemble* vue, const EnsembleActions* ensemble)
 {
     vue->setNom(ensemble->nom());
     vue->setDescription(ensemble->description());
 }
 
-void ControleurGestionEnsemble::assignerEnsemble(VueEnsemble* vue, const EnsembleActions* ensemble) const
+void ControleurEnsembles::assignerEnsemble(VueEnsemble* vue, const EnsembleActions* ensemble)
 {
     vue->setNom(ensemble->nom());
     vue->setDescription(ensemble->description());
     vue->setActions(ensemble->actions());
 }
 
-void ControleurGestionEnsemble::extraireEnsemble(EnsembleActions* ensemble, const VueGestionEnsemble* vue) const
+void ControleurEnsembles::extraireEnsemble(EnsembleActions* ensemble, const VueGestionEnsemble* vue)
 {
     ensemble->setNom(vue->getNom());
     ensemble->setDescription(vue->getDescription());
     ensemble->setActions(vue->getActionsDansEnsemble());
 }
 
-void ControleurGestionEnsemble::supprimerEnsemble(const int &idEnsemble)
+void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
 {
     EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
     QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
@@ -88,7 +86,7 @@ void ControleurGestionEnsemble::supprimerEnsemble(const int &idEnsemble)
                     QMessageBox::Apply | QMessageBox::Cancel);
     if (confirmation->exec() == confirmation->Apply) {
         if (MappeurEnsembles::supprimer(ensemble)) {
-            emit ensemblesModifies();
+            emit Application::getInstance()->ensemblesModifies();
         }
     }
     confirmation->deleteLater();
