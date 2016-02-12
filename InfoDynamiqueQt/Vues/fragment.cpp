@@ -68,7 +68,7 @@ void Fragment::configurerBoutonVoir()
 
 void Fragment::configurerCase()
 {
-    QObject::connect(ui->caseCocher, SIGNAL(toggled(bool)), this, SLOT(signalerCase(bool)));
+    QObject::connect(ui->caseCocher, SIGNAL(toggled(bool)), this, SLOT(basculerCase(bool)));
 }
 
 void Fragment::configurerChamp()
@@ -101,7 +101,7 @@ QPushButton* Fragment::boutonVoir() const
     return ui->boutonVoir;
 }
 
-QPushButton* Fragment::ajouterBouton(const int &index, const QString &texte, const QIcon icone)
+QPushButton* Fragment::ajouterBouton(const int &index, const QString &texte, const QIcon &icone)
 {
     QPushButton* nouveau = ajouterBoutonNonConnecte(index, texte, icone);
     QObject::connect(this, SIGNAL(selectionValide(bool)), nouveau, SLOT(setEnabled(bool)));
@@ -206,12 +206,14 @@ void Fragment::selectionnerModele(const QModelIndex &index)
     emit modeleSelectionne(idModele);
 }
 
-void Fragment::signalerCase(const bool &etat)
+void Fragment::basculerCase(const bool &etat)
 {
     if (etat) {
         emit caseCochee();
+        ui->caseCocher->setIcon(QIcon(":/Images/visibility"));
     } else {
         emit caseDecochee();
+        ui->caseCocher->setIcon(QIcon(":/Images/hint"));
     }
 }
 
