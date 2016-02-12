@@ -1,23 +1,29 @@
 #include "Controleurs/controleurongletfiches.h"
+#include "ui_vueprincipale.h"
 
 #include "Controleurs/application.h"
 #include "Controleurs/requetessql.h"
 #include "Vues/vueeditionfiche.h"
 
-#include <QLayout>
 #include <QSqlQueryModel>
+#include <QDebug>
+#include "Controleurs/application.h"
 
 ControleurFiches::ControleurFiches(QWidget* vue)
     : QObject(vue)
 {
     fragment = new Fragment();
     fragment->retirerEtiquette();
+    fragment->boutonAjouter()->deleteLater();
     fragment->caseCocher()->setText(tr("Afficher toutes les fiches"));
     vue->layout()->addWidget(fragment);
+
+    controleurGestionFiche = new ControleurGestionFiche(this);
+
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
-    QObject::connect(fragment, SIGNAL(clicCreer()), this, SLOT(creerFiche()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirFiche()));
+    QObject::connect(controleurGestionFiche, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
     fragment->champ()->setFocus();
 }

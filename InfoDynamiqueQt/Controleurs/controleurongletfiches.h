@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "Controleurs/controleurgestionfiche.h"
+#include "Mappeurs/mappeurfiches.h"
 #include "Vues/fragment.h"
 
 class ControleurFiches : public QObject
@@ -22,6 +24,8 @@ public:
 
 private:
 
+    // Le contrôleur de gestion de fiches
+    ControleurGestionFiche* controleurGestionFiche;
     // Le fragment des fiches
     Fragment* fragment;
 
