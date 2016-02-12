@@ -101,11 +101,17 @@ QPushButton* Fragment::boutonVoir() const
     return ui->boutonVoir;
 }
 
-QPushButton* Fragment::ajouterBouton(const int &index)
+QPushButton* Fragment::ajouterBouton(const int &index, const QString &texte, const QIcon icone)
 {
-    QPushButton* bouton = new QPushButton(this);
+    QPushButton* nouveau = ajouterBoutonNonConnecte(index, texte, icone);
+    QObject::connect(this, SIGNAL(selectionValide(bool)), nouveau, SLOT(setEnabled(bool)));
+    return nouveau;
+}
+
+QPushButton* Fragment::ajouterBoutonNonConnecte(const int &index, const QString& texte, const QIcon icone)
+{
+    QPushButton* bouton = new QPushButton(icone, texte, this);
     ui->horizontalLayout->insertWidget(index, bouton);
-    QObject::connect(this, SIGNAL(selectionValide(bool)), bouton, SLOT(setEnabled(bool)));
     return bouton;
 }
 

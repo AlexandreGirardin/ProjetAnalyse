@@ -182,5 +182,8 @@ QString const * const RequetesSQL::filtrerFiches =
                                 OR s.nom LIKE :filtre\
                                 OR f.commentaire LIKE :filtre"));
 
+QString const * const RequetesSQL::tachesPourFiche =
+        new QString("SELECT * FROM taches WHERE idFiche=:idFiche");
+
 const QString* RequetesSQL::listerBD =
         new QString("show databases");

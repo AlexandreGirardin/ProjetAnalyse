@@ -6,19 +6,11 @@
 #include "Mappeurs/mappeurclients.h"
 #include "Vues/vuegestionclient.h"
 
-class ControleurGestionClient : public QObject{
+class ControleurClients : public QObject{
 
     Q_OBJECT
 
     // Contrôle l'exécution de la création, de la lecture et de la mise à jour des clients
-
-public:
-
-    /**
-     * @brief ControleurGestionClient
-     * @param parent
-     */
-    explicit ControleurGestionClient(QObject* parent = 0);
 
 private:
 
@@ -28,7 +20,7 @@ private:
      * @param vue La vue cible
      * @param client Le client source
      */
-    void assignerClient(VueGestionClient* vue, const Client* client);
+    static void assignerClient(VueGestionClient* vue, const Client* client);
 
     /**
      * @brief extraireClient
@@ -36,7 +28,7 @@ private:
      * @param client Le client cible
      * @param vue La vue source
      */
-    void extraireClient(Client* client, const VueGestionClient *vue);
+    static void extraireClient(Client* client, const VueGestionClient *vue);
 
 public slots:
 
@@ -44,27 +36,19 @@ public slots:
      * @brief ajouterClient
      * Lance la création d'un nouveau client
      */
-    void ajouterClient();
+    static void ajouterClient();
 
     /**
      * @brief modifierClient
      * Lance la modification d'un client
      */
-    void modifierClient(const int &idClient);
+    static void modifierClient(const int &idClient);
 
     /**
      * @brief modifierClient
      * Lance la visualisation d'un client
      */
-    void voirClient(const int &idClient);
-
-signals:
-
-    /**
-     * @brief donneesModifiees
-     * Lancé lorsque les valeurs du tableau ont été modifiées
-     */
-    void donneesModifiees();
+    static void voirClient(const int &idClient);
 };
 
 #endif // CONTROLEURGESTIONCLIENT_H

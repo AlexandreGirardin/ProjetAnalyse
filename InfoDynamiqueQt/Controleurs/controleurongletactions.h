@@ -35,12 +35,6 @@ public:
      */
     QSplitter* splitter;
 
-    // Contrôle la gestion des actions
-    ControleurActions* controleurActions;
-
-    // Contrôle la gestion des ensembles
-    ControleurGestionEnsemble* controleurEnsembles;
-
     // Vue permettant de contrôleur les actions
     Fragment* fragmentActions;
 
@@ -73,6 +67,12 @@ public slots:
      * @param filtre Le filtre à utiliser
      */
     void filtrerActions(const QString &filtre);
+
+    /**
+     * @brief creerAction
+     * Lance la création d'une nouvelle action
+     */
+    void creerAction();
 
     /**
      * @brief modifierAction
@@ -122,6 +122,12 @@ public slots:
      * @param filtre Le filtre à utiliser
      */
     void filtrerEnsembles(const QString &filtre);
+
+    /**
+     * @brief creerEnsemble
+     * Lance la création d'un nouvel ensemble
+     */
+    void creerEnsemble();
 
     /**
      * @brief modifierEnsemble

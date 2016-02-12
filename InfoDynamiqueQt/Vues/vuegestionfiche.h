@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "Modeles/tache.h"
+
 namespace Ui {
 class VueGestionFiche;
 }
@@ -16,6 +18,8 @@ class VueGestionFiche : public QDialog
 public:
     explicit VueGestionFiche(QWidget* parent = 0);
     ~VueGestionFiche();
+
+    void setTaches(const QList<Tache*>* taches);
 
     void setDescription(const QString &commentaire);
 

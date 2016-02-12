@@ -24,17 +24,14 @@ void ControleurOngletActions::configurerFragmentActions()
     requeteActions = RequetesSQL::afficherActionsActives;
     requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
     fragmentActions = new Fragment(splitter);
-    controleurActions = new ControleurActions(fragmentActions);
     fragmentActions->setEtiquette(tr("Actions"));
     fragmentActions->caseCocher()->setText(tr("Afficher toutes les actions"));
 
-    QPushButton* boutonEtat = fragmentActions->ajouterBouton(4);
-    boutonEtat->setText(tr("Changer l'état"));
-    boutonEtat->setIcon(QIcon(":/Images/reverse"));
+    QPushButton* boutonEtat = fragmentActions->ajouterBouton(4, tr("Changer l'état"), QIcon(":/Images/reverse"));
     boutonEtat->setEnabled(false);
 
+    QObject::connect(fragmentActions, SIGNAL(clicCreer()), this, SLOT(creerAction()));
     QObject::connect(fragmentActions, SIGNAL(clicEditer()), this, SLOT(modifierAction()));
-    QObject::connect(fragmentActions, SIGNAL(clicCreer()), controleurActions, SLOT(creerAction()));
     QObject::connect(fragmentActions, SIGNAL(clicVoir()), this, SLOT(voirAction()));
     QObject::connect(fragmentActions, SIGNAL(caseCochee()), this, SLOT(desactiverCritereActions()));
     QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
@@ -69,24 +66,29 @@ void ControleurOngletActions::filtrerActions(const QString &filtre)
     }
 }
 
+void ControleurOngletActions::creerAction()
+{
+    ControleurActions::creerAction();
+}
+
 void ControleurOngletActions::modifierAction()
 {
     if (fragmentActions->getIdModele() != -1) {
-        controleurActions->modifierAction(fragmentActions->getIdModele());
+        ControleurActions::modifierAction(fragmentActions->getIdModele());
     }
 }
 
 void ControleurOngletActions::voirAction()
 {
     if (fragmentActions->getIdModele() != -1) {
-        controleurActions->voirAction(fragmentActions->getIdModele());
+        ControleurActions::voirAction(fragmentActions->getIdModele());
     }
 }
 
 void ControleurOngletActions::changerEtatAction()
 {
     if (fragmentActions->getIdModele() != -1) {
-        controleurActions->changerEtat(fragmentActions->getIdModele());
+        ControleurActions::changerEtat(fragmentActions->getIdModele());
     }
 }
 
@@ -113,15 +115,12 @@ void ControleurOngletActions::desactiverCritereActions() {
 void ControleurOngletActions::configurerFragmentEnsembles()
 {
     fragmentEnsembles = new Fragment(splitter);
-    controleurEnsembles = new ControleurGestionEnsemble(fragmentEnsembles);
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->caseCocher()->setHidden(true);
-    QPushButton* boutonSupprimer = fragmentEnsembles->ajouterBouton(4);
-    boutonSupprimer->setText(tr("Supprimer"));
-    boutonSupprimer->setIcon(QIcon(":/Images/edit-delete"));
-    QObject::connect(controleurEnsembles, SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
-    QObject::connect(controleurActions, SIGNAL(actionsModifiees()), this, SLOT(rechargerActions()));
-    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), controleurEnsembles, SLOT(creerEnsemble()));
+    QPushButton* boutonSupprimer = fragmentEnsembles->ajouterBouton(4, tr("Supprimer"), QIcon(":/Images/edit-delete"));
+    QObject::connect(Application::getInstance(), SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
+    QObject::connect(Application::getInstance(), SIGNAL(actionsModifiees()), this, SLOT(rechargerActions()));
+    QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(doubleClicModele()), this, SLOT(voirEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicVoir()), this, SLOT(voirEnsemble()));
@@ -154,24 +153,29 @@ void ControleurOngletActions::filtrerEnsembles(const QString &filtre)
     }
 }
 
+void ControleurOngletActions::creerEnsemble()
+{
+    ControleurEnsembles::creerEnsemble();
+}
+
 void ControleurOngletActions::modifierEnsemble()
 {
     if (fragmentEnsembles->getIdModele() != -1) {
-        controleurEnsembles->modifierEnsemble(fragmentEnsembles->getIdModele());
+        ControleurEnsembles::modifierEnsemble(fragmentEnsembles->getIdModele());
     }
 }
 
 void ControleurOngletActions::voirEnsemble()
 {
     if (fragmentEnsembles->getIdModele() != -1) {
-        controleurEnsembles->voirEnsemble(fragmentEnsembles->getIdModele());
+        ControleurEnsembles::voirEnsemble(fragmentEnsembles->getIdModele());
     }
 }
 
 void ControleurOngletActions::supprimerEnsemble()
 {
     if (fragmentEnsembles->getIdModele() != -1) {
-        controleurEnsembles->supprimerEnsemble(fragmentEnsembles->getIdModele());
+        ControleurEnsembles::supprimerEnsemble(fragmentEnsembles->getIdModele());
     }
 }
 

@@ -47,9 +47,9 @@ VuePrincipale* Application::vuePrincipale()
 void Application::creerFenetre()
 {
     m_vuePrincipale = new VuePrincipale();
-    controleurClients = new ControleurClients(m_vuePrincipale->ongletClients());
-    controleurFiches = new ControleurFiches(m_vuePrincipale->ongletFiches());
-    controleurAppareils = new ControleurAppareils(m_vuePrincipale->ongletAppareils());
+    controleurClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
+    controleurFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
+    controleurAppareils = new ControleurOngletAppareils(m_vuePrincipale->ongletAppareils());
     controleurActions = new ControleurOngletActions(m_vuePrincipale->ongletActions());
     clientsCharges = false;
     fichesChargees = false;

@@ -90,6 +90,13 @@ bool MappeurAppareils::inserer(const Appareil *appareil)
     return succes;
 }
 
+bool MappeurAppareils::supprimer(const Appareil *appareil)
+{
+    const QString commande("DELETE FROM appareils WHERE id=:idAppareil");
+    const bool succes = ecrire(appareil, commande);
+    return succes;
+}
+
 QSqlQuery* MappeurAppareils::preparerRequete(const Appareil* appareil, const QString &commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);

@@ -17,7 +17,7 @@ RC_ICONS = Images/Toolbox.ico
 
 SOURCES += main.cpp\
 	Vues/vueauthentification.cpp \
-        Vues/vueconnexion.cpp \
+	Vues/vueconnexion.cpp \
 	Vues/vueprincipale.cpp \
 	Vues/vuegestiontache.cpp \
 	Vues/vuegestionpiece.cpp \
@@ -27,10 +27,10 @@ SOURCES += main.cpp\
 	Vues/vuegestionappareil.cpp \
 	Vues/vueeditionfiche.cpp \
 	Controleurs/controleuractions.cpp \
-	Controleurs/controleurgestionclient.cpp \
+	Controleurs/controleurclients.cpp \
 	Controleurs/controleurbd.cpp \
-	Controleurs/controleurgestionappareil.cpp \
-	Controleurs/controleurgestionfiche.cpp \
+	Controleurs/controleurappareils.cpp \
+	Controleurs/controleurfiches.cpp \
 	Mappeurs/mappeurpieces.cpp \
 	Mappeurs/mappeuractions.cpp \
 	Mappeurs/mappeurfabricants.cpp \
@@ -59,15 +59,15 @@ SOURCES += main.cpp\
 	Vues/champformulaire.cpp \
 	Vues/vueensemble.cpp \
 	Controleurs/controleurongletactions.cpp \
-        Controleurs/controleurensembles.cpp \
-        Mappeurs/mappeurfiches.cpp \
+	Controleurs/controleurensembles.cpp \
+	Mappeurs/mappeurfiches.cpp \
 	Controleurs/controleurongletclients.cpp \
 	Controleurs/controleurongletappareils.cpp \
 	Controleurs/controleurongletfiches.cpp \
 	Vues/fragment.cpp \
 	Vues/vueclient.cpp \
 	Vues/vueaction.cpp \
-        Mappeurs/mappeurtaches.cpp
+	Mappeurs/mappeurtaches.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -81,9 +81,9 @@ HEADERS  += \
 	Vues/vuegestionappareil.h \
 	Vues/vueeditionfiche.h \
 	Controleurs/controleuractions.h \
-	Controleurs/controleurgestionclient.h \
-	Controleurs/controleurgestionappareil.h \
-	Controleurs/controleurgestionfiche.h \
+	Controleurs/controleurclients.h \
+	Controleurs/controleurappareils.h \
+	Controleurs/controleurfiches.h \
 	Controleurs/controleurbd.h \
 	Mappeurs/mappeurpieces.h \
 	Mappeurs/mappeuractions.h \
@@ -125,8 +125,8 @@ HEADERS  += \
 
 FORMS    += \
 	Vues/vueauthentification.ui \
-        Vues/vueconnexion.ui \
-        Vues/vueeditionfiche.ui \
+	Vues/vueconnexion.ui \
+	Vues/vueeditionfiche.ui \
 	Vues/vuegestionappareil.ui \
 	Vues/vuegestionclient.ui \
 	Vues/vuegestionensemble.ui \

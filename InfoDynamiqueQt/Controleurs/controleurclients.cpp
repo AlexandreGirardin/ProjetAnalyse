@@ -1,4 +1,4 @@
-#include "Controleurs/controleurgestionclient.h"
+#include "Controleurs/controleurclients.h"
 
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
@@ -7,9 +7,7 @@
 #include <QSqlQueryModel>
 #include <QDebug>
 
-ControleurGestionClient::ControleurGestionClient(QObject* parent) : QObject(parent) {}
-
-void ControleurGestionClient::ajouterClient()
+void ControleurClients::ajouterClient()
 {
     VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer un nouveau client"));
@@ -17,7 +15,7 @@ void ControleurGestionClient::ajouterClient()
         Client* client = new Client(vue);
         extraireClient(client, vue);
         if (MappeurClients::inserer(client)) {
-            emit donneesModifiees();
+            emit Application::getInstance()->clientsModifies();
         } else {
             qDebug() << "Pas marché: " << client->out();
         }
@@ -25,7 +23,7 @@ void ControleurGestionClient::ajouterClient()
     }
 }
 
-void ControleurGestionClient::modifierClient(const int &idClient)
+void ControleurClients::modifierClient(const int &idClient)
 {
     Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
@@ -36,7 +34,7 @@ void ControleurGestionClient::modifierClient(const int &idClient)
         if (vue->exec() == vue->Accepted) {
             extraireClient(client, vue);
             if (MappeurClients::mettreAJour(client)) {
-                emit donneesModifiees();
+                emit Application::getInstance()->clientsModifies();
             } else {
                 qDebug() << "Pas marché" << client->out();
             }
@@ -45,7 +43,7 @@ void ControleurGestionClient::modifierClient(const int &idClient)
     }
 }
 
-void ControleurGestionClient::voirClient(const int &idClient)
+void ControleurClients::voirClient(const int &idClient)
 {
     Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
@@ -61,7 +59,7 @@ void ControleurGestionClient::voirClient(const int &idClient)
     }
 }
 
-void ControleurGestionClient::assignerClient(VueGestionClient* vue, const Client* client)
+void ControleurClients::assignerClient(VueGestionClient* vue, const Client* client)
 {
     vue->setPrenom(client->prenom());
     vue->setNom(client->nom());
@@ -69,7 +67,7 @@ void ControleurGestionClient::assignerClient(VueGestionClient* vue, const Client
     vue->setAdresse(client->adresse());
 }
 
-void ControleurGestionClient::extraireClient(Client *client, const VueGestionClient* vue)
+void ControleurClients::extraireClient(Client *client, const VueGestionClient* vue)
 {
     client->setPrenom(vue->getPrenom());
     client->setNom(vue->getNom());

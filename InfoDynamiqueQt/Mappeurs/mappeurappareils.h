@@ -58,6 +58,8 @@ public:
      */
     static bool inserer(const Appareil* appareil);
 
+    static bool supprimer(const Appareil* appareil);
+
 private:
 
     /**
