@@ -55,6 +55,8 @@ private:
      * @return La commande préparée
      */
     static QSqlQuery* preparerRequete(const Client* client, const QString &commande);
+
+    static bool ecrire(const Client *client, const QString &commande);
 };
 
 #endif // MAPPEURCLIENTS_H

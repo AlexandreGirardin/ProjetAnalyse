@@ -8,8 +8,9 @@
 #include "Controleurs/controleurongletappareils.h"
 #include "Controleurs/controleurongletclients.h"
 #include "Controleurs/controleurongletfiches.h"
-
 #include "Vues/vueprincipale.h"
+
+#include <QMessageBox>
 
 class Application : public QApplication
 {
@@ -105,6 +106,8 @@ public slots:
      * Charge l'onglet sélectionné au besoin
      */
     void chargerOnglet();
+
+    static void messageErreur(const QString &titre, const QString &texte, QWidget * parent = 0);
 
 signals:
 

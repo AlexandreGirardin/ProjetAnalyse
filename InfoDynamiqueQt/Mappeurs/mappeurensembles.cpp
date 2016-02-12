@@ -3,10 +3,9 @@
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeuractions.h"
 
-#include <QDebug>
-#include <QVariant>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
+#include <QVariant>
 
 EnsembleActions* MappeurEnsembles::getEnsemble(const int &id)
 {
@@ -157,7 +156,9 @@ bool MappeurEnsembles::ecrire(const EnsembleActions* ensemble, const QString &co
     requete->bindValue(":idEnsemble", ensemble->id());
     const bool succes = requete->exec();
     if (!succes) {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
     }
     delete requete;
     return succes;
@@ -174,7 +175,9 @@ bool MappeurEnsembles::ecrireActions(const EnsembleActions *ensemble, const QStr
         succes = succes && requete->exec();
     }
     if (!succes) {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
     }
     delete requete;
     return succes;

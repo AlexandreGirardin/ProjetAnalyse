@@ -4,7 +4,6 @@
 #include "Controleurs/controleurbd.h"
 #include "mappeurfabricants.h"
 
-#include <QDebug>
 #include <QSqlError>
 
 Appareil* MappeurAppareils::getAppareil(const int &id)
@@ -117,7 +116,9 @@ bool MappeurAppareils::ecrire(const Appareil* appareil, const QString &commande)
     if (succes) {
         bd.commit();
     } else {
-        qDebug() << requete->lastError();
+        Application::messageErreur(tr("Erreur lors de l'écriture"),
+                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
+                                   Application::vuePrincipale());
         bd.rollback();
     }
     delete requete;

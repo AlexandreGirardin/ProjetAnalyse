@@ -78,6 +78,13 @@ void Application::chargerOnglet()
     verifierParesseux();
 }
 
+void Application::messageErreur(const QString &titre, const QString &texte, QWidget *parent)
+{
+    QMessageBox* alerte = new QMessageBox(QMessageBox::Warning, titre, texte, QMessageBox::Ok, parent);
+    alerte->exec();
+    alerte->deleteLater();
+}
+
 void Application::verifierParesseux()
 {
     if (clientsCharges && fichesChargees && appareilsCharges && actionsChargees) {
