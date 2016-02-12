@@ -16,6 +16,8 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     fragment = new Fragment();
     fragment->retirerEtiquette();
     fragment->boutonAjouter()->deleteLater();
+    fragment->boutonModifier()->deleteLater();
+    fragment->boutonVoir()->deleteLater();
     fragment->caseCocher()->setText(tr("Afficher toutes les fiches"));
     boutonTraiter = fragment->ajouterBouton(4);
     boutonTraiter->setText(tr("Traiter"));
@@ -23,9 +25,7 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     vue->layout()->addWidget(fragment);
 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
-    QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
-    QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirFiche()));
     QObject::connect(Application::getInstance(), SIGNAL(fichesModifiees()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
     fragment->champ()->setFocus();
@@ -39,20 +39,6 @@ void ControleurOngletFiches::peuplerFiches()
     fragment->getTableau()->hideColumn(0);
 }
 
-void ControleurOngletFiches::modifierFiche() const
-{
-    Fiche* fiche = MappeurFiches::getFiche(fragment->getIdModele());
-    if (fiche != NULL) {
-        VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
-        vue->setCommentaire(fiche->commentaire());
-        vue->setPriorite(fiche->priorite());
-        vue->cacherGestionEnsemble();
-        vue->setTaches(fiche->taches());
-        vue->exec();
-        vue->deleteLater();
-    }
-}
-
 void ControleurOngletFiches::traiterFiche() const
 {
     Fiche* fiche = MappeurFiches::getFiche(fragment->getIdModele());
@@ -63,10 +49,6 @@ void ControleurOngletFiches::traiterFiche() const
         vue->exec();
         vue->deleteLater();
     }
-}
-
-void ControleurOngletFiches::voirFiche() const
-{
 }
 
 void ControleurOngletFiches::filtrerFiches(const QString &filtre)

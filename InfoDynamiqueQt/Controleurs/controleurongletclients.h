@@ -45,6 +45,8 @@ private:
 
     QPushButton* boutonEffacerAppareil;
 
+    QPushButton* boutonTraiter;
+
     // La commande SQL actuelle servant à peupler le fragmentFiches
     const QString* commandeFiches;
 
@@ -143,11 +145,6 @@ public slots:
      */
     void ajouterFiche() const;
 
-    /**
-     * @brief modifierFiche
-     * Lance la modification de la fiche sélectionné
-     */
-    void modifierFiche() const;
 
     /**
      * @brief filtrerClients
@@ -177,12 +174,6 @@ private slots:
      * Lance la visualisation de l'appareil sélectionné
      */
     void voirAppareil() const;
-
-    /**
-     * @brief modifierFiche
-     * Lance la visualisation de la fiche sélectionnée
-     */
-    void voirFiche() const;
 
     /**
      * @brief activerCritereActions
