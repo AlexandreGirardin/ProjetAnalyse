@@ -24,9 +24,6 @@ public:
 
 private:
 
-    // Le contrôleur de gestion de fiches
-    ControleurGestionFiche* controleurGestionFiche;
-    // Le fragment des fiches
     Fragment* fragment;
 
     QPushButton* boutonTraiter;
@@ -38,12 +35,6 @@ public slots:
      * Peuple la table du fragment avec toutes les fiches
      */
     void peuplerFiches();
-
-    /**
-     * @brief creerFiche
-     * Lance la création d'une nouvelle fiche
-     */
-    void creerFiche() const;
 
     /**
      * @brief modifierFiche

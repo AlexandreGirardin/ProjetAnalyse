@@ -29,7 +29,7 @@ public:
      * @param fiche La fiche à ajouter
      * @return Succès
      */
-    bool inserer(const Fiche* fiche) const;
+    static bool inserer(const Fiche* fiche);
 
     /**
      * @brief mettreAJour
@@ -37,7 +37,7 @@ public:
      * @param appareil La fiche à mettre à jour
      * @return Succès
      */
-    bool mettreAJour(const Fiche* fiche) const;
+    static bool mettreAJour(const Fiche* fiche);
 
 private:
 

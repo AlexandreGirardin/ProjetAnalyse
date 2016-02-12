@@ -2,6 +2,7 @@
 
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeurfiches.h"
+#include "Mappeurs/mappeurensembles.h"
 
 #include <QDebug>
 
@@ -22,7 +23,12 @@ void ControleurFiches::modifierFiche(const int &idFiche)
         VueGestionFiche* vue = new VueGestionFiche();
         assignerFiche(vue, fiche);
         vue->setWindowTitle(tr("Modifier une fiche"));
-        vue->exec();
+        if (vue->exec() == vue->Accepted) {
+            extraireFiche(fiche, vue);
+            if (MappeurFiches::mettreAJour(fiche)) {
+                emit Application::getInstance()->fichesModifiees();
+            }
+        }
         vue->deleteLater();
     }
 }
@@ -41,5 +47,12 @@ void ControleurFiches::voirFiche(const int &idFiche)
 
 void ControleurFiches::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
 {
+    vue->setCommentaire(fiche->commentaire());
     vue->setTaches(fiche->taches());
+    vue->setEnsembles(MappeurEnsembles::getEnsembles());
+}
+
+void ControleurFiches::extraireFiche(Fiche *fiche, const VueGestionFiche * const vue)
+{
+
 }

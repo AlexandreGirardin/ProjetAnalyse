@@ -22,13 +22,11 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     boutonTraiter->setIcon(QIcon(":/Images/document-edit-sign"));
     vue->layout()->addWidget(fragment);
 
-    controleurGestionFiche = new ControleurGestionFiche(this);
-
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirFiche()));
-    QObject::connect(controleurGestionFiche, SIGNAL(donneesModifiees()), this, SLOT(recharger()));
+    QObject::connect(Application::getInstance(), SIGNAL(fichesModifiees()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
     fragment->champ()->setFocus();
 }
@@ -46,7 +44,10 @@ void ControleurOngletFiches::modifierFiche() const
     Fiche* fiche = MappeurFiches::getFiche(fragment->getIdModele());
     if (fiche != NULL) {
         VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
-        vue->setDescription(fiche->commentaire());
+        vue->setCommentaire(fiche->commentaire());
+        vue->setPriorite(fiche->priorite());
+        vue->cacherGestionEnsemble();
+        vue->setTaches(fiche->taches());
         vue->exec();
         vue->deleteLater();
     }

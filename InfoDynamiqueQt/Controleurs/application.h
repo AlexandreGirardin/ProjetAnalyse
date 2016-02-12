@@ -121,6 +121,12 @@ signals:
     void appareilsModifies() const;
 
     /**
+     * @brief fichesModifiees
+     * Émis lorsque les données des fiches ont été modifiées
+     */
+    void fichesModifiees() const;
+
+    /**
      * @brief nombreAppareilsChange
      * Émis lorsqu'un appareil a été ajouté ou supprimé
      */

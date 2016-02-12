@@ -17,20 +17,17 @@
    <item>
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="etiquetteDescription">
+      <widget class="QLabel" name="etiquetteCommentaire">
        <property name="text">
-        <string>Description:</string>
+        <string>Commentaire:</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QTextEdit" name="champDescription"/>
+      <widget class="QTextEdit" name="champCommentaire"/>
      </item>
      <item row="2" column="1">
-      <widget class="QComboBox" name="comboPreselection"/>
-     </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="comboPriorite"/>
+      <widget class="QComboBox" name="comboEnsemble"/>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="etiquettePriorite">
@@ -40,9 +37,19 @@
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QLabel" name="etiquettePreselection">
+      <widget class="QLabel" name="etiquetteEnsemble">
        <property name="text">
         <string>Présélection:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSpinBox" name="champPriorite">
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>5</number>
        </property>
       </widget>
      </item>
@@ -64,9 +71,8 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>champDescription</tabstop>
-  <tabstop>comboPriorite</tabstop>
-  <tabstop>comboPreselection</tabstop>
+  <tabstop>champCommentaire</tabstop>
+  <tabstop>comboEnsemble</tabstop>
   <tabstop>tableTaches</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>

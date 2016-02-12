@@ -34,8 +34,7 @@ QList<Fiche*>* MappeurFiches::fichesPourAppareil(const int &id)
     return mapper(requete);
 }
 
-bool MappeurFiches::inserer(const Fiche *fiche) const
-{
+bool MappeurFiches::inserer(const Fiche *fiche){
     const QString commande("INSERT INTO fiches\
                                 (idAppareil, priorite, idTechnicien, idStatut, commentaire)\
                             VALUES\
@@ -44,7 +43,7 @@ bool MappeurFiches::inserer(const Fiche *fiche) const
     return succes;
 }
 
-bool MappeurFiches::mettreAJour(const Fiche *fiche) const
+bool MappeurFiches::mettreAJour(const Fiche *fiche)
 {
     const QString commande("UPDATE fiches\
                             SET\
