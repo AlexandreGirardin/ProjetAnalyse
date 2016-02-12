@@ -2,8 +2,6 @@
 
 #include "Controleurs/application.h"
 
-MappeurPieces::MappeurPieces(QObject* parent) : QObject(parent) {}
-
 Piece* MappeurPieces::getPiece(const int &id)
 {
     Piece* piece = NULL;

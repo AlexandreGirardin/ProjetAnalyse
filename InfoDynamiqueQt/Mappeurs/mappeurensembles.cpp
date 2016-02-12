@@ -8,8 +8,6 @@
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
 
-MappeurEnsembles::MappeurEnsembles(QObject* parent) : QObject(parent) {}
-
 EnsembleActions* MappeurEnsembles::getEnsemble(const int &id)
 {
     EnsembleActions* ensemble = NULL;

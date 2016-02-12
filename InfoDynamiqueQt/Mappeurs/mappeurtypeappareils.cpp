@@ -6,8 +6,6 @@
 #include <QtSql/QSqlQuery>
 #include <QDebug>
 
-MappeurTypeAppareils::MappeurTypeAppareils(QObject* parent) : QObject(parent) {}
-
 TypeAppareil* MappeurTypeAppareils::getTypeAppareil(const int &idType)
 {
     TypeAppareil* type = NULL;

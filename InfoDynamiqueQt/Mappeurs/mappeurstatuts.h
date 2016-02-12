@@ -17,13 +17,6 @@ class MappeurStatuts : public QObject
 public:
 
     /**
-     * @brief MappeurStatuts
-     * @param a_bd La base de données à utiliser
-     * @param parent
-     */
-    explicit MappeurStatuts(QObject* parent = 0);
-
-    /**
      * @brief getStatutFiche
      * @param id Le numéro du statutFiche à mapper
      * @return Le statut si elle existe. NULL autrement

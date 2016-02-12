@@ -13,8 +13,6 @@ class MappeurEnsembles : public QObject
 
 public:
 
-    explicit MappeurEnsembles(QObject *parent = 0);
-
     /**
      * @brief getEnsemble
      * Construit un ensemble donné
