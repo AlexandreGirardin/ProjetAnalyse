@@ -34,6 +34,8 @@ public:
 
     QList<int>* getActionsSelectionnees() const;
 
+    QPushButton* getBoutonAction() const;
+
 private slots:
 
     void horsEnsembleSelectionnee();
@@ -47,6 +49,10 @@ private slots:
     void verifierNom();
 
     void verifierOk();
+
+public slots:
+
+    void creerAction();
 
 private:
 
@@ -63,6 +69,8 @@ private:
     void configurerBoutonOk();
 
     QStandardItemModel* listeEnModele(const QList<Action*>* actions);
+
+    QStandardItem* actionEnItem(const Action* action);
 
 signals:
 

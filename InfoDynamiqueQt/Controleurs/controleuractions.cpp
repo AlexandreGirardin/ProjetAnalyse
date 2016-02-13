@@ -18,11 +18,20 @@ void ControleurActions::assignerAction(VueGestionAction* vue, const Action *acti
 
 void ControleurActions::creerAction()
 {
+    Action* action = creerEtRetournerAction();
+    if (action != NULL) {
+        delete action;
+    }
+}
+
+Action* ControleurActions::creerEtRetournerAction()
+{
+    Action* action = NULL;
     VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer une nouvelle action"));
     vue->setEtat(true);
     if (vue->exec() == vue->Accepted) {
-        Action* action = new Action(vue);
+        action = new Action();
         action->setNom(vue->getNom());
         action->setDescription(vue->getDescription());
         action->setEtat(vue->getEtat());
@@ -31,6 +40,7 @@ void ControleurActions::creerAction()
         }
     }
     vue->deleteLater();
+    return action;
 }
 
 void ControleurActions::modifierAction(const int &idAction)

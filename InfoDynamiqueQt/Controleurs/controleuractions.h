@@ -36,6 +36,12 @@ public slots:
     static void creerAction();
 
     /**
+     * @brief creerAction
+     * Lance la création d'une nouvelle action et la retourne
+     */
+    static Action* creerEtRetournerAction();
+
+    /**
      * @brief modifierAction
      * Lance la modification de l'action sélectionnée
      */

@@ -67,7 +67,8 @@ SOURCES += main.cpp\
 	Vues/fragment.cpp \
 	Vues/vueclient.cpp \
 	Vues/vueaction.cpp \
-	Mappeurs/mappeurtaches.cpp
+	Mappeurs/mappeurtaches.cpp \
+    Mappeurs/aidemappeurs.cpp
 
 HEADERS  += \
 	Vues/vueauthentification.h \
@@ -121,7 +122,8 @@ HEADERS  += \
 	Vues/fragment.h \
 	Vues/vueclient.h \
 	Vues/vueaction.h \
-	Mappeurs/mappeurtaches.h
+	Mappeurs/mappeurtaches.h \
+    Mappeurs/aidemappeurs.h
 
 FORMS    += \
 	Vues/vueauthentification.ui \
