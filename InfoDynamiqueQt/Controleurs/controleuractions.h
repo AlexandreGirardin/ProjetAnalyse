@@ -43,22 +43,24 @@ public slots:
 
     /**
      * @brief modifierAction
-     * Lance la modification de l'action sélectionnée
+     * Lance la modification d'une action
+     * @param idAction L'id de l'action à modifier
      */
     static void modifierAction(const int &idAction);
 
     /**
-     * @brief voirAction
-     * Lance la visualisation de l'action sélectionnée
-     */
-    static void voirAction(const int &idAction);
-
-    /**
      * @brief changerEtat
-     * Inverse l'état actuel de l'action sélectionnée
+     * Inverse l'état actuel d'une action
+     * @param idAction L'id de l'action à basculer
      */
     static void changerEtat(const int &idAction);
 
+    /**
+     * @brief effacerAction
+     * Efface une action si elle n'a jamais été utilisée
+     * @param idAction L'id de l'action à effacer
+     */
+    static void effacerAction(const int &idAction);
 };
 
 #endif // CONTROLEURACTIONS_H

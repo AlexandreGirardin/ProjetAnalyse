@@ -13,6 +13,16 @@ class ControleurOngletActions : public QObject
 {
     Q_OBJECT
 
+private:
+
+    QPushButton* boutonEtat;
+
+    QPushButton* boutonSupprimerAction;
+
+    void configurerBoutonEtat();
+
+    void configurerBoutonSupprimerAction();
+
 public:
 
     explicit ControleurOngletActions(QWidget *parent = 0);
@@ -81,12 +91,6 @@ public slots:
     void modifierAction();
 
     /**
-     * @brief voirAction
-     * Lance la visualisation de l'action sélectionnée
-     */
-    void voirAction();
-
-    /**
      * @brief changerEtatAction
      * Inverse l'état de la tâche sélectionnée
      */
@@ -152,6 +156,10 @@ public slots:
      * Lance la suppression de l'ensemble sélectionné
      */
     void supprimerEnsemble();
+
+    void supprimerAction();
+
+    void activerBoutonSupprimerAction(const bool &actif);
 };
 
 #endif // CONTROLEURONGLETACTIONS_H

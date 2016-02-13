@@ -18,14 +18,14 @@ VueGestionClient::VueGestionClient(QWidget* parent) :
 
 void VueGestionClient::configurerPrenom()
 {
-    prenom = new ChampFormulaire(tr("Ce champ est requis"), this);
+    prenom = new ChampFormulaire(tr("Ce champ est requis."), this);
     ui->formLayout->setWidget(0,QFormLayout::FieldRole, prenom);
     QObject::connect(prenom, SIGNAL(valeurChangee()), this, SLOT(verifierPrenom()));
 }
 
 void VueGestionClient::configurerNom()
 {
-    nom = new ChampFormulaire(tr("Ce champ est requis"), this);
+    nom = new ChampFormulaire(tr("Ce champ est requis."), this);
     ui->formLayout->setWidget(1,QFormLayout::FieldRole, nom);
     QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
 }

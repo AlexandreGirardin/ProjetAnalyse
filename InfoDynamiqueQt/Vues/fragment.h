@@ -230,7 +230,7 @@ signals:
      * @brief selectionValide
      * Informe d'un changement de modèle sélectionné
      */
-    void selectionValide(const bool &valide);
+    void selectionValide(const bool valide);
 
     /**
      * @brief clicCreer
@@ -266,21 +266,21 @@ signals:
      * @brief rechercher
      * Émis lorsque le champ de recherche est utilisé
      */
-    void rechercher(const QString &filtre);
+    void rechercher(const QString filtre);
 
     /**
      * @brief nouvelleSelection
      * Émis lorsqu'une nouvelle entrée du tableau est sélectionnée
      * @param nouveau La nouvelle sélection
      */
-    void nouvelleSelection(const QModelIndex &nouveau);
+    void nouvelleSelection(const QModelIndex nouveau);
 
     /**
      * @brief modeleSelectionne
      * Émis lorsqu'un nouveau modèle est sélectionné
      * @param idModele L'id du nouveau modèle sélectionné
      */
-    void modeleSelectionne(const int &idModele);
+    void modeleSelectionne(const int idModele);
 
     /**
      * @brief modeleRelache
@@ -292,7 +292,7 @@ signals:
      * @brief boutonsActives
      * Indique un changement de l'état des boutons (activés ou désactivés)
      */
-    void boutonsActives(bool &etat);
+    void boutonsActives(const bool etat);
 
     /**
      * @brief doubleClicModele

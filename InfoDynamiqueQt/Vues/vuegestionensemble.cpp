@@ -11,7 +11,7 @@ VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
     ui(new Ui::VueGestionEnsemble)
 {
     ui->setupUi(this);
-    nom = new ChampFormulaire(tr("Ce champ est requis"), this);
+    nom = new ChampFormulaire(tr("Ce champ est requis."), this);
     nom->setFocus();
     ui->formLayout->setWidget(0,QFormLayout::FieldRole, nom);
     configurerBoutonOk();

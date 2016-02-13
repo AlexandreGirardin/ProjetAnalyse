@@ -3,6 +3,7 @@
 
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeuractions.h"
+#include "Mappeurs/mappeurtaches.h"
 #include "Vues/vueaction.h"
 
 #include <QMessageBox>
@@ -62,18 +63,27 @@ void ControleurActions::modifierAction(const int &idAction)
     action->deleteLater();
 }
 
-void ControleurActions::voirAction(const int &idAction)
+void ControleurActions::effacerAction(const int &idAction)
 {
-    Action* action = MappeurActions::getAction(idAction);
-    if (action != NULL) {
-        VueAction* vue = new VueAction(Application::vuePrincipale());
-        vue->setNom(action->nom());
-        vue->setDescription(action->description());
-        vue->setWindowTitle(tr("Action"));
-        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
-        vue->show();
+    QList<Tache*>* usages = MappeurTaches::tachesPourAction(idAction);
+    if (usages->isEmpty()) {
+        Action* action = MappeurActions::getAction(idAction);
+        QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
+                        tr("Confirmation de la suppression"),
+                        tr("Supprimer l'action «") + action->out()+"» ?",
+                        QMessageBox::Apply | QMessageBox::Cancel);
+        if (confirmation->exec() == confirmation->Apply) {
+            if (MappeurActions::supprimer(action)) {
+                emit Application::getInstance()->nombreActionsChange();
+            }
+        }
+        confirmation->deleteLater();
+        action->deleteLater();
+    } else {
+
     }
-    action->deleteLater();
+    qDeleteAll(*usages);
+    delete usages;
 }
 
 void ControleurActions::changerEtat(const int &idAction)

@@ -36,6 +36,16 @@ QList<Tache*>* MappeurTaches::tachesPourFiche(const int &idFiche)
     return mapper(requete);
 }
 
+QList<Tache*>* MappeurTaches::tachesPourAction(const int &idAction)
+{
+    QString commande("SELECT * FROM taches WHERE idAction=:idAction");
+    QSqlQuery requete(*Application::bd);
+    requete.prepare(commande);
+    requete.bindValue(":idAction", idAction);
+    requete.exec();
+    return mapper(requete);
+}
+
 Tache* MappeurTaches::mapper(const QSqlRecord &ligne)
 {
     Tache* tache = new Tache();

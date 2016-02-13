@@ -19,6 +19,8 @@ public:
 
     static QList<Tache*>* tachesPourFiche(const int &idFiche);
 
+    static QList<Tache*>* tachesPourAction(const int &idAction);
+
 private:
 
     /**

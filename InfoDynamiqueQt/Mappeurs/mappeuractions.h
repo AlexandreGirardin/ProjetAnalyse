@@ -62,6 +62,8 @@ public:
      */
     static bool inserer(Action* action);
 
+    static bool supprimer(Action* action);
+
     /**
      * @brief getActions
      * Mappe une liste d'actions possédant les id donnés
@@ -70,6 +72,8 @@ public:
      * @return La liste des actions mappées
      */
     static QList<Action*>* getActions(const QList<int>* listeId);
+
+    static int nombreTachesPourAction(const int &idAction);
 
 private:
 

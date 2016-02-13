@@ -142,6 +142,12 @@ signals:
     void actionsModifiees() const;
 
     /**
+     * @brief nombreActionsChange
+     * Émis lorsqu'une action a été ajoutée ou supprimée
+     */
+    void nombreActionsChange() const;
+
+    /**
      * @brief ensemblesModifies
      * Émis lorsqu'un ensemble a été ajouté ou supprimé
      */

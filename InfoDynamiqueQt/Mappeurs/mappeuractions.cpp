@@ -3,9 +3,9 @@
 #include "Controleurs/application.h"
 #include "Mappeurs/aidemappeurs.h"
 
-#include <QVariant>
-#include <QtSql/QSqlQuery>
-#include <QtSql/QSqlError>
+#include <QDebug>
+#include <QSqlQuery>
+#include <QSqlError>
 
 Action* MappeurActions::getAction(const int &id)
 {
@@ -36,6 +36,19 @@ QList<Action*>* MappeurActions::getActions(const QList<int>* listeId)
         }
     }
     return listeActions;
+}
+
+int MappeurActions::nombreTachesPourAction(const int &idAction)
+{
+    QSqlQuery requete(*Application::bd);
+    requete.prepare("SELECT count(*) as 'nombre' FROM taches WHERE idAction=:idAction");
+    requete.bindValue(":idAction", idAction);
+    requete.exec();
+    int nombre = -1;
+    if (requete.next()) {
+        nombre = requete.record().value("nombre").toInt();
+    }
+    return nombre;
 }
 
 Action* MappeurActions::mapper(const QSqlRecord &ligne)
@@ -100,6 +113,36 @@ bool MappeurActions::inserer(Action* action)
                             VALUES (:nom, :description, :etat)");
     const bool succes = ecrire(action, commande);
     action->setId(AideMappeurs::derniereInsertion());
+    return succes;
+}
+
+bool MappeurActions::supprimer(Action *action)
+{
+    bool succes = false;
+    QString erreur;
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    QSqlQuery* requeteEnsembles = preparerRequete(action, "DELETE FROM ensemblesActions WHERE idAction=:idAction");
+    const bool ensemblesNettoyes = requeteEnsembles->exec();
+    if (ensemblesNettoyes) {
+        QSqlQuery* requeteActions = preparerRequete(action, "DELETE FROM actions WHERE id=:idAction");
+        const bool actionEffacee = requeteActions->exec();
+        if (actionEffacee) {
+            succes = true;
+        } else {
+            erreur = requeteActions->lastError().text();
+        }
+    } else {
+        erreur = requeteEnsembles->lastError().text();
+    }
+    if (succes) {
+        bd.commit();
+    } else {
+        bd.rollback();
+        Application::messageErreur(tr("Erreur lors de la suppression"),
+                                   tr("Une erreur s'est produite lors de la suppression de l'action:\n") + erreur,
+                                   Application::vuePrincipale());
+    }
     return succes;
 }
 
