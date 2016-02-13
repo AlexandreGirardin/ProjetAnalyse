@@ -102,7 +102,7 @@ void ControleurAppareils::assignerAppareil(VueAppareil *vue, const Appareil *app
 void ControleurAppareils::extraireAppareil(Appareil *appareil, const VueGestionAppareil *vue)
 {
     appareil->setMotDePasse(vue->getMotDePasse());
-    appareil->setType(vue->getType());
-    appareil->setFabricant(vue->getFabricant());
+    appareil->setType(MappeurTypeAppareils::getTypeAppareil(vue->getType()));
+    appareil->setFabricant(MappeurFabricants::getFabricant(vue->getFabricant()));
     appareil->setDescription(vue->getDescription());
 }

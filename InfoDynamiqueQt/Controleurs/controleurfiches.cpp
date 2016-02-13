@@ -39,7 +39,6 @@ void ControleurFiches::voirFiche(const int &idFiche)
     if (fiche != NULL) {
         VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
         assignerFiche(vue, fiche);
-        vue->setLectureSeule();
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
@@ -48,7 +47,6 @@ void ControleurFiches::voirFiche(const int &idFiche)
 void ControleurFiches::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
 {
     vue->setCommentaire(fiche->commentaire());
-    vue->setTaches(fiche->taches());
     vue->setEnsembles(MappeurEnsembles::getEnsembles());
 }
 

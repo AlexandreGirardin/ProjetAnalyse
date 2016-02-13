@@ -8,27 +8,26 @@ VueGestionAppareil::VueGestionAppareil(QWidget* parent) :
     ui(new Ui::VueGestionAppareil)
 {
     ui->setupUi(this);
-    types = new QList<TypeAppareil*>;
-    fabricants = new QList<Fabricant*>;
+//    types = new QList<TypeAppareil*>;
+//    fabricants = new QList<Fabricant*>;
 }
 
 VueGestionAppareil::~VueGestionAppareil()
 {
     delete ui;
-    qDeleteAll(*types);
-    delete types;
-    qDeleteAll(*fabricants);
-    delete fabricants;
+//    qDeleteAll(*types);
+//    delete types;
+//    qDeleteAll(*fabricants);
+//    delete fabricants;
 }
 
 void VueGestionAppareil::setTypes(QList<TypeAppareil*>* a_types)
 {
-    qDeleteAll(*types);
-    delete types;
+//    qDeleteAll(*types);
+//    delete types;
     ui->comboType->clear();
-    types = a_types;
-    for (QList<TypeAppareil*>::const_iterator i = types->constBegin(); i != types->constEnd(); ++i) {
-        ui->comboType->addItem((*i)->nom());
+    for (QList<TypeAppareil*>::const_iterator i = a_types->constBegin(); i != a_types->constEnd(); ++i) {
+        ui->comboType->addItem((*i)->nom(), (*i)->id());
     }
     ui->comboType->adjustSize();
 }
@@ -44,23 +43,15 @@ void VueGestionAppareil::setType(const QString &a_type)
     ui->comboType->setCurrentText(a_type);
 }
 
-TypeAppareil* VueGestionAppareil::getType() const
+int VueGestionAppareil::getType() const
 {
-    TypeAppareil* type = NULL;
-    int index = ui->comboType->currentIndex();
-    if (index > -1 && index < types->length()) {
-        type = types->at(index);
-    }
-    return type;
+    return ui->comboType->currentData().toInt();;
 }
 
 void VueGestionAppareil::setFabricants(QList<Fabricant*>* a_fabricants)
 {
-    qDeleteAll(*fabricants);
-    delete fabricants;
-    fabricants = a_fabricants;
-    for (QList<Fabricant*>::const_iterator i = fabricants->constBegin(); i != fabricants->constEnd(); ++i) {
-        ui->comboFabricant->addItem((*i)->nom());
+    for (QList<Fabricant*>::const_iterator i = a_fabricants->constBegin(); i != a_fabricants->constEnd(); ++i) {
+        ui->comboFabricant->addItem((*i)->nom(), (*i)->id());
     }
     ui->comboType->adjustSize();
 }
@@ -76,14 +67,9 @@ void VueGestionAppareil::setFabricant(const QString &a_fabricant)
     ui->comboFabricant->setCurrentText(a_fabricant);
 }
 
-Fabricant* VueGestionAppareil::getFabricant() const
+int VueGestionAppareil::getFabricant() const
 {
-    Fabricant* fabricant = NULL;
-    int index = ui->comboFabricant->currentIndex();
-    if (index > -1 && index < fabricants->length()) {
-        fabricant = fabricants->at(index);
-    }
-    return fabricant;
+    return ui->comboFabricant->currentData().toInt();
 }
 
 void VueGestionAppareil::setMotDePasse(const QString &a_motDePasse)

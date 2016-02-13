@@ -3,6 +3,7 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/requetessql.h"
+#include "Mappeurs/mappeurensembles.h"
 #include "Vues/vueeditionfiche.h"
 #include "Vues/vuegestionfiche.h"
 
@@ -47,8 +48,7 @@ void ControleurOngletFiches::modifierFiche() const
         VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
         vue->setCommentaire(fiche->commentaire());
         vue->setPriorite(fiche->priorite());
-        vue->cacherGestionEnsemble();
-        vue->setTaches(fiche->taches());
+        vue->setEnsembles(MappeurEnsembles::getEnsembles());
         vue->exec();
         vue->deleteLater();
     }

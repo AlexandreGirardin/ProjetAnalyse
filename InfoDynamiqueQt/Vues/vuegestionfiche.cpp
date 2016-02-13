@@ -1,6 +1,8 @@
 #include "Vues/vuegestionfiche.h"
 #include "ui_vuegestionfiche.h"
 
+#include "Mappeurs/mappeurensembles.h"
+
 #include <QStandardItemModel>
 #include <QDebug>
 
@@ -11,6 +13,7 @@ VueGestionFiche::VueGestionFiche(QWidget* parent) :
     ui->setupUi(this);
     ui->tableTaches->horizontalHeader()->setStretchLastSection(true);
     ui->tableTaches->verticalHeader()->hide();
+    QObject::connect(ui->comboEnsemble, SIGNAL(currentIndexChanged(int)), this, SLOT(peuplerTaches()));
 }
 
 VueGestionFiche::~VueGestionFiche()
@@ -18,32 +21,43 @@ VueGestionFiche::~VueGestionFiche()
     delete ui;
 }
 
-void VueGestionFiche::cacherGestionEnsemble()
-{
-    if (ui->etiquetteEnsemble != NULL) {
-        ui->etiquetteEnsemble->hide();
-    }
-    if (ui->comboEnsemble != NULL) {
-        ui->comboEnsemble->hide();
-    }
-}
-
-void VueGestionFiche::setTaches(const QList<Tache*>* taches)
+void VueGestionFiche::setTaches(const QList<Action*>* actions)
 {
     delete ui->tableTaches->model();
     QStandardItemModel* modele = new QStandardItemModel(ui->tableTaches);
     QStringList entetes;
-    entetes << tr("Tâches") << tr("Statut");
+    entetes << tr("Tâches");
     modele->setHorizontalHeaderLabels(entetes);
-    for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd(); ++i) {
+    for (QList<Action*>::const_iterator i = actions->constBegin(); i != actions->constEnd(); ++i) {
         QList<QStandardItem*> rangee;
-        Tache* tache = (*i);
-        rangee.append(new QStandardItem(tache->action()->nom()));
-        rangee.append(new QStandardItem(tache->statut()->nom()));
+        Action* action = (*i);
+        rangee.append(new QStandardItem(action->nom()));
         modele->appendRow(rangee);
     }
     ui->tableTaches->setModel(modele);
     ui->tableTaches->resizeColumnsToContents();
+}
+
+int VueGestionFiche::getIdEnsemble()
+{
+    return ui->comboEnsemble->currentData().toInt();
+}
+
+void VueGestionFiche::peuplerTaches()
+{
+    if (ui->tableTaches->model() != NULL) {
+        ui->tableTaches->model()->deleteLater();
+    }
+    EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(getIdEnsemble());
+    if (ensemble != NULL) {
+        QStandardItemModel* modele = new QStandardItemModel(ui->tableTaches);
+        QList<Action*>* actions = ensemble->actions();
+        modele->setHorizontalHeaderLabels(QStringList(tr("Tâches")));
+        for (QList<Action*>::const_iterator i = actions->constBegin(); i != actions->constEnd(); ++i) {
+            modele->appendRow(new QStandardItem((*i)->nom()));
+        }
+        ui->tableTaches->setModel(modele);
+    }
 }
 
 void VueGestionFiche::setPriorite(const int &priorite)
@@ -56,9 +70,12 @@ int VueGestionFiche::getPriorite() const
     ui->champPriorite->value();
 }
 
-void VueGestionFiche::setEnsembles(const QList<EnsembleActions *> *ensembles)
+void VueGestionFiche::setEnsembles(const QList<EnsembleActions*>* ensembles)
 {
-    //TODO ui->comboEnsemble;
+    ui->comboEnsemble->addItem(tr("Sélectionner un ensemble"), -1);
+    for (QList<EnsembleActions*>::const_iterator i = ensembles->constBegin(); i != ensembles->constEnd(); ++i) {
+        ui->comboEnsemble->addItem((*i)->nom(), (*i)->id());
+    }
 }
 
 void VueGestionFiche::setCommentaire(const QString &commentaire)
@@ -69,10 +86,5 @@ void VueGestionFiche::setCommentaire(const QString &commentaire)
 QString VueGestionFiche::getCommentaire() const
 {
     return ui->champCommentaire->toPlainText();
-}
-
-void VueGestionFiche::setLectureSeule()
-{
-
 }
 

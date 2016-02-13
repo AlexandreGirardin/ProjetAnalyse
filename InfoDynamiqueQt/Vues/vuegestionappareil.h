@@ -48,7 +48,7 @@ public:
      * @brief getType
      * @return Le type actuellement sélectionné
      */
-    TypeAppareil* getType() const;
+    int getType() const;
 
     /**
      * @brief setFabricants
@@ -76,7 +76,7 @@ public:
      * @brief getFabricant
      * @return Le fabricant actuellement sélectionné
      */
-    Fabricant* getFabricant() const;
+    int getFabricant() const;
 
     /**
      * @brief setMotDePasse
@@ -112,13 +112,13 @@ private:
      * @brief types
      * La liste des types permettant de retourner l'objet Type sélectionné
      */
-    QList<TypeAppareil*>* types;
+//    QList<TypeAppareil*>* types;
 
     /**
      * @brief types
      * La liste des fabricants permettant de retourner l'objet Fabricant sélectionné
      */
-    QList<Fabricant*>* fabricants;
+//    QList<Fabricant*>* fabricants;
 };
 
 #endif // GESTIONAPPAREIL_H

@@ -20,8 +20,6 @@ public:
     explicit VueGestionFiche(QWidget* parent = 0);
     ~VueGestionFiche();
 
-    void cacherGestionEnsemble();
-
     void setCommentaire(const QString &commentaire);
 
     QString getCommentaire() const;
@@ -32,16 +30,17 @@ public:
 
     void setEnsembles(const QList<EnsembleActions*>* ensembles);
 
-    void setTaches(const QList<Tache*>* taches);
+    void setTaches(const QList<Action *> *actions);
 
-
+    int getIdEnsemble();
 
 private:
     Ui::VueGestionFiche* ui;
 
-public slots:
+private slots:
 
-    void setLectureSeule();
+    void peuplerTaches();
+
 };
 
 #endif // GESTIONFICHE_H
