@@ -1,10 +1,7 @@
 #ifndef MAPPEURAPPAREILS_H
 #define MAPPEURAPPAREILS_H
 
-#include <QObject>
-
 #include "Mappeurs/mappeurtypeappareils.h"
-
 #include "Modeles/action.h"
 #include "Modeles/appareil.h"
 #include "Modeles/client.h"
@@ -12,9 +9,7 @@
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-class MappeurAppareils : public QObject
-{
-    Q_OBJECT
+class MappeurAppareils {
 
     // Extrait des objets Appareil de la base de données
 

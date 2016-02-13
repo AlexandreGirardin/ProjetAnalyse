@@ -1,16 +1,12 @@
 #ifndef MAPPEURTYPEAPPAREILS_H
 #define MAPPEURTYPEAPPAREILS_H
 
-#include <QObject>
-
 #include "Modeles/typeappareil.h"
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-class MappeurTypeAppareils : public QObject
-{
-    Q_OBJECT
+class MappeurTypeAppareils {
 
     // Extrait des objets Appareil de la base de données
 

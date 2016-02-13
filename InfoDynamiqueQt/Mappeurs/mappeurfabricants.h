@@ -1,16 +1,12 @@
 #ifndef MAPPEURFABRICANTS_H
 #define MAPPEURFABRICANTS_H
 
-#include <QObject>
-
 #include "Modeles/fabricant.h"
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-class MappeurFabricants : public QObject
-{
-    Q_OBJECT
+class MappeurFabricants {
 
     // Extrait des objets Fabricant de la base de données
 

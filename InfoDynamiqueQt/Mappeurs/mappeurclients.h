@@ -1,17 +1,13 @@
 #ifndef MAPPEURCLIENTS_H
 #define MAPPEURCLIENTS_H
 
-#include <QObject>
-
 #include "Modeles/client.h"
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
 
-class MappeurClients : public QObject
-{
-    Q_OBJECT
+class MappeurClients {
 
     // Extrait des objets Client de la base de données
 

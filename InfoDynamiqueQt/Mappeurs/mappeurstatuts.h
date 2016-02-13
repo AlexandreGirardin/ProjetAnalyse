@@ -1,16 +1,12 @@
 #ifndef MAPPEURSTATUTS_H
 #define MAPPEURSTATUTS_H
 
-#include <QObject>
-
 #include "Modeles/statut.h"
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-class MappeurStatuts : public QObject
-{
-    Q_OBJECT
+class MappeurStatuts {
 
     // Extrait des objets Statut (fiches ou pièces) de la base de données
 

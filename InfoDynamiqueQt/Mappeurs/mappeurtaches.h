@@ -1,15 +1,11 @@
 #ifndef MAPPEURTACHES_H
 #define MAPPEURTACHES_H
 
-#include <QObject>
-
 #include "Modeles/tache.h"
 
 #include <QSqlQuery>
 
-class MappeurTaches : public QObject
-{
-    Q_OBJECT
+class MappeurTaches {
 
 public:
 

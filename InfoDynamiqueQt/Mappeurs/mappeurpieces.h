@@ -1,16 +1,12 @@
 #ifndef MAPPEURPIECES_H
 #define MAPPEURPIECES_H
 
-#include <QObject>
-
 #include "Modeles/piece.h"
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-class MappeurPieces : public QObject
-{
-    Q_OBJECT
+class MappeurPieces {
 
     // Extrait des objets Piece de la base de données
 

@@ -1,17 +1,13 @@
 #ifndef MAPPEURACTIONS_H
 #define MAPPEURACTIONS_H
 
-#include <QObject>
-
 #include "Modeles/action.h"
 #include "Modeles/ensembleactions.h"
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-class MappeurActions : public QObject
-{
-    Q_OBJECT
+class MappeurActions {
 
     // Extrait des objets Action de la base de données
 

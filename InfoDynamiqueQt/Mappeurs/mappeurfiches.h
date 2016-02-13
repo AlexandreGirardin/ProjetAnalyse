@@ -1,16 +1,12 @@
 #ifndef MAPPEURFICHES
 #define MAPPEURFICHES
 
-#include <QObject>
-
 #include "Modeles/fiche.h"
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-class MappeurFiches : public QObject
-{
-    Q_OBJECT
+class MappeurFiches {
 
 public:
 

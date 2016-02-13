@@ -1,16 +1,12 @@
 #ifndef MAPPEURTECHNICIENS_H
 #define MAPPEURTECHNICIENS_H
 
-#include <QObject>
-
 #include "Modeles/technicien.h"
 
 #include <QSqlDatabase>
 #include <QSqlRecord>
 
-class MappeurTechniciens : public QObject
-{
-    Q_OBJECT
+class MappeurTechniciens {
 
     // Extrait des objets Technicien de la base de données
 

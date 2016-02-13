@@ -1,15 +1,11 @@
 #ifndef MAPPEURENSEMBLES_H
 #define MAPPEURENSEMBLES_H
 
-#include <QObject>
-
 #include "Modeles/ensembleactions.h"
 
 #include <QSqlQuery>
 
-class MappeurEnsembles : public QObject
-{
-    Q_OBJECT
+class MappeurEnsembles {
 
 public:
 
