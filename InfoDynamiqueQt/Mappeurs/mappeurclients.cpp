@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeurclients.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/aidemappeurs.h"
 
 #include <QDebug>
 #include <QSqlError>
@@ -18,14 +19,16 @@ Client* MappeurClients::getClient(const int &id)
     return client;
 }
 
-bool MappeurClients::inserer(const Client* client)
+bool MappeurClients::inserer(Client* client)
 {
     const QString commande(
                 "INSERT INTO clients\
                     (prenom, nom, telephone, adresse)\
                 VALUES\
                     (:prenom, :nom, :telephone, :adresse)");
-    return ecrire(client, commande);
+    bool succes = ecrire(client, commande);
+    client->setId(AideMappeurs::derniereInsertion());
+    return succes;
 }
 
 bool MappeurClients::mettreAJour(const Client *client)

@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeuractions.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/aidemappeurs.h"
 
 #include <QVariant>
 #include <QtSql/QSqlQuery>
@@ -93,11 +94,12 @@ QList<Action*>* MappeurActions::actionsHorsEnsemble(const int &idEnsemble)
     return mapper(requete);
 }
 
-bool MappeurActions::inserer(const Action* action)
+bool MappeurActions::inserer(Action* action)
 {
     const QString commande("INSERT INTO actions (nom, description, etat)\
                             VALUES (:nom, :description, :etat)");
     const bool succes = ecrire(action, commande);
+    action->setId(AideMappeurs::derniereInsertion());
     return succes;
 }
 

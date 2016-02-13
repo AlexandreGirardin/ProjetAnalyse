@@ -2,7 +2,8 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/controleurbd.h"
-#include "mappeurfabricants.h"
+#include "Mappeurs/aidemappeurs.h"
+#include "Mappeurs/mappeurfabricants.h"
 
 #include <QSqlError>
 
@@ -77,13 +78,14 @@ bool MappeurAppareils::mettreAJour(const Appareil *appareil)
     return succes;
 }
 
-bool MappeurAppareils::inserer(const Appareil *appareil)
+bool MappeurAppareils::inserer(Appareil *appareil)
 {
     const QString commande("INSERT INTO appareils\
                                 (idType, idFabricant, idClient, description, motDePasse)\
                             VALUES\
                                 (:idType, :idFabricant, :idClient, :description, :motDePasse)");
     const bool succes = ecrire(appareil, commande);
+    appareil->setId(AideMappeurs::derniereInsertion());
     return succes;
 }
 

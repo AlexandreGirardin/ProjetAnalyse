@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeurensembles.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeuractions.h"
 
 #include <QtSql/QSqlQuery>
@@ -62,15 +63,13 @@ bool MappeurEnsembles::inserer(EnsembleActions *ensemble)
     const QString commandeEnsemble("INSERT INTO ensembles\
                                         (nom, description)\
                                     VALUES\
-                                        (:nom, :description)\
-                                    ");
+                                        (:nom, :description)");
     bool ecritureEnsemble = ecrire(ensemble, commandeEnsemble);
-    ensemble->setId(derniereInsertion());
+    ensemble->setId(AideMappeurs::derniereInsertion());
     const QString commandeActions("INSERT INTO ensemblesActions\
                                         (idEnsemble, idAction)\
                                     VALUES\
-                                        (:idEnsemble, :idAction)"
-                                    );
+                                        (:idEnsemble, :idAction)");
     bool ecritureActions = ecrireActions(ensemble, commandeActions);
     bool succes = ecritureEnsemble && ecritureActions;
     if (succes) {
@@ -99,8 +98,7 @@ bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble)
             const QString commandeActions("INSERT INTO ensemblesActions\
                                                 (idEnsemble, idAction)\
                                             VALUES\
-                                                (:idEnsemble, :idAction)"
-                                            );
+                                                (:idEnsemble, :idAction)");
             succes = ecrireActions(ensemble, commandeActions);
         }
     }
@@ -138,16 +136,6 @@ QSqlQuery* MappeurEnsembles::preparerRequete(const EnsembleActions* ensemble, co
     requete->bindValue(":nom", ensemble->nom());
     requete->bindValue(":description", ensemble->description());
     return requete;
-}
-
-int MappeurEnsembles::derniereInsertion()
-{
-    int id = -1;
-    QSqlQuery* requete = new QSqlQuery("SELECT LAST_INSERT_ID() as id",*Application::bd);
-    if (requete->next()) {
-        id = requete->record().value("id").toInt();
-    }
-    return id;
 }
 
 bool MappeurEnsembles::ecrire(const EnsembleActions* ensemble, const QString &commande)

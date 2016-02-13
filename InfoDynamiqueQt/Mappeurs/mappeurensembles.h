@@ -96,14 +96,6 @@ private:
      * @return Succès de l'opération
      */
     static bool ecrireActions(const EnsembleActions* ensemble, const QString &commande);
-
-    /**
-     * @brief derniereInsertion
-     * Retourne l'id de la dernière insertion dans la base de données
-     * Permet l'inscription des actions d'un ensemble nouvellement créé
-     * @return L'id de la dernière insertion
-     */
-    static int derniereInsertion();
 };
 
 #endif // MAPPEURENSEMBLES_H

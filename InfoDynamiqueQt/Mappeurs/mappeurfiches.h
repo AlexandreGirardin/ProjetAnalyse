@@ -29,7 +29,7 @@ public:
      * @param fiche La fiche à ajouter
      * @return Succès
      */
-    static bool inserer(const Fiche* fiche);
+    static bool inserer(Fiche* fiche);
 
     /**
      * @brief mettreAJour

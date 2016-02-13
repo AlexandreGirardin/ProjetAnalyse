@@ -26,10 +26,11 @@ public:
 
     /**
      * @brief inserer
-     * @param client Le client a insérer dans la base de donnée
+     * Inscrit un nouveau client dans la base de données
+     * @param client Le client a insérer dans la base de données
      * @return succes
      */
-    static bool inserer(const Client* client);
+    static bool inserer(Client* client);
 
     /**
      * @brief mettreAJour

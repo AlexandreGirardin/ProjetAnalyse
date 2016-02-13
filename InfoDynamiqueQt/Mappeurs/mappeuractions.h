@@ -60,7 +60,7 @@ public:
      * @param action L'action à inscrire
      * @return Succès de l'écriture
      */
-    static bool inserer(const Action *action);
+    static bool inserer(Action* action);
 
     /**
      * @brief getActions

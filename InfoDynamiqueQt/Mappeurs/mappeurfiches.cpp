@@ -1,6 +1,7 @@
 #include "Mappeurs/mappeurfiches.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeurpieces.h"
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
@@ -31,12 +32,13 @@ QList<Fiche*>* MappeurFiches::fichesPourAppareil(const int &id)
     return mapper(requete);
 }
 
-bool MappeurFiches::inserer(const Fiche *fiche){
+bool MappeurFiches::inserer(Fiche *fiche){
     const QString commande("INSERT INTO fiches\
                                 (idAppareil, priorite, idTechnicien, idStatut, commentaire)\
                             VALUES\
                                 (:idAppareil, :priorite, :idTechnicien, :idStatut, :commentaire)");
     const bool succes = ecrire(fiche, commande);
+    fiche->setId(AideMappeurs::derniereInsertion());
     return succes;
 }
 

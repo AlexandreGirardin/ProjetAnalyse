@@ -36,6 +36,14 @@ public:
     static QList<Appareil*>* appareilsPourClient(const int &idClient);
 
     /**
+     * @brief inserer
+     * Insère un nouvel appareil dans la base de données
+     * @param appareil L'appareil à ajouter
+     * @return Succès
+     */
+    static bool inserer(Appareil* appareil);
+
+    /**
      * @brief mettreAJour
      * Met à jour un appareil dans la base de données
      * @param appareil L'appareil à mettre à jour
@@ -44,13 +52,12 @@ public:
     static bool mettreAJour(const Appareil* appareil);
 
     /**
-     * @brief inserer
-     * Insère un nouvel appareil dans la base de données
-     * @param appareil L'appareil à ajouter
+     * @brief supprimer
+     * Efface un appareil de la base de données
+     * Échouera si l'appareil possède des fiches
+     * @param appareil L'appareil à effacer
      * @return Succès
      */
-    static bool inserer(const Appareil* appareil);
-
     static bool supprimer(const Appareil* appareil);
 
 private:
