@@ -6,28 +6,15 @@
 
 #include <QDebug>
 
-ControleurFiches::ControleurFiches(QObject* parent) : QObject(parent) {}
-
 void ControleurFiches::ajouterFiche(const int &idAppareil)
 {
-    VueGestionFiche* vue = new VueGestionFiche();
+    VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer une nouvelle fiche"));
-    vue->exec();
-    vue->deleteLater();
-}
-
-void ControleurFiches::modifierFiche(const int &idFiche)
-{
-    Fiche* fiche = MappeurFiches::getFiche(idFiche);
-    if (fiche != NULL) {
-        VueGestionFiche* vue = new VueGestionFiche();
-        assignerFiche(vue, fiche);
-        vue->setWindowTitle(tr("Modifier une fiche"));
-        if (vue->exec() == vue->Accepted) {
-            extraireFiche(fiche, vue);
-            if (MappeurFiches::mettreAJour(fiche)) {
-                emit Application::getInstance()->fichesModifiees();
-            }
+    if (vue->exec() == vue->Accepted) {
+        Fiche* fiche = new Fiche(vue);
+        extraireFiche(fiche, vue);
+        if (MappeurFiches::inserer(fiche)) {
+            emit Application::getInstance()->fichesModifiees();
         }
         vue->deleteLater();
     }

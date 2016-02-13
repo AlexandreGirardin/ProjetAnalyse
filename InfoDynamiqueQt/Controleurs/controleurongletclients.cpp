@@ -63,9 +63,12 @@ void ControleurOngletClients::configurerFragmentFiches()
     fragmentFiches->caseCocher()->setChecked(true);
     fragmentFiches->caseCocher()->setText(tr("Afficher toutes les fiches"));
     fragmentFiches->retirerChamp();
-    gestionFiche = new ControleurFiches(fragmentFiches);
+    fragmentFiches->boutonModifier()->deleteLater();
+    fragmentFiches->boutonVoir()->deleteLater();
+    boutonTraiter = fragmentFiches->ajouterBouton(4);
+    boutonTraiter->setText(tr("Traiter"));
+    boutonTraiter->setIcon(QIcon(":/Images/document-edit-sign"));
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));
-    QObject::connect(fragmentFiches, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
     QObject::connect(fragmentFiches, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
     QObject::connect(fragmentFiches, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
     QObject::connect(fragmentFiches, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
@@ -83,6 +86,11 @@ void ControleurOngletClients::peuplerClients()
     clients->setQuery(*RequetesSQL::afficherClients, *Application::bd);
     fragmentClients->peuplerTableau(clients);
     fragmentClients->getTableau()->hideColumn(fragmentClients->getColonneId());
+}
+
+void ControleurOngletClients::ajouterClient() const
+{
+    ControleurClients::ajouterClient();
 }
 
 void ControleurOngletClients::modifierClient() const
@@ -222,22 +230,10 @@ void ControleurOngletClients::ajouterFiche() const
     }
 }
 
-void ControleurOngletClients::ajouterClient() const
-{
-    ControleurClients::ajouterClient();
-}
-
-void ControleurOngletClients::modifierFiche() const
-{
-    if (fragmentFiches->getIdModele() != -1) {
-        gestionFiche->modifierFiche(fragmentFiches->getIdModele());
-    }
-}
-
 void ControleurOngletClients::voirFiche() const
 {
-    if (fragmentFiches->getIdModele() != -1) {
-        gestionFiche->modifierFiche(fragmentFiches->getIdModele());
+    if (fragmentAppareils->getIdModele() != -1) {
+        gestionFiche->voirFiche(fragmentAppareils->getIdModele());
     }
 }
 

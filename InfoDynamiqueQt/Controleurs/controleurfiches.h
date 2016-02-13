@@ -12,14 +12,6 @@ class ControleurFiches : public QObject
 
     // Contrôle l'exécution de la création, de la lecture et de la mise à jour des fiches
 
-public:
-
-    /**
-     * @brief ControleurGestionFiche
-     * @param parent
-     */
-    explicit ControleurFiches(QObject* parent = 0);
-
 private:
 
     /**
@@ -28,7 +20,7 @@ private:
      * @param vue La vue cible
      * @param fiche La fiche source
      */
-    void assignerFiche(VueGestionFiche* vue, const Fiche* fiche);
+    static void assignerFiche(VueGestionFiche* vue, const Fiche* fiche);
 
     /**
      * @brief extraireClient
@@ -36,7 +28,7 @@ private:
      * @param client Le client cible
      * @param vue La vue source
      */
-    void extraireFiche(Fiche* fiche, VueGestionFiche const * const vue);
+    static void extraireFiche(Fiche* fiche, VueGestionFiche const * const vue);
 
 public slots:
 
@@ -45,22 +37,14 @@ public slots:
      * Lance la création d'une nouvelle fiche pour un appareil sélectionné
      * @param idAppareil L'id de l'appareil
      */
-    void ajouterFiche(const int &idAppareil);
-
-    /**
-     * @brief modifierFiche
-     * Lance la modification d'une fiche
-     * @param idFiche L'id de la fiche
-     */
-    void modifierFiche(const int &idFiche);
+    static void ajouterFiche(const int &idAppareil);
 
     /**
      * @brief voirFiche
      * Lance la visualisation d'une fiche
-     * @param idFiche L'id de la fiche
+     * @param idFiche L'id de la fiche à visualiser
      */
-    void voirFiche(const int &idFiche);
-
+    static void voirFiche(const int &idFiche);
 };
 
 #endif // CONTROLEURGESTIONFICHE_H

@@ -38,7 +38,7 @@ public slots:
 
     /**
      * @brief modifierFiche
-     * Lance la modification de la fiche sélectionnée
+     * Lance la modification de la fiche actuellement sélectionnée
      */
     void modifierFiche() const;
 
@@ -47,13 +47,6 @@ public slots:
      * Lance le traitement de la fiche sélectionnée
      */
     void traiterFiche() const;
-
-    /**
-     * @brief modifierFiche
-     * Lance la visualisation de la fiche sélectionnée
-     */
-    void voirFiche() const;
-
 
     /**
      * @brief filtrerFiches

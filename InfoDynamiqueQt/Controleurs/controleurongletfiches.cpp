@@ -17,6 +17,8 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     fragment = new Fragment();
     fragment->retirerEtiquette();
     fragment->boutonAjouter()->deleteLater();
+    fragment->boutonModifier()->deleteLater();
+    fragment->boutonVoir()->deleteLater();
     fragment->caseCocher()->setText(tr("Afficher toutes les fiches"));
     boutonTraiter = fragment->ajouterBouton(4);
     boutonTraiter->setText(tr("Traiter"));
@@ -24,11 +26,10 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     vue->layout()->addWidget(fragment);
 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
-    QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierFiche()));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirFiche()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(modifierFiche()));
-//    QObject::connect(Application::getInstance(), SIGNAL(fichesModifiees()), this, SLOT(recharger()));
+    QObject::connect(Application::getInstance(), SIGNAL(fichesModifiees()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
     fragment->champ()->setFocus();
 }
@@ -64,10 +65,6 @@ void ControleurOngletFiches::traiterFiche() const
         vue->exec();
         vue->deleteLater();
     }
-}
-
-void ControleurOngletFiches::voirFiche() const
-{
 }
 
 void ControleurOngletFiches::filtrerFiches(const QString &filtre)
