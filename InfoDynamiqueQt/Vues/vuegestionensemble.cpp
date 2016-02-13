@@ -17,21 +17,41 @@ VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
     QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
     ui->boutonAjouter->setEnabled(false);
     ui->boutonRetirer->setEnabled(false);
-    actionsHorsEnsemble = new QList<Action*>;
-    actionsDansEnsemble = new QList<Action*>;
-    QObject::connect(ui->listeExistantes, SIGNAL(activated(QModelIndex)), this, SLOT(horsEnsembleSelectionnee(QModelIndex)));
+    QObject::connect(ui->listeExistantes, SIGNAL(activated(QModelIndex)), this, SLOT(horsEnsembleSelectionnee()));
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SLOT(ajouter()));
-    QObject::connect(ui->listeSelectionnees, SIGNAL(activated(QModelIndex)), this, SLOT(dansEnsembleSelectionnee(QModelIndex)));
+    QObject::connect(ui->listeSelectionnees, SIGNAL(activated(QModelIndex)), this, SLOT(dansEnsembleSelectionnee()));
     QObject::connect(ui->boutonRetirer, SIGNAL(clicked()), this, SLOT(retirer()));
 }
 
 VueGestionEnsemble::~VueGestionEnsemble()
 {
     delete ui;
-    qDeleteAll(*actionsHorsEnsemble);
-    delete actionsHorsEnsemble;
-    qDeleteAll(*actionsDansEnsemble);
-    delete actionsDansEnsemble;
+}
+
+void VueGestionEnsemble::setActions(const QList<Action*>* horsEnsemble, const QList<Action*>* dansEnsemble)
+{
+    delete ui->listeExistantes->model();
+    modeleHorsEnsemble = listeEnModele(horsEnsemble);
+    ui->listeExistantes->setModel(modeleHorsEnsemble);
+    delete ui->listeSelectionnees->model();
+    if (dansEnsemble == 0) {
+        modeleDansEnsemble = new QStandardItemModel(this);
+    } else {
+        modeleDansEnsemble = listeEnModele(dansEnsemble);
+    }
+    ui->listeSelectionnees->setModel(modeleDansEnsemble);
+}
+
+QStandardItemModel* VueGestionEnsemble::listeEnModele(const QList<Action*>* actions)
+{
+    QStandardItemModel* modele = new QStandardItemModel(this);
+    for (QList<Action*>::const_iterator i = actions->constBegin(); i != actions->constEnd(); ++i) {
+        QStandardItem* element = new QStandardItem((*i)->nom());
+        element->setToolTip((*i)->description());
+        element->setData((*i)->id());
+        modele->appendRow(element);
+    }
+    return modele;
 }
 
 void VueGestionEnsemble::configurerBoutonOk()
@@ -63,87 +83,39 @@ QString VueGestionEnsemble::getDescription() const
     return ui->champDescription->text();
 }
 
-QList<Action*>* VueGestionEnsemble::getActionsHorsEnsemble() const
+QList<int>* VueGestionEnsemble::getActionsSelectionnees() const
 {
-    return actionsHorsEnsemble;
+    QList<int>* liste = new QList<int>;
+    for (int i = 0; i < modeleDansEnsemble->rowCount(); ++i) {
+        liste->append(modeleDansEnsemble->item(i, 0)->data().toInt());
+    }
+    return liste;
 }
 
-QList<Action*>* VueGestionEnsemble::getActionsDansEnsemble() const
+void VueGestionEnsemble::horsEnsembleSelectionnee()
 {
-    return actionsDansEnsemble;
-}
-
-void VueGestionEnsemble::setActionsHorsEnsemble(QList<Action*>* actions)
-{
-    qDeleteAll(*actionsHorsEnsemble);
-    delete actionsHorsEnsemble;
-    actionsHorsEnsemble = actions;
-    peuplerHorsEnsemble();
-}
-
-void VueGestionEnsemble::setActionsDansEnsemble(QList<Action*>* actions)
-{
-    qDeleteAll(*actionsDansEnsemble);
-    delete actionsDansEnsemble;
-    actionsDansEnsemble = actions;
-    peuplerDansEnsemble();
-}
-
-void VueGestionEnsemble::horsEnsembleSelectionnee(const QModelIndex &index)
-{
-    selectionHorsEnsemble = index.row();
     ui->boutonAjouter->setEnabled(true);
 }
 
-void VueGestionEnsemble::dansEnsembleSelectionnee(const QModelIndex &index)
+void VueGestionEnsemble::dansEnsembleSelectionnee()
 {
-    selectionDansEnsemble = index.row();
     ui->boutonRetirer->setEnabled(true);
 }
 
 void VueGestionEnsemble::ajouter()
 {
-    if (selectionHorsEnsemble >= 0 && selectionHorsEnsemble < actionsHorsEnsemble->count()) {
-        actionsDansEnsemble->append(actionsHorsEnsemble->takeAt(selectionHorsEnsemble));
-        peuplerHorsEnsemble();
-        peuplerDansEnsemble();
-        selectionHorsEnsemble = -1;
+    modeleDansEnsemble->appendRow(modeleHorsEnsemble->takeRow(ui->listeExistantes->currentIndex().row()));
+    if (modeleHorsEnsemble->rowCount() == 0) {
+        ui->boutonAjouter->setEnabled(false);
     }
 }
 
 void VueGestionEnsemble::retirer()
 {
-    if (selectionDansEnsemble >= 0 && selectionDansEnsemble < actionsDansEnsemble->count()) {
-        actionsHorsEnsemble->append(actionsDansEnsemble->takeAt(selectionDansEnsemble));
-        peuplerDansEnsemble();
-        peuplerHorsEnsemble();
-        selectionDansEnsemble = -1;
+    modeleHorsEnsemble->appendRow(modeleDansEnsemble->takeRow(ui->listeSelectionnees->currentIndex().row()));
+    if (modeleDansEnsemble->rowCount() == 0) {
+        ui->boutonRetirer->setEnabled(false);
     }
-}
-
-void VueGestionEnsemble::peuplerHorsEnsemble()
-{
-    delete ui->listeExistantes->model();
-    ui->listeExistantes->setModel(listeVersModele(actionsHorsEnsemble));
-    ui->boutonAjouter->setEnabled(false);
-}
-
-void VueGestionEnsemble::peuplerDansEnsemble()
-{
-    delete ui->listeSelectionnees->model();
-    ui->listeSelectionnees->setModel(listeVersModele(actionsDansEnsemble));
-    ui->boutonRetirer->setEnabled(false);
-}
-
-QStandardItemModel *VueGestionEnsemble::listeVersModele(const QList<Action*>* liste)
-{
-    QStandardItemModel* modele = new QStandardItemModel(this);
-    for (QList<Action*>::const_iterator i = liste->constBegin(); i != liste->constEnd(); ++i) {
-        QStandardItem* element = new QStandardItem((*i)->nom());
-        element->setToolTip((*i)->description());
-        modele->appendRow(element);
-    }
-    return modele;
 }
 
 void VueGestionEnsemble::verifierNom()

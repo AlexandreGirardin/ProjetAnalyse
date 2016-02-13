@@ -62,6 +62,15 @@ public:
      */
     static bool inserer(const Action *action);
 
+    /**
+     * @brief getActions
+     * Mappe une liste d'actions possédant les id donnés
+     * Ne retourne pas d'objets invalide
+     * @param listeId La liste d'id d'actions à mapper
+     * @return La liste des actions mappées
+     */
+    static QList<Action*>* getActions(const QList<int>* listeId);
+
 private:
 
     /**

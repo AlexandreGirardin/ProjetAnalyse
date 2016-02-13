@@ -22,35 +22,27 @@ public:
     explicit VueGestionEnsemble(QWidget* parent = 0);
     ~VueGestionEnsemble();
 
-    void setActionsHorsEnsemble(QList<Action*>* actions);
+    void setActions(const QList<Action*>* horsEnsemble, const QList<Action*>* dansEnsemble = 0);
 
-    QList<Action*>* getActionsHorsEnsemble() const;
-
-    void setActionsDansEnsemble(QList<Action *> *actions);
-
-    QList<Action*>* getActionsDansEnsemble() const;
-
-    void setNom(const QString& valeur);
+    void setNom(const QString &valeur);
 
     QString getNom() const;
 
-    void setDescription(const QString& valeur);
+    void setDescription(const QString &valeur);
 
     QString getDescription() const;
 
+    QList<int>* getActionsSelectionnees() const;
+
 private slots:
 
-    void horsEnsembleSelectionnee(const QModelIndex &index);
+    void horsEnsembleSelectionnee();
 
-    void dansEnsembleSelectionnee(const QModelIndex &index);
+    void dansEnsembleSelectionnee();
 
     void ajouter();
 
     void retirer();
-
-    void peuplerHorsEnsemble();
-
-    void peuplerDansEnsemble();
 
     void verifierNom();
 
@@ -64,13 +56,13 @@ private:
 
     QPushButton* boutonOk;
 
-    QList<Action*> *actionsHorsEnsemble, *actionsDansEnsemble;
+    QStandardItemModel* modeleDansEnsemble;
 
-    int selectionHorsEnsemble, selectionDansEnsemble;
+    QStandardItemModel* modeleHorsEnsemble;
 
     void configurerBoutonOk();
 
-    QStandardItemModel* listeVersModele(const QList<Action *> *liste);
+    QStandardItemModel* listeEnModele(const QList<Action*>* actions);
 
 signals:
 

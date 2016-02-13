@@ -25,6 +25,18 @@ QList<Action*>* MappeurActions::getActions()
     return mapper(requete);
 }
 
+QList<Action*>* MappeurActions::getActions(const QList<int>* listeId)
+{
+    QList<Action*>* listeActions = new QList<Action*>;
+    for (QList<int>::const_iterator i = listeId->constBegin(); i != listeId->constEnd(); ++i) {
+        Action* action = getAction((*i));
+        if (action != NULL) {
+            listeActions->append(action);
+        }
+    }
+    return listeActions;
+}
+
 Action* MappeurActions::mapper(const QSqlRecord &ligne)
 {
     Action* action = new Action();

@@ -12,17 +12,15 @@ void ControleurEnsembles::creerEnsemble()
 {
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer un nouvel ensemble de tâches"));
-    vue->setActionsHorsEnsemble(MappeurActions::getActions());
+    vue->setActions(MappeurActions::getActions());
     if (vue->exec() == vue->Accepted) {
         EnsembleActions* ensemble = new EnsembleActions(vue);
         extraireEnsemble(ensemble, vue);
         if (MappeurEnsembles::inserer(ensemble)) {
             emit Application::getInstance()->ensemblesModifies();
-        } else {
-            qDebug() << "Pas marché :(";
         }
-        vue->deleteLater();
     }
+    vue->deleteLater();
 }
 
 void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
@@ -30,19 +28,16 @@ void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
     EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
     vue->setWindowTitle(tr("Modifier un ensemble de tâches"));
-    QList<Action*>* actionsHorsEnsemble = MappeurActions::actionsHorsEnsemble(ensemble->id());
-    vue->setActionsHorsEnsemble(actionsHorsEnsemble);
-    vue->setActionsDansEnsemble(MappeurActions::actionsDansEnsemble(ensemble->id()));
+    vue->setActions(MappeurActions::actionsHorsEnsemble(ensemble->id()), MappeurActions::actionsDansEnsemble(ensemble->id()));
     assignerEnsemble(vue, ensemble);
     if (vue->exec() == vue->Accepted) {
         extraireEnsemble(ensemble, vue);
         if (MappeurEnsembles::mettreAJour(ensemble)) {
             emit Application::getInstance()->ensemblesModifies();
-        } else {
-            qDebug() << "Pas marché :(";
         }
-        vue->deleteLater();
     }
+    vue->deleteLater();
+    ensemble->deleteLater();
 }
 
 void ControleurEnsembles::voirEnsemble(const int &idEnsemble)
@@ -74,7 +69,7 @@ void ControleurEnsembles::extraireEnsemble(EnsembleActions* ensemble, const VueG
 {
     ensemble->setNom(vue->getNom());
     ensemble->setDescription(vue->getDescription());
-    ensemble->setActions(vue->getActionsDansEnsemble());
+    ensemble->setActions(MappeurActions::getActions(vue->getActionsSelectionnees()));
 }
 
 void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
