@@ -144,9 +144,7 @@ bool MappeurEnsembles::ecrire(const EnsembleActions* ensemble, const QString &co
     requete->bindValue(":idEnsemble", ensemble->id());
     const bool succes = requete->exec();
     if (!succes) {
-        Application::messageErreur(tr("Erreur lors de l'écriture"),
-                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
-                                   Application::vuePrincipale());
+        Application::erreurEcriture(requete->lastError().text());
     }
     delete requete;
     return succes;
@@ -163,9 +161,7 @@ bool MappeurEnsembles::ecrireActions(const EnsembleActions *ensemble, const QStr
         succes = succes && requete->exec();
     }
     if (!succes) {
-        Application::messageErreur(tr("Erreur lors de l'écriture"),
-                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
-                                   Application::vuePrincipale());
+        Application::erreurEcriture(requete->lastError().text());
     }
     delete requete;
     return succes;

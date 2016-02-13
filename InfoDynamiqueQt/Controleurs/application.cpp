@@ -78,9 +78,19 @@ void Application::chargerOnglet()
     verifierParesseux();
 }
 
-void Application::messageErreur(const QString &titre, const QString &texte, QWidget *parent)
+void Application::erreurEcriture(const QString &message)
 {
-    QMessageBox* alerte = new QMessageBox(QMessageBox::Warning, titre, texte, QMessageBox::Ok, parent);
+    erreur(tr("Une erreur s'est produite lors de l'écriture:\n")+message, tr("Erreur lors de l'écriture"));
+}
+
+void Application::erreurSuppression(const QString &message)
+{
+    erreur(tr("Une erreur s'est produite lors de la suppression:\n")+message, tr("Erreur lors de la suppression"));
+}
+
+void Application::erreur(const QString &message, const QString &titre, QMessageBox::Icon type)
+{
+    QMessageBox* alerte = new QMessageBox(type, titre, message, QMessageBox::Ok, vuePrincipale());
     alerte->exec();
     alerte->deleteLater();
 }

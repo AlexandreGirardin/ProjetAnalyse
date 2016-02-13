@@ -118,9 +118,7 @@ bool MappeurAppareils::ecrire(const Appareil* appareil, const QString &commande)
     if (succes) {
         bd.commit();
     } else {
-        Application::messageErreur(tr("Erreur lors de l'écriture"),
-                                   tr("Une erreur s'est produite lors de l'écriture:\n") + requete->lastError().text(),
-                                   Application::vuePrincipale());
+        Application::erreurEcriture(requete->lastError().text());
         bd.rollback();
     }
     delete requete;

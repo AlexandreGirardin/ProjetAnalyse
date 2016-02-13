@@ -45,7 +45,6 @@ public:
 
     // Imprime des informations pour tester
     void debug();
-
 private:
 
     // Singleton
@@ -99,6 +98,8 @@ private:
      */
     void executer();
 
+    static void erreur(const QString &message, const QString &titre = tr("Erreur"), QMessageBox::Icon type = QMessageBox::Warning);
+
 public slots:
 
     /**
@@ -107,7 +108,9 @@ public slots:
      */
     void chargerOnglet();
 
-    static void messageErreur(const QString &titre, const QString &texte, QWidget * parent = 0);
+    static void erreurEcriture(const QString &message);
+
+    static void erreurSuppression(const QString &message);
 
 signals:
 
