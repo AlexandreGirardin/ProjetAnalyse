@@ -12,7 +12,7 @@ Fiche *MappeurFiches::getFiche(const int &id)
 {
     Fiche* fiche = NULL;
     QString commande("SELECT * FROM fiches WHERE id=:id");
-    QSqlQuery requete(QSqlQuery(*Application::bd));
+    QSqlQuery requete(*Application::bd);
     requete.prepare(commande);
     requete.bindValue(":id", id);
     requete.exec();
@@ -22,14 +22,29 @@ Fiche *MappeurFiches::getFiche(const int &id)
     return fiche;
 }
 
-QList<Fiche*>* MappeurFiches::fichesPourAppareil(const int &id)
+QList<Fiche*>* MappeurFiches::fichesPourAppareil(const int &idAppareil)
 {
     const QString commande("SELECT * FROM fiches WHERE idAppareil=:idAppareil");
     QSqlQuery requete(*Application::bd);
     requete.prepare(commande);
-    requete.bindValue(":idAppareil", id);
+    requete.bindValue(":idAppareil", idAppareil);
     requete.exec();
     return mapper(requete);
+}
+
+int MappeurFiches::nombreFiches(const int &idAppareil)
+{
+    QString commande("SELECT count(*) as 'nombre' FROM fiches WHERE idAppareil=:idAppareil");
+//    QString commande("SELECT 2 as nombre");
+    QSqlQuery requete(*Application::bd);
+    requete.prepare(commande);
+    requete.bindValue(":idAppareil", idAppareil);
+    requete.exec();
+    int nombre = -1;
+    if (requete.next()) {
+        nombre = requete.record().value("nombre").toInt();
+    }
+    return nombre;
 }
 
 bool MappeurFiches::inserer(Fiche *fiche){

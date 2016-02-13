@@ -21,7 +21,9 @@ public:
      */
     static Fiche* getFiche(const int &id);
 
-    static QList<Fiche*>* fichesPourAppareil(const int &id);
+    static QList<Fiche*>* fichesPourAppareil(const int &idAppareil);
+
+    static int nombreFiches(const int &idAppareil);
 
     /**
      * @brief inserer

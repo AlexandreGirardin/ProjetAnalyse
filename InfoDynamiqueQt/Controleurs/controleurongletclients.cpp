@@ -157,8 +157,8 @@ void ControleurOngletClients::activerBoutonEffacerAppareil(const bool &actif) co
 {
     if (!actif) {
         boutonEffacerAppareil->setEnabled(false);
-    } else if (MappeurFiches::fichesPourAppareil(fragmentAppareils->getIdModele())->isEmpty()) {
-        boutonEffacerAppareil->setEnabled(true);
+    } else {
+        boutonEffacerAppareil->setEnabled(MappeurFiches::nombreFiches(fragmentAppareils->getIdModele()) == 0);
     }
 }
 
