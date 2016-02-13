@@ -118,7 +118,8 @@ void ControleurOngletActions::configurerFragmentEnsembles()
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->caseCocher()->setHidden(true);
     QPushButton* boutonSupprimer = fragmentEnsembles->ajouterBouton(4, tr("Supprimer"), QIcon(":/Images/edit-delete"));
-    QObject::connect(Application::getInstance(), SIGNAL(ensemblesModifies()), this, SLOT(peuplerEnsembles()));
+    QObject::connect(Application::getInstance(), SIGNAL(nombreEnsemblesModifie()), this, SLOT(rechargerEnsembles()));
+    QObject::connect(Application::getInstance(), SIGNAL(ensembleModifie()), this, SLOT(ensembleModifie()));
     QObject::connect(Application::getInstance(), SIGNAL(actionsModifiees()), this, SLOT(rechargerActions()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
@@ -182,4 +183,11 @@ void ControleurOngletActions::supprimerEnsemble()
 void ControleurOngletActions::rechargerEnsembles()
 {
     filtrerEnsembles(fragmentEnsembles->getFiltre());
+}
+
+void ControleurOngletActions::ensembleModifie()
+{
+    int selection = fragmentEnsembles->getDernierIndexSelectionne();
+    rechargerEnsembles();
+    fragmentEnsembles->getTableau()->selectRow(selection);
 }

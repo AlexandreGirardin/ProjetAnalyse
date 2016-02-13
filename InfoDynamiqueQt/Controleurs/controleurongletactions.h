@@ -111,6 +111,12 @@ public slots:
     void rechargerEnsembles();
 
     /**
+     * @brief ensembleModifie
+     * Repeuple les ensembles en tenant compte du filtre actuel et en conservant la même sélection
+     */
+    void ensembleModifie();
+
+    /**
      * @brief peuplerEnsembles
      * Peuple le fragmentEnsembles sans filtre
      */

@@ -17,7 +17,7 @@ void ControleurEnsembles::creerEnsemble()
         EnsembleActions* ensemble = new EnsembleActions(vue);
         extraireEnsemble(ensemble, vue);
         if (MappeurEnsembles::inserer(ensemble)) {
-            emit Application::getInstance()->ensemblesModifies();
+            emit Application::getInstance()->nombreEnsemblesModifie();
         }
     }
     vue->deleteLater();
@@ -33,7 +33,7 @@ void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
     if (vue->exec() == vue->Accepted) {
         extraireEnsemble(ensemble, vue);
         if (MappeurEnsembles::mettreAJour(ensemble)) {
-            emit Application::getInstance()->ensemblesModifies();
+            emit Application::getInstance()->ensembleModifie();
         }
     }
     vue->deleteLater();
@@ -81,7 +81,7 @@ void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
                     QMessageBox::Apply | QMessageBox::Cancel);
     if (confirmation->exec() == confirmation->Apply) {
         if (MappeurEnsembles::supprimer(ensemble)) {
-            emit Application::getInstance()->ensemblesModifies();
+            emit Application::getInstance()->nombreEnsemblesModifie();
         }
     }
     confirmation->deleteLater();

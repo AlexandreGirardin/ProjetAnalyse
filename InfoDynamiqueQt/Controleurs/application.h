@@ -143,9 +143,15 @@ signals:
 
     /**
      * @brief ensemblesModifies
-     * Émis lorsque les données des ensembles ont été modifiées
+     * Émis lorsqu'un ensemble a été ajouté ou supprimé
      */
-    void ensemblesModifies() const;
+    void nombreEnsemblesModifie() const;
+
+    /**
+     * @brief ensembleModifie
+     * Émis lorsqu'un ensemble a été mis à jour
+     */
+    void ensembleModifie() const;
 
 };
 
