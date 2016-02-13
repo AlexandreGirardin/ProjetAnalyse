@@ -12,6 +12,7 @@ void ControleurFiches::ajouterFiche(const int &idAppareil)
     vue->setWindowTitle(tr("Créer une nouvelle fiche"));
     if (vue->exec() == vue->Accepted) {
         Fiche* fiche = new Fiche(vue);
+        fiche->setIdAppareil(idAppareil);
         extraireFiche(fiche, vue);
         if (MappeurFiches::inserer(fiche)) {
             emit Application::getInstance()->fichesModifiees();

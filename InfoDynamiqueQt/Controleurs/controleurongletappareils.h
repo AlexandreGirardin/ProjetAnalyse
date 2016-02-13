@@ -39,13 +39,13 @@ public slots:
      * @brief modifierAppareil
      * Lance la modification de l'appareil sélectionné
      */
-    void modifierAppareil() const;
+    void modifierAppareil();
 
     /**
      * @brief modifierAppareil
      * Lance la visualisation de l'appareil sélectionné
      */
-    void voirAppareil() const;
+    void voirAppareil();
 
     /**
      * @brief filtrerAppareils
@@ -59,6 +59,12 @@ public slots:
      * Repeuple le tableau avec filtre de recherche au besoin
      */
     void recharger();
+
+    /**
+     * @brief rafraichirActions
+     * Repeuple le tableau avec filtre de recherche au besoin et conserve la sélection
+     */
+    void rafraichir();
 
 signals:
 

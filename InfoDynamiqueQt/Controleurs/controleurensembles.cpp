@@ -26,36 +26,59 @@ void ControleurEnsembles::creerEnsemble()
 void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
 {
     EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
-    VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
-    vue->setWindowTitle(tr("Modifier un ensemble de tâches"));
-    vue->setActions(MappeurActions::actionsHorsEnsemble(ensemble->id()), MappeurActions::actionsDansEnsemble(ensemble->id()));
-    assignerEnsemble(vue, ensemble);
-    if (vue->exec() == vue->Accepted) {
-        extraireEnsemble(ensemble, vue);
-        if (MappeurEnsembles::mettreAJour(ensemble)) {
-            emit Application::getInstance()->ensembleModifie();
+    if (ensemble != NULL) {
+        VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
+        vue->setWindowTitle(tr("Modifier un ensemble de tâches"));
+        assignerEnsemble(vue, ensemble);
+        if (vue->exec() == vue->Accepted) {
+            extraireEnsemble(ensemble, vue);
+            if (MappeurEnsembles::mettreAJour(ensemble)) {
+                emit Application::getInstance()->ensembleModifie();
+            }
         }
+        vue->deleteLater();
     }
-    vue->deleteLater();
     ensemble->deleteLater();
 }
 
 void ControleurEnsembles::voirEnsemble(const int &idEnsemble)
 {
-    VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
-    vue->setWindowTitle(tr("Ensemble de tâches"));
     EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
-    QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
-    assignerEnsemble(vue, ensemble);
-    vue->setActions(ensemble->actions());
-    vue->show();
+    if (ensemble != NULL) {
+        VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
+        vue->setWindowTitle(tr("Ensemble de tâches"));
+        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
+        assignerEnsemble(vue, ensemble);
+        vue->setActions(ensemble->actions());
+        vue->show();
+    }
     ensemble->deleteLater();
+}
+
+void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
+{
+    EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
+    if (ensemble != NULL) {
+        QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
+                        tr("Confirmation de la suppression"),
+                        tr("Supprimer l'ensemble «") + ensemble->nom()+"» ?",
+                        QMessageBox::Ok | QMessageBox::Cancel);
+        confirmation->setDefaultButton(QMessageBox::Cancel);
+        if (confirmation->exec() == confirmation->Ok) {
+            if (MappeurEnsembles::supprimer(ensemble)) {
+                emit Application::getInstance()->nombreEnsemblesModifie();
+            }
+        }
+        confirmation->deleteLater();
+        ensemble->deleteLater();
+    }
 }
 
 void ControleurEnsembles::assignerEnsemble(VueGestionEnsemble* vue, const EnsembleActions* ensemble)
 {
     vue->setNom(ensemble->nom());
     vue->setDescription(ensemble->description());
+    vue->setActions(MappeurActions::actionsHorsEnsemble(ensemble->id()), MappeurActions::actionsDansEnsemble(ensemble->id()));
 }
 
 void ControleurEnsembles::assignerEnsemble(VueEnsemble* vue, const EnsembleActions* ensemble)
@@ -70,20 +93,4 @@ void ControleurEnsembles::extraireEnsemble(EnsembleActions* ensemble, const VueG
     ensemble->setNom(vue->getNom());
     ensemble->setDescription(vue->getDescription());
     ensemble->setActions(MappeurActions::getActions(vue->getActionsSelectionnees()));
-}
-
-void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
-{
-    EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
-    QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
-                    tr("Confirmation de la suppression"),
-                    tr("Supprimer l'ensemble «") + ensemble->nom()+"» ?",
-                    QMessageBox::Apply | QMessageBox::Cancel);
-    if (confirmation->exec() == confirmation->Apply) {
-        if (MappeurEnsembles::supprimer(ensemble)) {
-            emit Application::getInstance()->nombreEnsemblesModifie();
-        }
-    }
-    confirmation->deleteLater();
-    ensemble->deleteLater();
 }

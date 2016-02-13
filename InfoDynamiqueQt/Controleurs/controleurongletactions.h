@@ -60,6 +60,12 @@ public:
 public slots:
 
     /**
+     * @brief rafraichirActions
+     * Repeuple les actions en tenant compte du filtre actuel et conserve la sélection
+     */
+    void rafraichirActions();
+
+    /**
      * @brief rechargerActions
      * Repeuple les actions en tenant compte du filtre actuel
      */

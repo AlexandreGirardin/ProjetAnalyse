@@ -204,7 +204,7 @@ private slots:
      */
     void rechargerAppareils();
 
-    void rechargerNombreAppareils();
+    void rafraichirAppareils();
 };
 
 #endif // CONTROLEURCLIENTS_H

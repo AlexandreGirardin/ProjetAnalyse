@@ -119,6 +119,8 @@ public:
      * @return Représentation textuelle de l'appareil
      */
     QString out() const;
+
+    QString joliOut() const;
 };
 
 #endif // APPAREIL_H

@@ -99,3 +99,8 @@ QString Appareil::out() const
     out.append(m_motDePasse + " " + m_description);
     return out;
 }
+
+QString Appareil::joliOut() const
+{
+    return m_type->nom() + " " + m_fabricant->nom() + " (" + m_description + ") ";
+}

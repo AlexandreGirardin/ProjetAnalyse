@@ -20,7 +20,8 @@ ControleurOngletAppareils::ControleurOngletAppareils(QWidget* vue)
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-    QObject::connect(Application::getInstance(), SIGNAL(appareilsModifies()), this, SLOT(recharger()));
+    QObject::connect(Application::getInstance(), SIGNAL(appareilsModifies()), this, SLOT(rafraichir()));
+    QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     fragment->champ()->setFocus();
 }
@@ -33,14 +34,14 @@ void ControleurOngletAppareils::peuplerAppareils()
     fragment->getTableau()->hideColumn(fragment->getColonneId());
 }
 
-void ControleurOngletAppareils::modifierAppareil() const
+void ControleurOngletAppareils::modifierAppareil()
 {
     if (fragment->getIdModele() != -1) {
         ControleurAppareils::modifierAppareil(fragment->getIdModele());
     }
 }
 
-void ControleurOngletAppareils::voirAppareil() const
+void ControleurOngletAppareils::voirAppareil()
 {
     if (fragment->getIdModele() != -1) {
         ControleurAppareils::voirAppareil(fragment->getIdModele());
@@ -67,5 +68,12 @@ void ControleurOngletAppareils::filtrerAppareils(const QString &filtre)
 void ControleurOngletAppareils::recharger()
 {
     filtrerAppareils(fragment->getFiltre());
+}
+
+void ControleurOngletAppareils::rafraichir()
+{
+    int selection = fragment->getTableau()->currentIndex().row();
+    recharger();
+    fragment->getTableau()->selectRow(selection);
 }
 

@@ -18,7 +18,6 @@ void ControleurAppareils::ajouterAppareil(const int &idClient)
         appareil->setIdClient(idClient);
         extraireAppareil(appareil, vue);
         if (MappeurAppareils::inserer(appareil)) {
-            emit Application::getInstance()->appareilsModifies();
             emit Application::getInstance()->nombreAppareilsChange();
         } else {
             qDebug() << "Pas marché: " << appareil->out();
@@ -67,11 +66,12 @@ void ControleurAppareils::effacerAppareil(const int &idAppareil)
         Appareil* appareil = MappeurAppareils::getAppareil(idAppareil);
         QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                         tr("Confirmation de la suppression"),
-                        tr("Supprimer l'appareil «") + appareil->out()+"» ?",
-                        QMessageBox::Apply | QMessageBox::Cancel);
-        if (confirmation->exec() == confirmation->Apply) {
+                        tr("Supprimer l'appareil?\n") + appareil->joliOut(),
+                        QMessageBox::Ok | QMessageBox::Cancel);
+        confirmation->setDefaultButton(QMessageBox::Cancel);
+        if (confirmation->exec() == confirmation->Ok) {
             if (MappeurAppareils::supprimer(appareil)) {
-                emit Application::getInstance()->appareilsModifies();
+                emit Application::getInstance()->nombreAppareilsChange();
             }
         }
         confirmation->deleteLater();

@@ -37,7 +37,7 @@ Action* ControleurActions::creerEtRetournerAction()
         action->setDescription(vue->getDescription());
         action->setEtat(vue->getEtat());
         if (MappeurActions::inserer(action)) {
-            emit Application::getInstance()->actionsModifiees();
+            emit Application::getInstance()->nombreActionsChange();
         }
     }
     vue->deleteLater();
@@ -70,20 +70,18 @@ void ControleurActions::effacerAction(const int &idAction)
         Action* action = MappeurActions::getAction(idAction);
         if (action != NULL) {
             QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
-                                             tr("Confirmation de la suppression"),
-                                             tr("Supprimer l'action «") + action->nom()+"» ?",
-                                             QMessageBox::Apply | QMessageBox::Cancel);
+                                            tr("Confirmation de la suppression"),
+                                            tr("Supprimer l'action «") + action->nom()+"» ?",
+                                            QMessageBox::Ok | QMessageBox::Cancel);
+            confirmation->setDefaultButton(QMessageBox::Cancel);
             if (confirmation->exec() == confirmation->Apply) {
                 if (MappeurActions::supprimer(action)) {
                     emit Application::getInstance()->nombreActionsChange();
-                    emit Application::getInstance()->actionsModifiees();
                 }
             }
             confirmation->deleteLater();
             action->deleteLater();
         }
-    } else {
-
     }
     qDeleteAll(*usages);
     delete usages;

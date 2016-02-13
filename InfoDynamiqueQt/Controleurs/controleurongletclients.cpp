@@ -47,8 +47,8 @@ void ControleurOngletClients::configurerFragmentAppareils()
     QObject::connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
-    QObject::connect(Application::getInstance(), SIGNAL(appareilsModifies()), this, SLOT(rechargerAppareils()));
-    QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rechargerNombreAppareils()));
+    QObject::connect(Application::getInstance(), SIGNAL(appareilsModifies()), this, SLOT(rafraichirAppareils()));
+    QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rechargerAppareils()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
     QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
@@ -207,11 +207,11 @@ void ControleurOngletClients::rechargerAppareils()
     filtrerAppareils("");
 }
 
-void ControleurOngletClients::rechargerNombreAppareils()
+void ControleurOngletClients::rafraichirAppareils()
 {
-    int dernierIndex = fragmentClients->getDernierIndexSelectionne();
-    rechargerClients();
-    fragmentClients->getTableau()->selectRow(dernierIndex);
+    int selection = fragmentAppareils->getTableau()->currentIndex().row();
+    rechargerAppareils();
+    fragmentAppareils->getTableau()->selectRow(selection);
 }
 
 // Fiches

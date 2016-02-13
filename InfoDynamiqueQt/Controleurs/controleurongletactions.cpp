@@ -35,7 +35,8 @@ void ControleurOngletActions::configurerFragmentActions()
     QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
     QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
     QObject::connect(fragmentActions, SIGNAL(doubleClicModele()), this, SLOT(modifierAction()));
-    QObject::connect(Application::getInstance(), SIGNAL(actionsModifiees()), this, SLOT(rechargerActions()));
+    QObject::connect(Application::getInstance(), SIGNAL(actionsModifiees()), this, SLOT(rafraichirActions()));
+    QObject::connect(Application::getInstance(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
 
     configurerBoutonEtat();
     configurerBoutonSupprimerAction();
@@ -152,6 +153,13 @@ void ControleurOngletActions::configurerFragmentEnsembles()
     QObject::connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimerEnsemble()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreEnsemblesModifie()), this, SLOT(rechargerEnsembles()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerEnsembles()));
+}
+
+void ControleurOngletActions::rafraichirActions()
+{
+    int selection = fragmentActions->getTableau()->currentIndex().row();
+    rechargerActions();
+    fragmentActions->getTableau()->selectRow(selection);
 }
 
 void ControleurOngletActions::peuplerEnsembles()
