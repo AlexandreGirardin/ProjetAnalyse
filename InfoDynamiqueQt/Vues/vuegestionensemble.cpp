@@ -102,11 +102,6 @@ QList<int>* VueGestionEnsemble::getActionsSelectionnees() const
     return liste;
 }
 
-QPushButton *VueGestionEnsemble::getBoutonAction() const
-{
-    return ui->boutonNouvelle;
-}
-
 void VueGestionEnsemble::horsEnsembleSelectionnee()
 {
     ui->boutonAjouter->setEnabled(true);
