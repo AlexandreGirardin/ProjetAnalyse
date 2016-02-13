@@ -68,17 +68,20 @@ void ControleurActions::effacerAction(const int &idAction)
     QList<Tache*>* usages = MappeurTaches::tachesPourAction(idAction);
     if (usages->isEmpty()) {
         Action* action = MappeurActions::getAction(idAction);
-        QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
-                        tr("Confirmation de la suppression"),
-                        tr("Supprimer l'action «") + action->out()+"» ?",
-                        QMessageBox::Apply | QMessageBox::Cancel);
-        if (confirmation->exec() == confirmation->Apply) {
-            if (MappeurActions::supprimer(action)) {
-                emit Application::getInstance()->nombreActionsChange();
+        if (action != NULL) {
+            QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
+                                             tr("Confirmation de la suppression"),
+                                             tr("Supprimer l'action «") + action->nom()+"» ?",
+                                             QMessageBox::Apply | QMessageBox::Cancel);
+            if (confirmation->exec() == confirmation->Apply) {
+                if (MappeurActions::supprimer(action)) {
+                    emit Application::getInstance()->nombreActionsChange();
+                    emit Application::getInstance()->actionsModifiees();
+                }
             }
+            confirmation->deleteLater();
+            action->deleteLater();
         }
-        confirmation->deleteLater();
-        action->deleteLater();
     } else {
 
     }
