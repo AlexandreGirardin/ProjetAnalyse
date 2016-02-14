@@ -27,6 +27,10 @@ private:
     // Le fragment des appareils
     Fragment* fragment;
 
+    QPushButton* boutonSupprimer;
+
+    void configurerBoutonSupprimer();
+
 public slots:
 
     /**
@@ -65,6 +69,10 @@ public slots:
      * Repeuple le tableau avec filtre de recherche au besoin et conserve la sélection
      */
     void rafraichir();
+
+    void supprimer() const;
+
+    void activerBoutonSupprimer(const bool actif);
 
 signals:
 

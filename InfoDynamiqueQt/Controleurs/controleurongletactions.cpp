@@ -220,7 +220,7 @@ void ControleurOngletActions::rechargerEnsembles()
 
 void ControleurOngletActions::ensembleModifie()
 {
-    int selection = fragmentEnsembles->getDernierIndexSelectionne();
+    int selection = fragmentEnsembles->getTableau()->currentIndex().row();
     rechargerEnsembles();
     fragmentEnsembles->getTableau()->selectRow(selection);
 }

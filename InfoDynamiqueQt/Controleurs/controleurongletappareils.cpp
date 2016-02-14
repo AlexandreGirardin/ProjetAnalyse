@@ -17,6 +17,8 @@ ControleurOngletAppareils::ControleurOngletAppareils(QWidget* vue)
     fragment->retirerCaseCocher();
     vue->layout()->addWidget(fragment);
 
+    configurerBoutonSupprimer();
+
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
@@ -24,6 +26,30 @@ ControleurOngletAppareils::ControleurOngletAppareils(QWidget* vue)
     QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     fragment->champ()->setFocus();
+}
+
+void ControleurOngletAppareils::configurerBoutonSupprimer()
+{
+    boutonSupprimer = fragment->ajouterBoutonNonConnecte(4, tr("Supprimer"), QIcon(":/Images/edit-delete"));
+    boutonSupprimer->setEnabled(false);
+    QObject::connect(fragment, SIGNAL(selectionValide(bool)), this, SLOT(activerBoutonSupprimer(bool)));
+    QObject::connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimer()));
+}
+
+void ControleurOngletAppareils::activerBoutonSupprimer(const bool actif)
+{
+    if (!actif) {
+        boutonSupprimer->setEnabled(false);
+    } else {
+        boutonSupprimer->setEnabled(MappeurFiches::nombreFiches(fragment->getIdModele()) == 0);
+    }
+}
+
+void ControleurOngletAppareils::supprimer() const
+{
+    if (fragment->getIdModele() != -1) {
+        ControleurAppareils::effacerAppareil(fragment->getIdModele());
+    }
 }
 
 void ControleurOngletAppareils::peuplerAppareils()

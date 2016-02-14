@@ -36,7 +36,7 @@ private:
     // L'index de la colonne des id des modèles dans le tableau
     int colonneId;
 
-    int dernierIndexSelectionne;
+//    int dernierIndexSelectionne;
 
     /**
      * @brief configurerBoutonAjouter
@@ -176,9 +176,9 @@ public:
      */
     void setColonneId(const int &value);
 
-    int getDernierIndexSelectionne() const;
+//    int getDernierIndexSelectionne() const;
 
-    void setDernierIndexSelectionne(int value);
+//    void setDernierIndexSelectionne(int value);
 
     QComboBox *ajouterCombobox(const int &index);
 

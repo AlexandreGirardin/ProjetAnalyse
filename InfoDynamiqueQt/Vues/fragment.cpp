@@ -8,8 +8,6 @@ Fragment::Fragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment)
     colonneId = 0;
     idModele = -1;
     ui->setupUi(this);
-    ui->tableau->horizontalHeader()->setStretchLastSection(true);
-    ui->tableau->horizontalHeader()->setSectionsMovable(true);
     ui->champ->setClearButtonEnabled(true);
     configurerBoutonAjouter();
     configurerBoutonModifier();
@@ -39,16 +37,6 @@ void Fragment::setEtiquette(const QString &etiquette) const
     }
 }
 
-
-int Fragment::getDernierIndexSelectionne() const
-{
-    return dernierIndexSelectionne;
-}
-
-void Fragment::setDernierIndexSelectionne(int value)
-{
-    dernierIndexSelectionne = value;
-}
 void Fragment::configurerBoutonAjouter()
 {
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
@@ -200,7 +188,6 @@ void Fragment::relacherModele()
 
 void Fragment::selectionnerModele(const QModelIndex &index)
 {
-    dernierIndexSelectionne = index.row();
     idModele = getId(index);
     emit selectionValide(true);
     emit modeleSelectionne(idModele);
