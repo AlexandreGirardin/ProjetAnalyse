@@ -4,6 +4,7 @@
 #include "Controleurs/requetessql.h"
 #include "Mappeurs/mappeuractions.h"
 
+#include <QHeaderView>
 #include <QLayout>
 #include <QSqlQueryModel>
 
@@ -63,6 +64,7 @@ void ControleurOngletActions::peuplerActions()
     actions->setQuery(*requeteActions, *Application::bd);
     fragmentActions->peuplerTableau(actions);
     fragmentActions->tableau()->hideColumn(0);
+    fragmentActions->tableau()->horizontalHeader()->stretchLastSection();
 }
 
 void ControleurOngletActions::filtrerActions(const QString &filtre)

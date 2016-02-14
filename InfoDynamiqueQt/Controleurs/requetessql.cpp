@@ -108,8 +108,8 @@ QString const * const RequetesSQL::afficherToutesActions =
         new QString("SELECT\
                         id as '#',\
                         nom as 'Action',\
-                        description as 'Description',\
-                        IF (etat < 1, '', '✓') as 'Activée'\
+                        IF (etat < 1, '', '✓') as 'Activée',\
+                        description as 'Description'\
                     FROM actions");
 
 QString const * const RequetesSQL::afficherActionsActives =
