@@ -74,6 +74,11 @@ void Fragment::setColonneId(const int &value)
     m_colonneId = value;
 }
 
+void Fragment::cacherColonneId() const
+{
+    ui->tableau->hideColumn(m_colonneId);
+}
+
 QPushButton* Fragment::boutonAjouter() const
 {
     return ui->boutonAjouter;

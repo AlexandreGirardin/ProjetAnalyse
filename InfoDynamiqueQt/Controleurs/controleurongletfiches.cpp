@@ -37,7 +37,7 @@ void ControleurOngletFiches::peuplerFiches()
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(*RequetesSQL::afficherFiches, *Application::bd);
     fragment->peuplerTableau(fiches);
-    fragment->tableau()->hideColumn(0);
+    fragment->cacherColonneId();
 }
 
 void ControleurOngletFiches::modifierFiche() const
@@ -78,7 +78,7 @@ void ControleurOngletFiches::filtrerFiches(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
-        fragment->tableau()->hideColumn(0);
+        fragment->cacherColonneId();
     }
 }
 

@@ -147,14 +147,6 @@ public slots:
      */
     void filtrerClients(const QString &filtre);
 
-
-    /**
-     * @brief filtrerAppareils
-     * Filtre les appareils affichés selon la correspondance avec une chaîne
-     * @param filtre Critère de filtre à utiliser
-     */
-    void filtrerAppareils(const QString &filtre);
-
 private slots:
 
     /**

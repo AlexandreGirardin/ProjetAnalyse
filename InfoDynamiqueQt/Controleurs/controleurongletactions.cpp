@@ -63,7 +63,7 @@ void ControleurOngletActions::peuplerActions()
     QSqlQueryModel* actions = new QSqlQueryModel(this);
     actions->setQuery(*requeteActions, *Application::bd);
     fragmentActions->peuplerTableau(actions);
-    fragmentActions->tableau()->hideColumn(0);
+    fragmentActions->cacherColonneId();
     fragmentActions->tableau()->horizontalHeader()->stretchLastSection();
 }
 
@@ -80,8 +80,8 @@ void ControleurOngletActions::filtrerActions(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentActions->peuplerTableau(resultats);
-        fragmentActions->tableau()->hideColumn(0);
-        fragmentActions->tableau()->resizeColumnsToContents();
+        fragmentActions->cacherColonneId();
+//        fragmentActions->tableau()->resizeColumnsToContents();
     }
 }
 
@@ -175,7 +175,7 @@ void ControleurOngletActions::peuplerEnsembles()
     QSqlQueryModel* ensembles = new QSqlQueryModel(this);
     ensembles->setQuery(*RequetesSQL::afficherEnsembles, *Application::bd);
     fragmentEnsembles->peuplerTableau(ensembles);
-    fragmentEnsembles->tableau()->hideColumn(0);
+    fragmentEnsembles->cacherColonneId();
 }
 
 void ControleurOngletActions::filtrerEnsembles(const QString &filtre)
@@ -191,7 +191,7 @@ void ControleurOngletActions::filtrerEnsembles(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentEnsembles->peuplerTableau(resultats);
-        fragmentEnsembles->tableau()->hideColumn(0);
+        fragmentEnsembles->cacherColonneId();
     }
 }
 

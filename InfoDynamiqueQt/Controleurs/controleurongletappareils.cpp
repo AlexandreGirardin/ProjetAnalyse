@@ -64,7 +64,7 @@ void ControleurOngletAppareils::peuplerAppareils()
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(*RequetesSQL::afficherAppareils, *Application::bd);
     fragment->peuplerTableau(appareils);
-    fragment->tableau()->hideColumn(fragment->colonneId());
+    fragment->cacherColonneId();
 }
 
 void ControleurOngletAppareils::modifierAppareil()
@@ -94,7 +94,7 @@ void ControleurOngletAppareils::filtrerAppareils(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
-        fragment->tableau()->hideColumn(fragment->colonneId());
+        fragment->cacherColonneId();
     }
 }
 

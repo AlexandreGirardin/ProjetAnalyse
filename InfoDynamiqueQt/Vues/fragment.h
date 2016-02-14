@@ -209,11 +209,9 @@ public:
      */
     void setColonneId(const int &value);
 
-//    int getDernierIndexSelectionne() const;
+    void cacherColonneId() const;
 
-//    void setDernierIndexSelectionne(int value);
-
-    QComboBox *ajouterCombobox(const int &index);
+    QComboBox* ajouterCombobox(const int &index);
 
 public slots:
 

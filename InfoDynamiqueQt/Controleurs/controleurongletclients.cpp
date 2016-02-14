@@ -92,7 +92,7 @@ void ControleurOngletClients::peuplerClients()
     QSqlQueryModel* clients = new QSqlQueryModel(this);
     clients->setQuery(*RequetesSQL::afficherClients, *Application::bd);
     fragmentClients->peuplerTableau(clients);
-    fragmentClients->tableau()->hideColumn(fragmentClients->colonneId());
+    fragmentClients->cacherColonneId();
 }
 
 void ControleurOngletClients::ajouterClient() const
@@ -127,7 +127,7 @@ void ControleurOngletClients::filtrerClients(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentClients->peuplerTableau(resultats);
-        fragmentClients->tableau()->hideColumn(fragmentClients->colonneId());
+        fragmentClients->cacherColonneId();
     }
 }
 
@@ -150,7 +150,7 @@ void ControleurOngletClients::peuplerAppareils(const int &idClient)
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(requeteAppareils(idClient));
     fragmentAppareils->peuplerTableau(appareils);
-    fragmentAppareils->tableau()->hideColumn(fragmentAppareils->colonneId());
+    fragmentAppareils->cacherColonneId();
 }
 
 void ControleurOngletClients::ajouterAppareil() const
@@ -192,33 +192,16 @@ void ControleurOngletClients::voirAppareil() const
 
 QSqlQuery ControleurOngletClients::requeteAppareils(const int &idClient) const
 {
-    QSqlQuery requete = QSqlQuery(*Application::bd);
+    QSqlQuery requete(*Application::bd);
     requete.prepare(*RequetesSQL::appareilsPourClient);
     requete.bindValue(":idClient", idClient);
     requete.exec();
     return requete;
 }
 
-void ControleurOngletClients::filtrerAppareils(const QString &filtre)
-{
-    if (filtre.isEmpty()) {
-        peuplerAppareils(fragmentClients->idModele());
-    } else {
-        QSqlQuery requete = QSqlQuery(*Application::bd);
-        requete.prepare(*RequetesSQL::filtrerAppareils);
-        const QString meta = *ControleurBD::meta;
-        requete.bindValue(":filtre", meta + filtre + meta);
-        requete.exec();
-        QSqlQueryModel* resultats = new QSqlQueryModel(this);
-        resultats->setQuery(requete);
-        fragmentAppareils->peuplerTableau(resultats);
-        fragmentAppareils->tableau()->hideColumn(fragmentAppareils->colonneId());
-    }
-}
-
 void ControleurOngletClients::rechargerAppareils()
 {
-    filtrerAppareils("");
+    peuplerAppareils(fragmentClients->idModele());
 }
 
 void ControleurOngletClients::rafraichirAppareils()
@@ -265,7 +248,7 @@ void ControleurOngletClients::desactiverCritereFiches()
 
 QSqlQuery ControleurOngletClients::requeteFiches(const int &idAppareil) const
 {
-    QSqlQuery requete = QSqlQuery(*Application::bd);
+    QSqlQuery requete(*Application::bd);
     requete.prepare(*commandeFiches);
     requete.bindValue(":idAppareil", idAppareil);
     requete.exec();
