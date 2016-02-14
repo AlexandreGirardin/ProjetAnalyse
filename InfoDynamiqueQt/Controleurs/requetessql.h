@@ -9,6 +9,9 @@ class RequetesSQL : public QObject
 
 public:
 
+    // Le méta-caractère de la base de données
+    static QString const * const meta;
+
     // Requête permettant d'afficher les appareils
     static QString const * const afficherAppareils;
     // Requête permettant d'afficher les appareils correspondant à :filtre
@@ -47,9 +50,6 @@ public:
 
     // Requête permettant d'afficher les fiches correspondant à :filtre
     static QString const * const tachesPourFiche;
-
-    // Requête permettant de lister toutes les base de données d'un serveur
-    static QString const * const listerBD;
 };
 
 #endif // REQUETESSQL_H

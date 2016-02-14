@@ -122,7 +122,7 @@ void ControleurOngletClients::filtrerClients(const QString &filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*RequetesSQL::filtrerClients);
-        const QString meta = *ControleurBD::meta;
+        const QString meta = *RequetesSQL::meta;
         requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);

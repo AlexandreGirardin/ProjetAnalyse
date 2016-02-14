@@ -77,7 +77,7 @@ void ControleurOngletActions::filtrerActions(const QString &filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*requeteActionsFiltre);
-        const QString meta = *ControleurBD::meta;
+        const QString meta = *RequetesSQL::meta;
         requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
@@ -188,7 +188,7 @@ void ControleurOngletActions::filtrerEnsembles(const QString &filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*RequetesSQL::filtrerEnsembles);
-        const QString meta = *ControleurBD::meta;
+        const QString meta = *RequetesSQL::meta;
         requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);

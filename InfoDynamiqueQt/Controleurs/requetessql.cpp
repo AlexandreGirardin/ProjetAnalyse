@@ -1,5 +1,7 @@
 #include "requetessql.h"
 
+QString const * const RequetesSQL::meta = new QString("%");
+
 QString const * const RequetesSQL::afficherClients =
         new QString(
             "SELECT\
@@ -184,6 +186,3 @@ QString const * const RequetesSQL::filtrerFiches =
 
 QString const * const RequetesSQL::tachesPourFiche =
         new QString("SELECT * FROM taches WHERE idFiche=:idFiche");
-
-QString const * const RequetesSQL::listerBD =
-        new QString("show databases");
