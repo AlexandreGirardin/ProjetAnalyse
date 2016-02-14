@@ -9,8 +9,9 @@
 #include <QLayout>
 #include <QSqlQueryModel>
 
-ControleurOngletAppareils::ControleurOngletAppareils(QWidget* vue)
-    : QObject(vue)
+ControleurOngletAppareils::ControleurOngletAppareils(QObject* parent) : QObject(parent) {}
+
+void ControleurOngletAppareils::charger(QWidget* vue)
 {
     fragment = new Fragment(vue);
     fragment->retirerEtiquette();
@@ -27,6 +28,8 @@ ControleurOngletAppareils::ControleurOngletAppareils(QWidget* vue)
     QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     fragment->champ()->setFocus();
+
+    peuplerAppareils();
 }
 
 void ControleurOngletAppareils::configurerBoutonSupprimer()

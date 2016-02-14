@@ -47,10 +47,10 @@ VuePrincipale* Application::vuePrincipale()
 void Application::creerFenetre()
 {
     m_vuePrincipale = new VuePrincipale();
-    controleurClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
-    controleurFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
-    controleurAppareils = new ControleurOngletAppareils(m_vuePrincipale->ongletAppareils());
-    controleurActions = new ControleurOngletActions(m_vuePrincipale->ongletActions());
+    ongletClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
+    ongletFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
+    ongletAppareils = new ControleurOngletAppareils(m_vuePrincipale->ongletAppareils());
+    ongletActions = new ControleurOngletActions(m_vuePrincipale->ongletActions());
     clientsCharges = false;
     fichesChargees = false;
     appareilsCharges = false;
@@ -62,17 +62,16 @@ void Application::chargerOnglet()
 {
     QWidget* onglet = m_vuePrincipale->onglets()->currentWidget();
     if (onglet == m_vuePrincipale->ongletClients() && !clientsCharges) {
-        controleurClients->peuplerClients();
+        ongletClients->charger(m_vuePrincipale->ongletClients());
         clientsCharges = true;
     } else if (onglet == m_vuePrincipale->ongletFiches() && !fichesChargees) {
-        controleurFiches->peuplerFiches();
+        ongletFiches->peuplerFiches();
         fichesChargees = true;
     } else if (onglet == m_vuePrincipale->ongletAppareils() && !appareilsCharges) {
-        controleurAppareils->peuplerAppareils();
+        ongletAppareils->charger(m_vuePrincipale->ongletAppareils());
         appareilsCharges = true;
     } else if (onglet == m_vuePrincipale->ongletActions() && !actionsChargees) {
-        controleurActions->peuplerActions();
-        controleurActions->peuplerEnsembles();
+        ongletActions->charger(m_vuePrincipale->ongletActions());
         actionsChargees = true;
     }
     verifierParesseux();

@@ -8,8 +8,9 @@
 #include <QLayout>
 #include <QSqlQueryModel>
 
-ControleurOngletActions::ControleurOngletActions(QWidget* vue)
-    : QObject(vue)
+ControleurOngletActions::ControleurOngletActions(QObject* parent) : QObject(parent) {}
+
+void ControleurOngletActions::charger(QWidget* vue)
 {
     splitter = new QSplitter(Qt::Vertical, vue);
     splitter->setChildrenCollapsible(false);
@@ -17,6 +18,8 @@ ControleurOngletActions::ControleurOngletActions(QWidget* vue)
     configurerFragmentActions();
     configurerFragmentEnsembles();
     fragmentActions->champ()->setFocus();
+    peuplerActions();
+    peuplerEnsembles();
 }
 
 // Actions

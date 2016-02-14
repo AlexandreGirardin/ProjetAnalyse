@@ -45,6 +45,7 @@ public:
 
     // Imprime des informations pour tester
     void debug();
+
 private:
 
     // Singleton
@@ -54,25 +55,25 @@ private:
     static VuePrincipale* m_vuePrincipale;
 
     // Le contrôleur de la vue des clients
-    ControleurOngletClients* controleurClients;
+    ControleurOngletClients* ongletClients;
 
     // Si l'onglet des clients a été chargé
     bool clientsCharges;
 
     // Le contrôleur de la vue des fiches
-    ControleurOngletFiches* controleurFiches;
+    ControleurOngletFiches* ongletFiches;
 
     // Si l'onglet des fiches a été chargé
     bool fichesChargees;
 
     // Le contrôleur de la vue des appareils
-    ControleurOngletAppareils* controleurAppareils;
+    ControleurOngletAppareils* ongletAppareils;
 
     // Si l'onglet des appareils a été chargé
     bool appareilsCharges;
 
     // Le contrôleur de la vue des actions
-    ControleurOngletActions* controleurActions;
+    ControleurOngletActions* ongletActions;
 
     // Si l'onglet des actions a été chargé
     bool actionsChargees;
@@ -98,6 +99,13 @@ private:
      */
     void executer();
 
+    /**
+     * @brief erreur
+     * Affiche un message d'erreur
+     * @param message Le contenu du message à afficher
+     * @param titre Le titre de la fenêtre à afficher
+     * @param type Le type de message à afficher
+     */
     static void erreur(const QString &message, const QString &titre = tr("Erreur"), QMessageBox::Icon type = QMessageBox::Warning);
 
 public slots:
@@ -108,8 +116,18 @@ public slots:
      */
     void chargerOnglet();
 
+    /**
+     * @brief erreurEcriture
+     * Affiche un message d'avertissement d'erreur d'écriture
+     * @param message L'erreur à afficher
+     */
     static void erreurEcriture(const QString &message);
 
+    /**
+     * @brief erreurSuppression
+     * Affiche un message d'avertissement d'erreur de suppression
+     * @param message L'erreur à afficher
+     */
     static void erreurSuppression(const QString &message);
 
 signals:

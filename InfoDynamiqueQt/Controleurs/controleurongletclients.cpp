@@ -9,9 +9,9 @@
 #include <QLayout>
 #include <QSqlQueryModel>
 
-ControleurOngletClients::ControleurOngletClients(QWidget* vue)
-    : QObject(vue)
-{
+ControleurOngletClients::ControleurOngletClients(QObject* parent) : QObject(parent) {}
+
+void ControleurOngletClients::charger(QWidget* vue) {
     splitter = new QSplitter(Qt::Vertical, vue);
     vue->layout()->addWidget(splitter);
     splitter->setChildrenCollapsible(false);
@@ -19,6 +19,7 @@ ControleurOngletClients::ControleurOngletClients(QWidget* vue)
     configurerFragmentAppareils();
     configurerFragmentFiches();
     fragmentClients->champ()->setFocus();
+    peuplerClients();
 }
 
 // Configuration

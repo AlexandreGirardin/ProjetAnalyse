@@ -25,7 +25,9 @@ private:
 
 public:
 
-    explicit ControleurOngletActions(QWidget *parent = 0);
+    explicit ControleurOngletActions(QObject* parent = 0);
+
+    void charger(QWidget* vue);
 
     /**
      * @brief configurerFragmentActions
