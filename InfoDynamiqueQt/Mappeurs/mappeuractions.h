@@ -8,7 +8,7 @@
 
 class MappeurActions {
 
-    // Extrait des objets Action de la base de données
+    // Lit et écrit des objets Action dans la base de données
 
 public:
 
@@ -57,6 +57,12 @@ public:
      */
     static bool inserer(Action* action);
 
+    /**
+     * @brief supprimer
+     * Efface une action de la base de données
+     * @param action L'action à effacer
+     * @return Succès de l'écriture
+     */
     static bool supprimer(Action* action);
 
     /**
@@ -68,6 +74,12 @@ public:
      */
     static QList<Action*>* getActions(const QList<int>* listeId);
 
+    /**
+     * @brief nombreTachesPourAction
+     * Retourne le nombre de tâches utilisant une action donnée
+     * @param idAction L'action à chercher
+     * @return Le nombre de tâches
+     */
     static int nombreTachesPourAction(const int &idAction);
 
 private:

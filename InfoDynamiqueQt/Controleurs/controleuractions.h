@@ -22,6 +22,12 @@ private:
      */
     static void assignerAction(VueGestionAction* vue, const Action* action);
 
+    /**
+     * @brief extraireAction
+     * Assigne les informations contenues dans une vue à une action
+     * @param action L'action cible
+     * @param vue La vue source
+     */
     static void extraireAction(Action* action, const VueGestionAction* vue);
 
 public slots:

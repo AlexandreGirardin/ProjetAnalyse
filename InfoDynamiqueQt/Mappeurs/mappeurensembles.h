@@ -7,6 +7,8 @@
 
 class MappeurEnsembles {
 
+    // Lit et écrit des objets Ensemble dans la base de données
+
 public:
 
     /**

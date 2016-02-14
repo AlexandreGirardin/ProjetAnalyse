@@ -20,6 +20,11 @@ public:
      */
     explicit ControleurOngletAppareils(QObject *parent = 0);
 
+    /**
+     * @brief charger
+     * Charge le fragment et le peuple
+     * @param vue La vue devant contenir le fragment
+     */
     void charger(QWidget *vue);
 
 private:
@@ -27,8 +32,13 @@ private:
     // Le fragment des appareils
     Fragment* fragment;
 
+    // Le bouton de suppression d'appareil
     QPushButton* boutonSupprimer;
 
+    /**
+     * @brief configurerBoutonSupprimer
+     * Configure le bouton de suppression d'appareil
+     */
     void configurerBoutonSupprimer();
 
 public slots:
@@ -70,8 +80,17 @@ public slots:
      */
     void rafraichir();
 
+    /**
+     * @brief supprimer
+     * Lance la suppression de l'appareil sélectionné
+     */
     void supprimer() const;
 
+    /**
+     * @brief activerBoutonSupprimer
+     * Change l'état du bouton de suppression d'appareil
+     * @param actif Si un appareil est sélectionné
+     */
     void activerBoutonSupprimer(const bool actif);
 
 signals:

@@ -4,6 +4,8 @@
 class AideMappeurs
 {
 
+    // Fonctions utiles à tous les mappeurs
+
 public:
 
     /**

@@ -56,13 +56,23 @@ public:
     void setStatut(Statut* value);
 
     /**
+     * @brief idFiche
+     * @return L'id de la fiche à laquelle la tâche est associée
+     */
+    int idFiche() const;
+
+    /**
+     * @brief setIdFiche
+     * Assigne l'id de la fiche à laquelle la tâche est associée
+     * @param idFiche L'id de la tâche à assigner
+     */
+    void setIdFiche(const int &idFiche);
+
+    /**
      * @brief out
      * @return Représentation textuelle de la tâche
      */
     QString out() const;
-
-    int idFiche() const;
-    void setIdFiche(const int &idFiche);
 };
 
 #endif // TACHE_H

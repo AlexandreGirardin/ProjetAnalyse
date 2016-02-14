@@ -185,5 +185,5 @@ QString const * const RequetesSQL::filtrerFiches =
 QString const * const RequetesSQL::tachesPourFiche =
         new QString("SELECT * FROM taches WHERE idFiche=:idFiche");
 
-const QString* RequetesSQL::listerBD =
+QString const * const RequetesSQL::listerBD =
         new QString("show databases");

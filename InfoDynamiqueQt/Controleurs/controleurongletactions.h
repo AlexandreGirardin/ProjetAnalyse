@@ -15,18 +15,33 @@ class ControleurOngletActions : public QObject
 
 private:
 
+    // Bouton permettant d'alterner rapidement l'état de l'action sélectionnée
     QPushButton* boutonEtat;
 
+    // Bouton permettant de supprimer l'action sélectionnée
     QPushButton* boutonSupprimerAction;
 
+    /**
+     * @brief configurerBoutonEtat
+     * Configure le bouton de changement d'état d'action
+     */
     void configurerBoutonEtat();
 
+    /**
+     * @brief configurerBoutonSupprimerAction
+     * Configure le bouton de suppression d'action
+     */
     void configurerBoutonSupprimerAction();
 
 public:
 
     explicit ControleurOngletActions(QObject* parent = 0);
 
+    /**
+     * @brief charger
+     * Charge les fragments et les peuple
+     * @param vue La vue devant contenir les fragments
+     */
     void charger(QWidget* vue);
 
     /**
@@ -165,8 +180,17 @@ public slots:
      */
     void supprimerEnsemble();
 
+    /**
+     * @brief supprimerAction
+     * Lance la suppression de l'action sélectionnée
+     */
     void supprimerAction();
 
+    /**
+     * @brief activerBoutonSupprimerAction
+     * Change l'état du bouton de suppression d'action
+     * @param actif Si une action est sélectionnée
+     */
     void activerBoutonSupprimerAction(const bool &actif);
 };
 

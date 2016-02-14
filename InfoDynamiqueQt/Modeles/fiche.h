@@ -39,10 +39,6 @@ private:
 
 public:
 
-    /**
-     * @brief Fiche
-     * @param parent
-     */
     explicit Fiche(QObject* parent = 0);
 
     /**
@@ -118,13 +114,23 @@ public:
     void setTechniciens(QList<Technicien*>* value);
 
     /**
+     * @brief idAppareil
+     * @return L'id de l'appareil
+     */
+    int idAppareil() const;
+
+    /**
+     * @brief setIdAppareil
+     * Assigne l'id de l'appareil auquel est associée la fiche
+     * @param idAppareil L'id à assigner
+     */
+    void setIdAppareil(int idAppareil);
+
+    /**
      * @brief out
      * @return Représentation textuelle de la fiche
      */
     QString out() const;
-
-    int idAppareil() const;
-    void setIdAppareil(int idAppareil);
 };
 
 #endif // FICHE_H

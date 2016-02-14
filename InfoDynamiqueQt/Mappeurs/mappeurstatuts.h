@@ -8,7 +8,7 @@
 
 class MappeurStatuts {
 
-    // Extrait des objets Statut (fiches ou pièces) de la base de données
+    // Lit et écrit des objets Statut (Fiches ou Tâches) dans la base de données
 
 public:
 

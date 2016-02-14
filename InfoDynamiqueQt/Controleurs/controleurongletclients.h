@@ -23,6 +23,11 @@ public:
      */
     explicit ControleurOngletClients(QObject* parent = 0);
 
+    /**
+     * @brief charger
+     * Charge les fragments et les peuple
+     * @param vue La vue devant contenir les fragments
+     */
     void charger(QWidget* vue);
 
 private:
@@ -39,8 +44,10 @@ private:
     // Le fragment des fiches
     Fragment* fragmentFiches;
 
+    // Le bouton de suppression d'appareil
     QPushButton* boutonEffacerAppareil;
 
+    // Le bouton de traitement de fiche
     QPushButton* boutonTraiter;
 
     // La commande SQL actuelle servant à peupler le fragmentFiches
@@ -118,6 +125,11 @@ public slots:
      */
     void modifierAppareil() const;
 
+    /**
+     * @brief activerBoutonEffacerAppareil
+     * Change l'état du bouton de suppression d'appareil
+     * @param actif Si un appareil est sélectionné
+     */
     void activerBoutonEffacerAppareil(const bool &actif) const;
 
     /**
@@ -198,10 +210,22 @@ private slots:
      */
     void rechargerAppareils();
 
+    /**
+     * @brief rafraichirAppareils
+     * Recharge le fragmentAppareils et conserve la sélection
+     */
     void rafraichirAppareils();
 
+    /**
+     * @brief rechargerFiches
+     * Repeuple le fragmentFiches en tenant compte du filtre actuel
+     */
     void rechargerFiches();
 
+    /**
+     * @brief rafraichirFiches
+     * Recharge le fragmentFiches et conserve la sélection
+     */
     void rafraichirFiches();
 };
 

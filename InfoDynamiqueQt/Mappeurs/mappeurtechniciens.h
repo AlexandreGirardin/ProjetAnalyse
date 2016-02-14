@@ -8,7 +8,7 @@
 
 class MappeurTechniciens {
 
-    // Extrait des objets Technicien de la base de données
+    // Lit et écrit des objets Technicien dans la base de données
 
 public:
 

@@ -62,6 +62,12 @@ public slots:
      */
     static void voirAppareil(const int &idAppareil);
 
+    /**
+     * @brief effacerAppareil
+     * Lance la suppression d'un appareil
+     * Ne fonctionnera que si l'appareil n'a pas de fiches
+     * @param idAppareil L'id de l'appareil à effacer
+     */
     static void effacerAppareil(const int &idAppareil);
 };
 

@@ -16,19 +16,7 @@ private:
 
 public:
 
-    /**
-     * @brief Statut
-     * @param parent
-     */
     explicit Statut(QObject* parent = 0);
-
-    /**
-     * @brief Statut
-     * @param a_id L'id du statut
-     * @param a_nom Le nom du statut
-     * @param parent
-     */
-    explicit Statut(const int &a_id, const QString &a_nom, QObject* parent = 0);
 
     /**
      * @brief getNom

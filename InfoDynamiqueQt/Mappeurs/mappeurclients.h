@@ -8,7 +8,7 @@
 
 class MappeurClients {
 
-    // Extrait des objets Client de la base de données
+    // Lit et écrit des objets Client dans la base de données
 
 public:
 
@@ -52,6 +52,14 @@ private:
      */
     static QSqlQuery* preparerRequete(const Client* client, const QString &commande);
 
+    /**
+     * @brief ecrire
+     * Effectue une opération SQL à l'intérieur d'une transaction
+     * La transaction est annulée si l'opération échoue et validée autrement
+     * @param client Le client à inclure dans l'opération SQL
+     * @param commande La commande à exécuter
+     * @return Succès de l'opération
+     */
     static bool ecrire(const Client* client, const QString &commande);
 };
 

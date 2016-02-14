@@ -22,6 +22,7 @@ public:
     static QString const * const filtrerToutesActions;
     // Requête permettant d'afficher les actions actives correspondant à :filtre
     static QString const * const filtrerActionsActives;
+
     // Requête permettant d'afficher les ensembles d'actions
     static QString const * const afficherEnsembles;
     // Requête permettant d'afficher les ensembles correspondant à :filtre
@@ -31,13 +32,14 @@ public:
     static QString const * const afficherClients;
     // Requête permettant d'afficher les clients correspondant à :filtre
     static QString const * const filtrerClients;
+
     // Requête permettant d'afficher les appareils ayant un :idClient
     static QString const * const appareilsPourClient;
+
     // Requête permettant d'afficher les fiches actives ayant un :idAppareil
     static QString const * const toutesFichesPourAppareil;
     // Requête permettant d'afficher toutes les fiches ayant un :idAppareil
     static QString const * const fichesActivesPourAppareil;
-
     // Requête permettant d'afficher toutes les fiches
     static QString const * const afficherFiches;
     // Requête permettant d'afficher les fiches correspondant à :filtre
@@ -47,7 +49,7 @@ public:
     static QString const * const tachesPourFiche;
 
     // Requête permettant de lister toutes les base de données d'un serveur
-    static const QString* listerBD;
+    static QString const * const listerBD;
 };
 
 #endif // REQUETESSQL_H

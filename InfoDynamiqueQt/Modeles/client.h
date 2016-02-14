@@ -28,10 +28,6 @@ private:
 
 public:
 
-    /**
-     * @brief Client
-     * @param parent
-     */
     explicit Client(QObject* parent = 0);
 
     ~Client();

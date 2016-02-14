@@ -120,6 +120,10 @@ public:
      */
     QString out() const;
 
+    /**
+     * @brief joliOut
+     * @return Représentation textuelle de l'appareil plus propre que out()
+     */
     QString joliOut() const;
 };
 

@@ -22,8 +22,10 @@ public:
 
 private:
 
+    // Le fragment permettant de contrôler les fiches
     Fragment* fragment;
 
+    // Le bouton permettant de traiter la fiche sélectionner
     QPushButton* boutonTraiter;
 
 public slots:
@@ -53,8 +55,16 @@ public slots:
      */
     void filtrerFiches(const QString &filtre);
 
+    /**
+     * @brief recharger
+     * Repeuple le fragment en tenant compte du filtre actuel
+     */
     void recharger();
 
+    /**
+     * @brief rafraichir
+     * Recharge le fragment et conserve la sélection
+     */
     void rafraichir();
 };
 

@@ -7,12 +7,15 @@ class ModeleBD : public QObject
 {
     Q_OBJECT
 
+    // Parent abstrait des autres modèle
+
 protected:
 
     // L'identifiant unique du modèle dans une table de la BD
     int m_id;
 
 public:
+
     explicit ModeleBD(QObject *parent = 0);
 
     /**

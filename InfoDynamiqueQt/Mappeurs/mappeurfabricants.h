@@ -8,7 +8,7 @@
 
 class MappeurFabricants {
 
-    // Extrait des objets Fabricant de la base de données
+    // Lit et écrit des objets Fabricant dans la base de données
 
 public:
 
@@ -35,12 +35,10 @@ private:
     static Fabricant* mapper(const QSqlRecord &ligne);
 
     /**
-     * @brief ecrire
-     * Effectue une opération SQL à l'intérieur d'une transaction
-     * La transaction est annulée si l'opération échoue et validée autrement
-     * @param action L'action à inclure dans l'opération SQL
-     * @param commande La commande à exécuter
-     * @return Succès de l'opération
+     * @brief mapper
+     * Construit tous les fabricants se retrouvant dans les résultats d'une requête SQL
+     * @param requete La requête à mapper
+     * @return Les fabricants présents dans la requête
      */
     static QList<Fabricant*>* mapper(QSqlQuery &requete);
 

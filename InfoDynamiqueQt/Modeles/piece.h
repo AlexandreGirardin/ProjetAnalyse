@@ -22,21 +22,7 @@ private:
 
 public:
 
-    /**
-     * @brief Piece
-     * @param parent
-     */
     explicit Piece(QObject* parent = 0);
-
-    /**
-     * @brief Piece
-     * @param a_id L'id à donner à la pièce
-     * @param a_nom Le nom à donner à la pièce
-     * @param a_description La description à donner à la pièce
-     * @param a_prix Le prix à donner à la pièce
-     * @param parent
-     */
-//    Piece(const int &a_id, const QString &a_nom, const QString &a_description, const int &a_prix, QObject* parent = 0);
 
     /**
      * @brief getNom

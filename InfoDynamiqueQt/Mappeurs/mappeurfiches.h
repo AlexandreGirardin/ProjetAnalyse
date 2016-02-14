@@ -8,6 +8,8 @@
 
 class MappeurFiches {
 
+    // Lit et écrit des objets Fiches dans la base de données
+
 public:
 
     /**
@@ -17,8 +19,20 @@ public:
      */
     static Fiche* getFiche(const int &id);
 
+    /**
+     * @brief fichesPourAppareil
+     * Retourne les fiches associées à un appareil donné
+     * @param idAppareil L'id de l'appareil à chercher
+     * @return Les fiches de l'appareil
+     */
     static QList<Fiche*>* fichesPourAppareil(const int &idAppareil);
 
+    /**
+     * @brief nombreFiches
+     * Retourne le nombre de fiches associées à un appareil donné
+     * @param idAppareil L'id de l'appareil à chercher
+     * @return Le nombre de fiches de l'appareil
+     */
     static int nombreFiches(const int &idAppareil);
 
     /**
@@ -47,6 +61,14 @@ private:
     static Fiche* mapper(const QSqlRecord &ligne);
 
     /**
+     * @brief mapper
+     * Construit toutes les fiches se retrouvant dans les résultats d'une requête SQL
+     * @param requete La requête à mapper
+     * @return Les fiches présentes dans la requête
+     */
+    static QList<Fiche*>* mapper(QSqlQuery &requete);
+
+    /**
      * @brief preparerRequete Assigne les valeurs d'une fiche à une requête préparée
      * @param fiche La fiche source
      * @param commande La commande SQL à préparer
@@ -62,13 +84,13 @@ private:
 
     /**
      * @brief ecrire
-     * @param fiche
-     * @param commande
-     * @return
+     * Effectue une opération SQL à l'intérieur d'une transaction
+     * La transaction est annulée si l'opération échoue et validée autrement
+     * @param appareil La fiche à inclure dans l'opération SQL
+     * @param commande La commande à exécuter
+     * @return Succès de l'opération
      */
     static bool ecrire(const Fiche* fiche, const QString &commande);
-
-    static QList<Fiche*>* mapper(QSqlQuery &requete);
 };
 
 #endif // MAPPEURFICHES

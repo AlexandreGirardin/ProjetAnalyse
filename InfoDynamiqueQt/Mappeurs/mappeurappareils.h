@@ -8,7 +8,7 @@
 
 class MappeurAppareils {
 
-    // Extrait des objets Appareil de la base de données
+    // Lit et écrit des objets Appareil dans la base de données
 
 public:
 
