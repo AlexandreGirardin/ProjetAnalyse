@@ -88,7 +88,7 @@ void ControleurOngletClients::peuplerClients()
     QSqlQueryModel* clients = new QSqlQueryModel(this);
     clients->setQuery(*RequetesSQL::afficherClients, *Application::bd);
     fragmentClients->peuplerTableau(clients);
-    fragmentClients->getTableau()->hideColumn(fragmentClients->getColonneId());
+    fragmentClients->tableau()->hideColumn(fragmentClients->colonneId());
 }
 
 void ControleurOngletClients::ajouterClient() const
@@ -98,15 +98,15 @@ void ControleurOngletClients::ajouterClient() const
 
 void ControleurOngletClients::modifierClient() const
 {
-    if (fragmentClients->getIdModele() != -1) {
-        ControleurClients::modifierClient(fragmentClients->getIdModele());
+    if (fragmentClients->idModele() != -1) {
+        ControleurClients::modifierClient(fragmentClients->idModele());
     }
 }
 
 void ControleurOngletClients::voirClient() const
 {
-    if (fragmentClients->getIdModele() != -1) {
-        ControleurClients::voirClient(fragmentClients->getIdModele());
+    if (fragmentClients->idModele() != -1) {
+        ControleurClients::voirClient(fragmentClients->idModele());
     }
 }
 
@@ -123,20 +123,20 @@ void ControleurOngletClients::filtrerClients(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentClients->peuplerTableau(resultats);
-        fragmentClients->getTableau()->hideColumn(fragmentClients->getColonneId());
+        fragmentClients->tableau()->hideColumn(fragmentClients->colonneId());
     }
 }
 
 void ControleurOngletClients::rechargerClients()
 {
-    filtrerClients(fragmentClients->getFiltre());
+    filtrerClients(fragmentClients->filtre());
 }
 
 void ControleurOngletClients::rafraichirClients()
 {
-    int selection = fragmentClients->getTableau()->currentIndex().row();
+    int selection = fragmentClients->tableau()->currentIndex().row();
     rechargerClients();
-    fragmentClients->getTableau()->selectRow(selection);
+    fragmentClients->tableau()->selectRow(selection);
 }
 
 // Appareils
@@ -146,20 +146,20 @@ void ControleurOngletClients::peuplerAppareils(const int &idClient)
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(requeteAppareils(idClient));
     fragmentAppareils->peuplerTableau(appareils);
-    fragmentAppareils->getTableau()->hideColumn(fragmentAppareils->getColonneId());
+    fragmentAppareils->tableau()->hideColumn(fragmentAppareils->colonneId());
 }
 
 void ControleurOngletClients::ajouterAppareil() const
 {
-    if (fragmentClients->getIdModele() != -1) {
-        ControleurAppareils::ajouterAppareil(fragmentClients->getIdModele());
+    if (fragmentClients->idModele() != -1) {
+        ControleurAppareils::ajouterAppareil(fragmentClients->idModele());
     }
 }
 
 void ControleurOngletClients::modifierAppareil() const
 {
-    if (fragmentAppareils->getIdModele() != -1) {
-        ControleurAppareils::modifierAppareil(fragmentAppareils->getIdModele());
+    if (fragmentAppareils->idModele() != -1) {
+        ControleurAppareils::modifierAppareil(fragmentAppareils->idModele());
     }
 }
 
@@ -168,21 +168,21 @@ void ControleurOngletClients::activerBoutonEffacerAppareil(const bool &actif) co
     if (!actif) {
         boutonEffacerAppareil->setEnabled(false);
     } else {
-        boutonEffacerAppareil->setEnabled(MappeurFiches::nombreFiches(fragmentAppareils->getIdModele()) == 0);
+        boutonEffacerAppareil->setEnabled(MappeurFiches::nombreFiches(fragmentAppareils->idModele()) == 0);
     }
 }
 
 void ControleurOngletClients::effacerAppareil() const
 {
-    if (fragmentAppareils->getIdModele() != -1) {
-        ControleurAppareils::effacerAppareil(fragmentAppareils->getIdModele());
+    if (fragmentAppareils->idModele() != -1) {
+        ControleurAppareils::effacerAppareil(fragmentAppareils->idModele());
     }
 }
 
 void ControleurOngletClients::voirAppareil() const
 {
-    if (fragmentAppareils->getIdModele() != -1) {
-        ControleurAppareils::voirAppareil(fragmentAppareils->getIdModele());
+    if (fragmentAppareils->idModele() != -1) {
+        ControleurAppareils::voirAppareil(fragmentAppareils->idModele());
     }
 }
 
@@ -198,7 +198,7 @@ QSqlQuery ControleurOngletClients::requeteAppareils(const int &idClient) const
 void ControleurOngletClients::filtrerAppareils(const QString &filtre)
 {
     if (filtre.isEmpty()) {
-        peuplerAppareils(fragmentClients->getIdModele());
+        peuplerAppareils(fragmentClients->idModele());
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*RequetesSQL::filtrerAppareils);
@@ -208,7 +208,7 @@ void ControleurOngletClients::filtrerAppareils(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentAppareils->peuplerTableau(resultats);
-        fragmentAppareils->getTableau()->hideColumn(fragmentAppareils->getColonneId());
+        fragmentAppareils->tableau()->hideColumn(fragmentAppareils->colonneId());
     }
 }
 
@@ -219,9 +219,9 @@ void ControleurOngletClients::rechargerAppareils()
 
 void ControleurOngletClients::rafraichirAppareils()
 {
-    int selection = fragmentAppareils->getTableau()->currentIndex().row();
+    int selection = fragmentAppareils->tableau()->currentIndex().row();
     rechargerAppareils();
-    fragmentAppareils->getTableau()->selectRow(selection);
+    fragmentAppareils->tableau()->selectRow(selection);
 }
 
 // Fiches
@@ -235,28 +235,28 @@ void ControleurOngletClients::peuplerFiches(const int &idAppareil)
 
 void ControleurOngletClients::ajouterFiche() const
 {
-    if (fragmentAppareils->getIdModele() != -1) {
-        ControleurFiches::ajouterFiche(fragmentAppareils->getIdModele());
+    if (fragmentAppareils->idModele() != -1) {
+        ControleurFiches::ajouterFiche(fragmentAppareils->idModele());
     }
 }
 
 void ControleurOngletClients::voirFiche() const
 {
-    if (fragmentAppareils->getIdModele() != -1) {
-        ControleurFiches::voirFiche(fragmentAppareils->getIdModele());
+    if (fragmentAppareils->idModele() != -1) {
+        ControleurFiches::voirFiche(fragmentAppareils->idModele());
     }
 }
 
 void ControleurOngletClients::activerCritereFiches()
 {
     commandeFiches = RequetesSQL::fichesActivesPourAppareil;
-    peuplerFiches(fragmentAppareils->getIdModele());
+    peuplerFiches(fragmentAppareils->idModele());
 }
 
 void ControleurOngletClients::desactiverCritereFiches()
 {
     commandeFiches = RequetesSQL::toutesFichesPourAppareil;
-    peuplerFiches(fragmentAppareils->getIdModele());
+    peuplerFiches(fragmentAppareils->idModele());
 }
 
 QSqlQuery ControleurOngletClients::requeteFiches(const int &idAppareil) const

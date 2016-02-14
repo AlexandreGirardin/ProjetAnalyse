@@ -31,12 +31,10 @@ private:
 
     // Id du modèle sélectionné dans le tableau
     // -1 S'il n'y en a aucun
-    int idModele;
+    int m_idModele;
 
     // L'index de la colonne des id des modèles dans le tableau
-    int colonneId;
-
-//    int dernierIndexSelectionne;
+    int m_colonneId;
 
     /**
      * @brief configurerBoutonAjouter
@@ -68,6 +66,13 @@ private:
      */
     void configurerChamp();
 
+    /**
+     * @brief getId
+     * @param index L'entrée du tableau duquel on souhaite connaître l'id du modèle
+     * @return L'id du modèle
+     */
+    int getId(const QModelIndex &index);
+
 public:
 
     /**
@@ -75,44 +80,66 @@ public:
      * @param parent
      */
     explicit Fragment(QWidget* parent = 0);
+
     ~Fragment();
 
+    /**
+     * @brief retirerEtiquette
+     * Retire l'étiquette de fragment
+     */
     void retirerEtiquette() const;
 
+    /**
+     * @brief setEtiquette
+     * Assigne un texte à l'étiquette de fragment
+     * @param etiquette Le texte à placer dans l'étiquette
+     */
     void setEtiquette(const QString &etiquette) const;
 
     /**
-     * @brief getBoutonAjouter
+     * @brief boutonAjouter
      * @return  Le bouton d'ajout de modèle du fragment
      */
     QPushButton* boutonAjouter() const;
 
     /**
-     * @brief getBoutonModifier
+     * @brief boutonModifier
      * @return Le bouton de modification de modèle du fragment
      */
     QPushButton* boutonModifier() const;
 
     /**
-     * @brief getBoutonVoir
+     * @brief boutonVoir
      * @return Le bouton de visualisation de modèle du fragment
      */
     QPushButton* boutonVoir() const;
 
     /**
      * @brief ajouterBouton
-     * Ajoute un bouton d'action au fragment
-     * @param bouton Le bouton à ajouter
+     * Ajoute un bouton au fragment et le connecte
+     * Le bouton sera actif en fonction de la validité de la sélection actuelle dans le tableau
+     * @param index La position souhaitée
+     * @param texte Le texte du bouton
+     * @param icone L'icône du bouton
+     * @return Le bouton connecté
      */
     QPushButton* ajouterBouton(const int &index, const QString &texte = 0, const QIcon &icone = QIcon());
 
+    /**
+     * @brief ajouterBoutonNonConnecte
+     * Ajoute un bouton au fragment
+     * @param index La position souhaitée
+     * @param texte Le texte du bouton
+     * @param icone L'icône du bouton
+     * @return Le bouton
+     */
     QPushButton* ajouterBoutonNonConnecte(const int &index, const QString &texte = 0, const QIcon icone = QIcon());
 
     /**
-     * @brief getCaseCocher
+     * @brief caseCocher
      * @return La case à cocher du fragment
      */
-    QPushButton *caseCocher() const;
+    QPushButton* caseCocher() const;
 
     /**
      * @brief champ
@@ -136,26 +163,19 @@ public:
      * @brief getFiltre
      * @return Le filtre de recherche actuel
      */
-    QString getFiltre() const;
+    QString filtre() const;
 
     /**
      * @brief getTableau
      * @return Le tableau de modèles du fragment
      */
-    QTableView* getTableau() const;
-
-    /**
-     * @brief getId
-     * @param index L'entrée du tableau duquel on souhaite connaître l'id du modèle
-     * @return L'id du modèle
-     */
-    int getId(const QModelIndex &index);
+    QTableView* tableau() const;
 
     /**
      * @brief getIdModele
      * @return L'id du modèle actuellement sélectionné dans le tableau, ou -1
      */
-    int getIdModele() const;
+    int idModele() const;
 
     /**
      * @brief setIdModele
@@ -164,10 +184,10 @@ public:
     void setIdModele(const int &value);
 
     /**
-     * @brief getColonneId
+     * @brief colonneId
      * @return Le numéro de la colonne du tableau contenant les id des modèles
      */
-    int getColonneId() const;
+    int colonneId() const;
 
     /**
      * @brief setColonneId
@@ -280,7 +300,7 @@ signals:
      * Émis lorsqu'un nouveau modèle est sélectionné
      * @param idModele L'id du nouveau modèle sélectionné
      */
-    void modeleSelectionne(const int idModele);
+    void modeleSelectionne(const int m_idModele);
 
     /**
      * @brief modeleRelache
@@ -297,7 +317,7 @@ signals:
     /**
      * @brief doubleClicModele
      * Émis lors d'un double clic sur un modèle du tableau
-     * Le premier clic sélectionne le modèle, donc getIdModele retourne déjà une valeur valide
+     * Le premier clic sélectionne le modèle, donc idModele retourne déjà une valeur valide
      */
     void doubleClicModele();
 

@@ -5,8 +5,8 @@
 
 Fragment::Fragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment)
 {
-    colonneId = 0;
-    idModele = -1;
+    m_colonneId = 0;
+    m_idModele = -1;
     ui->setupUi(this);
     ui->champ->setClearButtonEnabled(true);
     configurerBoutonAjouter();
@@ -64,14 +64,14 @@ void Fragment::configurerChamp()
     QObject::connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(rechercher(QString)));
 }
 
-int Fragment::getColonneId() const
+int Fragment::colonneId() const
 {
-    return colonneId;
+    return m_colonneId;
 }
 
 void Fragment::setColonneId(const int &value)
 {
-    colonneId = value;
+    m_colonneId = value;
 }
 
 QPushButton* Fragment::boutonAjouter() const
@@ -135,7 +135,7 @@ void Fragment::retirerChamp() const
     }
 }
 
-QString Fragment::getFiltre() const
+QString Fragment::filtre() const
 {
     if (ui->champ != NULL) {
         return ui->champ->text();
@@ -144,7 +144,7 @@ QString Fragment::getFiltre() const
     }
 }
 
-QTableView* Fragment::getTableau() const
+QTableView* Fragment::tableau() const
 {
     return ui->tableau;
 }
@@ -164,33 +164,33 @@ void Fragment::peuplerTableau(QAbstractTableModel* valeurs)
 int Fragment::getId(const QModelIndex &index)
 {
     int rangee = index.row();
-    QModelIndex caseId = ui->tableau->model()->index(rangee, colonneId);
+    QModelIndex caseId = ui->tableau->model()->index(rangee, m_colonneId);
     return ui->tableau->model()->data(caseId).toInt();
 }
 
-int Fragment::getIdModele() const
+int Fragment::idModele() const
 {
-    return idModele;
+    return m_idModele;
 }
 
 void Fragment::setIdModele(const int &value)
 {
-    idModele = value;
+    m_idModele = value;
 }
 
 void Fragment::relacherModele()
 {
     ui->tableau->clearSelection();
-    idModele = -1;
+    m_idModele = -1;
     emit selectionValide(false);
     emit modeleRelache();
 }
 
 void Fragment::selectionnerModele(const QModelIndex &index)
 {
-    idModele = getId(index);
+    m_idModele = getId(index);
     emit selectionValide(true);
-    emit modeleSelectionne(idModele);
+    emit modeleSelectionne(m_idModele);
 }
 
 void Fragment::basculerCase(const bool &etat)

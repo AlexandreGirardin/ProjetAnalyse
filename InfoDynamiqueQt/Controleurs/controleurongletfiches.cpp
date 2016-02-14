@@ -37,12 +37,12 @@ void ControleurOngletFiches::peuplerFiches()
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(*RequetesSQL::afficherFiches, *Application::bd);
     fragment->peuplerTableau(fiches);
-    fragment->getTableau()->hideColumn(0);
+    fragment->tableau()->hideColumn(0);
 }
 
 void ControleurOngletFiches::modifierFiche() const
 {
-    Fiche* fiche = MappeurFiches::getFiche(fragment->getIdModele());
+    Fiche* fiche = MappeurFiches::getFiche(fragment->idModele());
     if (fiche != NULL) {
         VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
         vue->setCommentaire(fiche->commentaire());
@@ -55,7 +55,7 @@ void ControleurOngletFiches::modifierFiche() const
 
 void ControleurOngletFiches::traiterFiche() const
 {
-    Fiche* fiche = MappeurFiches::getFiche(fragment->getIdModele());
+    Fiche* fiche = MappeurFiches::getFiche(fragment->idModele());
     if (fiche != NULL) {
         VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
         vue->setIdFiche(fiche->id());
@@ -78,19 +78,19 @@ void ControleurOngletFiches::filtrerFiches(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
-        fragment->getTableau()->hideColumn(0);
+        fragment->tableau()->hideColumn(0);
     }
 }
 
 void ControleurOngletFiches::recharger()
 {
-    filtrerFiches(fragment->getFiltre());
+    filtrerFiches(fragment->filtre());
 }
 
 void ControleurOngletFiches::rafraichir()
 {
-    int selection = fragment->getTableau()->currentIndex().row();
+    int selection = fragment->tableau()->currentIndex().row();
     recharger();
-    fragment->getTableau()->selectRow(selection);
+    fragment->tableau()->selectRow(selection);
 }
 

@@ -62,7 +62,7 @@ void ControleurOngletActions::peuplerActions()
     QSqlQueryModel* actions = new QSqlQueryModel(this);
     actions->setQuery(*requeteActions, *Application::bd);
     fragmentActions->peuplerTableau(actions);
-    fragmentActions->getTableau()->hideColumn(0);
+    fragmentActions->tableau()->hideColumn(0);
 }
 
 void ControleurOngletActions::filtrerActions(const QString &filtre)
@@ -78,8 +78,8 @@ void ControleurOngletActions::filtrerActions(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentActions->peuplerTableau(resultats);
-        fragmentActions->getTableau()->hideColumn(0);
-        fragmentActions->getTableau()->resizeColumnsToContents();
+        fragmentActions->tableau()->hideColumn(0);
+        fragmentActions->tableau()->resizeColumnsToContents();
     }
 }
 
@@ -90,22 +90,22 @@ void ControleurOngletActions::creerAction()
 
 void ControleurOngletActions::modifierAction()
 {
-    if (fragmentActions->getIdModele() != -1) {
-        ControleurActions::modifierAction(fragmentActions->getIdModele());
+    if (fragmentActions->idModele() != -1) {
+        ControleurActions::modifierAction(fragmentActions->idModele());
     }
 }
 
 void ControleurOngletActions::changerEtatAction()
 {
-    if (fragmentActions->getIdModele() != -1) {
-        ControleurActions::changerEtat(fragmentActions->getIdModele());
+    if (fragmentActions->idModele() != -1) {
+        ControleurActions::changerEtat(fragmentActions->idModele());
     }
 }
 
 void ControleurOngletActions::supprimerAction()
 {
-    if (fragmentActions->getIdModele() != -1) {
-        ControleurActions::effacerAction(fragmentActions->getIdModele());
+    if (fragmentActions->idModele() != -1) {
+        ControleurActions::effacerAction(fragmentActions->idModele());
     }
 }
 
@@ -114,7 +114,7 @@ void ControleurOngletActions::activerBoutonSupprimerAction(const bool &actif)
     if (!actif) {
         boutonSupprimerAction->setEnabled(false);
     } else {
-        if (MappeurActions::nombreTachesPourAction(fragmentActions->getIdModele()) == 0) {
+        if (MappeurActions::nombreTachesPourAction(fragmentActions->idModele()) == 0) {
             boutonSupprimerAction->setEnabled(true);
             boutonSupprimerAction->setToolTip("");
         } else {
@@ -126,20 +126,20 @@ void ControleurOngletActions::activerBoutonSupprimerAction(const bool &actif)
 
 void ControleurOngletActions::rechargerActions()
 {
-    filtrerActions(fragmentActions->getFiltre());
+    filtrerActions(fragmentActions->filtre());
 }
 
 void ControleurOngletActions::activerCritereActions()
 {
     requeteActions = RequetesSQL::afficherActionsActives;
     requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
-    filtrerActions(fragmentActions->getFiltre());
+    filtrerActions(fragmentActions->filtre());
 }
 
 void ControleurOngletActions::desactiverCritereActions() {
     requeteActions = RequetesSQL::afficherToutesActions;
     requeteActionsFiltre = RequetesSQL::filtrerToutesActions;
-    filtrerActions(fragmentActions->getFiltre());
+    filtrerActions(fragmentActions->filtre());
 }
 
 // Ensembles
@@ -163,9 +163,9 @@ void ControleurOngletActions::configurerFragmentEnsembles()
 
 void ControleurOngletActions::rafraichirActions()
 {
-    int selection = fragmentActions->getTableau()->currentIndex().row();
+    int selection = fragmentActions->tableau()->currentIndex().row();
     rechargerActions();
-    fragmentActions->getTableau()->selectRow(selection);
+    fragmentActions->tableau()->selectRow(selection);
 }
 
 void ControleurOngletActions::peuplerEnsembles()
@@ -173,7 +173,7 @@ void ControleurOngletActions::peuplerEnsembles()
     QSqlQueryModel* ensembles = new QSqlQueryModel(this);
     ensembles->setQuery(*RequetesSQL::afficherEnsembles, *Application::bd);
     fragmentEnsembles->peuplerTableau(ensembles);
-    fragmentEnsembles->getTableau()->hideColumn(0);
+    fragmentEnsembles->tableau()->hideColumn(0);
 }
 
 void ControleurOngletActions::filtrerEnsembles(const QString &filtre)
@@ -189,7 +189,7 @@ void ControleurOngletActions::filtrerEnsembles(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragmentEnsembles->peuplerTableau(resultats);
-        fragmentEnsembles->getTableau()->hideColumn(0);
+        fragmentEnsembles->tableau()->hideColumn(0);
     }
 }
 
@@ -200,33 +200,33 @@ void ControleurOngletActions::creerEnsemble()
 
 void ControleurOngletActions::modifierEnsemble()
 {
-    if (fragmentEnsembles->getIdModele() != -1) {
-        ControleurEnsembles::modifierEnsemble(fragmentEnsembles->getIdModele());
+    if (fragmentEnsembles->idModele() != -1) {
+        ControleurEnsembles::modifierEnsemble(fragmentEnsembles->idModele());
     }
 }
 
 void ControleurOngletActions::voirEnsemble()
 {
-    if (fragmentEnsembles->getIdModele() != -1) {
-        ControleurEnsembles::voirEnsemble(fragmentEnsembles->getIdModele());
+    if (fragmentEnsembles->idModele() != -1) {
+        ControleurEnsembles::voirEnsemble(fragmentEnsembles->idModele());
     }
 }
 
 void ControleurOngletActions::supprimerEnsemble()
 {
-    if (fragmentEnsembles->getIdModele() != -1) {
-        ControleurEnsembles::supprimerEnsemble(fragmentEnsembles->getIdModele());
+    if (fragmentEnsembles->idModele() != -1) {
+        ControleurEnsembles::supprimerEnsemble(fragmentEnsembles->idModele());
     }
 }
 
 void ControleurOngletActions::rechargerEnsembles()
 {
-    filtrerEnsembles(fragmentEnsembles->getFiltre());
+    filtrerEnsembles(fragmentEnsembles->filtre());
 }
 
 void ControleurOngletActions::ensembleModifie()
 {
-    int selection = fragmentEnsembles->getTableau()->currentIndex().row();
+    int selection = fragmentEnsembles->tableau()->currentIndex().row();
     rechargerEnsembles();
-    fragmentEnsembles->getTableau()->selectRow(selection);
+    fragmentEnsembles->tableau()->selectRow(selection);
 }

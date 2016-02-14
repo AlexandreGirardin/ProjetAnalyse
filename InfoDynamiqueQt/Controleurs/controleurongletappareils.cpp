@@ -42,7 +42,7 @@ void ControleurOngletAppareils::activerBoutonSupprimer(const bool actif)
     if (!actif) {
         boutonSupprimer->setEnabled(false);
     } else {
-        if (MappeurFiches::nombreFiches(fragment->getIdModele()) == 0) {
+        if (MappeurFiches::nombreFiches(fragment->idModele()) == 0) {
             boutonSupprimer->setEnabled(true);
             boutonSupprimer->setToolTip("");
         } else {
@@ -54,8 +54,8 @@ void ControleurOngletAppareils::activerBoutonSupprimer(const bool actif)
 
 void ControleurOngletAppareils::supprimer() const
 {
-    if (fragment->getIdModele() != -1) {
-        ControleurAppareils::effacerAppareil(fragment->getIdModele());
+    if (fragment->idModele() != -1) {
+        ControleurAppareils::effacerAppareil(fragment->idModele());
     }
 }
 
@@ -64,20 +64,20 @@ void ControleurOngletAppareils::peuplerAppareils()
     QSqlQueryModel* appareils = new QSqlQueryModel(this);
     appareils->setQuery(*RequetesSQL::afficherAppareils, *Application::bd);
     fragment->peuplerTableau(appareils);
-    fragment->getTableau()->hideColumn(fragment->getColonneId());
+    fragment->tableau()->hideColumn(fragment->colonneId());
 }
 
 void ControleurOngletAppareils::modifierAppareil()
 {
-    if (fragment->getIdModele() != -1) {
-        ControleurAppareils::modifierAppareil(fragment->getIdModele());
+    if (fragment->idModele() != -1) {
+        ControleurAppareils::modifierAppareil(fragment->idModele());
     }
 }
 
 void ControleurOngletAppareils::voirAppareil()
 {
-    if (fragment->getIdModele() != -1) {
-        ControleurAppareils::voirAppareil(fragment->getIdModele());
+    if (fragment->idModele() != -1) {
+        ControleurAppareils::voirAppareil(fragment->idModele());
     }
 }
 
@@ -94,19 +94,19 @@ void ControleurOngletAppareils::filtrerAppareils(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
-        fragment->getTableau()->hideColumn(fragment->getColonneId());
+        fragment->tableau()->hideColumn(fragment->colonneId());
     }
 }
 
 void ControleurOngletAppareils::recharger()
 {
-    filtrerAppareils(fragment->getFiltre());
+    filtrerAppareils(fragment->filtre());
 }
 
 void ControleurOngletAppareils::rafraichir()
 {
-    int selection = fragment->getTableau()->currentIndex().row();
+    int selection = fragment->tableau()->currentIndex().row();
     recharger();
-    fragment->getTableau()->selectRow(selection);
+    fragment->tableau()->selectRow(selection);
 }
 
