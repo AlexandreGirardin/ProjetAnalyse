@@ -3,19 +3,14 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurensembles.h"
 #include "Modeles/action.h"
-#include "Vues/fragment.h"
 #include "Vues/vuegestionaction.h"
-
-#include <QSqlQuery>
-#include <QSplitter>
 
 class ControleurActions : public QObject
 {
     Q_OBJECT
 
-    // Contrôle l'exécution de l'onglet Actions de la vue principale
+    // Contrôle la gestion (création, modification, suppression) des actions
 
 private:
 
@@ -25,7 +20,9 @@ private:
      * @param vue La vue cible
      * @param action L'action source
      */
-    static void assignerAction(VueGestionAction* vue, const Action *action);
+    static void assignerAction(VueGestionAction* vue, const Action* action);
+
+    static void extraireAction(Action* action, const VueGestionAction* vue);
 
 public slots:
 

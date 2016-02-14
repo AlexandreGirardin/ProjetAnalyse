@@ -3,9 +3,8 @@
 
 #include "Modeles/client.h"
 
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QSqlRecord>
-
 
 class MappeurClients {
 
@@ -53,7 +52,7 @@ private:
      */
     static QSqlQuery* preparerRequete(const Client* client, const QString &commande);
 
-    static bool ecrire(const Client *client, const QString &commande);
+    static bool ecrire(const Client* client, const QString &commande);
 };
 
 #endif // MAPPEURCLIENTS_H

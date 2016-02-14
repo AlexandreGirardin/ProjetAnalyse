@@ -3,7 +3,7 @@
 
 #include "Modeles/fabricant.h"
 
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QSqlRecord>
 
 class MappeurFabricants {

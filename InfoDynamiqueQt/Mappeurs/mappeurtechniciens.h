@@ -3,7 +3,7 @@
 
 #include "Modeles/technicien.h"
 
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QSqlRecord>
 
 class MappeurTechniciens {

@@ -1,10 +1,6 @@
 #include "Mappeurs/mappeurtypeappareils.h"
 
-#include "Controleurs/application.h"
-
-#include <QVariant>
-#include <QtSql/QSqlQuery>
-#include <QDebug>
+#include <Controleurs/application.h>
 
 TypeAppareil* MappeurTypeAppareils::getTypeAppareil(const int &idType)
 {

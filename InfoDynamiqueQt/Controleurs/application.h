@@ -124,7 +124,7 @@ signals:
      * @brief appareilsModifies
      * Émis lorsque les données des appareils ont été modifiées
      */
-    void appareilsModifies() const;
+    void appareilModifie() const;
 
     /**
      * @brief fichesModifiees
@@ -142,7 +142,7 @@ signals:
      * @brief actionsModifiees
      * Émis lorsque les données des actions ont été modifiées
      */
-    void actionsModifiees() const;
+    void actionModifiee() const;
 
     /**
      * @brief nombreActionsChange

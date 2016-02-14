@@ -1,12 +1,9 @@
 #ifndef MAPPEURAPPAREILS_H
 #define MAPPEURAPPAREILS_H
 
-#include "Mappeurs/mappeurtypeappareils.h"
-#include "Modeles/action.h"
 #include "Modeles/appareil.h"
-#include "Modeles/client.h"
 
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QSqlRecord>
 
 class MappeurAppareils {

@@ -114,7 +114,13 @@ void ControleurOngletActions::activerBoutonSupprimerAction(const bool &actif)
     if (!actif) {
         boutonSupprimerAction->setEnabled(false);
     } else {
-        boutonSupprimerAction->setEnabled(MappeurActions::nombreTachesPourAction(fragmentActions->getIdModele()) == 0);
+        if (MappeurActions::nombreTachesPourAction(fragmentActions->getIdModele()) == 0) {
+            boutonSupprimerAction->setEnabled(true);
+            boutonSupprimerAction->setToolTip("");
+        } else {
+            boutonSupprimerAction->setEnabled(false);
+            boutonSupprimerAction->setToolTip(tr("Cette action ne peut pas être supprimée."));
+        }
     }
 }
 

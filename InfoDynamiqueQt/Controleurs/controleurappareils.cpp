@@ -1,11 +1,12 @@
 #include "Controleurs/controleurappareils.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/mappeurappareils.h"
 #include "Mappeurs/mappeurfabricants.h"
+#include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurtypeappareils.h"
 
 #include <QMessageBox>
-#include <QDebug>
 
 void ControleurAppareils::ajouterAppareil(const int &idClient)
 {
@@ -19,8 +20,6 @@ void ControleurAppareils::ajouterAppareil(const int &idClient)
         extraireAppareil(appareil, vue);
         if (MappeurAppareils::inserer(appareil)) {
             emit Application::getInstance()->nombreAppareilsChange();
-        } else {
-            qDebug() << "Pas marché: " << appareil->out();
         }
         vue->deleteLater();
     }
@@ -36,9 +35,7 @@ void ControleurAppareils::modifierAppareil(const int &idAppareil)
         if (vue->exec() == vue->Accepted) {
             extraireAppareil(appareil, vue);
             if (MappeurAppareils::mettreAJour(appareil)) {
-                emit Application::getInstance()->appareilsModifies();
-            } else {
-                qDebug() << "Pas marché: " << appareil->out();
+                emit Application::getInstance()->appareilModifie();
             }
         }
         vue->deleteLater();

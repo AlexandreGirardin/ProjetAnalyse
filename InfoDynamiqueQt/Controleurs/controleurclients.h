@@ -3,14 +3,14 @@
 
 #include <QObject>
 
-#include "Mappeurs/mappeurclients.h"
+#include "Modeles/client.h"
 #include "Vues/vuegestionclient.h"
 
 class ControleurClients : public QObject{
 
     Q_OBJECT
 
-    // Contrôle l'exécution de la création, de la lecture et de la mise à jour des clients
+    // Contrôle la gestion (création, modification, visualisation) des clients
 
 private:
 
@@ -28,7 +28,7 @@ private:
      * @param client Le client cible
      * @param vue La vue source
      */
-    static void extraireClient(Client* client, const VueGestionClient *vue);
+    static void extraireClient(Client* client, const VueGestionClient* vue);
 
 public slots:
 

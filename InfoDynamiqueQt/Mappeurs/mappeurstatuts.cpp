@@ -2,9 +2,6 @@
 
 #include "Controleurs/application.h"
 
-#include <QVariant>
-#include <QtSql/QSqlQuery>
-
 Statut* MappeurStatuts::getStatutFiche(const int &idStatut)
 {
     return getStatut(idStatut, QString("SELECT * FROM statutsFiche WHERE id=:idStatut"));

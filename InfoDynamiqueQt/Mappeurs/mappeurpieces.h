@@ -3,7 +3,7 @@
 
 #include "Modeles/piece.h"
 
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QSqlRecord>
 
 class MappeurPieces {

@@ -2,9 +2,8 @@
 #define MAPPEURACTIONS_H
 
 #include "Modeles/action.h"
-#include "Modeles/ensembleactions.h"
 
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QSqlRecord>
 
 class MappeurActions {

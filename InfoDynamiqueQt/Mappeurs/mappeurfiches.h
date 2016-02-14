@@ -3,7 +3,7 @@
 
 #include "Modeles/fiche.h"
 
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QSqlRecord>
 
 class MappeurFiches {

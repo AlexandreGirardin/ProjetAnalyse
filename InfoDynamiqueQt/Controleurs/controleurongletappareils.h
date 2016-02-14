@@ -3,8 +3,6 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurappareils.h"
-#include "Mappeurs/mappeurappareils.h"
 #include "Vues/fragment.h"
 
 class ControleurOngletAppareils : public QObject

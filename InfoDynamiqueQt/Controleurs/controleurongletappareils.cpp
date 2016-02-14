@@ -1,12 +1,13 @@
 #include "controleurongletappareils.h"
-#include "ui_vueprincipale.h"
 
-#include "Controleurs/controleurbd.h"
-#include "Controleurs/requetessql.h"
-
-#include <QSqlQueryModel>
-#include <QDebug>
 #include "Controleurs/application.h"
+#include "Controleurs/controleurappareils.h"
+#include "Controleurs/requetessql.h"
+#include "Mappeurs/mappeurappareils.h"
+#include "Mappeurs/mappeurfiches.h"
+
+#include <QLayout>
+#include <QSqlQueryModel>
 
 ControleurOngletAppareils::ControleurOngletAppareils(QWidget* vue)
     : QObject(vue)
@@ -41,7 +42,13 @@ void ControleurOngletAppareils::activerBoutonSupprimer(const bool actif)
     if (!actif) {
         boutonSupprimer->setEnabled(false);
     } else {
-        boutonSupprimer->setEnabled(MappeurFiches::nombreFiches(fragment->getIdModele()) == 0);
+        if (MappeurFiches::nombreFiches(fragment->getIdModele()) == 0) {
+            boutonSupprimer->setEnabled(true);
+            boutonSupprimer->setToolTip("");
+        } else {
+            boutonSupprimer->setEnabled(false);
+            boutonSupprimer->setToolTip(tr("Cet appareil ne peut pas être supprimé."));
+        }
     }
 }
 

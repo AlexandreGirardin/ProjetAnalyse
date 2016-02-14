@@ -4,9 +4,7 @@
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurensembles.h"
 
-#include <QDebug>
 #include <QMessageBox>
-#include <QSqlQueryModel>
 
 void ControleurEnsembles::creerEnsemble()
 {
@@ -47,9 +45,9 @@ void ControleurEnsembles::voirEnsemble(const int &idEnsemble)
     if (ensemble != NULL) {
         VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
         vue->setWindowTitle(tr("Ensemble de tâches"));
-        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         assignerEnsemble(vue, ensemble);
         vue->setActions(ensemble->actions());
+        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
     ensemble->deleteLater();

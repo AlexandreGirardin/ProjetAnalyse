@@ -2,8 +2,10 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/requetessql.h"
+#include "Controleurs/controleurappareils.h"
+#include "Controleurs/controleurclients.h"
+#include "Controleurs/controleurfiches.h"
 
-#include <QDebug>
 #include <QLayout>
 #include <QSqlQueryModel>
 
@@ -226,14 +228,14 @@ void ControleurOngletClients::peuplerFiches(const int &idAppareil)
 void ControleurOngletClients::ajouterFiche() const
 {
     if (fragmentAppareils->getIdModele() != -1) {
-        gestionFiche->ajouterFiche(fragmentAppareils->getIdModele());
+        ControleurFiches::ajouterFiche(fragmentAppareils->getIdModele());
     }
 }
 
 void ControleurOngletClients::voirFiche() const
 {
     if (fragmentAppareils->getIdModele() != -1) {
-        gestionFiche->voirFiche(fragmentAppareils->getIdModele());
+        ControleurFiches::voirFiche(fragmentAppareils->getIdModele());
     }
 }
 

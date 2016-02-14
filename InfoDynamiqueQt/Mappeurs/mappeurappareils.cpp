@@ -1,9 +1,9 @@
 #include "mappeurappareils.h"
 
 #include "Controleurs/application.h"
-#include "Controleurs/controleurbd.h"
 #include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeurfabricants.h"
+#include "Mappeurs/mappeurtypeappareils.h"
 
 #include <QSqlError>
 

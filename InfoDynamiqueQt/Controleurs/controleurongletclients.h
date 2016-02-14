@@ -3,13 +3,10 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurappareils.h"
-#include "Controleurs/controleurclients.h"
-#include "Controleurs/controleurfiches.h"
 #include "Vues/fragment.h"
 
-#include <QSqlQuery>
 #include <QSplitter>
+#include <QSqlQuery>
 
 class ControleurOngletClients : public QObject
 {
@@ -30,9 +27,6 @@ private:
 
     // Le séparateur redimensionnable contenant les fragments
     QSplitter* splitter;
-
-    // Le contrôleur de gestion de fiches
-    ControleurFiches* gestionFiche;
 
     // Le fragment des clients
     Fragment* fragmentClients;

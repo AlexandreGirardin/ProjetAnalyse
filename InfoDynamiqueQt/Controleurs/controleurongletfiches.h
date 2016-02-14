@@ -3,8 +3,6 @@
 
 #include <QObject>
 
-#include "Controleurs/controleurfiches.h"
-#include "Mappeurs/mappeurfiches.h"
 #include "Vues/fragment.h"
 
 class ControleurOngletFiches : public QObject

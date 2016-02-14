@@ -4,7 +4,6 @@
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurstatuts.h"
 
-#include <QSqlQuery>
 #include <QSqlError>
 
 Tache *MappeurTaches::getTache(const int &id)

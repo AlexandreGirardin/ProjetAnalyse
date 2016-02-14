@@ -1,11 +1,8 @@
 #include "Controleurs/controleurclients.h"
 
 #include "Controleurs/application.h"
-#include "Controleurs/controleurbd.h"
+#include "Mappeurs/mappeurclients.h"
 #include "Vues/vueclient.h"
-
-#include <QSqlQueryModel>
-#include <QDebug>
 
 void ControleurClients::ajouterClient()
 {
@@ -16,8 +13,6 @@ void ControleurClients::ajouterClient()
         extraireClient(client, vue);
         if (MappeurClients::inserer(client)) {
             emit Application::getInstance()->clientsModifies();
-        } else {
-            qDebug() << "Pas marché: " << client->out();
         }
         vue->deleteLater();
     }
@@ -28,18 +23,16 @@ void ControleurClients::modifierClient(const int &idClient)
     Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
         VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
-        client->setParent(vue);
         vue->setWindowTitle(tr("Modifier un client"));
         assignerClient(vue, client);
         if (vue->exec() == vue->Accepted) {
             extraireClient(client, vue);
             if (MappeurClients::mettreAJour(client)) {
                 emit Application::getInstance()->clientsModifies();
-            } else {
-                qDebug() << "Pas marché" << client->out();
             }
         }
         vue->deleteLater();
+        client->deleteLater();
     }
 }
 
@@ -48,7 +41,6 @@ void ControleurClients::voirClient(const int &idClient)
     Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
         VueClient* vue = new VueClient(Application::vuePrincipale());
-        client->setParent(vue);
         vue->setWindowTitle(tr("Informations d'un client"));
         vue->setPrenom(client->prenom());
         vue->setNom(client->nom());
@@ -56,6 +48,7 @@ void ControleurClients::voirClient(const int &idClient)
         vue->setAdresse(client->adresse());
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
+        client->deleteLater();
     }
 }
 

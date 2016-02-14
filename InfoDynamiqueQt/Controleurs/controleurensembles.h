@@ -26,7 +26,7 @@ private:
      * @param vue La vue cible
      * @param ensemble L'ensemble source
      */
-    static void assignerEnsemble(VueEnsemble *vue, const EnsembleActions *ensemble);
+    static void assignerEnsemble(VueEnsemble* vue, const EnsembleActions* ensemble);
 
     /**
      * @brief extraireEnsemble

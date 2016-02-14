@@ -2,8 +2,8 @@
 
 #include "Controleurs/application.h"
 #include "Mappeurs/aidemappeurs.h"
+#include "Mappeurs/mappeurappareils.h"
 
-#include <QDebug>
 #include <QSqlError>
 
 Client* MappeurClients::getClient(const int &id)

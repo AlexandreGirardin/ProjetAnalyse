@@ -3,7 +3,7 @@
 
 #include "Modeles/statut.h"
 
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QSqlRecord>
 
 class MappeurStatuts {

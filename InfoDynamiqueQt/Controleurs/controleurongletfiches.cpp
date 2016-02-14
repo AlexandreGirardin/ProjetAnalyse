@@ -1,15 +1,14 @@
 #include "Controleurs/controleurongletfiches.h"
-#include "ui_vueprincipale.h"
 
 #include "Controleurs/application.h"
 #include "Controleurs/requetessql.h"
 #include "Mappeurs/mappeurensembles.h"
+#include "Mappeurs/mappeurfiches.h"
 #include "Vues/vueeditionfiche.h"
 #include "Vues/vuegestionfiche.h"
 
+#include <QLayout>
 #include <QSqlQueryModel>
-#include <QDebug>
-#include "Controleurs/application.h"
 
 ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     : QObject(vue)

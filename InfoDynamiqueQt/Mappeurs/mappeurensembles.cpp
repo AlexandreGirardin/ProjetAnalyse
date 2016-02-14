@@ -4,9 +4,7 @@
 #include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeuractions.h"
 
-#include <QtSql/QSqlQuery>
-#include <QtSql/QSqlError>
-#include <QVariant>
+#include <QSqlError>
 
 EnsembleActions* MappeurEnsembles::getEnsemble(const int &id)
 {

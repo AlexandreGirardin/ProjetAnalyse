@@ -1,20 +1,23 @@
 #include "controleuractions.h"
-#include "ui_vueprincipale.h"
 
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurtaches.h"
-#include "Vues/vueaction.h"
 
 #include <QMessageBox>
-#include <QSqlQueryModel>
-#include <QDebug>
 
-void ControleurActions::assignerAction(VueGestionAction* vue, const Action *action)
+void ControleurActions::assignerAction(VueGestionAction* vue, const Action* action)
 {
     vue->setNom(action->nom());
     vue->setDescription(action->description());
     vue->setEtat(action->etat());
+}
+
+void ControleurActions::extraireAction(Action* action, const VueGestionAction* vue)
+{
+    action->setNom(vue->getNom());
+    action->setDescription(vue->getDescription());
+    action->setEtat(vue->getEtat());
 }
 
 void ControleurActions::creerAction()
@@ -33,9 +36,7 @@ Action* ControleurActions::creerEtRetournerAction()
     vue->setEtat(true);
     if (vue->exec() == vue->Accepted) {
         action = new Action();
-        action->setNom(vue->getNom());
-        action->setDescription(vue->getDescription());
-        action->setEtat(vue->getEtat());
+        extraireAction(action, vue);
         if (MappeurActions::inserer(action)) {
             emit Application::getInstance()->nombreActionsChange();
         }
@@ -52,11 +53,9 @@ void ControleurActions::modifierAction(const int &idAction)
         vue->setWindowTitle(tr("Modifier une action"));
         assignerAction(vue, action);
         if (vue->exec()) {
-            action->setNom(vue->getNom());
-            action->setDescription(vue->getDescription());
-            action->setEtat(vue->getEtat());
+            extraireAction(action, vue);
             if (MappeurActions::mettreAJour(action)) {
-                emit Application::getInstance()->actionsModifiees();
+                emit Application::getInstance()->actionModifiee();
             }
         }
     }
@@ -93,7 +92,7 @@ void ControleurActions::changerEtat(const int &idAction)
     if (action != NULL) {
         action->setEtat(!action->etat());
         if (MappeurActions::mettreAJour(action)) {
-            emit Application::getInstance()->actionsModifiees();
+            emit Application::getInstance()->actionModifiee();
         }
     }
     action->deleteLater();

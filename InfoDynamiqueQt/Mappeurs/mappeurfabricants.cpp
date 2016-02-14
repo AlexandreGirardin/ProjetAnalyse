@@ -2,8 +2,7 @@
 
 #include "Controleurs/application.h"
 
-#include <QVariant>
-#include <QtSql/QSqlQuery>
+#include <QSqlError>
 
 Fabricant* MappeurFabricants::getFabricant(const int &id)
 {

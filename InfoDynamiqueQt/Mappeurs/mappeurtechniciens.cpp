@@ -2,8 +2,7 @@
 
 #include "Controleurs/application.h"
 
-#include <QVariant>
-#include <QtSql/QSqlQuery>
+#include <QSqlError>
 
 Technicien* MappeurTechniciens::getTechnicien(const int &id)
 {
