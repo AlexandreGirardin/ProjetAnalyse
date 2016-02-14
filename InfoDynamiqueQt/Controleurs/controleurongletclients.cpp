@@ -79,6 +79,8 @@ void ControleurOngletClients::configurerFragmentFiches()
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
+    QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
+    QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
 }
 
 // Clients
@@ -134,9 +136,9 @@ void ControleurOngletClients::rechargerClients()
 
 void ControleurOngletClients::rafraichirClients()
 {
-    int selection = fragmentClients->tableau()->currentIndex().row();
+    int selection = fragmentClients->rangeeSelectionnee();
     rechargerClients();
-    fragmentClients->tableau()->selectRow(selection);
+    fragmentClients->selectionnerRangee(selection);
 }
 
 // Appareils
@@ -219,9 +221,9 @@ void ControleurOngletClients::rechargerAppareils()
 
 void ControleurOngletClients::rafraichirAppareils()
 {
-    int selection = fragmentAppareils->tableau()->currentIndex().row();
+    int selection = fragmentAppareils->rangeeSelectionnee();
     rechargerAppareils();
-    fragmentAppareils->tableau()->selectRow(selection);
+    fragmentAppareils->selectionnerRangee(selection);
 }
 
 // Fiches
@@ -266,4 +268,16 @@ QSqlQuery ControleurOngletClients::requeteFiches(const int &idAppareil) const
     requete.bindValue(":idAppareil", idAppareil);
     requete.exec();
     return requete;
+}
+
+void ControleurOngletClients::rechargerFiches()
+{
+    peuplerFiches(fragmentAppareils->idModele());
+}
+
+void ControleurOngletClients::rafraichirFiches()
+{
+    int selection = fragmentFiches->rangeeSelectionnee();
+    rechargerFiches();
+    fragmentFiches->selectionnerRangee(selection);
 }

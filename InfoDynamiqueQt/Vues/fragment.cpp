@@ -149,6 +149,16 @@ QTableView* Fragment::tableau() const
     return ui->tableau;
 }
 
+int Fragment::rangeeSelectionnee() const
+{
+    return ui->tableau->currentIndex().row();
+}
+
+void Fragment::selectionnerRangee(const int &rangee) const
+{
+    ui->tableau->selectRow(rangee);
+}
+
 void Fragment::peuplerTableau(QAbstractTableModel* valeurs)
 {
     QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->tableau);

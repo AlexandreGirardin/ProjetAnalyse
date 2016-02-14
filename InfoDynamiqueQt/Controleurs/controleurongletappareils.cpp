@@ -105,8 +105,8 @@ void ControleurOngletAppareils::recharger()
 
 void ControleurOngletAppareils::rafraichir()
 {
-    int selection = fragment->tableau()->currentIndex().row();
+    int selection = fragment->rangeeSelectionnee();
     recharger();
-    fragment->tableau()->selectRow(selection);
+    fragment->selectionnerRangee(selection);
 }
 

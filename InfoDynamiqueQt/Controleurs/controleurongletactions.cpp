@@ -165,9 +165,9 @@ void ControleurOngletActions::configurerFragmentEnsembles()
 
 void ControleurOngletActions::rafraichirActions()
 {
-    int selection = fragmentActions->tableau()->currentIndex().row();
+    int selection = fragmentActions->rangeeSelectionnee();
     rechargerActions();
-    fragmentActions->tableau()->selectRow(selection);
+    fragmentActions->selectionnerRangee(selection);
 }
 
 void ControleurOngletActions::peuplerEnsembles()
@@ -228,7 +228,7 @@ void ControleurOngletActions::rechargerEnsembles()
 
 void ControleurOngletActions::ensembleModifie()
 {
-    int selection = fragmentEnsembles->tableau()->currentIndex().row();
+    int selection = fragmentEnsembles->rangeeSelectionnee();
     rechargerEnsembles();
-    fragmentEnsembles->tableau()->selectRow(selection);
+    fragmentEnsembles->selectionnerRangee(selection);
 }

@@ -205,6 +205,10 @@ private slots:
     void rechargerAppareils();
 
     void rafraichirAppareils();
+
+    void rechargerFiches();
+
+    void rafraichirFiches();
 };
 
 #endif // CONTROLEURCLIENTS_H

@@ -172,6 +172,19 @@ public:
     QTableView* tableau() const;
 
     /**
+     * @brief rangeeSelection
+     * @return La rangée du tableau actuellement sélectionnée
+     */
+    int rangeeSelectionnee() const;
+
+    /**
+     * @brief selectionnerRangee
+     * Sélectionne une rangée dans le tableau
+     * @param rangee La rangée à sélectionner
+     */
+    void selectionnerRangee(const int &rangee) const;
+
+    /**
      * @brief getIdModele
      * @return L'id du modèle actuellement sélectionné dans le tableau, ou -1
      */
