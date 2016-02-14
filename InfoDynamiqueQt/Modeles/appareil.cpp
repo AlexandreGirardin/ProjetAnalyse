@@ -102,5 +102,9 @@ QString Appareil::out() const
 
 QString Appareil::joliOut() const
 {
-    return m_type->nom() + " " + m_fabricant->nom() + " (" + m_description + ") ";
+    QString out = m_type->nom() + " " + m_fabricant->nom();
+    if (!m_description.isEmpty()) {
+       out = out + " (" + m_description + ") ";
+    }
+    return out;
 }
