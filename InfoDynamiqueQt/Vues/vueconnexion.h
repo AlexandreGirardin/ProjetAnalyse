@@ -20,40 +20,87 @@ private:
     // Interface utilisée pour la vue
     Ui::VueConnexion *ui;
 
-    // String du modèle sélectionné dans le tableau
-    // -1 S'il n'y en a aucun
-    QString nomBD;
+    QPushButton* boutonOk;
 
 public:
     explicit VueConnexion(QWidget *parent = 0);
     ~VueConnexion();
 
     /**
-     * @brief getNom
-     * @param index L'entrée du tableau duquel on souhaite connaître le nom de la BD
-     * @return Le nom de la BD
+     * @brief getNomBD
+     * @return Le nom de la base de données sélectionnée
      */
-    QString getNom(const QModelIndex &index);
+    QString getNomBD() const;
 
     /**
-     * @brief getNomBD
-     * @return Le nom de la BD
+     * @brief getHote
+     * @return La valeur actuelle du champ d'hôte
      */
-    QString getNomBD();
+    QString getHote() const;
 
-    QString getHote();
-    int getPort();
-    QString getUsager();
-    QString getMotDePasse();
+    /**
+     * @brief setHote
+     * Assigne une valeur au champ d'hôte
+     * @param hote La valeur à assigner
+     */
+    void setHote(const QString &hote);
 
-    QDialogButtonBox* getButtonBox();
+    /**
+     * @brief getPort
+     * @return La valeur actuelle du champ de port
+     */
+    int getPort() const;
 
-    void setHote(QString value);
-    void setPort(int value);
-    void setUsager(QString value);
-    void setMotDePasse(QString value);
+    /**
+     * @brief setPort
+     * Assigne une valeur au champ de port
+     * @param port La valeur à assigner
+     */
+    void setPort(const int &port);
 
+    /**
+     * @brief getUsager
+     * @return La valeur actuelle du champ de nom d'usager
+     */
+    QString getUsager() const;
+
+    /**
+     * @brief getMotDePasse
+     * @return La valeur actuelle du champ de mot de passe
+     */
+    QString getMotDePasse() const;
+
+    /**
+     * @brief boutonConnexion
+     * @return Le bouton servant à sonder l'hôte
+     */
+    QPushButton* boutonConnexion() const;
+
+    /**
+     * @brief setUsager
+     * Assigne une valeur au champ du nom d'usager
+     * @param usager La valeur à assigner
+     */
+    void setUsager(const QString &usager);
+
+    /**
+     * @brief setMotDePasse
+     * Assigne une valeur au champ du mot de passe
+     * @param motDePasse La valeur à assigner
+     */
+    void setMotDePasse(const QString &motDePasse);
+
+    /**
+     * @brief peuplerListe
+     * Peuple la liste des bases de données
+     */
     void peuplerListe();
+
+private slots:
+
+    void activerBoutonOk();
+
+    void desactiverBoutonOk();
 
 public slots:
 
@@ -65,42 +112,9 @@ public slots:
      */
     void peuplerTableau(QAbstractTableModel* valeurs);
 
-    /**
-     * @brief modeleSelectionne
-     * Émis lorsqu'un nouveau modèle est sélectionné
-     * @param idModele L'id du nouveau modèle sélectionné
-     */
-    void selectionnerModele(const QModelIndex &index);
-
-    /**
-     * @brief signalerSelection
-     * @param nouveau La nouvelle sélection du tableau
-     * @param ancien L'ancienne sélection du tableau
-     */
-    void signalerSelection(const QModelIndex &nouveau, const QModelIndex &ancien);
-
-
 signals:
 
-    /**
-     * @brief selectionValide
-     * Informe d'un changement de modèle sélectionné
-     */
-    void selectionValide(const bool &valide);
-
-    /**
-     * @brief nouvelleSelection
-     * Émis lorsqu'une nouvelle entrée du tableau est sélectionnée
-     * @param nouveau La nouvelle sélection
-     */
-    void nouvelleSelection(QModelIndex nouveau);
-
-    /**
-     * @brief modeleSelectionne
-     * Émis lorsqu'un nouveau modèle est sélectionné
-     * @param idModele L'id du nouveau modèle sélectionné
-     */
-    void modeleSelectionne(const int &idModele);
+    void testerConnexion();
 
 };
 

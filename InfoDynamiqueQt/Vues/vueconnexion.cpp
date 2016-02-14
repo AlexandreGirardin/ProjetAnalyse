@@ -1,7 +1,6 @@
 #include "vueconnexion.h"
 #include "ui_vueconnexion.h"
 
-#include <QDebug>
 #include <QSortFilterProxyModel>
 #include "Controleurs/controleurbd.h"
 
@@ -10,10 +9,15 @@ VueConnexion::VueConnexion(QWidget *parent) :
     ui(new Ui::VueConnexion)
 {
     ui->setupUi(this);
+    setWindowTitle(tr("Connexion"));
     ui->champHote->setText("localhost");
     ui->champPort->setValue(3307);
     ui->champUsager->setText("root");
-    QObject::connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
+    QObject::connect(ui->boutonConnecter, SIGNAL(clicked()), this, SIGNAL(testerConnexion()));
+    boutonOk = new QPushButton(tr("Ok"), this);
+    boutonOk->setEnabled(false);
+    ui->buttonBox->addButton(boutonOk, QDialogButtonBox::AcceptRole);
+    QObject::connect(ui->listeBd, SIGNAL(activated(QModelIndex)), this, SLOT(activerBoutonOk()));
 }
 
 VueConnexion::~VueConnexion()
@@ -21,78 +25,71 @@ VueConnexion::~VueConnexion()
     delete ui;
 }
 
-QString VueConnexion::getNom(const QModelIndex &index)
+QString VueConnexion::getNomBD() const
 {
-    int rangee = index.row();
-    QModelIndex caseId = ui->listeBd->model()->index(rangee, 0);
-    return ui->listeBd->model()->data(caseId).toString();
+    return ui->listeBd->currentIndex().data().toString();
 }
 
-QString VueConnexion::getNomBD()
-{
-    return nomBD;
-}
-
-QString VueConnexion::getHote()
+QString VueConnexion::getHote() const
 {
     return ui->champHote->text();
 }
 
-int VueConnexion::getPort()
+void VueConnexion::setHote(const QString &hote)
+{
+    ui->champHote->setText(hote);
+}
+
+int VueConnexion::getPort() const
 {
     return ui->champPort->value();
 }
 
-QString VueConnexion::getUsager()
+void VueConnexion::setPort(const int &port)
+{
+    ui->champPort->setValue(port);
+}
+
+QString VueConnexion::getUsager() const
 {
     return ui->champUsager->text();
 }
 
-QString VueConnexion::getMotDePasse()
+void VueConnexion::setUsager(const QString &usager)
+{
+    ui->champUsager->setText(usager);
+}
+
+QString VueConnexion::getMotDePasse() const
 {
     return ui->champMDP->text();
 }
 
-QDialogButtonBox* VueConnexion::getButtonBox()
+void VueConnexion::setMotDePasse(const QString &motDePasse)
 {
-    return ui->buttonBox;
+    ui->champMDP->setText(motDePasse);
 }
 
-void VueConnexion::setHote(QString value)
+void VueConnexion::activerBoutonOk()
 {
-    ui->champHote->setText(value);
+    boutonOk->setEnabled(true);
 }
 
-void VueConnexion::setPort(int value)
+void VueConnexion::desactiverBoutonOk()
 {
-    ui->champPort->setValue(value);
+    boutonOk->setEnabled(false);
 }
 
-void VueConnexion::setUsager(QString value)
+QPushButton* VueConnexion::boutonConnexion() const
 {
-    ui->champUsager->setText(value);
-}
-
-void VueConnexion::setMotDePasse(QString value)
-{
-    ui->champMDP->setText(value);
+    return ui->boutonConnecter;
 }
 
 void VueConnexion::peuplerTableau(QAbstractTableModel* valeurs)
 {
-    QSortFilterProxyModel* modeleTriable = new QSortFilterProxyModel(ui->listeBd);
-    modeleTriable->setSourceModel(valeurs);
-    ui->listeBd->setModel(modeleTriable);
-    QObject::connect(ui->listeBd->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(signalerSelection(QModelIndex,QModelIndex)));
-}
-
-void VueConnexion::selectionnerModele(const QModelIndex &index)
-{
-    nomBD = getNom(index);
-    emit selectionValide(true);
-}
-
-void VueConnexion::signalerSelection(const QModelIndex &nouvelle, const QModelIndex&)
-{
-    emit nouvelleSelection(nouvelle);
+    if (ui->listeBd->model() != NULL) {
+        ui->listeBd->model()->deleteLater();
+    }
+    ui->listeBd->setModel(valeurs);
+    desactiverBoutonOk();
 }

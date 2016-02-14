@@ -9,13 +9,14 @@ Application::Application(int &argc, char **argv) :
 {
     m_instance = this;
     controleurBD = new ControleurBD(this);
-    controleurBD->connecterDossiers();
-    bd = controleurBD->getBd();
 }
 
 const Application* Application::m_instance = NULL;
+
 VuePrincipale* Application::m_vuePrincipale = NULL;
+
 QSqlDatabase* Application::bd = NULL;
+
 ControleurBD* Application::controleurBD = NULL;
 
 const Application* Application::getInstance()
@@ -23,8 +24,16 @@ const Application* Application::getInstance()
     return m_instance;
 }
 
+void Application::connecter()
+{
+    QObject::connect(controleurBD, SIGNAL(connexionEtablie()), this, SLOT(demarrer()));
+    QObject::connect(controleurBD, SIGNAL(connexionRatee()), controleurBD, SLOT(connecterDossiers()));
+    controleurBD->connecterDossiers();
+}
+
 void Application::demarrer()
 {
+    bd = controleurBD->bd();
     creerFenetre();
     chargerOnglet();
     m_vuePrincipale->show();

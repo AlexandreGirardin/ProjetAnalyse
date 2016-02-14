@@ -5,9 +5,8 @@
 
 #include "Vues/vueconnexion.h"
 
-#include <QtSql/QSql>
-#include <QtSql/QSqlDriver>
-#include <QtSql/QSqlQuery>
+#include <QSqlDriver>
+#include <QSqlQuery>
 
 class ControleurBD : public QObject
 {
@@ -18,7 +17,10 @@ class ControleurBD : public QObject
 private:
 
     // La base de données principale
-    QSqlDatabase bd;
+    QSqlDatabase m_bd;
+
+    // La vue servant à recueillir les informations de connexion
+    VueConnexion* vue;
 
 public:
 
@@ -32,7 +34,27 @@ public:
      * @brief getBd
      * @return La base de donnée principale
      */
-    QSqlDatabase* getBd();
+    QSqlDatabase* bd();
+
+    /**
+     * @brief nomBd
+     * @return Le nom de la base de données
+     */
+    static const QString nomBd;
+
+public slots:
+
+    /**
+     * @brief peuplerBd
+     * peuple la table de la vueConnexion avec toutes les BD du serveur.
+     */
+    void listerBd();
+
+    /**
+     * @brief clicConnecter
+     * Informe lors de la demande de connexion
+     */
+    void sonderHote();
 
     /**
      * @brief connecterDossiers
@@ -41,44 +63,15 @@ public:
      */
     void connecterDossiers();
 
-    /**
-     * @brief nomBd
-     * @return Le nom de la base de données
-     */
-    static const QString nomBd();
+    void reconnecter();
 
-    /**
-     * @brief meta
-     * @return Le méta-caractère de la base de données
-     */
-    static const QString* meta;
+signals:
 
-private:
+    void connexionRatee();
 
-    /**
-     * @brief configurerBoutonConnecter
-     * Connecte le bouton Connecter
-     */
-    void configurerBoutonConnecter();
+    void connexionEtablie();
 
-    /**
-     * @brief vueConnexion
-     */
-    VueConnexion* vue;
-
-public slots:
-
-    /**
-     * @brief peuplerBd
-     * peuple la table de la vueConnexion avec toutes les BD du serveur.
-     */
-    void peuplerBd();
-
-    /**
-     * @brief clicConnecter
-     * Informe lors de la demande de connexion
-     */
-    void clicConnecter();
+    void annule();
 
 };
 

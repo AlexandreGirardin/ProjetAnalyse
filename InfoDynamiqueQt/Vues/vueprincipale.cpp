@@ -5,6 +5,7 @@
 VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)
 {
     ui->setupUi(this);
+    QObject::connect(ui->menuDeconnexion, SIGNAL(triggered()), this, SIGNAL(deconnexion()));
 }
 
 VuePrincipale::~VuePrincipale()

@@ -1,72 +1,80 @@
 #include "Controleurs/controleurbd.h"
 
-#include "ui_vueconnexion.h"
+#include "Vues/vueconnexion.h"
 
+#include "Controleurs/application.h"
 #include "Controleurs/requetessql.h"
 
 #include <QDebug>
-#include <QtSql/QSqlDatabase>
+#include <QSqlDatabase>
 #include <QSqlQueryModel>
 
-ControleurBD::ControleurBD(QObject* parent) :
-    QObject(parent)
+ControleurBD::ControleurBD(QObject* parent) : QObject(parent)
 {
+    vue = new VueConnexion(Application::vuePrincipale());
+    QObject::connect(vue, SIGNAL(testerConnexion()), this, SLOT(sonderHote()));
 }
 
-QSqlDatabase* ControleurBD::getBd()
+QSqlDatabase* ControleurBD::bd()
 {
-    return &bd;
+    return &m_bd;
 }
 
 void ControleurBD::connecterDossiers()
 {
-//    vue = new VueConnexion(Application::vuePrincipale());
-//    configurerBoutonConnecter();
 //    if (vue->exec() == vue->Accepted) {
-//        bd.setDatabaseName(vue->getNomBD());
-//        if (!bd.open()) {
+//        m_bd.setDatabaseName(vue->getNomBD());
+//        if (!m_bd.open()) {
 //            qDebug() << "Erreur d'ouverture de la base de données";
+//            emit connexionRatee();
+//        } else {
+//            emit connexionEtablie();
 //        }
+//    } else {
+//        emit annule();
 //    }
-    bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd());
-    bd.setHostName("localhost");
-    bd.setPort(3307);
-    bd.setUserName("root");
-//    bd.setPassword("root");
-    bd.setDatabaseName("InfoDynamiqueDossiers");
-    if (!bd.open()) {
+
+// Commenter ce qui précède et décommenter ce qui suit <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    m_bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd);
+    m_bd.setHostName("localhost");
+    m_bd.setPort(3307);
+    m_bd.setUserName("root");
+//    m_bd.setPassword("root");
+    m_bd.setDatabaseName("InfoDynamiqueDossiers");
+    if (!m_bd.open()) {
         qDebug() << "Erreur d'ouverture de la base de données";
-    }
+        }
+    emit connexionEtablie();
 }
 
-const QString ControleurBD::nomBd()
+void ControleurBD::reconnecter()
 {
-    return QString("dossiers");
+    vue->setMotDePasse("");
+    connecterDossiers();
 }
 
-void ControleurBD::clicConnecter()
+const QString ControleurBD::nomBd = QString("dossiers");
+
+void ControleurBD::sonderHote()
 {
-    bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd());
-    bd.setHostName(vue->getHote());
-    bd.setPort(vue->getPort());
-    bd.setUserName(vue->getUsager());
-    bd.setPassword(vue->getMotDePasse());
-    if (!bd.open()) {
+    m_bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd);
+    m_bd.setHostName(vue->getHote());
+    m_bd.setPort(vue->getPort());
+    m_bd.setUserName(vue->getUsager());
+    m_bd.setPassword(vue->getMotDePasse());
+    if (m_bd.open()) {
+        listerBd();
+    } else {
+        m_bd = QSqlDatabase();
+        QSqlDatabase::removeDatabase(nomBd);
         qDebug() << "Erreur de connexion à la base de données";
     }
-    peuplerBd();
 }
 
-void ControleurBD::configurerBoutonConnecter()
+void ControleurBD::listerBd()
 {
-    QObject::connect(vue->getButtonBox(), SIGNAL(accepted()), this, SLOT(clicConnecter()));
+    QSqlQueryModel* basesDeDonnees = new QSqlQueryModel(this);
+    basesDeDonnees->setQuery("show databases", m_bd);
+    vue->peuplerTableau(basesDeDonnees);
 }
-
-void ControleurBD::peuplerBd()
-{
-    QSqlQueryModel* baseDeDonnees = new QSqlQueryModel(this);
-    baseDeDonnees->setQuery(*RequetesSQL::listerBD, bd);
-    vue->peuplerTableau(baseDeDonnees);
-}
-
-const QString* ControleurBD::meta = new QString("%");

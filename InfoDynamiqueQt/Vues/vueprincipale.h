@@ -49,6 +49,11 @@ public:
 
 private:
     Ui::VuePrincipale* ui;
+
+signals:
+
+    void deconnexion();
+
 };
 
 #endif // MAINWINDOW_H

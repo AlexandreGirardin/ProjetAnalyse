@@ -129,31 +129,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1081</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="defaultUp">
-    <bool>false</bool>
-   </property>
-   <property name="nativeMenuBar">
-    <bool>false</bool>
-   </property>
-   <widget class="QMenu" name="menuMenu">
-    <property name="title">
-     <string>Menu</string>
-    </property>
-    <addaction name="actionD_connexion"/>
-    <addaction name="actionConnexion"/>
-   </widget>
-   <addaction name="menuMenu"/>
-  </widget>
-  <action name="actionD_connexion">
+  <action name="menuDeconnexion">
    <property name="text">
     <string>Déconnexion</string>
    </property>

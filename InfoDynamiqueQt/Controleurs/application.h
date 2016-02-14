@@ -40,9 +40,6 @@ public:
     // Le contrôleur de base de données de l'application
     static ControleurBD* controleurBD;
 
-    // Démarre l'application
-    void demarrer();
-
     // Imprime des informations pour tester
     void debug();
 
@@ -78,7 +75,7 @@ private:
     // Si l'onglet des actions a été chargé
     bool actionsChargees;
 
-    // Connexion prenant en charge le chargement paresseux des onglet
+    // Connexion prenant en charge le chargement paresseux des onglets
     QMetaObject::Connection paresseux;
 
     /**
@@ -110,11 +107,8 @@ private:
 
 public slots:
 
-    /**
-     * @brief chargerOnglet
-     * Charge l'onglet sélectionné au besoin
-     */
-    void chargerOnglet();
+    // Démarre l'application
+    void connecter();
 
     /**
      * @brief erreurEcriture
@@ -192,6 +186,15 @@ signals:
      */
     void nombreEnsemblesModifie() const;
 
+private slots:
+
+    void demarrer();
+
+    /**
+     * @brief chargerOnglet
+     * Charge l'onglet sélectionné au besoin
+     */
+    void chargerOnglet();
 };
 
 #endif // APPLICATION_H
