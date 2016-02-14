@@ -12,7 +12,7 @@ void ControleurClients::ajouterClient()
         Client* client = new Client(vue);
         extraireClient(client, vue);
         if (MappeurClients::inserer(client)) {
-            emit Application::getInstance()->clientsModifies();
+            emit Application::getInstance()->nombreClientsChange();
         }
         vue->deleteLater();
     }
@@ -28,7 +28,7 @@ void ControleurClients::modifierClient(const int &idClient)
         if (vue->exec() == vue->Accepted) {
             extraireClient(client, vue);
             if (MappeurClients::mettreAJour(client)) {
-                emit Application::getInstance()->clientsModifies();
+                emit Application::getInstance()->clientModifie();
             }
         }
         vue->deleteLater();

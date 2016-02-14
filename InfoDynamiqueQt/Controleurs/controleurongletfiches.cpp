@@ -26,10 +26,9 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
-    QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirFiche()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(modifierFiche()));
-    QObject::connect(Application::getInstance(), SIGNAL(fichesModifiees()), this, SLOT(recharger()));
-    QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
+    QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichir()));
+    QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
     fragment->champ()->setFocus();
 }
 
@@ -81,5 +80,17 @@ void ControleurOngletFiches::filtrerFiches(const QString &filtre)
         fragment->peuplerTableau(resultats);
         fragment->getTableau()->hideColumn(0);
     }
+}
+
+void ControleurOngletFiches::recharger()
+{
+    filtrerFiches(fragment->getFiltre());
+}
+
+void ControleurOngletFiches::rafraichir()
+{
+    int selection = fragment->getTableau()->currentIndex().row();
+    recharger();
+    fragment->getTableau()->selectRow(selection);
 }
 

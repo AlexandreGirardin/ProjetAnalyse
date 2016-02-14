@@ -13,7 +13,7 @@ void ControleurFiches::ajouterFiche(const int &idAppareil)
         fiche->setIdAppareil(idAppareil);
         extraireFiche(fiche, vue);
         if (MappeurFiches::inserer(fiche)) {
-            emit Application::getInstance()->fichesModifiees();
+            emit Application::getInstance()->ficheModifiee();
         }
         fiche->deleteLater();
     }

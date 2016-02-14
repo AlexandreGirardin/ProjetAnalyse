@@ -35,7 +35,7 @@ void ControleurOngletActions::configurerFragmentActions()
     QObject::connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
     QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
     QObject::connect(fragmentActions, SIGNAL(doubleClicModele()), this, SLOT(modifierAction()));
-    QObject::connect(Application::getInstance(), SIGNAL(actionsModifiees()), this, SLOT(rafraichirActions()));
+    QObject::connect(Application::getInstance(), SIGNAL(actionModifiee()), this, SLOT(rafraichirActions()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
 
     configurerBoutonEtat();

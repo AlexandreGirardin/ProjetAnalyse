@@ -193,6 +193,12 @@ private slots:
     void rechargerClients();
 
     /**
+     * @brief rafraichirClients
+     * Recharge les clients en conservant la sélection actuelle
+     */
+    void rafraichirClients();
+
+    /**
      * @brief rechargerAppareils
      * Repeuple le fragmentAppareils en tenant compte du filtre actuel
      */

@@ -52,6 +52,10 @@ public slots:
      * @param filtre Critère de filtre à utiliser
      */
     void filtrerFiches(const QString &filtre);
+
+    void recharger();
+
+    void rafraichir();
 };
 
 #endif // CONTROLEURFICHES_H

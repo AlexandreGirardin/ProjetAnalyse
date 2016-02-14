@@ -33,7 +33,8 @@ void ControleurOngletClients::configurerFragmentClients()
     QObject::connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
     QObject::connect(fragmentClients, SIGNAL(rechercher(QString)), this, SLOT(filtrerClients(QString)));
     QObject::connect(fragmentClients, SIGNAL(doubleClicModele()), this, SLOT(voirClient()));
-    QObject::connect(Application::getInstance(), SIGNAL(clientsModifies()), this, SLOT(rechargerClients()));
+    QObject::connect(Application::getInstance(), SIGNAL(clientModifie()), this, SLOT(rafraichirClients()));
+    QObject::connect(Application::getInstance(), SIGNAL(nombreClientsChange()), this, SLOT(rechargerClients()));
 }
 
 void ControleurOngletClients::configurerFragmentAppareils()
@@ -49,7 +50,7 @@ void ControleurOngletClients::configurerFragmentAppareils()
     QObject::connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragmentAppareils, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
-    QObject::connect(Application::getInstance(), SIGNAL(appareilsModifies()), this, SLOT(rafraichirAppareils()));
+    QObject::connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichirAppareils()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rechargerAppareils()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
@@ -129,6 +130,13 @@ void ControleurOngletClients::filtrerClients(const QString &filtre)
 void ControleurOngletClients::rechargerClients()
 {
     filtrerClients(fragmentClients->getFiltre());
+}
+
+void ControleurOngletClients::rafraichirClients()
+{
+    int selection = fragmentClients->getTableau()->currentIndex().row();
+    rechargerClients();
+    fragmentClients->getTableau()->selectRow(selection);
 }
 
 // Appareils

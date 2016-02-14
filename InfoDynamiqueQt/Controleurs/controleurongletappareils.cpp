@@ -23,7 +23,7 @@ ControleurOngletAppareils::ControleurOngletAppareils(QWidget* vue)
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-    QObject::connect(Application::getInstance(), SIGNAL(appareilsModifies()), this, SLOT(rafraichir()));
+    QObject::connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichir()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     fragment->champ()->setFocus();

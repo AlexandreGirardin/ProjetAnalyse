@@ -118,7 +118,13 @@ signals:
      * @brief clientsModifies
      * Émis lorsque les données des clients ont été modifiées
      */
-    void clientsModifies() const;
+    void clientModifie() const;
+
+    /**
+     * @brief nombreClientsChange
+     * Émis lorsqu'un client a été ajouté ou supprimé
+     */
+    void nombreClientsChange() const;
 
     /**
      * @brief appareilsModifies
@@ -127,16 +133,22 @@ signals:
     void appareilModifie() const;
 
     /**
-     * @brief fichesModifiees
-     * Émis lorsque les données des fiches ont été modifiées
-     */
-    void fichesModifiees() const;
-
-    /**
      * @brief nombreAppareilsChange
      * Émis lorsqu'un appareil a été ajouté ou supprimé
      */
     void nombreAppareilsChange() const;
+
+    /**
+     * @brief fichesModifiees
+     * Émis lorsque les données des fiches ont été modifiées
+     */
+    void ficheModifiee() const;
+
+    /**
+     * @brief nombreFichesChange
+     * Émis lorsqu'une fiche a été ajoutée ou supprimée
+     */
+    void nombreFichesChange() const;
 
     /**
      * @brief actionsModifiees
@@ -151,16 +163,16 @@ signals:
     void nombreActionsChange() const;
 
     /**
-     * @brief ensemblesModifies
-     * Émis lorsqu'un ensemble a été ajouté ou supprimé
-     */
-    void nombreEnsemblesModifie() const;
-
-    /**
      * @brief ensembleModifie
      * Émis lorsqu'un ensemble a été mis à jour
      */
     void ensembleModifie() const;
+
+    /**
+     * @brief ensemblesModifies
+     * Émis lorsqu'un ensemble a été ajouté ou supprimé
+     */
+    void nombreEnsemblesModifie() const;
 
 };
 
