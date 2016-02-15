@@ -1,6 +1,8 @@
 #include "Modeles/fiche.h"
 
-Fiche::Fiche(QObject* parent) : ModeleBD(parent) {}
+Fiche::Fiche(QObject* parent) : ModeleBD(parent)
+{
+}
 
 int Fiche::idAppareil() const
 {

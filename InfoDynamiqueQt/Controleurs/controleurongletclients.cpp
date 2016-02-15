@@ -77,7 +77,6 @@ void ControleurOngletClients::configurerFragmentFiches()
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));
     QObject::connect(fragmentFiches, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
     QObject::connect(fragmentFiches, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
-    QObject::connect(fragmentFiches, SIGNAL(doubleClicModele()), this, SLOT(voirFiche()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
     QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
@@ -225,13 +224,6 @@ void ControleurOngletClients::ajouterFiche() const
 {
     if (fragmentAppareils->idModele() != -1) {
         ControleurFiches::ajouterFiche(fragmentAppareils->idModele());
-    }
-}
-
-void ControleurOngletClients::voirFiche() const
-{
-    if (fragmentAppareils->idModele() != -1) {
-        ControleurFiches::voirFiche(fragmentAppareils->idModele());
     }
 }
 

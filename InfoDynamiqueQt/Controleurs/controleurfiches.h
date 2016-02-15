@@ -39,12 +39,6 @@ public slots:
      */
     static void ajouterFiche(const int &idAppareil);
 
-    /**
-     * @brief voirFiche
-     * Lance la visualisation d'une fiche
-     * @param idFiche L'id de la fiche à visualiser
-     */
-    static void voirFiche(const int &idFiche);
 };
 
 #endif // CONTROLEURGESTIONFICHE_H

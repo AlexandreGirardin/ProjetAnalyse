@@ -176,12 +176,6 @@ private slots:
     void voirAppareil() const;
 
     /**
-     * @brief voirFiche
-     * Lance la visualisation de la fiche sélectionnée
-     */
-    void voirFiche() const;
-
-    /**
      * @brief activerCritereActions
      * Réassigne les commandes SQL pour n'afficher que les fiches actives
      */

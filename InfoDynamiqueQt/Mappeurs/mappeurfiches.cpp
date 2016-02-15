@@ -115,7 +115,11 @@ QSqlQuery *MappeurFiches::preparerRequete(const Fiche *fiche, const QString &com
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
     requete->bindValue(":id", fiche->id());
-//    requete->bindValue(":statut", fiche->statut());
+    requete->bindValue(":idAppareil", fiche->idAppareil());
+    requete->bindValue(":priorite", fiche->priorite());
+    requete->bindValue(":idTechnicien", 1); // TODO
+    requete->bindValue(":idStatut", fiche->statut()->id());
+    requete->bindValue(":commentaire", fiche->commentaire());
     return requete;
 }
 
@@ -138,7 +142,7 @@ bool MappeurFiches::ecrire(const Fiche *fiche, const QString &commande)
     if (succes) {
         bd.commit();
     } else {
-        Application::erreurEcriture(requete->lastError().text());
+        Application::erreurEcriture(requete->lastQuery()+requete->lastError().text());
         bd.rollback();
     }
     delete requete;
