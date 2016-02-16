@@ -21,28 +21,12 @@
     <widget class="QLineEdit" name="champ"/>
    </item>
    <item>
-    <widget class="QPushButton" name="iconeStatut">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>29</width>
-       <height>29</height>
-      </size>
-     </property>
+    <widget class="QLabel" name="iconeStatut">
      <property name="text">
       <string notr="true"/>
      </property>
-     <property name="icon">
-      <iconset resource="../ressources.qrc">
-       <normaloff>:/Images/flag-red.svg</normaloff>:/Images/flag-red.svg</iconset>
-     </property>
-     <property name="flat">
-      <bool>true</bool>
+     <property name="pixmap">
+      <pixmap resource="../ressources.qrc">:/Images/flag-red.svg</pixmap>
      </property>
     </widget>
    </item>
