@@ -16,6 +16,7 @@ class VueEditionFiche : public QDialog
     // Vue permettant d'éditer en détails une fiche déjà créée
 
 public:
+
     explicit VueEditionFiche(QWidget* parent = 0);
     ~VueEditionFiche();
 
@@ -25,8 +26,12 @@ public:
 
     QString getCommentaire() const;
 
+    void setClient(const int &id, const QString &nom, const QString &telephone);
+
+    void setAppareil(const int &id, const QString &description);
 
 private:
+
     Ui::VueEditionFiche* ui;
 
     int idFiche;
