@@ -5,6 +5,7 @@
 
 #include "Mappeurs/mappeurfiches.h"
 #include "Vues/vuegestionfiche.h"
+#include "Vues/vueeditionfiche.h"
 
 class ControleurFiches : public QObject
 {
@@ -29,6 +30,23 @@ private:
      * @param vue La vue source
      */
     static void extraireFiche(Fiche* fiche, VueGestionFiche const * const vue);
+
+    /**
+     * @brief assignerFiche
+     * Insère les informations d'une fiche dans les champs d'une fiche de gestion
+     * @param vue La vue cible
+     * @param fiche La fiche source
+     */
+    static void assignerFiche(VueEditionFiche* vue, const Fiche* fiche);
+
+    /**
+     * @brief extraireClient
+     * Transfère la valeur des champs d'une vue dans un client
+     * @param client Le client cible
+     * @param vue La vue source
+     */
+    static void extraireFiche(Fiche* fiche, VueEditionFiche const * const vue);
+
 
 public slots:
 

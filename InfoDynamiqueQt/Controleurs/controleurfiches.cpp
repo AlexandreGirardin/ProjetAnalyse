@@ -48,5 +48,15 @@ void ControleurFiches::extraireFiche(Fiche *fiche, const VueGestionFiche * const
 {
     fiche->setCommentaire(vue->getCommentaire());
     fiche->setPriorite(vue->getPriorite());
-//    fiche->setTaches(vue->getTaches);
+    //    fiche->setTaches(vue->getTaches);
+}
+
+void ControleurFiches::assignerFiche(VueEditionFiche *vue, const Fiche *fiche)
+{
+
+}
+
+void ControleurFiches::extraireFiche(Fiche *fiche, const VueEditionFiche * const vue)
+{
+
 }
