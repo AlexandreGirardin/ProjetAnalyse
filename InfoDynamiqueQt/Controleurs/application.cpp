@@ -11,7 +11,6 @@ Application::Application(int &argc, char **argv) :
     controleurBD = new ControleurBD("dossiers", this);
     chargerParametres();
     creerFenetre();
-
 }
 
 const Application* Application::m_instance = NULL;
@@ -118,9 +117,8 @@ void Application::erreurSuppression(const QString &message)
 void Application::fermer()
 {
     controleurBD->fermer();
-    qDebug() << "fermeture";
-    closeAllWindows();
-    quit();
+    m_vuePrincipale->show();
+    m_vuePrincipale->deleteLater();
 }
 
 void Application::erreur(const QString &message, const QString &titre, QMessageBox::Icon type)
