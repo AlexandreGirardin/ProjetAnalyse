@@ -146,6 +146,14 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>champDescription</tabstop>
+  <tabstop>listeExistantes</tabstop>
+  <tabstop>boutonAjouter</tabstop>
+  <tabstop>boutonRetirer</tabstop>
+  <tabstop>listeSelectionnees</tabstop>
+  <tabstop>boutonNouvelle</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

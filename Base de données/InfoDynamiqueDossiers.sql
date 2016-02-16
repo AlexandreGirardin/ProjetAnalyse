@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `fiches` (
   `priorite` int(10) NOT NULL,
   `idTechnicien` int(10) NOT NULL,
   `idStatut` int(10) NOT NULL,
-  `commentaire` varchar(255) DEFAULT NULL
+  `commentaire` varchar(1023) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

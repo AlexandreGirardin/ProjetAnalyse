@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>326</width>
-    <height>126</height>
+    <height>135</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -71,7 +71,6 @@
  <tabstops>
   <tabstop>champTelephone</tabstop>
   <tabstop>champAdresse</tabstop>
-  <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources/>
  <connections>

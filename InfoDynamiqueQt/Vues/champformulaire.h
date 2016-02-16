@@ -2,6 +2,7 @@
 #define CHAMPFORMULAIRE_H
 
 #include <QWidget>
+#include <QLineEdit>
 
 namespace Ui {
 class ChampFormulaire;
@@ -19,6 +20,7 @@ public:
     void setTexte(const QString &valeur);
     void setLectureSeule(const bool &valeur);
     void setTexteDefaut(const QString &valeur);
+    QLineEdit *getChamp() const;
 
     bool estValide();
 private:

@@ -15,6 +15,7 @@ VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
     nom->setFocus();
     ui->formLayout->setWidget(0,QFormLayout::FieldRole, nom);
     configurerBoutonOk();
+    setTabOrder(nom->getChamp(), ui->champDescription);
     QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
     ui->boutonAjouter->setEnabled(false);
     ui->boutonRetirer->setEnabled(false);

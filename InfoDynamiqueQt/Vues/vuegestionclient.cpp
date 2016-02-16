@@ -14,6 +14,10 @@ VueGestionClient::VueGestionClient(QWidget* parent) :
     configurerNom();
     configurerBoutonOk();
     prenom->setFocus();
+    setTabOrder(prenom->getChamp(), nom->getChamp());
+    setTabOrder(nom->getChamp(), ui->champTelephone);
+    setTabOrder(ui->champTelephone, ui->champAdresse);
+    setTabOrder(ui->champAdresse, ui->buttonBox);
 }
 
 void VueGestionClient::configurerPrenom()

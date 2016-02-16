@@ -1,54 +1,8 @@
-Exploration
+Notes par rapport au logiciel:
 
-Problème -> Raison
-
-Pourquoi?
-
-Documentation
-	- Système existant
-		- Processus
-		- Logiciels déjà utilisés
-	- Loi
-	- Technologie
-	- etc
-
-Parties prenantes
-
-Entrevue/Questionnaire
-
-Observation de tâches (workflow)
-
-
-
----------------------
-
-
-Remise 1:
-    
-    Document de vision
-    Diagramme de contexte
-    Exigences fonctionnelles (internes et externes) et non-fonctionnelles
-    User stories
-    Use case + Diagramme
-    Diagramme workflow
-    
-17 sept 23h
-
-
-Livrables conception
-    ✓prototype
-    ✓diagramme du domaine
-    diagramme des classes participantes
-    ✓diagramme de déploiement
-    diagramme de paquets
-    ✓diagramme DER
-    ✓diagrammes de communication/séquence*
-
-Librables analyse
-    ✓Document de vision
-    ✓Diagramme de contexte
-    ✓Exigences
-    ✓Use Cases
-    ✓User stories
-    ✓Dictionnaire
-    ✓Diagramme d'acteurs
+Fenêtre «Connexion» :
+	1. Il faut double clicker pour sélectionner une BD et pouvoir appuyer sur OK. 
+	    Le bouton reste grisé si on ne fais que sélectionner en cliquant une fois.
+		
+Fenêtre «Créer un nouveau client» :
+	1. 
