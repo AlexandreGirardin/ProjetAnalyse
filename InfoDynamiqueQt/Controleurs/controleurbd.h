@@ -22,6 +22,8 @@ private:
     // La vue servant à recueillir les informations de connexion
     VueConnexion* vue;
 
+    void chargerChamps();
+
 public:
 
     /**

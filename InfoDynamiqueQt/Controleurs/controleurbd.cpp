@@ -10,6 +10,14 @@
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 
+void ControleurBD::chargerChamps()
+{
+    QSettings parametres;
+    parametres.setValue("connexion/hote", m_bd.hostName());
+    parametres.setValue("connexion/port", m_bd.port());
+    parametres.setValue("connexion/usager", m_bd.userName());
+}
+
 ControleurBD::ControleurBD(const QString &nom, QObject* parent)
     : QObject(parent)
 {
@@ -32,10 +40,7 @@ void ControleurBD::connecterDossiers()
             emit connexionRatee();
         } else {
             emit connexionEtablie();
-            QSettings parametres;
-            parametres.setValue("connexion/hote", m_bd.hostName());
-            parametres.setValue("connexion/port", m_bd.port());
-            parametres.setValue("connexion/usager", m_bd.userName());
+            chargerChamps();
         }
     } else {
         emit annule();
