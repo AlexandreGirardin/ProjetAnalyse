@@ -19,5 +19,6 @@
         <file>Images/user-group-properties.svg</file>
         <file>Images/computer-laptop.svg</file>
         <file>Images/hint.svg</file>
+        <file>Images/network-connect.svg</file>
     </qresource>
 </RCC>

@@ -6,6 +6,7 @@
 #include "Controleurs/requetessql.h"
 
 #include <QDebug>
+#include <QSettings>
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 
@@ -31,6 +32,10 @@ void ControleurBD::connecterDossiers()
             emit connexionRatee();
         } else {
             emit connexionEtablie();
+            QSettings parametres;
+            parametres.setValue("connexion/hote", m_bd.hostName());
+            parametres.setValue("connexion/port", m_bd.port());
+            parametres.setValue("connexion/usager", m_bd.userName());
         }
     } else {
         emit annule();
