@@ -9,8 +9,10 @@
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 
-ControleurBD::ControleurBD(QObject* parent) : QObject(parent)
+ControleurBD::ControleurBD(const QString &nom, QObject* parent)
+    : QObject(parent)
 {
+    nomBd = nom;
 }
 
 QSqlDatabase* ControleurBD::bd()
@@ -60,8 +62,6 @@ void ControleurBD::fermer()
     m_bd.close();
     vue->deleteLater();
 }
-
-const QString ControleurBD::nomBd = QString("dossiers");
 
 void ControleurBD::sonderHote()
 {

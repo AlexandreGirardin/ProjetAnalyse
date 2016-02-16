@@ -28,7 +28,7 @@ public:
      * @brief ControleurBD
      * @param parent
      */
-    explicit ControleurBD(QObject* parent = 0);
+    explicit ControleurBD(const QString &nom, QObject* parent = 0);
 
     /**
      * @brief getBd
@@ -36,11 +36,8 @@ public:
      */
     QSqlDatabase* bd();
 
-    /**
-     * @brief nomBd
-     * @return Le nom de la base de données
-     */
-    static const QString nomBd;
+     // Le nom de la base de données
+    QString nomBd;
 
 public slots:
 

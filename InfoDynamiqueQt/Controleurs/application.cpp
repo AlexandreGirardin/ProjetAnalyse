@@ -2,14 +2,16 @@
 #include "Vues/vueprincipale.h"
 
 #include <QDebug>
-#include "Mappeurs/mappeuractions.h"
+#include <QSettings>
 
 Application::Application(int &argc, char **argv) :
     QApplication(argc, argv)
 {
     m_instance = this;
-    controleurBD = new ControleurBD(this);
+    controleurBD = new ControleurBD("dossiers", this);
+    chargerParametres();
     creerFenetre();
+
 }
 
 const Application* Application::m_instance = NULL;
@@ -29,7 +31,7 @@ void Application::connecter()
 {
     QObject::connect(controleurBD, SIGNAL(connexionEtablie()), this, SLOT(demarrer()));
     QObject::connect(controleurBD, SIGNAL(connexionRatee()), controleurBD, SLOT(connecterDossiers()));
-//    QObject::connect(this, SIGNAL(aboutToQuit()), controleurBD, SLOT(connecterDossiers()));
+    QObject::connect(this, SIGNAL(aboutToQuit()), this, SLOT(sauvegarderParametres()));
     QObject::connect(controleurBD, SIGNAL(annule()), this, SLOT(fermer()));
     controleurBD->connecterDossiers();
 }
@@ -41,13 +43,26 @@ void Application::demarrer()
     m_vuePrincipale->show();
 }
 
+void Application::chargerParametres()
+{
+    QCoreApplication::setOrganizationName("InfoDynamique");
+    QCoreApplication::setOrganizationDomain("infodynamique.com");
+    QCoreApplication::setApplicationName("Dossiers");
+}
+
+void Application::sauvegarderParametres()
+{
+    QSettings parametres;
+    parametres.setValue("fenetre/dimensions", m_vuePrincipale->saveGeometry());
+}
+
 void Application::debug()
 {
-    QList<Action*>* listeActions = MappeurActions::getActions();
-    for (QList<Action*>::const_iterator i = listeActions->constBegin(); i != listeActions->constEnd(); ++i)
-    {
-        qDebug() << (*i)->out();
-    }
+//    QList<Action*>* listeActions = MappeurActions::getActions();
+//    for (QList<Action*>::const_iterator i = listeActions->constBegin(); i != listeActions->constEnd(); ++i)
+//    {
+//        qDebug() << (*i)->out();
+//    }
 }
 
 VuePrincipale* Application::vuePrincipale()
@@ -57,7 +72,9 @@ VuePrincipale* Application::vuePrincipale()
 
 void Application::creerFenetre()
 {
+    QSettings settings;
     m_vuePrincipale = new VuePrincipale();
+    m_vuePrincipale->restoreGeometry(settings.value("fenetre/dimensions").toByteArray());
     ongletClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
     ongletFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
     ongletAppareils = new ControleurOngletAppareils(m_vuePrincipale->ongletAppareils());

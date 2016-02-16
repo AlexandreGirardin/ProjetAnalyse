@@ -90,6 +90,8 @@ private:
      */
     void creerFenetre();
 
+    void chargerParametres();
+
     /**
      * @brief executer
      * Lance l'exécution de l'application
@@ -104,6 +106,20 @@ private:
      * @param type Le type de message à afficher
      */
     static void erreur(const QString &message, const QString &titre = tr("Erreur"), QMessageBox::Icon type = QMessageBox::Warning);
+
+private slots:
+
+    void fermer();
+
+    void demarrer();
+
+    void sauvegarderParametres();
+
+    /**
+     * @brief chargerOnglet
+     * Charge l'onglet sélectionné au besoin
+     */
+    void chargerOnglet();
 
 public slots:
 
@@ -123,6 +139,7 @@ public slots:
      * @param message L'erreur à afficher
      */
     static void erreurSuppression(const QString &message);
+
 
 signals:
 
@@ -185,18 +202,6 @@ signals:
      * Émis lorsqu'un ensemble a été ajouté ou supprimé
      */
     void nombreEnsemblesModifie() const;
-
-private slots:
-
-    void fermer();
-
-    void demarrer();
-
-    /**
-     * @brief chargerOnglet
-     * Charge l'onglet sélectionné au besoin
-     */
-    void chargerOnglet();
 };
 
 #endif // APPLICATION_H
