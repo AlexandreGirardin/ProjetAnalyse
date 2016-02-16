@@ -20,10 +20,13 @@ private:
     // Interface utilisée pour la vue
     Ui::VueConnexion *ui;
 
+    // Le bouton de confirmation
     QPushButton* boutonOk;
 
 public:
+
     explicit VueConnexion(QWidget *parent = 0);
+
     ~VueConnexion();
 
     /**
@@ -98,8 +101,16 @@ public:
 
 private slots:
 
+    /**
+     * @brief activerBoutonOk
+     * Rend le bouton Ok actif
+     */
     void activerBoutonOk();
 
+    /**
+     * @brief desactiverBoutonOk
+     * Rend le bouton Ok inactif
+     */
     void desactiverBoutonOk();
 
 public slots:
@@ -112,10 +123,18 @@ public slots:
      */
     void peuplerTableau(QAbstractTableModel *valeurs);
 
+    /**
+     * @brief viderListe
+     * Vide la liste des bases de données de l'hôte
+     */
     void viderListe();
 
 signals:
 
+    /**
+     * @brief testerConnexion
+     * Émis lorsque le bouton de connexion à l'hôte est cliqué
+     */
     void testerConnexion();
 
 };
