@@ -28,7 +28,6 @@ void ControleurFiches::ajouterFiche(const int &idAppareil)
 
 void ControleurFiches::traiterFiche(const int &idFiche)
 {
-    qDebug()<<idFiche;
     Fiche* fiche = MappeurFiches::getFiche(idFiche);
     if (fiche != NULL) {
         VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
@@ -38,8 +37,6 @@ void ControleurFiches::traiterFiche(const int &idFiche)
         vue->deleteLater();
     }
 }
-
-
 
 void ControleurFiches::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
 {

@@ -2,13 +2,15 @@
 #include "Vues/vueprincipale.h"
 
 #include <QDebug>
-#include "Mappeurs/mappeuractions.h"
+#include <QSettings>
 
 Application::Application(int &argc, char **argv) :
     QApplication(argc, argv)
 {
     m_instance = this;
-    controleurBD = new ControleurBD(this);
+    controleurBD = new ControleurBD("dossiers", this);
+    chargerParametres();
+    creerFenetre();
 }
 
 const Application* Application::m_instance = NULL;
@@ -28,24 +30,38 @@ void Application::connecter()
 {
     QObject::connect(controleurBD, SIGNAL(connexionEtablie()), this, SLOT(demarrer()));
     QObject::connect(controleurBD, SIGNAL(connexionRatee()), controleurBD, SLOT(connecterDossiers()));
+    QObject::connect(this, SIGNAL(aboutToQuit()), this, SLOT(sauvegarderParametres()));
+    QObject::connect(controleurBD, SIGNAL(annule()), this, SLOT(fermer()));
     controleurBD->connecterDossiers();
 }
 
 void Application::demarrer()
 {
     bd = controleurBD->bd();
-    creerFenetre();
     chargerOnglet();
     m_vuePrincipale->show();
 }
 
+void Application::chargerParametres()
+{
+    QCoreApplication::setOrganizationName("InfoDynamique");
+    QCoreApplication::setOrganizationDomain("infodynamique.com");
+    QCoreApplication::setApplicationName("Dossiers");
+}
+
+void Application::sauvegarderParametres()
+{
+    QSettings parametres;
+    parametres.setValue("fenetre/dimensions", m_vuePrincipale->saveGeometry());
+}
+
 void Application::debug()
 {
-    QList<Action*>* listeActions = MappeurActions::getActions();
-    for (QList<Action*>::const_iterator i = listeActions->constBegin(); i != listeActions->constEnd(); ++i)
-    {
-        qDebug() << (*i)->out();
-    }
+//    QList<Action*>* listeActions = MappeurActions::getActions();
+//    for (QList<Action*>::const_iterator i = listeActions->constBegin(); i != listeActions->constEnd(); ++i)
+//    {
+//        qDebug() << (*i)->out();
+//    }
 }
 
 VuePrincipale* Application::vuePrincipale()
@@ -55,11 +71,9 @@ VuePrincipale* Application::vuePrincipale()
 
 void Application::creerFenetre()
 {
+    QSettings settings;
     m_vuePrincipale = new VuePrincipale();
-    ongletClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
-    ongletFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
-    ongletAppareils = new ControleurOngletAppareils(m_vuePrincipale->ongletAppareils());
-    ongletActions = new ControleurOngletActions(m_vuePrincipale->ongletActions());
+    m_vuePrincipale->restoreGeometry(settings.value("fenetre/dimensions").toByteArray());
     clientsCharges = false;
     fichesChargees = false;
     appareilsCharges = false;
@@ -71,15 +85,19 @@ void Application::chargerOnglet()
 {
     QWidget* onglet = m_vuePrincipale->onglets()->currentWidget();
     if (onglet == m_vuePrincipale->ongletClients() && !clientsCharges) {
+        ongletClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
         ongletClients->charger(m_vuePrincipale->ongletClients());
         clientsCharges = true;
+        ongletFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
     } else if (onglet == m_vuePrincipale->ongletFiches() && !fichesChargees) {
         ongletFiches->peuplerFiches();
         fichesChargees = true;
     } else if (onglet == m_vuePrincipale->ongletAppareils() && !appareilsCharges) {
+        ongletAppareils = new ControleurOngletAppareils(m_vuePrincipale->ongletAppareils());
         ongletAppareils->charger(m_vuePrincipale->ongletAppareils());
         appareilsCharges = true;
     } else if (onglet == m_vuePrincipale->ongletActions() && !actionsChargees) {
+        ongletActions = new ControleurOngletActions(m_vuePrincipale->ongletActions());
         ongletActions->charger(m_vuePrincipale->ongletActions());
         actionsChargees = true;
     }
@@ -94,6 +112,13 @@ void Application::erreurEcriture(const QString &message)
 void Application::erreurSuppression(const QString &message)
 {
     erreur(tr("Une erreur s'est produite lors de la suppression:\n")+message, tr("Erreur lors de la suppression"));
+}
+
+void Application::fermer()
+{
+    controleurBD->fermer();
+    m_vuePrincipale->show();
+    m_vuePrincipale->deleteLater();
 }
 
 void Application::erreur(const QString &message, const QString &titre, QMessageBox::Icon type)

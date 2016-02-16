@@ -75,6 +75,9 @@
      </item>
      <item row="3" column="1">
       <widget class="QLineEdit" name="champMDP">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
        <property name="placeholderText">
         <string>Aucun</string>
        </property>
@@ -86,6 +89,10 @@
     <widget class="QPushButton" name="boutonConnecter">
      <property name="text">
       <string>Connecter</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../ressources.qrc">
+       <normaloff>:/Images/network-connect.svg</normaloff>:/Images/network-connect.svg</iconset>
      </property>
     </widget>
    </item>
@@ -120,7 +127,9 @@
   <tabstop>listeBd</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../ressources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

@@ -28,7 +28,7 @@ public:
      * @brief ControleurBD
      * @param parent
      */
-    explicit ControleurBD(QObject* parent = 0);
+    explicit ControleurBD(const QString &nom, QObject* parent = 0);
 
     /**
      * @brief getBd
@@ -36,11 +36,8 @@ public:
      */
     QSqlDatabase* bd();
 
-    /**
-     * @brief nomBd
-     * @return Le nom de la base de données
-     */
-    static const QString nomBd;
+     // Le nom de la base de données
+    QString nomBd;
 
 public slots:
 
@@ -63,14 +60,30 @@ public slots:
      */
     void connecterDossiers();
 
-    void reconnecter();
+    /**
+     * @brief fermer
+     * Ferme la base de données et le contrôleur
+     */
+    void fermer();
 
 signals:
 
+    /**
+     * @brief connexionRatee
+     * Émis lorsque la tentative de connexion échoue
+     */
     void connexionRatee();
 
+    /**
+     * @brief connexionEtablie
+     * Émis lorsque la tentative de connexion réussit
+     */
     void connexionEtablie();
 
+    /**
+     * @brief annule
+     * Émis lorsque la fenêtre de dialogue est fermée autrement que par le bouton Ok
+     */
     void annule();
 
 };

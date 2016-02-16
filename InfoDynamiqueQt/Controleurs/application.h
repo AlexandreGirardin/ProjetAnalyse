@@ -91,6 +91,12 @@ private:
     void creerFenetre();
 
     /**
+     * @brief chargerParametres
+     * Configure l'application selon les paramètres sauvegardés
+     */
+    void chargerParametres();
+
+    /**
      * @brief executer
      * Lance l'exécution de l'application
      */
@@ -105,9 +111,39 @@ private:
      */
     static void erreur(const QString &message, const QString &titre = tr("Erreur"), QMessageBox::Icon type = QMessageBox::Warning);
 
+private slots:
+
+    /**
+     * @brief demarrer
+     * Démarre la fenêtre principale
+     * Lancé une fois la connexion à la base de données établie
+     */
+    void demarrer();
+
+    /**
+     * @brief fermer
+     * Ferme l'application suite à une annulation de la connexion
+     */
+    void fermer();
+
+    /**
+     * @brief sauvegarderParametres
+     * Enregistre les paramètres de session
+     */
+    void sauvegarderParametres();
+
+    /**
+     * @brief chargerOnglet
+     * Charge l'onglet sélectionné au besoin
+     */
+    void chargerOnglet();
+
 public slots:
 
-    // Démarre l'application
+    /**
+     * @brief connecter
+     * Établit une connexion à la base de données
+     */
     void connecter();
 
     /**
@@ -123,6 +159,7 @@ public slots:
      * @param message L'erreur à afficher
      */
     static void erreurSuppression(const QString &message);
+
 
 signals:
 
@@ -185,16 +222,6 @@ signals:
      * Émis lorsqu'un ensemble a été ajouté ou supprimé
      */
     void nombreEnsemblesModifie() const;
-
-private slots:
-
-    void demarrer();
-
-    /**
-     * @brief chargerOnglet
-     * Charge l'onglet sélectionné au besoin
-     */
-    void chargerOnglet();
 };
 
 #endif // APPLICATION_H

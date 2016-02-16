@@ -1,8 +1,10 @@
 #include "vueconnexion.h"
 #include "ui_vueconnexion.h"
 
-#include <QSortFilterProxyModel>
 #include "Controleurs/controleurbd.h"
+
+#include <QSettings>
+#include <QStringListModel>
 
 VueConnexion::VueConnexion(QWidget *parent) :
     QDialog(parent),
@@ -10,9 +12,10 @@ VueConnexion::VueConnexion(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle(tr("Connexion"));
-    ui->champHote->setText("localhost");
-    ui->champPort->setValue(3307);
-    ui->champUsager->setText("root");
+    QSettings parametres;
+    ui->champHote->setText(parametres.value("connexion/hote","localhost").toString());
+    ui->champPort->setValue(parametres.value("connexion/port", 3307).toInt());
+    ui->champUsager->setText(parametres.value("connexion/usager","root").toString());
     QObject::connect(ui->boutonConnecter, SIGNAL(clicked()), this, SIGNAL(testerConnexion()));
     boutonOk = new QPushButton(tr("Ok"), this);
     boutonOk->setEnabled(false);
@@ -91,5 +94,14 @@ void VueConnexion::peuplerTableau(QAbstractTableModel* valeurs)
         ui->listeBd->model()->deleteLater();
     }
     ui->listeBd->setModel(valeurs);
+    desactiverBoutonOk();
+}
+
+void VueConnexion::viderListe()
+{
+    if (ui->listeBd->model() != NULL) {
+        ui->listeBd->model()->deleteLater();
+    }
+    ui->listeBd->setModel(new QStringListModel(this));
     desactiverBoutonOk();
 }
