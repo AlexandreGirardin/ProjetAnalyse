@@ -153,6 +153,10 @@ public slots:
      */
     void ajouterFiche() const;
 
+    /**
+     * @brief traiterFiche
+     */
+    void traiterFiche() const;
 
     /**
      * @brief filtrerClients

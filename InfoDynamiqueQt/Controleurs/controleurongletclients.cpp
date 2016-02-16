@@ -83,6 +83,7 @@ void ControleurOngletClients::configurerFragmentFiches()
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
     QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
+    QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
 }
 
 // Clients
@@ -224,6 +225,13 @@ void ControleurOngletClients::ajouterFiche() const
 {
     if (fragmentAppareils->idModele() != -1) {
         ControleurFiches::ajouterFiche(fragmentAppareils->idModele());
+    }
+}
+
+void ControleurOngletClients::traiterFiche() const
+{
+    if (fragmentFiches->idModele() != -1) {
+        ControleurFiches::traiterFiche(fragmentFiches->idModele());
     }
 }
 

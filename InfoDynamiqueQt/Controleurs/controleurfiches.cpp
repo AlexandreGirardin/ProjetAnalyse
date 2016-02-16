@@ -5,6 +5,9 @@
 #include "Mappeurs/mappeurensembles.h"
 #include "Mappeurs/mappeurstatuts.h"
 
+#include "Vues/vueeditionfiche.h"
+#include "QDebug"
+
 void ControleurFiches::ajouterFiche(const int &idAppareil)
 {
     VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
@@ -22,6 +25,21 @@ void ControleurFiches::ajouterFiche(const int &idAppareil)
     }
     vue->deleteLater();
 }
+
+void ControleurFiches::traiterFiche(const int &idFiche)
+{
+    qDebug()<<idFiche;
+    Fiche* fiche = MappeurFiches::getFiche(idFiche);
+    if (fiche != NULL) {
+        VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
+        vue->setIdFiche(fiche->id());
+        vue->setCommentaire(fiche->commentaire());
+        vue->exec();
+        vue->deleteLater();
+    }
+}
+
+
 
 void ControleurFiches::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
 {

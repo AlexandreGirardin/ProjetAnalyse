@@ -2,6 +2,7 @@
 
 #include "Controleurs/application.h"
 #include "Controleurs/requetessql.h"
+#include "Controleurs/controleurfiches.h"
 #include "Mappeurs/mappeurensembles.h"
 #include "Mappeurs/mappeurfiches.h"
 #include "Vues/vueeditionfiche.h"
@@ -26,7 +27,7 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
-    QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(modifierFiche()));
+    QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
     QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichir()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
     fragment->champ()->setFocus();
@@ -37,31 +38,12 @@ void ControleurOngletFiches::peuplerFiches()
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
     fiches->setQuery(*RequetesSQL::afficherFiches, *Application::bd);
     fragment->peuplerTableau(fiches);
-    fragment->cacherColonneId();
-}
-
-void ControleurOngletFiches::modifierFiche() const
-{
-    Fiche* fiche = MappeurFiches::getFiche(fragment->idModele());
-    if (fiche != NULL) {
-        VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
-        vue->setCommentaire(fiche->commentaire());
-        vue->setPriorite(fiche->priorite());
-        vue->setEnsembles(MappeurEnsembles::getEnsembles());
-        vue->exec();
-        vue->deleteLater();
-    }
 }
 
 void ControleurOngletFiches::traiterFiche() const
 {
-    Fiche* fiche = MappeurFiches::getFiche(fragment->idModele());
-    if (fiche != NULL) {
-        VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
-        vue->setIdFiche(fiche->id());
-        vue->setCommentaire(fiche->commentaire());
-        vue->exec();
-        vue->deleteLater();
+    if (fragment->idModele() != -1) {
+        ControleurFiches::traiterFiche(fragment->idModele());
     }
 }
 
@@ -78,7 +60,6 @@ void ControleurOngletFiches::filtrerFiches(const QString &filtre)
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
         fragment->peuplerTableau(resultats);
-        fragment->cacherColonneId();
     }
 }
 
