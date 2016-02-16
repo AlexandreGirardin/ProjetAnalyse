@@ -65,6 +65,8 @@ public slots:
 
     void reconnecter();
 
+    void fermer();
+
 signals:
 
     void connexionRatee();

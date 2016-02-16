@@ -9,6 +9,7 @@ Application::Application(int &argc, char **argv) :
 {
     m_instance = this;
     controleurBD = new ControleurBD(this);
+    creerFenetre();
 }
 
 const Application* Application::m_instance = NULL;
@@ -28,13 +29,14 @@ void Application::connecter()
 {
     QObject::connect(controleurBD, SIGNAL(connexionEtablie()), this, SLOT(demarrer()));
     QObject::connect(controleurBD, SIGNAL(connexionRatee()), controleurBD, SLOT(connecterDossiers()));
+//    QObject::connect(this, SIGNAL(aboutToQuit()), controleurBD, SLOT(connecterDossiers()));
+    QObject::connect(controleurBD, SIGNAL(annule()), this, SLOT(fermer()));
     controleurBD->connecterDossiers();
 }
 
 void Application::demarrer()
 {
     bd = controleurBD->bd();
-    creerFenetre();
     chargerOnglet();
     m_vuePrincipale->show();
 }
@@ -94,6 +96,14 @@ void Application::erreurEcriture(const QString &message)
 void Application::erreurSuppression(const QString &message)
 {
     erreur(tr("Une erreur s'est produite lors de la suppression:\n")+message, tr("Erreur lors de la suppression"));
+}
+
+void Application::fermer()
+{
+    controleurBD->fermer();
+    qDebug() << "fermeture";
+    closeAllWindows();
+    quit();
 }
 
 void Application::erreur(const QString &message, const QString &titre, QMessageBox::Icon type)

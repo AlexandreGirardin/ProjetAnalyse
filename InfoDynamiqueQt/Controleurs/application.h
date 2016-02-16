@@ -188,6 +188,8 @@ signals:
 
 private slots:
 
+    void fermer();
+
     void demarrer();
 
     /**

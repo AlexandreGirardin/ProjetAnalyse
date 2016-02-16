@@ -110,7 +110,9 @@ public slots:
      * Peuple le tableau avec les valeurs du modèle donné.
      * S'assure que le modèle est triable et réinitialise le tri.
      */
-    void peuplerTableau(QAbstractTableModel* valeurs);
+    void peuplerTableau(QAbstractTableModel *valeurs);
+
+    void viderListe();
 
 signals:
 

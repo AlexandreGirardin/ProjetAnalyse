@@ -1,8 +1,9 @@
 #include "vueconnexion.h"
 #include "ui_vueconnexion.h"
 
-#include <QSortFilterProxyModel>
 #include "Controleurs/controleurbd.h"
+
+#include <QStringListModel>
 
 VueConnexion::VueConnexion(QWidget *parent) :
     QDialog(parent),
@@ -91,5 +92,12 @@ void VueConnexion::peuplerTableau(QAbstractTableModel* valeurs)
         ui->listeBd->model()->deleteLater();
     }
     ui->listeBd->setModel(valeurs);
+    desactiverBoutonOk();
+}
+
+void VueConnexion::viderListe()
+{
+    ui->listeBd->model()->deleteLater();
+    ui->listeBd->setModel(new QStringListModel(this));
     desactiverBoutonOk();
 }
