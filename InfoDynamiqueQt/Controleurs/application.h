@@ -90,6 +90,10 @@ private:
      */
     void creerFenetre();
 
+    /**
+     * @brief chargerParametres
+     * Configure l'application selon les paramètres sauvegardés
+     */
     void chargerParametres();
 
     /**
@@ -109,10 +113,23 @@ private:
 
 private slots:
 
-    void fermer();
-
+    /**
+     * @brief demarrer
+     * Démarre la fenêtre principale
+     * Lancé une fois la connexion à la base de données établie
+     */
     void demarrer();
 
+    /**
+     * @brief fermer
+     * Ferme l'application suite à une annulation de la connexion
+     */
+    void fermer();
+
+    /**
+     * @brief sauvegarderParametres
+     * Enregistre les paramètres de session
+     */
     void sauvegarderParametres();
 
     /**
@@ -123,7 +140,10 @@ private slots:
 
 public slots:
 
-    // Démarre l'application
+    /**
+     * @brief connecter
+     * Établit une connexion à la base de données
+     */
     void connecter();
 
     /**

@@ -56,12 +56,6 @@ void ControleurBD::connecterDossiers()
 //    emit connexionEtablie();
 }
 
-void ControleurBD::reconnecter()
-{
-    vue->setMotDePasse("");
-    connecterDossiers();
-}
-
 void ControleurBD::fermer()
 {
     m_bd.close();

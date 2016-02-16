@@ -60,16 +60,30 @@ public slots:
      */
     void connecterDossiers();
 
-    void reconnecter();
-
+    /**
+     * @brief fermer
+     * Ferme la base de données et le contrôleur
+     */
     void fermer();
 
 signals:
 
+    /**
+     * @brief connexionRatee
+     * Émis lorsque la tentative de connexion échoue
+     */
     void connexionRatee();
 
+    /**
+     * @brief connexionEtablie
+     * Émis lorsque la tentative de connexion réussit
+     */
     void connexionEtablie();
 
+    /**
+     * @brief annule
+     * Émis lorsque la fenêtre de dialogue est fermée autrement que par le bouton Ok
+     */
     void annule();
 
 };
