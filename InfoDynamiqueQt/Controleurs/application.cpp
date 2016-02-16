@@ -75,10 +75,6 @@ void Application::creerFenetre()
     QSettings settings;
     m_vuePrincipale = new VuePrincipale();
     m_vuePrincipale->restoreGeometry(settings.value("fenetre/dimensions").toByteArray());
-    ongletClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
-    ongletFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
-    ongletAppareils = new ControleurOngletAppareils(m_vuePrincipale->ongletAppareils());
-    ongletActions = new ControleurOngletActions(m_vuePrincipale->ongletActions());
     clientsCharges = false;
     fichesChargees = false;
     appareilsCharges = false;
@@ -90,15 +86,19 @@ void Application::chargerOnglet()
 {
     QWidget* onglet = m_vuePrincipale->onglets()->currentWidget();
     if (onglet == m_vuePrincipale->ongletClients() && !clientsCharges) {
+        ongletClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
         ongletClients->charger(m_vuePrincipale->ongletClients());
         clientsCharges = true;
+        ongletFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
     } else if (onglet == m_vuePrincipale->ongletFiches() && !fichesChargees) {
         ongletFiches->peuplerFiches();
         fichesChargees = true;
     } else if (onglet == m_vuePrincipale->ongletAppareils() && !appareilsCharges) {
+        ongletAppareils = new ControleurOngletAppareils(m_vuePrincipale->ongletAppareils());
         ongletAppareils->charger(m_vuePrincipale->ongletAppareils());
         appareilsCharges = true;
     } else if (onglet == m_vuePrincipale->ongletActions() && !actionsChargees) {
+        ongletActions = new ControleurOngletActions(m_vuePrincipale->ongletActions());
         ongletActions->charger(m_vuePrincipale->ongletActions());
         actionsChargees = true;
     }
