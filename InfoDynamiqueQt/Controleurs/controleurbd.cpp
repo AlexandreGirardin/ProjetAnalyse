@@ -31,6 +31,7 @@ QSqlDatabase* ControleurBD::bd()
 
 void ControleurBD::connecterDossiers()
 {
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     vue = new VueConnexion(Application::vuePrincipale());
     QObject::connect(vue, SIGNAL(testerConnexion()), this, SLOT(sonderHote()));
     if (vue->exec() == vue->Accepted) {
@@ -59,8 +60,8 @@ void ControleurBD::connecterDossiers()
 //        qDebug() << "Erreur d'ouverture de la base de données";
 //        }
 //    emit connexionEtablie();
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
-
 void ControleurBD::fermer()
 {
     m_bd.close();

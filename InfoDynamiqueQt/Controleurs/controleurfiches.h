@@ -39,6 +39,12 @@ public slots:
      */
     static void ajouterFiche(const int &idAppareil);
 
+    /**
+     * @brief traiterFiche
+     * Lance le traitement de la fiche sélectionnée
+     */
+    static void traiterFiche(const int &idFiche);
+
 };
 
 #endif // CONTROLEURGESTIONFICHE_H

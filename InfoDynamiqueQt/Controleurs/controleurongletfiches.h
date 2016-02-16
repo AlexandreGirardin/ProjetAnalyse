@@ -37,12 +37,6 @@ public slots:
     void peuplerFiches();
 
     /**
-     * @brief modifierFiche
-     * Lance la modification de la fiche actuellement sélectionnée
-     */
-    void modifierFiche() const;
-
-    /**
      * @brief traiterFiche
      * Lance le traitement de la fiche sélectionnée
      */
