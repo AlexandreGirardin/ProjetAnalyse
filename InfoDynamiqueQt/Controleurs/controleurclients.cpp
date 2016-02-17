@@ -36,11 +36,12 @@ void ControleurClients::modifierClient(const int &idClient)
     }
 }
 
-void ControleurClients::voirClient(const int &idClient)
+void ControleurClients::voirClient(const int &idClient, const bool &modal)
 {
     Client* client = MappeurClients::getClient(idClient);
     if (client != NULL) {
         VueClient* vue = new VueClient(Application::vuePrincipale());
+        vue->setModal(modal);
         vue->setWindowTitle(tr("Informations d'un client"));
         vue->setPrenom(client->prenom());
         vue->setNom(client->nom());

@@ -60,7 +60,7 @@ public slots:
      * Lance la visualisation de l'appareil
      * @param idAppareil L'id de l'appareil à visualiser
      */
-    static void voirAppareil(const int &idAppareil);
+    static void voirAppareil(const int &idAppareil, const bool &modal = false);
 
     /**
      * @brief effacerAppareil

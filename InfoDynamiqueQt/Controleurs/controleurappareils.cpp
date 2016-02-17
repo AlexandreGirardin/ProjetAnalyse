@@ -43,11 +43,12 @@ void ControleurAppareils::modifierAppareil(const int &idAppareil)
     appareil->deleteLater();
 }
 
-void ControleurAppareils::voirAppareil(const int &idAppareil)
+void ControleurAppareils::voirAppareil(const int &idAppareil, const bool &modal)
 {
     Appareil* appareil = MappeurAppareils::getAppareil(idAppareil);
     if (appareil != NULL) {
         VueAppareil* vue = new VueAppareil(Application::vuePrincipale());
+        vue->setModal(modal);
         vue->setWindowTitle(tr("Appareil"));
         assignerAppareil(vue, appareil);
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));

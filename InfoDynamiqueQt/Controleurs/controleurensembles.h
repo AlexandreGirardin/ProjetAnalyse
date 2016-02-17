@@ -55,7 +55,7 @@ public:
      * Lance la visualisation de l'ensemble donné
      * @param idEnsemble L'id de l'ensemble à afficher
      */
-    static void voirEnsemble(const int &idEnsemble);
+    static void voirEnsemble(const int &idEnsemble, const bool &modal = false);
 
     /**
      * @brief supprimerEnsemble

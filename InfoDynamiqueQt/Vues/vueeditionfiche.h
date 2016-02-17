@@ -4,6 +4,7 @@
 #include <QDialog>
 
 #include "Vues/fragment.h"
+#include "Modeles/tache.h"
 
 namespace Ui {
 class VueEditionFiche;
@@ -22,19 +23,31 @@ public:
 
     void setIdFiche(const int &id);
 
+    int idFiche() const;
+
     void setCommentaire(const QString &commentaire);
 
-    QString getCommentaire() const;
+    QString commentaire() const;
+
+    void setDescription(const QString &commentaire);
+
+    QString description() const;
 
     void setClient(const int &id, const QString &nom, const QString &telephone);
 
     void setAppareil(const int &id, const QString &description);
 
+    void setTaches(const QList<Tache*>* taches);
+
 private:
 
     Ui::VueEditionFiche* ui;
 
-    int idFiche;
+    int m_idFiche;
+
+    int m_idClient;
+
+    int m_idAppareil;
 
     Fragment* fragmentTaches;
 
@@ -42,6 +55,12 @@ private:
 
     void configurerFragmentTaches();
     void configurerFragmentPieces();
+
+private slots:
+
+    void detailsClient();
+
+    void detailsAppareil();
 
 public slots:
 
@@ -52,6 +71,10 @@ public slots:
 signals:
 
     void nouvelId();
+
+    void voirClient(const int &idClient);
+
+    void voirAppareil(const int &idFiche);
 
 };
 

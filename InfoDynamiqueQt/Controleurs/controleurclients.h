@@ -48,7 +48,7 @@ public slots:
      * @brief modifierClient
      * Lance la visualisation d'un client
      */
-    static void voirClient(const int &idClient);
+    static void voirClient(const int &idClient, const bool &modal = false);
 };
 
 #endif // CONTROLEURGESTIONCLIENT_H

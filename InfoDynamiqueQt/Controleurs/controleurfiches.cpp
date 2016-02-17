@@ -1,6 +1,8 @@
 #include "Controleurs/controleurfiches.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/mappeurappareils.h"
+#include "Mappeurs/mappeurclients.h"
 #include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurensembles.h"
 #include "Mappeurs/mappeurstatuts.h"
@@ -33,6 +35,10 @@ void ControleurFiches::traiterFiche(const int &idFiche)
         VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
         vue->setIdFiche(fiche->id());
         vue->setCommentaire(fiche->commentaire());
+        Appareil* appareil = MappeurAppareils::getAppareil(fiche->idAppareil());
+        vue->setAppareil(appareil->id(), appareil->nomType() + " " + appareil->nomFabricant());
+        Client* client = MappeurClients::getClient(appareil->idClient());
+        vue->setClient(client->id(), client->prenom() + " " + client->nom(), client->telephone());
         vue->exec();
         vue->deleteLater();
     }

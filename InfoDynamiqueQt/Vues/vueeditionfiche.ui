@@ -28,7 +28,7 @@
            <item>
             <layout class="QGridLayout" name="gridLayout">
              <item row="0" column="0">
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="etiquetteClient">
                <property name="text">
                 <string>Client:</string>
                </property>
@@ -38,7 +38,7 @@
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QLabel" name="label_2">
+              <widget class="QLabel" name="etiquetteAppareil">
                <property name="text">
                 <string>Appareil:</string>
                </property>
@@ -48,7 +48,7 @@
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLabel" name="label_3">
+              <widget class="QLabel" name="texteAppareil">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -61,7 +61,7 @@
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QLabel" name="label_7">
+              <widget class="QLabel" name="texteClient">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -74,13 +74,7 @@
               </widget>
              </item>
              <item row="0" column="2">
-              <widget class="QPushButton" name="pushButton">
-               <property name="minimumSize">
-                <size>
-                 <width>24</width>
-                 <height>24</height>
-                </size>
-               </property>
+              <widget class="QPushButton" name="detailsClient">
                <property name="text">
                 <string/>
                </property>
@@ -91,7 +85,7 @@
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="detailsAppareil">
                <property name="text">
                 <string/>
                </property>
@@ -111,7 +105,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QTextEdit" name="textEdit"/>
+            <widget class="QTextEdit" name="champDescription"/>
            </item>
           </layout>
          </widget>
@@ -120,16 +114,7 @@
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_4">
-        <property name="leftMargin">
-         <number>9</number>
-        </property>
-        <property name="topMargin">
-         <number>9</number>
-        </property>
-        <property name="rightMargin">
-         <number>9</number>
-        </property>
-        <property name="bottomMargin">
+        <property name="margin">
          <number>9</number>
         </property>
         <item>

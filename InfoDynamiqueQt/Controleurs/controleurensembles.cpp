@@ -39,11 +39,12 @@ void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
     ensemble->deleteLater();
 }
 
-void ControleurEnsembles::voirEnsemble(const int &idEnsemble)
+void ControleurEnsembles::voirEnsemble(const int &idEnsemble, const bool &modal)
 {
     EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
     if (ensemble != NULL) {
         VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
+        vue->setModal(modal);
         vue->setWindowTitle(tr("Ensemble de tâches"));
         assignerEnsemble(vue, ensemble);
         vue->setActions(ensemble->actions());
