@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `appareils` (
   `idType` int(10) NOT NULL,
   `idFabricant` int(10) NOT NULL,
   `idClient` int(10) NOT NULL,
-  `Description` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
   `motDePasse` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -59,7 +59,8 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `telephone` varchar(255) NOT NULL,
-  `adresse` varchar(255) DEFAULT NULL
+  `adresse` varchar(255) DEFAULT NULL,
+  `courriel` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -108,7 +109,8 @@ CREATE TABLE IF NOT EXISTS `fiches` (
   `priorite` int(10) NOT NULL,
   `idTechnicien` int(10) NOT NULL,
   `idStatut` int(10) NOT NULL,
-  `commentaire` varchar(1023) DEFAULT NULL
+  `commentaire` varchar(1023) DEFAULT NULL,
+  `description` varchar(1023) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -166,7 +168,8 @@ CREATE TABLE IF NOT EXISTS `statutsTache` (
 CREATE TABLE IF NOT EXISTS `taches` (
   `idFiche` int(10) NOT NULL,
   `idAction` int(10) NOT NULL,
-  `idStatut` int(10) NOT NULL
+  `idStatut` int(10) NOT NULL,
+  `commentaire` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

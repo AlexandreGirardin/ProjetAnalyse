@@ -10,13 +10,13 @@ VALUES
 -- ------------------------------------------------------------
 
 INSERT INTO `InfoDynamiqueDossiers`.`clients`
-    (`id`, `prenom`, `nom`, `telephone`, `adresse`)
+    (`id`, `prenom`, `nom`, `telephone`, `adresse`, `courriel`)
 VALUES
-    (1, "Dilbert",   "Daiquiri",    "5558501111", "1 rue Dickens"),
-    (2, "Elphège",   "Éléphant",    "5554502222", "2 rue Eddings"),
-    (3, "Franny",    "Fréchette",   "5554183333", "3 rue Franck"),
-    (4, "Gaston",    "Gaboury",     "5554714444", "4 rue Galt"),
-    (5, "Henriette", "Hospitalité", "5558185555", "5 rue Hemmingway");
+    (1, "Dilbert",   "Daiquiri",    "5558501111", "1 rue Dickens",    "dd@courriel.com"),
+    (2, "Elphège",   "Éléphant",    "5554502222", "2 rue Eddings",    "ee@courriel.com"),
+    (3, "Franny",    "Fréchette",   "5554183333", "3 rue Franck",     "ff@courriel.com"),
+    (4, "Gaston",    "Gaboury",     "5554714444", "4 rue Galt",       "gg@courriel.com"),
+    (5, "Henriette", "Hospitalité", "5558185555", "5 rue Hemmingway", "hh@courriel.com");
 
 -- ------------------------------------------------------------
 
@@ -55,7 +55,7 @@ INSERT INTO `InfoDynamiqueDossiers`.`pieces`
     (`id`, `nom`, `description`, `prix`)
 VALUES
     (1, "WesternDigital 1to Blue", "Disque dur Western Digital 1to Blue", "9999"),
-    (2, "Samsung EVO 120go",       "SSD Samsung EVO 120go",              "12999"),
+    (2, "Samsung EVO 120go",       "SSD Samsung EVO 120go",               "12999"),
     (3, "Iphone5s LCD",            "Iphone5s LCD assembly",               "4999"),
     (4, "Kingston V300 240go",     "SSD Kingston 240go",                  "18999");
 
@@ -106,10 +106,10 @@ VALUES
 INSERT INTO `InfoDynamiqueDossiers`.`statutsTache`
     (`id`, `nom`)
 VALUES
-    (1, "Terminée"),
-    (2, "En cours"),
-    (3, "En attente"),
-    (4, "Terminée avec erreurs");
+    (0, "Terminée"),
+    (1, "En cours"),
+    (2, "En attente"),
+    (3, "Terminée avec erreurs");
 
 -- ------------------------------------------------------------
 
@@ -127,21 +127,21 @@ VALUES
 -- ------------------------------------------------------------
 
 INSERT INTO `InfoDynamiqueDossiers`.`fiches`
-    (`id`, `idAppareil`, `priorite`, `idTechnicien`, `idStatut`, `commentaire`)
+    (`id`, `idAppareil`, `priorite`, `idTechnicien`, `idStatut`, `description`)
 VALUES
-    (1,  1, 1, 2, 4, "Nettoyage du disque dur"),
-    (2,  1, 2, 2, 0, "Nettoyage des virus"),
-    (3,  2, 2, 2, 0, "Réparation de l'écran"),
-    (4,  2, 2, 2, 0, "Transfert de données"),
-    (5,  1, 2, 2, 0, "Ne démarre pas"),
-    (6,  2, 2, 2, 0, "Mise à niveau Windows 10"),
-    (7,  1, 2, 2, 0, "Nettoyage du disque dur"),
+    (1,  1, 1, 2, 0, "Nettoyage du disque dur"),
+    (2,  1, 2, 2, 1, "Nettoyage des virus"),
+    (3,  2, 2, 2, 2, "Réparation de l'écran"),
+    (4,  2, 2, 2, 3, "Transfert de données"),
+    (5,  1, 2, 2, 4, "Ne démarre pas"),
+    (6,  2, 2, 2, 5, "Mise à niveau Windows 10"),
+    (7,  1, 2, 2, 6, "Nettoyage du disque dur"),
     (8,  2, 2, 2, 0, "Problème de son"),
-    (9,  2, 2, 2, 0, "Nettoyage du disque dur"),
-    (10, 1, 2, 2, 0, "Nettoyage des virus"),
-    (11, 3, 2, 2, 0, "Réparation de l'écran"),
-    (12, 3, 2, 2, 0, "Transfert de données"),
-    (13, 4, 2, 2, 0, "Ne démarre pas");
+    (9,  2, 2, 2, 1, "Nettoyage du disque dur"),
+    (10, 1, 2, 2, 2, "Nettoyage des virus"),
+    (11, 3, 2, 2, 3, "Réparation de l'écran"),
+    (12, 3, 2, 2, 4, "Transfert de données"),
+    (13, 4, 2, 2, 5, "Ne démarre pas");
 
 -- ------------------------------------------------------------
 
@@ -154,32 +154,32 @@ VALUES
 -- ------------------------------------------------------------
 
 INSERT INTO `InfoDynamiqueDossiers`.`taches`
-    (`idFiche`, `idAction`, `idStatut`)
+    (`idFiche`, `idAction`, `idStatut`, `commentaire`)
 VALUES
-    (1,  1,  2),
-    (1,  2,  1),
-    (2,  2,  1),
-    (2,  1,  1),
-    (1,  3,  1),
-    (3,  2,  1),
-    (3,  3,  1),
-    (3,  4,  1),
-    (3,  5,  1),
-    (4,  2,  1),
-    (4,  6,  1),
-    (5,  2,  1),
-    (5,  6,  1),
-    (6,  2,  1),
-    (6,  6,  1),
-    (7,  2,  1),
-    (8,  2,  1),
-    (9,  2,  1),
-    (10, 2,  1),
-    (8,  6,  1),
-    (8,  7,  1),
-    (9,  8,  1),
-    (9,  9,  1),
-    (10, 10, 1),
-    (10, 1,  1),
-    (5,  4,  1),
-    (7,  4,  1);
+    (1,  1,  0, "Terminé"),
+    (1,  2,  1, ""),
+    (2,  2,  2, "D'ici vendredi"),
+    (2,  1,  3, "Passera chercher"),
+    (1,  3,  0, ""),
+    (3,  2,  1, ""),
+    (3,  3,  2, ""),
+    (3,  4,  3, "A nécessité plus de temps que prévu"),
+    (3,  5,  0, ""),
+    (4,  2,  1, ""),
+    (4,  6,  2, ""),
+    (5,  2,  3, ""),
+    (5,  6,  0, ""),
+    (6,  2,  1, ""),
+    (6,  6,  2, "Annulé"),
+    (7,  2,  3, ""),
+    (8,  2,  0, ""),
+    (9,  2,  1, ""),
+    (10, 2,  2, ""),
+    (8,  6,  3, ""),
+    (8,  7,  0, ""),
+    (9,  8,  1, ""),
+    (9,  9,  2, ""),
+    (10, 10, 3, "Terminé"),
+    (10, 1,  0, ""),
+    (5,  4,  1, ""),
+    (7,  4,  2, "");
