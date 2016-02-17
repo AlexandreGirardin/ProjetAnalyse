@@ -28,6 +28,12 @@ public:
     static const Application* getInstance();
 
     /**
+     * @brief demarrer
+     * Lance l'application
+     */
+    void demarrer();
+
+    /**
      * @brief getVuePrincipale
      * Retourne la fenêtre principale de l'application
      * @return
@@ -37,13 +43,10 @@ public:
     // La base de donnée de l'application
     static QSqlDatabase* bd;
 
+private:
+
     // Le contrôleur de base de données de l'application
     static ControleurBD* controleurBD;
-
-    // Imprime des informations pour tester
-    void debug();
-
-private:
 
     // Singleton
     static const Application* m_instance;
@@ -114,11 +117,17 @@ private:
 private slots:
 
     /**
+     * @brief connecter
+     * Établit une connexion à la base de données
+     */
+    void connecter();
+
+    /**
      * @brief demarrer
      * Démarre la fenêtre principale
      * Lancé une fois la connexion à la base de données établie
      */
-    void demarrer();
+    void ouvrirFenetre();
 
     /**
      * @brief fermer
@@ -138,13 +147,9 @@ private slots:
      */
     void chargerOnglet();
 
-public slots:
+    void deconnexion();
 
-    /**
-     * @brief connecter
-     * Établit une connexion à la base de données
-     */
-    void connecter();
+public slots:
 
     /**
      * @brief erreurEcriture

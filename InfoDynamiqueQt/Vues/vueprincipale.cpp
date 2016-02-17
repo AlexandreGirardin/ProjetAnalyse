@@ -1,11 +1,22 @@
 #include "Vues/vueprincipale.h"
 #include "ui_vueprincipale.h"
 
+#include <QCloseEvent>
+#include <QDebug>
+
+void VuePrincipale::closeEvent (QCloseEvent *event)
+{
+    event->ignore();
+    qDebug() << "intercepté";
+    emit deconnexion();
+//    QMainWindow::closeEvent(event);
+//        event->accept();
+}
 
 VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)
 {
     ui->setupUi(this);
-    QObject::connect(ui->menuDeconnexion, SIGNAL(triggered()), this, SIGNAL(deconnexion()));
+//    QObject::connect(ui->menuDeconnexion, SIGNAL(triggered()), this, SIGNAL(deconnexion()));
 }
 
 VuePrincipale::~VuePrincipale()

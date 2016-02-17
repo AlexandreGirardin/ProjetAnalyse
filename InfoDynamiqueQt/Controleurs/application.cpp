@@ -8,9 +8,14 @@ Application::Application(int &argc, char **argv) :
     QApplication(argc, argv)
 {
     m_instance = this;
+}
+
+void Application::demarrer()
+{
     controleurBD = new ControleurBD("dossiers", this);
     chargerParametres();
     creerFenetre();
+    connecter();
 }
 
 const Application* Application::m_instance = NULL;
@@ -28,14 +33,13 @@ const Application* Application::getInstance()
 
 void Application::connecter()
 {
-    QObject::connect(controleurBD, SIGNAL(connexionEtablie()), this, SLOT(demarrer()));
-    QObject::connect(controleurBD, SIGNAL(connexionRatee()), controleurBD, SLOT(connecterDossiers()));
-    QObject::connect(this, SIGNAL(aboutToQuit()), this, SLOT(sauvegarderParametres()));
-    QObject::connect(controleurBD, SIGNAL(annule()), this, SLOT(fermer()));
+    connect(controleurBD, SIGNAL(connexionEtablie()), this, SLOT(ouvrirFenetre()));
+    connect(controleurBD, SIGNAL(connexionRatee()), controleurBD, SLOT(connecterDossiers()));
+    connect(controleurBD, SIGNAL(annule()), this, SLOT(fermer()));
     controleurBD->connecterDossiers();
 }
 
-void Application::demarrer()
+void Application::ouvrirFenetre()
 {
     bd = controleurBD->bd();
     chargerOnglet();
@@ -55,15 +59,6 @@ void Application::sauvegarderParametres()
     parametres.setValue("fenetre/dimensions", m_vuePrincipale->saveGeometry());
 }
 
-void Application::debug()
-{
-//    QList<Action*>* listeActions = MappeurActions::getActions();
-//    for (QList<Action*>::const_iterator i = listeActions->constBegin(); i != listeActions->constEnd(); ++i)
-//    {
-//        qDebug() << (*i)->out();
-//    }
-}
-
 VuePrincipale* Application::vuePrincipale()
 {
     return m_vuePrincipale;
@@ -78,7 +73,8 @@ void Application::creerFenetre()
     fichesChargees = false;
     appareilsCharges = false;
     actionsChargees = false;
-    paresseux = QObject::connect(m_vuePrincipale->onglets(), SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
+    paresseux = connect(m_vuePrincipale->onglets(), SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
+    connect(m_vuePrincipale, SIGNAL(deconnexion()), this, SLOT(deconnexion()));
 }
 
 void Application::chargerOnglet()
@@ -102,6 +98,16 @@ void Application::chargerOnglet()
         actionsChargees = true;
     }
     verifierParesseux();
+}
+
+void Application::deconnexion()
+{
+    sauvegarderParametres();
+    m_vuePrincipale->hide();
+    controleurBD->fermer();
+    controleurBD->deleteLater();
+    m_vuePrincipale->deleteLater();
+    demarrer();
 }
 
 void Application::erreurEcriture(const QString &message)

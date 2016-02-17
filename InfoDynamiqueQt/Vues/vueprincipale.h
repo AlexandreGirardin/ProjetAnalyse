@@ -50,6 +50,7 @@ public:
 private:
     Ui::VuePrincipale* ui;
 
+    void closeEvent(QCloseEvent *event);
 signals:
 
     void deconnexion();

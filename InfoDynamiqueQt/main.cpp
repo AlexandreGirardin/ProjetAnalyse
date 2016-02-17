@@ -3,7 +3,7 @@
 int main(int argc, char* argv[])
 {
     Application application(argc, argv);
-    application.connecter();
+    application.demarrer();
     int retour = application.exec();
     application.deleteLater();
     return retour;

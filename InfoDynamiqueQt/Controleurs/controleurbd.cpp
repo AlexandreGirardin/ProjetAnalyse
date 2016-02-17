@@ -10,7 +10,7 @@
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 
-void ControleurBD::chargerChamps()
+void ControleurBD::sauvegarderChamps()
 {
     QSettings parametres;
     parametres.setValue("connexion/hote", m_bd.hostName());
@@ -37,11 +37,11 @@ void ControleurBD::connecterDossiers()
     if (vue->exec() == vue->Accepted) {
         m_bd.setDatabaseName(vue->getNomBD());
         if (!m_bd.open()) {
-//            qDebug() << "Erreur d'ouverture de la base de données";
+            qDebug() << "Erreur d'ouverture de la base de données";
             emit connexionRatee();
         } else {
             emit connexionEtablie();
-            chargerChamps();
+            sauvegarderChamps();
         }
     } else {
         emit annule();
@@ -65,7 +65,7 @@ void ControleurBD::connecterDossiers()
 void ControleurBD::fermer()
 {
     m_bd.close();
-    vue->deleteLater();
+    m_bd = QSqlDatabase();
 }
 
 void ControleurBD::sonderHote()

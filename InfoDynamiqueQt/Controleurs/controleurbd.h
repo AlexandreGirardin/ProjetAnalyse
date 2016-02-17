@@ -22,7 +22,11 @@ private:
     // La vue servant à recueillir les informations de connexion
     VueConnexion* vue;
 
-    void chargerChamps();
+    /**
+     * @brief sauvegarderChamps
+     * Enregistre la valeur des champs d'hôte, de port et d'usager pour la prochaine connexion
+     */
+    void sauvegarderChamps();
 
 public:
 
@@ -38,7 +42,7 @@ public:
      */
     QSqlDatabase* bd();
 
-     // Le nom de la base de données
+     // Le nom à donner à la base de données
     QString nomBd;
 
 public slots:
