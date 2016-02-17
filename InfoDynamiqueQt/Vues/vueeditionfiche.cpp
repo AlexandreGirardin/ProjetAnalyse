@@ -5,11 +5,13 @@
 #include "Controleurs/controleurappareils.h"
 #include "Controleurs/controleurclients.h"
 #include "Controleurs/requetessql.h"
+#include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
 
 #include <QComboBox>
 #include <QDebug>
+#include <QVariant>
 
 VueEditionFiche::VueEditionFiche(QWidget* parent) :
     QDialog(parent),
@@ -72,6 +74,11 @@ void VueEditionFiche::setAppareil(const int &id, const QString &description)
     ui->texteAppareil->setText(description);
 }
 
+void VueEditionFiche::configurerTableauTaches()
+{
+
+}
+
 void VueEditionFiche::setTaches(const QList<Tache*>* taches)
 {
     ui->tableauTaches->setRowCount(taches->count());
@@ -79,15 +86,28 @@ void VueEditionFiche::setTaches(const QList<Tache*>* taches)
     QList<Statut*>* statuts = MappeurStatuts::getStatutsTache();
     int rangee = 0;
     for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd(); ++i) {
-        ui->tableauTaches->setItem(rangee, 0, new QTableWidgetItem((*i)->action()->nom()));
+        ui->tableauTaches->setItem(rangee, 0, actionVersItem((*i)->action()));
         ui->tableauTaches->setCellWidget(rangee, 1, comboStatut((*i), statuts));
+        ui->tableauTaches->setItem(rangee, 2, new QTableWidgetItem((*i)->commentaire()));
         ++rangee;
     }
+    ui->tableauTaches->resizeColumnsToContents();
+    qDeleteAll(*statuts);
+    delete statuts;
 }
 
-void VueEditionFiche::configurerTableauTaches()
-{
-
+QList<Tache*>* VueEditionFiche::getTaches() const {
+    QList<Tache*>* taches = new QList<Tache*>;
+    for (int rangee = 0; rangee < ui->tableauTaches->rowCount(); ++rangee) {
+        Tache* tache = new Tache(ui->tableauTaches);
+        tache->setIdFiche(m_idFiche);
+        tache->setAction(itemVersAction(rangee));
+        tache->setStatut(itemVersStatut(rangee));
+        tache->setCommentaire(itemVersCommentaire(rangee));
+        taches->append(tache);
+        qDebug() << tache->out();
+    }
+    return taches;
 }
 
 void VueEditionFiche::configurerFragmentPieces()
@@ -100,14 +120,39 @@ void VueEditionFiche::configurerFragmentPieces()
     QObject::connect(this, SIGNAL(nouvelId()), this, SLOT(peuplerPieces()));
 }
 
-QComboBox *VueEditionFiche::comboStatut(const Tache *tache, const QList<Statut *> *statuts)
+QComboBox *VueEditionFiche::comboStatut(const Tache* tache, const QList<Statut*>* statuts) const
 {
-    QComboBox* combo = new QComboBox(this);
+    QComboBox* combo = new QComboBox(ui->tableauTaches);
     for (QList<Statut*>::const_iterator i = statuts->constBegin(); i != statuts->constEnd(); ++i) {
         combo->addItem((*i)->nom(), (*i)->id());
     }
     combo->setCurrentText(tache->statut()->nom());
     return combo;
+}
+
+QTableWidgetItem *VueEditionFiche::actionVersItem(const Action *action) const
+{
+    QTableWidgetItem* nom = new QTableWidgetItem(action->nom());
+    nom->setData(Qt::UserRole, action->id());
+    nom->setFlags(nom->flags() & ~Qt::ItemIsEditable);
+    return nom;
+}
+
+Action* VueEditionFiche::itemVersAction(const int &rangee) const
+{
+    return MappeurActions::getAction(ui->tableauTaches->item(rangee, 0)->data(Qt::UserRole).toInt());
+}
+
+Statut* VueEditionFiche::itemVersStatut(const int &rangee) const
+{
+    QComboBox* combo = qobject_cast<QComboBox*>(ui->tableauTaches->cellWidget(rangee, 1));
+    int idStatut = combo->currentData().toInt();
+    return MappeurStatuts::getStatutTache(idStatut);
+}
+
+QString VueEditionFiche::itemVersCommentaire(const int &rangee) const
+{
+    return ui->tableauTaches->item(rangee, 2)->data(Qt::DisplayRole).toString();
 }
 
 void VueEditionFiche::detailsClient()

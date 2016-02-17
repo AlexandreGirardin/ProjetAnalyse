@@ -42,6 +42,7 @@ void ControleurFiches::traiterFiche(const int &idFiche)
         Client* client = MappeurClients::getClient(appareil->idClient());
         vue->setClient(client->id(), client->prenom() + " " + client->nom(), client->telephone());
         vue->exec();
+        vue->getTaches();
         vue->deleteLater();
     }
 }

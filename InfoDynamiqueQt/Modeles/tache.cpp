@@ -4,8 +4,18 @@
 
 Tache::Tache(QObject* parent) : ModeleBD(parent)
 {
-    m_action = new Action();
-    m_statut = new Statut();
+    m_action = new Action(this);
+    m_statut = new Statut(this);
+}
+
+QString Tache::commentaire() const
+{
+    return m_commentaire;
+}
+
+void Tache::setCommentaire(const QString &value)
+{
+    m_commentaire = value;
 }
 
 int Tache::idFiche() const
@@ -42,5 +52,5 @@ void Tache::setStatut(Statut* value)
 
 QString Tache::out() const
 {
-    return QString::number(m_id) + " " + m_action->nom() + " " + m_statut->nom();
+    return QString::number(m_idFiche) + " " + m_action->nom() + " " + m_statut->nom() + " " + m_commentaire;
 }

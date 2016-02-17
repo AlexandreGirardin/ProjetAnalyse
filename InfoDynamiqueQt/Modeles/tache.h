@@ -23,6 +23,9 @@ private:
     // Le statut de la tâche
     Statut* m_statut;
 
+    // Commentaire facultatif sur l'état d'avancement de la tâche
+    QString m_commentaire;
+
 public:
 
     /**
@@ -67,6 +70,19 @@ public:
      * @param idFiche L'id de la tâche à assigner
      */
     void setIdFiche(const int &idFiche);
+
+    /**
+     * @brief getCommentaire
+     * @return Le commentaire de la tâche
+     */
+    QString commentaire() const;
+
+    /**
+     * @brief setCommentaire
+     * Assigne un commentaire à la tâche
+     * @param value Le commentaire à assigner
+     */
+    void setCommentaire(const QString &value);
 
     /**
      * @brief out

@@ -3,7 +3,7 @@
 Statut::Statut(QObject* parent) : ModeleBD(parent)
 {
     m_id = -1;
-    m_nom = QString("");
+    m_nom = QString();
 }
 
 QString Statut::nom() const

@@ -25,6 +25,9 @@ private:
     // Le commentaire facultatif sur la fiche
     QString m_commentaire;
 
+    // La description de l'avancement de la fiche
+    QString m_description;
+
     // Le statut de la fiche
     Statut* m_statut;
 
@@ -64,6 +67,19 @@ public:
      * @param value Le commentaire à assigner à la fiche
      */
     void setCommentaire(const QString &value);
+
+    /**
+     * @brief description
+     * @return La description de la fiche
+     */
+    QString description() const;
+
+    /**
+     * @brief setDescription
+     * Assigne la description de la fiche
+     * @param description La description à assigner
+     */
+    void setDescription(const QString &description);
 
     /**
      * @brief getStatut

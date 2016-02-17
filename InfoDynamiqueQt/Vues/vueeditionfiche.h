@@ -41,6 +41,8 @@ public:
 
     void setTaches(const QList<Tache*>* taches);
 
+    QList<Tache*>* getTaches() const;
+
 private:
 
     Ui::VueEditionFiche* ui;
@@ -57,7 +59,17 @@ private:
 
     void configurerFragmentPieces();
 
-    QComboBox *comboStatut(const Tache* tache, const QList<Statut*>* statuts);
+    QComboBox* comboStatut(const Tache* tache, const QList<Statut*>* statuts) const;
+
+    QTableWidgetItem* actionVersItem(const Action* action) const;
+
+    Action* itemVersAction(const int &rangee) const;
+
+    Statut* itemVersStatut(const int &rangee) const;
+
+    QString itemVersCommentaire(const int &rangee) const;
+
+//    QTableWidgetItem* actionVersItem(const Action* action);
 
 private slots:
 

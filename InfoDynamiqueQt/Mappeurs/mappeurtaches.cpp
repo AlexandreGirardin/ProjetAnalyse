@@ -61,6 +61,7 @@ Tache* MappeurTaches::mapper(const QSqlRecord &ligne)
     tache->setIdFiche(ligne.value("idFiche").toInt());
     tache->setAction(MappeurActions::getAction(ligne.value("idAction").toInt()));
     tache->setStatut(MappeurStatuts::getStatutTache(ligne.value("idStatut").toInt()));
+    tache->setCommentaire(ligne.value("commentaire").toString());
     return tache;
 }
 
@@ -71,12 +72,14 @@ QList<Tache*>* MappeurTaches::mapper(QSqlQuery &requete)
     int colIdFiche = ligne.indexOf("idFiche");
     int colIdAction = ligne.indexOf("idAction");
     int colIdStatut = ligne.indexOf("idStatut");
+    int colCommentaire = ligne.indexOf("commentaire");
     while (requete.next()) {
         ligne = requete.record();
         Tache* tache = new Tache();
         tache->setIdFiche(ligne.value(colIdFiche).toInt());
         tache->setAction(MappeurActions::getAction(ligne.value(colIdAction).toInt()));
         tache->setStatut(MappeurStatuts::getStatutTache(ligne.value(colIdStatut).toInt()));
+        tache->setCommentaire(ligne.value(colCommentaire).toString());
         liste->append(tache);
     }
     return liste;

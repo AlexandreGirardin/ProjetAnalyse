@@ -2,6 +2,7 @@
 
 Fiche::Fiche(QObject* parent) : ModeleBD(parent)
 {
+    m_statut = new Statut(this);
 }
 
 int Fiche::idAppareil() const
@@ -32,6 +33,16 @@ QString Fiche::commentaire() const
 void Fiche::setCommentaire(const QString &value)
 {
     m_commentaire = value;
+}
+
+QString Fiche::description() const
+{
+    return m_description;
+}
+
+void Fiche::setDescription(const QString &description)
+{
+    m_description = description;
 }
 
 Statut* Fiche::statut() const

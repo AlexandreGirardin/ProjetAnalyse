@@ -67,7 +67,7 @@ void VueGestionFiche::setPriorite(const int &priorite)
 
 int VueGestionFiche::getPriorite() const
 {
-    ui->champPriorite->value();
+    return ui->champPriorite->value();
 }
 
 void VueGestionFiche::setEnsembles(const QList<EnsembleActions*>* ensembles)
