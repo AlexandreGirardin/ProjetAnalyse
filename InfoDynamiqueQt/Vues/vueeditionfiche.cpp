@@ -5,19 +5,18 @@
 #include "Controleurs/controleurappareils.h"
 #include "Controleurs/controleurclients.h"
 #include "Controleurs/requetessql.h"
+#include "Mappeurs/mappeurstatuts.h"
+#include "Mappeurs/mappeurtaches.h"
 
 #include <QComboBox>
 #include <QDebug>
-#include <QStandardItemModel>
-//#include <QSqlQueryModel>
-//#include <QSqlQuery>
 
 VueEditionFiche::VueEditionFiche(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueEditionFiche)
 {
     ui->setupUi(this);
-    configurerFragmentTaches();
+    configurerTableauTaches();
     configurerFragmentPieces();
     connect(ui->detailsAppareil, SIGNAL(clicked()), this, SLOT(detailsAppareil()));
     connect(ui->detailsClient, SIGNAL(clicked()), this, SLOT(detailsClient()));
@@ -75,22 +74,20 @@ void VueEditionFiche::setAppareil(const int &id, const QString &description)
 
 void VueEditionFiche::setTaches(const QList<Tache*>* taches)
 {
-//    QAbstractItemModel* modele = fragmentTaches->tableau()->model();
-//    for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd(); ++i) {
-//        QStandardItem* item = new QStandardItem((*i)->action()->nom());
-//        modele->insertRow(item);
-//    }
-//    fragmentTaches->peuplerTableau(modele);
+    ui->tableauTaches->setRowCount(taches->count());
+    ui->tableauTaches->setColumnCount(3);
+    QList<Statut*>* statuts = MappeurStatuts::getStatutsTache();
+    int rangee = 0;
+    for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd(); ++i) {
+        ui->tableauTaches->setItem(rangee, 0, new QTableWidgetItem((*i)->action()->nom()));
+        ui->tableauTaches->setCellWidget(rangee, 1, comboStatut((*i), statuts));
+        ++rangee;
+    }
 }
 
-void VueEditionFiche::configurerFragmentTaches()
+void VueEditionFiche::configurerTableauTaches()
 {
-    fragmentTaches = new Fragment(this);
-    fragmentTaches->setEtiquette(tr("Tâches"));
-    delete fragmentTaches->caseCocher();
-    delete fragmentTaches->champ();
-    ui->cadreFragmentTaches->addWidget(fragmentTaches);
-//    QComboBox* combo = fragmentTaches->ajouterCombobox(4);
+
 }
 
 void VueEditionFiche::configurerFragmentPieces()
@@ -101,6 +98,16 @@ void VueEditionFiche::configurerFragmentPieces()
     fragmentPieces->setEtiquette(tr("Pièces"));
     ui->cadreFragmentPieces->addWidget(fragmentPieces);
     QObject::connect(this, SIGNAL(nouvelId()), this, SLOT(peuplerPieces()));
+}
+
+QComboBox *VueEditionFiche::comboStatut(const Tache *tache, const QList<Statut *> *statuts)
+{
+    QComboBox* combo = new QComboBox(this);
+    for (QList<Statut*>::const_iterator i = statuts->constBegin(); i != statuts->constEnd(); ++i) {
+        combo->addItem((*i)->nom(), (*i)->id());
+    }
+    combo->setCurrentText(tache->statut()->nom());
+    return combo;
 }
 
 void VueEditionFiche::detailsClient()

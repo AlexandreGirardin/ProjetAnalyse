@@ -6,6 +6,8 @@
 #include "Vues/fragment.h"
 #include "Modeles/tache.h"
 
+#include <QSpinBox>
+
 namespace Ui {
 class VueEditionFiche;
 }
@@ -49,12 +51,13 @@ private:
 
     int m_idAppareil;
 
-    Fragment* fragmentTaches;
-
     Fragment* fragmentPieces;
 
-    void configurerFragmentTaches();
+    void configurerTableauTaches();
+
     void configurerFragmentPieces();
+
+    QComboBox *comboStatut(const Tache* tache, const QList<Statut*>* statuts);
 
 private slots:
 

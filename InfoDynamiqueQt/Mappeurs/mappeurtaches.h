@@ -39,6 +39,10 @@ public:
      */
     static QList<Tache*>* tachesPourAction(const int &idAction);
 
+    static int prioriteMinimale();
+
+    static int prioriteMaximale();
+
 private:
 
     /**

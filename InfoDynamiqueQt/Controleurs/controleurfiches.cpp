@@ -3,9 +3,10 @@
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeurappareils.h"
 #include "Mappeurs/mappeurclients.h"
-#include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurensembles.h"
+#include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurstatuts.h"
+#include "Mappeurs/mappeurtaches.h"
 
 #include "Vues/vueeditionfiche.h"
 #include "QDebug"
@@ -35,6 +36,7 @@ void ControleurFiches::traiterFiche(const int &idFiche)
         VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
         vue->setIdFiche(fiche->id());
         vue->setCommentaire(fiche->commentaire());
+        vue->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
         Appareil* appareil = MappeurAppareils::getAppareil(fiche->idAppareil());
         vue->setAppareil(appareil->id(), appareil->nomType() + " " + appareil->nomFabricant());
         Client* client = MappeurClients::getClient(appareil->idClient());
@@ -57,12 +59,12 @@ void ControleurFiches::extraireFiche(Fiche *fiche, const VueGestionFiche * const
     //    fiche->setTaches(vue->getTaches);
 }
 
-void ControleurFiches::assignerFiche(VueEditionFiche *vue, const Fiche *fiche)
+void ControleurFiches::assignerFiche(VueEditionFiche* vue, const Fiche* fiche)
 {
-
+    vue->setCommentaire(fiche->commentaire());
 }
 
-void ControleurFiches::extraireFiche(Fiche *fiche, const VueEditionFiche * const vue)
+void ControleurFiches::extraireFiche(Fiche* fiche, const VueEditionFiche* const vue)
 {
-
+    fiche->setCommentaire(vue->commentaire());
 }

@@ -45,6 +45,16 @@ QList<Tache*>* MappeurTaches::tachesPourAction(const int &idAction)
     return mapper(requete);
 }
 
+int MappeurTaches::prioriteMinimale()
+{
+    return 1; // TODO Déplacer vers la base de données
+}
+
+int MappeurTaches::prioriteMaximale()
+{
+    return 5; // TODO Déplacer vers la base de données
+}
+
 Tache* MappeurTaches::mapper(const QSqlRecord &ligne)
 {
     Tache* tache = new Tache();
