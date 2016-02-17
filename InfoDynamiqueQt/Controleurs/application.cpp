@@ -4,10 +4,20 @@
 #include <QDebug>
 #include <QSettings>
 
+const Application* Application::m_instance = NULL;
+VuePrincipale* Application::m_vuePrincipale = NULL;
+QSqlDatabase* Application::bd = NULL;
+ControleurBD* Application::controleurBD = NULL;
+
 Application::Application(int &argc, char **argv) :
     QApplication(argc, argv)
 {
     m_instance = this;
+}
+
+const Application* Application::getInstance()
+{
+    return m_instance;
 }
 
 void Application::demarrer()
@@ -16,19 +26,6 @@ void Application::demarrer()
     chargerParametres();
     creerFenetre();
     connecter();
-}
-
-const Application* Application::m_instance = NULL;
-
-VuePrincipale* Application::m_vuePrincipale = NULL;
-
-QSqlDatabase* Application::bd = NULL;
-
-ControleurBD* Application::controleurBD = NULL;
-
-const Application* Application::getInstance()
-{
-    return m_instance;
 }
 
 void Application::connecter()

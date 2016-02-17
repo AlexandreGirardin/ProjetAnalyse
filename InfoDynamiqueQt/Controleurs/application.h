@@ -54,32 +54,33 @@ private:
     // La vue principale de l'application
     static VuePrincipale* m_vuePrincipale;
 
-    // Le contrôleur de la vue des clients
+    // Contrôle les clients, leurs appareils et leurs fiches
     ControleurOngletClients* ongletClients;
+
+    // Contrôle les fiches
+    ControleurOngletFiches* ongletFiches;
+
+    // Contrôle les appareils
+    ControleurOngletAppareils* ongletAppareils;
+
+    // Contrôle les actions et les appareils
+    ControleurOngletActions* ongletActions;
+
+    // Connexion prenant en charge le chargement paresseux des onglets
+    // Détruite lorsque tous les onglets ont été chargés
+    QMetaObject::Connection paresseux;
 
     // Si l'onglet des clients a été chargé
     bool clientsCharges;
 
-    // Le contrôleur de la vue des fiches
-    ControleurOngletFiches* ongletFiches;
-
     // Si l'onglet des fiches a été chargé
     bool fichesChargees;
-
-    // Le contrôleur de la vue des appareils
-    ControleurOngletAppareils* ongletAppareils;
 
     // Si l'onglet des appareils a été chargé
     bool appareilsCharges;
 
-    // Le contrôleur de la vue des actions
-    ControleurOngletActions* ongletActions;
-
     // Si l'onglet des actions a été chargé
     bool actionsChargees;
-
-    // Connexion prenant en charge le chargement paresseux des onglets
-    QMetaObject::Connection paresseux;
 
     /**
      * @brief verifierParesseux
@@ -147,6 +148,10 @@ private slots:
      */
     void chargerOnglet();
 
+    /**
+     * @brief deconnexion
+     * Ferme la fenêtre et relance le dialogue de connexion à une base de données
+     */
     void deconnexion();
 
 public slots:
@@ -164,7 +169,6 @@ public slots:
      * @param message L'erreur à afficher
      */
     static void erreurSuppression(const QString &message);
-
 
 signals:
 
