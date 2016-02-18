@@ -4,7 +4,7 @@
 
 #include <QSqlError>
 
-Technicien* MappeurTechniciens::getTechnicien(const int &id)
+Technicien* MappeurTechniciens::get(const int &id)
 {
     Technicien* technicien = NULL;
     QSqlQuery commande(QSqlQuery(*Application::bd));
@@ -25,7 +25,7 @@ Technicien* MappeurTechniciens::mapper(const QSqlRecord &ligne)
     return technicien;
 }
 
-QList<Technicien*>* MappeurTechniciens::getTechniciens()
+QList<Technicien*>* MappeurTechniciens::get()
 {
     QSqlQuery requete(QSqlQuery("SELECT * FROM techniciens",*Application::bd));
     return mapper(requete);

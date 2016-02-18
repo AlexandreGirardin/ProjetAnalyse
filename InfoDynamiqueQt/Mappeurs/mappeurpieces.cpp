@@ -2,7 +2,7 @@
 
 #include "Controleurs/application.h"
 
-Piece* MappeurPieces::getPiece(const int &id)
+Piece* MappeurPieces::get(const int &id)
 {
     Piece* piece = NULL;
     QString commande("SELECT * FROM pieces WHERE id=:id");
@@ -16,7 +16,7 @@ Piece* MappeurPieces::getPiece(const int &id)
     return piece;
 }
 
-QList<Piece*>* MappeurPieces::getPieces()
+QList<Piece*>* MappeurPieces::get()
 {
     QSqlQuery requete(QSqlQuery("SELECT * FROM pieces", *Application::bd));
     return mapper(requete);

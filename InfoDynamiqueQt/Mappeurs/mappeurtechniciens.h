@@ -17,13 +17,13 @@ public:
      * @param id Le numéro du technicien à mapper
      * @return Le technicien s'il existe, NULL autrement
      */
-    static Technicien* getTechnicien(const int &id);
+    static Technicien* get(const int &id);
 
     /**
      * @brief getTechniciens
      * @return La liste de tous les techniciens de la base de données
      */
-    static QList<Technicien*>* getTechniciens();
+    static QList<Technicien*>* get();
 
     /**
      * @brief technicienPourFiche

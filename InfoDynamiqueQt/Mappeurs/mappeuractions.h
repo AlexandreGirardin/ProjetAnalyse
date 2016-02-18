@@ -17,13 +17,13 @@ public:
      * @param id Le numéro de l'action à mapper
      * @return L'action si elle existe, NULL autrement
      */
-    static Action* getAction(const int &id);
+    static Action* get(const int &id);
 
     /**
      * @brief getActions
      * @return La liste de toutes les actions de la base de données.
      */
-    static QList<Action*>* getActions();
+    static QList<Action*>* get();
 
     /**
      * @brief actionsDansEnsemble
@@ -72,7 +72,7 @@ public:
      * @param listeId La liste d'id d'actions à mapper
      * @return La liste des actions mappées
      */
-    static QList<Action*>* getActions(const QList<int>* listeId);
+    static QList<Action*>* get(const QList<int>* listeId);
 
     /**
      * @brief nombreTachesPourAction

@@ -2,7 +2,7 @@
 
 #include <Controleurs/application.h>
 
-TypeAppareil* MappeurTypeAppareils::getTypeAppareil(const int &idType)
+TypeAppareil* MappeurTypeAppareils::get(const int &idType)
 {
     TypeAppareil* type = NULL;
     QSqlQuery commande(*Application::bd);
@@ -23,7 +23,7 @@ TypeAppareil* MappeurTypeAppareils::mapper(const QSqlRecord &ligne)
     return type;
 }
 
-QList<TypeAppareil*>* MappeurTypeAppareils::getTypesAppareil()
+QList<TypeAppareil*>* MappeurTypeAppareils::get()
 {
     QSqlQuery requete("SELECT * FROM types", *Application::bd);
     return mapper(requete);

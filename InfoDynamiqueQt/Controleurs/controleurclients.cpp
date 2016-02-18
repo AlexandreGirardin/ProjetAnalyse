@@ -20,7 +20,7 @@ void ControleurClients::ajouterClient()
 
 void ControleurClients::modifierClient(const int &idClient)
 {
-    Client* client = MappeurClients::getClient(idClient);
+    Client* client = MappeurClients::get(idClient);
     if (client != NULL) {
         VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
         vue->setWindowTitle(tr("Modifier un client"));
@@ -38,7 +38,7 @@ void ControleurClients::modifierClient(const int &idClient)
 
 void ControleurClients::voirClient(const int &idClient, const bool &modal)
 {
-    Client* client = MappeurClients::getClient(idClient);
+    Client* client = MappeurClients::get(idClient);
     if (client != NULL) {
         VueClient* vue = new VueClient(Application::vuePrincipale());
         vue->setModal(modal);

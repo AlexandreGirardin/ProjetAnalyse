@@ -10,7 +10,7 @@ void ControleurEnsembles::creerEnsemble()
 {
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer un nouvel ensemble de tâches"));
-    vue->setActions(MappeurActions::getActions());
+    vue->setActions(MappeurActions::get());
     if (vue->exec() == vue->Accepted) {
         EnsembleActions* ensemble = new EnsembleActions(vue);
         extraireEnsemble(ensemble, vue);
@@ -23,7 +23,7 @@ void ControleurEnsembles::creerEnsemble()
 
 void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
 {
-    EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
+    EnsembleActions* ensemble = MappeurEnsembles::get(idEnsemble);
     if (ensemble != NULL) {
         VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
         vue->setWindowTitle(tr("Modifier un ensemble de tâches"));
@@ -41,7 +41,7 @@ void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
 
 void ControleurEnsembles::voirEnsemble(const int &idEnsemble, const bool &modal)
 {
-    EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
+    EnsembleActions* ensemble = MappeurEnsembles::get(idEnsemble);
     if (ensemble != NULL) {
         VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
         vue->setModal(modal);
@@ -56,7 +56,7 @@ void ControleurEnsembles::voirEnsemble(const int &idEnsemble, const bool &modal)
 
 void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
 {
-    EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(idEnsemble);
+    EnsembleActions* ensemble = MappeurEnsembles::get(idEnsemble);
     if (ensemble != NULL) {
         QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                         tr("Confirmation de la suppression"),
@@ -91,5 +91,5 @@ void ControleurEnsembles::extraireEnsemble(EnsembleActions* ensemble, const VueG
 {
     ensemble->setNom(vue->getNom());
     ensemble->setDescription(vue->getDescription());
-    ensemble->setActions(MappeurActions::getActions(vue->getActionsSelectionnees()));
+    ensemble->setActions(MappeurActions::get(vue->getActionsSelectionnees()));
 }

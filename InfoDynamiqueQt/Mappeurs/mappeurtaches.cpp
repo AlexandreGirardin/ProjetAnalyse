@@ -7,7 +7,7 @@
 
 #include <QSqlError>
 
-Tache *MappeurTaches::getTache(const int &id)
+Tache *MappeurTaches::get(const int &id)
 {
     Tache* tache = NULL;
     QSqlQuery requete(*Application::bd);
@@ -20,7 +20,7 @@ Tache *MappeurTaches::getTache(const int &id)
     return tache;
 }
 
-QList<Tache*>* MappeurTaches::getTaches()
+QList<Tache*>* MappeurTaches::get()
 {
     QSqlQuery requete("SELECT * FROM taches ORDER BY idFiche ASC", *Application::bd);
     return mapper(requete);
@@ -83,7 +83,7 @@ Tache* MappeurTaches::mapper(const QSqlRecord &ligne)
 {
     Tache* tache = new Tache();
     tache->setIdFiche(ligne.value("idFiche").toInt());
-    tache->setAction(MappeurActions::getAction(ligne.value("idAction").toInt()));
+    tache->setAction(MappeurActions::get(ligne.value("idAction").toInt()));
     tache->setStatut(MappeurStatuts::getStatutTache(ligne.value("idStatut").toInt()));
     tache->setCommentaire(ligne.value("commentaire").toString());
     return tache;
@@ -101,7 +101,7 @@ QList<Tache*>* MappeurTaches::mapper(QSqlQuery &requete)
         ligne = requete.record();
         Tache* tache = new Tache();
         tache->setIdFiche(ligne.value(colIdFiche).toInt());
-        tache->setAction(MappeurActions::getAction(ligne.value(colIdAction).toInt()));
+        tache->setAction(MappeurActions::get(ligne.value(colIdAction).toInt()));
         tache->setStatut(MappeurStatuts::getStatutTache(ligne.value(colIdStatut).toInt()));
         tache->setCommentaire(ligne.value(colCommentaire).toString());
         liste->append(tache);

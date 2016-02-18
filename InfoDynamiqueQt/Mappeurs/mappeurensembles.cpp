@@ -6,7 +6,7 @@
 
 #include <QSqlError>
 
-EnsembleActions* MappeurEnsembles::getEnsemble(const int &id)
+EnsembleActions* MappeurEnsembles::get(const int &id)
 {
     EnsembleActions* ensemble = NULL;
     QSqlQuery requete(*Application::bd);
@@ -19,7 +19,7 @@ EnsembleActions* MappeurEnsembles::getEnsemble(const int &id)
     return ensemble;
 }
 
-QList<EnsembleActions*>* MappeurEnsembles::getEnsembles()
+QList<EnsembleActions*>* MappeurEnsembles::get()
 {
     QSqlQuery requete("SELECT * FROM ensembles", *Application::bd);
     return mapper(requete);

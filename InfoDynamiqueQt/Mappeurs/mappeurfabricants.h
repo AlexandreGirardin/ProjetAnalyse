@@ -17,13 +17,13 @@ public:
      * @param id Le numéro du fabricant à mapper
      * @return le fabricant s'il existe, NULL autrement
      */
-    static Fabricant* getFabricant(const int &id);
+    static Fabricant* get(const int &id);
 
     /**
      * @brief getFabricants
      * @return La liste de tous les fabricants de la base de données
      */
-    static QList<Fabricant*>* getFabricants();
+    static QList<Fabricant*>* get();
 
 private:
 

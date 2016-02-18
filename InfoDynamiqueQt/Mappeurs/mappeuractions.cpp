@@ -6,7 +6,7 @@
 
 #include <QSqlError>
 
-Action* MappeurActions::getAction(const int &id)
+Action* MappeurActions::get(const int &id)
 {
     Action* action = NULL;
     QSqlQuery requete(*Application::bd);
@@ -19,17 +19,17 @@ Action* MappeurActions::getAction(const int &id)
     return action;
 }
 
-QList<Action*>* MappeurActions::getActions()
+QList<Action*>* MappeurActions::get()
 {
     QSqlQuery requete("SELECT * FROM actions ORDER BY nom ASC", *Application::bd);
     return mapper(requete);
 }
 
-QList<Action*>* MappeurActions::getActions(const QList<int>* listeId)
+QList<Action*>* MappeurActions::get(const QList<int>* listeId)
 {
     QList<Action*>* listeActions = new QList<Action*>;
     for (QList<int>::const_iterator i = listeId->constBegin(); i != listeId->constEnd(); ++i) {
-        Action* action = getAction((*i));
+        Action* action = get((*i));
         if (action != NULL) {
             listeActions->append(action);
         }

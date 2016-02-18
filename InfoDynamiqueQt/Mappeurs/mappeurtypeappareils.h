@@ -17,13 +17,13 @@ public:
      * @param id Le numéro du type d'appareil à mapper
      * @return Le type d'appareil si il existe, NULL autremeent
      */
-    static TypeAppareil* getTypeAppareil(const int &idType);
+    static TypeAppareil* get(const int &idType);
 
     /**
      * @brief getTypesAppareil
      * @return La liste de tous les types d'appareils de la base de données
      */
-    static QList<TypeAppareil*>* getTypesAppareil();
+    static QList<TypeAppareil*>* get();
 
 private:
 

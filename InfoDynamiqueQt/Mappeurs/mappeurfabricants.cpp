@@ -4,7 +4,7 @@
 
 #include <QSqlError>
 
-Fabricant* MappeurFabricants::getFabricant(const int &id)
+Fabricant* MappeurFabricants::get(const int &id)
 {
     Fabricant* fabricant = NULL;
     QString commande("SELECT * FROM fabricants WHERE id=:id");
@@ -18,7 +18,7 @@ Fabricant* MappeurFabricants::getFabricant(const int &id)
     return fabricant;
 }
 
-QList<Fabricant*>* MappeurFabricants::getFabricants()
+QList<Fabricant*>* MappeurFabricants::get()
 {
     QSqlQuery requete(QSqlQuery("SELECT * FROM fabricants",*Application::bd));
     return mapper(requete);

@@ -17,7 +17,7 @@ public:
      * @param id Le numéro du client à mapper
      * @return Le client s'il existe, NULL autrement
      */
-    static Client* getClient(const int &id);
+    static Client* get(const int &id);
 
     /**
      * @brief inserer

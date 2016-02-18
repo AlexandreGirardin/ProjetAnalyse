@@ -17,7 +17,7 @@ public:
      * @param id Le numéro de la fiche à mapper
      * @return le fabricant s'il existe, NULL autrement
      */
-    static Fiche* getFiche(const int &id);
+    static Fiche* get(const int &id);
 
     /**
      * @brief fichesPourAppareil

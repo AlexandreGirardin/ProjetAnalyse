@@ -8,7 +8,7 @@
 
 #include <QSqlError>
 
-Fiche *MappeurFiches::getFiche(const int &id)
+Fiche *MappeurFiches::get(const int &id)
 {
     Fiche* fiche = NULL;
     QString commande("SELECT * FROM fiches WHERE id=:id");

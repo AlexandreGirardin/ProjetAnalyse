@@ -17,13 +17,13 @@ public:
      * @param id Le numéro de la pièce à mapper
      * @return La pièce si elle existe, NULL autrement
      */
-    static Piece* getPiece(const int &id);
+    static Piece* get(const int &id);
 
     /**
      * @brief MappeurPieces::getPieces
      * @return La liste de toutes les pièces de la base de données
      */
-    static QList<Piece*>* getPieces();
+    static QList<Piece*>* get();
 
     /**
      * @brief piecesPourFiche

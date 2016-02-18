@@ -12,8 +12,8 @@ void ControleurAppareils::ajouterAppareil(const int &idClient)
 {
     VueGestionAppareil* vue = new VueGestionAppareil(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer un nouvel appareil"));
-    vue->setTypes(MappeurTypeAppareils::getTypesAppareil());
-    vue->setFabricants(MappeurFabricants::getFabricants());
+    vue->setTypes(MappeurTypeAppareils::get());
+    vue->setFabricants(MappeurFabricants::get());
     if (vue->exec() == vue->Accepted) {
         Appareil* appareil = new Appareil(vue);
         appareil->setIdClient(idClient);
@@ -27,7 +27,7 @@ void ControleurAppareils::ajouterAppareil(const int &idClient)
 
 void ControleurAppareils::modifierAppareil(const int &idAppareil)
 {
-    Appareil* appareil = MappeurAppareils::getAppareil(idAppareil);
+    Appareil* appareil = MappeurAppareils::get(idAppareil);
     if (appareil != NULL) {
         VueGestionAppareil* vue = new VueGestionAppareil(Application::vuePrincipale());
         vue->setWindowTitle(tr("Modifier un appareil"));
@@ -45,7 +45,7 @@ void ControleurAppareils::modifierAppareil(const int &idAppareil)
 
 void ControleurAppareils::voirAppareil(const int &idAppareil, const bool &modal)
 {
-    Appareil* appareil = MappeurAppareils::getAppareil(idAppareil);
+    Appareil* appareil = MappeurAppareils::get(idAppareil);
     if (appareil != NULL) {
         VueAppareil* vue = new VueAppareil(Application::vuePrincipale());
         vue->setModal(modal);
@@ -61,7 +61,7 @@ void ControleurAppareils::effacerAppareil(const int &idAppareil)
 {
     QList<Fiche*>* fiches = MappeurFiches::fichesPourAppareil(idAppareil);
     if (fiches->isEmpty()) {
-        Appareil* appareil = MappeurAppareils::getAppareil(idAppareil);
+        Appareil* appareil = MappeurAppareils::get(idAppareil);
         QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                         tr("Confirmation de la suppression"),
                         tr("Supprimer l'appareil?\n") + appareil->joliOut(),
@@ -83,8 +83,8 @@ void ControleurAppareils::effacerAppareil(const int &idAppareil)
 
 void ControleurAppareils::assignerAppareil(VueGestionAppareil *vue, const Appareil *appareil)
 {
-    vue->setTypes(MappeurTypeAppareils::getTypesAppareil(), appareil->nomType());
-    vue->setFabricants(MappeurFabricants::getFabricants(), appareil->nomFabricant());
+    vue->setTypes(MappeurTypeAppareils::get(), appareil->nomType());
+    vue->setFabricants(MappeurFabricants::get(), appareil->nomFabricant());
     vue->setMotDePasse(appareil->motDePasse());
     vue->setDescription(appareil->description());
 }
@@ -100,7 +100,7 @@ void ControleurAppareils::assignerAppareil(VueAppareil *vue, const Appareil *app
 void ControleurAppareils::extraireAppareil(Appareil *appareil, const VueGestionAppareil *vue)
 {
     appareil->setMotDePasse(vue->getMotDePasse());
-    appareil->setType(MappeurTypeAppareils::getTypeAppareil(vue->getType()));
-    appareil->setFabricant(MappeurFabricants::getFabricant(vue->getFabricant()));
+    appareil->setType(MappeurTypeAppareils::get(vue->getType()));
+    appareil->setFabricant(MappeurFabricants::get(vue->getFabricant()));
     appareil->setDescription(vue->getDescription());
 }

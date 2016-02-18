@@ -48,7 +48,7 @@ void VueGestionFiche::peuplerTaches()
     if (ui->tableTaches->model() != NULL) {
         ui->tableTaches->model()->deleteLater();
     }
-    EnsembleActions* ensemble = MappeurEnsembles::getEnsemble(getIdEnsemble());
+    EnsembleActions* ensemble = MappeurEnsembles::get(getIdEnsemble());
     if (ensemble != NULL) {
         QStandardItemModel* modele = new QStandardItemModel(ui->tableTaches);
         QList<Action*>* actions = ensemble->actions();

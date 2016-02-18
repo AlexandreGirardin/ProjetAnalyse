@@ -17,14 +17,14 @@ public:
      * @param id Le numéro de l'ensemble à mapper
      * @return L'ensemble s'il existe, NULL autrement
      */
-    static EnsembleActions* getEnsemble(const int &id);
+    static EnsembleActions* get(const int &id);
 
     /**
      * @brief getActions
      * Construit tous les ensembles de la base de données
      * @return La liste de tous les ensembles de la base de données.
      */
-    static QList<EnsembleActions*>* getEnsembles();
+    static QList<EnsembleActions*>* get();
 
     /**
      * @brief inserer

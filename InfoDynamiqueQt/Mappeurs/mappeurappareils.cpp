@@ -7,7 +7,7 @@
 
 #include <QSqlError>
 
-Appareil* MappeurAppareils::getAppareil(const int &id)
+Appareil* MappeurAppareils::get(const int &id)
 {
     Appareil* appareil = NULL;
     QSqlQuery requete(*Application::bd);
@@ -36,8 +36,8 @@ Appareil* MappeurAppareils::mapper(const QSqlRecord &ligne)
     appareil->setDescription(ligne.value("description").toString());
     appareil->setMotDePasse(ligne.value("motDePasse").toString());
     appareil->setIdClient(ligne.value("idClient").toInt());
-    appareil->setType(MappeurTypeAppareils::getTypeAppareil(ligne.value("idType").toInt()));
-    appareil->setFabricant(MappeurFabricants::getFabricant(ligne.value("idFabricant").toInt()));
+    appareil->setType(MappeurTypeAppareils::get(ligne.value("idType").toInt()));
+    appareil->setFabricant(MappeurFabricants::get(ligne.value("idFabricant").toInt()));
     return appareil;
 }
 
@@ -57,8 +57,8 @@ QList<Appareil*>* MappeurAppareils::mapper(QSqlQuery &requete)
         appareil->setId(ligne.value(colId).toInt());
         appareil->setDescription(ligne.value(colDesc).toString());
         appareil->setMotDePasse(ligne.value(colMDP).toString());
-        appareil->setType(MappeurTypeAppareils::getTypeAppareil(ligne.value(colType).toInt()));
-        appareil->setFabricant(MappeurFabricants::getFabricant(ligne.value(colFab).toInt()));
+        appareil->setType(MappeurTypeAppareils::get(ligne.value(colType).toInt()));
+        appareil->setFabricant(MappeurFabricants::get(ligne.value(colFab).toInt()));
         appareil->setIdClient(ligne.value(colClient).toInt());
         liste->append(appareil);
     }

@@ -14,14 +14,14 @@ public:
      * @param id Le numéro de la tache à mapper
      * @return Le fabricant s'il existe, NULL autrement
      */
-    static Tache* getTache(const int &id);
+    static Tache* get(const int &id);
 
     /**
      * @brief getTaches
      * Construit toutes les tâches de la base de données
      * @return La liste de tous les ensembles de la base de données.
      */
-    static QList<Tache*>* getTaches();
+    static QList<Tache*>* get();
 
     /**
      * @brief tachesPourFiche

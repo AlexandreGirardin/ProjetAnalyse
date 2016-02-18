@@ -15,7 +15,7 @@ void ControleurFiches::ajouterFiche(const int &idAppareil)
 {
     VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer une nouvelle fiche"));
-    vue->setEnsembles(MappeurEnsembles::getEnsembles());
+    vue->setEnsembles(MappeurEnsembles::get());
     if (vue->exec() == vue->Accepted) {
         Fiche* fiche = new Fiche(vue);
         fiche->setIdAppareil(idAppareil);
@@ -31,15 +31,15 @@ void ControleurFiches::ajouterFiche(const int &idAppareil)
 
 void ControleurFiches::traiterFiche(const int &idFiche)
 {
-    Fiche* fiche = MappeurFiches::getFiche(idFiche);
+    Fiche* fiche = MappeurFiches::get(idFiche);
     if (fiche != NULL) {
         VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
         vue->setIdFiche(fiche->id());
         vue->setCommentaire(fiche->commentaire());
         vue->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
-        Appareil* appareil = MappeurAppareils::getAppareil(fiche->idAppareil());
+        Appareil* appareil = MappeurAppareils::get(fiche->idAppareil());
         vue->setAppareil(appareil->id(), appareil->nomType() + " " + appareil->nomFabricant());
-        Client* client = MappeurClients::getClient(appareil->idClient());
+        Client* client = MappeurClients::get(appareil->idClient());
         vue->setClient(client->id(), client->prenom() + " " + client->nom(), client->telephone());
         vue->exec();
         vue->getTaches();
@@ -50,7 +50,7 @@ void ControleurFiches::traiterFiche(const int &idFiche)
 void ControleurFiches::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
 {
     vue->setCommentaire(fiche->commentaire());
-    vue->setEnsembles(MappeurEnsembles::getEnsembles());
+    vue->setEnsembles(MappeurEnsembles::get());
 }
 
 void ControleurFiches::extraireFiche(Fiche *fiche, const VueGestionFiche * const vue)

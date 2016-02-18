@@ -6,7 +6,7 @@
 
 #include <QSqlError>
 
-Client* MappeurClients::getClient(const int &id)
+Client* MappeurClients::get(const int &id)
 {
     Client* client = NULL;
     QSqlQuery requete = QSqlQuery(*Application::bd);

@@ -17,7 +17,7 @@ public:
      * @param id Le numéro de l'appareil à mapper
      * @return L'appareil s'il existe, NULL autrement
      */
-    static Appareil* getAppareil(const int &id);
+    static Appareil* get(const int &id);
 
     /**
      * @brief appareilsPourClient

@@ -47,7 +47,7 @@ Action* ControleurActions::creerEtRetournerAction()
 
 void ControleurActions::modifierAction(const int &idAction)
 {
-    Action* action = MappeurActions::getAction(idAction);
+    Action* action = MappeurActions::get(idAction);
     if (action != NULL) {
         VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
         vue->setWindowTitle(tr("Modifier une action"));
@@ -66,7 +66,7 @@ void ControleurActions::effacerAction(const int &idAction)
 {
     QList<Tache*>* usages = MappeurTaches::tachesPourAction(idAction);
     if (usages->isEmpty()) {
-        Action* action = MappeurActions::getAction(idAction);
+        Action* action = MappeurActions::get(idAction);
         if (action != NULL) {
             QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                                             tr("Confirmation de la suppression"),
@@ -88,7 +88,7 @@ void ControleurActions::effacerAction(const int &idAction)
 
 void ControleurActions::changerEtat(const int &idAction)
 {
-    Action* action = MappeurActions::getAction(idAction);
+    Action* action = MappeurActions::get(idAction);
     if (action != NULL) {
         action->setEtat(!action->etat());
         if (MappeurActions::mettreAJour(action)) {

@@ -140,7 +140,7 @@ QTableWidgetItem *VueEditionFiche::actionVersItem(const Action *action) const
 
 Action* VueEditionFiche::itemVersAction(const int &rangee) const
 {
-    return MappeurActions::getAction(ui->tableauTaches->item(rangee, 0)->data(Qt::UserRole).toInt());
+    return MappeurActions::get(ui->tableauTaches->item(rangee, 0)->data(Qt::UserRole).toInt());
 }
 
 Statut* VueEditionFiche::itemVersStatut(const int &rangee) const
