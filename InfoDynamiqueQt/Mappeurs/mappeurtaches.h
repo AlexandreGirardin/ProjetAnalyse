@@ -43,6 +43,10 @@ public:
 
     static int prioriteMaximale();
 
+    bool inserer(Tache *tache);
+
+    bool mettreAJour(const Tache *tache);
+
 private:
 
     /**
@@ -60,6 +64,24 @@ private:
      * @return Les tâches présentes dans la requête
      */
     static QList<Tache*>* mapper(QSqlQuery &requete);
+
+    /**
+     * @brief preparerRequete
+     * Assigne les valeurs d'une tache à une requête préparée
+     * @param tache La tâche source
+     * @param commande La commande SQL à préparer
+     * @return La commande préparée
+     */
+    static QSqlQuery* preparerRequete(const Tache* tache, const QString &commande);
+
+    /**
+     * @brief ecrire
+     * Exécute une commande sans transaction
+     * @param tache La tâche à inclure dans l'opération SQL
+     * @param commande La commande à exécuter
+     * @return Succès de l'opération
+     */
+    static bool ecrire(const Tache* tache, const QString &commande);
 };
 
 #endif // MAPPEURTACHES_H

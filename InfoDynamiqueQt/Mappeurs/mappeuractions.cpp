@@ -115,6 +115,18 @@ bool MappeurActions::inserer(Action* action)
     return succes;
 }
 
+bool MappeurActions::mettreAJour(const Action* action)
+{
+    const QString commande("UPDATE actions\
+                            SET\
+                                nom=:nom,\
+                                description=:description,\
+                                etat=:etat\
+                            WHERE id=:idAction");
+    const bool succes = ecrire(action, commande);
+    return succes;
+}
+
 bool MappeurActions::supprimer(Action *action)
 {
     bool succes = false;
@@ -140,18 +152,6 @@ bool MappeurActions::supprimer(Action *action)
         bd.rollback();
         Application::erreurSuppression(erreur);
     }
-    return succes;
-}
-
-bool MappeurActions::mettreAJour(const Action* action)
-{
-    const QString commande("UPDATE actions\
-                            SET\
-                                nom=:nom,\
-                                description=:description,\
-                                etat=:etat\
-                            WHERE id=:idAction");
-    const bool succes = ecrire(action, commande);
     return succes;
 }
 

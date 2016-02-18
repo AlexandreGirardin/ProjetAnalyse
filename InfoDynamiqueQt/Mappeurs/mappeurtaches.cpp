@@ -1,6 +1,7 @@
 #include "mappeurtaches.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurstatuts.h"
 
@@ -55,6 +56,29 @@ int MappeurTaches::prioriteMaximale()
     return 5; // TODO Déplacer vers la base de données
 }
 
+bool MappeurTaches::inserer(Tache* tache)
+{
+    const QString commande("INSERT INTO taches\
+                               (idFiche, idAction, idStatut, commentaire)\
+                            VALUES\
+                               (:idFiche, :idAction, :idStatut, :commentaire)");
+    const bool succes = ecrire(tache, commande);
+    tache->setId(AideMappeurs::derniereInsertion());
+    return succes;
+}
+
+bool MappeurTaches::mettreAJour(const Tache* tache)
+{
+    const QString commande("UPDATE taches\
+                            SET\
+                                idStatut=:idStatut,\
+                                commentaire=:commentaire,\
+                            WHERE\
+                                idFiche=:idFiche AND idAction=:idAction");
+    const bool succes = ecrire(tache, commande);
+    return succes;
+}
+
 Tache* MappeurTaches::mapper(const QSqlRecord &ligne)
 {
     Tache* tache = new Tache();
@@ -83,4 +107,26 @@ QList<Tache*>* MappeurTaches::mapper(QSqlQuery &requete)
         liste->append(tache);
     }
     return liste;
+}
+
+QSqlQuery* MappeurTaches::preparerRequete(const Tache* tache, const QString &commande)
+{
+    QSqlQuery* requete = new QSqlQuery(*Application::bd);
+    requete->prepare(commande);
+    requete->bindValue(":idFiche", tache->idFiche());
+    requete->bindValue(":idAction", tache->action()->id());
+    requete->bindValue(":idStatut", tache->statut()->id());
+    requete->bindValue(":commentaire", tache->commentaire());
+    return requete;
+}
+
+bool MappeurTaches::ecrire(const Tache* tache, const QString &commande)
+{
+    QSqlQuery* requete = preparerRequete(tache, commande);
+    const bool succes = requete->exec();
+    if (!succes) {
+        Application::erreurEcriture(requete->lastError().text());
+    }
+    delete requete;
+    return succes;
 }
