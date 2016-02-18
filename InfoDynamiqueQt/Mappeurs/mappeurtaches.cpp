@@ -26,6 +26,18 @@ QList<Tache*>* MappeurTaches::get()
     return mapper(requete);
 }
 
+QList<Tache*>* MappeurTaches::get(const QList<int>* listeId)
+{
+    QList<Tache*>* taches = new QList<Tache*>;
+    for (QList<int>::const_iterator i = listeId->constBegin(); i != listeId->constEnd(); ++i) {
+        Tache* tache = get(*i);
+        if (tache != NULL) {
+            taches->append(tache);
+        }
+    }
+    return taches;
+}
+
 QList<Tache*>* MappeurTaches::tachesPourFiche(const int &idFiche)
 {
     QString commande("SELECT * FROM taches WHERE idFiche=:idFiche");
@@ -64,6 +76,15 @@ bool MappeurTaches::inserer(Tache* tache)
                                (:idFiche, :idAction, :idStatut, :commentaire)");
     const bool succes = ecrire(tache, commande);
     tache->setId(AideMappeurs::derniereInsertion());
+    return succes;
+}
+
+bool MappeurTaches::inserer(const QList<Tache*>* taches)
+{
+    bool succes = true;
+    for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd() && succes; ++i) {
+        succes = inserer(*i);
+    }
     return succes;
 }
 

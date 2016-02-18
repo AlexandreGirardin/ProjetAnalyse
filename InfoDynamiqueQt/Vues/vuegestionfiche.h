@@ -6,6 +6,8 @@
 #include "Modeles/ensembleactions.h"
 #include "Modeles/tache.h"
 
+#include <QStandardItemModel>
+
 namespace Ui {
 class VueGestionFiche;
 }
@@ -17,12 +19,14 @@ class VueGestionFiche : public QDialog
     // Vue servant à modifier les informations générales d'une fiche
 
 public:
+
     explicit VueGestionFiche(QWidget* parent = 0);
+
     ~VueGestionFiche();
 
-    void setCommentaire(const QString &commentaire);
+    void setDescription(const QString &commentaire);
 
-    QString getCommentaire() const;
+    QString getDescription() const;
 
     void setPriorite(const int &priorite);
 
@@ -30,13 +34,19 @@ public:
 
     void setEnsembles(const QList<EnsembleActions*>* ensembles);
 
-    void setTaches(const QList<Action *> *actions);
+    void setActions(const QList<Action*>* actions);
 
-    int getIdEnsemble();
+    QList<int>* getTaches() const;
+
+    int getIdEnsemble() const;
 
 private:
+
     Ui::VueGestionFiche* ui;
 
+    QStandardItemModel* listeEnModele(const QList<Action*>* actions);
+
+    QStandardItem* actionEnItem(const Action* action);
 private slots:
 
     void peuplerTaches();

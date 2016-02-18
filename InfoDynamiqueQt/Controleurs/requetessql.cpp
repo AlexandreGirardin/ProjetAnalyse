@@ -161,7 +161,7 @@ QString const * const RequetesSQL::afficherFiches =
                         c.telephone as 'Client',\
                         f.priorite as 'Priorité',\
                         s.nom as 'Statut',\
-                        f.commentaire as 'Commentaire'\
+                        f.description as 'Description'\
                     FROM\
                         fiches f\
                     LEFT OUTER JOIN\
@@ -182,7 +182,8 @@ QString const * const RequetesSQL::filtrerFiches =
                     QString(" WHERE c.telephone LIKE :filtre\
                                 OR f.priorite LIKE :filtre\
                                 OR s.nom LIKE :filtre\
-                                OR f.commentaire LIKE :filtre"));
+                                OR f.commentaire LIKE :filtre\
+                                OR f.description LIKE :filtre"));
 
 QString const * const RequetesSQL::tachesPourFiche =
         new QString("SELECT * FROM taches WHERE idFiche=:idFiche");

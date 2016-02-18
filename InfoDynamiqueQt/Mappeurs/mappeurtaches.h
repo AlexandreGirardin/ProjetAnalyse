@@ -23,6 +23,8 @@ public:
      */
     static QList<Tache*>* get();
 
+    static QList<Tache*>* get(const QList<int>* listeId);
+
     /**
      * @brief tachesPourFiche
      * Retourne toutes les tâches associées à une fiche donnée
@@ -43,10 +45,11 @@ public:
 
     static int prioriteMaximale();
 
-    bool inserer(Tache *tache);
+    static bool inserer(Tache* tache);
 
-    bool mettreAJour(const Tache *tache);
+    static bool inserer(const QList<Tache*>* taches);
 
+    static bool mettreAJour(const Tache *tache);
 private:
 
     /**

@@ -3,6 +3,7 @@
 Fiche::Fiche(QObject* parent) : ModeleBD(parent)
 {
     m_statut = new Statut(this);
+    m_taches = new QList<Tache*>;
 }
 
 int Fiche::idAppareil() const
@@ -67,6 +68,8 @@ QList<Tache*>* Fiche::taches() const
 
 void Fiche::setTaches(QList<Tache*>* value)
 {
+    qDeleteAll(*m_taches);
+    delete m_taches;
     m_taches = value;
 }
 

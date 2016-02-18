@@ -47,27 +47,56 @@ int MappeurFiches::nombreFiches(const int &idAppareil)
     return nombre;
 }
 
-bool MappeurFiches::inserer(Fiche *fiche){
+bool MappeurFiches::inserer(Fiche *fiche)
+{
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
     const QString commande("INSERT INTO fiches\
-                                (idAppareil, priorite, idTechnicien, idStatut, commentaire)\
+                                (idAppareil, priorite, idTechnicien,\
+                                 idStatut, commentaire, description)\
                             VALUES\
-                                (:idAppareil, :priorite, :idTechnicien, :idStatut, :commentaire)");
-    const bool succes = ecrire(fiche, commande);
-    fiche->setId(AideMappeurs::derniereInsertion());
+                                (:idAppareil, :priorite, :idTechnicien,\
+                                 :idStatut, :commentaire, :description)");
+    bool succes = ecrire(fiche, commande);
+    if (succes) {
+        succes = MappeurTaches::inserer(fiche->taches());
+    }
+    if (succes) {
+        bd.commit();
+        fiche->setId(AideMappeurs::derniereInsertion());
+    } else {
+        bd.rollback();
+    }
     return succes;
 }
 
-bool MappeurFiches::mettreAJour(const Fiche *fiche)
+bool MappeurFiches::mettreAJour(const Fiche* fiche)
 {
-    const QString commande("UPDATE fiches\
-                            SET\
-                                idAppareil=:idAppareil,\
-                                priorite=:priorite,\
-                                idTechnicien=:idTechnicien,\
-                                idStatut=:idStatut,\
-                                commentaire=:commentaire\
-                            WHERE id=:idFiche");
-    const bool succes = ecrire(fiche, commande);
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    const QString commandeFiche("UPDATE fiches\
+                                 SET\
+                                    idAppareil=:idAppareil,\
+                                    priorite=:priorite,\
+                                    idTechnicien=:idTechnicien,\
+                                    idStatut=:idStatut,\
+                                    commentaire=:commentaire\
+                                    description=:description\
+                                WHERE id=:idFiche");
+    bool succes = ecrire(fiche, commandeFiche);
+    if (succes) {
+        const QString commandeViderTaches("DELETE FROM taches\
+                                           WHERE idFiche=:idFiche");
+        succes = ecrire(fiche, commandeViderTaches);
+        if (succes) {
+            succes = MappeurTaches::inserer(fiche->taches());
+        }
+    }
+    if (succes) {
+        bd.commit();
+    } else {
+        bd.rollback();
+    }
     return succes;
 }
 
@@ -79,8 +108,8 @@ Fiche *MappeurFiches::mapper(const QSqlRecord &ligne)
     fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
     fiche->setPriorite(ligne.value("priorite").toInt());
     fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value("idStatut").toInt()));
-
     fiche->setCommentaire(ligne.value("commentaire").toString());
+    fiche->setDescription(ligne.value("description").toString());
     fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
 //    fiche->setTechniciens(MappeurTechniciens::);
     return fiche;
@@ -95,6 +124,7 @@ QList<Fiche*>* MappeurFiches::mapper(QSqlQuery &requete)
     int colPriorite = ligne.indexOf("priorite");
     int colStatut = ligne.indexOf("idStatut");
     int colCommentaire = ligne.indexOf("commentaire");
+    int colDescription = ligne.indexOf("description");
     while (requete.next()) {
         ligne = requete.record();
         Fiche* fiche = new Fiche();
@@ -104,6 +134,7 @@ QList<Fiche*>* MappeurFiches::mapper(QSqlQuery &requete)
         fiche->setPriorite(ligne.value(colPriorite).toInt());
         fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value(colStatut).toInt()));
         fiche->setCommentaire(ligne.value(colCommentaire).toString());
+        fiche->setDescription(ligne.value(colDescription).toString());
         fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
         liste->append(fiche);
     }
@@ -120,6 +151,7 @@ QSqlQuery *MappeurFiches::preparerRequete(const Fiche *fiche, const QString &com
     requete->bindValue(":idTechnicien", 1); // TODO
     requete->bindValue(":idStatut", fiche->statut()->id());
     requete->bindValue(":commentaire", fiche->commentaire());
+    requete->bindValue(":description", fiche->description());
     return requete;
 }
 
