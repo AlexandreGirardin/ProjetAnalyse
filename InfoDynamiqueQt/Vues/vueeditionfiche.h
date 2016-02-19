@@ -57,8 +57,6 @@ private:
 
     void configurerTableauTaches();
 
-    void configurerFragmentPieces();
-
     QComboBox* comboStatut(const Tache* tache, const QList<Statut*>* statuts) const;
 
     QTableWidgetItem* actionVersItem(const Action* action) const;
@@ -68,8 +66,6 @@ private:
     Statut* itemVersStatut(const int &rangee) const;
 
     QString itemVersCommentaire(const int &rangee) const;
-
-//    QTableWidgetItem* actionVersItem(const Action* action);
 
 private slots:
 

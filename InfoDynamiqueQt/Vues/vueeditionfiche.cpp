@@ -19,7 +19,6 @@ VueEditionFiche::VueEditionFiche(QWidget* parent) :
 {
     ui->setupUi(this);
     configurerTableauTaches();
-    configurerFragmentPieces();
     connect(ui->detailsAppareil, SIGNAL(clicked()), this, SLOT(detailsAppareil()));
     connect(ui->detailsClient, SIGNAL(clicked()), this, SLOT(detailsClient()));
 }
@@ -82,7 +81,6 @@ void VueEditionFiche::configurerTableauTaches()
 void VueEditionFiche::setTaches(const QList<Tache*>* taches)
 {
     ui->tableauTaches->setRowCount(taches->count());
-    ui->tableauTaches->setColumnCount(3);
     QList<Statut*>* statuts = MappeurStatuts::getStatutsTache();
     int rangee = 0;
     for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd(); ++i) {
@@ -108,16 +106,6 @@ QList<Tache*>* VueEditionFiche::getTaches() const {
         qDebug() << tache->out();
     }
     return taches;
-}
-
-void VueEditionFiche::configurerFragmentPieces()
-{
-    fragmentPieces = new Fragment(this);
-    delete fragmentPieces->caseCocher();
-    delete fragmentPieces->champ();
-    fragmentPieces->setEtiquette(tr("Pièces"));
-    ui->cadreFragmentPieces->addWidget(fragmentPieces);
-    QObject::connect(this, SIGNAL(nouvelId()), this, SLOT(peuplerPieces()));
 }
 
 QComboBox *VueEditionFiche::comboStatut(const Tache* tache, const QList<Statut*>* statuts) const
