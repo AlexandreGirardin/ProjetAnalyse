@@ -20,7 +20,8 @@ VueConnexion::VueConnexion(QWidget *parent) :
     boutonOk = new QPushButton(tr("Ok"), this);
     boutonOk->setEnabled(false);
     ui->buttonBox->addButton(boutonOk, QDialogButtonBox::AcceptRole);
-    QObject::connect(ui->listeBd, SIGNAL(activated(QModelIndex)), this, SLOT(activerBoutonOk()));
+    QObject::connect(ui->listeBd, SIGNAL(clicked(QModelIndex)), this, SLOT(activerBoutonOk()));
+    QObject::connect(ui->listeBd, SIGNAL(doubleClicked(QModelIndex)), boutonOk, SIGNAL(clicked()));
 }
 
 VueConnexion::~VueConnexion()

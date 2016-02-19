@@ -22,7 +22,7 @@ VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
     QObject::connect(ui->listeExistantes, SIGNAL(activated(QModelIndex)), this, SLOT(horsEnsembleSelectionnee()));
     QObject::connect(ui->listeExistantes, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(ajouter()));
     QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SLOT(ajouter()));
-    QObject::connect(ui->listeSelectionnees, SIGNAL(activated(QModelIndex)), this, SLOT(dansEnsembleSelectionnee()));
+    QObject::connect(ui->listeSelectionnees, SIGNAL(clicked(QModelIndex)), this, SLOT(dansEnsembleSelectionnee()));
     QObject::connect(ui->listeSelectionnees, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(retirer()));
     QObject::connect(ui->boutonRetirer, SIGNAL(clicked()), this, SLOT(retirer()));
     QObject::connect(ui->boutonNouvelle, SIGNAL(clicked()), this, SLOT(creerAction()));
