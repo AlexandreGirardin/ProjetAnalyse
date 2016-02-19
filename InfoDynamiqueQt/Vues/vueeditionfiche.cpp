@@ -134,6 +134,7 @@ QTableWidgetItem *VueEditionFiche::actionVersItem(const Action *action) const
 {
     QTableWidgetItem* nom = new QTableWidgetItem(action->nom());
     nom->setData(Qt::UserRole, action->id());
+    nom->setToolTip(action->description());
     nom->setFlags(nom->flags() & ~Qt::ItemIsEditable);
     return nom;
 }
