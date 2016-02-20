@@ -16,7 +16,6 @@ RESOURCES = ressources.qrc
 RC_ICONS = Images/Toolbox.ico
 
 SOURCES += main.cpp\
-	Vues/vueauthentification.cpp \
 	Vues/vueconnexion.cpp \
 	Vues/vueprincipale.cpp \
 	Vues/vuegestiontache.cpp \
@@ -71,7 +70,6 @@ SOURCES += main.cpp\
     Mappeurs/aidemappeurs.cpp
 
 HEADERS  += \
-	Vues/vueauthentification.h \
 	Vues/vueconnexion.h \
 	Vues/vueprincipale.h \
 	Vues/vuegestiontache.h \
