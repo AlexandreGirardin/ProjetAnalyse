@@ -17,16 +17,20 @@ VueConnexion::VueConnexion(QWidget *parent) :
     ui->champPort->setValue(parametres.value("connexion/port", 3307).toInt());
     ui->champUsager->setText(parametres.value("connexion/usager","root").toString());
     QObject::connect(ui->boutonConnecter, SIGNAL(clicked()), this, SIGNAL(testerConnexion()));
-    boutonOk = new QPushButton(tr("Ok"), this);
-    boutonOk->setEnabled(false);
-    ui->buttonBox->addButton(boutonOk, QDialogButtonBox::AcceptRole);
-    QObject::connect(ui->listeBd, SIGNAL(clicked(QModelIndex)), this, SLOT(activerBoutonOk()));
-    QObject::connect(ui->listeBd, SIGNAL(doubleClicked(QModelIndex)), boutonOk, SIGNAL(clicked()));
+    configurerBoutonOk();
 }
 
 VueConnexion::~VueConnexion()
 {
     delete ui;
+}
+
+void VueConnexion::configurerBoutonOk()
+{
+    QPushButton* boutonOk = ui->buttonBox->button(QDialogButtonBox::Save);
+    boutonOk->setEnabled(false);
+    QObject::connect(ui->listeBd, SIGNAL(clicked(QModelIndex)), this, SLOT(activerBoutonOk()));
+    QObject::connect(ui->listeBd, SIGNAL(doubleClicked(QModelIndex)), boutonOk, SIGNAL(clicked()));
 }
 
 QString VueConnexion::getNomBD() const
@@ -76,12 +80,12 @@ void VueConnexion::setMotDePasse(const QString &motDePasse)
 
 void VueConnexion::activerBoutonOk()
 {
-    boutonOk->setEnabled(true);
+    ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
 }
 
 void VueConnexion::desactiverBoutonOk()
 {
-    boutonOk->setEnabled(false);
+    ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
 }
 
 QPushButton* VueConnexion::boutonConnexion() const

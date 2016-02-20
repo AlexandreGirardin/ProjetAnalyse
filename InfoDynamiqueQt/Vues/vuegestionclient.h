@@ -89,8 +89,6 @@ private:
 
     Ui::VueGestionClient* ui;
 
-    QPushButton* boutonOk;
-
     ChampFormulaire* prenom;
 
     ChampFormulaire* nom;

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>VueEditionFiche</class>
- <widget class="QWidget" name="VueEditionFiche">
+ <widget class="QDialog" name="VueEditionFiche">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -271,7 +274,7 @@
          <item>
           <widget class="QDialogButtonBox" name="buttonBox">
            <property name="standardButtons">
-            <set>QDialogButtonBox::Discard|QDialogButtonBox::Save</set>
+            <set>QDialogButtonBox::Abort|QDialogButtonBox::Save</set>
            </property>
           </widget>
          </item>
@@ -289,5 +292,38 @@
  <resources>
   <include location="../ressources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>VueEditionFiche</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>676</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>VueEditionFiche</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>676</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

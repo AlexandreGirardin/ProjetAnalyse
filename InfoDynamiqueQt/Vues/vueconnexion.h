@@ -20,8 +20,7 @@ private:
     // Interface utilisée pour la vue
     Ui::VueConnexion *ui;
 
-    // Le bouton de confirmation
-    QPushButton* boutonOk;
+    void configurerBoutonOk();
 
 public:
 

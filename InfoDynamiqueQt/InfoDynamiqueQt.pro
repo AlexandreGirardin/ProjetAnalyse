@@ -122,7 +122,6 @@ HEADERS  += \
     Mappeurs/aidemappeurs.h
 
 FORMS    += \
-	Vues/vueauthentification.ui \
 	Vues/vueconnexion.ui \
 	Vues/vueeditionfiche.ui \
 	Vues/vuegestionappareil.ui \

@@ -121,12 +121,6 @@ private:
     ChampFormulaire* nom;
 
     /**
-     * @brief boutonOk
-     * Le bouton de validation, activé uniquement si les champs requis sont valides
-     */
-    QPushButton* boutonOk;
-
-    /**
      * @brief modeleDansEnsemble
      * Le modèle servant à présenter la liste des actions ne faisant pas partie de l'ensemble
      */

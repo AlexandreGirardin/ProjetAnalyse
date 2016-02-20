@@ -130,6 +130,10 @@
        <property name="text">
         <string>Créer une action</string>
        </property>
+       <property name="icon">
+        <iconset resource="../ressources.qrc">
+         <normaloff>:/Images/list-add.svg</normaloff>:/Images/list-add.svg</iconset>
+       </property>
       </widget>
      </item>
      <item>
@@ -138,7 +142,7 @@
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="standardButtons">
-        <set>QDialogButtonBox::Cancel</set>
+        <set>QDialogButtonBox::Abort|QDialogButtonBox::Save</set>
        </property>
       </widget>
      </item>
@@ -154,7 +158,9 @@
   <tabstop>listeSelectionnees</tabstop>
   <tabstop>boutonNouvelle</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../ressources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

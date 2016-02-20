@@ -36,10 +36,8 @@ void VueGestionClient::configurerNom()
 
 void VueGestionClient::configurerBoutonOk()
 {
-    boutonOk = new QPushButton(tr("Ok"), this);
+    QPushButton* boutonOk = ui->buttonBox->button(QDialogButtonBox::Save);
     boutonOk->setEnabled(false);
-    boutonOk->setIcon(QIcon::fromTheme("dialog-ok-apply"));
-    ui->buttonBox->addButton(boutonOk, QDialogButtonBox::AcceptRole);
     QObject::connect(prenom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
     QObject::connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
     QObject::connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));

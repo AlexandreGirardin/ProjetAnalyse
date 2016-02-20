@@ -67,10 +67,10 @@ QStandardItem* VueGestionEnsemble::actionEnItem(const Action* action) {
 
 void VueGestionEnsemble::configurerBoutonOk()
 {
-    boutonOk = new QPushButton(tr("Ok"), this);
+    QPushButton* boutonOk = ui->buttonBox->button(QDialogButtonBox::Save);
     boutonOk->setEnabled(false);
-    ui->buttonBox->addButton(boutonOk, QDialogButtonBox::AcceptRole);
     QObject::connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    boutonOk->setEnabled(false);
     QObject::connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));
 }
 
