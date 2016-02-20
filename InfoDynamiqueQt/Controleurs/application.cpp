@@ -81,8 +81,8 @@ void Application::chargerOnglet()
         ongletClients = new ControleurOngletClients(m_vuePrincipale->ongletClients());
         ongletClients->charger(m_vuePrincipale->ongletClients());
         clientsCharges = true;
-        ongletFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
     } else if (onglet == m_vuePrincipale->ongletFiches() && !fichesChargees) {
+        ongletFiches = new ControleurOngletFiches(m_vuePrincipale->ongletFiches());
         ongletFiches->peuplerFiches();
         fichesChargees = true;
     } else if (onglet == m_vuePrincipale->ongletAppareils() && !appareilsCharges) {
