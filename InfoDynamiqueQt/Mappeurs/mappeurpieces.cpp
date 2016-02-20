@@ -22,7 +22,7 @@ QList<Piece*>* MappeurPieces::get()
     return mapper(requete);
 }
 
-QList<Piece *> *MappeurPieces::piecesPourFiche(const int &idFiche)
+QList<Piece*>* MappeurPieces::piecesPourFiche(const int &idFiche)
 {
     QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM pieces p\

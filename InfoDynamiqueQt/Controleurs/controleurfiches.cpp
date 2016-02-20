@@ -5,6 +5,7 @@
 #include "Mappeurs/mappeurclients.h"
 #include "Mappeurs/mappeurensembles.h"
 #include "Mappeurs/mappeurfiches.h"
+#include "Mappeurs/mappeurpieces.h"
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
 
@@ -51,7 +52,7 @@ void ControleurFiches::assignerFiche(VueGestionFiche* vue, const Fiche* fiche)
     vue->setEnsembles(MappeurEnsembles::get());
 }
 
-void ControleurFiches::extraireFiche(Fiche *fiche, const VueGestionFiche * const vue)
+void ControleurFiches::extraireFiche(Fiche *fiche, const VueGestionFiche* const vue)
 {
     fiche->setPriorite(vue->getPriorite());
     fiche->setDescription(vue->getDescription());
@@ -64,6 +65,7 @@ void ControleurFiches::assignerFiche(VueEditionFiche* vue, const Fiche* fiche)
     vue->setCommentaire(fiche->commentaire());
     vue->setDescription(fiche->description());
     vue->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
+    vue->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
     Appareil* appareil = MappeurAppareils::get(fiche->idAppareil());
     vue->setAppareil(appareil->id(), appareil->nomType() + " " + appareil->nomFabricant());
     Client* client = MappeurClients::get(appareil->idClient());

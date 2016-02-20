@@ -4,6 +4,7 @@
 #include <QDialog>
 
 #include "Vues/fragment.h"
+#include "Modeles/piece.h"
 #include "Modeles/tache.h"
 
 #include <QSpinBox>
@@ -43,6 +44,10 @@ public:
 
     QList<Tache*>* getTaches() const;
 
+    void setPieces(const QList<Piece*>* pieces);
+
+    QList<Piece*>* getPieces() const;
+
 private:
 
     Ui::VueEditionFiche* ui;
@@ -74,8 +79,6 @@ private slots:
     void detailsAppareil();
 
 public slots:
-
-    void peuplerTaches();
 
     void peuplerPieces();
 

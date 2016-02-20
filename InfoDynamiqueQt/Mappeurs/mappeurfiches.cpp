@@ -47,7 +47,7 @@ int MappeurFiches::nombreFiches(const int &idAppareil)
     return nombre;
 }
 
-bool MappeurFiches::inserer(Fiche *fiche)
+bool MappeurFiches::inserer(Fiche* fiche)
 {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();
@@ -141,7 +141,7 @@ QList<Fiche*>* MappeurFiches::mapper(QSqlQuery &requete)
     return liste;
 }
 
-QSqlQuery *MappeurFiches::preparerRequete(const Fiche *fiche, const QString &commande)
+QSqlQuery *MappeurFiches::preparerRequete(const Fiche* fiche, const QString &commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
@@ -165,7 +165,7 @@ int MappeurFiches::derniereInsertion()
     return id;
 }
 
-bool MappeurFiches::ecrire(const Fiche *fiche, const QString &commande)
+bool MappeurFiches::ecrire(const Fiche* fiche, const QString &commande)
 {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();

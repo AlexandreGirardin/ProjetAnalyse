@@ -108,7 +108,21 @@ QList<Tache*>* VueEditionFiche::getTaches() const {
     return taches;
 }
 
-QComboBox *VueEditionFiche::comboStatut(const Tache* tache, const QList<Statut*>* statuts) const
+void VueEditionFiche::setPieces(const QList<Piece*>* pieces)
+{
+    ui->tableauPieces->setRowCount(pieces->count());
+    int rangee = 0;
+    QLocale localisation;
+    for (QList<Piece*>::const_iterator i = pieces->constBegin(); i != pieces->constEnd(); ++i) {
+        ui->tableauPieces->setItem(rangee, 0, new QTableWidgetItem(localisation.toString((*i)->prixDouble())));
+        ui->tableauPieces->setItem(rangee, 1, new QTableWidgetItem((*i)->nom()));
+        ui->tableauPieces->setItem(rangee, 2, new QTableWidgetItem((*i)->description()));
+        ++rangee;
+    }
+    ui->tableauPieces->resizeColumnsToContents();
+}
+
+QComboBox* VueEditionFiche::comboStatut(const Tache* tache, const QList<Statut*>* statuts) const
 {
     QComboBox* combo = new QComboBox(ui->tableauTaches);
     for (QList<Statut*>::const_iterator i = statuts->constBegin(); i != statuts->constEnd(); ++i) {
@@ -118,7 +132,7 @@ QComboBox *VueEditionFiche::comboStatut(const Tache* tache, const QList<Statut*>
     return combo;
 }
 
-QTableWidgetItem *VueEditionFiche::actionVersItem(const Action *action) const
+QTableWidgetItem* VueEditionFiche::actionVersItem(const Action *action) const
 {
     QTableWidgetItem* nom = new QTableWidgetItem(action->nom());
     nom->setData(Qt::UserRole, action->id());
@@ -152,19 +166,6 @@ void VueEditionFiche::detailsClient()
 void VueEditionFiche::detailsAppareil()
 {
     ControleurAppareils::voirAppareil(m_idAppareil, true);
-}
-
-void VueEditionFiche::peuplerTaches()
-{
-//    QSqlQueryModel* modele = new QSqlQueryModel(this);
-//    QSqlQuery requete(*Application::bd);
-//    QString commande(*RequetesSQL::tachesPourFiche);
-//    modele->setQuery(QSqlQuery(*Application::bd));
-//    requete.prepare(commande);
-//    requete.bindValue(":idFiche", m_idFiche);
-//    requete.exec();
-//    modele->setQuery(requete);
-//    fragmentTaches->peuplerTableau(modele);
 }
 
 void VueEditionFiche::peuplerPieces()
