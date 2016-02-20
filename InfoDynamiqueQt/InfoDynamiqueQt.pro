@@ -65,7 +65,6 @@ SOURCES += main.cpp\
 	Controleurs/controleurongletfiches.cpp \
 	Vues/fragment.cpp \
 	Vues/vueclient.cpp \
-	Vues/vueaction.cpp \
 	Mappeurs/mappeurtaches.cpp \
     Mappeurs/aidemappeurs.cpp
 
@@ -119,7 +118,6 @@ HEADERS  += \
 	Controleurs/controleurongletfiches.h \
 	Vues/fragment.h \
 	Vues/vueclient.h \
-	Vues/vueaction.h \
 	Mappeurs/mappeurtaches.h \
     Mappeurs/aidemappeurs.h
 
@@ -139,5 +137,4 @@ FORMS    += \
 	Vues/champformulaire.ui \
 	Vues/vueensemble.ui \
 	Vues/fragment.ui \
-	Vues/vueclient.ui \
-	Vues/vueaction.ui
+	Vues/vueclient.ui

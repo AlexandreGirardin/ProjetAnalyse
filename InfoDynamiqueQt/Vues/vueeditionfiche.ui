@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Traitement d'une fiche de maintenance</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -270,29 +270,8 @@
          </item>
          <item>
           <widget class="QDialogButtonBox" name="buttonBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="cursor">
-            <cursorShape>ArrowCursor</cursorShape>
-           </property>
-           <property name="acceptDrops">
-            <bool>false</bool>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhNone</set>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
            <property name="standardButtons">
-            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-           </property>
-           <property name="centerButtons">
-            <bool>false</bool>
+            <set>QDialogButtonBox::Discard|QDialogButtonBox::Save</set>
            </property>
           </widget>
          </item>
@@ -306,7 +285,6 @@
  </widget>
  <tabstops>
   <tabstop>boutonFermerFiche</tabstop>
-  <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources>
   <include location="../ressources.qrc"/>
