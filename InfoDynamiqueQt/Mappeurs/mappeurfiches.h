@@ -77,15 +77,18 @@ private:
     static QSqlQuery* preparerRequete(const Fiche* fiche, const QString &commande);
 
     /**
-     * @brief derniereInsertion
-     * @return L'id de la dernière fiche entré
-     */
-    static int derniereInsertion();
-
-    /**
      * @brief ecrire
      * Effectue une opération SQL à l'intérieur d'une transaction
      * La transaction est annulée si l'opération échoue et validée autrement
+     * @param appareil La fiche à inclure dans l'opération SQL
+     * @param commande La commande à exécuter
+     * @return Succès de l'opération
+     */
+    static bool ecrireTransaction(const Fiche* fiche, const QString &commande);
+
+    /**
+     * @brief ecrire
+     * Effectue une opération SQL
      * @param appareil La fiche à inclure dans l'opération SQL
      * @param commande La commande à exécuter
      * @return Succès de l'opération

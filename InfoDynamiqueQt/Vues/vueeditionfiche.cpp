@@ -10,7 +10,6 @@
 #include "Mappeurs/mappeurtaches.h"
 
 #include <QComboBox>
-#include <QDebug>
 #include <QVariant>
 
 VueEditionFiche::VueEditionFiche(QWidget* parent) :
@@ -103,7 +102,6 @@ QList<Tache*>* VueEditionFiche::getTaches() const {
         tache->setStatut(itemVersStatut(rangee));
         tache->setCommentaire(itemVersCommentaire(rangee));
         taches->append(tache);
-        qDebug() << tache->out();
     }
     return taches;
 }
@@ -120,7 +118,6 @@ void VueEditionFiche::setPieces(const QList<Piece*>* pieces)
         spin->setFrame(false);
         spin->setButtonSymbols(QDoubleSpinBox::NoButtons);
         ui->tableauPieces->setCellWidget(rangee, 0, spin);
-//        ui->tableauPieces->setItem(rangee, 0, new QTableWidgetItem(localisation.toString((*i)->prixDouble())));
         ui->tableauPieces->setItem(rangee, 1, new QTableWidgetItem((*i)->nom()));
         ui->tableauPieces->setItem(rangee, 2, new QTableWidgetItem((*i)->description()));
         ++rangee;

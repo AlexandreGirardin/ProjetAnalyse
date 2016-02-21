@@ -74,6 +74,7 @@ void ControleurFiches::assignerFiche(VueEditionFiche* vue, const Fiche* fiche)
 
 void ControleurFiches::extraireFiche(Fiche* fiche, const VueEditionFiche* const vue)
 {
+    fiche->setDescription(vue->description());
     fiche->setCommentaire(vue->commentaire());
     fiche->setTaches(vue->getTaches());
 }

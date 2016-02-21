@@ -2,6 +2,7 @@
 #define MAPPEURTACHES_H
 
 #include "Modeles/tache.h"
+#include "Modeles/fiche.h"
 
 #include <QSqlQuery>
 
@@ -41,8 +42,10 @@ public:
      */
     static QList<Tache*>* tachesPourAction(const int &idAction);
 
+    // TODO
     static int prioriteMinimale();
 
+    // TODO
     static int prioriteMaximale();
 
     static bool inserer(Tache* tache);
@@ -50,6 +53,13 @@ public:
     static bool inserer(const QList<Tache*>* taches);
 
     static bool mettreAJour(const Tache *tache);
+
+    static bool supprimer(const Tache* tache);
+
+    static bool supprimer(const QList<Tache*>* taches);
+
+    static bool syncTaches(const Fiche* fiche);
+
 private:
 
     /**

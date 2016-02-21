@@ -68,6 +68,16 @@ int MappeurTaches::prioriteMaximale()
     return 5; // TODO Déplacer vers la base de données
 }
 
+bool MappeurTaches::syncTaches(const Fiche* fiche) {
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    bool succes = false;
+    if (supprimer(tachesPourFiche(fiche->id())) && inserer(fiche->taches())) {
+        succes = true;
+    }
+    return succes;
+}
+
 bool MappeurTaches::inserer(Tache* tache)
 {
     const QString commande("INSERT INTO taches\
@@ -130,6 +140,23 @@ QList<Tache*>* MappeurTaches::mapper(QSqlQuery &requete)
     return liste;
 }
 
+bool MappeurTaches::supprimer(const Tache *tache)
+{
+    const QString commande("DELETE FROM taches\
+                            WHERE idFiche=:idFiche AND idAction=:idAction");
+    const bool succes = ecrire(tache, commande);
+    return succes;
+}
+
+bool MappeurTaches::supprimer(const QList<Tache*>* taches)
+{
+    bool succes = true;
+    for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd() && succes; ++i) {
+        succes = supprimer(*i);
+    }
+    return succes;
+}
+
 QSqlQuery* MappeurTaches::preparerRequete(const Tache* tache, const QString &commande)
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
@@ -146,7 +173,7 @@ bool MappeurTaches::ecrire(const Tache* tache, const QString &commande)
     QSqlQuery* requete = preparerRequete(tache, commande);
     const bool succes = requete->exec();
     if (!succes) {
-        Application::erreurEcriture(requete->lastError().text());
+        Application::erreurEcriture(requete->lastError().text() + "\n" + requete->lastQuery());
     }
     delete requete;
     return succes;

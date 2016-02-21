@@ -6,6 +6,7 @@
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
 
+#include <QDebug>
 #include <QSqlError>
 
 Fiche *MappeurFiches::get(const int &id)
@@ -35,7 +36,6 @@ QList<Fiche*>* MappeurFiches::fichesPourAppareil(const int &idAppareil)
 int MappeurFiches::nombreFiches(const int &idAppareil)
 {
     QString commande("SELECT count(*) as 'nombre' FROM fiches WHERE idAppareil=:idAppareil");
-//    QString commande("SELECT 2 as nombre");
     QSqlQuery requete(*Application::bd);
     requete.prepare(commande);
     requete.bindValue(":idAppareil", idAppareil);
@@ -80,23 +80,24 @@ bool MappeurFiches::mettreAJour(const Fiche* fiche)
                                     priorite=:priorite,\
                                     idTechnicien=:idTechnicien,\
                                     idStatut=:idStatut,\
-                                    commentaire=:commentaire\
+                                    commentaire=:commentaire,\
                                     description=:description\
-                                WHERE id=:idFiche");
+                                WHERE id=:id");
     bool succes = ecrire(fiche, commandeFiche);
     if (succes) {
-        const QString commandeViderTaches("DELETE FROM taches\
-                                           WHERE idFiche=:idFiche");
-        succes = ecrire(fiche, commandeViderTaches);
-        if (succes) {
-            succes = MappeurTaches::inserer(fiche->taches());
-        }
+        succes = MappeurTaches::syncTaches(fiche);
     }
     if (succes) {
         bd.commit();
+        qDebug() << "succès";
     } else {
         bd.rollback();
+        qDebug() << "échec";
     }
+    Fiche* derp = get(fiche->id());
+    qDebug() << fiche->description() << " " << fiche->commentaire();
+    qDebug() << derp->description() << " " << derp->commentaire();
+    delete derp;
     return succes;
 }
 
@@ -155,27 +156,25 @@ QSqlQuery *MappeurFiches::preparerRequete(const Fiche* fiche, const QString &com
     return requete;
 }
 
-int MappeurFiches::derniereInsertion()
+bool MappeurFiches::ecrireTransaction(const Fiche* fiche, const QString &commande)
 {
-    int id = -1;
-    QSqlQuery* requete = new QSqlQuery("SELECT LAST_INSERT_ID() as id",*Application::bd);
-    if (requete->next()) {
-        id = requete->record().value("id").toInt();
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    const bool succes = ecrire(fiche, commande);
+    if (succes) {
+        bd.commit();
+    } else {
+        bd.rollback();
     }
-    return id;
+    return succes;
 }
 
 bool MappeurFiches::ecrire(const Fiche* fiche, const QString &commande)
 {
-    QSqlDatabase bd = *Application::bd;
-    bd.transaction();
     QSqlQuery* requete = preparerRequete(fiche, commande);
     const bool succes = requete->exec();
-    if (succes) {
-        bd.commit();
-    } else {
+    if (!succes) {
         Application::erreurEcriture(requete->lastQuery()+requete->lastError().text());
-        bd.rollback();
     }
     delete requete;
     return succes;
