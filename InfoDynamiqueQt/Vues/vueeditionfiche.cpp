@@ -114,7 +114,13 @@ void VueEditionFiche::setPieces(const QList<Piece*>* pieces)
     int rangee = 0;
     QLocale localisation;
     for (QList<Piece*>::const_iterator i = pieces->constBegin(); i != pieces->constEnd(); ++i) {
-        ui->tableauPieces->setItem(rangee, 0, new QTableWidgetItem(localisation.toString((*i)->prixDouble())));
+        QDoubleSpinBox* spin = new QDoubleSpinBox(ui->tableauPieces);
+        spin->setMinimum(0);
+        spin->setValue((*i)->prixDouble());
+        spin->setFrame(false);
+        spin->setButtonSymbols(QDoubleSpinBox::NoButtons);
+        ui->tableauPieces->setCellWidget(rangee, 0, spin);
+//        ui->tableauPieces->setItem(rangee, 0, new QTableWidgetItem(localisation.toString((*i)->prixDouble())));
         ui->tableauPieces->setItem(rangee, 1, new QTableWidgetItem((*i)->nom()));
         ui->tableauPieces->setItem(rangee, 2, new QTableWidgetItem((*i)->description()));
         ++rangee;
