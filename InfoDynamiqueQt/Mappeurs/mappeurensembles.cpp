@@ -62,14 +62,19 @@ bool MappeurEnsembles::inserer(EnsembleActions *ensemble)
                                         (nom, description)\
                                     VALUES\
                                         (:nom, :description)");
-    bool ecritureEnsemble = ecrire(ensemble, commandeEnsemble);
-    ensemble->setId(AideMappeurs::derniereInsertion());
-    const QString commandeActions("INSERT INTO ensemblesActions\
-                                        (idEnsemble, idAction)\
-                                    VALUES\
-                                        (:idEnsemble, :idAction)");
-    bool ecritureActions = ecrireActions(ensemble, commandeActions);
-    bool succes = ecritureEnsemble && ecritureActions;
+    QSqlQuery* requete = preparerRequete(ensemble, commandeEnsemble);
+    bool succes = requete->exec();
+    if (succes) {
+        ensemble->setId(requete->lastInsertId().toInt());
+        const QString commandeActions("INSERT INTO ensemblesActions\
+                                            (idEnsemble, idAction)\
+                                        VALUES\
+                                            (:idEnsemble, :idAction)");
+        succes = ecrireActions(ensemble, commandeActions);
+    } else {
+        Application::erreurEcriture(requete->lastError().text());
+    }
+    delete requete;
     if (succes) {
         bd.commit();
     } else {
@@ -139,7 +144,6 @@ QSqlQuery* MappeurEnsembles::preparerRequete(const EnsembleActions* ensemble, co
 bool MappeurEnsembles::ecrire(const EnsembleActions* ensemble, const QString &commande)
 {
     QSqlQuery* requete = preparerRequete(ensemble, commande);
-    requete->bindValue(":idEnsemble", ensemble->id());
     const bool succes = requete->exec();
     if (!succes) {
         Application::erreurEcriture(requete->lastError().text());
