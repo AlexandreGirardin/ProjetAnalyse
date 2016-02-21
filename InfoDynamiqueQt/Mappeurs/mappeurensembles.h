@@ -87,6 +87,17 @@ private:
     static bool ecrire(const EnsembleActions* ensemble, const QString &commande);
 
     /**
+     * @brief ecrireNouveau
+     * Effectue une opération SQL à l'intérieur d'une transaction
+     * La transaction est annulée si l'opération échoue et validée autrement
+     * Le dernier id inséré est assigné à l'ensemble
+     * @param ensemble L'ensemble à inclure dans l'opération SQL
+     * @param commande La commande à exécuter
+     * @return Succès de l'opération
+     */
+    static bool ecrireNouveau(EnsembleActions* ensemble, const QString &commande);
+
+    /**
      * @brief ecrireActions
      * Effectue une opération SQL sur toutes les actions d'un ensemble données
      * @param ensemble L'ensemble à traiter

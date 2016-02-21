@@ -62,19 +62,14 @@ bool MappeurEnsembles::inserer(EnsembleActions *ensemble)
                                         (nom, description)\
                                     VALUES\
                                         (:nom, :description)");
-    QSqlQuery* requete = preparerRequete(ensemble, commandeEnsemble);
-    bool succes = requete->exec();
+    bool succes = ecrireNouveau(ensemble, commandeEnsemble);
     if (succes) {
-        ensemble->setId(requete->lastInsertId().toInt());
         const QString commandeActions("INSERT INTO ensemblesActions\
                                             (idEnsemble, idAction)\
                                         VALUES\
                                             (:idEnsemble, :idAction)");
         succes = ecrireActions(ensemble, commandeActions);
-    } else {
-        Application::erreurEcriture(requete->lastError().text());
     }
-    delete requete;
     if (succes) {
         bd.commit();
     } else {
@@ -113,7 +108,7 @@ bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble)
     return succes;
 }
 
-bool MappeurEnsembles::supprimer(const EnsembleActions *ensemble)
+bool MappeurEnsembles::supprimer(const EnsembleActions* ensemble)
 {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();
@@ -152,7 +147,20 @@ bool MappeurEnsembles::ecrire(const EnsembleActions* ensemble, const QString &co
     return succes;
 }
 
-bool MappeurEnsembles::ecrireActions(const EnsembleActions *ensemble, const QString &commande)
+bool MappeurEnsembles::ecrireNouveau(EnsembleActions *ensemble, const QString &commande)
+{
+    QSqlQuery* requete = preparerRequete(ensemble, commande);
+    const bool succes = requete->exec();
+    if (!succes) {
+        Application::erreurEcriture(requete->lastError().text());
+    } else {
+        ensemble->setId(requete->lastInsertId().toInt());
+    }
+    delete requete;
+    return succes;
+}
+
+bool MappeurEnsembles::ecrireActions(const EnsembleActions* ensemble, const QString &commande)
 {
     QSqlQuery* requete = preparerRequete(ensemble, commande);
     requete->bindValue(":idEnsemble", ensemble->id());
