@@ -170,8 +170,3 @@ void VueEditionFiche::detailsAppareil()
 {
     ControleurAppareils::voirAppareil(m_idAppareil, true);
 }
-
-void VueEditionFiche::peuplerPieces()
-{
-
-}

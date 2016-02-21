@@ -89,15 +89,9 @@ bool MappeurFiches::mettreAJour(const Fiche* fiche)
     }
     if (succes) {
         bd.commit();
-        qDebug() << "succès";
     } else {
         bd.rollback();
-        qDebug() << "échec";
     }
-    Fiche* derp = get(fiche->id());
-    qDebug() << fiche->description() << " " << fiche->commentaire();
-    qDebug() << derp->description() << " " << derp->commentaire();
-    delete derp;
     return succes;
 }
 

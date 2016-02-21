@@ -10,7 +10,7 @@
 #include "Mappeurs/mappeurtaches.h"
 
 #include "Vues/vueeditionfiche.h"
-#include "QDebug"
+#include <QDebug>
 
 void ControleurFiches::ajouterFiche(const int &idAppareil)
 {

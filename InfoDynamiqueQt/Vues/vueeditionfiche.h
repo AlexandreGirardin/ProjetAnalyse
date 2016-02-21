@@ -78,13 +78,7 @@ private slots:
 
     void detailsAppareil();
 
-public slots:
-
-    void peuplerPieces();
-
 signals:
-
-    void nouvelId();
 
     void voirClient(const int &idClient);
 

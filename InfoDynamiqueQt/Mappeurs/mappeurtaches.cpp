@@ -69,8 +69,6 @@ int MappeurTaches::prioriteMaximale()
 }
 
 bool MappeurTaches::syncTaches(const Fiche* fiche) {
-    QSqlDatabase bd = *Application::bd;
-    bd.transaction();
     bool succes = false;
     if (supprimer(tachesPourFiche(fiche->id())) && inserer(fiche->taches())) {
         succes = true;
