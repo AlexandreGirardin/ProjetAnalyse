@@ -138,7 +138,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QGroupBox" name="groupBox">
+      <widget class="QGroupBox" name="groupeTaches">
        <property name="title">
         <string>Tâches</string>
        </property>
@@ -146,7 +146,7 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="boutonAjouterTache">
             <property name="icon">
              <iconset resource="../ressources.qrc">
               <normaloff>:/Images/list-add.svg</normaloff>:/Images/list-add.svg</iconset>
@@ -154,7 +154,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="boutonRetirerTache">
             <property name="icon">
              <iconset resource="../ressources.qrc">
               <normaloff>:/Images/edit-delete.svg</normaloff>:/Images/edit-delete.svg</iconset>
@@ -235,7 +235,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QGroupBox" name="groupBox_2">
+      <widget class="QGroupBox" name="groupePieces">
        <property name="title">
         <string>Pièces</string>
        </property>
@@ -289,7 +289,7 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="boutonAjouterPiece">
             <property name="icon">
              <iconset resource="../ressources.qrc">
               <normaloff>:/Images/list-add.svg</normaloff>:/Images/list-add.svg</iconset>
@@ -297,15 +297,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_5">
-            <property name="icon">
-             <iconset resource="../ressources.qrc">
-              <normaloff>:/Images/document-edit.svg</normaloff>:/Images/document-edit.svg</iconset>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="boutonRetirerPiece">
             <property name="icon">
              <iconset resource="../ressources.qrc">
               <normaloff>:/Images/edit-delete.svg</normaloff>:/Images/edit-delete.svg</iconset>
@@ -362,6 +354,17 @@
   </layout>
  </widget>
  <tabstops>
+  <tabstop>detailsClient</tabstop>
+  <tabstop>detailsAppareil</tabstop>
+  <tabstop>champDescription</tabstop>
+  <tabstop>champCommentaire</tabstop>
+  <tabstop>boutonAjouterTache</tabstop>
+  <tabstop>boutonRetirerTache</tabstop>
+  <tabstop>tableauTaches</tabstop>
+  <tabstop>boutonAjouterPiece</tabstop>
+  <tabstop>boutonRetirerPiece</tabstop>
+  <tabstop>tableauPieces</tabstop>
+  <tabstop>buttonBox</tabstop>
   <tabstop>boutonFermerFiche</tabstop>
  </tabstops>
  <resources>

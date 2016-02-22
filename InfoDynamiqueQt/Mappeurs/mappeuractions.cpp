@@ -37,6 +37,21 @@ QList<Action*>* MappeurActions::get(const QList<int>* listeId)
     return listeActions;
 }
 
+QList<Action*>* MappeurActions::getSauf(const QList<int>* idExclus)
+{
+    QList<Action*>* listeActions = new QList<Action*>;
+    QSqlQuery requete("SELECT * FROM actions ORDER BY nom ASC", *Application::bd);
+    const int colId = requete.record().indexOf("id");
+    while (requete.next()) {
+        QSqlRecord ligne = requete.record();
+        int id = requete.record().value(colId).toInt();
+        if (!idExclus->contains(id)) {
+            listeActions->append(mapper(ligne));
+        }
+    }
+    return listeActions;
+}
+
 int MappeurActions::nombreTachesPourAction(const int &idAction)
 {
     QSqlQuery requete(*Application::bd);

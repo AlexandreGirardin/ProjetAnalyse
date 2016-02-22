@@ -82,6 +82,8 @@ public:
      */
     static int nombreTachesPourAction(const int &idAction);
 
+    static QList<Action*>* getSauf(const QList<int>* idExclus);
+
 private:
 
     /**

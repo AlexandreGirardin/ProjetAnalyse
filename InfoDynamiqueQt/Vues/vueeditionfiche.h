@@ -3,11 +3,13 @@
 
 #include <QDialog>
 
-#include "Vues/fragment.h"
+#include "Mappeurs/mappeurstatuts.h"
 #include "Modeles/piece.h"
 #include "Modeles/tache.h"
 
 #include <QSpinBox>
+#include <QComboBox>
+#include <QTableWidgetItem>
 
 namespace Ui {
 class VueEditionFiche;
@@ -44,6 +46,8 @@ public:
 
     QList<Tache*>* getTaches() const;
 
+    QList<int>* getIdActions() const;
+
     void setPieces(const QList<Piece*>* pieces);
 
     QList<Piece*>* getPieces() const;
@@ -58,8 +62,6 @@ private:
 
     int m_idAppareil;
 
-    Fragment* fragmentPieces;
-
     void configurerTableauTaches();
 
     QComboBox* comboStatut(const Tache* tache, const QList<Statut*>* statuts) const;
@@ -72,11 +74,19 @@ private:
 
     QString itemVersCommentaire(const int &rangee) const;
 
+    void setTache(const Tache* tache, const int &rangee, const QList<Statut*>* statuts = MappeurStatuts::getStatutsTache());
+
 private slots:
 
     void detailsClient();
 
     void detailsAppareil();
+
+    void ajouterTache();
+
+    void retirerTache();
+
+    void tacheSelectionnee();
 
 signals:
 

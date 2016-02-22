@@ -8,8 +8,10 @@
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
+#include "Vues/vueajoutertache.h"
 
 #include <QComboBox>
+#include <QDebug>
 #include <QVariant>
 
 VueEditionFiche::VueEditionFiche(QWidget* parent) :
@@ -74,7 +76,10 @@ void VueEditionFiche::setAppareil(const int &id, const QString &description)
 
 void VueEditionFiche::configurerTableauTaches()
 {
-
+    ui->boutonRetirerTache->setEnabled(false);
+    connect(ui->tableauTaches, SIGNAL(clicked(QModelIndex)), this, SLOT(tacheSelectionnee()));
+    connect(ui->boutonAjouterTache, SIGNAL(clicked()), this, SLOT(ajouterTache()));
+    connect(ui->boutonRetirerTache, SIGNAL(clicked()), this, SLOT(retirerTache()));
 }
 
 void VueEditionFiche::setTaches(const QList<Tache*>* taches)
@@ -83,9 +88,7 @@ void VueEditionFiche::setTaches(const QList<Tache*>* taches)
     QList<Statut*>* statuts = MappeurStatuts::getStatutsTache();
     int rangee = 0;
     for (QList<Tache*>::const_iterator i = taches->constBegin(); i != taches->constEnd(); ++i) {
-        ui->tableauTaches->setItem(rangee, 0, actionVersItem((*i)->action()));
-        ui->tableauTaches->setCellWidget(rangee, 1, comboStatut((*i), statuts));
-        ui->tableauTaches->setItem(rangee, 2, new QTableWidgetItem((*i)->commentaire()));
+        setTache(*i, rangee, statuts);
         ++rangee;
     }
     ui->tableauTaches->resizeColumnsToContents();
@@ -104,6 +107,15 @@ QList<Tache*>* VueEditionFiche::getTaches() const {
         taches->append(tache);
     }
     return taches;
+}
+
+QList<int>* VueEditionFiche::getIdActions() const
+{
+    QList<int>* liste = new QList<int>;
+    for (int rangee = 0; rangee < ui->tableauTaches->rowCount(); ++rangee) {
+        liste->append(ui->tableauTaches->item(rangee, 0)->data(Qt::UserRole).toInt());
+    }
+    return liste;
 }
 
 void VueEditionFiche::setPieces(const QList<Piece*>* pieces)
@@ -161,6 +173,13 @@ QString VueEditionFiche::itemVersCommentaire(const int &rangee) const
     return ui->tableauTaches->item(rangee, 2)->data(Qt::DisplayRole).toString();
 }
 
+void VueEditionFiche::setTache(const Tache *tache, const int &rangee, const QList<Statut*>* statuts)
+{
+    ui->tableauTaches->setItem(rangee, 0, actionVersItem(tache->action()));
+    ui->tableauTaches->setCellWidget(rangee, 1, comboStatut(tache, statuts));
+    ui->tableauTaches->setItem(rangee, 2, new QTableWidgetItem(tache->commentaire()));
+}
+
 void VueEditionFiche::detailsClient()
 {
     ControleurClients::voirClient(m_idClient, true);
@@ -169,4 +188,42 @@ void VueEditionFiche::detailsClient()
 void VueEditionFiche::detailsAppareil()
 {
     ControleurAppareils::voirAppareil(m_idAppareil, true);
+}
+
+void VueEditionFiche::ajouterTache()
+{
+    QList<Action*>* actionsRestantes = MappeurActions::getSauf(getIdActions());
+    if (!actionsRestantes->isEmpty()) {
+        VueAjouterTache* vue = new VueAjouterTache(this);
+        vue->setActions(actionsRestantes);
+        vue->setStatuts(MappeurStatuts::getStatutsTache());
+        if (vue->exec() == vue->Accepted) {
+            Tache* tache = new Tache(this);
+            tache->setIdFiche(m_idFiche);
+            tache->setAction(MappeurActions::get(vue->getAction()));
+            tache->setStatut(MappeurStatuts::getStatutTache(vue->getStatut()));
+            tache->setCommentaire(vue->getCommentaire());
+            ui->tableauTaches->setRowCount(ui->tableauTaches->rowCount()+1);
+            setTache(tache, ui->tableauTaches->rowCount()-1);
+            delete tache;
+        }
+    }
+    qDeleteAll(*actionsRestantes);
+    delete actionsRestantes;
+}
+
+void VueEditionFiche::retirerTache()
+{
+    int rangeeSelectionnee = ui->tableauTaches->currentRow();
+    if (rangeeSelectionnee >= 0 && rangeeSelectionnee < ui->tableauTaches->rowCount()) {
+        ui->tableauTaches->removeRow(rangeeSelectionnee);
+        if (ui->tableauTaches->rowCount() == 0) {
+            ui->boutonRetirerTache->setEnabled(false);
+        }
+    }
+}
+
+void VueEditionFiche::tacheSelectionnee()
+{
+    ui->boutonRetirerTache->setEnabled(true);
 }
