@@ -28,6 +28,15 @@ private:
     // Le bouton permettant de traiter la fiche sélectionner
     QPushButton* boutonTraiter;
 
+    // Le bouton de rafraichissement de l'application
+    QPushButton* boutonRafraichir;
+
+    /**
+     * @brief configurerBoutonRafraichir
+     * Configure le bouton de rafraichissement de l'application
+     */
+    void configurerBoutonRafraichir();
+
 public slots:
 
     /**

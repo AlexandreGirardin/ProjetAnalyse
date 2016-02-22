@@ -40,10 +40,18 @@ void ControleurOngletActions::configurerFragmentActions()
     QObject::connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
     QObject::connect(fragmentActions, SIGNAL(doubleClicModele()), this, SLOT(modifierAction()));
     QObject::connect(Application::getInstance(), SIGNAL(actionModifiee()), this, SLOT(rafraichirActions()));
+    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rafraichirActions()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
 
+    configurerBoutonRafraichir();
     configurerBoutonEtat();
     configurerBoutonSupprimerAction();
+}
+
+void ControleurOngletActions::configurerBoutonRafraichir()
+{
+    boutonRafraichir = fragmentActions->ajouterBoutonNonConnecte(7, "", QIcon(":/Images/refresh"));
+    QObject::connect(boutonRafraichir, SIGNAL(clicked()), Application::getInstance(), SIGNAL(rafraichirTout()));
 }
 
 void ControleurOngletActions::configurerBoutonEtat()
@@ -147,6 +155,13 @@ void ControleurOngletActions::desactiverCritereActions() {
     filtrerActions(fragmentActions->filtre());
 }
 
+void ControleurOngletActions::rafraichirActions()
+{
+    int selection = fragmentActions->rangeeSelectionnee();
+    rechargerActions();
+    fragmentActions->selectionnerRangee(selection);
+}
+
 // Ensembles
 
 void ControleurOngletActions::configurerFragmentEnsembles()
@@ -162,15 +177,9 @@ void ControleurOngletActions::configurerFragmentEnsembles()
     QObject::connect(fragmentEnsembles, SIGNAL(clicVoir()), this, SLOT(voirEnsemble()));
     QObject::connect(fragmentEnsembles, SIGNAL(rechercher(QString)), this, SLOT(filtrerEnsembles(QString)));
     QObject::connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimerEnsemble()));
+    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rechargerEnsembles()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreEnsemblesModifie()), this, SLOT(rechargerEnsembles()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerEnsembles()));
-}
-
-void ControleurOngletActions::rafraichirActions()
-{
-    int selection = fragmentActions->rangeeSelectionnee();
-    rechargerActions();
-    fragmentActions->selectionnerRangee(selection);
 }
 
 void ControleurOngletActions::peuplerEnsembles()

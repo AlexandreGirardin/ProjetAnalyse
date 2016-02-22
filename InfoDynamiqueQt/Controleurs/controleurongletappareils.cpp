@@ -20,12 +20,14 @@ void ControleurOngletAppareils::charger(QWidget* vue)
     vue->layout()->addWidget(fragment);
 
     configurerBoutonSupprimer();
+    configurerBoutonRafraichir();
 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     QObject::connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichir()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
+    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     fragment->champ()->setFocus();
 
@@ -38,6 +40,12 @@ void ControleurOngletAppareils::configurerBoutonSupprimer()
     boutonSupprimer->setEnabled(false);
     QObject::connect(fragment, SIGNAL(selectionValide(bool)), this, SLOT(activerBoutonSupprimer(bool)));
     QObject::connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimer()));
+}
+
+void ControleurOngletAppareils::configurerBoutonRafraichir()
+{
+    boutonRafraichir = fragment->ajouterBoutonNonConnecte(10, "", QIcon(":/Images/refresh"));
+    QObject::connect(boutonRafraichir, SIGNAL(clicked()), Application::getInstance(), SIGNAL(rafraichirTout()));
 }
 
 void ControleurOngletAppareils::activerBoutonSupprimer(const bool actif)

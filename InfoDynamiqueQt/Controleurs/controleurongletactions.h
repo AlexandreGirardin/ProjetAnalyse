@@ -21,6 +21,9 @@ private:
     // Bouton permettant de supprimer l'action sélectionnée
     QPushButton* boutonSupprimerAction;
 
+    // Le bouton de rafraichissement de l'application
+    QPushButton* boutonRafraichir;
+
     /**
      * @brief configurerBoutonEtat
      * Configure le bouton de changement d'état d'action
@@ -33,6 +36,11 @@ private:
      */
     void configurerBoutonSupprimerAction();
 
+    /**
+     * @brief configurerBoutonRafraichir
+     * Configure le bouton de rafraichissement de l'application
+     */
+    void configurerBoutonRafraichir();
 public:
 
     explicit ControleurOngletActions(QObject* parent = 0);

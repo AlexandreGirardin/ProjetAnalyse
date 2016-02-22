@@ -50,8 +50,17 @@ private:
     // Le bouton de traitement de fiche
     QPushButton* boutonTraiter;
 
+    // Le bouton de rafraichissement de l'application
+    QPushButton* boutonRafraichir;
+
     // La commande SQL actuelle servant à peupler le fragmentFiches
     const QString* commandeFiches;
+
+    /**
+     * @brief configurerBoutonRafraichir
+     * Configure le bouton de rafraichissement de l'application
+     */
+    void configurerBoutonRafraichir();
 
     /**
      * @brief configurerFragmentClients

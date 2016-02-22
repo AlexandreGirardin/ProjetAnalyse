@@ -35,11 +35,20 @@ private:
     // Le bouton de suppression d'appareil
     QPushButton* boutonSupprimer;
 
+    // Le bouton de rafraichissement de l'application
+    QPushButton* boutonRafraichir;
+
     /**
      * @brief configurerBoutonSupprimer
      * Configure le bouton de suppression d'appareil
      */
     void configurerBoutonSupprimer();
+
+    /**
+     * @brief configurerBoutonRafraichir
+     * Configure le bouton de rafraichissement de l'application
+     */
+    void configurerBoutonRafraichir();
 
 public slots:
 

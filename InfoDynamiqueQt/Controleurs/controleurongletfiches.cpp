@@ -24,13 +24,21 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     boutonTraiter->setText(tr("Traiter"));
     boutonTraiter->setIcon(QIcon(":/Images/document-edit-sign"));
     vue->layout()->addWidget(fragment);
+    configurerBoutonRafraichir();
 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
     QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichir()));
+    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
     fragment->champ()->setFocus();
+}
+
+void ControleurOngletFiches::configurerBoutonRafraichir()
+{
+    boutonRafraichir = fragment->ajouterBoutonNonConnecte(10, "", QIcon(":/Images/refresh"));
+    QObject::connect(boutonRafraichir, SIGNAL(clicked()), Application::getInstance(), SIGNAL(rafraichirTout()));
 }
 
 void ControleurOngletFiches::peuplerFiches()

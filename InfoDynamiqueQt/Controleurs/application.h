@@ -231,6 +231,12 @@ signals:
      * Émis lorsqu'un ensemble a été ajouté ou supprimé
      */
     void nombreEnsemblesModifie() const;
+
+    /**
+     * @brief rafraichirTout
+     * Émis lorsque le bouton rafraichir est cliqué.
+     */
+    void rafraichirTout() const;
 };
 
 #endif // APPLICATION_H

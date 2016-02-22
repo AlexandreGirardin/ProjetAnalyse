@@ -20,5 +20,6 @@
         <file>Images/computer-laptop.svg</file>
         <file>Images/hint.svg</file>
         <file>Images/network-connect.svg</file>
+        <file>Images/refresh.svg</file>
     </qresource>
 </RCC>
