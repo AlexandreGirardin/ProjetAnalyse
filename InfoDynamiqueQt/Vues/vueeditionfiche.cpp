@@ -169,6 +169,7 @@ QDoubleSpinBox *VueEditionFiche::prixVersItem(const double &prix)
 {
     QDoubleSpinBox* spin = new QDoubleSpinBox(ui->tableauPieces);
     spin->setMinimum(0);
+    spin->setMaximum(10000000);
     spin->setValue(prix);
     spin->setFrame(false);
     spin->setButtonSymbols(QDoubleSpinBox::NoButtons);
