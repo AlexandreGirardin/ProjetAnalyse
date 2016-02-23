@@ -68,11 +68,15 @@ private:
 
     QTableWidgetItem* actionVersItem(const Action* action) const;
 
+    QDoubleSpinBox *prixVersItem(const double &prix);
+
     Action* itemVersAction(const int &rangee) const;
 
     Statut* itemVersStatut(const int &rangee) const;
 
     QString itemVersCommentaire(const int &rangee) const;
+
+    double itemVersPrix(const int &rangee) const;
 
     void setTache(const Tache* tache, const int &rangee, const QList<Statut*>* statuts = MappeurStatuts::getStatutsTache());
 
