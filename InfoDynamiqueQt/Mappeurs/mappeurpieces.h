@@ -1,6 +1,7 @@
 #ifndef MAPPEURPIECES_H
 #define MAPPEURPIECES_H
 
+#include "Modeles/fiche.h"
 #include "Modeles/piece.h"
 
 #include <QSqlQuery>
@@ -33,6 +34,18 @@ public:
      */
     static QList<Piece*>* piecesPourFiche(const int &idFiche);
 
+    static bool inserer(Piece* piece);
+
+    static bool inserer(const QList<Piece*>* pieces);
+
+    static bool mettreAJour(const Piece* piece);
+
+    static bool supprimer(const Piece* piece);
+
+    static bool supprimer(const QList<Piece*>* pieces);
+
+    static bool syncPieces(const Fiche* fiche);
+
 private:
 
     /**
@@ -49,6 +62,10 @@ private:
      * @return Les pièces présentes dans la requête
      */
     static QList<Piece*>* mapper(QSqlQuery &requete);
+
+    static QSqlQuery* preparerRequete(const Piece* piece, const QString &commande);
+
+    static bool ecrire(const Piece *piece, const QString &commande);
 };
 
 #endif // MAPPEURPIECES_H

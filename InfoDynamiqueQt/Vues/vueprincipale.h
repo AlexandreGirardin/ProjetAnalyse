@@ -59,7 +59,7 @@ private:
      * Ignore l'événement et émet le signal deconnexion()
      * @param event L'événement de fermeture de fenêtre
      */
-    void closeEvent(QCloseEvent *event);
+    void closeEvent(QCloseEvent* event);
 
 signals:
 
