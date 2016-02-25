@@ -77,4 +77,5 @@ void ControleurFiches::extraireFiche(Fiche* fiche, const VueEditionFiche* const 
     fiche->setDescription(vue->description());
     fiche->setCommentaire(vue->commentaire());
     fiche->setTaches(vue->getTaches());
+    fiche->setPieces(vue->getPieces());
 }

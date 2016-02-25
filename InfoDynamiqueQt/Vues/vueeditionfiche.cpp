@@ -142,6 +142,7 @@ QList<Piece *> *VueEditionFiche::getPieces() const
         piece->setNom(ui->tableauPieces->item(rangee, 1)->data(Qt::DisplayRole).toString());
         piece->setDescription(ui->tableauPieces->item(rangee, 2)->data(Qt::DisplayRole).toString());
         pieces->append(piece);
+        qDebug() << piece->out();
     }
     return pieces;
 }
@@ -194,7 +195,7 @@ QString VueEditionFiche::itemVersCommentaire(const int &rangee) const
 
 double VueEditionFiche::itemVersPrix(const int &rangee) const
 {
-    QDoubleSpinBox* spin = qobject_cast<QDoubleSpinBox*>(ui->tableauTaches->cellWidget(rangee, 0));
+    QDoubleSpinBox* spin = qobject_cast<QDoubleSpinBox*>(ui->tableauPieces->cellWidget(rangee, 0));
     double prix = spin->value();
     return prix;
 }
