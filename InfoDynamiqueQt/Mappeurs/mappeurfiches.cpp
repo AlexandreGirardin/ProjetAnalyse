@@ -88,6 +88,9 @@ bool MappeurFiches::mettreAJour(const Fiche* fiche)
         succes = MappeurTaches::syncTaches(fiche);
     }
     if (succes) {
+        succes = MappeurPieces::syncPieces(fiche);
+    }
+    if (succes) {
         bd.commit();
     } else {
         bd.rollback();

@@ -124,17 +124,26 @@ void VueEditionFiche::setPieces(const QList<Piece*>* pieces)
     int rangee = 0;
     QLocale localisation;
     for (QList<Piece*>::const_iterator i = pieces->constBegin(); i != pieces->constEnd(); ++i) {
-        QDoubleSpinBox* spin = new QDoubleSpinBox(ui->tableauPieces);
-        spin->setMinimum(0);
-        spin->setValue((*i)->prixDouble());
-        spin->setFrame(false);
-        spin->setButtonSymbols(QDoubleSpinBox::NoButtons);
-        ui->tableauPieces->setCellWidget(rangee, 0, spin);
+        ui->tableauPieces->setCellWidget(rangee, 0, prixVersItem((*i)->prixDouble()));
         ui->tableauPieces->setItem(rangee, 1, new QTableWidgetItem((*i)->nom()));
         ui->tableauPieces->setItem(rangee, 2, new QTableWidgetItem((*i)->description()));
         ++rangee;
     }
     ui->tableauPieces->resizeColumnsToContents();
+}
+
+QList<Piece *> *VueEditionFiche::getPieces() const
+{
+    QList<Piece*>* pieces = new QList<Piece*>;
+    for (int rangee = 0; rangee < ui->tableauPieces->rowCount(); ++rangee) {
+        Piece* piece = new Piece(ui->tableauPieces);
+        piece->setPrix(itemVersPrix(rangee));
+        piece->setId(ui->tableauPieces->item(rangee, 1)->data(Qt::UserRole).toInt());
+        piece->setNom(ui->tableauPieces->item(rangee, 1)->data(Qt::DisplayRole).toString());
+        piece->setDescription(ui->tableauPieces->item(rangee, 2)->data(Qt::DisplayRole).toString());
+        pieces->append(piece);
+    }
+    return pieces;
 }
 
 QComboBox* VueEditionFiche::comboStatut(const Tache* tache, const QList<Statut*>* statuts) const
@@ -156,6 +165,17 @@ QTableWidgetItem* VueEditionFiche::actionVersItem(const Action *action) const
     return nom;
 }
 
+QDoubleSpinBox *VueEditionFiche::prixVersItem(const double &prix)
+{
+    QDoubleSpinBox* spin = new QDoubleSpinBox(ui->tableauPieces);
+    spin->setMinimum(0);
+    spin->setMaximum(10000000);
+    spin->setValue(prix);
+    spin->setFrame(false);
+    spin->setButtonSymbols(QDoubleSpinBox::NoButtons);
+    return spin;
+}
+
 Action* VueEditionFiche::itemVersAction(const int &rangee) const
 {
     return MappeurActions::get(ui->tableauTaches->item(rangee, 0)->data(Qt::UserRole).toInt());
@@ -171,6 +191,13 @@ Statut* VueEditionFiche::itemVersStatut(const int &rangee) const
 QString VueEditionFiche::itemVersCommentaire(const int &rangee) const
 {
     return ui->tableauTaches->item(rangee, 2)->data(Qt::DisplayRole).toString();
+}
+
+double VueEditionFiche::itemVersPrix(const int &rangee) const
+{
+    QDoubleSpinBox* spin = qobject_cast<QDoubleSpinBox*>(ui->tableauTaches->cellWidget(rangee, 0));
+    double prix = spin->value();
+    return prix;
 }
 
 void VueEditionFiche::setTache(const Tache *tache, const int &rangee, const QList<Statut*>* statuts)
