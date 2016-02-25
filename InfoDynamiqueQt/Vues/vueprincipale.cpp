@@ -3,7 +3,7 @@
 
 #include <QCloseEvent>
 
-void VuePrincipale::closeEvent (QCloseEvent *event)
+void VuePrincipale::closeEvent (QCloseEvent* event)
 {
     event->ignore();
     emit deconnexion();
@@ -12,7 +12,7 @@ void VuePrincipale::closeEvent (QCloseEvent *event)
 VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)
 {
     ui->setupUi(this);
-//    QObject::connect(ui->menuDeconnexion, SIGNAL(triggered()), this, SIGNAL(deconnexion()));
+    ui->onglets->tabBar()->hide();
 }
 
 VuePrincipale::~VuePrincipale()

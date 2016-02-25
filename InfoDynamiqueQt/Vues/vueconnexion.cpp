@@ -16,6 +16,7 @@ VueConnexion::VueConnexion(QWidget *parent) :
     ui->champHote->setText(parametres.value("connexion/hote","localhost").toString());
     ui->champPort->setValue(parametres.value("connexion/port", 3307).toInt());
     ui->champUsager->setText(parametres.value("connexion/usager","root").toString());
+    ui->boutonConnecter->setDefault(true);
     QObject::connect(ui->boutonConnecter, SIGNAL(clicked()), this, SIGNAL(testerConnexion()));
     configurerBoutonOk();
 }
