@@ -32,3 +32,8 @@ void VueClient::setAdresse(const QString &adresse)
 {
     ui->champAdresse->setText(adresse);
 }
+
+void VueClient::setCourriel(const QString &courriel)
+{
+    ui->champCourriel->setText(courriel);
+}

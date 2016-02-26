@@ -25,7 +25,7 @@ bool MappeurClients::inserer(Client* client)
                 "INSERT INTO clients\
                     (prenom, nom, telephone, adresse)\
                 VALUES\
-                    (:prenom, :nom, :telephone, :adresse)");
+                    (:prenom, :nom, :telephone, :adresse, :courriel)");
     bool succes = ecrire(client, commande);
     client->setId(AideMappeurs::derniereInsertion());
     return succes;
@@ -39,7 +39,8 @@ bool MappeurClients::mettreAJour(const Client *client)
                     prenom=:prenom,\
                     nom=:nom,\
                     telephone=:telephone,\
-                    adresse=:adresse\
+                    adresse=:adresse,\
+                    courriel=:courriel\
                 WHERE id=:id");
     return ecrire(client, commande);
 }
@@ -52,7 +53,7 @@ Client* MappeurClients::mapper(const QSqlRecord &ligne)
     client->setNom(ligne.value("nom").toString());
     client->setTelephone(ligne.value("telephone").toString());
     client->setAdresse(ligne.value("adresse").toString());
-    client->setAppareils(MappeurAppareils::appareilsPourClient(client->id()));
+    client->setCourriel(ligne.value("courriel").toString());
     return client;
 }
 
@@ -65,6 +66,7 @@ QSqlQuery* MappeurClients::preparerRequete(const Client* client, const QString &
     requete->bindValue(":prenom", client->prenom());
     requete->bindValue(":telephone", client->telephone());
     requete->bindValue(":adresse", client->adresse());
+    requete->bindValue(":courriel", client->courriel());
     return requete;
 }
 

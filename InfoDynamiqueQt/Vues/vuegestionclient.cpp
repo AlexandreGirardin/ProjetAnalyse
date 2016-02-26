@@ -88,6 +88,16 @@ void VueGestionClient::setAdresse(const QString &adresse)
     ui->champAdresse->setText(adresse);
 }
 
+QString VueGestionClient::getCourriel() const
+{
+    return ui->champCourriel->text();
+}
+
+void VueGestionClient::setCourriel(const QString &courriel)
+{
+    ui->champCourriel->setText(courriel);
+}
+
 void VueGestionClient::verifierPrenom() {
     prenom->setValide(!prenom->getTexte().isEmpty());
 }

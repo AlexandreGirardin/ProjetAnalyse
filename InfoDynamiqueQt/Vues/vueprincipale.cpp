@@ -12,7 +12,6 @@ void VuePrincipale::closeEvent (QCloseEvent* event)
 VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)
 {
     ui->setupUi(this);
-    ui->onglets->tabBar()->hide();
 }
 
 VuePrincipale::~VuePrincipale()

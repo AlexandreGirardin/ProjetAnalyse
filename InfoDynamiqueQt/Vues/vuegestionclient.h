@@ -73,6 +73,11 @@ public:
      */
     void setAdresse(const QString &courriel);
 
+    QString getCourriel() const;
+
+    void setCourriel(const QString &courriel);
+
+
 private slots:
 
     void verifierPrenom();
