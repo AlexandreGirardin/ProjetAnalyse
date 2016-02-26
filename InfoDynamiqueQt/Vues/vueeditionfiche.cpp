@@ -8,10 +8,11 @@
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
+#include "Mappeurs/mappeurpieces.h"
 #include "Vues/vueajoutertache.h"
+#include "Vues/vuegestionpiece.h"
 
 #include <QComboBox>
-#include <QDebug>
 #include <QVariant>
 
 VueEditionFiche::VueEditionFiche(QWidget* parent) :
@@ -20,6 +21,7 @@ VueEditionFiche::VueEditionFiche(QWidget* parent) :
 {
     ui->setupUi(this);
     configurerTableauTaches();
+    configurerTableauPieces();
     connect(ui->detailsAppareil, SIGNAL(clicked()), this, SLOT(detailsAppareil()));
     connect(ui->detailsClient, SIGNAL(clicked()), this, SLOT(detailsClient()));
 }
@@ -82,6 +84,14 @@ void VueEditionFiche::configurerTableauTaches()
     connect(ui->boutonRetirerTache, SIGNAL(clicked()), this, SLOT(retirerTache()));
 }
 
+void VueEditionFiche::configurerTableauPieces()
+{
+    ui->boutonRetirerPiece->setEnabled(false);
+    connect(ui->tableauPieces, SIGNAL(clicked(QModelIndex)), this, SLOT(pieceSelectionnee()));
+    connect(ui->boutonAjouterPiece, SIGNAL(clicked()), this, SLOT(ajouterPiece()));
+    connect(ui->boutonRetirerPiece, SIGNAL(clicked()), this, SLOT(retirerPiece()));
+}
+
 void VueEditionFiche::setTaches(const QList<Tache*>* taches)
 {
     ui->tableauTaches->setRowCount(taches->count());
@@ -124,9 +134,7 @@ void VueEditionFiche::setPieces(const QList<Piece*>* pieces)
     int rangee = 0;
     QLocale localisation;
     for (QList<Piece*>::const_iterator i = pieces->constBegin(); i != pieces->constEnd(); ++i) {
-        ui->tableauPieces->setCellWidget(rangee, 0, prixVersItem((*i)->prixDouble()));
-        ui->tableauPieces->setItem(rangee, 1, new QTableWidgetItem((*i)->nom()));
-        ui->tableauPieces->setItem(rangee, 2, new QTableWidgetItem((*i)->description()));
+        setPiece(*i, rangee);
         ++rangee;
     }
     ui->tableauPieces->resizeColumnsToContents();
@@ -137,12 +145,11 @@ QList<Piece *> *VueEditionFiche::getPieces() const
     QList<Piece*>* pieces = new QList<Piece*>;
     for (int rangee = 0; rangee < ui->tableauPieces->rowCount(); ++rangee) {
         Piece* piece = new Piece(ui->tableauPieces);
-        piece->setPrix(itemVersPrix(rangee));
+        piece->setPrixDouble(itemVersPrix(rangee));
         piece->setId(ui->tableauPieces->item(rangee, 1)->data(Qt::UserRole).toInt());
         piece->setNom(ui->tableauPieces->item(rangee, 1)->data(Qt::DisplayRole).toString());
         piece->setDescription(ui->tableauPieces->item(rangee, 2)->data(Qt::DisplayRole).toString());
         pieces->append(piece);
-        qDebug() << piece->out();
     }
     return pieces;
 }
@@ -201,11 +208,18 @@ double VueEditionFiche::itemVersPrix(const int &rangee) const
     return prix;
 }
 
-void VueEditionFiche::setTache(const Tache *tache, const int &rangee, const QList<Statut*>* statuts)
+void VueEditionFiche::setTache(const Tache* tache, const int &rangee, const QList<Statut*>* statuts)
 {
     ui->tableauTaches->setItem(rangee, 0, actionVersItem(tache->action()));
     ui->tableauTaches->setCellWidget(rangee, 1, comboStatut(tache, statuts));
     ui->tableauTaches->setItem(rangee, 2, new QTableWidgetItem(tache->commentaire()));
+}
+
+void VueEditionFiche::setPiece(const Piece* piece, const int &rangee)
+{
+    ui->tableauPieces->setCellWidget(rangee, 0, prixVersItem(piece->prixDouble()));
+    ui->tableauPieces->setItem(rangee, 1, new QTableWidgetItem(piece->nom()));
+    ui->tableauPieces->setItem(rangee, 2, new QTableWidgetItem(piece->description()));
 }
 
 void VueEditionFiche::detailsClient()
@@ -251,7 +265,38 @@ void VueEditionFiche::retirerTache()
     }
 }
 
+void VueEditionFiche::ajouterPiece()
+{
+    VueGestionPiece* vue = new VueGestionPiece(this);
+    vue->setWindowTitle(tr("Ajouter une nouvelle pièce"));
+    if (vue->exec() == vue->Accepted) {
+        Piece* piece = new Piece(vue);
+        piece->setNom(vue->getNom());
+        piece->setPrixInt(vue->getPrixInt());
+        piece->setDescription(vue->getDescription());
+        ui->tableauPieces->setRowCount(ui->tableauPieces->rowCount()+1);
+        setPiece(piece, ui->tableauPieces->rowCount()-1);
+        vue->deleteLater();
+    }
+}
+
+void VueEditionFiche::retirerPiece()
+{
+    int rangeeSelectionnee = ui->tableauPieces->currentRow();
+    if (rangeeSelectionnee >= 0 && rangeeSelectionnee < ui->tableauPieces->rowCount()) {
+        ui->tableauPieces->removeRow(rangeeSelectionnee);
+        if (ui->tableauPieces->rowCount() == 0) {
+            ui->boutonRetirerPiece->setEnabled(false);
+        }
+    }
+}
+
 void VueEditionFiche::tacheSelectionnee()
 {
     ui->boutonRetirerTache->setEnabled(true);
+}
+
+void VueEditionFiche::pieceSelectionnee()
+{
+    ui->boutonRetirerPiece->setEnabled(true);
 }

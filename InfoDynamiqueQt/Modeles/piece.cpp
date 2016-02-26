@@ -32,7 +32,12 @@ int Piece::prixInt() const
     return m_prix;
 }
 
-void Piece::setPrix(const int &value)
+void Piece::setPrixDouble(const double &value)
+{
+    m_prix = value * 100;
+}
+
+void Piece::setPrixInt(const int &value)
 {
     m_prix = value;
 }

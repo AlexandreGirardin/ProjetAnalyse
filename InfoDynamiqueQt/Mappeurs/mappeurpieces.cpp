@@ -4,6 +4,7 @@
 #include "Mappeurs/aidemappeurs.h"
 
 #include <QSqlError>
+#include <QDebug>
 
 Piece* MappeurPieces::get(const int &id)
 {
@@ -36,22 +37,36 @@ QList<Piece*>* MappeurPieces::piecesPourFiche(const int &idFiche)
     return mapper(requete);
 }
 
-bool MappeurPieces::inserer(Piece* piece)
+bool MappeurPieces::inserer(Piece* piece, const int &idFiche)
 {
-    const QString commande("INSERT INTO pieces\
-                               (id, nom, description, prix)\
-                            VALUES\
-                               (:id, :nom, :description, :prix)");
-    const bool succes = ecrire(piece, commande);
+    QSqlDatabase bd = *Application::bd;
+    bd.transaction();
+    const QString commandeFiche("INSERT INTO pieces (id, nom, description, prix) VALUES (:id, :nom, :description, :prix)");
+    bool succes = ecrire(piece, commandeFiche);
     piece->setId(AideMappeurs::derniereInsertion());
+    if (succes) {
+        QSqlQuery requete(*Application::bd);
+        requete.prepare("INSERT INTO fichespieces (idFiche, idPiece) VALUES (:idFiche, :idPiece)");
+        requete.bindValue(":idFiche", idFiche);
+        requete.bindValue(":idPiece", piece->id());
+        succes = requete.exec();
+        if (!succes) {
+            Application::erreurEcriture(requete.lastError().text() + "\n" + requete.lastQuery());
+        }
+    }
+    if (succes) {
+        bd.commit();
+    } else {
+        bd.rollback();
+    }
     return succes;
 }
 
-bool MappeurPieces::inserer(const QList<Piece*>* pieces)
+bool MappeurPieces::inserer(const QList<Piece*>* pieces, const int &idFiche)
 {
     bool succes = true;
     for (QList<Piece*>::const_iterator i = pieces->constBegin(); i != pieces->constEnd() && succes; ++i) {
-        succes = inserer(*i);
+        succes = inserer(*i, idFiche);
     }
     return succes;
 }
@@ -118,7 +133,7 @@ bool MappeurPieces::syncPieces(const Fiche* fiche) {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();
     bool succes = false;
-    if (supprimer(piecesPourFiche(fiche->id())) && inserer(fiche->pieces())) {
+    if (supprimer(piecesPourFiche(fiche->id())) && inserer(fiche->pieces(), fiche->id())) {
         succes = true;
     }
     if (succes) {
@@ -135,7 +150,7 @@ Piece* MappeurPieces::mapper(const QSqlRecord &ligne)
     piece->setId(ligne.value("id").toInt());
     piece->setNom(ligne.value("nom").toString());
     piece->setDescription(ligne.value("description").toString());
-    piece->setPrix(ligne.value("prix").toInt());
+    piece->setPrixInt(ligne.value("prix").toInt());
     return piece;
 }
 
@@ -153,7 +168,7 @@ QList<Piece*>* MappeurPieces::mapper(QSqlQuery &requete)
         piece->setId(ligne.value(colId).toInt());
         piece->setNom(ligne.value(colNom).toString());
         piece->setDescription(ligne.value(colDesc).toString());
-        piece->setPrix(ligne.value(colPrix).toInt());
+        piece->setPrixInt(ligne.value(colPrix).toInt());
         liste->append(piece);
     }
     return liste;

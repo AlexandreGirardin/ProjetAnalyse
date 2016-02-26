@@ -49,7 +49,7 @@ void ControleurBD::connecterDossiers()
     vue->deleteLater();
 
 // Commenter ce qui précède et décommenter ce qui suit <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
+//
 //    m_bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd);
 //    m_bd.setHostName("localhost");
 //    m_bd.setPort(3307);

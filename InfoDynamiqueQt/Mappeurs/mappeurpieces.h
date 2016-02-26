@@ -34,9 +34,9 @@ public:
      */
     static QList<Piece*>* piecesPourFiche(const int &idFiche);
 
-    static bool inserer(Piece* piece);
+    static bool inserer(Piece* piece, const int &idFiche);
 
-    static bool inserer(const QList<Piece*>* pieces);
+    static bool inserer(const QList<Piece*>* pieces, const int &idFiche);
 
     static bool mettreAJour(const Piece* piece);
 

@@ -64,6 +64,8 @@ private:
 
     void configurerTableauTaches();
 
+    void configurerTableauPieces();
+
     QComboBox* comboStatut(const Tache* tache, const QList<Statut*>* statuts) const;
 
     QTableWidgetItem* actionVersItem(const Action* action) const;
@@ -80,6 +82,8 @@ private:
 
     void setTache(const Tache* tache, const int &rangee, const QList<Statut*>* statuts = MappeurStatuts::getStatutsTache());
 
+    void setPiece(const Piece* piece, const int &rangee);
+
 private slots:
 
     void detailsClient();
@@ -90,7 +94,13 @@ private slots:
 
     void retirerTache();
 
+    void ajouterPiece();
+
+    void retirerPiece();
+
     void tacheSelectionnee();
+
+    void pieceSelectionnee();
 
 signals:
 

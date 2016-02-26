@@ -38,6 +38,11 @@ double VueGestionPiece::getPrix() const
     return ui->champPrix->value();
 }
 
+int VueGestionPiece::getPrixInt() const
+{
+    return getPrix()*100;
+}
+
 void VueGestionPiece::setPrix(const double &prix)
 {
     ui->champPrix->setValue(prix);

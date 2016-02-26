@@ -67,8 +67,7 @@ SOURCES += main.cpp\
 	Vues/vuegestionpiece.cpp \
 	Vues/vuegestiontache.cpp \
 	Vues/vueprincipale.cpp \
-    Vues/vueajoutertache.cpp \
-    Vues/vueajouterpiece.cpp
+    Vues/vueajoutertache.cpp
 
 HEADERS  += \
 	Modeles/action.h \
@@ -122,8 +121,7 @@ HEADERS  += \
 	Vues/vuegestionpiece.h \
 	Vues/vuegestiontache.h \
 	Vues/vueprincipale.h \
-    Vues/vueajoutertache.h \
-    Vues/vueajouterpiece.h
+    Vues/vueajoutertache.h
 
 FORMS    += \
 	Vues/champformulaire.ui \
@@ -141,5 +139,4 @@ FORMS    += \
 	Vues/vuegestionpiece.ui \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
-    Vues/vueajoutertache.ui \
-    Vues/vueajouterpiece.ui
+    Vues/vueajoutertache.ui

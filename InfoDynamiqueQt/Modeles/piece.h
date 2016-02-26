@@ -64,7 +64,9 @@ public:
      * @brief setPrix
      * @param value Le prix à assigner à la pièce, en sous
      */
-    void setPrix(const int &value);
+    void setPrixInt(const int &value);
+
+    void setPrixDouble(const double &value);
 
     /**
      * @brief out

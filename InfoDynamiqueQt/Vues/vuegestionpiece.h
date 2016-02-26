@@ -56,6 +56,8 @@ public:
      */
     void setPrix(const double &prix);
 
+    int getPrixInt() const;
+
 private:
     Ui::VueGestionPiece* ui;
 };

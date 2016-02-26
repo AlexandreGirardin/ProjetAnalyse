@@ -4,6 +4,7 @@ Fiche::Fiche(QObject* parent) : ModeleBD(parent)
 {
     m_statut = new Statut(this);
     m_taches = new QList<Tache*>;
+    m_pieces = new QList<Piece*>;
 }
 
 int Fiche::idAppareil() const
@@ -80,11 +81,14 @@ QList<Piece*>* Fiche::pieces() const
 
 void Fiche::setPieces(QList<Piece*>* value)
 {
+    qDeleteAll(*m_pieces);
+    delete m_pieces;
     m_pieces = value;
 }
 
 QList<Technicien*>* Fiche::techniciens() const
 {
+
     return m_techniciens;
 }
 
