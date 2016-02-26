@@ -149,7 +149,8 @@ void ControleurOngletActions::activerCritereActions()
     filtrerActions(fragmentActions->filtre());
 }
 
-void ControleurOngletActions::desactiverCritereActions() {
+void ControleurOngletActions::desactiverCritereActions()
+{
     requeteActions = RequetesSQL::afficherToutesActions;
     requeteActionsFiltre = RequetesSQL::filtrerToutesActions;
     filtrerActions(fragmentActions->filtre());

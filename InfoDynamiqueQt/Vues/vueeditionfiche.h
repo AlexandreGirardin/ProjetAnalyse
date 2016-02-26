@@ -52,6 +52,9 @@ public:
 
     QList<Piece*>* getPieces() const;
 
+    Statut* getStatutFiche() const;
+
+    void setStatutsFiche(const QList<Statut *> *statuts, const Statut *statutFiche);
 private:
 
     Ui::VueEditionFiche* ui;
@@ -66,11 +69,11 @@ private:
 
     void configurerTableauPieces();
 
-    QComboBox* comboStatut(const Tache* tache, const QList<Statut*>* statuts) const;
+    QComboBox* comboStatutTache(const Tache* tache, const QList<Statut*>* statuts) const;
 
     QTableWidgetItem* actionVersItem(const Action* action) const;
 
-    QDoubleSpinBox *prixVersItem(const double &prix);
+    QDoubleSpinBox* prixVersItem(const double &prix);
 
     Action* itemVersAction(const int &rangee) const;
 

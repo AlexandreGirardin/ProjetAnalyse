@@ -20,8 +20,10 @@ VueEditionFiche::VueEditionFiche(QWidget* parent) :
     ui(new Ui::VueEditionFiche)
 {
     ui->setupUi(this);
+
     configurerTableauTaches();
     configurerTableauPieces();
+
     connect(ui->detailsAppareil, SIGNAL(clicked()), this, SLOT(detailsAppareil()));
     connect(ui->detailsClient, SIGNAL(clicked()), this, SLOT(detailsClient()));
 }
@@ -140,7 +142,7 @@ void VueEditionFiche::setPieces(const QList<Piece*>* pieces)
     ui->tableauPieces->resizeColumnsToContents();
 }
 
-QList<Piece *> *VueEditionFiche::getPieces() const
+QList<Piece*>* VueEditionFiche::getPieces() const
 {
     QList<Piece*>* pieces = new QList<Piece*>;
     for (int rangee = 0; rangee < ui->tableauPieces->rowCount(); ++rangee) {
@@ -154,7 +156,13 @@ QList<Piece *> *VueEditionFiche::getPieces() const
     return pieces;
 }
 
-QComboBox* VueEditionFiche::comboStatut(const Tache* tache, const QList<Statut*>* statuts) const
+Statut *VueEditionFiche::getStatutFiche() const
+{
+    int id = ui->comboStatutFiche->currentData().toInt();
+    return MappeurStatuts::getStatutFiche(id);
+}
+
+QComboBox* VueEditionFiche::comboStatutTache(const Tache* tache, const QList<Statut*>* statuts) const
 {
     QComboBox* combo = new QComboBox(ui->tableauTaches);
     for (QList<Statut*>::const_iterator i = statuts->constBegin(); i != statuts->constEnd(); ++i) {
@@ -162,6 +170,14 @@ QComboBox* VueEditionFiche::comboStatut(const Tache* tache, const QList<Statut*>
     }
     combo->setCurrentText(tache->statut()->nom());
     return combo;
+}
+
+void VueEditionFiche::setStatutsFiche(const QList<Statut*>* statuts, const Statut* statutFiche)
+{
+    for (QList<Statut*>::const_iterator i = statuts->constBegin(); i != statuts->constEnd(); ++i) {
+        ui->comboStatutFiche->addItem((*i)->nom(), (*i)->id());
+    }
+    ui->comboStatutFiche->setCurrentText(statutFiche->nom());
 }
 
 QTableWidgetItem* VueEditionFiche::actionVersItem(const Action *action) const
@@ -211,7 +227,7 @@ double VueEditionFiche::itemVersPrix(const int &rangee) const
 void VueEditionFiche::setTache(const Tache* tache, const int &rangee, const QList<Statut*>* statuts)
 {
     ui->tableauTaches->setItem(rangee, 0, actionVersItem(tache->action()));
-    ui->tableauTaches->setCellWidget(rangee, 1, comboStatut(tache, statuts));
+    ui->tableauTaches->setCellWidget(rangee, 1, comboStatutTache(tache, statuts));
     ui->tableauTaches->setItem(rangee, 2, new QTableWidgetItem(tache->commentaire()));
 }
 

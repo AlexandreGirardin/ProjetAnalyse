@@ -23,7 +23,7 @@ bool MappeurClients::inserer(Client* client)
 {
     const QString commande(
                 "INSERT INTO clients\
-                    (prenom, nom, telephone, adresse)\
+                    (prenom, nom, telephone, adresse, courriel)\
                 VALUES\
                     (:prenom, :nom, :telephone, :adresse, :courriel)");
     bool succes = ecrire(client, commande);

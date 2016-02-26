@@ -155,7 +155,7 @@ QString const * const RequetesSQL::filtrerEnsembles =
                     " WHERE nom LIKE :filtre\
                     OR description LIKE :filtre");
 
-QString const * const RequetesSQL::afficherFiches =
+QString const * const RequetesSQL::afficherToutesFiches =
         new QString("SELECT\
                         f.id as '#',\
                         c.telephone as 'Client',\
@@ -177,13 +177,24 @@ QString const * const RequetesSQL::afficherFiches =
                     ON\
                         a.idClient = c.id");
 
-QString const * const RequetesSQL::filtrerFiches =
-        new QString(*afficherFiches +
+QString const * const RequetesSQL::afficherFichesActives =
+        new QString(*afficherToutesFiches +
+                    QString(" WHERE f.idStatut <> 0"));
+
+QString const * const RequetesSQL::filtrerToutesFiches =
+        new QString(*afficherToutesFiches +
                     QString(" WHERE c.telephone LIKE :filtre\
                                 OR f.priorite LIKE :filtre\
                                 OR s.nom LIKE :filtre\
                                 OR f.commentaire LIKE :filtre\
                                 OR f.description LIKE :filtre"));
+
+QString const * const RequetesSQL::filtrerFichesActives =
+        new QString(*afficherFichesActives +
+                    QString(" HAVING f.id LIKE :filtre\
+                            OR c.telephone LIKE :filtre\
+                            OR s.nom LIKE :filtre\
+                            OR f.description LIKE :filtre"));
 
 QString const * const RequetesSQL::tachesPourFiche =
         new QString("SELECT * FROM taches WHERE idFiche=:idFiche");

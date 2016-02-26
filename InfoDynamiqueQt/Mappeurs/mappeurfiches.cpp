@@ -58,6 +58,7 @@ bool MappeurFiches::inserer(Fiche* fiche)
                                 (:idAppareil, :priorite, :idTechnicien,\
                                  :idStatut, :commentaire, :description)");
     bool succes = ecrire(fiche, commande);
+    fiche->setId(AideMappeurs::derniereInsertion());
     if (succes) {
         succes = MappeurTaches::inserer(fiche->taches());
     }

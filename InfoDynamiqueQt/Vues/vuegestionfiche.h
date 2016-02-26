@@ -34,8 +34,6 @@ public:
 
     void setEnsembles(const QList<EnsembleActions*>* ensembles);
 
-    void setActions(const QList<Action*>* actions);
-
     QList<int>* getTaches() const;
 
     int getIdEnsemble() const;

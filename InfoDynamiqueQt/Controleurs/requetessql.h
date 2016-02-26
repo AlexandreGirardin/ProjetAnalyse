@@ -43,10 +43,14 @@ public:
     static QString const * const toutesFichesPourAppareil;
     // Requête permettant d'afficher toutes les fiches ayant un :idAppareil
     static QString const * const fichesActivesPourAppareil;
+    // Requête permettant d'afficher les fiches actives
+    static QString const * const afficherFichesActives;
     // Requête permettant d'afficher toutes les fiches
-    static QString const * const afficherFiches;
+    static QString const * const afficherToutesFiches;
+    // Requête permettant d'afficher toutes les fiches correspondant à :filtre
+    static QString const * const filtrerToutesFiches;
     // Requête permettant d'afficher les fiches correspondant à :filtre
-    static QString const * const filtrerFiches;
+    static QString const * const filtrerFichesActives;
 
     // Requête permettant d'afficher les fiches correspondant à :filtre
     static QString const * const tachesPourFiche;

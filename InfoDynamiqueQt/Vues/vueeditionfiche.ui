@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>VueEditionFiche</class>
- <widget class="QDialog" name="VueEditionFiche">
-  <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
-  </property>
+ <widget class="QWidget" name="VueEditionFiche">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -117,9 +114,32 @@
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_4">
-        <property name="margin">
+        <property name="leftMargin">
          <number>9</number>
         </property>
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>9</number>
+        </property>
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="1" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Statut de la fiche:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboStatutFiche"/>
+          </item>
+         </layout>
+        </item>
         <item>
          <widget class="QLabel" name="label_6">
           <property name="text">
@@ -327,19 +347,6 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QPushButton" name="boutonFermerFiche">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Fermer la fiche</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QDialogButtonBox" name="buttonBox">
        <property name="standardButtons">
         <set>QDialogButtonBox::Abort|QDialogButtonBox::Save</set>
@@ -362,7 +369,6 @@
   <tabstop>boutonRetirerPiece</tabstop>
   <tabstop>tableauPieces</tabstop>
   <tabstop>buttonBox</tabstop>
-  <tabstop>boutonFermerFiche</tabstop>
  </tabstops>
  <resources>
   <include location="../ressources.qrc"/>

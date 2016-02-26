@@ -34,8 +34,10 @@ void ControleurFiches::traiterFiche(const int &idFiche)
 {
     Fiche* fiche = MappeurFiches::get(idFiche);
     if (fiche != NULL) {
-        VueEditionFiche* vue = new VueEditionFiche(Application::vuePrincipale());
+        VueEditionFiche* vue = new VueEditionFiche();
+        vue->setWindowFlags(Qt::Window);
         assignerFiche(vue, fiche);
+        vue->setStatutsFiche(MappeurStatuts::getStatutsFiche(), fiche->statut());
         if (vue->exec() == vue->Accepted) {
             extraireFiche(fiche, vue);
             if (MappeurFiches::mettreAJour(fiche)) {
@@ -78,4 +80,5 @@ void ControleurFiches::extraireFiche(Fiche* fiche, const VueEditionFiche* const 
     fiche->setCommentaire(vue->commentaire());
     fiche->setTaches(vue->getTaches());
     fiche->setPieces(vue->getPieces());
+    fiche->setStatut(vue->getStatutFiche());
 }

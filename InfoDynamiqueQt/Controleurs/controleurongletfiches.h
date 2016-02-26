@@ -37,6 +37,12 @@ private:
      */
     void configurerBoutonRafraichir();
 
+    // La requête SQL actuelle pour fiches sans filtre de recherche
+    const QString* requeteFiches;
+
+    // La requête SQL actuelle pour fiches avec filtre de recherche
+    const QString* requeteFichesFiltre;
+
 public slots:
 
     /**
@@ -69,6 +75,10 @@ public slots:
      * Recharge le fragment et conserve la sélection
      */
     void rafraichir();
+
+    void activerCritereFiches();
+
+    void desactiverCritereFiches();
 };
 
 #endif // CONTROLEURFICHES_H

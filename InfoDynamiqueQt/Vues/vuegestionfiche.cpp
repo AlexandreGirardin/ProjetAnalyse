@@ -19,23 +19,12 @@ VueGestionFiche::~VueGestionFiche()
     delete ui;
 }
 
-void VueGestionFiche::setActions(const QList<Action*>* actions)
-{
-    delete ui->listeTaches->model();
-    QStandardItemModel* modele = new QStandardItemModel(ui->listeTaches);
-    for (QList<Action*>::const_iterator i = actions->constBegin(); i != actions->constEnd(); ++i) {
-        QStandardItem* item = new QStandardItem((*i)->nom());
-        item->setData((*i)->id());
-        modele->appendRow(item);
-    }
-    ui->listeTaches->setModel(modele);
-}
-
 QList<int>* VueGestionFiche::getTaches() const
 {
     QList<int>* taches = new QList<int>;
     for (int i = 0; i < ui->listeTaches->model()->rowCount(); ++i) {
-        taches->append(ui->listeTaches->model()->data(ui->listeTaches->model()->index(i, 0), Qt::UserRole).toInt());
+        int id = ui->listeTaches->model()->data(ui->listeTaches->model()->index(i, 0), Qt::UserRole).toInt();
+        taches->append(id);
     }
     return taches;
 }
@@ -68,7 +57,7 @@ QStandardItemModel* VueGestionFiche::listeEnModele(const QList<Action*>* actions
 QStandardItem* VueGestionFiche::actionEnItem(const Action* action) {
     QStandardItem* element = new QStandardItem(action->nom());
     element->setToolTip(action->description());
-    element->setData(action->id());
+    element->setData(action->id(), Qt::UserRole);
     return element;
 }
 

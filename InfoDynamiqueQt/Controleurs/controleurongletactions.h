@@ -41,6 +41,13 @@ private:
      * Configure le bouton de rafraichissement de l'application
      */
     void configurerBoutonRafraichir();
+
+    // La requête SQL actuelle pour actions sans filtre de recherche
+    const QString* requeteActions;
+
+    // La requête SQL actuelle pour actions avec filtre de recherche
+    const QString* requeteActionsFiltre;
+
 public:
 
     explicit ControleurOngletActions(QObject* parent = 0);
@@ -75,12 +82,6 @@ public:
 
     // Vue permettant de contrôler les ensembles
     Fragment* fragmentEnsembles;
-
-    // La requête SQL actuelle pour actions sans filtre de recherche
-    const QString* requeteActions;
-
-    // La requête SQL actuelle pour actions avec filtre de recherche
-    const QString* requeteActionsFiltre;
 
 public slots:
 

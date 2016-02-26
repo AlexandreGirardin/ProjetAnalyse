@@ -14,6 +14,7 @@
 ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     : QObject(vue)
 {
+    requeteFiches = RequetesSQL::afficherFichesActives;
     fragment = new Fragment();
     fragment->retirerEtiquette();
     fragment->boutonAjouter()->deleteLater();
@@ -28,6 +29,8 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
 
     QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
+    QObject::connect(fragment, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
+    QObject::connect(fragment, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
     QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
     QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichir()));
     QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
@@ -44,7 +47,7 @@ void ControleurOngletFiches::configurerBoutonRafraichir()
 void ControleurOngletFiches::peuplerFiches()
 {
     QSqlQueryModel* fiches = new QSqlQueryModel(this);
-    fiches->setQuery(*RequetesSQL::afficherFiches, *Application::bd);
+    fiches->setQuery(*requeteFiches, *Application::bd);
     fragment->peuplerTableau(fiches);
 }
 
@@ -61,7 +64,7 @@ void ControleurOngletFiches::filtrerFiches(const QString &filtre)
         peuplerFiches();
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
-        requete.prepare(*RequetesSQL::filtrerFiches);
+        requete.prepare(*requeteFichesFiltre);
         const QString* metacaractere = new QString("%");
         requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);
         requete.exec();
@@ -81,5 +84,19 @@ void ControleurOngletFiches::rafraichir()
     int selection = fragment->rangeeSelectionnee();
     recharger();
     fragment->selectionnerRangee(selection);
+}
+
+void ControleurOngletFiches::activerCritereFiches()
+{
+    requeteFiches = RequetesSQL::afficherFichesActives;
+    requeteFichesFiltre = RequetesSQL::filtrerFichesActives;
+    filtrerFiches(fragment->filtre());
+}
+
+void ControleurOngletFiches::desactiverCritereFiches()
+{
+    requeteFiches = RequetesSQL::afficherToutesFiches;
+    requeteFichesFiltre = RequetesSQL::filtrerToutesFiches;
+    filtrerFiches(fragment->filtre());
 }
 
