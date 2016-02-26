@@ -56,11 +56,6 @@ void Fiche::setStatut(Statut* value)
     m_statut = value;
 }
 
-QString Fiche::out() const
-{
-    return QString::number(m_id) + " " + QString::number(m_priorite) + " " + m_commentaire + " " + m_statut->nom();
-}
-
 QList<Tache*>* Fiche::taches() const
 {
     return m_taches;
@@ -83,12 +78,7 @@ void Fiche::setPieces(QList<Piece*>* value)
     m_pieces = value;
 }
 
-QList<Technicien*>* Fiche::techniciens() const
+QString Fiche::out() const
 {
-    return m_techniciens;
-}
-
-void Fiche::setTechniciens(QList<Technicien*>* value)
-{
-    m_techniciens = value;
+    return QString::number(m_id) + " " + QString::number(m_priorite) + " " + m_commentaire + " " + m_statut->nom();
 }
