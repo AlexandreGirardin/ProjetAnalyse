@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-Tache::Tache(QObject* parent) : ModeleBD(parent)
+Tache::Tache(QObject* parent) : QObject(parent)
 {
     m_action = new Action(this);
     m_statut = new Statut(this);

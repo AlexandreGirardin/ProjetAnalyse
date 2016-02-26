@@ -23,6 +23,8 @@ public:
 
     void setAdresse(const QString &adresse);
 
+    void setCourriel(const QString &courriel);
+
 private:
     Ui::VueClient *ui;
 };

@@ -66,6 +66,7 @@ void Application::creerFenetre()
     QSettings settings;
     m_vuePrincipale = new VuePrincipale();
     m_vuePrincipale->restoreGeometry(settings.value("fenetre/dimensions").toByteArray());
+    m_vuePrincipale->hide();
     clientsCharges = false;
     fichesChargees = false;
     appareilsCharges = false;
@@ -120,7 +121,6 @@ void Application::erreurSuppression(const QString &message)
 void Application::fermer()
 {
     controleurBD->fermer();
-    m_vuePrincipale->show();
     m_vuePrincipale->deleteLater();
 }
 

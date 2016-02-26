@@ -90,7 +90,6 @@ bool MappeurTaches::inserer(Tache* tache)
                             VALUES\
                                (:idFiche, :idAction, :idStatut, :commentaire)");
     const bool succes = ecrire(tache, commande);
-    tache->setId(AideMappeurs::derniereInsertion());
     return succes;
 }
 

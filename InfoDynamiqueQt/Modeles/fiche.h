@@ -37,9 +37,6 @@ private:
     // La liste des pièces utilisées pour la fiche
     QList<Piece*>* m_pieces;
 
-    // La liste des techniciens ayant travaillé sur la fiche
-    QList<Technicien*>* m_techniciens;
-
 public:
 
     explicit Fiche(QObject* parent = 0);
@@ -116,18 +113,6 @@ public:
      * @param value La liste de pièces à assigner à la fiche
      */
     void setPieces(QList<Piece*>* value);
-
-    /**
-     * @brief getTechniciens
-     * @return La liste des techniciens associés à la fiche
-     */
-    QList<Technicien*>* techniciens() const;
-
-    /**
-     * @brief setTechniciens
-     * @param value La liste de techniciens à assigner à la fiche
-     */
-    void setTechniciens(QList<Technicien*>* value);
 
     /**
      * @brief idAppareil

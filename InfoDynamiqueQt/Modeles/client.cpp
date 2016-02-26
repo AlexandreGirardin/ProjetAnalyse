@@ -1,15 +1,17 @@
 #include "Modeles/client.h"
 
-Client::Client(QObject* parent) : ModeleBD(parent)
+
+QString Client::courriel() const
 {
-    m_appareils = new QList<Appareil*>;
+    return m_courriel;
 }
 
-Client::~Client()
+void Client::setCourriel(const QString &courriel)
 {
-    qDeleteAll(*m_appareils);
-    delete m_appareils;
+    m_courriel = courriel;
 }
+
+Client::Client(QObject* parent) : ModeleBD(parent) {}
 
 QString Client::prenom() const
 {
@@ -49,16 +51,6 @@ QString Client::adresse() const
 void Client::setAdresse(const QString &value)
 {
     m_adresse = value;
-}
-
-QList<Appareil*>* Client::appareils() const
-{
-    return m_appareils;
-}
-
-void Client::setAppareils(QList<Appareil*>* value)
-{
-    m_appareils = value;
 }
 
 QString Client::out() const

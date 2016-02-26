@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>326</width>
-    <height>158</height>
+    <height>205</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,6 +53,16 @@
      </item>
      <item row="3" column="1">
       <widget class="QLineEdit" name="champAdresse"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="etiquetteCourriel">
+       <property name="text">
+        <string>Courriel:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="champCourriel"/>
      </item>
     </layout>
    </item>

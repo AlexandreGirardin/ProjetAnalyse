@@ -6,7 +6,7 @@
 #include "Modeles/action.h"
 #include "Modeles/statut.h"
 
-class Tache : public ModeleBD
+class Tache : public QObject
 {
     Q_OBJECT
 

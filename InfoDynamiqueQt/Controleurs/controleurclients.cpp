@@ -47,6 +47,7 @@ void ControleurClients::voirClient(const int &idClient, const bool &modal)
         vue->setNom(client->nom());
         vue->setTelephone(client->telephone());
         vue->setAdresse(client->adresse());
+        vue->setCourriel(client->courriel());
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
         client->deleteLater();
@@ -59,6 +60,7 @@ void ControleurClients::assignerClient(VueGestionClient* vue, const Client* clie
     vue->setNom(client->nom());
     vue->setTelephone(client->telephone());
     vue->setAdresse(client->adresse());
+    vue->setCourriel(client->courriel());
 }
 
 void ControleurClients::extraireClient(Client *client, const VueGestionClient* vue)
@@ -67,5 +69,6 @@ void ControleurClients::extraireClient(Client *client, const VueGestionClient* v
     client->setNom(vue->getNom());
     client->setTelephone(vue->getTelephone());
     client->setAdresse(vue->getAdresse());
+    client->setCourriel(vue->getCourriel());
 }
 

@@ -23,17 +23,15 @@ private:
     // Adresse du client
     QString m_adresse;
 
-    // Liste des appareils du client
-    QList<Appareil*>* m_appareils;
+    // Adresse électronique du client
+    QString m_courriel;
 
 public:
 
     explicit Client(QObject* parent = 0);
 
-    ~Client();
-
     /**
-     * @brief getPrenom
+     * @brief prenom
      * @return Le prénom du client
      */
     QString prenom() const;
@@ -45,7 +43,7 @@ public:
     void setPrenom(const QString &value);
 
     /**
-     * @brief getNom
+     * @brief nom
      * @return Le nom du client
      */
     QString nom() const;
@@ -57,7 +55,7 @@ public:
     void setNom(const QString &value);
 
     /**
-     * @brief getTelephone
+     * @brief telephone
      * @return Le numéro de téléphone du client
      */
     QString telephone() const;
@@ -69,7 +67,7 @@ public:
     void setTelephone(const QString &value);
 
     /**
-     * @brief getAdresse
+     * @brief adresse
      * @return L'adresse résidentielle du client
      */
     QString adresse() const;
@@ -81,23 +79,23 @@ public:
     void setAdresse(const QString &value);
 
     /**
-     * @brief getAppareils
-     * @return La liste des appareils du client
+     * @brief courriel
+     * @return L'adresse électronique du client
      */
-    QList<Appareil*>* appareils() const;
+    QString courriel() const;
 
     /**
-     * @brief setAppareils
-     * @param value La liste d'appareils à assigner au client
+     * @brief setCourriel
+     * Assigne une adresse électronique au client
+     * @param courriel La valeur à assigner
      */
-    void setAppareils(QList<Appareil*>* value);
+    void setCourriel(const QString &courriel);
 
     /**
      * @brief out
      * @return Représentation textuelle du client
      */
     QString out() const;
-
 };
 
 #endif // CLIENT_H
