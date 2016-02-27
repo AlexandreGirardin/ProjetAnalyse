@@ -32,7 +32,10 @@ void VueConnexion::configurerBoutonOk()
     boutonOk->setEnabled(false);
     QObject::connect(ui->listeBd, SIGNAL(clicked(QModelIndex)), this, SLOT(activerBoutonOk()));
     QObject::connect(ui->listeBd, SIGNAL(activated(QModelIndex)), this, SLOT(activerBoutonOk()));
-//    QObject::connect(ui->listeBd, SIGNAL(activated(QModelIndex)), this, SLOT(activerBoutonOk()));
+    QObject::connect(ui->champHote, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
+    QObject::connect(ui->champPort, SIGNAL(valueChanged(int)), this, SLOT(boutonConnecterParDefaut()));
+    QObject::connect(ui->champUsager, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
+    QObject::connect(ui->champMDP, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
     QObject::connect(ui->listeBd, SIGNAL(doubleClicked(QModelIndex)), boutonOk, SIGNAL(clicked()));
 }
 
@@ -90,6 +93,11 @@ void VueConnexion::activerBoutonOk()
 void VueConnexion::desactiverBoutonOk()
 {
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+    boutonConnecterParDefaut();
+}
+
+void VueConnexion::boutonConnecterParDefaut()
+{
     ui->boutonConnecter->setDefault(true);
 }
 

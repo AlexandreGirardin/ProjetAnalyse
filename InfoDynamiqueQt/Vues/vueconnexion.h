@@ -112,6 +112,12 @@ private slots:
      */
     void desactiverBoutonOk();
 
+    /**
+     * @brief boutonConnecterParDefaut
+     * Active le bouton Connecter par défaut
+     */
+    void boutonConnecterParDefaut();
+
 public slots:
 
     /**
