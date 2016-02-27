@@ -3,8 +3,8 @@
 
 #include <QObject>
 
-#include "Modeles/action.h"
-#include "Vues/vuegestionaction.h"
+class Action;
+class VueGestionAction;
 
 class ControleurActions : public QObject
 {

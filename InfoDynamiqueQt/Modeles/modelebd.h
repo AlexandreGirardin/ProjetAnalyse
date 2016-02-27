@@ -5,7 +5,6 @@
 
 class ModeleBD : public QObject
 {
-    Q_OBJECT
 
     // Parent abstrait des autres modèle
 

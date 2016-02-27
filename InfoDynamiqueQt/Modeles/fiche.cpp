@@ -1,5 +1,9 @@
 #include "Modeles/fiche.h"
 
+#include "Modeles/piece.h"
+#include "Modeles/statut.h"
+#include "Modeles/tache.h"
+
 Fiche::Fiche(QObject* parent) : ModeleBD(parent)
 {
     m_statut = new Statut(this);

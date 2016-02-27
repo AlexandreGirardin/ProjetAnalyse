@@ -5,6 +5,10 @@
 #include "Mappeurs/mappeurfabricants.h"
 #include "Mappeurs/mappeurfiches.h"
 #include "Mappeurs/mappeurtypeappareils.h"
+#include "Modeles/appareil.h"
+#include "Vues/vueappareil.h"
+#include "Vues/vuegestionappareil.h"
+#include "Vues/vueprincipale.h"
 
 #include <QMessageBox>
 

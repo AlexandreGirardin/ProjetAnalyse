@@ -1,6 +1,9 @@
 #include "vueajoutertache.h"
 #include "ui_vueajoutertache.h"
 
+#include "Modeles/action.h"
+#include "Modeles/statut.h"
+
 VueAjouterTache::VueAjouterTache(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::VueAjouterTache)

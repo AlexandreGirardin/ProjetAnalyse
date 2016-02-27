@@ -1,10 +1,9 @@
 #ifndef GESTIONCLIENT_H
 #define GESTIONCLIENT_H
 
-#include "champformulaire.h"
-
 #include <QDialog>
-#include <QLineEdit>
+
+class ChampFormulaire;
 
 namespace Ui {
 class VueGestionClient;

@@ -1,8 +1,11 @@
 #include "Mappeurs/mappeurfabricants.h"
 
 #include "Controleurs/application.h"
+#include "Modeles/fabricant.h"
 
+#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 Fabricant* MappeurFabricants::get(const int &id)
 {

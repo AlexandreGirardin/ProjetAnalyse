@@ -3,12 +3,11 @@
 
 #include "Modeles/modelebd.h"
 
-#include "Modeles/action.h"
-#include "Modeles/statut.h"
+class Action;
+class Statut;
 
 class Tache : public QObject
 {
-    Q_OBJECT
 
     // Exécution d'une action sur un appareil dans le cadre d'une fiche de maintenance
 

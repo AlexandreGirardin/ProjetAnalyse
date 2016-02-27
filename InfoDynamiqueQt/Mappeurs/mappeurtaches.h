@@ -1,10 +1,13 @@
 #ifndef MAPPEURTACHES_H
 #define MAPPEURTACHES_H
 
-#include "Modeles/tache.h"
-#include "Modeles/fiche.h"
+class Fiche;
+class Tache;
 
-#include <QSqlQuery>
+template <class T> class QList;
+class QString;
+class QSqlQuery;
+class QSqlRecord;
 
 class MappeurTaches {
 

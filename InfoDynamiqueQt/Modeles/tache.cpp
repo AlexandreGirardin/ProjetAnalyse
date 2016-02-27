@@ -1,6 +1,7 @@
 #include "Modeles/tache.h"
 
-#include <QDebug>
+#include "Modeles/action.h"
+#include "Modeles/statut.h"
 
 Tache::Tache(QObject* parent) : QObject(parent)
 {

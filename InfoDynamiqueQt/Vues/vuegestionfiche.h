@@ -3,8 +3,9 @@
 
 #include <QDialog>
 
-#include "Modeles/ensembleactions.h"
-#include "Modeles/tache.h"
+class Action;
+class EnsembleActions;
+class Tache;
 
 #include <QStandardItemModel>
 

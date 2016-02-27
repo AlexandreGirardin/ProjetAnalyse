@@ -3,10 +3,11 @@
 
 #include <QObject>
 
-#include "Vues/fragment.h"
+class Fragment;
 
-#include <QSplitter>
-#include <QSqlQuery>
+class QPushButton;
+class QSplitter;
+class QSqlQuery;
 
 class ControleurOngletClients : public QObject
 {

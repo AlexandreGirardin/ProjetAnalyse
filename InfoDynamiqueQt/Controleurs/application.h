@@ -3,14 +3,16 @@
 
 #include <QApplication>
 
-#include "Controleurs/controleurconnexion.h"
-#include "Controleurs/controleurongletactions.h"
-#include "Controleurs/controleurongletappareils.h"
-#include "Controleurs/controleurongletclients.h"
-#include "Controleurs/controleurongletfiches.h"
-#include "Vues/vueprincipale.h"
+class ControleurConnexion;
+class ControleurOngletActions;
+class ControleurOngletAppareils;
+class ControleurOngletClients;
+class ControleurOngletFiches;
+class VuePrincipale;
 
+class QSqlDatabase;
 #include <QMessageBox>
+
 
 class Application : public QApplication
 {

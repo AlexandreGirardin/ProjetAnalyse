@@ -5,9 +5,12 @@
 #include "Mappeurs/mappeurpieces.h"
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
+#include "Modeles/fiche.h"
+#include "Modeles/statut.h"
 
-#include <QDebug>
+#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 Fiche *MappeurFiches::get(const int &id)
 {

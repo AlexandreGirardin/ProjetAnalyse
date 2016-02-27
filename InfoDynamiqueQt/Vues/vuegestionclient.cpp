@@ -1,9 +1,10 @@
 #include "Vues/vuegestionclient.h"
 #include "ui_vuegestionclient.h"
 
-#include <QPushButton>
+#include "champformulaire.h"
 
-#include <QDebug>
+#include <QPushButton>
+#include <QLineEdit>
 
 VueGestionClient::VueGestionClient(QWidget* parent) :
     QDialog(parent),

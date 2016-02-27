@@ -4,8 +4,14 @@
 #include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurstatuts.h"
+#include "Modeles/action.h"
+#include "Modeles/fiche.h"
+#include "Modeles/statut.h"
+#include "Modeles/tache.h"
 
+#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 Tache *MappeurTaches::get(const int &id)
 {

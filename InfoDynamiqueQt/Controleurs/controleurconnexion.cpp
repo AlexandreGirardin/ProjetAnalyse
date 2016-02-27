@@ -1,13 +1,10 @@
 #include "Controleurs/controleurconnexion.h"
 
-#include "Vues/vueconnexion.h"
-
 #include "Controleurs/application.h"
 #include "Controleurs/requetessql.h"
+#include "Vues/vueconnexion.h"
 
-#include <QDebug>
 #include <QSettings>
-#include <QSqlDatabase>
 #include <QSqlQueryModel>
 
 void ControleurConnexion::sauvegarderChamps()
@@ -37,7 +34,6 @@ void ControleurConnexion::connecterDossiers()
     if (vue->exec() == vue->Accepted) {
         m_bd.setDatabaseName(vue->getNomBD());
         if (!m_bd.open()) {
-            qDebug() << "Erreur d'ouverture de la base de données";
             emit connexionRatee();
         } else {
             emit connexionEtablie();

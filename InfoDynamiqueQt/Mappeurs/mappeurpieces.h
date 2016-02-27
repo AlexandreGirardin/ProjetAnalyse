@@ -1,11 +1,13 @@
 #ifndef MAPPEURPIECES_H
 #define MAPPEURPIECES_H
 
-#include "Modeles/fiche.h"
-#include "Modeles/piece.h"
+class Fiche;
+class Piece;
 
-#include <QSqlQuery>
-#include <QSqlRecord>
+template <class T> class QList;
+class QString;
+class QSqlQuery;
+class QSqlRecord;
 
 class MappeurPieces {
 

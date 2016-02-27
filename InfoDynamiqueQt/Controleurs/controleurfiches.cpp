@@ -8,9 +8,12 @@
 #include "Mappeurs/mappeurpieces.h"
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
-
+#include "Modeles/fiche.h"
+#include "Modeles/client.h"
+#include "Modeles/appareil.h"
+#include "Vues/vuegestionfiche.h"
 #include "Vues/vueeditionfiche.h"
-#include <QDebug>
+#include "Vues/vueprincipale.h"
 
 int ControleurFiches::ajouterFiche(const int &idAppareil)
 {

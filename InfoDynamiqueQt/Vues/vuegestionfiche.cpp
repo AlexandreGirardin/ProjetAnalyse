@@ -2,6 +2,9 @@
 #include "ui_vuegestionfiche.h"
 
 #include "Mappeurs/mappeurensembles.h"
+#include "Modeles/action.h"
+#include "Modeles/ensembleactions.h"
+#include "Modeles/tache.h"
 
 #include <QStandardItemModel>
 #include <QDebug>

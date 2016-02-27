@@ -3,11 +3,12 @@
 
 #include <QObject>
 
-#include "Controleurs/controleuractions.h"
-#include "Controleurs/controleurensembles.h"
-#include "Vues/fragment.h"
+class ControleurActions;
+class ControleurEnsembles;
+class Fragment;
 
-#include <QSplitter>
+class QPushButton;
+class QSplitter;
 
 class ControleurOngletActions : public QObject
 {

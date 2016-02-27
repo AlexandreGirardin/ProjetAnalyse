@@ -2,7 +2,10 @@
 
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeurclients.h"
+#include "Modeles/client.h"
 #include "Vues/vueclient.h"
+#include "Vues/vuegestionclient.h"
+#include "Vues/vueprincipale.h"
 
 int ControleurClients::ajouterClient()
 {

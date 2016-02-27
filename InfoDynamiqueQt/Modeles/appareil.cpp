@@ -1,5 +1,8 @@
 #include "Modeles/appareil.h"
 
+#include "Modeles/fabricant.h"
+#include "Modeles/typeappareil.h"
+
 Appareil::Appareil(QObject* parent) :
     ModeleBD(parent)
 {

@@ -1,10 +1,12 @@
 #ifndef MAPPEURACTIONS_H
 #define MAPPEURACTIONS_H
 
-#include "Modeles/action.h"
+class Action;
 
-#include <QSqlQuery>
-#include <QSqlRecord>
+template <class T> class QList;
+class QString;
+class QSqlQuery;
+class QSqlRecord;
 
 class MappeurActions {
 

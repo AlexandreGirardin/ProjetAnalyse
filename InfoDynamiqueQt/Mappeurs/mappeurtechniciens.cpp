@@ -1,8 +1,11 @@
 #include "Mappeurs/mappeurtechniciens.h"
 
 #include "Controleurs/application.h"
+#include "Modeles/technicien.h"
 
+#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 Technicien* MappeurTechniciens::get(const int &id)
 {

@@ -3,8 +3,9 @@
 
 #include <QObject>
 
-#include "Vues/vueensemble.h"
-#include "Vues/vuegestionensemble.h"
+class EnsembleActions;
+class VueEnsemble;
+class VueGestionEnsemble;
 
 class ControleurEnsembles : public QObject
 {

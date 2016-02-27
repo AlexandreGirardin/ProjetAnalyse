@@ -7,8 +7,12 @@
 #include "Mappeurs/mappeurfiches.h"
 #include "Vues/vueeditionfiche.h"
 #include "Vues/vuegestionfiche.h"
+#include "Vues/fragment.h"
 
 #include <QLayout>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSqlQuery>
 #include <QSqlQueryModel>
 
 ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)

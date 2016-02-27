@@ -3,10 +3,12 @@
 
 #include <QDialog>
 
-#include "Modeles/ensembleactions.h"
-#include "Vues/champformulaire.h"
+class Action;
+class ChampFormulaire;
+class EnsembleActions;
 
-#include <QStandardItemModel>
+class QStandardItem;
+class QStandardItemModel;
 
 namespace Ui {
 class VueGestionEnsemble;

@@ -3,8 +3,12 @@
 #include "Controleurs/application.h"
 #include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeuractions.h"
+#include "Modeles/action.h"
+#include "Modeles/ensembleactions.h"
 
+#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 EnsembleActions* MappeurEnsembles::get(const int &id)
 {

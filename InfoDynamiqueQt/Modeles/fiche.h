@@ -3,14 +3,12 @@
 
 #include "Modeles/modelebd.h"
 
-#include "Modeles/piece.h"
-#include "Modeles/statut.h"
-#include "Modeles/tache.h"
-#include "Modeles/technicien.h"
+class Piece;
+class Statut;
+class Tache;
 
 class Fiche : public ModeleBD
 {
-    Q_OBJECT
 
     // Fiche de maintenance d'un appareil
 

@@ -1,10 +1,13 @@
 #include "Mappeurs/mappeurclients.h"
 
 #include "Controleurs/application.h"
+#include "Modeles/client.h"
 #include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeurappareils.h"
 
+#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 Client* MappeurClients::get(const int &id)
 {

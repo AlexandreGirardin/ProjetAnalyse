@@ -2,9 +2,11 @@
 #include "ui_vuegestionensemble.h"
 
 #include "Controleurs/controleuractions.h"
+#include "Modeles/action.h"
 #include "Modeles/ensembleactions.h"
+#include "Vues/champformulaire.h"
 
-#include <QDebug>
+#include <QStandardItemModel>
 
 VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
     QDialog(parent),

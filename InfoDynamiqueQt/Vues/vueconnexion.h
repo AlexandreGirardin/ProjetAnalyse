@@ -2,10 +2,12 @@
 #define VUECONNEXION_H
 
 #include <QDialog>
-#include <QLineEdit>
-#include <QTextEdit>
-#include <QTableWidget>
-#include <QDialogButtonBox>
+
+class QAbstractTableModel;
+class QDialogButtonBox;
+class QLineEdit;
+class QTableWidget;
+class QTextEdit;
 
 namespace Ui {
 class VueConnexion;

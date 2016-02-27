@@ -1,6 +1,10 @@
 #include "vueensemble.h"
 #include "ui_vueensemble.h"
 
+#include "Modeles/action.h"
+
+#include <QStandardItemModel>
+
 VueEnsemble::VueEnsemble(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::VueEnsemble)

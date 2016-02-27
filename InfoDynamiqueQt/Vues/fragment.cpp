@@ -1,7 +1,13 @@
 #include "Vues/fragment.h"
 #include "ui_fragment.h"
 
+#include <QCheckBox>
+#include <QComboBox>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 #include <QSortFilterProxyModel>
+#include <QTableWidget>
 
 Fragment::Fragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment)
 {

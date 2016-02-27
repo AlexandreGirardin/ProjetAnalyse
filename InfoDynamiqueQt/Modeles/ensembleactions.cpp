@@ -1,5 +1,7 @@
 #include "Modeles/ensembleactions.h"
 
+#include "Modeles/action.h"
+
 EnsembleActions::EnsembleActions(QObject* parent) : ModeleBD(parent)
 {
     m_actions = new QList<Action*>;

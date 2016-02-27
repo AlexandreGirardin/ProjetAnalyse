@@ -3,8 +3,8 @@
 
 #include <QDialog>
 
-#include "Modeles/action.h"
-#include "Modeles/statut.h"
+class Action;
+class Statut;
 
 namespace Ui {
 class VueAjouterTache;

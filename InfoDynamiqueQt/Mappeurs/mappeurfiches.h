@@ -1,10 +1,12 @@
 #ifndef MAPPEURFICHES
 #define MAPPEURFICHES
 
-#include "Modeles/fiche.h"
+class Fiche;
 
-#include <QSqlQuery>
-#include <QSqlRecord>
+template <class T> class QList;
+class QString;
+class QSqlQuery;
+class QSqlRecord;
 
 class MappeurFiches {
 

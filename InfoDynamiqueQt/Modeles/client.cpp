@@ -1,5 +1,6 @@
 #include "Modeles/client.h"
 
+#include "Modeles/appareil.h"
 
 QString Client::courriel() const
 {

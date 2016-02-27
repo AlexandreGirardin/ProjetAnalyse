@@ -1,10 +1,12 @@
 #ifndef MAPPEURSTATUTS_H
 #define MAPPEURSTATUTS_H
 
-#include "Modeles/statut.h"
+class Statut;
 
-#include <QSqlQuery>
-#include <QSqlRecord>
+template <class T> class QList;
+class QString;
+class QSqlQuery;
+class QSqlRecord;
 
 class MappeurStatuts {
 

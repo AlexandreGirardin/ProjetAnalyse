@@ -5,8 +5,12 @@
 #include "Controleurs/requetessql.h"
 #include "Mappeurs/mappeurappareils.h"
 #include "Mappeurs/mappeurfiches.h"
+#include "Vues/fragment.h"
 
 #include <QLayout>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSqlQuery>
 #include <QSqlQueryModel>
 
 ControleurOngletAppareils::ControleurOngletAppareils(QObject* parent) : QObject(parent) {}

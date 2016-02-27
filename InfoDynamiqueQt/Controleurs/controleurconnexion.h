@@ -3,10 +3,9 @@
 
 #include <QObject>
 
-#include "Vues/vueconnexion.h"
+class VueConnexion;
 
-#include <QSqlDriver>
-#include <QSqlQuery>
+#include <QSqlDatabase>
 
 class ControleurConnexion : public QObject
 {

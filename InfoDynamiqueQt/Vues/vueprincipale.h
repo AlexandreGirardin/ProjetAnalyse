@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include <QPushButton>
+class QPushButton;
 
 namespace Ui {
 class VuePrincipale;

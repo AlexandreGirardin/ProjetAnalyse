@@ -5,7 +5,6 @@
 
 class Technicien : public ModeleBD
 {
-    Q_OBJECT
 
     // Employé de l'entreprise qui effectue des tâches sur les appareils
 

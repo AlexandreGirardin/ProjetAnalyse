@@ -1,10 +1,14 @@
 #include "vueconnexion.h"
 #include "ui_vueconnexion.h"
 
-#include "Controleurs/controleurbd.h"
+#include "Controleurs/controleurconnexion.h"
 
+#include <QDialogButtonBox>
+#include <QLineEdit>
 #include <QSettings>
 #include <QStringListModel>
+#include <QTextEdit>
+#include <QTableWidget>
 
 VueConnexion::VueConnexion(QWidget *parent) :
     QDialog(parent),

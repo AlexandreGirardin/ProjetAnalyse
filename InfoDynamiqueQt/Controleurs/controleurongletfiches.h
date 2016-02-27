@@ -3,7 +3,9 @@
 
 #include <QObject>
 
-#include "Vues/fragment.h"
+class Fragment;
+
+class QPushButton;
 
 class ControleurOngletFiches : public QObject
 {
@@ -67,8 +69,16 @@ public slots:
      */
     void rafraichir();
 
+    /**
+     * @brief activerCritereFiches
+     * Le fragment n'affichera que les fiches correspondant au filtre qui ne sont pas fermées
+     */
     void activerCritereFiches();
 
+    /**
+     * @brief desactiverCritereFiches
+     * Le fragment affichera toutes les fiches correspondant au filtre
+     */
     void desactiverCritereFiches();
 };
 

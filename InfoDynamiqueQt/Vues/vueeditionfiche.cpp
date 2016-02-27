@@ -9,10 +9,16 @@
 #include "Mappeurs/mappeurstatuts.h"
 #include "Mappeurs/mappeurtaches.h"
 #include "Mappeurs/mappeurpieces.h"
+#include "Modeles/action.h"
+#include "Modeles/piece.h"
+#include "Modeles/statut.h"
+#include "Modeles/tache.h"
 #include "Vues/vueajoutertache.h"
 #include "Vues/vuegestionpiece.h"
 
 #include <QComboBox>
+#include <QSpinBox>
+#include <QTableWidgetItem>
 #include <QVariant>
 
 VueEditionFiche::VueEditionFiche(QWidget* parent) :
@@ -262,7 +268,7 @@ void VueEditionFiche::ajouterTache()
             tache->setStatut(MappeurStatuts::getStatutTache(vue->getStatut()));
             tache->setCommentaire(vue->getCommentaire());
             ui->tableauTaches->setRowCount(ui->tableauTaches->rowCount()+1);
-            setTache(tache, ui->tableauTaches->rowCount()-1);
+            setTache(tache, ui->tableauTaches->rowCount()-1, MappeurStatuts::getStatutsTache());
             delete tache;
         }
     }

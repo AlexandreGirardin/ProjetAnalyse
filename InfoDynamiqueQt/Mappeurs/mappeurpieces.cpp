@@ -2,9 +2,12 @@
 
 #include "Controleurs/application.h"
 #include "Mappeurs/aidemappeurs.h"
+#include "Modeles/fiche.h"
+#include "Modeles/piece.h"
 
+#include <QSqlQuery>
 #include <QSqlError>
-#include <QDebug>
+#include <QSqlRecord>
 
 Piece* MappeurPieces::get(const int &id)
 {

@@ -5,7 +5,6 @@
 
 class Statut : public ModeleBD
 {
-    Q_OBJECT
 
     // Statut d'une fiche ou d'une tâche
 

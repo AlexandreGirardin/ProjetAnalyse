@@ -3,9 +3,8 @@
 
 #include "Modeles/modelebd.h"
 
-class TypeAppareil : public ModeleBD {
-
-    Q_OBJECT
+class TypeAppareil : public ModeleBD
+{
 
     // Type d'un appareil (ex. portable, bureau)
 

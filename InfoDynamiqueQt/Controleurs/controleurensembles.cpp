@@ -3,6 +3,10 @@
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurensembles.h"
+#include "Modeles/ensembleactions.h"
+#include "Vues/vueensemble.h"
+#include "Vues/vuegestionensemble.h"
+#include "Vues/vueprincipale.h"
 
 #include <QMessageBox>
 

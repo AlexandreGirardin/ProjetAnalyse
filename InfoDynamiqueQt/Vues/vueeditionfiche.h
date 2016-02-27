@@ -3,13 +3,14 @@
 
 #include <QDialog>
 
-#include "Mappeurs/mappeurstatuts.h"
-#include "Modeles/piece.h"
-#include "Modeles/tache.h"
+class Action;
+class Piece;
+class Statut;
+class Tache;
 
-#include <QSpinBox>
-#include <QComboBox>
-#include <QTableWidgetItem>
+class QDoubleSpinBox;
+class QComboBox;
+class QTableWidgetItem;
 
 namespace Ui {
 class VueEditionFiche;
@@ -83,7 +84,7 @@ private:
 
     double itemVersPrix(const int &rangee) const;
 
-    void setTache(const Tache* tache, const int &rangee, const QList<Statut*>* statuts = MappeurStatuts::getStatutsTache());
+    void setTache(const Tache* tache, const int &rangee, const QList<Statut*>* statuts);
 
     void setPiece(const Piece* piece, const int &rangee);
 

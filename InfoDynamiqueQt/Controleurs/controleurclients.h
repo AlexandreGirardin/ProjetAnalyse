@@ -3,8 +3,8 @@
 
 #include <QObject>
 
-#include "Modeles/client.h"
-#include "Vues/vuegestionclient.h"
+class Client;
+class VueGestionClient;
 
 class ControleurClients : public QObject{
 

@@ -2,10 +2,10 @@
 #define CLIENT_H
 
 #include <Modeles/modelebd.h>
-#include "Modeles/appareil.h"
+
+class Appareil;
 
 class Client : public ModeleBD {
-    Q_OBJECT
 
     // Personne qui fait affaire avec l'entreprise
 

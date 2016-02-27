@@ -3,12 +3,17 @@
 
 #include <QWidget>
 
-#include <QCheckBox>
-#include <QComboBox>
-#include <QLabel>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QTableWidget>
+class QAbstractTableModel;
+class QCheckBox;
+class QComboBox;
+class QLabel;
+class QLineEdit;
+class QModelIndex;
+class QPushButton;
+class QTableView;
+
+#include <QIcon>
+#include <QModelIndex>
 
 namespace Ui {
 class VueFragment;

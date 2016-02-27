@@ -3,9 +3,9 @@
 
 #include <QObject>
 
-#include "Mappeurs/mappeurfiches.h"
-#include "Vues/vuegestionfiche.h"
-#include "Vues/vueeditionfiche.h"
+class Fiche;
+class VueGestionFiche;
+class VueEditionFiche;
 
 class ControleurFiches : public QObject
 {

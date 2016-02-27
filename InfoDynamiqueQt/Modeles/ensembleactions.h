@@ -1,10 +1,11 @@
 #ifndef ENSEMBLEACTIONS_H
 #define ENSEMBLEACTIONS_H
 
-#include "Modeles/action.h"
+#include "Modeles/modelebd.h"
+
+class Action;
 
 class EnsembleActions : public ModeleBD {
-    Q_OBJECT
 
     // Regroupement prédéfini de tâches permettant une création de fiches simplifiée
 

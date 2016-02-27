@@ -3,11 +3,10 @@
 
 #include "Modeles/modelebd.h"
 
-#include "Modeles/fabricant.h"
-#include "Modeles/typeappareil.h"
+class Fabricant;
+class TypeAppareil;
 
 class Appareil : public ModeleBD {
-    Q_OBJECT
 
     // Appareil électronique d'un client
 

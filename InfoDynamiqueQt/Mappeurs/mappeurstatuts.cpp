@@ -1,6 +1,11 @@
 #include "Mappeurs/mappeurstatuts.h"
 
 #include "Controleurs/application.h"
+#include "Modeles/statut.h"
+
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QSqlRecord>
 
 Statut* MappeurStatuts::getStatutFiche(const int &idStatut)
 {

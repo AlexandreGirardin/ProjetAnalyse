@@ -1,9 +1,12 @@
 #ifndef MAPPEURENSEMBLES_H
 #define MAPPEURENSEMBLES_H
 
-#include "Modeles/ensembleactions.h"
+class EnsembleActions;
 
-#include <QSqlQuery>
+template <class T> class QList;
+class QString;
+class QSqlQuery;
+class QSqlRecord;
 
 class MappeurEnsembles {
 

@@ -3,6 +3,9 @@
 #include "Controleurs/application.h"
 #include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurtaches.h"
+#include "Modeles/action.h"
+#include "Vues/vueprincipale.h"
+#include "Vues/vuegestionaction.h"
 
 #include <QMessageBox>
 

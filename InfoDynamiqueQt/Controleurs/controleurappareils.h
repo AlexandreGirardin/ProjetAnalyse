@@ -3,9 +3,9 @@
 
 #include <QObject>
 
-#include "Modeles/appareil.h"
-#include "Vues/vueappareil.h"
-#include "Vues/vuegestionappareil.h"
+class Appareil;
+class VueAppareil;
+class VueGestionAppareil;
 
 class ControleurAppareils : public QObject
 {

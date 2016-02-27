@@ -2,9 +2,12 @@
 
 #include "Controleurs/application.h"
 #include "Mappeurs/aidemappeurs.h"
+#include "Modeles/action.h"
 #include "Modeles/ensembleactions.h"
 
+#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 Action* MappeurActions::get(const int &id)
 {

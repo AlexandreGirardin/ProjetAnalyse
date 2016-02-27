@@ -5,7 +5,6 @@
 
 class Piece : public ModeleBD
 {
-    Q_OBJECT
 
     // Pièce utilisée pour réaliser les tâches d'une fiche de maintenance
 

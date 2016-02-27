@@ -1,10 +1,12 @@
 #ifndef MAPPEURFABRICANTS_H
 #define MAPPEURFABRICANTS_H
 
-#include "Modeles/fabricant.h"
+class Fabricant;
 
-#include <QSqlQuery>
-#include <QSqlRecord>
+template <class T> class QList;
+class QString;
+class QSqlQuery;
+class QSqlRecord;
 
 class MappeurFabricants {
 

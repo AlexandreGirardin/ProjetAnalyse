@@ -2,7 +2,8 @@
 #define CHAMPFORMULAIRE_H
 
 #include <QWidget>
-#include <QLineEdit>
+
+class QLineEdit;
 
 namespace Ui {
 class ChampFormulaire;

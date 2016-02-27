@@ -1,10 +1,12 @@
 #ifndef MAPPEURTYPEAPPAREILS_H
 #define MAPPEURTYPEAPPAREILS_H
 
-#include "Modeles/typeappareil.h"
+class TypeAppareil;
 
-#include <QSqlQuery>
-#include <QSqlRecord>
+template <class T> class QList;
+class QString;
+class QSqlQuery;
+class QSqlRecord;
 
 class MappeurTypeAppareils {
 

@@ -1,6 +1,13 @@
 #include "application.h"
 #include "Vues/vueprincipale.h"
 
+#include "Controleurs/controleurconnexion.h"
+#include "Controleurs/controleurongletactions.h"
+#include "Controleurs/controleurongletappareils.h"
+#include "Controleurs/controleurongletclients.h"
+#include "Controleurs/controleurongletfiches.h"
+
+#include <QPushButton>
 #include <QSettings>
 
 const Application* Application::m_instance = NULL;

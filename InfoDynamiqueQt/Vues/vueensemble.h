@@ -3,9 +3,9 @@
 
 #include <QDialog>
 
-#include "Modeles/action.h"
+class Action;
 
-#include <QStandardItemModel>
+class QStandardItemModel;
 
 namespace Ui {
 class VueEnsemble;

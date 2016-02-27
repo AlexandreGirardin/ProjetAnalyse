@@ -3,8 +3,8 @@
 
 #include <QDialog>
 
-#include "Modeles/typeappareil.h"
-#include "Modeles/fabricant.h"
+class TypeAppareil;
+class Fabricant;
 
 namespace Ui {
 class VueGestionAppareil;

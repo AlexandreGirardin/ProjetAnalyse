@@ -1,12 +1,20 @@
 #include "controleurongletactions.h"
 
 #include "Controleurs/application.h"
+#include "Controleurs/controleuractions.h"
+#include "Controleurs/controleurensembles.h"
 #include "Controleurs/requetessql.h"
 #include "Mappeurs/mappeuractions.h"
+#include "Vues/fragment.h"
 
 #include <QHeaderView>
 #include <QLayout>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSplitter>
+#include <QSqlQuery>
 #include <QSqlQueryModel>
+#include <QTableView>
 
 ControleurOngletActions::ControleurOngletActions(QObject* parent) : QObject(parent) {}
 

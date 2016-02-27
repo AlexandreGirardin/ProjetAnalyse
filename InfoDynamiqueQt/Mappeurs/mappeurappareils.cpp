@@ -4,8 +4,13 @@
 #include "Mappeurs/aidemappeurs.h"
 #include "Mappeurs/mappeurfabricants.h"
 #include "Mappeurs/mappeurtypeappareils.h"
+#include "Modeles/appareil.h"
+#include "Modeles/fabricant.h"
+#include "Modeles/typeappareil.h"
 
+#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 Appareil* MappeurAppareils::get(const int &id)
 {

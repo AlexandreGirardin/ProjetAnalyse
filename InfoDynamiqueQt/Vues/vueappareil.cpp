@@ -1,6 +1,9 @@
 #include "vueappareil.h"
 #include "ui_vueappareil.h"
 
+#include <QLineEdit>
+#include <QTextEdit>
+
 VueAppareil::VueAppareil(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::VueAppareil)

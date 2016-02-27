@@ -2,6 +2,7 @@
 #include "ui_vueprincipale.h"
 
 #include <QCloseEvent>
+#include <QPushButton>
 #include <QResizeEvent>
 
 VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)

@@ -4,7 +4,6 @@
 #include "Modeles/modelebd.h"
 
 class Fabricant : public ModeleBD {
-    Q_OBJECT
 
     // Marque du constructeur d'un appareil permettant de l'identifier
 

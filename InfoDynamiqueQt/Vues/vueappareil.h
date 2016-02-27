@@ -2,8 +2,9 @@
 #define VUEAPPAREIL_H
 
 #include <QDialog>
-#include <QLineEdit>
-#include <QTextEdit>
+
+class QLineEdit;
+class QTextEdit;
 
 namespace Ui {
 class VueAppareil;

@@ -5,8 +5,14 @@
 #include "Controleurs/controleurappareils.h"
 #include "Controleurs/controleurclients.h"
 #include "Controleurs/controleurfiches.h"
+#include "Mappeurs/mappeurfiches.h"
+#include <Vues/fragment.h>
 
 #include <QLayout>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSplitter>
+#include <QSqlQuery>
 #include <QSqlQueryModel>
 
 ControleurOngletClients::ControleurOngletClients(QObject* parent) : QObject(parent) {}

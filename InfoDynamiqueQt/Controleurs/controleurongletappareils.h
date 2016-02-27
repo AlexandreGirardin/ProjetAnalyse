@@ -3,7 +3,9 @@
 
 #include <QObject>
 
-#include "Vues/fragment.h"
+class Fragment;
+
+class QPushButton;
 
 class ControleurOngletAppareils : public QObject
 {

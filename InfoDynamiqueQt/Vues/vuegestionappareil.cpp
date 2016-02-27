@@ -1,24 +1,19 @@
 #include "Vues/vuegestionappareil.h"
 #include "ui_vuegestionappareil.h"
 
-#include <QDebug>
+#include "Modeles/typeappareil.h"
+#include "Modeles/fabricant.h"
 
 VueGestionAppareil::VueGestionAppareil(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionAppareil)
 {
     ui->setupUi(this);
-//    types = new QList<TypeAppareil*>;
-//    fabricants = new QList<Fabricant*>;
 }
 
 VueGestionAppareil::~VueGestionAppareil()
 {
     delete ui;
-//    qDeleteAll(*types);
-//    delete types;
-//    qDeleteAll(*fabricants);
-//    delete fabricants;
 }
 
 void VueGestionAppareil::setTypes(QList<TypeAppareil*>* a_types)
