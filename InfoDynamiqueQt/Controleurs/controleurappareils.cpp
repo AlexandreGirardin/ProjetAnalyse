@@ -8,8 +8,9 @@
 
 #include <QMessageBox>
 
-void ControleurAppareils::ajouterAppareil(const int &idClient)
+int ControleurAppareils::ajouterAppareil(const int &idClient)
 {
+    int id = -1;
     VueGestionAppareil* vue = new VueGestionAppareil(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer un nouvel appareil"));
     vue->setTypes(MappeurTypeAppareils::get());
@@ -19,10 +20,12 @@ void ControleurAppareils::ajouterAppareil(const int &idClient)
         appareil->setIdClient(idClient);
         extraireAppareil(appareil, vue);
         if (MappeurAppareils::inserer(appareil)) {
+            id = appareil->id();
             emit Application::getInstance()->nombreAppareilsChange();
         }
         vue->deleteLater();
     }
+    return id;
 }
 
 void ControleurAppareils::modifierAppareil(const int &idAppareil)

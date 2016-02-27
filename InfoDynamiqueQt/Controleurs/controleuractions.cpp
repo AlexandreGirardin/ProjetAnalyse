@@ -20,12 +20,15 @@ void ControleurActions::extraireAction(Action* action, const VueGestionAction* v
     action->setEtat(vue->getEtat());
 }
 
-void ControleurActions::creerAction()
+int ControleurActions::creerAction()
 {
     Action* action = creerEtRetournerAction();
+    int id = -1;
     if (action != NULL) {
+        id = action->id();
         delete action;
     }
+    return id;
 }
 
 Action* ControleurActions::creerEtRetournerAction()

@@ -45,8 +45,9 @@ public slots:
      * @brief ajouterAppareil
      * Lance la création d'un nouvel appareil
      * @param idClient L'id du client
+     * @return L'id de l'appareil nouvellement créé ou -1
      */
-    static void ajouterAppareil(const int &idClient);
+    static int ajouterAppareil(const int &idClient);
 
     /**
      * @brief modifierAppareil

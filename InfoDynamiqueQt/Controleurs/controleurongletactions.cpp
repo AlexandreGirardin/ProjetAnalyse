@@ -91,7 +91,10 @@ void ControleurOngletActions::filtrerActions(const QString &filtre)
 
 void ControleurOngletActions::creerAction()
 {
-    ControleurActions::creerAction();
+    int id = ControleurActions::creerAction();
+    if (id != -1) {
+        fragmentActions->selectionnerModeleParId(id);
+    }
 }
 
 void ControleurOngletActions::modifierAction()
@@ -203,7 +206,10 @@ void ControleurOngletActions::filtrerEnsembles(const QString &filtre)
 
 void ControleurOngletActions::creerEnsemble()
 {
-    ControleurEnsembles::creerEnsemble();
+    int id = ControleurEnsembles::creerEnsemble();
+    if (id != -1) {
+        fragmentEnsembles->selectionnerModeleParId(id);
+    }
 }
 
 void ControleurOngletActions::modifierEnsemble()

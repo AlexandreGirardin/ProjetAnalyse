@@ -98,7 +98,10 @@ void ControleurOngletClients::peuplerClients()
 
 void ControleurOngletClients::ajouterClient() const
 {
-    ControleurClients::ajouterClient();
+    int id = ControleurClients::ajouterClient();
+    if (id != -1) {
+        fragmentClients->selectionnerModeleParId(id);
+    }
 }
 
 void ControleurOngletClients::modifierClient() const
@@ -157,7 +160,10 @@ void ControleurOngletClients::peuplerAppareils(const int &idClient)
 void ControleurOngletClients::ajouterAppareil() const
 {
     if (fragmentClients->idModele() != -1) {
-        ControleurAppareils::ajouterAppareil(fragmentClients->idModele());
+        int id = ControleurAppareils::ajouterAppareil(fragmentClients->idModele());
+        if (id != -1) {
+            fragmentAppareils->selectionnerModeleParId(id);
+        }
     }
 }
 
@@ -224,7 +230,10 @@ void ControleurOngletClients::peuplerFiches(const int &idAppareil)
 void ControleurOngletClients::ajouterFiche() const
 {
     if (fragmentAppareils->idModele() != -1) {
-        ControleurFiches::ajouterFiche(fragmentAppareils->idModele());
+        int id = ControleurFiches::ajouterFiche(fragmentAppareils->idModele());
+        if (id != -1) {
+            fragmentFiches->selectionnerModeleParId(id);
+        }
     }
 }
 

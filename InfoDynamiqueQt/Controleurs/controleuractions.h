@@ -36,7 +36,7 @@ public slots:
      * @brief creerAction
      * Lance la création d'une nouvelle action
      */
-    static void creerAction();
+    static int creerAction();
 
     /**
      * @brief creerAction

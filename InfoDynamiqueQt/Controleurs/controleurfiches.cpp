@@ -12,8 +12,9 @@
 #include "Vues/vueeditionfiche.h"
 #include <QDebug>
 
-void ControleurFiches::ajouterFiche(const int &idAppareil)
+int ControleurFiches::ajouterFiche(const int &idAppareil)
 {
+    int id = -1;
     VueGestionFiche* vue = new VueGestionFiche(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer une nouvelle fiche"));
     vue->setEnsembles(MappeurEnsembles::get());
@@ -23,11 +24,13 @@ void ControleurFiches::ajouterFiche(const int &idAppareil)
         fiche->setStatut(MappeurStatuts::getStatutFiche(1));
         extraireFiche(fiche, vue);
         if (MappeurFiches::inserer(fiche)) {
+            id = fiche->id();
             emit Application::getInstance()->nombreFichesChange();
         }
         fiche->deleteLater();
     }
     vue->deleteLater();
+    return id;
 }
 
 void ControleurFiches::traiterFiche(const int &idFiche)

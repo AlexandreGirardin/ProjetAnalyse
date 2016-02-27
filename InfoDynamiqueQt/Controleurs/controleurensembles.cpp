@@ -6,8 +6,9 @@
 
 #include <QMessageBox>
 
-void ControleurEnsembles::creerEnsemble()
+int ControleurEnsembles::creerEnsemble()
 {
+    int id = -1;
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer un nouvel ensemble de tâches"));
     vue->setActions(MappeurActions::get());
@@ -15,10 +16,12 @@ void ControleurEnsembles::creerEnsemble()
         EnsembleActions* ensemble = new EnsembleActions(vue);
         extraireEnsemble(ensemble, vue);
         if (MappeurEnsembles::inserer(ensemble)) {
+            id = ensemble->id();
             emit Application::getInstance()->nombreEnsemblesModifie();
         }
     }
     vue->deleteLater();
+    return id;
 }
 
 void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)

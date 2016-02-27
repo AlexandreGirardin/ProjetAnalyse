@@ -4,18 +4,21 @@
 #include "Mappeurs/mappeurclients.h"
 #include "Vues/vueclient.h"
 
-void ControleurClients::ajouterClient()
+int ControleurClients::ajouterClient()
 {
+    int id = -1;
     VueGestionClient* vue = new VueGestionClient(Application::vuePrincipale());
     vue->setWindowTitle(tr("Créer un nouveau client"));
     if (vue->exec() == vue->Accepted) {
         Client* client = new Client(vue);
         extraireClient(client, vue);
         if (MappeurClients::inserer(client)) {
+            id = client->id();
             emit Application::getInstance()->nombreClientsChange();
         }
         vue->deleteLater();
     }
+    return id;
 }
 
 void ControleurClients::modifierClient(const int &idClient)

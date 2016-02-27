@@ -209,9 +209,19 @@ public:
      */
     void setColonneId(const int &value);
 
+    /**
+     * @brief cacherColonneId
+     * Cache la colonne comprenant les id des modèles
+     * L'index de la colonne est contenu dans colonneId()
+     */
     void cacherColonneId() const;
 
-    QComboBox* ajouterCombobox(const int &index);
+    /**
+     * @brief selectionnerModeleParId
+     * Sélectionne la rangée qui contient un id donné
+     * @param id L'id à trouver dans le tableau
+     */
+    void selectionnerModeleParId(const int &id);
 
 public slots:
 
@@ -224,14 +234,6 @@ public slots:
     void peuplerTableau(QAbstractTableModel* valeurs);
 
     /**
-     * @brief selectionnerModele
-     * Assigne l'id correspondant à l'entrée spécifiée à idModele
-     * @param index L'entrée du tableau dont l'id doit être assigné à idModele
-     * Émet modeleSelectionne();
-     */
-    void selectionnerModele(const QModelIndex &index);
-
-    /**
      * @brief relacherModele
      * Oublie et désélectionne le modèle actuellement sélectionné
      * Assigne -1 à idModele
@@ -240,6 +242,14 @@ public slots:
     void relacherModele();
 
 private slots:
+
+    /**
+     * @brief selectionnerModele
+     * Assigne l'id correspondant à l'entrée spécifiée à idModele
+     * @param index L'entrée du tableau dont l'id doit être assigné à idModele
+     * Émet modeleSelectionne();
+     */
+    void selectionnerModele(const QModelIndex &index);
 
     /**
      * @brief signalerCase

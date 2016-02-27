@@ -54,8 +54,9 @@ public slots:
      * @brief ajouterFiche
      * Lance la création d'une nouvelle fiche pour un appareil sélectionné
      * @param idAppareil L'id de l'appareil
+     * @return L'id de la fiche nouvellement créée ou -1
      */
-    static void ajouterFiche(const int &idAppareil);
+    static int ajouterFiche(const int &idAppareil);
 
     /**
      * @brief traiterFiche

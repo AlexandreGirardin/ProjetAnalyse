@@ -41,8 +41,9 @@ public:
     /**
      * @brief creerEnsemble
      * Lance la création d'un nouvel ensemble
+     * @return L'id de l'ensemble nouvellement créé ou -1
      */
-    static void creerEnsemble();
+    static int creerEnsemble();
 
     /**
      * @brief modifierEnsemble

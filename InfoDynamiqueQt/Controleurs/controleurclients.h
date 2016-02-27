@@ -35,8 +35,9 @@ public slots:
     /**
      * @brief ajouterClient
      * Lance la création d'un nouveau client
+     * @return L'id du client nouvellement créé ou -1
      */
-    static void ajouterClient();
+    static int ajouterClient();
 
     /**
      * @brief modifierClient

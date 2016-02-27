@@ -79,6 +79,17 @@ void Fragment::cacherColonneId() const
     ui->tableau->hideColumn(m_colonneId);
 }
 
+void Fragment::selectionnerModeleParId(const int &id)
+{
+    for (int i = ui->tableau->model()->rowCount() - 1; i >= 0; --i) {
+        int idTest = ui->tableau->model()->data(ui->tableau->model()->index(i, m_colonneId)).toInt();
+        if (id == idTest) {
+            ui->tableau->selectRow(i);
+        }
+        i = 0;
+    }
+}
+
 QPushButton* Fragment::boutonAjouter() const
 {
     return ui->boutonAjouter;
@@ -105,14 +116,6 @@ QPushButton* Fragment::ajouterBoutonNonConnecte(const int &index, const QString&
 {
     QPushButton* bouton = new QPushButton(icone, texte, this);
     ui->horizontalLayout->insertWidget(index, bouton);
-    return bouton;
-}
-
-QComboBox* Fragment::ajouterCombobox(const int &index)
-{
-    QComboBox* bouton = new QComboBox(this);
-    ui->horizontalLayout->insertWidget(index, bouton);
-    QObject::connect(this, SIGNAL(selectionValide(bool)), bouton, SLOT(setEnabled(bool)));
     return bouton;
 }
 

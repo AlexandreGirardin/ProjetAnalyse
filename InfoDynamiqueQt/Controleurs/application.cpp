@@ -1,7 +1,6 @@
 #include "application.h"
 #include "Vues/vueprincipale.h"
 
-#include <QDebug>
 #include <QSettings>
 
 const Application* Application::m_instance = NULL;
