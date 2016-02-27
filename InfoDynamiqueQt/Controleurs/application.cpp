@@ -121,6 +121,7 @@ void Application::erreurSuppression(const QString &message)
 void Application::fermer()
 {
     controleurBD->fermer();
+    m_vuePrincipale->showMinimized();
     m_vuePrincipale->deleteLater();
 }
 
