@@ -84,6 +84,8 @@ private slots:
 
     void verifierNom();
 
+    void verifierTelephone();
+
     void verifierOk();
 
 signals:
@@ -98,9 +100,13 @@ private:
 
     ChampFormulaire* nom;
 
+    ChampFormulaire* telephone;
+
     void configurerPrenom();
 
     void configurerNom();
+
+    void configurerTelephone();
 
     void configurerBoutonOk();
 

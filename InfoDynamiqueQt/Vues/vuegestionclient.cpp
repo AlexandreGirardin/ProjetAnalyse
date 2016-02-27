@@ -12,26 +12,34 @@ VueGestionClient::VueGestionClient(QWidget* parent) :
     ui->setupUi(this);
     configurerPrenom();
     configurerNom();
+    configurerTelephone();
     configurerBoutonOk();
     prenom->setFocus();
     setTabOrder(prenom->getChamp(), nom->getChamp());
-    setTabOrder(nom->getChamp(), ui->champTelephone);
-    setTabOrder(ui->champTelephone, ui->champAdresse);
-    setTabOrder(ui->champAdresse, ui->buttonBox);
+    setTabOrder(nom->getChamp(), telephone);
+    setTabOrder(telephone->getChamp(), ui->champAdresse);
+    prenom->getChamp()->setFocus();
 }
 
 void VueGestionClient::configurerPrenom()
 {
     prenom = new ChampFormulaire(tr("Ce champ est requis."), this);
-    ui->formLayout->setWidget(0,QFormLayout::FieldRole, prenom);
+    ui->formLayout->setWidget(0, QFormLayout::FieldRole, prenom);
     QObject::connect(prenom, SIGNAL(valeurChangee()), this, SLOT(verifierPrenom()));
 }
 
 void VueGestionClient::configurerNom()
 {
     nom = new ChampFormulaire(tr("Ce champ est requis."), this);
-    ui->formLayout->setWidget(1,QFormLayout::FieldRole, nom);
+    ui->formLayout->setWidget(1, QFormLayout::FieldRole, nom);
     QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
+}
+
+void VueGestionClient::configurerTelephone()
+{
+    telephone = new ChampFormulaire(tr("Ce champ est requis."), this);
+    ui->formLayout->setWidget(2, QFormLayout::FieldRole, telephone);
+    QObject::connect(telephone, SIGNAL(valeurChangee()), this, SLOT(verifierTelephone()));
 }
 
 void VueGestionClient::configurerBoutonOk()
@@ -40,6 +48,7 @@ void VueGestionClient::configurerBoutonOk()
     boutonOk->setEnabled(false);
     QObject::connect(prenom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
     QObject::connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    QObject::connect(telephone, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
     QObject::connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));
 }
 
@@ -70,12 +79,12 @@ void VueGestionClient::setNom(const QString &texte)
 
 QString VueGestionClient::getTelephone() const
 {
-    return ui->champTelephone->text();
+    return telephone->getTexte();
 }
 
 void VueGestionClient::setTelephone(const QString &texte)
 {
-    ui->champTelephone->setText(texte);
+    telephone->setTexte(texte);
 }
 
 QString VueGestionClient::getAdresse() const
@@ -106,7 +115,14 @@ void VueGestionClient::verifierNom() {
     nom->setValide(!nom->getTexte().isEmpty());
 }
 
+void VueGestionClient::verifierTelephone()
+{
+    bool ok;
+    telephone->getTexte().toInt(&ok);
+    telephone->setValide(ok);
+}
+
 void VueGestionClient::verifierOk()
 {
-    emit champsRequisModifies(prenom->estValide() && nom->estValide());
+    emit champsRequisModifies(prenom->estValide() && nom->estValide() && telephone->estValide());
 }

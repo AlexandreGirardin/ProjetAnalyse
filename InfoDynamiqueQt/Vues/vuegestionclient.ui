@@ -44,13 +44,6 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="champTelephone">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item row="3" column="1">
       <widget class="QLineEdit" name="champAdresse"/>
      </item>
@@ -79,7 +72,6 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>champTelephone</tabstop>
   <tabstop>champAdresse</tabstop>
  </tabstops>
  <resources/>
