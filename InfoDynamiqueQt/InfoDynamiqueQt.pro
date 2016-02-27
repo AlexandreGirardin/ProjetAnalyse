@@ -44,7 +44,6 @@ SOURCES += main.cpp\
 	Controleurs/requetessql.cpp \
 	Controleurs/controleuractions.cpp \
 	Controleurs/controleurappareils.cpp \
-	Controleurs/controleurbd.cpp \
 	Controleurs/controleurclients.cpp \
 	Controleurs/controleurensembles.cpp \
 	Controleurs/controleurfiches.cpp \
@@ -67,7 +66,8 @@ SOURCES += main.cpp\
 	Vues/vuegestionpiece.cpp \
 	Vues/vuegestiontache.cpp \
 	Vues/vueprincipale.cpp \
-        Vues/vueajoutertache.cpp
+        Vues/vueajoutertache.cpp \
+    Controleurs/controleurconnexion.cpp
 
 HEADERS  += \
 	Modeles/action.h \
@@ -98,7 +98,6 @@ HEADERS  += \
 	Controleurs/requetessql.h \
 	Controleurs/controleuractions.h \
 	Controleurs/controleurappareils.h \
-	Controleurs/controleurbd.h \
 	Controleurs/controleurclients.h \
 	Controleurs/controleurensembles.h \
 	Controleurs/controleurfiches.h \
@@ -121,7 +120,8 @@ HEADERS  += \
 	Vues/vuegestionpiece.h \
 	Vues/vuegestiontache.h \
 	Vues/vueprincipale.h \
-        Vues/vueajoutertache.h
+        Vues/vueajoutertache.h \
+    Controleurs/controleurconnexion.h
 
 FORMS    += \
 	Vues/champformulaire.ui \

@@ -1,4 +1,4 @@
-#include "Controleurs/controleurbd.h"
+#include "Controleurs/controleurconnexion.h"
 
 #include "Vues/vueconnexion.h"
 
@@ -10,7 +10,7 @@
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 
-void ControleurBD::sauvegarderChamps()
+void ControleurConnexion::sauvegarderChamps()
 {
     QSettings parametres;
     parametres.setValue("connexion/hote", m_bd.hostName());
@@ -18,18 +18,18 @@ void ControleurBD::sauvegarderChamps()
     parametres.setValue("connexion/usager", m_bd.userName());
 }
 
-ControleurBD::ControleurBD(const QString &nom, QObject* parent)
+ControleurConnexion::ControleurConnexion(const QString &nom, QObject* parent)
     : QObject(parent)
 {
     nomBd = nom;
 }
 
-QSqlDatabase* ControleurBD::bd()
+QSqlDatabase* ControleurConnexion::bd()
 {
     return &m_bd;
 }
 
-void ControleurBD::connecterDossiers()
+void ControleurConnexion::connecterDossiers()
 {
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     vue = new VueConnexion();
@@ -62,13 +62,13 @@ void ControleurBD::connecterDossiers()
 //    emit connexionEtablie();
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
-void ControleurBD::fermer()
+void ControleurConnexion::fermer()
 {
     m_bd.close();
     m_bd = QSqlDatabase();
 }
 
-void ControleurBD::sonderHote()
+void ControleurConnexion::sonderHote()
 {
     m_bd = QSqlDatabase();
     QSqlDatabase::removeDatabase(nomBd);
@@ -84,7 +84,7 @@ void ControleurBD::sonderHote()
     }
 }
 
-void ControleurBD::listerBd()
+void ControleurConnexion::listerBd()
 {
     QSqlQueryModel* basesDeDonnees = new QSqlQueryModel(this);
     basesDeDonnees->setQuery("show databases", m_bd);

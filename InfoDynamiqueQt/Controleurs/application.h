@@ -3,7 +3,7 @@
 
 #include <QApplication>
 
-#include "Controleurs/controleurbd.h"
+#include "Controleurs/controleurconnexion.h"
 #include "Controleurs/controleurongletactions.h"
 #include "Controleurs/controleurongletappareils.h"
 #include "Controleurs/controleurongletclients.h"
@@ -46,7 +46,7 @@ public:
 private:
 
     // Le contrôleur de base de données de l'application
-    static ControleurBD* controleurBD;
+    static ControleurConnexion* connexion;
 
     // Singleton
     static const Application* m_instance;

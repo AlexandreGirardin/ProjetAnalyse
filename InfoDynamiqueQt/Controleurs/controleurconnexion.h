@@ -8,7 +8,7 @@
 #include <QSqlDriver>
 #include <QSqlQuery>
 
-class ControleurBD : public QObject
+class ControleurConnexion : public QObject
 {
     Q_OBJECT
 
@@ -34,7 +34,7 @@ public:
      * @brief ControleurBD
      * @param parent
      */
-    explicit ControleurBD(const QString &nom, QObject* parent = 0);
+    explicit ControleurConnexion(const QString &nom, QObject* parent = 0);
 
     /**
      * @brief getBd

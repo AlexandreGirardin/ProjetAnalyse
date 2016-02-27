@@ -7,7 +7,7 @@
 const Application* Application::m_instance = NULL;
 VuePrincipale* Application::m_vuePrincipale = NULL;
 QSqlDatabase* Application::bd = NULL;
-ControleurBD* Application::controleurBD = NULL;
+ControleurConnexion* Application::connexion = NULL;
 
 Application::Application(int &argc, char **argv) :
     QApplication(argc, argv)
@@ -22,7 +22,7 @@ const Application* Application::getInstance()
 
 void Application::demarrer()
 {
-    controleurBD = new ControleurBD("dossiers", this);
+    connexion = new ControleurConnexion("dossiers", this);
     chargerParametres();
     creerFenetre();
     connecter();
@@ -30,15 +30,15 @@ void Application::demarrer()
 
 void Application::connecter()
 {
-    connect(controleurBD, SIGNAL(connexionEtablie()), this, SLOT(ouvrirFenetre()));
-    connect(controleurBD, SIGNAL(connexionRatee()), controleurBD, SLOT(connecterDossiers()));
-    connect(controleurBD, SIGNAL(annule()), this, SLOT(fermer()));
-    controleurBD->connecterDossiers();
+    connect(connexion, SIGNAL(connexionEtablie()), this, SLOT(ouvrirFenetre()));
+    connect(connexion, SIGNAL(connexionRatee()), connexion, SLOT(connecterDossiers()));
+    connect(connexion, SIGNAL(annule()), this, SLOT(fermer()));
+    connexion->connecterDossiers();
 }
 
 void Application::ouvrirFenetre()
 {
-    bd = controleurBD->bd();
+    bd = connexion->bd();
     chargerOnglet();
     m_vuePrincipale->show();
 }
@@ -103,8 +103,8 @@ void Application::deconnexion()
 {
     sauvegarderParametres();
     m_vuePrincipale->hide();
-    controleurBD->fermer();
-    controleurBD->deleteLater();
+    connexion->fermer();
+    connexion->deleteLater();
     m_vuePrincipale->deleteLater();
     demarrer();
 }
@@ -121,7 +121,7 @@ void Application::erreurSuppression(const QString &message)
 
 void Application::fermer()
 {
-    controleurBD->fermer();
+    connexion->fermer();
     m_vuePrincipale->showMinimized();
     m_vuePrincipale->deleteLater();
 }
