@@ -19,7 +19,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="etiquettePort">
        <property name="text">
-        <string>Port du serveur:</string>
+        <string>Port:</string>
        </property>
       </widget>
      </item>
@@ -33,7 +33,7 @@
      <item row="0" column="0">
       <widget class="QLabel" name="etiquetteHote">
        <property name="text">
-        <string>Nom d'hôte:</string>
+        <string>Hôte:</string>
        </property>
       </widget>
      </item>
@@ -66,7 +66,7 @@
         <number>65535</number>
        </property>
        <property name="value">
-        <number>3307</number>
+        <number>3306</number>
        </property>
       </widget>
      </item>
@@ -124,6 +124,7 @@
   <tabstop>champPort</tabstop>
   <tabstop>champUsager</tabstop>
   <tabstop>champMDP</tabstop>
+  <tabstop>boutonConnecter</tabstop>
   <tabstop>listeBd</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>

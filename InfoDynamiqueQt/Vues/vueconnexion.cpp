@@ -31,6 +31,8 @@ void VueConnexion::configurerBoutonOk()
     QPushButton* boutonOk = ui->buttonBox->button(QDialogButtonBox::Ok);
     boutonOk->setEnabled(false);
     QObject::connect(ui->listeBd, SIGNAL(clicked(QModelIndex)), this, SLOT(activerBoutonOk()));
+    QObject::connect(ui->listeBd, SIGNAL(activated(QModelIndex)), this, SLOT(activerBoutonOk()));
+//    QObject::connect(ui->listeBd, SIGNAL(activated(QModelIndex)), this, SLOT(activerBoutonOk()));
     QObject::connect(ui->listeBd, SIGNAL(doubleClicked(QModelIndex)), boutonOk, SIGNAL(clicked()));
 }
 
@@ -82,11 +84,13 @@ void VueConnexion::setMotDePasse(const QString &motDePasse)
 void VueConnexion::activerBoutonOk()
 {
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+    ui->buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
 }
 
 void VueConnexion::desactiverBoutonOk()
 {
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+    ui->boutonConnecter->setDefault(true);
 }
 
 QPushButton* VueConnexion::boutonConnexion() const
@@ -99,8 +103,14 @@ void VueConnexion::peuplerTableau(QAbstractTableModel* valeurs)
     if (ui->listeBd->model() != NULL) {
         ui->listeBd->model()->deleteLater();
     }
-    ui->listeBd->setModel(valeurs);
-    desactiverBoutonOk();
+    if (valeurs->rowCount() > 0) {
+        ui->listeBd->setFocus();
+        ui->listeBd->setModel(valeurs);
+        ui->listeBd->setCurrentIndex(valeurs->index(0,0));
+        activerBoutonOk();
+    } else {
+        desactiverBoutonOk();
+    }
 }
 
 void VueConnexion::viderListe()
