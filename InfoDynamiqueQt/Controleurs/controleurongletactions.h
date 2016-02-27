@@ -21,9 +21,6 @@ private:
     // Bouton permettant de supprimer l'action sélectionnée
     QPushButton* boutonSupprimerAction;
 
-    // Le bouton de rafraichissement de l'application
-    QPushButton* boutonRafraichir;
-
     /**
      * @brief configurerBoutonEtat
      * Configure le bouton de changement d'état d'action
@@ -35,12 +32,6 @@ private:
      * Configure le bouton de suppression d'action
      */
     void configurerBoutonSupprimerAction();
-
-    /**
-     * @brief configurerBoutonRafraichir
-     * Configure le bouton de rafraichissement de l'application
-     */
-    void configurerBoutonRafraichir();
 
     // La requête SQL actuelle pour actions sans filtre de recherche
     const QString* requeteActions;

@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include <QPushButton>
+
 namespace Ui {
 class VuePrincipale;
 }
@@ -12,6 +14,12 @@ class VuePrincipale : public QMainWindow
     Q_OBJECT
 
     // Vue principale de l'application, regroupant les autres vues dans des onglets
+
+    QPushButton* boutonRecharger;
+
+    void repositionnerBoutonRecharger();
+
+    void configurerBoutonRecharger();
 
 public:
 
@@ -48,6 +56,14 @@ public:
      * @return L'onglet de gestion des fiches
      */
     QWidget* ongletFiches() const;
+
+    /**
+     * @brief resizeEvent
+     * Intercepte les redimensionnements pour replacer le boutonRecharger
+     */
+    void resizeEvent(QResizeEvent*);
+
+    QPushButton* getBoutonRecharger() const;
 
 private:
 

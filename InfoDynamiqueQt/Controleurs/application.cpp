@@ -72,6 +72,7 @@ void Application::creerFenetre()
     appareilsCharges = false;
     actionsChargees = false;
     paresseux = connect(m_vuePrincipale->onglets(), SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
+    connect(m_vuePrincipale->getBoutonRecharger(), SIGNAL(clicked()), getInstance(), SIGNAL(rafraichirTout()));
     connect(m_vuePrincipale, SIGNAL(deconnexion()), this, SLOT(deconnexion()));
 }
 

@@ -25,13 +25,6 @@ public:
      */
     static QList<Technicien*>* get();
 
-    /**
-     * @brief technicienPourFiche
-     * @param idFiche
-     * @return
-     */
-    static QList<Technicien*>* technicienPourFiche(const int &idFiche);
-
 private:
 
     /**

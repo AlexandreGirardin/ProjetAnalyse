@@ -43,15 +43,8 @@ void ControleurOngletActions::configurerFragmentActions()
     QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rafraichirActions()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
 
-    configurerBoutonRafraichir();
     configurerBoutonEtat();
     configurerBoutonSupprimerAction();
-}
-
-void ControleurOngletActions::configurerBoutonRafraichir()
-{
-    boutonRafraichir = fragmentActions->ajouterBoutonNonConnecte(7, "", QIcon(":/Images/refresh"));
-    QObject::connect(boutonRafraichir, SIGNAL(clicked()), Application::getInstance(), SIGNAL(rafraichirTout()));
 }
 
 void ControleurOngletActions::configurerBoutonEtat()

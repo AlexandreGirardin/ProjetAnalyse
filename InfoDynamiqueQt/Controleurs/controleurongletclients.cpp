@@ -29,7 +29,6 @@ void ControleurOngletClients::configurerFragmentClients()
     fragmentClients = new Fragment(splitter);
     fragmentClients->setEtiquette(tr("Clients"));
     fragmentClients->retirerCaseCocher();
-    configurerBoutonRafraichir();
     QObject::connect(fragmentClients, SIGNAL(clicCreer()), this, SLOT(ajouterClient()));
     QObject::connect(fragmentClients, SIGNAL(clicEditer()), this, SLOT(modifierClient()));
     QObject::connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
@@ -57,7 +56,6 @@ void ControleurOngletClients::configurerFragmentAppareils()
     QObject::connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichirAppareils()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rafraichirAppareils()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rechargerAppareils()));
-    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rechargerAppareils()));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
     QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
     QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
@@ -74,9 +72,7 @@ void ControleurOngletClients::configurerFragmentFiches()
     fragmentFiches->retirerChamp();
     fragmentFiches->boutonModifier()->deleteLater();
     fragmentFiches->boutonVoir()->deleteLater();
-    boutonTraiter = fragmentFiches->ajouterBouton(4);
-    boutonTraiter->setText(tr("Traiter"));
-    boutonTraiter->setIcon(QIcon(":/Images/document-edit-sign"));
+    boutonTraiter = fragmentFiches->ajouterBouton(4, tr("Traiter"), QIcon(":/Images/document-edit-sign"));
     QObject::connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));
     QObject::connect(fragmentFiches, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
     QObject::connect(fragmentFiches, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
@@ -87,14 +83,7 @@ void ControleurOngletClients::configurerFragmentFiches()
     QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
     QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
     QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
-    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rechargerFiches()));
     QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
-}
-
-void ControleurOngletClients::configurerBoutonRafraichir()
-{
-    boutonRafraichir = fragmentClients->ajouterBoutonNonConnecte(7, "", QIcon(":/Images/refresh"));
-    QObject::connect(boutonRafraichir, SIGNAL(clicked()), Application::getInstance(), SIGNAL(rafraichirTout()));
 }
 
 // Clients

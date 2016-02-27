@@ -121,7 +121,7 @@ HEADERS  += \
 	Vues/vuegestionpiece.h \
 	Vues/vuegestiontache.h \
 	Vues/vueprincipale.h \
-        Vues/vueajoutertache.h \
+        Vues/vueajoutertache.h
 
 FORMS    += \
 	Vues/champformulaire.ui \

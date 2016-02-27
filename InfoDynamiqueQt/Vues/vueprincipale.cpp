@@ -2,16 +2,40 @@
 #include "ui_vueprincipale.h"
 
 #include <QCloseEvent>
+#include <QResizeEvent>
+
+VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)
+{
+    ui->setupUi(this);
+    configurerBoutonRecharger();
+}
+
+void VuePrincipale::configurerBoutonRecharger()
+{
+    boutonRecharger = new QPushButton(QIcon(":Images/refresh"), tr("Rafraîchir"), this);
+    boutonRecharger->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    boutonRecharger->show();
+    repositionnerBoutonRecharger();
+}
+
+void VuePrincipale::resizeEvent(QResizeEvent*) {
+    repositionnerBoutonRecharger();
+}
+
+void VuePrincipale::repositionnerBoutonRecharger()
+{
+    boutonRecharger->move(width() - boutonRecharger->width(), 0);
+}
+
+QPushButton *VuePrincipale::getBoutonRecharger() const
+{
+    return boutonRecharger;
+}
 
 void VuePrincipale::closeEvent (QCloseEvent* event)
 {
     event->ignore();
     emit deconnexion();
-}
-
-VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)
-{
-    ui->setupUi(this);
 }
 
 VuePrincipale::~VuePrincipale()
