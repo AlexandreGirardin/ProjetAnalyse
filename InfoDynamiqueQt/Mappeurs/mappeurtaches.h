@@ -39,11 +39,11 @@ public:
 
     /**
      * @brief tachesPourAction
-     * Retourne toutes les tâches associées à une action donnée
+     * Retourne le nombre total de tâches associées à une action donnée
      * @param idAction L'id de l'action à chercher
-     * @return La liste des tâches
+     * @return Le nombre de tâches
      */
-    static QList<Tache*>* tachesPourAction(const int &idAction);
+    static int tachesPourAction(const int &idAction);
 
     // TODO
     static int prioriteMinimale();

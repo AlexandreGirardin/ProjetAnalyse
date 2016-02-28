@@ -47,9 +47,9 @@ void ControleurOngletActions::configurerFragmentActions()
     connect(fragmentActions, SIGNAL(caseDecochee()), this, SLOT(activerCritereActions()));
     connect(fragmentActions, SIGNAL(rechercher(QString)), this, SLOT(filtrerActions(QString)));
     connect(fragmentActions, SIGNAL(doubleClicModele()), this, SLOT(modifierAction()));
-    connect(Application::getInstance(), SIGNAL(actionModifiee()), this, SLOT(rafraichirActions()));
-    connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rafraichirActions()));
-    connect(Application::getInstance(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
+    connect(Application::get(), SIGNAL(actionModifiee()), this, SLOT(rafraichirActions()));
+    connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(rafraichirActions()));
+    connect(Application::get(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
 
     configurerBoutonEtat();
     configurerBoutonSupprimerAction();
@@ -93,7 +93,7 @@ void ControleurOngletActions::filtrerActions(const QString &filtre)
         resultats->setQuery(requete);
         fragmentActions->peuplerTableau(resultats);
         fragmentActions->cacherColonneId();
-//        fragmentActions->tableau()->resizeColumnsToContents();
+        fragmentActions->tableau()->horizontalHeader()->stretchLastSection();
     }
 }
 
@@ -131,7 +131,8 @@ void ControleurOngletActions::activerBoutonSupprimerAction(const bool &actif)
     if (!actif) {
         boutonSupprimerAction->setEnabled(false);
     } else {
-        if (MappeurActions::nombreTachesPourAction(fragmentActions->idModele()) == 0) {
+        int usages = MappeurActions::nombreTachesPourAction(fragmentActions->idModele());
+        if (usages == 0) {
             boutonSupprimerAction->setEnabled(true);
             boutonSupprimerAction->setToolTip("");
         } else {
@@ -175,16 +176,16 @@ void ControleurOngletActions::configurerFragmentEnsembles()
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
     fragmentEnsembles->caseCocher()->setHidden(true);
     QPushButton* boutonSupprimer = fragmentEnsembles->ajouterBouton(4, tr("Supprimer"), QIcon(":/Images/edit-delete"));
-    connect(Application::getInstance(), SIGNAL(ensembleModifie()), this, SLOT(ensembleModifie()));
+    connect(Application::get(), SIGNAL(ensembleModifie()), this, SLOT(ensembleModifie()));
     connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));
     connect(fragmentEnsembles, SIGNAL(clicEditer()), this, SLOT(modifierEnsemble()));
     connect(fragmentEnsembles, SIGNAL(doubleClicModele()), this, SLOT(voirEnsemble()));
     connect(fragmentEnsembles, SIGNAL(clicVoir()), this, SLOT(voirEnsemble()));
     connect(fragmentEnsembles, SIGNAL(rechercher(QString)), this, SLOT(filtrerEnsembles(QString)));
     connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimerEnsemble()));
-    connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rechargerEnsembles()));
-    connect(Application::getInstance(), SIGNAL(nombreEnsemblesModifie()), this, SLOT(rechargerEnsembles()));
-    connect(Application::getInstance(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerEnsembles()));
+    connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(rechargerEnsembles()));
+    connect(Application::get(), SIGNAL(nombreEnsemblesModifie()), this, SLOT(rechargerEnsembles()));
+    connect(Application::get(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerEnsembles()));
 }
 
 void ControleurOngletActions::peuplerEnsembles()

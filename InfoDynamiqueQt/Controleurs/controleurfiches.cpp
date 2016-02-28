@@ -28,7 +28,7 @@ int ControleurFiches::ajouterFiche(const int &idAppareil)
         extraireFiche(fiche, vue);
         if (MappeurFiches::inserer(fiche)) {
             id = fiche->id();
-            emit Application::getInstance()->nombreFichesChange();
+            emit Application::get()->nombreFichesChange();
         }
         fiche->deleteLater();
     }
@@ -47,10 +47,11 @@ void ControleurFiches::traiterFiche(const int &idFiche)
         if (vue->exec() == vue->Accepted) {
             extraireFiche(fiche, vue);
             if (MappeurFiches::mettreAJour(fiche)) {
-                emit Application::getInstance()->ficheModifiee();
+                emit Application::get()->ficheModifiee();
             }
         }
         vue->deleteLater();
+        fiche->deleteLater();
     }
 }
 

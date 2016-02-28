@@ -18,7 +18,7 @@ int ControleurClients::ajouterClient()
         extraireClient(client, vue);
         if (MappeurClients::inserer(client)) {
             id = client->id();
-            emit Application::getInstance()->nombreClientsChange();
+            emit Application::get()->nombreClientsChange();
         }
         vue->deleteLater();
     }
@@ -35,7 +35,7 @@ void ControleurClients::modifierClient(const int &idClient)
         if (vue->exec() == vue->Accepted) {
             extraireClient(client, vue);
             if (MappeurClients::mettreAJour(client)) {
-                emit Application::getInstance()->clientModifie();
+                emit Application::get()->clientModifie();
             }
         }
         vue->deleteLater();
@@ -63,20 +63,23 @@ void ControleurClients::voirClient(const int &idClient, const bool &modal)
 
 void ControleurClients::effacerClient(const int &idClient)
 {
-    if (MappeurAppareils::nombreAppareils(idClient) == 0) {
+    int usages = MappeurAppareils::nombreAppareils(idClient);
+    if (usages == 0) {
         Client* client = MappeurClients::get(idClient);
-        QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
-                        tr("Confirmation de la suppression"),
-                        tr("Supprimer le client?\n") + client->out(),
-                        QMessageBox::Ok | QMessageBox::Cancel);
-        confirmation->setDefaultButton(QMessageBox::Cancel);
-        if (confirmation->exec() == confirmation->Ok) {
-            if (MappeurClients::supprimer(client)) {
-                emit Application::getInstance()->nombreClientsChange();
+        if (client != NULL) {
+            QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
+                            tr("Confirmation de la suppression"),
+                            tr("Supprimer le client?\n") + client->out(),
+                            QMessageBox::Ok | QMessageBox::Cancel);
+            confirmation->setDefaultButton(QMessageBox::Cancel);
+            if (confirmation->exec() == confirmation->Ok) {
+                if (MappeurClients::supprimer(client)) {
+                    emit Application::get()->nombreClientsChange();
+                }
             }
+            confirmation->deleteLater();
+            client->deleteLater();
         }
-        confirmation->deleteLater();
-        client->deleteLater();
     }
 }
 

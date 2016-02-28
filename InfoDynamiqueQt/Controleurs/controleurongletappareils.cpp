@@ -28,9 +28,9 @@ void ControleurOngletAppareils::charger(QWidget* vue)
     connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
     connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-    connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichir()));
-    connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
-    connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
+    connect(Application::get(), SIGNAL(appareilModifie()), this, SLOT(rafraichir()));
+    connect(Application::get(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
+    connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
     connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     fragment->champ()->setFocus();
 
@@ -45,12 +45,13 @@ void ControleurOngletAppareils::configurerBoutonSupprimer()
     connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimer()));
 }
 
-void ControleurOngletAppareils::activerBoutonSupprimer(const bool actif)
+void ControleurOngletAppareils::activerBoutonSupprimer(const bool &actif)
 {
     if (!actif) {
         boutonSupprimer->setEnabled(false);
     } else {
-        if (MappeurFiches::nombreFiches(fragment->idModele()) == 0) {
+        int usages = MappeurFiches::nombreFiches(fragment->idModele()) == 0;
+        if (usages == 0) {
             boutonSupprimer->setEnabled(true);
             boutonSupprimer->setToolTip("");
         } else {
@@ -94,7 +95,7 @@ void ControleurOngletAppareils::filtrerAppareils(const QString &filtre)
     if (filtre.isEmpty()) {
         peuplerAppareils();
     } else {
-        QSqlQuery requete = QSqlQuery(*Application::bd);
+        QSqlQuery requete(*Application::bd);
         requete.prepare(*RequetesSQL::filtrerAppareils);
         const QString meta = *RequetesSQL::meta;
         requete.bindValue(":filtre", meta + filtre + meta);

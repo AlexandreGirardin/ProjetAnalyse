@@ -26,14 +26,18 @@ Fiche *MappeurFiches::get(const int &id)
     return fiche;
 }
 
-QList<Fiche*>* MappeurFiches::fichesPourAppareil(const int &idAppareil)
+int MappeurFiches::fichesPourAppareil(const int &idAppareil)
 {
-    const QString commande("SELECT * FROM fiches WHERE idAppareil=:idAppareil");
+    int nombre = -1;
+    const QString commande("SELECT count(*) as 'nb' FROM fiches WHERE idAppareil=:idAppareil");
     QSqlQuery requete(*Application::bd);
     requete.prepare(commande);
     requete.bindValue(":idAppareil", idAppareil);
     requete.exec();
-    return mapper(requete);
+    if (requete.next()) {
+        nombre = requete.record().value("nb").toInt();
+    }
+    return nombre;
 }
 
 int MappeurFiches::nombreFiches(const int &idAppareil)

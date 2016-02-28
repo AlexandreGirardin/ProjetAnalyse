@@ -54,14 +54,18 @@ QList<Tache*>* MappeurTaches::tachesPourFiche(const int &idFiche)
     return mapper(requete);
 }
 
-QList<Tache*>* MappeurTaches::tachesPourAction(const int &idAction)
+int MappeurTaches::tachesPourAction(const int &idAction)
 {
-    QString commande("SELECT * FROM taches WHERE idAction=:idAction");
+    int nombre = -1;
+    QString commande("SELECT count(*) as 'nb' FROM taches WHERE idAction=:idAction");
     QSqlQuery requete(*Application::bd);
     requete.prepare(commande);
     requete.bindValue(":idAction", idAction);
     requete.exec();
-    return mapper(requete);
+    if (requete.next()) {
+        nombre = requete.record().value("nb").toInt();
+    }
+    return nombre;
 }
 
 int MappeurTaches::prioriteMinimale()

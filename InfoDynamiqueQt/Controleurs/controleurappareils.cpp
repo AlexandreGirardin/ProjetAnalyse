@@ -25,7 +25,7 @@ int ControleurAppareils::ajouterAppareil(const int &idClient)
         extraireAppareil(appareil, vue);
         if (MappeurAppareils::inserer(appareil)) {
             id = appareil->id();
-            emit Application::getInstance()->nombreAppareilsChange();
+            emit Application::get()->nombreAppareilsChange();
         }
         vue->deleteLater();
     }
@@ -42,12 +42,12 @@ void ControleurAppareils::modifierAppareil(const int &idAppareil)
         if (vue->exec() == vue->Accepted) {
             extraireAppareil(appareil, vue);
             if (MappeurAppareils::mettreAJour(appareil)) {
-                emit Application::getInstance()->appareilModifie();
+                emit Application::get()->appareilModifie();
             }
         }
         vue->deleteLater();
+        appareil->deleteLater();
     }
-    appareil->deleteLater();
 }
 
 void ControleurAppareils::voirAppareil(const int &idAppareil, const bool &modal)
@@ -58,16 +58,16 @@ void ControleurAppareils::voirAppareil(const int &idAppareil, const bool &modal)
         vue->setModal(modal);
         vue->setWindowTitle(tr("Appareil"));
         assignerAppareil(vue, appareil);
+        appareil->deleteLater();
         connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
-    appareil->deleteLater();
 }
 
 void ControleurAppareils::effacerAppareil(const int &idAppareil)
 {
-    QList<Fiche*>* fiches = MappeurFiches::fichesPourAppareil(idAppareil);
-    if (fiches->isEmpty()) {
+    int usages = MappeurFiches::fichesPourAppareil(idAppareil);
+    if (usages == 0) {
         Appareil* appareil = MappeurAppareils::get(idAppareil);
         QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                         tr("Confirmation de la suppression"),
@@ -76,19 +76,15 @@ void ControleurAppareils::effacerAppareil(const int &idAppareil)
         confirmation->setDefaultButton(QMessageBox::Cancel);
         if (confirmation->exec() == confirmation->Ok) {
             if (MappeurAppareils::supprimer(appareil)) {
-                emit Application::getInstance()->nombreAppareilsChange();
+                emit Application::get()->nombreAppareilsChange();
             }
         }
         confirmation->deleteLater();
         appareil->deleteLater();
-    } else {
-
     }
-    qDeleteAll(*fiches);
-    delete fiches;
 }
 
-void ControleurAppareils::assignerAppareil(VueGestionAppareil *vue, const Appareil *appareil)
+void ControleurAppareils::assignerAppareil(VueGestionAppareil* vue, const Appareil* appareil)
 {
     vue->setTypes(MappeurTypeAppareils::get(), appareil->nomType());
     vue->setFabricants(MappeurFabricants::get(), appareil->nomFabricant());
@@ -96,7 +92,7 @@ void ControleurAppareils::assignerAppareil(VueGestionAppareil *vue, const Appare
     vue->setDescription(appareil->description());
 }
 
-void ControleurAppareils::assignerAppareil(VueAppareil *vue, const Appareil *appareil)
+void ControleurAppareils::assignerAppareil(VueAppareil* vue, const Appareil* appareil)
 {
     vue->setType(appareil->nomType());
     vue->setFabricant(appareil->nomFabricant());
@@ -104,7 +100,7 @@ void ControleurAppareils::assignerAppareil(VueAppareil *vue, const Appareil *app
     vue->setDescription(appareil->description());
 }
 
-void ControleurAppareils::extraireAppareil(Appareil *appareil, const VueGestionAppareil *vue)
+void ControleurAppareils::extraireAppareil(Appareil* appareil, const VueGestionAppareil* vue)
 {
     appareil->setMotDePasse(vue->getMotDePasse());
     appareil->setType(MappeurTypeAppareils::get(vue->getType()));

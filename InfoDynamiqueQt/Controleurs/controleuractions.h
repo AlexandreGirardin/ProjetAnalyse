@@ -12,37 +12,14 @@ class ControleurActions : public QObject
 
     // Contrôle la gestion (création, modification, suppression) des actions
 
-private:
-
-    /**
-     * @brief assignerAction
-     * Assigne les informations de l'action dans les champs de la vue
-     * @param vue La vue cible
-     * @param action L'action source
-     */
-    static void assignerAction(VueGestionAction* vue, const Action* action);
-
-    /**
-     * @brief extraireAction
-     * Assigne les informations contenues dans une vue à une action
-     * @param action L'action cible
-     * @param vue La vue source
-     */
-    static void extraireAction(Action* action, const VueGestionAction* vue);
-
 public slots:
 
     /**
      * @brief creerAction
      * Lance la création d'une nouvelle action
+     * @return L'id de la nouvelle action ou -1
      */
     static int creerAction();
-
-    /**
-     * @brief creerAction
-     * Lance la création d'une nouvelle action et la retourne
-     */
-    static Action* creerEtRetournerAction();
 
     /**
      * @brief modifierAction
@@ -64,6 +41,25 @@ public slots:
      * @param idAction L'id de l'action à effacer
      */
     static void effacerAction(const int &idAction);
+
+private:
+
+    /**
+     * @brief assignerAction
+     * Assigne les informations de l'action dans les champs de la vue
+     * @param vue La vue cible
+     * @param action L'action source
+     */
+    static void assignerAction(VueGestionAction* vue, const Action* action);
+
+    /**
+     * @brief extraireAction
+     * Assigne les informations contenues dans une vue à une action
+     * @param action L'action cible
+     * @param vue La vue source
+     */
+    static void extraireAction(Action* action, const VueGestionAction* vue);
+
 };
 
 #endif // CONTROLEURACTIONS_H

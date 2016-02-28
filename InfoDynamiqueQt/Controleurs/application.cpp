@@ -21,7 +21,7 @@ Application::Application(int &argc, char **argv) :
     m_instance = this;
 }
 
-const Application* Application::getInstance()
+const Application* Application::get()
 {
     return m_instance;
 }
@@ -78,7 +78,7 @@ void Application::creerFenetre()
     appareilsCharges = false;
     actionsChargees = false;
     paresseux = connect(m_vuePrincipale->onglets(), SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
-    connect(m_vuePrincipale->getBoutonRecharger(), SIGNAL(clicked()), getInstance(), SIGNAL(rafraichirTout()));
+    connect(m_vuePrincipale->getBoutonRecharger(), SIGNAL(clicked()), get(), SIGNAL(rafraichirTout()));
     connect(m_vuePrincipale, SIGNAL(deconnexion()), this, SLOT(deconnexion()));
 }
 
@@ -132,7 +132,7 @@ void Application::fermer()
     m_vuePrincipale->deleteLater();
 }
 
-void Application::erreur(const QString &message, const QString &titre, QMessageBox::Icon type)
+void Application::erreur(const QString &message, const QString &titre, const QMessageBox::Icon type)
 {
     QMessageBox* alerte = new QMessageBox(type, titre, message, QMessageBox::Ok, vuePrincipale());
     alerte->exec();

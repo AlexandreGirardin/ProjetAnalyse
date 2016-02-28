@@ -21,7 +21,7 @@ int ControleurEnsembles::creerEnsemble()
         extraireEnsemble(ensemble, vue);
         if (MappeurEnsembles::inserer(ensemble)) {
             id = ensemble->id();
-            emit Application::getInstance()->nombreEnsemblesModifie();
+            emit Application::get()->nombreEnsemblesModifie();
         }
     }
     vue->deleteLater();
@@ -38,12 +38,12 @@ void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
         if (vue->exec() == vue->Accepted) {
             extraireEnsemble(ensemble, vue);
             if (MappeurEnsembles::mettreAJour(ensemble)) {
-                emit Application::getInstance()->ensembleModifie();
+                emit Application::get()->ensembleModifie();
             }
         }
         vue->deleteLater();
+        ensemble->deleteLater();
     }
-    ensemble->deleteLater();
 }
 
 void ControleurEnsembles::voirEnsemble(const int &idEnsemble, const bool &modal)
@@ -55,10 +55,10 @@ void ControleurEnsembles::voirEnsemble(const int &idEnsemble, const bool &modal)
         vue->setWindowTitle(tr("Ensemble de tâches"));
         assignerEnsemble(vue, ensemble);
         vue->setActions(ensemble->actions());
+        ensemble->deleteLater();
         connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
-    ensemble->deleteLater();
 }
 
 void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
@@ -72,7 +72,7 @@ void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
         confirmation->setDefaultButton(QMessageBox::Cancel);
         if (confirmation->exec() == confirmation->Ok) {
             if (MappeurEnsembles::supprimer(ensemble)) {
-                emit Application::getInstance()->nombreEnsemblesModifie();
+                emit Application::get()->nombreEnsemblesModifie();
             }
         }
         confirmation->deleteLater();

@@ -37,7 +37,7 @@ private:
      * @param appareil L'appareil cible
      * @param vue La vue source
      */
-    static void extraireAppareil(Appareil* appareil, const VueGestionAppareil *vue);
+    static void extraireAppareil(Appareil* appareil, const VueGestionAppareil* vue);
 
 public slots:
 

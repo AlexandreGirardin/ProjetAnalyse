@@ -2,6 +2,7 @@
 #include "ui_vuegestionensemble.h"
 
 #include "Controleurs/controleuractions.h"
+#include "Mappeurs/mappeuractions.h"
 #include "Modeles/action.h"
 #include "Modeles/ensembleactions.h"
 #include "Vues/champformulaire.h"
@@ -145,9 +146,10 @@ void VueGestionEnsemble::verifierOk()
 
 void VueGestionEnsemble::creerAction()
 {
-    Action* nouvelle = ControleurActions::creerEtRetournerAction();
+    Action* nouvelle = MappeurActions::get(ControleurActions::creerAction());
     if (nouvelle != NULL) {
         modeleDansEnsemble->appendRow(actionEnItem(nouvelle));
     }
+    nouvelle->deleteLater();
 
 }

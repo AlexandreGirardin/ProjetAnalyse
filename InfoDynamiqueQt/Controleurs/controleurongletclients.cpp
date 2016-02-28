@@ -45,10 +45,10 @@ void ControleurOngletClients::configurerFragmentClients()
     connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
     connect(fragmentClients, SIGNAL(rechercher(QString)), this, SLOT(filtrerClients(QString)));
     connect(fragmentClients, SIGNAL(doubleClicModele()), this, SLOT(voirClient()));
-    connect(Application::getInstance(), SIGNAL(clientModifie()), this, SLOT(rafraichirClients()));
-    connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rafraichirClients()));
-    connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rechargerClients()));
-    connect(Application::getInstance(), SIGNAL(nombreClientsChange()), this, SLOT(rechargerClients()));
+    connect(Application::get(), SIGNAL(clientModifie()), this, SLOT(rafraichirClients()));
+    connect(Application::get(), SIGNAL(nombreAppareilsChange()), this, SLOT(rafraichirClients()));
+    connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(rechargerClients()));
+    connect(Application::get(), SIGNAL(nombreClientsChange()), this, SLOT(rechargerClients()));
 }
 
 void ControleurOngletClients::configurerFragmentAppareils()
@@ -64,9 +64,9 @@ void ControleurOngletClients::configurerFragmentAppareils()
     connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
     connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
     connect(fragmentAppareils, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
-    connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichirAppareils()));
-    connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rafraichirAppareils()));
-    connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rechargerAppareils()));
+    connect(Application::get(), SIGNAL(appareilModifie()), this, SLOT(rafraichirAppareils()));
+    connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(rafraichirAppareils()));
+    connect(Application::get(), SIGNAL(nombreAppareilsChange()), this, SLOT(rechargerAppareils()));
     connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
     connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
     connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
@@ -92,8 +92,8 @@ void ControleurOngletClients::configurerFragmentFiches()
     connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
     connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
     connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
-    connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
-    connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
+    connect(Application::get(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
+    connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
     connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
 }
 
@@ -158,7 +158,14 @@ void ControleurOngletClients::activerBoutonEffacerClient(const bool &actif) cons
     if (!actif) {
         boutonEffacerClient->setEnabled(false);
     } else {
-        boutonEffacerClient->setEnabled(MappeurAppareils::nombreAppareils(fragmentClients->idModele()) == 0);
+        int usages = MappeurAppareils::nombreAppareils(fragmentClients->idModele());
+        if (usages == 0) {
+            boutonEffacerClient->setEnabled(true);
+            boutonEffacerClient->setToolTip("");
+        } else {
+            boutonEffacerClient->setEnabled(false);
+            boutonEffacerClient->setToolTip("Ce client ne peut pas être supprimé.");
+        }
     }
 }
 

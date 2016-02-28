@@ -27,7 +27,7 @@ public:
      * @param idAppareil L'id de l'appareil à chercher
      * @return Les fiches de l'appareil
      */
-    static QList<Fiche*>* fichesPourAppareil(const int &idAppareil);
+    static int fichesPourAppareil(const int &idAppareil);
 
     /**
      * @brief nombreFiches

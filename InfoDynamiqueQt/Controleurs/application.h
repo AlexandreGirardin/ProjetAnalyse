@@ -23,11 +23,11 @@ public:
     explicit Application(int &argc, char **argv);
 
     /**
-     * @brief getInstance
+     * @brief get
      * Retourne l'instance de l'application en singleton
      * @return
      */
-    static const Application* getInstance();
+    static const Application* get();
 
     /**
      * @brief demarrer
@@ -115,7 +115,7 @@ private:
      * @param titre Le titre de la fenêtre à afficher
      * @param type Le type de message à afficher
      */
-    static void erreur(const QString &message, const QString &titre = tr("Erreur"), QMessageBox::Icon type = QMessageBox::Warning);
+    static void erreur(const QString &message, const QString &titre = tr("Erreur"), const QMessageBox::Icon type = QMessageBox::Warning);
 
 private slots:
 

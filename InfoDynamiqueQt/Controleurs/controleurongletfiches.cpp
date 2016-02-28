@@ -35,9 +35,9 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     connect(fragment, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
     connect(fragment, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
     connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
-    connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichir()));
-    connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
-    connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
+    connect(Application::get(), SIGNAL(ficheModifiee()), this, SLOT(rafraichir()));
+    connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
+    connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
     fragment->champ()->setFocus();
 }
 

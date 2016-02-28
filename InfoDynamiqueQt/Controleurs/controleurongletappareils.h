@@ -20,14 +20,14 @@ public:
      * @param vuePrincipale La vue à laquelle se rattache le contrôleur
      * @param parent
      */
-    explicit ControleurOngletAppareils(QObject *parent = 0);
+    explicit ControleurOngletAppareils(QObject* parent = 0);
 
     /**
      * @brief charger
      * Charge le fragment et le peuple
      * @param vue La vue devant contenir le fragment
      */
-    void charger(QWidget *vue);
+    void charger(QWidget* vue);
 
 private:
 
@@ -93,7 +93,7 @@ public slots:
      * Change l'état du bouton de suppression d'appareil
      * @param actif Si un appareil est sélectionné
      */
-    void activerBoutonSupprimer(const bool actif);
+    void activerBoutonSupprimer(const bool &actif);
 
 signals:
 
