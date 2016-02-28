@@ -56,5 +56,5 @@ void Client::setAdresse(const QString &value)
 
 QString Client::out() const
 {
-    return ModeleBD::out();
+    return prenom() + " " + nom();
 }

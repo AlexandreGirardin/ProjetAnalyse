@@ -1,6 +1,7 @@
 #include "Controleurs/controleurclients.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/mappeurappareils.h"
 #include "Mappeurs/mappeurclients.h"
 #include "Modeles/client.h"
 #include "Vues/vueclient.h"
@@ -56,6 +57,25 @@ void ControleurClients::voirClient(const int &idClient, const bool &modal)
         vue->setCourriel(client->courriel());
         QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
+        client->deleteLater();
+    }
+}
+
+void ControleurClients::effacerClient(const int &idClient)
+{
+    if (MappeurAppareils::nombreAppareils(idClient) == 0) {
+        Client* client = MappeurClients::get(idClient);
+        QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
+                        tr("Confirmation de la suppression"),
+                        tr("Supprimer le client?\n") + client->out(),
+                        QMessageBox::Ok | QMessageBox::Cancel);
+        confirmation->setDefaultButton(QMessageBox::Cancel);
+        if (confirmation->exec() == confirmation->Ok) {
+            if (MappeurClients::supprimer(client)) {
+                emit Application::getInstance()->nombreClientsChange();
+            }
+        }
+        confirmation->deleteLater();
         client->deleteLater();
     }
 }

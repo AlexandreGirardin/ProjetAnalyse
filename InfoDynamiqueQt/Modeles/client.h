@@ -96,6 +96,7 @@ public:
      * @return Représentation textuelle du client
      */
     QString out() const;
+
 };
 
 #endif // CLIENT_H

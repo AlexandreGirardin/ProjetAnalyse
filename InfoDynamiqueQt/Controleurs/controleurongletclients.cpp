@@ -5,6 +5,7 @@
 #include "Controleurs/controleurappareils.h"
 #include "Controleurs/controleurclients.h"
 #include "Controleurs/controleurfiches.h"
+#include "Mappeurs/mappeurappareils.h"
 #include "Mappeurs/mappeurfiches.h"
 #include <Vues/fragment.h>
 
@@ -35,15 +36,19 @@ void ControleurOngletClients::configurerFragmentClients()
     fragmentClients = new Fragment(splitter);
     fragmentClients->setEtiquette(tr("Clients"));
     fragmentClients->retirerCaseCocher();
-    QObject::connect(fragmentClients, SIGNAL(clicCreer()), this, SLOT(ajouterClient()));
-    QObject::connect(fragmentClients, SIGNAL(clicEditer()), this, SLOT(modifierClient()));
-    QObject::connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
-    QObject::connect(fragmentClients, SIGNAL(rechercher(QString)), this, SLOT(filtrerClients(QString)));
-    QObject::connect(fragmentClients, SIGNAL(doubleClicModele()), this, SLOT(voirClient()));
-    QObject::connect(Application::getInstance(), SIGNAL(clientModifie()), this, SLOT(rafraichirClients()));
-    QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rafraichirClients()));
-    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rechargerClients()));
-    QObject::connect(Application::getInstance(), SIGNAL(nombreClientsChange()), this, SLOT(rechargerClients()));
+    boutonEffacerClient = fragmentClients->ajouterBoutonNonConnecte(4, tr("Effacer"), QIcon(":/Images/edit-delete"));
+    boutonEffacerClient->setEnabled(false);
+    connect(boutonEffacerClient, SIGNAL(clicked()), this, SLOT(effacerClient()));
+    connect(fragmentClients, SIGNAL(selectionValide(bool)), this, SLOT(activerBoutonEffacerClient(bool)));
+    connect(fragmentClients, SIGNAL(clicCreer()), this, SLOT(ajouterClient()));
+    connect(fragmentClients, SIGNAL(clicEditer()), this, SLOT(modifierClient()));
+    connect(fragmentClients, SIGNAL(clicVoir()), this, SLOT(voirClient()));
+    connect(fragmentClients, SIGNAL(rechercher(QString)), this, SLOT(filtrerClients(QString)));
+    connect(fragmentClients, SIGNAL(doubleClicModele()), this, SLOT(voirClient()));
+    connect(Application::getInstance(), SIGNAL(clientModifie()), this, SLOT(rafraichirClients()));
+    connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rafraichirClients()));
+    connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(rechargerClients()));
+    connect(Application::getInstance(), SIGNAL(nombreClientsChange()), this, SLOT(rechargerClients()));
 }
 
 void ControleurOngletClients::configurerFragmentAppareils()
@@ -53,19 +58,19 @@ void ControleurOngletClients::configurerFragmentAppareils()
     fragmentAppareils->retirerCaseCocher();
     fragmentAppareils->retirerChamp();
     boutonEffacerAppareil = fragmentAppareils->ajouterBoutonNonConnecte(4, tr("Effacer"), QIcon(":/Images/edit-delete"));
-    QObject::connect(boutonEffacerAppareil, SIGNAL(clicked()), this, SLOT(effacerAppareil()));
-    QObject::connect(fragmentAppareils, SIGNAL(selectionValide(bool)), this, SLOT(activerBoutonEffacerAppareil(bool)));
-    QObject::connect(fragmentAppareils, SIGNAL(clicCreer()), this, SLOT(ajouterAppareil()));
-    QObject::connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-    QObject::connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
-    QObject::connect(fragmentAppareils, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
-    QObject::connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichirAppareils()));
-    QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rafraichirAppareils()));
-    QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rechargerAppareils()));
-    QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
-    QObject::connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
-    QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
-    QObject::connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(hide()));
+    connect(boutonEffacerAppareil, SIGNAL(clicked()), this, SLOT(effacerAppareil()));
+    connect(fragmentAppareils, SIGNAL(selectionValide(bool)), this, SLOT(activerBoutonEffacerAppareil(bool)));
+    connect(fragmentAppareils, SIGNAL(clicCreer()), this, SLOT(ajouterAppareil()));
+    connect(fragmentAppareils, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
+    connect(fragmentAppareils, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
+    connect(fragmentAppareils, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
+    connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichirAppareils()));
+    connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rafraichirAppareils()));
+    connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(rechargerAppareils()));
+    connect(fragmentClients, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerAppareils(int)));
+    connect(fragmentClients, SIGNAL(modeleSelectionne(int)), fragmentAppareils, SLOT(show()));
+    connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(relacherModele()));
+    connect(fragmentClients, SIGNAL(modeleRelache()), fragmentAppareils, SLOT(hide()));
 }
 
 void ControleurOngletClients::configurerFragmentFiches()
@@ -79,17 +84,17 @@ void ControleurOngletClients::configurerFragmentFiches()
     fragmentFiches->boutonModifier()->deleteLater();
     fragmentFiches->boutonVoir()->deleteLater();
     boutonTraiter = fragmentFiches->ajouterBouton(4, tr("Traiter"), QIcon(":/Images/document-edit-sign"));
-    QObject::connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));
-    QObject::connect(fragmentFiches, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
-    QObject::connect(fragmentFiches, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
-    QObject::connect(fragmentFiches, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
-    QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
-    QObject::connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
-    QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
-    QObject::connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
-    QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
-    QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
-    QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
+    connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));
+    connect(fragmentFiches, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
+    connect(fragmentFiches, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
+    connect(fragmentFiches, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
+    connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), this, SLOT(peuplerFiches(int)));
+    connect(fragmentAppareils, SIGNAL(modeleSelectionne(int)), fragmentFiches, SLOT(show()));
+    connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(relacherModele()));
+    connect(fragmentAppareils, SIGNAL(modeleRelache()), fragmentFiches, SLOT(hide()));
+    connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
+    connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
+    connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
 }
 
 // Clients
@@ -117,6 +122,13 @@ void ControleurOngletClients::modifierClient() const
     }
 }
 
+void ControleurOngletClients::effacerClient() const
+{
+    if (fragmentClients->idModele() != -1) {
+        ControleurClients::effacerClient(fragmentClients->idModele());
+    }
+}
+
 void ControleurOngletClients::voirClient() const
 {
     if (fragmentClients->idModele() != -1) {
@@ -138,6 +150,15 @@ void ControleurOngletClients::filtrerClients(const QString &filtre)
         resultats->setQuery(requete);
         fragmentClients->peuplerTableau(resultats);
         fragmentClients->cacherColonneId();
+    }
+}
+
+void ControleurOngletClients::activerBoutonEffacerClient(const bool &actif) const
+{
+    if (!actif) {
+        boutonEffacerClient->setEnabled(false);
+    } else {
+        boutonEffacerClient->setEnabled(MappeurAppareils::nombreAppareils(fragmentClients->idModele()) == 0);
     }
 }
 

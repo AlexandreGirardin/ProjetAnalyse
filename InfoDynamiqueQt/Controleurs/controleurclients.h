@@ -50,6 +50,14 @@ public slots:
      * Lance la visualisation d'un client
      */
     static void voirClient(const int &idClient, const bool &modal = false);
+
+    /**
+     * @brief effacerClient
+     * Lance la suppression d'un client
+     * Ne fonctionnera que si le client n'a pas d'appareil
+     * @param idClient L'id du client à effacer
+     */
+    static void effacerClient(const int &idClient);
 };
 
 #endif // CONTROLEURGESTIONCLIENT_H

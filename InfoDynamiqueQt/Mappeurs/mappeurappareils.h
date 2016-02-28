@@ -30,6 +30,14 @@ public:
     static QList<Appareil*>* appareilsPourClient(const int &idClient);
 
     /**
+     * @brief nombreAppareils
+     * Retourne le nombre d'appareils appartenant à un client
+     * @param idClient Le client à chercher
+     * @return Le nombre total d'appareils du client
+     */
+    static int nombreAppareils(const int &idClient);
+
+    /**
      * @brief inserer
      * Insère un nouvel appareil dans la base de données
      * @param appareil L'appareil à ajouter

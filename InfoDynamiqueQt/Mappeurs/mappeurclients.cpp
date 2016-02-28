@@ -48,6 +48,12 @@ bool MappeurClients::mettreAJour(const Client *client)
     return ecrire(client, commande);
 }
 
+bool MappeurClients::supprimer(const Client *client)
+{
+    const QString commande("DELETE FROM clients WHERE id=:id");
+    return ecrire(client, commande);
+}
+
 Client* MappeurClients::mapper(const QSqlRecord &ligne)
 {
     Client* client = new Client();

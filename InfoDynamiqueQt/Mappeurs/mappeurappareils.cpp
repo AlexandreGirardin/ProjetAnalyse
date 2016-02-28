@@ -34,6 +34,19 @@ QList<Appareil*>* MappeurAppareils::appareilsPourClient(const int &idClient)
     return mapper(requete);
 }
 
+int MappeurAppareils::nombreAppareils(const int &idClient)
+{
+    int nombre = -1;
+    QSqlQuery requete(*Application::bd);
+    requete.prepare("SELECT count(*) as 'nb' FROM appareils WHERE idClient=:idClient");
+    requete.bindValue(":idClient", idClient);
+    requete.exec();
+    if (requete.next()) {
+        nombre = requete.record().value("nb").toInt();
+    }
+    return nombre;
+}
+
 Appareil* MappeurAppareils::mapper(const QSqlRecord &ligne)
 {
     Appareil* appareil = new Appareil();

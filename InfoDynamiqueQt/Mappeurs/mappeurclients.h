@@ -37,6 +37,14 @@ public:
      */
     static bool mettreAJour(const Client* client);
 
+    /**
+     * @brief supprimer
+     * Efface un client de la base de données
+     * @param client Le client à supprimer
+     * @return Succès
+     */
+    static bool supprimer(const Client* client);
+
 private:
 
     /**

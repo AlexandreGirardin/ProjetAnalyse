@@ -45,6 +45,9 @@ private:
     // Le fragment des fiches
     Fragment* fragmentFiches;
 
+    // Le bouton de suppression de client
+    QPushButton* boutonEffacerClient;
+
     // Le bouton de suppression d'appareil
     QPushButton* boutonEffacerAppareil;
 
@@ -107,6 +110,13 @@ public slots:
     void modifierClient() const;
 
     /**
+     * @brief effacerClient
+     * Lance la suppression du client sélectionné
+     * Ne supprime qu'un client qui n'a aucun appareil
+     */
+    void effacerClient() const;
+
+    /**
      * @brief peuplerAppareils
      * Peuple la table de fragmentAppareils avec tous les appareils du client donné
      * @param int L'id du client
@@ -125,13 +135,6 @@ public slots:
      * Lance la modification de l'appareil sélectionné
      */
     void modifierAppareil() const;
-
-    /**
-     * @brief activerBoutonEffacerAppareil
-     * Change l'état du bouton de suppression d'appareil
-     * @param actif Si un appareil est sélectionné
-     */
-    void activerBoutonEffacerAppareil(const bool &actif) const;
 
     /**
      * @brief effacerAppareil
@@ -167,6 +170,20 @@ public slots:
     void filtrerClients(const QString &filtre);
 
 private slots:
+
+    /**
+     * @brief activerBoutonEffacerClient
+     * Change l'état du bouton de suppression de client
+     * @param actif Si un client est sélectionné
+     */
+    void activerBoutonEffacerClient(const bool &actif) const;
+
+    /**
+     * @brief activerBoutonEffacerAppareil
+     * Change l'état du bouton de suppression d'appareil
+     * @param actif Si un appareil est sélectionné
+     */
+    void activerBoutonEffacerAppareil(const bool &actif) const;
 
     /**
      * @brief modifierClient
