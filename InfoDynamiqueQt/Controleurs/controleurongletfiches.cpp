@@ -18,17 +18,15 @@
 ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     : QObject(vue)
 {
-    requeteFiches = RequetesSQL::afficherFichesActives;
     fragment = new Fragment();
     fragment->retirerEtiquette();
     fragment->boutonAjouter()->deleteLater();
     fragment->boutonModifier()->deleteLater();
     fragment->boutonVoir()->deleteLater();
     fragment->caseCocher()->setText(tr("Afficher toutes les fiches"));
-    boutonTraiter = fragment->ajouterBouton(4);
-    boutonTraiter->setText(tr("Traiter"));
-    boutonTraiter->setIcon(QIcon(":/Images/document-edit-sign"));
     vue->layout()->addWidget(fragment);
+
+    boutonTraiter = fragment->ajouterBouton(4, tr("Traiter"), QIcon(":/Images/document-edit-sign"));
 
     connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
     connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
@@ -39,6 +37,7 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
     connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
     fragment->champ()->setFocus();
+    fragment->caseCocher()->setChecked(true);
 }
 
 void ControleurOngletFiches::peuplerFiches()
@@ -62,8 +61,8 @@ void ControleurOngletFiches::filtrerFiches(const QString &filtre)
     } else {
         QSqlQuery requete = QSqlQuery(*Application::bd);
         requete.prepare(*requeteFichesFiltre);
-        const QString* metacaractere = new QString("%");
-        requete.bindValue(":filtre", *metacaractere + filtre + *metacaractere);
+        const QString meta = *RequetesSQL::meta;
+        requete.bindValue(":filtre", meta + filtre + meta);
         requete.exec();
         QSqlQueryModel* resultats = new QSqlQueryModel(this);
         resultats->setQuery(requete);
