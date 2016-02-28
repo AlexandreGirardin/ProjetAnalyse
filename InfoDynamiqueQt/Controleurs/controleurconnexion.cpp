@@ -30,7 +30,7 @@ void ControleurConnexion::connecterDossiers()
 {
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     vue = new VueConnexion();
-    QObject::connect(vue, SIGNAL(testerConnexion()), this, SLOT(sonderHote()));
+    connect(vue, SIGNAL(testerConnexion()), this, SLOT(sonderHote()));
     if (vue->exec() == vue->Accepted) {
         m_bd.setDatabaseName(vue->getNomBD());
         if (!m_bd.open()) {

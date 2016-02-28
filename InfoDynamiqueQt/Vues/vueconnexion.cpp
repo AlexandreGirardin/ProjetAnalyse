@@ -21,7 +21,7 @@ VueConnexion::VueConnexion(QWidget *parent) :
     ui->champPort->setValue(parametres.value("connexion/port", 3307).toInt());
     ui->champUsager->setText(parametres.value("connexion/usager","root").toString());
     ui->boutonConnecter->setDefault(true);
-    QObject::connect(ui->boutonConnecter, SIGNAL(clicked()), this, SIGNAL(testerConnexion()));
+    connect(ui->boutonConnecter, SIGNAL(clicked()), this, SIGNAL(testerConnexion()));
     configurerBoutonOk();
 }
 
@@ -34,13 +34,13 @@ void VueConnexion::configurerBoutonOk()
 {
     QPushButton* boutonOk = ui->buttonBox->button(QDialogButtonBox::Ok);
     boutonOk->setEnabled(false);
-    QObject::connect(ui->listeBd, SIGNAL(clicked(QModelIndex)), this, SLOT(activerBoutonOk()));
-    QObject::connect(ui->listeBd, SIGNAL(activated(QModelIndex)), this, SLOT(activerBoutonOk()));
-    QObject::connect(ui->champHote, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
-    QObject::connect(ui->champPort, SIGNAL(valueChanged(int)), this, SLOT(boutonConnecterParDefaut()));
-    QObject::connect(ui->champUsager, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
-    QObject::connect(ui->champMDP, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
-    QObject::connect(ui->listeBd, SIGNAL(doubleClicked(QModelIndex)), boutonOk, SIGNAL(clicked()));
+    connect(ui->listeBd, SIGNAL(clicked(QModelIndex)), this, SLOT(activerBoutonOk()));
+    connect(ui->listeBd, SIGNAL(activated(QModelIndex)), this, SLOT(activerBoutonOk()));
+    connect(ui->champHote, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
+    connect(ui->champPort, SIGNAL(valueChanged(int)), this, SLOT(boutonConnecterParDefaut()));
+    connect(ui->champUsager, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
+    connect(ui->champMDP, SIGNAL(textChanged(QString)), this, SLOT(boutonConnecterParDefaut()));
+    connect(ui->listeBd, SIGNAL(doubleClicked(QModelIndex)), boutonOk, SIGNAL(clicked()));
 }
 
 QString VueConnexion::getNomBD() const

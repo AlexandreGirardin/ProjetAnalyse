@@ -55,7 +55,7 @@ void ControleurEnsembles::voirEnsemble(const int &idEnsemble, const bool &modal)
         vue->setWindowTitle(tr("Ensemble de tâches"));
         assignerEnsemble(vue, ensemble);
         vue->setActions(ensemble->actions());
-        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
+        connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
     ensemble->deleteLater();

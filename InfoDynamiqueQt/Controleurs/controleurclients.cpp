@@ -55,7 +55,7 @@ void ControleurClients::voirClient(const int &idClient, const bool &modal)
         vue->setTelephone(client->telephone());
         vue->setAdresse(client->adresse());
         vue->setCourriel(client->courriel());
-        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
+        connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
         client->deleteLater();
     }

@@ -7,7 +7,7 @@ ChampFormulaire::ChampFormulaire(const QString& raison, QWidget *parent) :
 {
     valide = false;
     ui->setupUi(this);
-    QObject::connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(valeurChangee()));
+    connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(valeurChangee()));
     ui->iconeStatut->setToolTip(raison);
 }
 

@@ -58,7 +58,7 @@ void ControleurAppareils::voirAppareil(const int &idAppareil, const bool &modal)
         vue->setModal(modal);
         vue->setWindowTitle(tr("Appareil"));
         assignerAppareil(vue, appareil);
-        QObject::connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
+        connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
         vue->show();
     }
     appareil->deleteLater();

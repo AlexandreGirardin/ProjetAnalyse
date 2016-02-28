@@ -142,6 +142,6 @@ void Application::erreur(const QString &message, const QString &titre, QMessageB
 void Application::verifierParesseux()
 {
     if (clientsCharges && fichesChargees && appareilsCharges && actionsChargees) {
-        QObject::disconnect(paresseux);
+        disconnect(paresseux);
     }
 }

@@ -20,8 +20,8 @@ Fragment::Fragment(QWidget* parent) : QWidget(parent), ui(new Ui::VueFragment)
     configurerBoutonVoir();
     configurerCase();
     configurerChamp();
-    QObject::connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
-    QObject::connect(ui->tableau, SIGNAL(doubleClicked(QModelIndex)), this, SIGNAL(doubleClicModele()));
+    connect(this, SIGNAL(nouvelleSelection(QModelIndex)), this, SLOT(selectionnerModele(QModelIndex)));
+    connect(ui->tableau, SIGNAL(doubleClicked(QModelIndex)), this, SIGNAL(doubleClicModele()));
 }
 
 Fragment::~Fragment()
@@ -45,29 +45,29 @@ void Fragment::setEtiquette(const QString &etiquette) const
 
 void Fragment::configurerBoutonAjouter()
 {
-    QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
+    connect(ui->boutonAjouter, SIGNAL(clicked()), this, SIGNAL(clicCreer()));
 }
 
 void Fragment::configurerBoutonModifier()
 {
-    QObject::connect(ui->boutonModifier, SIGNAL(clicked()), this, SIGNAL(clicEditer()));
-    QObject::connect(this, SIGNAL(selectionValide(bool)), ui->boutonModifier, SLOT(setEnabled(bool)));
+    connect(ui->boutonModifier, SIGNAL(clicked()), this, SIGNAL(clicEditer()));
+    connect(this, SIGNAL(selectionValide(bool)), ui->boutonModifier, SLOT(setEnabled(bool)));
 }
 
 void Fragment::configurerBoutonVoir()
 {
-    QObject::connect(ui->boutonVoir, SIGNAL(clicked()), this, SIGNAL(clicVoir()));
-    QObject::connect(this, SIGNAL(selectionValide(bool)), ui->boutonVoir, SLOT(setEnabled(bool)));
+    connect(ui->boutonVoir, SIGNAL(clicked()), this, SIGNAL(clicVoir()));
+    connect(this, SIGNAL(selectionValide(bool)), ui->boutonVoir, SLOT(setEnabled(bool)));
 }
 
 void Fragment::configurerCase()
 {
-    QObject::connect(ui->caseCocher, SIGNAL(toggled(bool)), this, SLOT(basculerCase(bool)));
+    connect(ui->caseCocher, SIGNAL(toggled(bool)), this, SLOT(basculerCase(bool)));
 }
 
 void Fragment::configurerChamp()
 {
-    QObject::connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(rechercher(QString)));
+    connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(rechercher(QString)));
 }
 
 int Fragment::colonneId() const
@@ -114,7 +114,7 @@ QPushButton* Fragment::boutonVoir() const
 QPushButton* Fragment::ajouterBouton(const int &index, const QString &texte, const QIcon &icone)
 {
     QPushButton* nouveau = ajouterBoutonNonConnecte(index, texte, icone);
-    QObject::connect(this, SIGNAL(selectionValide(bool)), nouveau, SLOT(setEnabled(bool)));
+    connect(this, SIGNAL(selectionValide(bool)), nouveau, SLOT(setEnabled(bool)));
     return nouveau;
 }
 
@@ -179,7 +179,7 @@ void Fragment::peuplerTableau(QAbstractTableModel* valeurs)
     modeleTriable->setSourceModel(valeurs);
     delete ui->tableau->selectionModel();
     ui->tableau->setModel(modeleTriable);
-    QObject::connect(ui->tableau->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(signalerSelection(QModelIndex, QModelIndex)));
+    connect(ui->tableau->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(signalerSelection(QModelIndex, QModelIndex)));
     ui->tableau->resizeColumnsToContents();
     ui->tableau->sortByColumn(0, Qt::AscendingOrder);
     relacherModele();

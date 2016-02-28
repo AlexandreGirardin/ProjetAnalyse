@@ -18,16 +18,16 @@ VueGestionEnsemble::VueGestionEnsemble(QWidget* parent) :
     ui->formLayout->setWidget(0,QFormLayout::FieldRole, nom);
     configurerBoutonOk();
     setTabOrder(nom->getChamp(), ui->champDescription);
-    QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
+    connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
     ui->boutonAjouter->setEnabled(false);
     ui->boutonRetirer->setEnabled(false);
-    QObject::connect(ui->listeExistantes, SIGNAL(activated(QModelIndex)), this, SLOT(horsEnsembleSelectionnee()));
-    QObject::connect(ui->listeExistantes, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(ajouter()));
-    QObject::connect(ui->boutonAjouter, SIGNAL(clicked()), this, SLOT(ajouter()));
-    QObject::connect(ui->listeSelectionnees, SIGNAL(clicked(QModelIndex)), this, SLOT(dansEnsembleSelectionnee()));
-    QObject::connect(ui->listeSelectionnees, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(retirer()));
-    QObject::connect(ui->boutonRetirer, SIGNAL(clicked()), this, SLOT(retirer()));
-    QObject::connect(ui->boutonNouvelle, SIGNAL(clicked()), this, SLOT(creerAction()));
+    connect(ui->listeExistantes, SIGNAL(activated(QModelIndex)), this, SLOT(horsEnsembleSelectionnee()));
+    connect(ui->listeExistantes, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(ajouter()));
+    connect(ui->boutonAjouter, SIGNAL(clicked()), this, SLOT(ajouter()));
+    connect(ui->listeSelectionnees, SIGNAL(clicked(QModelIndex)), this, SLOT(dansEnsembleSelectionnee()));
+    connect(ui->listeSelectionnees, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(retirer()));
+    connect(ui->boutonRetirer, SIGNAL(clicked()), this, SLOT(retirer()));
+    connect(ui->boutonNouvelle, SIGNAL(clicked()), this, SLOT(creerAction()));
 }
 
 VueGestionEnsemble::~VueGestionEnsemble()
@@ -71,9 +71,9 @@ void VueGestionEnsemble::configurerBoutonOk()
 {
     QPushButton* boutonOk = ui->buttonBox->button(QDialogButtonBox::Save);
     boutonOk->setEnabled(false);
-    QObject::connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
     boutonOk->setEnabled(false);
-    QObject::connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));
+    connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));
 }
 
 void VueGestionEnsemble::setNom(const QString &valeur)

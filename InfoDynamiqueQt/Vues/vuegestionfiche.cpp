@@ -14,7 +14,7 @@ VueGestionFiche::VueGestionFiche(QWidget* parent) :
     ui(new Ui::VueGestionFiche)
 {
     ui->setupUi(this);
-    QObject::connect(ui->comboEnsemble, SIGNAL(currentIndexChanged(int)), this, SLOT(peuplerTaches()));
+    connect(ui->comboEnsemble, SIGNAL(currentIndexChanged(int)), this, SLOT(peuplerTaches()));
 }
 
 VueGestionFiche::~VueGestionFiche()

@@ -25,13 +25,13 @@ void ControleurOngletAppareils::charger(QWidget* vue)
 
     configurerBoutonSupprimer();
 
-    QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
-    QObject::connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
-    QObject::connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
-    QObject::connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichir()));
-    QObject::connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
-    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
-    QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
+    connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerAppareils(QString)));
+    connect(fragment, SIGNAL(clicVoir()), this, SLOT(voirAppareil()));
+    connect(fragment, SIGNAL(clicEditer()), this, SLOT(modifierAppareil()));
+    connect(Application::getInstance(), SIGNAL(appareilModifie()), this, SLOT(rafraichir()));
+    connect(Application::getInstance(), SIGNAL(nombreAppareilsChange()), this, SLOT(recharger()));
+    connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
+    connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(voirAppareil()));
     fragment->champ()->setFocus();
 
     peuplerAppareils();
@@ -41,8 +41,8 @@ void ControleurOngletAppareils::configurerBoutonSupprimer()
 {
     boutonSupprimer = fragment->ajouterBoutonNonConnecte(4, tr("Supprimer"), QIcon(":/Images/edit-delete"));
     boutonSupprimer->setEnabled(false);
-    QObject::connect(fragment, SIGNAL(selectionValide(bool)), this, SLOT(activerBoutonSupprimer(bool)));
-    QObject::connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimer()));
+    connect(fragment, SIGNAL(selectionValide(bool)), this, SLOT(activerBoutonSupprimer(bool)));
+    connect(boutonSupprimer, SIGNAL(clicked()), this, SLOT(supprimer()));
 }
 
 void ControleurOngletAppareils::activerBoutonSupprimer(const bool actif)

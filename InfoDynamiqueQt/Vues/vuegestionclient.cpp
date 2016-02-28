@@ -26,31 +26,31 @@ void VueGestionClient::configurerPrenom()
 {
     prenom = new ChampFormulaire(tr("Ce champ est requis."), this);
     ui->formLayout->setWidget(0, QFormLayout::FieldRole, prenom);
-    QObject::connect(prenom, SIGNAL(valeurChangee()), this, SLOT(verifierPrenom()));
+    connect(prenom, SIGNAL(valeurChangee()), this, SLOT(verifierPrenom()));
 }
 
 void VueGestionClient::configurerNom()
 {
     nom = new ChampFormulaire(tr("Ce champ est requis."), this);
     ui->formLayout->setWidget(1, QFormLayout::FieldRole, nom);
-    QObject::connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
+    connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
 }
 
 void VueGestionClient::configurerTelephone()
 {
     telephone = new ChampFormulaire(tr("Ce champ est requis."), this);
     ui->formLayout->setWidget(2, QFormLayout::FieldRole, telephone);
-    QObject::connect(telephone, SIGNAL(valeurChangee()), this, SLOT(verifierTelephone()));
+    connect(telephone, SIGNAL(valeurChangee()), this, SLOT(verifierTelephone()));
 }
 
 void VueGestionClient::configurerBoutonOk()
 {
     QPushButton* boutonOk = ui->buttonBox->button(QDialogButtonBox::Save);
     boutonOk->setEnabled(false);
-    QObject::connect(prenom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
-    QObject::connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
-    QObject::connect(telephone, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
-    QObject::connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));
+    connect(prenom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    connect(telephone, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    connect(this, SIGNAL(champsRequisModifies(bool)), boutonOk, SLOT(setEnabled(bool)));
 }
 
 VueGestionClient::~VueGestionClient()

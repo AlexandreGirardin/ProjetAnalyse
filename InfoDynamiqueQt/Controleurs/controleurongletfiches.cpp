@@ -30,14 +30,14 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     boutonTraiter->setIcon(QIcon(":/Images/document-edit-sign"));
     vue->layout()->addWidget(fragment);
 
-    QObject::connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
-    QObject::connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
-    QObject::connect(fragment, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
-    QObject::connect(fragment, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
-    QObject::connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
-    QObject::connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichir()));
-    QObject::connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
-    QObject::connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
+    connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
+    connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
+    connect(fragment, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
+    connect(fragment, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
+    connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
+    connect(Application::getInstance(), SIGNAL(ficheModifiee()), this, SLOT(rafraichir()));
+    connect(Application::getInstance(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
+    connect(Application::getInstance(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
     fragment->champ()->setFocus();
 }
 
