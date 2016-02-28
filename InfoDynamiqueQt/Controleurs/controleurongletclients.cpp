@@ -75,10 +75,8 @@ void ControleurOngletClients::configurerFragmentAppareils()
 
 void ControleurOngletClients::configurerFragmentFiches()
 {
-    commandeFiches = RequetesSQL::toutesFichesPourAppareil;
     fragmentFiches = new Fragment(splitter);
     fragmentFiches->setEtiquette(tr("Fiches"));
-    fragmentFiches->caseCocher()->setChecked(true);
     fragmentFiches->caseCocher()->setText(tr("Afficher toutes les fiches"));
     fragmentFiches->retirerChamp();
     fragmentFiches->boutonModifier()->deleteLater();
@@ -95,6 +93,7 @@ void ControleurOngletClients::configurerFragmentFiches()
     connect(Application::get(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
     connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
     connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
+    fragmentFiches->caseCocher()->setChecked(true);
 }
 
 // Clients

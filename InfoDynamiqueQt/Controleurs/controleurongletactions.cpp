@@ -34,8 +34,6 @@ void ControleurOngletActions::charger(QWidget* vue)
 
 void ControleurOngletActions::configurerFragmentActions()
 {
-    requeteActions = RequetesSQL::afficherActionsActives;
-    requeteActionsFiltre = RequetesSQL::filtrerActionsActives;
     fragmentActions = new Fragment(splitter);
     fragmentActions->setEtiquette(tr("Actions"));
     fragmentActions->caseCocher()->setText(tr("Afficher toutes les actions"));
@@ -50,6 +48,7 @@ void ControleurOngletActions::configurerFragmentActions()
     connect(Application::get(), SIGNAL(actionModifiee()), this, SLOT(rafraichirActions()));
     connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(rafraichirActions()));
     connect(Application::get(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
+    fragmentActions->caseCocher()->setChecked(true);
 
     configurerBoutonEtat();
     configurerBoutonSupprimerAction();
