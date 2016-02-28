@@ -157,7 +157,7 @@ void ControleurOngletClients::activerBoutonEffacerClient(const bool &actif) cons
     if (!actif) {
         boutonEffacerClient->setEnabled(false);
     } else {
-        int usages = MappeurAppareils::nombreAppareils(fragmentClients->idModele());
+        int usages = MappeurAppareils::nombrePourClient(fragmentClients->idModele());
         if (usages == 0) {
             boutonEffacerClient->setEnabled(true);
             boutonEffacerClient->setToolTip("");
@@ -212,7 +212,7 @@ void ControleurOngletClients::activerBoutonEffacerAppareil(const bool &actif) co
     if (!actif) {
         boutonEffacerAppareil->setEnabled(false);
     } else {
-        boutonEffacerAppareil->setEnabled(MappeurFiches::nombreFiches(fragmentAppareils->idModele()) == 0);
+        boutonEffacerAppareil->setEnabled(MappeurFiches::nombrePourAppareil(fragmentAppareils->idModele()) == 0);
     }
 }
 

@@ -16,14 +16,14 @@ class MappeurPieces {
 public:
 
     /**
-     * @brief MappeurPieces::getPiece
+     * @brief get
      * @param id Le numéro de la pièce à mapper
      * @return La pièce si elle existe, NULL autrement
      */
     static Piece* get(const int &id);
 
     /**
-     * @brief MappeurPieces::getPieces
+     * @brief get
      * @return La liste de toutes les pièces de la base de données
      */
     static QList<Piece*>* get();
@@ -34,7 +34,7 @@ public:
      * @param idFche La fiche cible
      * @return La liste des pieces appartenant à la fiche
      */
-    static QList<Piece*>* piecesPourFiche(const int &idFiche);
+    static QList<Piece*>* pourFiche(const int &idFiche);
 
     static bool inserer(Piece* piece, const int &idFiche);
 
@@ -46,7 +46,7 @@ public:
 
     static bool supprimer(const QList<Piece*>* pieces);
 
-    static bool syncPieces(const Fiche* fiche);
+    static bool sync(const Fiche* fiche);
 
 private:
 

@@ -14,36 +14,42 @@ class MappeurTaches {
 public:
 
     /**
-     * @brief getTache
+     * @brief get
      * @param id Le numéro de la tache à mapper
      * @return Le fabricant s'il existe, NULL autrement
      */
     static Tache* get(const int &id);
 
     /**
-     * @brief getTaches
+     * @brief get
      * Construit toutes les tâches de la base de données
      * @return La liste de tous les ensembles de la base de données.
      */
     static QList<Tache*>* get();
 
+    /**
+     * @brief get
+     * Retourne toutes les tâches dont l'id se retrouve dans un liste
+     * @param listeId La liste des tâches à mapper
+     * @return Les tâches
+     */
     static QList<Tache*>* get(const QList<int>* listeId);
 
     /**
-     * @brief tachesPourFiche
+     * @brief pourFiche
      * Retourne toutes les tâches associées à une fiche donnée
      * @param idFiche L'id de la fiche à chercher
      * @return La liste des tâches
      */
-    static QList<Tache*>* tachesPourFiche(const int &idFiche);
+    static QList<Tache*>* pourFiche(const int &idFiche);
 
     /**
-     * @brief tachesPourAction
+     * @brief pourAction
      * Retourne le nombre total de tâches associées à une action donnée
      * @param idAction L'id de l'action à chercher
      * @return Le nombre de tâches
      */
-    static int tachesPourAction(const int &idAction);
+    static int pourAction(const int &idAction);
 
     // TODO
     static int prioriteMinimale();

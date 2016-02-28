@@ -15,7 +15,7 @@ class MappeurEnsembles {
 public:
 
     /**
-     * @brief getEnsemble
+     * @brief get
      * Construit un ensemble donné
      * @param id Le numéro de l'ensemble à mapper
      * @return L'ensemble s'il existe, NULL autrement
@@ -23,7 +23,7 @@ public:
     static EnsembleActions* get(const int &id);
 
     /**
-     * @brief getActions
+     * @brief get
      * Construit tous les ensembles de la base de données
      * @return La liste de tous les ensembles de la base de données.
      */

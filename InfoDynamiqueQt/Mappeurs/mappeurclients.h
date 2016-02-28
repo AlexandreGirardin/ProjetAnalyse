@@ -15,7 +15,7 @@ class MappeurClients {
 public:
 
     /**
-     * @brief getClient
+     * @brief get
      * @param id Le numéro du client à mapper
      * @return Le client s'il existe, NULL autrement
      */

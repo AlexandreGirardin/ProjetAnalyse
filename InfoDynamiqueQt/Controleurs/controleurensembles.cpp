@@ -84,7 +84,7 @@ void ControleurEnsembles::assignerEnsemble(VueGestionEnsemble* vue, const Ensemb
 {
     vue->setNom(ensemble->nom());
     vue->setDescription(ensemble->description());
-    vue->setActions(MappeurActions::actionsHorsEnsemble(ensemble->id()), MappeurActions::actionsDansEnsemble(ensemble->id()));
+    vue->setActions(MappeurActions::horsEnsemble(ensemble->id()), MappeurActions::dansEnsemble(ensemble->id()));
 }
 
 void ControleurEnsembles::assignerEnsemble(VueEnsemble* vue, const EnsembleActions* ensemble)

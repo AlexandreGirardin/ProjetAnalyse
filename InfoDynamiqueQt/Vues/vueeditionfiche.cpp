@@ -256,7 +256,7 @@ void VueEditionFiche::detailsAppareil()
 
 void VueEditionFiche::ajouterTache()
 {
-    QList<Action*>* actionsRestantes = MappeurActions::getSauf(getIdActions());
+    QList<Action*>* actionsRestantes = MappeurActions::sauf(getIdActions());
     if (!actionsRestantes->isEmpty()) {
         VueAjouterTache* vue = new VueAjouterTache(this);
         vue->setActions(actionsRestantes);

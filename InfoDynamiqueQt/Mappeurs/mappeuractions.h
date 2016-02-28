@@ -15,33 +15,41 @@ class MappeurActions {
 public:
 
     /**
-     * @brief getAction
+     * @brief get
      * @param id Le numéro de l'action à mapper
      * @return L'action si elle existe, NULL autrement
      */
     static Action* get(const int &id);
 
     /**
-     * @brief getActions
+     * @brief get
      * @return La liste de toutes les actions de la base de données.
      */
     static QList<Action*>* get();
 
     /**
-     * @brief actionsDansEnsemble
+     * @brief sauf
+     * Retourne toutes les actions dont l'id ne fait pas partie de la liste
+     * @param idExclus La liste d'id d'actions à exclure
+     * @return Les actions restantes
+     */
+    static QList<Action*>* sauf(const QList<int>* idExclus);
+
+    /**
+     * @brief dansEnsemble
      * Trouve les actions faisant partie d'un ensemble donné
      * @param idEnsemble L'id de l'ensemble à chercher
      * @return Toutes les actions qui font partie de l'ensemble
      */
-    static QList<Action*>* actionsDansEnsemble(const int &idEnsemble);
+    static QList<Action*>* dansEnsemble(const int &idEnsemble);
 
     /**
-     * @brief actionsHorsEnsemble
+     * @brief horsEnsemble
      * Trouve les actions ne faisant pas partie d'un ensemble donné
      * @param idEnsemble L'id de l'ensemble à chercher
      * @return Toutes les actions qui ne font pas partie de l'ensemble
      */
-    static QList<Action*>* actionsHorsEnsemble(const int &idEnsemble);
+    static QList<Action*>* horsEnsemble(const int &idEnsemble);
 
     /**
      * @brief mettreAJour
@@ -65,7 +73,7 @@ public:
      * @param action L'action à effacer
      * @return Succès de l'écriture
      */
-    static bool supprimer(Action* action);
+    static bool supprimer(const Action* action);
 
     /**
      * @brief getActions
@@ -82,9 +90,7 @@ public:
      * @param idAction L'action à chercher
      * @return Le nombre de tâches
      */
-    static int nombreTachesPourAction(const int &idAction);
-
-    static QList<Action*>* getSauf(const QList<int>* idExclus);
+    static int tachesPourAction(const int &idAction);
 
 private:
 

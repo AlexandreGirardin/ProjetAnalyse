@@ -32,7 +32,7 @@ QList<Action*>* MappeurActions::get(const QList<int>* listeId)
 {
     QList<Action*>* listeActions = new QList<Action*>;
     for (QList<int>::const_iterator i = listeId->constBegin(); i != listeId->constEnd(); ++i) {
-        Action* action = get((*i));
+        Action* action = get(*i);
         if (action != NULL) {
             listeActions->append(action);
         }
@@ -40,7 +40,7 @@ QList<Action*>* MappeurActions::get(const QList<int>* listeId)
     return listeActions;
 }
 
-QList<Action*>* MappeurActions::getSauf(const QList<int>* idExclus)
+QList<Action*>* MappeurActions::sauf(const QList<int>* idExclus)
 {
     QList<Action*>* listeActions = new QList<Action*>;
     QSqlQuery requete("SELECT * FROM actions ORDER BY nom ASC", *Application::bd);
@@ -55,7 +55,7 @@ QList<Action*>* MappeurActions::getSauf(const QList<int>* idExclus)
     return listeActions;
 }
 
-int MappeurActions::nombreTachesPourAction(const int &idAction)
+int MappeurActions::tachesPourAction(const int &idAction)
 {
     QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT count(*) as 'nombre' FROM taches WHERE idAction=:idAction");
@@ -98,7 +98,7 @@ QList<Action*>* MappeurActions::mapper(QSqlQuery &requete)
     return liste;
 }
 
-QList<Action*>* MappeurActions::actionsDansEnsemble(const int &idEnsemble)
+QList<Action*>* MappeurActions::dansEnsemble(const int &idEnsemble)
 {
     QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM actions a\
@@ -111,7 +111,7 @@ QList<Action*>* MappeurActions::actionsDansEnsemble(const int &idEnsemble)
     return mapper(requete);
 }
 
-QList<Action*>* MappeurActions::actionsHorsEnsemble(const int &idEnsemble)
+QList<Action*>* MappeurActions::horsEnsemble(const int &idEnsemble)
 {
     QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM actions a\
@@ -145,7 +145,7 @@ bool MappeurActions::mettreAJour(const Action* action)
     return succes;
 }
 
-bool MappeurActions::supprimer(Action *action)
+bool MappeurActions::supprimer(const Action* action)
 {
     bool succes = false;
     QString erreur;

@@ -15,14 +15,14 @@ class MappeurFabricants {
 public:
 
     /**
-     * @brief getFabricant
+     * @brief get
      * @param id Le numéro du fabricant à mapper
      * @return le fabricant s'il existe, NULL autrement
      */
     static Fabricant* get(const int &id);
 
     /**
-     * @brief getFabricants
+     * @brief get
      * @return La liste de tous les fabricants de la base de données
      */
     static QList<Fabricant*>* get();

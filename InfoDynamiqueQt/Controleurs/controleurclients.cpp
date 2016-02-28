@@ -63,7 +63,7 @@ void ControleurClients::voirClient(const int &idClient, const bool &modal)
 
 void ControleurClients::effacerClient(const int &idClient)
 {
-    int usages = MappeurAppareils::nombreAppareils(idClient);
+    int usages = MappeurAppareils::nombrePourClient(idClient);
     if (usages == 0) {
         Client* client = MappeurClients::get(idClient);
         if (client != NULL) {

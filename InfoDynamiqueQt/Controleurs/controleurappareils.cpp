@@ -66,7 +66,7 @@ void ControleurAppareils::voirAppareil(const int &idAppareil, const bool &modal)
 
 void ControleurAppareils::effacerAppareil(const int &idAppareil)
 {
-    int usages = MappeurFiches::fichesPourAppareil(idAppareil);
+    int usages = MappeurFiches::pourAppareil(idAppareil);
     if (usages == 0) {
         Appareil* appareil = MappeurAppareils::get(idAppareil);
         QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,

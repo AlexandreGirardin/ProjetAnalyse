@@ -26,7 +26,7 @@ Fiche *MappeurFiches::get(const int &id)
     return fiche;
 }
 
-int MappeurFiches::fichesPourAppareil(const int &idAppareil)
+int MappeurFiches::pourAppareil(const int &idAppareil)
 {
     int nombre = -1;
     const QString commande("SELECT count(*) as 'nb' FROM fiches WHERE idAppareil=:idAppareil");
@@ -40,7 +40,7 @@ int MappeurFiches::fichesPourAppareil(const int &idAppareil)
     return nombre;
 }
 
-int MappeurFiches::nombreFiches(const int &idAppareil)
+int MappeurFiches::nombrePourAppareil(const int &idAppareil)
 {
     QString commande("SELECT count(*) as 'nombre' FROM fiches WHERE idAppareil=:idAppareil");
     QSqlQuery requete(*Application::bd);
@@ -96,7 +96,7 @@ bool MappeurFiches::mettreAJour(const Fiche* fiche)
         succes = MappeurTaches::syncTaches(fiche);
     }
     if (succes) {
-        succes = MappeurPieces::syncPieces(fiche);
+        succes = MappeurPieces::sync(fiche);
     }
     if (succes) {
         bd.commit();
@@ -111,12 +111,12 @@ Fiche *MappeurFiches::mapper(const QSqlRecord &ligne)
     Fiche* fiche = new Fiche();
     fiche->setId(ligne.value("id").toInt());
     fiche->setIdAppareil(ligne.value("idAppareil").toInt());
-    fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
+    fiche->setPieces(MappeurPieces::pourFiche(fiche->id()));
     fiche->setPriorite(ligne.value("priorite").toInt());
     fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value("idStatut").toInt()));
     fiche->setCommentaire(ligne.value("commentaire").toString());
     fiche->setDescription(ligne.value("description").toString());
-    fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
+    fiche->setTaches(MappeurTaches::pourFiche(fiche->id()));
 //    fiche->setTechniciens(MappeurTechniciens::);
     return fiche;
 }
@@ -136,12 +136,12 @@ QList<Fiche*>* MappeurFiches::mapper(QSqlQuery &requete)
         Fiche* fiche = new Fiche();
         fiche->setId(ligne.value(colId).toInt());
         fiche->setIdAppareil(ligne.value(colAppareil).toInt());
-        fiche->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
+        fiche->setPieces(MappeurPieces::pourFiche(fiche->id()));
         fiche->setPriorite(ligne.value(colPriorite).toInt());
         fiche->setStatut(MappeurStatuts::getStatutFiche(ligne.value(colStatut).toInt()));
         fiche->setCommentaire(ligne.value(colCommentaire).toString());
         fiche->setDescription(ligne.value(colDescription).toString());
-        fiche->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
+        fiche->setTaches(MappeurTaches::pourFiche(fiche->id()));
         liste->append(fiche);
     }
     return liste;

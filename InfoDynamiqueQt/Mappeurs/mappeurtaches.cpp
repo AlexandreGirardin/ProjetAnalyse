@@ -44,7 +44,7 @@ QList<Tache*>* MappeurTaches::get(const QList<int>* listeId)
     return taches;
 }
 
-QList<Tache*>* MappeurTaches::tachesPourFiche(const int &idFiche)
+QList<Tache*>* MappeurTaches::pourFiche(const int &idFiche)
 {
     QString commande("SELECT * FROM taches WHERE idFiche=:idFiche");
     QSqlQuery requete(*Application::bd);
@@ -54,7 +54,7 @@ QList<Tache*>* MappeurTaches::tachesPourFiche(const int &idFiche)
     return mapper(requete);
 }
 
-int MappeurTaches::tachesPourAction(const int &idAction)
+int MappeurTaches::pourAction(const int &idAction)
 {
     int nombre = -1;
     QString commande("SELECT count(*) as 'nb' FROM taches WHERE idAction=:idAction");
@@ -82,7 +82,7 @@ bool MappeurTaches::syncTaches(const Fiche* fiche) {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();
     bool succes = false;
-    if (supprimer(tachesPourFiche(fiche->id())) && inserer(fiche->taches())) {
+    if (supprimer(pourFiche(fiche->id())) && inserer(fiche->taches())) {
         succes = true;
     }
     if (succes) {

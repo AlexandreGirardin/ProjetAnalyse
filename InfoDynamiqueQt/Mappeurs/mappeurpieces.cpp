@@ -27,7 +27,7 @@ QList<Piece*>* MappeurPieces::get()
     return mapper(requete);
 }
 
-QList<Piece*>* MappeurPieces::piecesPourFiche(const int &idFiche)
+QList<Piece*>* MappeurPieces::pourFiche(const int &idFiche)
 {
     QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM pieces p\
@@ -132,11 +132,11 @@ bool MappeurPieces::supprimer(const QList<Piece*>* pieces)
     return succes;
 }
 
-bool MappeurPieces::syncPieces(const Fiche* fiche) {
+bool MappeurPieces::sync(const Fiche* fiche) {
     QSqlDatabase bd = *Application::bd;
     bd.transaction();
     bool succes = false;
-    if (supprimer(piecesPourFiche(fiche->id())) && inserer(fiche->pieces(), fiche->id())) {
+    if (supprimer(pourFiche(fiche->id())) && inserer(fiche->pieces(), fiche->id())) {
         succes = true;
     }
     if (succes) {

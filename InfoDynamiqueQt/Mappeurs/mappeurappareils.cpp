@@ -25,7 +25,7 @@ Appareil* MappeurAppareils::get(const int &id)
     return appareil;
 }
 
-QList<Appareil*>* MappeurAppareils::appareilsPourClient(const int &idClient)
+QList<Appareil*>* MappeurAppareils::pourClient(const int &idClient)
 {
     QSqlQuery requete(*Application::bd);
     requete.prepare("SELECT * FROM appareils WHERE idClient=:idClient");
@@ -34,7 +34,7 @@ QList<Appareil*>* MappeurAppareils::appareilsPourClient(const int &idClient)
     return mapper(requete);
 }
 
-int MappeurAppareils::nombreAppareils(const int &idClient)
+int MappeurAppareils::nombrePourClient(const int &idClient)
 {
     int nombre = -1;
     QSqlQuery requete(*Application::bd);

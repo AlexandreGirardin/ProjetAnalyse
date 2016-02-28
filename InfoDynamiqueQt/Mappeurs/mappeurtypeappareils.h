@@ -15,14 +15,14 @@ class MappeurTypeAppareils {
 public:
 
     /**
-     * @brief getTypeAppareil
+     * @brief get
      * @param id Le numéro du type d'appareil à mapper
      * @return Le type d'appareil si il existe, NULL autremeent
      */
     static TypeAppareil* get(const int &idType);
 
     /**
-     * @brief getTypesAppareil
+     * @brief get
      * @return La liste de tous les types d'appareils de la base de données
      */
     static QList<TypeAppareil*>* get();
@@ -30,7 +30,7 @@ public:
 private:
 
     /**
-     * @brief MappeurPieces::mapper
+     * @brief mapper
      * @param ligne La ligne de la base de données à mapper en pièce
      * @return La pièce
      */

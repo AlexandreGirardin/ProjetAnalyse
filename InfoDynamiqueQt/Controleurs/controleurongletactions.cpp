@@ -130,7 +130,7 @@ void ControleurOngletActions::activerBoutonSupprimerAction(const bool &actif)
     if (!actif) {
         boutonSupprimerAction->setEnabled(false);
     } else {
-        int usages = MappeurActions::nombreTachesPourAction(fragmentActions->idModele());
+        int usages = MappeurActions::tachesPourAction(fragmentActions->idModele());
         if (usages == 0) {
             boutonSupprimerAction->setEnabled(true);
             boutonSupprimerAction->setToolTip("");

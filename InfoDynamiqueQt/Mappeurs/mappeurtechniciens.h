@@ -15,14 +15,14 @@ class MappeurTechniciens {
 public:
 
     /**
-     * @brief getTechnicien
+     * @brief get
      * @param id Le numéro du technicien à mapper
      * @return Le technicien s'il existe, NULL autrement
      */
     static Technicien* get(const int &id);
 
     /**
-     * @brief getTechniciens
+     * @brief get
      * @return La liste de tous les techniciens de la base de données
      */
     static QList<Technicien*>* get();

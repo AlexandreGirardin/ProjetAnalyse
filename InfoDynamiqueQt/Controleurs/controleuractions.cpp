@@ -48,7 +48,7 @@ void ControleurActions::modifierAction(const int &idAction)
 
 void ControleurActions::effacerAction(const int &idAction)
 {
-    int usages = MappeurTaches::tachesPourAction(idAction);
+    int usages = MappeurTaches::pourAction(idAction);
     if (usages == 0) {
         Action* action = MappeurActions::get(idAction);
         if (action != NULL) {

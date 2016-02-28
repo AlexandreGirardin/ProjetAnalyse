@@ -15,27 +15,27 @@ class MappeurFiches {
 public:
 
     /**
-     * @brief getFiche
+     * @brief get
      * @param id Le numéro de la fiche à mapper
      * @return le fabricant s'il existe, NULL autrement
      */
     static Fiche* get(const int &id);
 
     /**
-     * @brief fichesPourAppareil
+     * @brief pourAppareil
      * Retourne les fiches associées à un appareil donné
      * @param idAppareil L'id de l'appareil à chercher
      * @return Les fiches de l'appareil
      */
-    static int fichesPourAppareil(const int &idAppareil);
+    static int pourAppareil(const int &idAppareil);
 
     /**
-     * @brief nombreFiches
+     * @brief nombrePourAppareil
      * Retourne le nombre de fiches associées à un appareil donné
      * @param idAppareil L'id de l'appareil à chercher
      * @return Le nombre de fiches de l'appareil
      */
-    static int nombreFiches(const int &idAppareil);
+    static int nombrePourAppareil(const int &idAppareil);
 
     /**
      * @brief inserer

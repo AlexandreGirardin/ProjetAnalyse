@@ -73,8 +73,8 @@ void ControleurFiches::assignerFiche(VueEditionFiche* vue, const Fiche* fiche)
     vue->setIdFiche(fiche->id());
     vue->setCommentaire(fiche->commentaire());
     vue->setDescription(fiche->description());
-    vue->setTaches(MappeurTaches::tachesPourFiche(fiche->id()));
-    vue->setPieces(MappeurPieces::piecesPourFiche(fiche->id()));
+    vue->setTaches(MappeurTaches::pourFiche(fiche->id()));
+    vue->setPieces(MappeurPieces::pourFiche(fiche->id()));
     Appareil* appareil = MappeurAppareils::get(fiche->idAppareil());
     vue->setAppareil(appareil->id(), appareil->nomType() + " " + appareil->nomFabricant());
     Client* client = MappeurClients::get(appareil->idClient());
