@@ -51,22 +51,66 @@ public:
      */
     static int pourAction(const int &idAction);
 
-    // TODO
+    /**
+     * @brief prioriteMinimale
+     * @return La priorité minimale permise pour une tâche
+     * @todo L'écrire dans la base de données
+     */
     static int prioriteMinimale();
 
-    // TODO
+    /**
+     * @brief prioriteMaximale
+     * @return La priorité maximale permise pour une tâche
+     * @todo L'écrire dans la base de données
+     */
     static int prioriteMaximale();
 
+    /**
+     * @brief inserer
+     * Insère une nouvelle tâche dans la base de données
+     * @param tache La tâche à insérer
+     * @return Succès
+     */
     static bool inserer(Tache* tache);
 
+    /**
+     * @brief inserer
+     * Insère des nouvelles tâches dans la base de données
+     * @param taches Les tâches à insérer
+     * @return Succès
+     */
     static bool inserer(const QList<Tache*>* taches);
 
+    /**
+     * @brief mettreAJour
+     * Modifie une tâche dans la base de données
+     * @param tache La tâche à mettre à jour
+     * @return Succès
+     */
     static bool mettreAJour(const Tache *tache);
 
+    /**
+     * @brief supprimer
+     * Efface une tâche de la base de données
+     * @param tache La tâche à supprimer
+     * @return Succès
+     */
     static bool supprimer(const Tache* tache);
 
+    /**
+     * @brief supprimer
+     * Efface des tâches de la base de données
+     * @param taches Les tâches à supprimer
+     * @return Succès
+     */
     static bool supprimer(const QList<Tache*>* taches);
 
+    /**
+     * @brief syncTaches
+     * S'assure que seules les tâches actuelles de la fiche soit dans la base de données
+     * @param fiche La fiche dont on souhaite synchroniser les tâches
+     * @return Succès
+     */
     static bool syncTaches(const Fiche* fiche);
 
 private:

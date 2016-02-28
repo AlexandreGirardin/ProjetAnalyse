@@ -28,6 +28,15 @@ public:
     static QList<Action*>* get();
 
     /**
+     * @brief getActions
+     * Mappe une liste d'actions possédant les id donnés
+     * Ne retourne pas d'objets invalide
+     * @param listeId La liste d'id d'actions à mapper
+     * @return La liste des actions mappées
+     */
+    static QList<Action*>* get(const QList<int>* listeId);
+
+    /**
      * @brief sauf
      * Retourne toutes les actions dont l'id ne fait pas partie de la liste
      * @param idExclus La liste d'id d'actions à exclure
@@ -74,15 +83,6 @@ public:
      * @return Succès de l'écriture
      */
     static bool supprimer(const Action* action);
-
-    /**
-     * @brief getActions
-     * Mappe une liste d'actions possédant les id donnés
-     * Ne retourne pas d'objets invalide
-     * @param listeId La liste d'id d'actions à mapper
-     * @return La liste des actions mappées
-     */
-    static QList<Action*>* get(const QList<int>* listeId);
 
     /**
      * @brief nombreTachesPourAction
