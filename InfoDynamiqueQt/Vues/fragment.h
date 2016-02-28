@@ -141,10 +141,18 @@ public:
     QPushButton* ajouterBoutonNonConnecte(const int &index, const QString &texte = 0, const QIcon icone = QIcon());
 
     /**
-     * @brief caseCocher
-     * @return La case à cocher du fragment
+     * @brief setTexteCaseCocher
+     * Assigne le texte de la case à cocher
+     * @param texte Le texte à assigner
      */
-    QPushButton* caseCocher() const;
+    void setTexteCaseCocher(const QString &texte);
+
+    /**
+     * @brief setCaseCochee
+     * Assigne l'état de la case à cocher
+     * @param etat L'état à assigner
+     */
+    void setCaseCochee(const bool &etat);
 
     /**
      * @brief champ

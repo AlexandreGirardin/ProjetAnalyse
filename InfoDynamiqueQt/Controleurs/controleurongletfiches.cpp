@@ -23,7 +23,7 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     fragment->boutonAjouter()->deleteLater();
     fragment->boutonModifier()->deleteLater();
     fragment->boutonVoir()->deleteLater();
-    fragment->caseCocher()->setText(tr("Afficher toutes les fiches"));
+    fragment->setTexteCaseCocher(tr("Afficher toutes les fiches"));
     vue->layout()->addWidget(fragment);
 
     boutonTraiter = fragment->ajouterBouton(4, tr("Traiter"), QIcon(":/Images/document-edit-sign"));
@@ -37,7 +37,7 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(recharger()));
     connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
     fragment->champ()->setFocus();
-    fragment->caseCocher()->setChecked(true);
+    fragment->setCaseCochee(true);
 }
 
 void ControleurOngletFiches::peuplerFiches()

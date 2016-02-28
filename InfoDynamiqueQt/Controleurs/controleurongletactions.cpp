@@ -36,7 +36,7 @@ void ControleurOngletActions::configurerFragmentActions()
 {
     fragmentActions = new Fragment(splitter);
     fragmentActions->setEtiquette(tr("Actions"));
-    fragmentActions->caseCocher()->setText(tr("Afficher toutes les actions"));
+    fragmentActions->setTexteCaseCocher(tr("Afficher toutes les actions"));
     fragmentActions->boutonVoir()->deleteLater();
 
     connect(fragmentActions, SIGNAL(clicCreer()), this, SLOT(creerAction()));
@@ -48,7 +48,7 @@ void ControleurOngletActions::configurerFragmentActions()
     connect(Application::get(), SIGNAL(actionModifiee()), this, SLOT(rafraichirActions()));
     connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(rafraichirActions()));
     connect(Application::get(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
-    fragmentActions->caseCocher()->setChecked(true);
+    fragmentActions->setCaseCochee(true);
 
     configurerBoutonEtat();
     configurerBoutonSupprimerAction();
@@ -173,7 +173,7 @@ void ControleurOngletActions::configurerFragmentEnsembles()
 {
     fragmentEnsembles = new Fragment(splitter);
     fragmentEnsembles->setEtiquette(tr("Ensembles"));
-    fragmentEnsembles->caseCocher()->setHidden(true);
+    fragmentEnsembles->retirerCaseCocher();
     QPushButton* boutonSupprimer = fragmentEnsembles->ajouterBouton(4, tr("Supprimer"), QIcon(":/Images/edit-delete"));
     connect(Application::get(), SIGNAL(ensembleModifie()), this, SLOT(ensembleModifie()));
     connect(fragmentEnsembles, SIGNAL(clicCreer()), this, SLOT(creerEnsemble()));

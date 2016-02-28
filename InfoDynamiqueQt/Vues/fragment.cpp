@@ -125,9 +125,18 @@ QPushButton* Fragment::ajouterBoutonNonConnecte(const int &index, const QString&
     return bouton;
 }
 
-QPushButton* Fragment::caseCocher() const
+void Fragment::setTexteCaseCocher(const QString &texte)
 {
-    return ui->caseCocher;
+    if (ui->caseCocher != NULL) {
+        ui->caseCocher->setText(texte);
+    }
+}
+
+void Fragment::setCaseCochee(const bool &etat)
+{
+    if (ui->caseCocher != NULL) {
+        ui->caseCocher->setChecked(etat);
+    }
 }
 
 QLineEdit *Fragment::champ() const

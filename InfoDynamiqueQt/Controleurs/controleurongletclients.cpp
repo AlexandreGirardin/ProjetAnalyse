@@ -77,7 +77,7 @@ void ControleurOngletClients::configurerFragmentFiches()
 {
     fragmentFiches = new Fragment(splitter);
     fragmentFiches->setEtiquette(tr("Fiches"));
-    fragmentFiches->caseCocher()->setText(tr("Afficher toutes les fiches"));
+    fragmentFiches->setTexteCaseCocher(tr("Afficher toutes les fiches"));
     fragmentFiches->retirerChamp();
     fragmentFiches->boutonModifier()->deleteLater();
     fragmentFiches->boutonVoir()->deleteLater();
@@ -93,7 +93,7 @@ void ControleurOngletClients::configurerFragmentFiches()
     connect(Application::get(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
     connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
     connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
-    fragmentFiches->caseCocher()->setChecked(true);
+    fragmentFiches->setCaseCochee(true);
 }
 
 // Clients
