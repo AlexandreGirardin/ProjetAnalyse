@@ -27,7 +27,7 @@ void VuePrincipale::resizeEvent(QResizeEvent*) {
 
 void VuePrincipale::repositionnerBoutonRecharger()
 {
-    boutonRecharger->move(width() - boutonRecharger->width(), 0);
+    boutonRecharger->move(width() - boutonRecharger->width(), 1);
 }
 
 QPushButton *VuePrincipale::getBoutonRecharger() const
