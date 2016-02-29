@@ -4,6 +4,7 @@
 #include <QCloseEvent>
 #include <QPushButton>
 #include <QResizeEvent>
+#include <QDebug>
 
 VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)
 {
@@ -15,7 +16,8 @@ void VuePrincipale::configurerBoutonRecharger()
 {
     boutonRecharger = new QPushButton(QIcon(":Images/refresh"), tr("Rafraîchir"), this);
     boutonRecharger->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    boutonRecharger->setMaximumHeight(ui->onglets->tabBar()->height()-2);
+    boutonRecharger->setMaximumHeight(ui->onglets->tabBar()->height());
+    boutonRecharger->setFlat(true);
     boutonRecharger->show();
     repositionnerBoutonRecharger();
 }
