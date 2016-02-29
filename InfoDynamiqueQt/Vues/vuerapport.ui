@@ -16,33 +16,43 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
+     <item row="1" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Description:</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QTextEdit" name="textEdit"/>
+     <item row="1" column="1">
+      <widget class="QTextEdit" name="champDescription"/>
      </item>
-     <item row="2" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Pièces:</string>
        </property>
       </widget>
      </item>
+     <item row="3" column="1">
+      <widget class="QTextEdit" name="champPieces"/>
+     </item>
      <item row="2" column="1">
-      <widget class="QTextEdit" name="textEdit_2"/>
+      <widget class="QTextEdit" name="champTaches"/>
      </item>
-     <item row="1" column="1">
-      <widget class="QTextEdit" name="textEdit_3"/>
-     </item>
-     <item row="1" column="0">
+     <item row="2" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
         <string>Tâches:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QTextEdit" name="champInformations"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Informations:</string>
        </property>
       </widget>
      </item>
