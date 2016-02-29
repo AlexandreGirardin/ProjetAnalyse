@@ -15,7 +15,7 @@ void VuePrincipale::configurerBoutonRecharger()
 {
     boutonRecharger = new QPushButton(QIcon(":Images/refresh"), tr("Rafraîchir"), this);
     boutonRecharger->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    boutonRecharger->resize(boutonRecharger->width(), ui->onglets->tabBar()->height());
+    boutonRecharger->setMaximumHeight(ui->onglets->tabBar()->height()-2);
     boutonRecharger->show();
     repositionnerBoutonRecharger();
 }
