@@ -67,7 +67,8 @@ SOURCES += main.cpp\
 	Vues/vuegestiontache.cpp \
 	Vues/vueprincipale.cpp \
         Vues/vueajoutertache.cpp \
-    Controleurs/controleurconnexion.cpp
+    Controleurs/controleurconnexion.cpp \
+    Vues/vuerapport.cpp
 
 HEADERS  += \
 	Modeles/action.h \
@@ -121,7 +122,8 @@ HEADERS  += \
 	Vues/vuegestiontache.h \
 	Vues/vueprincipale.h \
         Vues/vueajoutertache.h \
-    Controleurs/controleurconnexion.h
+    Controleurs/controleurconnexion.h \
+    Vues/vuerapport.h
 
 FORMS    += \
 	Vues/champformulaire.ui \
@@ -139,4 +141,5 @@ FORMS    += \
 	Vues/vuegestionpiece.ui \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
-        Vues/vueajoutertache.ui
+        Vues/vueajoutertache.ui \
+    Vues/vuerapport.ui
