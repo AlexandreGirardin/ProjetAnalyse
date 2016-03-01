@@ -82,6 +82,7 @@ void ControleurOngletClients::configurerFragmentFiches()
     fragmentFiches->boutonModifier()->deleteLater();
     fragmentFiches->boutonVoir()->deleteLater();
     boutonTraiter = fragmentFiches->ajouterBouton(4, tr("Traiter"), QIcon(":/Images/document-edit-sign"));
+    boutonRapport = fragmentFiches->ajouterBouton(5, tr("Rapport"), QIcon(":/Images/document-edit-sign"));
     connect(fragmentFiches, SIGNAL(clicCreer()), this, SLOT(ajouterFiche()));
     connect(fragmentFiches, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
     connect(fragmentFiches, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
@@ -93,6 +94,7 @@ void ControleurOngletClients::configurerFragmentFiches()
     connect(Application::get(), SIGNAL(ficheModifiee()), this, SLOT(rafraichirFiches()));
     connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(rechargerFiches()));
     connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
+    connect(boutonRapport, SIGNAL(clicked()), this, SLOT(rapportFiche()));
     fragmentFiches->setCaseCochee(true);
 }
 
@@ -274,6 +276,13 @@ void ControleurOngletClients::traiterFiche() const
 {
     if (fragmentFiches->idModele() != -1) {
         ControleurFiches::traiterFiche(fragmentFiches->idModele());
+    }
+}
+
+void ControleurOngletClients::rapportFiche() const
+{
+    if (fragmentFiches->idModele() != -1) {
+        ControleurFiches::rapportFiche(fragmentFiches->idModele());
     }
 }
 

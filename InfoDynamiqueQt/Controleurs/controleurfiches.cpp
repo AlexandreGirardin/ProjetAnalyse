@@ -13,6 +13,7 @@
 #include "Modeles/appareil.h"
 #include "Vues/vuegestionfiche.h"
 #include "Vues/vueeditionfiche.h"
+#include "Vues/vuerapport.h"
 #include "Vues/vueprincipale.h"
 
 int ControleurFiches::ajouterFiche(const int &idAppareil)
@@ -52,6 +53,27 @@ void ControleurFiches::traiterFiche(const int &idFiche)
         }
         vue->deleteLater();
         fiche->deleteLater();
+    }
+}
+
+void ControleurFiches::rapportFiche(const int &idFiche)
+{
+    Fiche* fiche = MappeurFiches::get(idFiche);
+    Appareil* appareil = MappeurAppareils::get(fiche->idAppareil());
+    Client* client = MappeurClients::get(appareil->idClient());
+
+    if (fiche != NULL) {
+        VueRapport* vue = new VueRapport();
+        vue->setWindowFlags(Qt::Window);
+        vue->setInformations(client, appareil);
+        vue->setDescription(fiche->description());
+        vue->setTaches(fiche->taches());
+        vue->setPieces(fiche->pieces());
+        connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));
+        vue->show();
+        fiche->deleteLater();
+        appareil->deleteLater();
+        client->deleteLater();
     }
 }
 

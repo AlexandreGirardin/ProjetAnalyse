@@ -61,8 +61,16 @@ public slots:
     /**
      * @brief traiterFiche
      * Lance le traitement de la fiche sélectionnée
+     * @param idFiche
      */
     static void traiterFiche(const int &idFiche);
+
+    /**
+     * @brief rapportFiche
+     *
+     * @param idFiche
+     */
+    static void rapportFiche(const int &idFiche);
 
 };
 

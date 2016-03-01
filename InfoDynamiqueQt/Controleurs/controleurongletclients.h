@@ -54,6 +54,9 @@ private:
     // Le bouton de traitement de fiche
     QPushButton* boutonTraiter;
 
+    // Le bouton de visualisation du rapport
+    QPushButton* boutonRapport;
+
     // La commande SQL actuelle servant à peupler le fragmentFiches
     const QString* commandeFiches;
 
@@ -161,6 +164,11 @@ public slots:
      * @brief traiterFiche
      */
     void traiterFiche() const;
+
+    /**
+     * @brief rapportFiche
+     */
+    void rapportFiche() const;
 
     /**
      * @brief filtrerClients

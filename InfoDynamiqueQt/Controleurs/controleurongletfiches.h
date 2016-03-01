@@ -30,6 +30,8 @@ private:
     // Le bouton permettant de traiter la fiche sélectionner
     QPushButton* boutonTraiter;
 
+    QPushButton* boutonRapport;
+
     // La requête SQL actuelle pour fiches sans filtre de recherche
     const QString* requeteFiches;
 
@@ -49,6 +51,11 @@ public slots:
      * Lance le traitement de la fiche sélectionnée
      */
     void traiterFiche() const;
+
+    /**
+     * @brief rapportFiche
+     */
+    void rapportFiche() const;
 
     /**
      * @brief filtrerFiches

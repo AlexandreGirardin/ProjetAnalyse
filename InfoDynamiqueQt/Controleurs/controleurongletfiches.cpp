@@ -27,9 +27,11 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     vue->layout()->addWidget(fragment);
 
     boutonTraiter = fragment->ajouterBouton(4, tr("Traiter"), QIcon(":/Images/document-edit-sign"));
+    boutonRapport = fragment->ajouterBouton(5, tr("Rapport"), QIcon(":/Images/document-edit-sign"));
 
     connect(fragment, SIGNAL(rechercher(QString)), this, SLOT(filtrerFiches(QString)));
     connect(boutonTraiter, SIGNAL(clicked()), this, SLOT(traiterFiche()));
+    connect(boutonRapport, SIGNAL(clicked()), this, SLOT(rapportFiche()));
     connect(fragment, SIGNAL(caseCochee()), this, SLOT(desactiverCritereFiches()));
     connect(fragment, SIGNAL(caseDecochee()), this, SLOT(activerCritereFiches()));
     connect(fragment, SIGNAL(doubleClicModele()), this, SLOT(traiterFiche()));
@@ -51,6 +53,13 @@ void ControleurOngletFiches::traiterFiche() const
 {
     if (fragment->idModele() != -1) {
         ControleurFiches::traiterFiche(fragment->idModele());
+    }
+}
+
+void ControleurOngletFiches::rapportFiche() const
+{
+    if (fragment->idModele() != -1) {
+        ControleurFiches::rapportFiche(fragment->idModele());
     }
 }
 
