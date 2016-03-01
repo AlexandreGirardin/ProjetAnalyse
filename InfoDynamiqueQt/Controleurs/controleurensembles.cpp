@@ -14,7 +14,7 @@ int ControleurEnsembles::creerEnsemble()
 {
     int id = -1;
     VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
-    vue->setWindowTitle(tr("Créer un nouvel ensemble de tâches"));
+    vue->setWindowTitle(tr("Créer un nouvel ensemble d'actions"));
     vue->setActions(MappeurActions::get());
     if (vue->exec() == vue->Accepted) {
         EnsembleActions* ensemble = new EnsembleActions(vue);
@@ -33,7 +33,7 @@ void ControleurEnsembles::modifierEnsemble(const int &idEnsemble)
     EnsembleActions* ensemble = MappeurEnsembles::get(idEnsemble);
     if (ensemble != NULL) {
         VueGestionEnsemble* vue = new VueGestionEnsemble(Application::vuePrincipale());
-        vue->setWindowTitle(tr("Modifier un ensemble de tâches"));
+        vue->setWindowTitle(tr("Modifier un ensemble d'actions"));
         assignerEnsemble(vue, ensemble);
         if (vue->exec() == vue->Accepted) {
             extraireEnsemble(ensemble, vue);
@@ -52,7 +52,7 @@ void ControleurEnsembles::voirEnsemble(const int &idEnsemble, const bool &modal)
     if (ensemble != NULL) {
         VueEnsemble* vue = new VueEnsemble(Application::vuePrincipale());
         vue->setModal(modal);
-        vue->setWindowTitle(tr("Ensemble de tâches"));
+        vue->setWindowTitle(tr("Ensemble d'actions"));
         assignerEnsemble(vue, ensemble);
         vue->setActions(ensemble->actions());
         ensemble->deleteLater();
