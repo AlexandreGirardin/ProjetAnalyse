@@ -24,9 +24,11 @@ VueGestionFiche::~VueGestionFiche()
 QList<int>* VueGestionFiche::getTaches() const
 {
     QList<int>* taches = new QList<int>;
-    for (int i = 0; i < ui->listeTaches->model()->rowCount(); ++i) {
-        int id = ui->listeTaches->model()->data(ui->listeTaches->model()->index(i, 0), Qt::UserRole).toInt();
-        taches->append(id);
+    if (ui->listeTaches->model() != NULL) {
+        for (int i = 0; i < ui->listeTaches->model()->rowCount(); ++i) {
+            int id = ui->listeTaches->model()->data(ui->listeTaches->model()->index(i, 0), Qt::UserRole).toInt();
+            taches->append(id);
+        }
     }
     return taches;
 }
