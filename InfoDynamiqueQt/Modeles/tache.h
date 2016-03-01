@@ -6,7 +6,7 @@
 class Action;
 class Statut;
 
-class Tache : public QObject
+class Tache : public ModeleBD
 {
 
     // Exécution d'une action sur un appareil dans le cadre d'une fiche de maintenance

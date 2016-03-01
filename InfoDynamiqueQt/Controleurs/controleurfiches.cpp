@@ -1,6 +1,7 @@
 #include "Controleurs/controleurfiches.h"
 
 #include "Controleurs/application.h"
+#include "Mappeurs/mappeuractions.h"
 #include "Mappeurs/mappeurappareils.h"
 #include "Mappeurs/mappeurclients.h"
 #include "Mappeurs/mappeurensembles.h"
@@ -87,7 +88,7 @@ void ControleurFiches::extraireFiche(Fiche *fiche, const VueGestionFiche* const 
 {
     fiche->setPriorite(vue->getPriorite());
     fiche->setDescription(vue->getDescription());
-    fiche->setTaches(MappeurTaches::get(vue->getTaches()));
+    fiche->setTaches(MappeurTaches::construirePourActions(MappeurActions::get(vue->getTaches())));
 }
 
 void ControleurFiches::assignerFiche(VueEditionFiche* vue, const Fiche* fiche)

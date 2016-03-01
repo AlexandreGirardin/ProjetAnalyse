@@ -18,11 +18,11 @@
     <UniqueID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</UniqueID>
     <UserID>UC-8</UserID>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
-    <Name>Ouverture de session</Name>
-    <Description>Processus d'authentification de l'usager.</Description>
+    <Name>Connexion à la base de données</Name>
+    <Description>Processus de connexion au serveur de base de données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Processus d'authentification de l'\cf1 usager\cf2 .\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Processus de connexion au serveur de \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:33:34.1946433-04:00</DateAdded>
-    <DateModified>2015-11-02T08:41:45.6722713-05:00</DateModified>
+    <DateModified>2016-03-01T15:44:49.9392557-05:00</DateModified>
   </UseCase>
   <ElementStub>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
@@ -80,18 +80,6 @@
     <ParentID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</ParentID>
   </Scenario>
   <Step>
-    <UniqueID>ST-faf512fe-58aa-4e43-8d74-79617b574717</UniqueID>
-    <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
-    <Description>Le technicien entre un nom d'utilisateur et un mot de passe.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  entre un nom d'utilisateur et un mot de passe.\cf0\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
     <UniqueID>ST-651ddad5-edc9-4a00-8da8-4bc44bd3058e</UniqueID>
     <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
     <Description>Le système affiche la fenêtre principale.</Description>
@@ -100,111 +88,171 @@
 \viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche la \cf3 fen\'eatre principale.\cf1\par
 }
 </RichDescription>
-    <Sequence>3</Sequence>
+    <Sequence>8</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-ba56bf95-7bc7-40cc-8514-891158910858</UniqueID>
+    <UniqueID>ST-2c03df0f-7ae6-4e27-8c00-ddf29c501e34</UniqueID>
     <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
-    <Description>Le système valide les informations avec la base de données.</Description>
+    <Description>Le technicien entre l'addresse ip ou le nom d'hôte et le port du serveur de base de données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  valide les informations avec la \cf1\ul base de donn\'e9es\cf2\ulnone .\cf0\par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  entre l'addresse ip ou le nom d'h\'f4te et le port du serveur de \cf2\ul base de donn\'e9es\cf1\ulnone .\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-45568436-70c5-4901-843e-b61b6974cd23</UniqueID>
+    <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
+    <Description>Le technicien entre le nom d'usager et le mot de passe pour cet usager</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  entre le nom d'\cf3 usager\cf1  et le mot de passe pour cet \cf3 usager\cf1\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-8a85f149-2aae-4333-92a3-fec93fa5a337</UniqueID>
+    <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
+    <Description>Le technicien indique qu'il veut se connecter au serveur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  indique qu'il veut se connecter au serveur.\par
 }
 </RichDescription>
     <Sequence>2</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-eb25c22d-ad2a-4a3c-8261-3d57c6593c73</UniqueID>
-    <ParentID>X-aaddf2ef-2a96-418a-a21d-746a8007f4ec</ParentID>
-    <Description>Le système affiche un message d'erreur.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur.\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-dd1da44f-f531-4ceb-9866-6ec85cff59de</UniqueID>
-    <ParentID>X-aaddf2ef-2a96-418a-a21d-746a8007f4ec</ParentID>
-    <Description>Continue to step 1.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 1.\par
-}
-</RichDescription>
-    <Sequence>1</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-118764ea-6f15-4443-9fe1-0346877def38</UniqueID>
-    <ParentID>X-83e063ed-d885-4cf0-b505-0addbe01e993</ParentID>
-    <Description>Ends.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Ends.\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-3ec75661-41b2-4877-859b-5a8fee4e4d60</UniqueID>
+    <UniqueID>ST-b094633e-f08c-4f1c-ae7c-a8a1c3d46bdd</UniqueID>
     <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
-    <Description>Le technicien confirme qu'il veut s'authentifier.</Description>
+    <Description>Le système se connecte au serveur a l'aide des informations entrées parle technicien.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme qu'il veut s'authentifier.\cf0\par
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  se connecte au serveur a l'aide des informations entr\'e9es parle \cf2\ul technicien\cf1\ulnone .\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-82567647-da84-45b5-8745-d0961822ba51</UniqueID>
+    <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
+    <Description>Le système affiche une liste des base de données disponible pour ce serveur.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche une liste des \cf2\ul base de donn\'e9es\cf1\ulnone  disponible pour ce serveur.\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-4bceada5-b6f0-42a7-94b3-4fc3db7eb006</UniqueID>
+    <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
+    <Description>Le technicien sélectionne la base de données voulue.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  s\'e9lectionne la \cf2\ul base de donn\'e9es\cf1\ulnone  voulue.\par
+}
+</RichDescription>
+    <Sequence>5</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-d6eb6491-2549-41c8-a896-e1829d33d433</UniqueID>
+    <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
+    <Description>Le technicien indique qu'il veut se connecter.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  indique qu'il veut se connecter.\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-ef1d8cbf-8333-4de3-8a2c-86f8cf218e6e</UniqueID>
+    <ParentID>MSS-27a5be4b-a574-49a8-83ec-4a4726dd27cd</ParentID>
+    <Description>Le système se connecte a la base de données sélectionnée.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  se connecte a la \cf2\ul base de donn\'e9es\cf1\ulnone  s\'e9lectionn\'e9e.\par
+}
+</RichDescription>
+    <Sequence>7</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-8d61982d-0a49-48dd-9bb3-9fc99cb66992</UniqueID>
+    <ParentID>X-c7ffc542-ab7e-4339-aa62-d9572789afb4</ParentID>
+    <Description>Le système vide la section affichant les base de données du serveur précédent, meme s'il n'y en a aucun</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  vide la section affichant les \cf2\ul base de donn\'e9es\cf1\ulnone  du serveur pr\'e9c\'e9dent, meme s'il n'y en a aucun\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-aa51e9d6-5e11-471c-a153-7aaa0a6293fb</UniqueID>
+    <ParentID>X-c7ffc542-ab7e-4339-aa62-d9572789afb4</ParentID>
+    <Description>Return to step 3.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Return to step 3.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-17c2caf2-8977-4ac0-8f5d-73988b4b250a</UniqueID>
-    <ParentID>X-f5ffe8a6-88b6-40c0-bb4c-234023bc1e38</ParentID>
-    <Description>Ends.</Description>
+    <UniqueID>ST-3eddd48b-2967-400d-89d4-a278a41dc55b</UniqueID>
+    <ParentID>X-de1247f3-2660-4bd5-b1fe-8d96caadfc8e</ParentID>
+    <Description>Return to step 3</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Ends.\par
+\viewkind4\uc1\pard\f0\fs20 Return to step 3\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-75b8203a-cad9-4f3b-a5d1-0ec0df132298</UniqueID>
+    <ParentID>X-de1247f3-2660-4bd5-b1fe-8d96caadfc8e</ParentID>
+    <Description>Le technicien doit réessayer avec d'autres informations de connexions.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  doit r\'e9essayer avec d'autres informations de connexions.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
-    <UniqueID>X-83e063ed-d885-4cf0-b505-0addbe01e993</UniqueID>
-    <ParentID>ST-faf512fe-58aa-4e43-8d74-79617b574717</ParentID>
-    <Description>Le technicien appuie sur le bouton de fermeture de la fenêtre d'authentification.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton de fermeture de la fen\'eatre d'authentification.\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Extension>
-  <Extension>
-    <UniqueID>X-aaddf2ef-2a96-418a-a21d-746a8007f4ec</UniqueID>
-    <ParentID>ST-ba56bf95-7bc7-40cc-8514-891158910858</ParentID>
-    <Description>Les informations sont invalides.</Description>
+    <UniqueID>X-c7ffc542-ab7e-4339-aa62-d9572789afb4</UniqueID>
+    <ParentID>ST-b094633e-f08c-4f1c-ae7c-a8a1c3d46bdd</ParentID>
+    <Description>L'addresse IP ou le nom d'hôte, le port, l'usager ou le mot de passe entrés sont invalides.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les informations sont invalides.\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 L'addresse IP ou le nom d'h\'f4te, le port, l'\cf2 usager\cf1  ou le mot de passe entr\'e9s sont invalides.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Extension>
   <Extension>
-    <UniqueID>X-f5ffe8a6-88b6-40c0-bb4c-234023bc1e38</UniqueID>
-    <ParentID>ST-3ec75661-41b2-4877-859b-5a8fee4e4d60</ParentID>
-    <Description>Le technicien annule sa connection.</Description>
+    <UniqueID>X-de1247f3-2660-4bd5-b1fe-8d96caadfc8e</UniqueID>
+    <ParentID>ST-4bceada5-b6f0-42a7-94b3-4fc3db7eb006</ParentID>
+    <Description>La base de données voulue n'est pas affichée.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  annule sa connection.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  voulue n'est pas affich\'e9e.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>

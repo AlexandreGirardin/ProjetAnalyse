@@ -3,7 +3,7 @@
 #include "Modeles/action.h"
 #include "Modeles/statut.h"
 
-Tache::Tache(QObject* parent) : QObject(parent)
+Tache::Tache(QObject* parent) : ModeleBD(parent)
 {
     m_action = new Action(this);
     m_statut = new Statut(this);

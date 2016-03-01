@@ -33,13 +33,13 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <Level />
     <Complexity />
     <UCStatus />
-    <ImplStatus />
+    <ImplStatus>Deferred</ImplStatus>
     <AssignedTo />
     <Release />
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0301979-04:00</DateAdded>
-    <DateModified>2015-12-17T15:56:36.9740743-05:00</DateModified>
+    <DateModified>2016-03-01T16:01:00.6448099-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-f2ba83bd-c853-4a3e-8eac-69b1db9a59d7</UniqueID>
@@ -60,13 +60,13 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <Level />
     <Complexity />
     <UCStatus />
-    <ImplStatus />
+    <ImplStatus>Deferred</ImplStatus>
     <AssignedTo />
     <Release />
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
-    <DateModified>2015-12-17T16:03:20.5089721-05:00</DateModified>
+    <DateModified>2016-03-01T16:00:48.5881676-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-92a5eb29-43aa-46bf-bf55-3a3e006f787d</UniqueID>
@@ -88,13 +88,13 @@ Le client a été redirigé vers la page d'aperçu de ses appareils.</PostCondit
     <Level />
     <Complexity />
     <UCStatus />
-    <ImplStatus />
+    <ImplStatus>Deferred</ImplStatus>
     <AssignedTo />
     <Release />
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-24T08:17:17.0614452-04:00</DateAdded>
-    <DateModified>2015-12-17T16:06:10.2680436-05:00</DateModified>
+    <DateModified>2016-03-01T16:00:54.884404-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-6f971717-cc5d-4ea4-93c2-c8ae9bb96abe</ParentID>

@@ -7,6 +7,7 @@
 #include "Mappeurs/mappeurtaches.h"
 #include "Modeles/fiche.h"
 #include "Modeles/statut.h"
+#include "Modeles/tache.h"
 
 #include <QSqlQuery>
 #include <QSqlError>
@@ -67,7 +68,11 @@ bool MappeurFiches::inserer(Fiche* fiche)
     bool succes = ecrire(fiche, commande);
     fiche->setId(AideMappeurs::derniereInsertion());
     if (succes) {
-        succes = MappeurTaches::inserer(fiche->taches());
+        for (QList<Tache*>::const_iterator i = fiche->taches()->constBegin(); i != fiche->taches()->constEnd() && succes; ++i) {
+            Tache* tache = *i;
+            tache->setIdFiche(fiche->id());
+            succes = MappeurTaches::inserer(tache);
+        }
     }
     if (succes) {
         bd.commit();
