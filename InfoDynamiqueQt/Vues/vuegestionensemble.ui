@@ -42,7 +42,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Tâches existantes</string>
+          <string>Actions existantes</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
@@ -106,7 +106,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
-          <string>Tâches de l'ensemble</string>
+          <string>Actions de l'ensemble</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
