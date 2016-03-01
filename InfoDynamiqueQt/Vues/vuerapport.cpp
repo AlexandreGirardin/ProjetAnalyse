@@ -44,7 +44,7 @@ void VueRapport::setPieces(const QList<Piece*>* pieces)
 {
     QString stringPieces = "";
     for (QList<Piece*>::const_iterator i = pieces->constBegin(); i != pieces->constEnd(); ++i) {
-        stringPieces = stringPieces + (*i)->nom() + " " + (*i)->prixDouble() + "$\n";
+        stringPieces = stringPieces + (*i)->nom() + " " + QString::number((*i)->prixDouble()) + "$\n";
     }
     ui->champPieces->setText(stringPieces);
 }
