@@ -82,9 +82,9 @@ void VueGestionFiche::setEnsembles(const QList<EnsembleActions*>* ensembles)
     }
 }
 
-void VueGestionFiche::setDescription(const QString &commentaire)
+void VueGestionFiche::setDescription(const QString &description)
 {
-    ui->champDescription->setPlainText(commentaire);
+    ui->champDescription->setPlainText(description);
 }
 
 QString VueGestionFiche::getDescription() const

@@ -63,6 +63,11 @@ public:
      */
     void resizeEvent(QResizeEvent*);
 
+    /**
+     * @brief getBoutonRecharger
+     * retourne le bouton qui permet de rafraichir l'application
+     * @return
+     */
     QPushButton* getBoutonRecharger() const;
 
 private:

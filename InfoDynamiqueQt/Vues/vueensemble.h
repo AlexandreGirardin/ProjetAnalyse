@@ -19,15 +19,35 @@ public:
     explicit VueEnsemble(QWidget *parent = 0);
     ~VueEnsemble();
 
+    /**
+     * @brief setNom
+     * Assigne le nom de l'ensemble
+     * @param nom Le nom à assigner
+     */
     void setNom(const QString &nom);
 
+    /**
+     * @brief setDescription
+     * Assigne la description de l'ensemble
+     * @param description La description à assigner
+     */
     void setDescription(const QString &description);
 
+    /**
+     * @brief setActions
+     * Assigne les actions à l'ensemble
+     * @param actions La liste d'actions à assigner
+     */
     void setActions(const QList<Action*>* actions);
 
 private:
     Ui::VueEnsemble *ui;
-    void peuplerDansEnsemble();
+
+    /**
+     * @brief listeVersModele
+     * @param liste La liste d'actions à convertir en modèle affichable dans un tableau
+     * @return Le modèle affichable dans un tableau
+     */
     QStandardItemModel *listeVersModele(const QList<Action*>* liste);
 };
 

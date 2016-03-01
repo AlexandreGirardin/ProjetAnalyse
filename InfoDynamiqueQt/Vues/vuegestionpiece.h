@@ -56,6 +56,10 @@ public:
      */
     void setPrix(const double &prix);
 
+    /**
+     * @brief getPrixInt
+     * @return  Le prix de la pièce, en sous
+     */
     int getPrixInt() const;
 
 private:

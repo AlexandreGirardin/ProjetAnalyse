@@ -67,7 +67,7 @@ public slots:
 
     /**
      * @brief rapportFiche
-     *
+     * Lance l'affichage du rapport pour la fiche sélectionnée
      * @param idFiche
      */
     static void rapportFiche(const int &idFiche);
