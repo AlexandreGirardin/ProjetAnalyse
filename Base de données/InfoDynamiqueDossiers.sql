@@ -166,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `statutsTache` (
 --
 
 CREATE TABLE IF NOT EXISTS `taches` (
+  `id` int(10) NOT NULL,
   `idFiche` int(10) NOT NULL,
   `idAction` int(10) NOT NULL,
   `idStatut` int(10) NOT NULL,
@@ -289,7 +290,7 @@ ALTER TABLE `statutsTache`
 -- Index pour la table `taches`
 --
 ALTER TABLE `taches`
-  ADD PRIMARY KEY (`idFiche`,`idAction`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idStatut` (`idStatut`),
   ADD KEY `tachesAction` (`idAction`);
 
@@ -362,6 +363,11 @@ ALTER TABLE `statutsFiche`
 -- AUTO_INCREMENT pour la table `statutsTache`
 --
 ALTER TABLE `statutsTache`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `taches`
+--
+ALTER TABLE `taches`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `types`

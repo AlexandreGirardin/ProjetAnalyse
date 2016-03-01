@@ -7,7 +7,6 @@
 #include "Modeles/tache.h"
 
 #include <QStandardItemModel>
-#include <QDebug>
 
 VueGestionFiche::VueGestionFiche(QWidget* parent) :
     QDialog(parent),
@@ -45,6 +44,7 @@ void VueGestionFiche::peuplerTaches()
     EnsembleActions* ensemble = MappeurEnsembles::get(getIdEnsemble());
     if (ensemble != NULL) {
         ui->listeTaches->setModel(listeEnModele(ensemble->actions()));
+        getTaches();
     }
 }
 

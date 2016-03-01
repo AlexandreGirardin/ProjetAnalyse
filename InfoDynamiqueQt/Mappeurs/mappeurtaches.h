@@ -1,6 +1,7 @@
 #ifndef MAPPEURTACHES_H
 #define MAPPEURTACHES_H
 
+class Action;
 class Fiche;
 class Tache;
 
@@ -112,6 +113,8 @@ public:
      * @return Succès
      */
     static bool syncTaches(const Fiche* fiche);
+
+    static QList<Tache*>* construirePourActions(const QList<Action*>* actions);
 
 private:
 

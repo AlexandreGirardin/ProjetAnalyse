@@ -13,12 +13,12 @@
 #include <QSqlError>
 #include <QSqlRecord>
 
-Tache *MappeurTaches::get(const int &id)
+Tache* MappeurTaches::get(const int &id)
 {
     Tache* tache = NULL;
     QSqlQuery requete(*Application::bd);
-    requete.prepare("SELECT * FROM taches WHERE id=:idTache");
-    requete.bindValue(":idTache", id);
+    requete.prepare("SELECT * FROM taches WHERE id=:id");
+    requete.bindValue(":id", id);
     requete.exec();
     if (requete.next()) {
         tache = mapper(requete.record());
@@ -68,6 +68,17 @@ int MappeurTaches::pourAction(const int &idAction)
     return nombre;
 }
 
+QList<Tache*>* MappeurTaches::construirePourActions(const QList<Action*>* actions) {
+    QList<Tache*>* taches = new QList<Tache*>;
+    for (QList<Action*>::const_iterator i = actions->constBegin(); i != actions->constEnd(); ++i) {
+        Tache* tache = new Tache();
+        tache->setStatut(MappeurStatuts::getStatutTache(1));
+        tache->setAction(*i);
+        taches->append(tache);
+    }
+    return taches;
+}
+
 int MappeurTaches::prioriteMinimale()
 {
     return 1; // TODO Déplacer vers la base de données
@@ -100,6 +111,9 @@ bool MappeurTaches::inserer(Tache* tache)
                             VALUES\
                                (:idFiche, :idAction, :idStatut, :commentaire)");
     const bool succes = ecrire(tache, commande);
+    if (succes) {
+        tache->setId(AideMappeurs::derniereInsertion());
+    }
     return succes;
 }
 
@@ -119,7 +133,7 @@ bool MappeurTaches::mettreAJour(const Tache* tache)
                                 idStatut=:idStatut,\
                                 commentaire=:commentaire,\
                             WHERE\
-                                idFiche=:idFiche AND idAction=:idAction");
+                                id=:id");
     const bool succes = ecrire(tache, commande);
     return succes;
 }
@@ -127,6 +141,7 @@ bool MappeurTaches::mettreAJour(const Tache* tache)
 Tache* MappeurTaches::mapper(const QSqlRecord &ligne)
 {
     Tache* tache = new Tache();
+    tache->setId(ligne.value("id").toInt());
     tache->setIdFiche(ligne.value("idFiche").toInt());
     tache->setAction(MappeurActions::get(ligne.value("idAction").toInt()));
     tache->setStatut(MappeurStatuts::getStatutTache(ligne.value("idStatut").toInt()));
@@ -138,6 +153,7 @@ QList<Tache*>* MappeurTaches::mapper(QSqlQuery &requete)
 {
     QList<Tache*>* liste = new QList<Tache*>;
     QSqlRecord ligne = requete.record();
+    int colId = ligne.indexOf("id");
     int colIdFiche = ligne.indexOf("idFiche");
     int colIdAction = ligne.indexOf("idAction");
     int colIdStatut = ligne.indexOf("idStatut");
@@ -145,6 +161,7 @@ QList<Tache*>* MappeurTaches::mapper(QSqlQuery &requete)
     while (requete.next()) {
         ligne = requete.record();
         Tache* tache = new Tache();
+        tache->setId(ligne.value(colId).toInt());
         tache->setIdFiche(ligne.value(colIdFiche).toInt());
         tache->setAction(MappeurActions::get(ligne.value(colIdAction).toInt()));
         tache->setStatut(MappeurStatuts::getStatutTache(ligne.value(colIdStatut).toInt()));
@@ -157,7 +174,7 @@ QList<Tache*>* MappeurTaches::mapper(QSqlQuery &requete)
 bool MappeurTaches::supprimer(const Tache *tache)
 {
     const QString commande("DELETE FROM taches\
-                            WHERE idFiche=:idFiche AND idAction=:idAction");
+                            WHERE id=:id");
     const bool succes = ecrire(tache, commande);
     return succes;
 }
@@ -175,6 +192,7 @@ QSqlQuery* MappeurTaches::preparerRequete(const Tache* tache, const QString &com
 {
     QSqlQuery* requete = new QSqlQuery(*Application::bd);
     requete->prepare(commande);
+    requete->bindValue(":id", tache->id());
     requete->bindValue(":idFiche", tache->idFiche());
     requete->bindValue(":idAction", tache->action()->id());
     requete->bindValue(":idStatut", tache->statut()->id());
