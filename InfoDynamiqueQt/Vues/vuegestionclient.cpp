@@ -118,9 +118,7 @@ void VueGestionClient::verifierNom() {
 
 void VueGestionClient::verifierTelephone()
 {
-    bool ok;
-    telephone->getTexte().toInt(&ok);
-    telephone->setValide(ok);
+    telephone->setValide(!telephone->getTexte().isEmpty());
 }
 
 void VueGestionClient::verifierOk()
