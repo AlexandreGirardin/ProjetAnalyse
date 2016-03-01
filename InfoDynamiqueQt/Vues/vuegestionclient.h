@@ -72,41 +72,93 @@ public:
      */
     void setAdresse(const QString &courriel);
 
+    /**
+     * @brief getCourriel
+     * @return L'adresse couriel du client
+     */
     QString getCourriel() const;
 
+    /**
+     * @brief setCourriel
+     * @param courriel L'adresse courriel à assigner
+     */
     void setCourriel(const QString &courriel);
 
 
 private slots:
 
+    /**
+     * @brief verifierPrenom Marque l'état du champ valide s'il n'est pas vide et vice versa
+     */
     void verifierPrenom();
 
+    /**
+     * @brief verifierNom Marque l'état du champ valide s'il n'est pas vide et vice versa
+     */
     void verifierNom();
 
+    /**
+     * @brief verifierTelephone Marque l'état du champ valide s'il n'est pas vide et vice versa
+     */
     void verifierTelephone();
 
+    /**
+     * @brief verifierOk Marque l'état du champ valide s'il n'est pas vide et vice versa
+     */
     void verifierOk();
 
 signals:
 
+    /**
+     * @brief champsRequisModifies
+     * Signal emit lorsqu'un champ requis est mofifié
+     */
     void champsRequisModifies(bool);
 
 private:
 
     Ui::VueGestionClient* ui;
 
+    /**
+     * @brief prenom
+     * Champ contenant le prenom
+     */
     ChampFormulaire* prenom;
 
+    /**
+     * @brief nom
+     * Champ contenant le nom
+     */
     ChampFormulaire* nom;
 
+    /**
+     * @brief telephone
+     * Champ contenant le numéro de téléphone
+     */
     ChampFormulaire* telephone;
 
+    /**
+     * @brief configurerPrenom
+     * Configure les règles de validation du champ prénom
+     */
     void configurerPrenom();
 
+    /**
+     * @brief configurerNom
+     * Configure les règles de validation du champ nom
+     */
     void configurerNom();
 
+    /**
+     * @brief configurerTelephone
+     * Configure les règles de validation du champ telephone
+     */
     void configurerTelephone();
 
+    /**
+     * @brief configurerBoutonOk
+     * Configure les connections du bouton de validation
+     */
     void configurerBoutonOk();
 
 };

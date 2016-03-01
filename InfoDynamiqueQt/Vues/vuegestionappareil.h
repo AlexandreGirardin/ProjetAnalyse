@@ -107,18 +107,6 @@ public:
 private:
 
     Ui::VueGestionAppareil* ui;
-
-    /**
-     * @brief types
-     * La liste des types permettant de retourner l'objet Type sélectionné
-     */
-//    QList<TypeAppareil*>* types;
-
-    /**
-     * @brief types
-     * La liste des fabricants permettant de retourner l'objet Fabricant sélectionné
-     */
-//    QList<Fabricant*>* fabricants;
 };
 
 #endif // GESTIONAPPAREIL_H
