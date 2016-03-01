@@ -72,6 +72,16 @@ QString VueEditionFiche::description() const
     return ui->champDescription->document()->toPlainText();
 }
 
+void VueEditionFiche::setPriorite(const int &priorite)
+{
+    ui->champPriorite->setValue(priorite);
+}
+
+int VueEditionFiche::getPriorite() const
+{
+    return ui->champPriorite->value();
+}
+
 void VueEditionFiche::setClient(const int &id, const QString &nom, const QString &telephone)
 {
     m_idClient = id;

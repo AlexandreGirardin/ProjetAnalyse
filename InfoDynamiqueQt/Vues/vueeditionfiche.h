@@ -56,6 +56,11 @@ public:
     Statut* getStatutFiche() const;
 
     void setStatutsFiche(const QList<Statut *> *statuts, const Statut *statutFiche);
+
+    void setPriorite(const int &priorite);
+
+    int getPriorite() const;
+
 private:
 
     Ui::VueEditionFiche* ui;

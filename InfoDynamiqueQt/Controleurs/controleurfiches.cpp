@@ -94,6 +94,7 @@ void ControleurFiches::extraireFiche(Fiche *fiche, const VueGestionFiche* const 
 void ControleurFiches::assignerFiche(VueEditionFiche* vue, const Fiche* fiche)
 {
     vue->setIdFiche(fiche->id());
+    vue->setPriorite(fiche->priorite());
     vue->setCommentaire(fiche->commentaire());
     vue->setDescription(fiche->description());
     vue->setTaches(MappeurTaches::pourFiche(fiche->id()));
@@ -107,6 +108,7 @@ void ControleurFiches::assignerFiche(VueEditionFiche* vue, const Fiche* fiche)
 void ControleurFiches::extraireFiche(Fiche* fiche, const VueEditionFiche* const vue)
 {
     fiche->setDescription(vue->description());
+    fiche->setPriorite(vue->getPriorite());
     fiche->setCommentaire(vue->commentaire());
     fiche->setTaches(vue->getTaches());
     fiche->setPieces(vue->getPieces());
