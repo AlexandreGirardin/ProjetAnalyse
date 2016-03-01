@@ -48,7 +48,8 @@ void ControleurOngletActions::configurerFragmentActions()
     connect(Application::get(), SIGNAL(actionModifiee()), this, SLOT(rafraichirActions()));
     connect(Application::get(), SIGNAL(rafraichirTout()), this, SLOT(rafraichirActions()));
     connect(Application::get(), SIGNAL(nombreActionsChange()), this, SLOT(rechargerActions()));
-    fragmentActions->setCaseCochee(true);
+    fragmentActions->setCaseCochee(false);
+    activerCritereActions();
 
     configurerBoutonEtat();
     configurerBoutonSupprimerAction();

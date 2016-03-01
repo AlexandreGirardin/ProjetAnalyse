@@ -40,6 +40,7 @@ ControleurOngletFiches::ControleurOngletFiches(QWidget* vue)
     connect(Application::get(), SIGNAL(nombreFichesChange()), this, SLOT(recharger()));
     fragment->champ()->setFocus();
     fragment->setCaseCochee(false);
+    activerCritereFiches();
 }
 
 void ControleurOngletFiches::peuplerFiches()
