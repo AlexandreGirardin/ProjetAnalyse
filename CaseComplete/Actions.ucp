@@ -27,7 +27,7 @@
 </RichDescription>
     <Sequence>0</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien est dans la page de visualisation des actions.</PreConditions>
+    <PreConditions>Le technicien est dans l'onglet de visualisation des actions ou dans la fenêtre de création ou de modification d'un ensemble de tâches.</PreConditions>
     <PostConditions>La nouvelle action a été ajoutée à la liste des actions définies.</PostConditions>
     <Level />
     <Complexity />
@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:04:55.5623216-04:00</DateAdded>
-    <DateModified>2015-12-17T15:21:37.3385559-05:00</DateModified>
+    <DateModified>2016-03-01T16:44:23.8967605-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-70cf062d-d8b2-42e8-9a00-cdaa827a72a0</UniqueID>
@@ -53,7 +53,7 @@
 </RichDescription>
     <Sequence>1</Sequence>
     <Priority>1</Priority>
-    <PreConditions>Le technicien doit être dans la page de visualisation des actions.</PreConditions>
+    <PreConditions>Le technicien doit être dans l'onglet de visualisation des actions</PreConditions>
     <PostConditions>L'état de l'action a été modifié.</PostConditions>
     <Level />
     <Complexity />
@@ -64,7 +64,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:13:25.1372805-04:00</DateAdded>
-    <DateModified>2015-12-17T15:25:30.679674-05:00</DateModified>
+    <DateModified>2016-03-01T16:03:17.3082707-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-70f463c9-8eec-4b37-83f6-2ce760b9db1b</UniqueID>
@@ -313,10 +313,10 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
   <Step>
     <UniqueID>ST-7f079859-12aa-4455-a9ff-719bbd652f8d</UniqueID>
     <ParentID>MSS-69089ac7-8b28-45cf-a123-5c1f4cae9633</ParentID>
-    <Description>Le technicien change l'état de la case à cocher «Actif».</Description>
+    <Description>Le technicien clique sur le bouton «Changer l'état» pour activer ou désactiver une action.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  change l'\'e9tat de la case \'e0 cocher \'abActif\'bb.\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1 technicien clique sur le bouton \'abChanger l'\'e9tat\'bb pour activer ou d\'e9sactiver une \cf2 action\cf1 .\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -541,10 +541,10 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
   <Step>
     <UniqueID>ST-912e2642-3f5c-4a6f-952b-75199ce86729</UniqueID>
     <ParentID>X-6fdc1aea-3c7f-49fb-aa0d-1787faef46de</ParentID>
-    <Description>Le système remet l'état de la case à cocher «Actif» à son état initial.</Description>
+    <Description>Le système remet l'état de la case à cocher «Activée» à son état initial.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  remet l'\'e9tat de la case \'e0 cocher \'abActif\'bb \'e0 son \'e9tat initial.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  remet l'\'e9tat de la case \'e0 cocher \'abActiv\'e9e\'bb \'e0 son \'e9tat initial.\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -718,10 +718,10 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
   <Step>
     <UniqueID>ST-085cc046-2f91-4fb4-8e03-106b6c1e7e2d</UniqueID>
     <ParentID>XA-6531fc9a-9fcb-4be6-a48d-e092746f599b</ParentID>
-    <Description>Le système remet l'état de la case à cocher «Actif» à son état initial.</Description>
+    <Description>Le système remet l'état de la case à cocher «Activée» à son état initial.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  remet l'\'e9tat de la case \'e0 cocher \'abActif\'bb \'e0 son \'e9tat initial.\cf0\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  remet l'\'e9tat de la case \'e0 cocher \'abActiv\'e9e\'bb \'e0 son \'e9tat initial.\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
