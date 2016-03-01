@@ -49,7 +49,7 @@ bool MappeurPieces::inserer(Piece* piece, const int &idFiche)
     piece->setId(AideMappeurs::derniereInsertion());
     if (succes) {
         QSqlQuery requete(*Application::bd);
-        requete.prepare("INSERT INTO fichespieces (idFiche, idPiece) VALUES (:idFiche, :idPiece)");
+        requete.prepare("INSERT INTO fichesPieces (idFiche, idPiece) VALUES (:idFiche, :idPiece)");
         requete.bindValue(":idFiche", idFiche);
         requete.bindValue(":idPiece", piece->id());
         succes = requete.exec();
