@@ -39,7 +39,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2015-12-17T14:29:26.4059261-05:00</DateModified>
+    <DateModified>2016-03-01T16:54:42.0568021-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</UniqueID>
@@ -640,9 +640,9 @@ La base de données est accessible et les dossiers de clients sont affichés.</P
   <Extension>
     <UniqueID>X-d965f804-39b8-4123-943a-8f8a82b9abc4</UniqueID>
     <ParentID>ST-a1976eff-9750-4b0b-9d4c-d4e6f4c9860b</ParentID>
-    <Description>Des données sont invalides ou le dossier existe déjà.</Description>
+    <Description>Des données sont invalides.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-\viewkind4\uc1\pard\f0\fs20 Des donn\'e9es sont invalides ou le dossier existe d\'e9j\'e0.\par
+\viewkind4\uc1\pard\f0\fs20 Des donn\'e9es sont invalides.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>

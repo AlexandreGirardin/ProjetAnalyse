@@ -42,7 +42,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2016-02-12T13:45:55.3362343-05:00</DateModified>
+    <DateModified>2016-03-01T16:55:02.3215924-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -106,10 +106,10 @@ La base de données est accessible et les fiches de maintenances sont affichées
     <UserID>UC-2</UserID>
     <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
     <Name>Fermer une fiche de maintenance</Name>
-    <Description>Créer un rapport à partir de la fiche de maintenance et change l'état de celle-ci pour la mettre «Fermé»</Description>
+    <Description>change l'état de la fiche pour la mettre «Fermée»</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Cr\'e9er un \cf1 rapport\cf2  \'e0 partir de la \cf1 fiche de maintenance\cf2  et change l'\'e9tat de celle-ci pour la mettre \'abFerm\'e9\'bb\cf0\par
+{\colortbl ;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 change \cf1 l'\'e9tat de la \cf2 fiche\cf1  pour la mettre \'abFerm\'e9e\'bb\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -127,7 +127,7 @@ La facture est ajoutée à Acomba.</PostConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.6817463-04:00</DateAdded>
-    <DateModified>2015-12-17T14:29:35.2683337-05:00</DateModified>
+    <DateModified>2016-03-01T16:50:23.9360314-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-d6188758-d353-48f5-aba2-86e7e521c02c</UniqueID>
@@ -406,10 +406,10 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Step>
     <UniqueID>ST-6baa438b-a4b0-4b02-afab-fae09f842148</UniqueID>
     <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
-    <Description>Le technicien confirme la fermeture de la fiche de maintenance en appuyant sur le bouton «Générer le rapport».</Description>
+    <Description>Le technicien confirme la fermeture de la fiche de maintenance en changeant l'état de celle-ci pour «Fermée»</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme la fermeture de la \cf3\ul fiche de maintenance\cf2\ulnone  en appuyant sur le bouton \'abG\'e9n\'e9rer le \cf3\ul rapport\cf2\ulnone\'bb.\cf0\par
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  confirme la fermeture de la \cf3\ul fiche de maintenance\cf2\ulnone  en changeant l'\'e9tat de celle-ci pour \'abFerm\'e9e\'bb\cf0\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -422,18 +422,6 @@ La facture est ajoutée à Acomba.</PostConditions>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
 \viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  modifie la \cf3\ul fiche de maintenance\cf2\ulnone  dans la \cf1\ul base de donn\'e9es\cf2\ulnone  pour la mettre comme \'abferm\'e9e\'bb.\par
-}
-</RichDescription>
-    <Sequence>2</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-5e46c579-d246-4e78-8c82-8d5b16eadb88</UniqueID>
-    <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
-    <Description>Le système génère le rapport pour la facturation.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  g\'e9n\'e8re le \cf3\ul rapport\cf2\ulnone  pour la facturation.\cf0\par
 }
 </RichDescription>
     <Sequence>3</Sequence>
@@ -825,6 +813,18 @@ La facture est ajoutée à Acomba.</PostConditions>
 }
 </RichDescription>
     <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-f485d0b8-efbb-4ebe-a1be-c14aee805a87</UniqueID>
+    <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
+    <Description>Le technicien sauvegarde les modifications apportées à la fiche de maintenance en appuyant sur le bouton «Save»</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  sauvegarde les modifications apport\'e9es \'e0 la \cf3 fiche de maintenance\cf1  en appuyant sur le bouton \'abSave\'bb\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Extension>
