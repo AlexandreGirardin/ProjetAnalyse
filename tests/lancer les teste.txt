@@ -1,0 +1,7 @@
+ouvrir invite de commande admin:
+setEnvironnementVariabe
+lancer serveur
+
+Autre fenetre de commande pas admin:
+commencer par origin pour creer les images
+exécuter le script pour lancer les tests.
