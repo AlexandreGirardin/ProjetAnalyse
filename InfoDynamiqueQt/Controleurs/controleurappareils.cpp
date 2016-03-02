@@ -72,9 +72,9 @@ void ControleurAppareils::effacerAppareil(const int &idAppareil)
         QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                         tr("Confirmation de la suppression"),
                         tr("Supprimer l'appareil?\n") + appareil->joliOut(),
-                        QMessageBox::Ok | QMessageBox::Cancel);
-        confirmation->setDefaultButton(QMessageBox::Cancel);
-        if (confirmation->exec() == confirmation->Ok) {
+                        QMessageBox::Yes | QMessageBox::No);
+        confirmation->setDefaultButton(QMessageBox::No);
+        if (confirmation->exec() == confirmation->Yes) {
             if (MappeurAppareils::supprimer(appareil)) {
                 emit Application::get()->nombreAppareilsChange();
             }

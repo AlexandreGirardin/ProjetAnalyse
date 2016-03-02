@@ -68,9 +68,9 @@ void ControleurEnsembles::supprimerEnsemble(const int &idEnsemble)
         QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                         tr("Confirmation de la suppression"),
                         tr("Supprimer l'ensemble «") + ensemble->nom()+"» ?",
-                        QMessageBox::Ok | QMessageBox::Cancel);
-        confirmation->setDefaultButton(QMessageBox::Cancel);
-        if (confirmation->exec() == confirmation->Ok) {
+                        QMessageBox::Yes | QMessageBox::No);
+        confirmation->setDefaultButton(QMessageBox::No);
+        if (confirmation->exec() == confirmation->Yes) {
             if (MappeurEnsembles::supprimer(ensemble)) {
                 emit Application::get()->nombreEnsemblesModifie();
             }

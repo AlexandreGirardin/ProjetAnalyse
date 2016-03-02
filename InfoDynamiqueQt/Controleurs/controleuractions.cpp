@@ -55,9 +55,9 @@ void ControleurActions::effacerAction(const int &idAction)
             QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                                             tr("Confirmation de la suppression"),
                                             tr("Supprimer l'action «") + action->nom()+"» ?",
-                                            QMessageBox::Ok | QMessageBox::Cancel);
-            confirmation->setDefaultButton(QMessageBox::Cancel);
-            if (confirmation->exec() == confirmation->Ok) {
+                                            QMessageBox::Yes | QMessageBox::No);
+            confirmation->setDefaultButton(QMessageBox::No);
+            if (confirmation->exec() == confirmation->Yes) {
                 if (MappeurActions::supprimer(action)) {
                     emit Application::get()->nombreActionsChange();
                 }
