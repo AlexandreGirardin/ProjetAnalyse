@@ -23,9 +23,6 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="champNom"/>
-     </item>
      <item row="2" column="0">
       <widget class="QLabel" name="etiquetteDesc">
        <property name="text">
@@ -55,7 +52,6 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>champNom</tabstop>
   <tabstop>champDesc</tabstop>
   <tabstop>caseActivee</tabstop>
   <tabstop>buttonBox</tabstop>

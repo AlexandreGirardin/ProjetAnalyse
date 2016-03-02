@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+class ChampFormulaire;
+
 namespace Ui {
 class VueGestionAction;
 }
@@ -16,13 +18,6 @@ public:
     explicit VueGestionAction(QWidget *parent = 0);
 
     ~VueGestionAction();
-
-    /**
-     * @brief setLectureSeule
-     * Rend les champs de la vue non éditables
-     * @param value
-     */
-    void setLectureSeule(const bool &value);
 
     /**
      * @brief getNom
@@ -65,6 +60,19 @@ public:
 
 private:
     Ui::VueGestionAction *ui;
+
+    ChampFormulaire* nom;
+
+private slots:
+
+    /**
+     * @brief verifierNom
+     * Vérifie si la valeur actuelle du champ Nom est valide
+     */
+    void verifierNom();
+
+    void verifierOk();
+
 };
 
 #endif // VUEGESTIONACTION_H

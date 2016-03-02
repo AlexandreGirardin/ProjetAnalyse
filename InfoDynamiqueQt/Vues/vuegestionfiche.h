@@ -6,6 +6,7 @@
 class Action;
 class EnsembleActions;
 class Tache;
+class ChampFormulaire;
 
 #include <QStandardItemModel>
 

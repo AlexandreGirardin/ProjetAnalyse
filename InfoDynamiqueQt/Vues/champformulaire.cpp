@@ -38,7 +38,7 @@ void ChampFormulaire::setTexteDefaut(const QString &valeur)
     ui->champ->setPlaceholderText(valeur);
 }
 
-QLineEdit *ChampFormulaire::getChamp() const
+QLineEdit* ChampFormulaire::getChamp() const
 {
     return ui->champ;
 }
