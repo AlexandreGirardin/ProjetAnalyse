@@ -50,7 +50,7 @@ void ControleurOngletAppareils::activerBoutonSupprimer(const bool &actif)
     if (!actif) {
         boutonSupprimer->setEnabled(false);
     } else {
-        int usages = MappeurFiches::nombrePourAppareil(fragment->idModele()) == 0;
+        int usages = MappeurFiches::nombrePourAppareil(fragment->idModele());
         if (usages == 0) {
             boutonSupprimer->setEnabled(true);
             boutonSupprimer->setToolTip("");
