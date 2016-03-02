@@ -3,8 +3,8 @@
 
 #include "Vues/champformulaire.h"
 
-#include "QLineEdit"
-#include "QPushButton"
+#include <QLineEdit>
+#include <QPushButton>
 
 VueGestionAction::VueGestionAction(QWidget *parent) :
     QDialog(parent),

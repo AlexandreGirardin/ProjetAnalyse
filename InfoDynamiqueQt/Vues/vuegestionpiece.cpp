@@ -1,11 +1,20 @@
 #include "Vues/vuegestionpiece.h"
 #include "ui_vuegestionpiece.h"
 
+#include "Vues/champformulaire.h"
+
+#include <QPushButton>
+
 VueGestionPiece::VueGestionPiece(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::VueGestionPiece)
 {
     ui->setupUi(this);
+    nom = new ChampFormulaire(tr("Ce champ est requis."), this);
+    ui->formLayout->setWidget(0, QFormLayout::FieldRole, nom);
+    connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
+    connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    verifierOk();
 }
 
 VueGestionPiece::~VueGestionPiece()
@@ -15,12 +24,12 @@ VueGestionPiece::~VueGestionPiece()
 
 QString VueGestionPiece::getNom() const
 {
-    return ui->champNom->text();
+    return nom->getTexte();
 }
 
-void VueGestionPiece::setNom(const QString &nom)
+void VueGestionPiece::setNom(const QString &valeur)
 {
-    ui->champNom->setText(nom);
+    nom->setTexte(valeur);
 }
 
 QString VueGestionPiece::getDescription() const
@@ -46,4 +55,14 @@ int VueGestionPiece::getPrixInt() const
 void VueGestionPiece::setPrix(const double &prix)
 {
     ui->champPrix->setValue(prix);
+}
+
+void VueGestionPiece::verifierNom()
+{
+    nom->setValide(!nom->getTexte().isEmpty());
+}
+
+void VueGestionPiece::verifierOk()
+{
+    ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(nom->estValide());
 }

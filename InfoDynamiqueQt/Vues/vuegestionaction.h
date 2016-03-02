@@ -71,6 +71,10 @@ private slots:
      */
     void verifierNom();
 
+    /**
+     * @brief verifierOk
+     * Vérifie l'état d'activation du bouton de confirmation
+     */
     void verifierOk();
 
 };

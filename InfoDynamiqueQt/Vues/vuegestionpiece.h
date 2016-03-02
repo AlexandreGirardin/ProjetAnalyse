@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+class ChampFormulaire;
+
 namespace Ui {
 class VueGestionPiece;
 }
@@ -28,7 +30,7 @@ public:
      * Assigne un nom à la pièce
      * @param nom Le nom à assigner
      */
-    void setNom(const QString &nom);
+    void setNom(const QString &valeur);
 
     /**
      * @brief getDescription
@@ -61,9 +63,25 @@ public:
      * @return  Le prix de la pièce, en sous
      */
     int getPrixInt() const;
-
 private:
     Ui::VueGestionPiece* ui;
+
+    ChampFormulaire* nom;
+
+private slots:
+
+    /**
+     * @brief verifierNom
+     * Vérifie si la valeur actuelle du champ Nom est valide
+     */
+    void verifierNom();
+
+    /**
+     * @brief verifierOk
+     * Vérifie l'état d'activation du bouton de confirmation
+     */
+    void verifierOk();
+
 };
 
 #endif // GESTIONPIECE_H
