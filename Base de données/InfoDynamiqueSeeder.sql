@@ -2,7 +2,7 @@
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`clients`
+INSERT INTO `clients`
     (`id`, `prenom`, `nom`, `telephone`, `adresse`, `courriel`)
 VALUES
     (1, "Dilbert",   "Daiquiri",    "5558501111", "1 rue Dickens",    "dd@courriel.com"),
@@ -21,7 +21,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`appareils`
+INSERT INTO `appareils`
     (`id`, `idType`, `idFabricant`, `idClient`, `description`, `motDePasse`)
 VALUES
     (1, 1, 2, 5, "Manque la lettre Y sur le clavier", "bonjour123"),
@@ -31,7 +31,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`pieces`
+INSERT INTO `pieces`
     (`id`, `nom`, `description`, `prix`)
 VALUES
     (1, "WesternDigital 1to Blue", "Disque dur Western Digital 1to Blue", "9999"),
@@ -41,7 +41,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`actions`
+INSERT INTO `actions`
     (`id`, `nom`, `description`, `etat`)
 VALUES
     (1,  "CCleaner",              "Supprimer les fichiers temporaires et nettoyer le registre.",    1),
@@ -57,7 +57,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`ensembles`
+INSERT INTO `ensembles`
     (`id`, `nom`, `description`)
 VALUES
     (1, "Nettoyage de virus",       "Nettoyer les virus et fichiers temporaires de l'ordinateur."),
@@ -66,7 +66,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`ensemblesActions`
+INSERT INTO `ensemblesActions`
     (`idEnsemble`, `idAction`)
 VALUES
     (1, 1),
@@ -91,7 +91,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fiches`
+INSERT INTO `fiches`
     (`id`, `idAppareil`, `priorite`, `idStatut`, `description`)
 VALUES
     (1,  1, 1, 0, "Nettoyage du disque dur"),
@@ -110,7 +110,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fichesPieces`
+INSERT INTO `fichesPieces`
     (`idFiche`, `idPiece`)
 VALUES
     (5, 2),
@@ -118,7 +118,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`taches`
+INSERT INTO `taches`
     (`id`, `idFiche`, `idAction`, `idStatut`, `commentaire`)
 VALUES
     (1,  1,  1,  0, "Terminé"),

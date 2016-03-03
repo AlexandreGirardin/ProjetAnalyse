@@ -16,10 +16,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de données :  `InfoDynamiqueDossiers`
---
-
 -- --------------------------------------------------------
 
 --
@@ -97,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `fabricants` (
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `InfoDynamiqueDossiers`.`fabricants`
+INSERT INTO `fabricants`
     (`id`, `nom`)
 VALUES
     (1, "Lenovo"),
@@ -157,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `statutsFiche` (
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `InfoDynamiqueDossiers`.`statutsFiche`
+INSERT INTO `statutsFiche`
     (`id`, `nom`)
 VALUES
     (0, "Fermée"),
@@ -179,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `statutsTache` (
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `InfoDynamiqueDossiers`.`statutsTache`
+INSERT INTO `statutsTache`
     (`id`, `nom`)
 VALUES
     (0, "Terminée"),
@@ -212,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `types` (
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `InfoDynamiqueDossiers`.`types`
+INSERT INTO `types`
     (`id`, `nom`)
 VALUES
     (1, "Portable"),
