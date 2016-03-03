@@ -82,6 +82,13 @@ private:
      */
     void closeEvent(QCloseEvent* event);
 
+public slots:
+
+    void cacherBoutonRecharger() const;
+
+    void afficherBoutonRecharger() const;
+
+
 signals:
 
     /**

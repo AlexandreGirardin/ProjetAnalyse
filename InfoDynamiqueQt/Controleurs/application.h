@@ -11,6 +11,7 @@ class ControleurOngletFiches;
 class VuePrincipale;
 
 class QSqlDatabase;
+class QTimer;
 #include <QMessageBox>
 
 
@@ -27,7 +28,7 @@ public:
      * Retourne l'instance de l'application en singleton
      * @return
      */
-    static const Application* get();
+    static Application* get();
 
     /**
      * @brief demarrer
@@ -51,7 +52,7 @@ private:
     static ControleurConnexion* connexion;
 
     // Singleton
-    static const Application* m_instance;
+    static Application* m_instance;
 
     // La vue principale de l'application
     static VuePrincipale* m_vuePrincipale;
@@ -117,6 +118,10 @@ private:
      */
     static void erreur(const QString &message, const QString &titre = tr("Erreur"), const QMessageBox::Icon type = QMessageBox::Warning);
 
+    QDateTime* derniereModification;
+
+    QTimer* chrono;
+
 private slots:
 
     /**
@@ -156,6 +161,10 @@ private slots:
      */
     void deconnexion();
 
+    void verifierModifications();
+
+    void rechargerDonnees();
+
 public slots:
 
     /**
@@ -171,6 +180,8 @@ public slots:
      * @param message L'erreur à afficher
      */
     static void erreurSuppression(const QString &message);
+
+    void donneesModifiees();
 
 signals:
 
@@ -239,6 +250,9 @@ signals:
      * Émis lorsque le bouton rafraichir est cliqué.
      */
     void rafraichirTout() const;
+
+    void nouvellesModifications() const;
+
 };
 
 #endif // APPLICATION_H

@@ -59,6 +59,7 @@ bool MappeurPieces::inserer(Piece* piece, const int &idFiche)
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }
@@ -87,6 +88,7 @@ bool MappeurPieces::mettreAJour(const Piece* piece)
     bool succes = ecrire(piece, commande);
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }
@@ -105,6 +107,7 @@ bool MappeurPieces::supprimer(const Piece* piece)
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }
@@ -126,6 +129,7 @@ bool MappeurPieces::supprimer(const QList<Piece*>* pieces)
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }
@@ -141,6 +145,7 @@ bool MappeurPieces::sync(const Fiche* fiche) {
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }

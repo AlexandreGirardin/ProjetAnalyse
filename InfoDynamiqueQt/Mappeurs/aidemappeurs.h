@@ -1,6 +1,8 @@
 #ifndef AIDEMAPPEURS_H
 #define AIDEMAPPEURS_H
 
+class QDateTime;
+
 class AideMappeurs
 {
 
@@ -15,6 +17,9 @@ public:
      */
     static int derniereInsertion();
 
+    static void noterModification();
+
+    static QDateTime* derniereModification();
 };
 
 #endif // AIDEMAPPEURS_H

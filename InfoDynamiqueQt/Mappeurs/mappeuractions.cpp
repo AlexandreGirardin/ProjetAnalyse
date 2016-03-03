@@ -166,6 +166,7 @@ bool MappeurActions::supprimer(const Action* action)
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
         Application::erreurSuppression(erreur);
@@ -192,6 +193,7 @@ bool MappeurActions::ecrire(const Action *action, const QString &commande)
     const bool succes = requete->exec();
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         Application::erreurEcriture(requete->lastError().text());
         bd.rollback();

@@ -75,6 +75,7 @@ bool MappeurFiches::inserer(Fiche* fiche)
     if (succes) {
         bd.commit();
         fiche->setId(AideMappeurs::derniereInsertion());
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }
@@ -102,6 +103,7 @@ bool MappeurFiches::mettreAJour(const Fiche* fiche)
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }
@@ -168,6 +170,7 @@ bool MappeurFiches::ecrireTransaction(const Fiche* fiche, const QString &command
     const bool succes = ecrire(fiche, commande);
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }

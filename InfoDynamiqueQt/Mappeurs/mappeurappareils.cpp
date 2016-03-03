@@ -135,6 +135,7 @@ bool MappeurAppareils::ecrire(const Appareil* appareil, const QString &commande)
     const bool succes = requete->exec();
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         Application::erreurEcriture(requete->lastError().text());
         bd.rollback();
