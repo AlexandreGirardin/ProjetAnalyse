@@ -1,15 +1,8 @@
 -- Commandes pour insérer des valeurs par défaut dans les tables
 
-INSERT INTO `InfoDynamiqueDossiers`.`techniciens`
-    (`id`, `prenom`, `nom`)
-VALUES
-    (1, "Ajax",    "Archambeault"),
-    (2, "Bruno",   "Beaudoin"),
-    (3, "Charles", "Chartrand");
-
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`clients`
+INSERT INTO `clients`
     (`id`, `prenom`, `nom`, `telephone`, `adresse`, `courriel`)
 VALUES
     (1, "Dilbert",   "Daiquiri",    "5558501111", "1 rue Dickens",    "dd@courriel.com"),
@@ -20,28 +13,15 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fabricants`
-    (`id`, `nom`)
-VALUES
-    (1, "Lenovo"),
-    (2, "Asus"),
-    (3, "Acer"),
-    (4, "Dell"),
-    (5, "Toshiba");
+-- fabricants peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`types`
-    (`id`, `nom`)
-VALUES
-    (1, "Portable"),
-    (2, "Tour"),
-    (3, "Tablette"),
-    (4, "Téléphone");
+-- types peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`appareils`
+INSERT INTO `appareils`
     (`id`, `idType`, `idFabricant`, `idClient`, `description`, `motDePasse`)
 VALUES
     (1, 1, 2, 5, "Manque la lettre Y sur le clavier", "bonjour123"),
@@ -51,7 +31,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`pieces`
+INSERT INTO `pieces`
     (`id`, `nom`, `description`, `prix`)
 VALUES
     (1, "WesternDigital 1to Blue", "Disque dur Western Digital 1to Blue", "9999"),
@@ -61,7 +41,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`actions`
+INSERT INTO `actions`
     (`id`, `nom`, `description`, `etat`)
 VALUES
     (1,  "CCleaner",              "Supprimer les fichiers temporaires et nettoyer le registre.",    1),
@@ -77,7 +57,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`ensembles`
+INSERT INTO `ensembles`
     (`id`, `nom`, `description`)
 VALUES
     (1, "Nettoyage de virus",       "Nettoyer les virus et fichiers temporaires de l'ordinateur."),
@@ -86,7 +66,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`ensemblesActions`
+INSERT INTO `ensemblesActions`
     (`idEnsemble`, `idAction`)
 VALUES
     (1, 1),
@@ -103,49 +83,34 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`statutsTache`
-    (`id`, `nom`)
-VALUES
-    (0, "Terminée"),
-    (1, "En cours"),
-    (2, "En attente"),
-    (3, "Terminée avec erreurs");
+-- statutsFiche peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`statutsFiche`
-    (`id`, `nom`)
-VALUES
-    (0, "Fermée"),
-    (1, "En cours"),
-    (2, "En attente"),
-    (3, "Prêt, client au courant"),
-    (4, "Prêt, message boîte vocale"),
-    (5, "En attente de pièces"),
-    (6, "En attente de confirmation du client");
+-- statutsTaches peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fiches`
-    (`id`, `idAppareil`, `priorite`, `idTechnicien`, `idStatut`, `description`)
+INSERT INTO `fiches`
+    (`id`, `idAppareil`, `priorite`, `idStatut`, `description`)
 VALUES
-    (1,  1, 1, 2, 0, "Nettoyage du disque dur"),
-    (2,  1, 2, 2, 1, "Nettoyage des virus"),
-    (3,  2, 2, 2, 2, "Réparation de l'écran"),
-    (4,  2, 2, 2, 3, "Transfert de données"),
-    (5,  1, 2, 2, 4, "Ne démarre pas"),
-    (6,  2, 2, 2, 5, "Mise à niveau Windows 10"),
-    (7,  1, 2, 2, 6, "Nettoyage du disque dur"),
-    (8,  2, 2, 2, 0, "Problème de son"),
-    (9,  2, 2, 2, 1, "Nettoyage du disque dur"),
-    (10, 1, 2, 2, 2, "Nettoyage des virus"),
-    (11, 3, 2, 2, 3, "Réparation de l'écran"),
-    (12, 3, 2, 2, 4, "Transfert de données"),
-    (13, 4, 2, 2, 5, "Ne démarre pas");
+    (1,  1, 1, 0, "Nettoyage du disque dur"),
+    (2,  1, 2, 1, "Nettoyage des virus"),
+    (3,  2, 2, 2, "Réparation de l'écran"),
+    (4,  2, 2, 3, "Transfert de données"),
+    (5,  1, 2, 4, "Ne démarre pas"),
+    (6,  2, 2, 5, "Mise à niveau Windows 10"),
+    (7,  1, 2, 6, "Nettoyage du disque dur"),
+    (8,  2, 2, 0, "Problème de son"),
+    (9,  2, 2, 1, "Nettoyage du disque dur"),
+    (10, 1, 2, 2, "Nettoyage des virus"),
+    (11, 3, 2, 3, "Réparation de l'écran"),
+    (12, 3, 2, 4, "Transfert de données"),
+    (13, 4, 2, 5, "Ne démarre pas");
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fichesPieces`
+INSERT INTO `fichesPieces`
     (`idFiche`, `idPiece`)
 VALUES
     (5, 2),
@@ -153,7 +118,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`taches`
+INSERT INTO `taches`
     (`id`, `idFiche`, `idAction`, `idStatut`, `commentaire`)
 VALUES
     (1,  1,  1,  0, "Terminé"),
