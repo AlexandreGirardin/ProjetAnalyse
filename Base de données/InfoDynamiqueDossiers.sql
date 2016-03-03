@@ -26,6 +26,11 @@ CREATE TABLE IF NOT EXISTS `date` (
   `derniereModification` TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO date
+	(derniereModification)
+VALUES
+	(CURRENT_TIMESTAMP)
+
 -- --------------------------------------------------------
 
 --
