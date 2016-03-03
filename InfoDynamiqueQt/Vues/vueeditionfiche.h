@@ -223,37 +223,85 @@ private:
 
     /**
      * @brief setTache
-     * Assigne la tâc
-     * @param tache
-     * @param rangee
-     * @param statuts
+     * Assigne une tâches au tableau des tâches
+     * @param tache La tâche à assigner
+     * @param rangee Le numéro de la rangée actuelle
+     * @param statuts Le status de la tâche
      */
     void setTache(const Tache* tache, const int &rangee, const QList<Statut*>* statuts);
 
+    /**
+     * @brief setPiece
+     * Assigne une pièce au tableau des pièces
+     * @param piece La pièce à assigner
+     * @param rangee Le numéro de la rangée actuelle
+     */
     void setPiece(const Piece* piece, const int &rangee);
 
 private slots:
 
+    /**
+     * @brief detailsClient
+     * Permet de visualiser les informations du client
+     */
     void detailsClient();
 
+    /**
+     * @brief detailsAppareil
+     * Permet de visualiser les informations de l'appareil
+     */
     void detailsAppareil();
 
+    /**
+     * @brief ajouterTache
+     * Permet d'ajouter une tâche
+     */
     void ajouterTache();
 
+    /**
+     * @brief retirerTache
+     * Permet de retirer une tâche
+     */
     void retirerTache();
 
+    /**
+     * @brief ajouterPiece
+     * Permet d'ajouter une pièce
+     */
     void ajouterPiece();
 
+    /**
+     * @brief retirerPiece
+     * Permet de retirer une pièce
+     */
     void retirerPiece();
 
+    /**
+     * @brief tacheSelectionnee
+     * Active le bouton retirer tâche
+     */
     void tacheSelectionnee();
 
+    /**
+     * @brief pieceSelectionnee
+     * Active le bouton reitirer pièce
+     */
     void pieceSelectionnee();
 
 signals:
 
+    /**
+     * @brief voirClient
+     * Signal emit lorsque le bouton détail client et cliqué
+     * @param idClient
+     */
     void voirClient(const int &idClient);
 
+    /**
+     * @brief voirAppareil
+     * Signal emit lorsque le bouton détail appareil et cliqué
+     * @param idFiche
+     */
     void voirAppareil(const int &idFiche);
 
 };

@@ -22,6 +22,10 @@ private:
     // Interface utilisée pour la vue
     Ui::VueConnexion *ui;
 
+    /**
+     * @brief configurerBoutonOk
+     * Configure les connexions en lien avec le bouton ok
+     */
     void configurerBoutonOk();
 
 public:
