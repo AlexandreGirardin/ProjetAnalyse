@@ -1,23 +1,26 @@
 #include "vuegestionaction.h"
 #include "ui_vuegestionaction.h"
 
+#include "Vues/champformulaire.h"
+
+#include <QLineEdit>
+#include <QPushButton>
+
 VueGestionAction::VueGestionAction(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::VueGestionAction)
 {
     ui->setupUi(this);
+    nom = new ChampFormulaire(tr("Ce champ est requis."), this);
+    ui->formLayout->setWidget(1, QFormLayout::FieldRole, nom);
+    connect(nom, SIGNAL(valeurChangee()), this, SLOT(verifierNom()));
+    connect(nom, SIGNAL(validiteChangee()), this, SLOT(verifierOk()));
+    verifierOk();
 }
 
 VueGestionAction::~VueGestionAction()
 {
     delete ui;
-}
-
-void VueGestionAction::setLectureSeule(const bool &value)
-{
-    ui->caseActivee->setCheckable(!value);
-    ui->champDesc->setReadOnly(value);
-    ui->champNom->setReadOnly(value);
 }
 
 bool VueGestionAction::getEtat() const
@@ -42,11 +45,21 @@ void VueGestionAction::setDescription(const QString &value)
 
 QString VueGestionAction::getNom() const
 {
-    return ui->champNom->text();
+    return nom->getTexte();
 }
 
 void VueGestionAction::setNom(const QString &value)
 {
-    ui->champNom->setText(value);
+    nom->setTexte(value);
+}
+
+void VueGestionAction::verifierNom()
+{
+    nom->setValide(!nom->getTexte().isEmpty());
+}
+
+void VueGestionAction::verifierOk()
+{
+    ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(nom->estValide());
 }
 

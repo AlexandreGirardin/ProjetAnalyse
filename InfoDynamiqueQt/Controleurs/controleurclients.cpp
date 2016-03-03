@@ -70,9 +70,9 @@ void ControleurClients::effacerClient(const int &idClient)
             QMessageBox* confirmation = new QMessageBox(QMessageBox::Warning,
                             tr("Confirmation de la suppression"),
                             tr("Supprimer le client?\n") + client->out(),
-                            QMessageBox::Ok | QMessageBox::Cancel);
-            confirmation->setDefaultButton(QMessageBox::Cancel);
-            if (confirmation->exec() == confirmation->Ok) {
+                            QMessageBox::Yes | QMessageBox::No);
+            confirmation->setDefaultButton(QMessageBox::No);
+            if (confirmation->exec() == confirmation->Yes) {
                 if (MappeurClients::supprimer(client)) {
                     emit Application::get()->nombreClientsChange();
                 }
