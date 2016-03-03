@@ -18,8 +18,7 @@ ALTER TABLE `ensemblesActions`
 --
 ALTER TABLE `fiches`
   DROP FOREIGN KEY `fichesAppareil`,
-  DROP FOREIGN KEY `fichesStatut`,
-  DROP FOREIGN KEY `fichesTechnicien`;
+  DROP FOREIGN KEY `fichesStatut`;
 
 --
 -- Contraintes pour la table `fichesPieces`

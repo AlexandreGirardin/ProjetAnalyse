@@ -89,13 +89,23 @@ CREATE TABLE IF NOT EXISTS `ensemblesActions` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `fabricants`
+-- Structure de la table `fabricants` et données de base
 --
 
 CREATE TABLE IF NOT EXISTS `fabricants` (
   `id` int(10) NOT NULL,
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `InfoDynamiqueDossiers`.`fabricants`
+    (`id`, `nom`)
+VALUES
+    (1, "Lenovo"),
+    (2, "Asus"),
+    (3, "Acer"),
+    (4, "Dell"),
+    (5, "Toshiba"),
+    (6, "Autre");
 
 -- --------------------------------------------------------
 
@@ -107,7 +117,6 @@ CREATE TABLE IF NOT EXISTS `fiches` (
   `id` int(10) NOT NULL,
   `idAppareil` int(10) NOT NULL,
   `priorite` int(10) NOT NULL,
-  `idTechnicien` int(10) NOT NULL,
   `idStatut` int(10) NOT NULL,
   `commentaire` varchar(1023) DEFAULT NULL,
   `description` varchar(1023) DEFAULT NULL
@@ -148,6 +157,17 @@ CREATE TABLE IF NOT EXISTS `statutsFiche` (
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `InfoDynamiqueDossiers`.`statutsFiche`
+    (`id`, `nom`)
+VALUES
+    (0, "Fermée"),
+    (1, "En cours"),
+    (2, "En attente"),
+    (3, "Prêt, client au courant"),
+    (4, "Prêt, message boîte vocale"),
+    (5, "En attente de pièces"),
+    (6, "En attente de confirmation du client");
+
 -- --------------------------------------------------------
 
 --
@@ -158,6 +178,14 @@ CREATE TABLE IF NOT EXISTS `statutsTache` (
   `id` int(10) NOT NULL,
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `InfoDynamiqueDossiers`.`statutsTache`
+    (`id`, `nom`)
+VALUES
+    (0, "Terminée"),
+    (1, "En cours"),
+    (2, "En attente"),
+    (3, "Terminée avec erreurs");
 
 -- --------------------------------------------------------
 
@@ -176,18 +204,6 @@ CREATE TABLE IF NOT EXISTS `taches` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `techniciens`
---
-
-CREATE TABLE IF NOT EXISTS `techniciens` (
-  `id` int(10) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `types`
 --
 
@@ -195,6 +211,14 @@ CREATE TABLE IF NOT EXISTS `types` (
   `id` int(10) NOT NULL,
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `InfoDynamiqueDossiers`.`types`
+    (`id`, `nom`)
+VALUES
+    (1, "Portable"),
+    (2, "Tour"),
+    (3, "Tablette"),
+    (4, "Téléphone");
 
 -- --------------------------------------------------------
 
@@ -256,7 +280,6 @@ ALTER TABLE `fabricants`
 ALTER TABLE `fiches`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idAppareil` (`idAppareil`),
-  ADD KEY `idTechnicien` (`idTechnicien`),
   ADD KEY `idStatut` (`idStatut`);
 
 --
@@ -293,12 +316,6 @@ ALTER TABLE `taches`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idStatut` (`idStatut`),
   ADD KEY `tachesAction` (`idAction`);
-
---
--- Index pour la table `techniciens`
---
-ALTER TABLE `techniciens`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `types`
@@ -378,11 +395,6 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT pour la table `usagers`
 --
 ALTER TABLE `usagers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `techniciens`
---
-ALTER TABLE `techniciens`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables exportées

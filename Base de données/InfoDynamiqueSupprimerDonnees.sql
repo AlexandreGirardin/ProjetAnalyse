@@ -10,13 +10,8 @@ DELETE FROM usagers;
 -- deuxième vague
 DELETE FROM ensembles;
 DELETE FROM actions;
-DELETE FROM statutsTache;
-DELETE FROM statutsFiche;
-DELETE FROM techniciens;
 
 -- troisième vague
 DELETE FROM appareils;
 DELETE FROM clients;
-DELETE FROM fabricants;
-DELETE FROM types;
 DELETE FROM fiches;

@@ -52,15 +52,10 @@ QString const * const RequetesSQL::toutesFichesPourAppareil =
         new QString("SELECT\
                         f.id as '#',\
                         f.priorite as 'Priorité',\
-                        CONCAT(t.nom, ', ', t.prenom) as 'Technicien',\
                         s.nom as 'Statut',\
                         f.commentaire as 'Commentaire'\
                     FROM\
                         fiches f\
-                    LEFT OUTER JOIN\
-                        techniciens t\
-                    ON\
-                        f.idTechnicien = t.id\
                     LEFT OUTER JOIN\
                         statutsFiche s\
                     ON\

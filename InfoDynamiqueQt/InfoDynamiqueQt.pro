@@ -26,7 +26,6 @@ SOURCES += main.cpp\
 	Modeles/piece.cpp \
 	Modeles/statut.cpp \
 	Modeles/tache.cpp \
-	Modeles/technicien.cpp \
 	Modeles/typeappareil.cpp \
 	Mappeurs/aidemappeurs.cpp \
 	Mappeurs/mappeuractions.cpp \
@@ -37,7 +36,6 @@ SOURCES += main.cpp\
 	Mappeurs/mappeurpieces.cpp \
 	Mappeurs/mappeurstatuts.cpp \
 	Mappeurs/mappeurtaches.cpp \
-	Mappeurs/mappeurtechniciens.cpp\
 	Mappeurs/mappeurtypeappareils.cpp \
 	Mappeurs/mappeurappareils.cpp \
 	Controleurs/application.cpp \
@@ -66,9 +64,9 @@ SOURCES += main.cpp\
 	Vues/vuegestionpiece.cpp \
 	Vues/vuegestiontache.cpp \
 	Vues/vueprincipale.cpp \
-        Vues/vueajoutertache.cpp \
-    Controleurs/controleurconnexion.cpp \
-    Vues/vuerapport.cpp
+		Vues/vueajoutertache.cpp \
+	Controleurs/controleurconnexion.cpp \
+	Vues/vuerapport.cpp
 
 HEADERS  += \
 	Modeles/action.h \
@@ -81,7 +79,6 @@ HEADERS  += \
 	Modeles/piece.h \
 	Modeles/statut.h \
 	Modeles/tache.h \
-	Modeles/technicien.h \
 	Modeles/typeappareil.h \
 	Mappeurs/aidemappeurs.h \
 	Mappeurs/mappeuractions.h \
@@ -92,7 +89,6 @@ HEADERS  += \
 	Mappeurs/mappeurpieces.h \
 	Mappeurs/mappeurstatuts.h \
 	Mappeurs/mappeurtaches.h \
-	Mappeurs/mappeurtechniciens.h\
 	Mappeurs/mappeurtypeappareils.h \
 	Mappeurs/mappeurappareils.h \
 	Controleurs/application.h \
@@ -121,9 +117,9 @@ HEADERS  += \
 	Vues/vuegestionpiece.h \
 	Vues/vuegestiontache.h \
 	Vues/vueprincipale.h \
-        Vues/vueajoutertache.h \
-    Controleurs/controleurconnexion.h \
-    Vues/vuerapport.h
+		Vues/vueajoutertache.h \
+	Controleurs/controleurconnexion.h \
+	Vues/vuerapport.h
 
 FORMS    += \
 	Vues/champformulaire.ui \
@@ -141,5 +137,5 @@ FORMS    += \
 	Vues/vuegestionpiece.ui \
 	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
-        Vues/vueajoutertache.ui \
-    Vues/vuerapport.ui
+		Vues/vueajoutertache.ui \
+	Vues/vuerapport.ui

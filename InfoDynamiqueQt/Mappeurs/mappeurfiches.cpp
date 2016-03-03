@@ -60,11 +60,9 @@ bool MappeurFiches::inserer(Fiche* fiche)
     QSqlDatabase bd = *Application::bd;
     bd.transaction();
     const QString commande("INSERT INTO fiches\
-                                (idAppareil, priorite, idTechnicien,\
-                                 idStatut, commentaire, description)\
+                                (idAppareil, priorite, idStatut, commentaire, description)\
                             VALUES\
-                                (:idAppareil, :priorite, :idTechnicien,\
-                                 :idStatut, :commentaire, :description)");
+                                (:idAppareil, :priorite, :idStatut, :commentaire, :description)");
     bool succes = ecrire(fiche, commande);
     fiche->setId(AideMappeurs::derniereInsertion());
     if (succes) {
@@ -91,7 +89,6 @@ bool MappeurFiches::mettreAJour(const Fiche* fiche)
                                  SET\
                                     idAppareil=:idAppareil,\
                                     priorite=:priorite,\
-                                    idTechnicien=:idTechnicien,\
                                     idStatut=:idStatut,\
                                     commentaire=:commentaire,\
                                     description=:description\
@@ -122,7 +119,6 @@ Fiche *MappeurFiches::mapper(const QSqlRecord &ligne)
     fiche->setCommentaire(ligne.value("commentaire").toString());
     fiche->setDescription(ligne.value("description").toString());
     fiche->setTaches(MappeurTaches::pourFiche(fiche->id()));
-//    fiche->setTechniciens(MappeurTechniciens::);
     return fiche;
 }
 
@@ -159,7 +155,6 @@ QSqlQuery *MappeurFiches::preparerRequete(const Fiche* fiche, const QString &com
     requete->bindValue(":id", fiche->id());
     requete->bindValue(":idAppareil", fiche->idAppareil());
     requete->bindValue(":priorite", fiche->priorite());
-    requete->bindValue(":idTechnicien", 1); // TODO
     requete->bindValue(":idStatut", fiche->statut()->id());
     requete->bindValue(":commentaire", fiche->commentaire());
     requete->bindValue(":description", fiche->description());

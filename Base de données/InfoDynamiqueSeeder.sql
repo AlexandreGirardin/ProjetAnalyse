@@ -1,12 +1,5 @@
 -- Commandes pour insérer des valeurs par défaut dans les tables
 
-INSERT INTO `InfoDynamiqueDossiers`.`techniciens`
-    (`id`, `prenom`, `nom`)
-VALUES
-    (1, "Ajax",    "Archambeault"),
-    (2, "Bruno",   "Beaudoin"),
-    (3, "Charles", "Chartrand");
-
 -- ------------------------------------------------------------
 
 INSERT INTO `InfoDynamiqueDossiers`.`clients`
@@ -20,24 +13,11 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fabricants`
-    (`id`, `nom`)
-VALUES
-    (1, "Lenovo"),
-    (2, "Asus"),
-    (3, "Acer"),
-    (4, "Dell"),
-    (5, "Toshiba");
+-- fabricants peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`types`
-    (`id`, `nom`)
-VALUES
-    (1, "Portable"),
-    (2, "Tour"),
-    (3, "Tablette"),
-    (4, "Téléphone");
+-- types peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
@@ -103,45 +83,30 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`statutsTache`
-    (`id`, `nom`)
-VALUES
-    (0, "Terminée"),
-    (1, "En cours"),
-    (2, "En attente"),
-    (3, "Terminée avec erreurs");
+-- statutsFiche peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`statutsFiche`
-    (`id`, `nom`)
-VALUES
-    (0, "Fermée"),
-    (1, "En cours"),
-    (2, "En attente"),
-    (3, "Prêt, client au courant"),
-    (4, "Prêt, message boîte vocale"),
-    (5, "En attente de pièces"),
-    (6, "En attente de confirmation du client");
+-- statutsTaches peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
 INSERT INTO `InfoDynamiqueDossiers`.`fiches`
-    (`id`, `idAppareil`, `priorite`, `idTechnicien`, `idStatut`, `description`)
+    (`id`, `idAppareil`, `priorite`, `idStatut`, `description`)
 VALUES
-    (1,  1, 1, 2, 0, "Nettoyage du disque dur"),
-    (2,  1, 2, 2, 1, "Nettoyage des virus"),
-    (3,  2, 2, 2, 2, "Réparation de l'écran"),
-    (4,  2, 2, 2, 3, "Transfert de données"),
-    (5,  1, 2, 2, 4, "Ne démarre pas"),
-    (6,  2, 2, 2, 5, "Mise à niveau Windows 10"),
-    (7,  1, 2, 2, 6, "Nettoyage du disque dur"),
-    (8,  2, 2, 2, 0, "Problème de son"),
-    (9,  2, 2, 2, 1, "Nettoyage du disque dur"),
-    (10, 1, 2, 2, 2, "Nettoyage des virus"),
-    (11, 3, 2, 2, 3, "Réparation de l'écran"),
-    (12, 3, 2, 2, 4, "Transfert de données"),
-    (13, 4, 2, 2, 5, "Ne démarre pas");
+    (1,  1, 1, 0, "Nettoyage du disque dur"),
+    (2,  1, 2, 1, "Nettoyage des virus"),
+    (3,  2, 2, 2, "Réparation de l'écran"),
+    (4,  2, 2, 3, "Transfert de données"),
+    (5,  1, 2, 4, "Ne démarre pas"),
+    (6,  2, 2, 5, "Mise à niveau Windows 10"),
+    (7,  1, 2, 6, "Nettoyage du disque dur"),
+    (8,  2, 2, 0, "Problème de son"),
+    (9,  2, 2, 1, "Nettoyage du disque dur"),
+    (10, 1, 2, 2, "Nettoyage des virus"),
+    (11, 3, 2, 3, "Réparation de l'écran"),
+    (12, 3, 2, 4, "Transfert de données"),
+    (13, 4, 2, 5, "Ne démarre pas");
 
 -- ------------------------------------------------------------
 
