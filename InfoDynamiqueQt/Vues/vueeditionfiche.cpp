@@ -62,9 +62,9 @@ QString VueEditionFiche::commentaire() const
     return ui->champCommentaire->document()->toPlainText();
 }
 
-void VueEditionFiche::setDescription(const QString &commentaire)
+void VueEditionFiche::setDescription(const QString &description)
 {
-    ui->champDescription->setText(commentaire);
+    ui->champDescription->setText(description);
 }
 
 QString VueEditionFiche::description() const
