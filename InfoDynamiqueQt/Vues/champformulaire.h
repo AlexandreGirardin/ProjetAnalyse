@@ -32,13 +32,30 @@ public:
 
     /**
      * @brief setLectureSeule
-     * @param valeur
+     * Assigne le mode de lecture du champ texte
+     * @param valeur Booléen qui détermine l'état
      */
     void setLectureSeule(const bool &valeur);
+
+    /**
+     * @brief setTexteDefaut
+     * Assigne un texte par défaut au champ texte
+     * @param valeur La valeur à assigner
+     */
     void setTexteDefaut(const QString &valeur);
+
+    /**
+     * @brief getChamp
+     * @return Le champ texte
+     */
     QLineEdit *getChamp() const;
 
+    /**
+     * @brief estValide
+     * @return La validité du champ texte
+     */
     bool estValide();
+
 private:
     Ui::ChampFormulaire *ui;
 
@@ -46,12 +63,25 @@ private:
 
 signals:
 
+    /**
+     * @brief valeurChangee
+     * Emis lorsque la valeur du champ texte est changée
+     */
     void valeurChangee();
 
+    /**
+     * @brief validiteChangee
+     * Emis lorsque la validité du champ texte est changée
+     */
     void validiteChangee();
 
 public slots:
 
+    /**
+     * @brief setValide
+     * Assigne la validité du champ texte
+     * @param valeur La valeur à assigner
+     */
     void setValide(const bool &valeur);
 
 };
