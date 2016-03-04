@@ -17,7 +17,13 @@ class VueGestionClient : public QDialog
 
 public:
 
+    /**
+     * @brief VueGestionClient
+     * Constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueGestionClient(QWidget* parent = 0);
+    
     ~VueGestionClient();
 
     /**
@@ -111,12 +117,13 @@ signals:
 
     /**
      * @brief champsRequisModifies
-     * Signal emit lorsqu'un champ requis est mofifié
+     * Emis lorsqu'un champ requis est mofifié
      */
     void champsRequisModifies(bool);
 
 private:
 
+    // Interface utilisée pour la vue
     Ui::VueGestionClient* ui;
 
     /**

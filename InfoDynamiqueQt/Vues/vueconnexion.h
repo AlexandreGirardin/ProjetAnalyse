@@ -17,6 +17,8 @@ class VueConnexion : public QDialog
 {
     Q_OBJECT
 
+    // Vue permettant la connexion à la base de donnée
+
 private:
 
     // Interface utilisée pour la vue

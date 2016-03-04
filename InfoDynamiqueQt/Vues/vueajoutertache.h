@@ -14,7 +14,7 @@ class VueAjouterTache : public QDialog
 {
     Q_OBJECT
 
-    //
+    // Vue permettant d'ajouter une tâche
 
 public:
 
@@ -75,10 +75,15 @@ public:
 
 private:
 
+    // Interface utilisée pour la vue
     Ui::VueAjouterTache *ui;
 
 public slots:
 
+    /**
+     * @brief ajouterAction
+     * Permet d'ajouter une nouvelle action
+     */
     void ajouterAction();
 
 };

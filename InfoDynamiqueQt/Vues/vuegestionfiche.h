@@ -21,6 +21,7 @@ class VueGestionFiche : public QDialog
     // Vue servant à modifier les informations générales d'une fiche
 
 public:
+
     /**
      * @brief VueGestionFiche
      * Constructeur de la vue
@@ -78,6 +79,7 @@ public:
 
 private:
 
+    // Interface utilisée pour la vue
     Ui::VueGestionFiche* ui;
 
     /**

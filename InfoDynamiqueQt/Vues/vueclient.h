@@ -11,8 +11,17 @@ class VueClient : public QDialog
 {
     Q_OBJECT
 
+    // Vue permettant de voir les informations d'un client
+
 public:
+    
+    /**
+     * @brief VueClient
+     * Le constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueClient(QWidget *parent = 0);
+    
     ~VueClient();
 
     /**
@@ -47,7 +56,10 @@ public:
     void setCourriel(const QString &courriel);
 
 private:
+
+    // Interface utilisée pour la vue
     Ui::VueClient *ui;
+
 };
 
 #endif // VUECLIENT_H

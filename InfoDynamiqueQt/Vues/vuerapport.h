@@ -25,6 +25,7 @@ public:
      * @param parent Le widget parent de la vue
      */
     explicit VueRapport(QWidget *parent = 0);
+
     ~VueRapport();
 
     /**
@@ -57,7 +58,10 @@ public:
     void setPieces(const QList<Piece*>* pieces);
 
 private:
+
+    // Interface utilisée pour la vue
     Ui::vueRapport *ui;
+
 };
 
 #endif // VUERAPPORT_H

@@ -14,9 +14,17 @@ class VueEnsemble;
 class VueEnsemble : public QDialog
 {
     Q_OBJECT
+    
+    // Vue servant à créer, visualiser et modifier un ensemble
 
 public:
+    /**
+     * @brief VueEnsemble
+     * Constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueEnsemble(QWidget *parent = 0);
+    
     ~VueEnsemble();
 
     /**
@@ -41,6 +49,8 @@ public:
     void setActions(const QList<Action*>* actions);
 
 private:
+
+    // Interface utilisée pour la vue
     Ui::VueEnsemble *ui;
 
     /**

@@ -71,6 +71,7 @@ public:
 
 private:
 
+    // Interface utilisée pour la vue
     Ui::VuePrincipale* ui;
 
     /**
@@ -98,8 +99,16 @@ private:
 
 public slots:
 
+    /**
+     * @brief cacherBoutonRecharger
+     * Permet de cacher le bouton recharger
+     */
     void cacherBoutonRecharger() const;
 
+    /**
+     * @brief afficherBoutonRecharger
+     * Permet d'afficher le bouton recharger
+     */
     void afficherBoutonRecharger() const;
 
 signals:

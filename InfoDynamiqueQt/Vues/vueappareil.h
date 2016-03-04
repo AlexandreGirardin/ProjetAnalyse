@@ -14,7 +14,10 @@ class VueAppareil : public QDialog
 {
     Q_OBJECT
 
+    // Vue permettant de voir les informations d'un appareil
+
 public:
+
     /**
      * @brief VueAppareil
      * Le constructeur de la vue
@@ -81,7 +84,10 @@ public:
     void setDescription(const QString &value);
 
 private:
+
+    // Interface utilisée pour la vue
     Ui::VueAppareil *ui;
+
 };
 
 #endif // VUEAPPAREIL_H

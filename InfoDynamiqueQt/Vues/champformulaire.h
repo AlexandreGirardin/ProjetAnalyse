@@ -67,6 +67,7 @@ public:
 
 private:
 
+    // Interface utilisée pour la vue
     Ui::ChampFormulaire *ui;
 
     // Conserve la validité du champ

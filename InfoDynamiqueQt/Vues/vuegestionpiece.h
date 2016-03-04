@@ -23,6 +23,7 @@ public:
      * @param parent Le widget parent de la vue
      */
     explicit VueGestionPiece(QWidget* parent = 0);
+
     ~VueGestionPiece();
 
     /**
@@ -69,7 +70,10 @@ public:
      * @return  Le prix de la pièce, en sous
      */
     int getPrixInt() const;
+
 private:
+
+    // Interface utilisée pour la vue
     Ui::VueGestionPiece* ui;
 
     //Champ contenant le nom de la pièce

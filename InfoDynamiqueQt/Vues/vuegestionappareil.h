@@ -18,6 +18,11 @@ class VueGestionAppareil : public QDialog
 
 public:
 
+    /**
+     * @brief VueGestionAppareil
+     * Constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueGestionAppareil(QWidget* parent = 0);
 
     ~VueGestionAppareil();
@@ -106,7 +111,9 @@ public:
 
 private:
 
+    // Interface utilisée pour la vue
     Ui::VueGestionAppareil* ui;
+
 };
 
 #endif // GESTIONAPPAREIL_H

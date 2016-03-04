@@ -150,6 +150,7 @@ public:
 
 private:
 
+    // Interface utilisée pour la vue
     Ui::VueEditionFiche* ui;
 
     // L'id de la fiche actuelle

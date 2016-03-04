@@ -12,9 +12,16 @@ class VueGestionAction;
 class VueGestionAction : public QDialog
 {
     Q_OBJECT
-
+    
+    // Vue servant à créer, visualiser et modifier une action
+    
 public:
 
+    /**
+     * @brief VueGestionAction
+     * Constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueGestionAction(QWidget *parent = 0);
 
     ~VueGestionAction();
@@ -59,8 +66,11 @@ public:
     void setEtat(const bool &value);
 
 private:
+
+    // Interface utilisée pour la vue
     Ui::VueGestionAction *ui;
 
+    // Le champ contenant le nom de l'action
     ChampFormulaire* nom;
 
 private slots:
