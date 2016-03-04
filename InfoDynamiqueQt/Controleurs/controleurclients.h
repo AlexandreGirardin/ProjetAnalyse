@@ -49,7 +49,7 @@ public slots:
      * @brief modifierClient
      * Lance la visualisation d'un client
      */
-    static void voirClient(const int &idClient, const bool &modal = false);
+    static void voirClient(const int &idClient, QWidget *parent = 0);
 
     /**
      * @brief effacerClient

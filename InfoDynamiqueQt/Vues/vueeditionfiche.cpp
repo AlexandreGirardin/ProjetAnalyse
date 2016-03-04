@@ -256,12 +256,12 @@ void VueEditionFiche::setPiece(const Piece* piece, const int &rangee)
 
 void VueEditionFiche::detailsClient()
 {
-    ControleurClients::voirClient(m_idClient, true);
+    ControleurClients::voirClient(m_idClient, this);
 }
 
 void VueEditionFiche::detailsAppareil()
 {
-    ControleurAppareils::voirAppareil(m_idAppareil, true);
+    ControleurAppareils::voirAppareil(m_idAppareil, this);
 }
 
 void VueEditionFiche::ajouterTache()

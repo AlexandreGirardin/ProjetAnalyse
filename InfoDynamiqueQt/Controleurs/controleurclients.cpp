@@ -43,13 +43,16 @@ void ControleurClients::modifierClient(const int &idClient)
     }
 }
 
-void ControleurClients::voirClient(const int &idClient, const bool &modal)
+void ControleurClients::voirClient(const int &idClient, QWidget* parent)
 {
     Client* client = MappeurClients::get(idClient);
     if (client != NULL) {
-        VueClient* vue = new VueClient(Application::vuePrincipale());
-        vue->setModal(modal);
-        vue->setWindowTitle(tr("Informations d'un client"));
+        VueClient* vue;
+        if (parent) {
+            vue = new VueClient(parent);
+        } else {
+            vue = new VueClient(Application::vuePrincipale());
+        }
         vue->setPrenom(client->prenom());
         vue->setNom(client->nom());
         vue->setTelephone(client->telephone());

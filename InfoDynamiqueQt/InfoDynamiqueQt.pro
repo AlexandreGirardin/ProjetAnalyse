@@ -62,7 +62,6 @@ SOURCES += main.cpp\
 	Vues/vuegestionensemble.cpp \
 	Vues/vuegestionfiche.cpp \
 	Vues/vuegestionpiece.cpp \
-	Vues/vuegestiontache.cpp \
 	Vues/vueprincipale.cpp \
 		Vues/vueajoutertache.cpp \
 	Controleurs/controleurconnexion.cpp \
@@ -115,7 +114,6 @@ HEADERS  += \
 	Vues/vuegestionensemble.h \
 	Vues/vuegestionfiche.h \
 	Vues/vuegestionpiece.h \
-	Vues/vuegestiontache.h \
 	Vues/vueprincipale.h \
 		Vues/vueajoutertache.h \
 	Controleurs/controleurconnexion.h \
@@ -135,7 +133,6 @@ FORMS    += \
 	Vues/vuegestionensemble.ui \
 	Vues/vuegestionfiche.ui \
 	Vues/vuegestionpiece.ui \
-	Vues/vuegestiontache.ui \
 	Vues/vueprincipale.ui \
 		Vues/vueajoutertache.ui \
 	Vues/vuerapport.ui
