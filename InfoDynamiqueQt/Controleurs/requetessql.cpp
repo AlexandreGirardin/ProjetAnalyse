@@ -53,6 +53,7 @@ QString const * const RequetesSQL::toutesFichesPourAppareil =
                         f.id as '#',\
                         f.priorite as 'Priorité',\
                         s.nom as 'Statut',\
+                        f.creation as 'Date de création',\
                         f.commentaire as 'Commentaire'\
                     FROM\
                         fiches f\
@@ -156,6 +157,7 @@ QString const * const RequetesSQL::afficherToutesFiches =
                         c.telephone as 'Client',\
                         f.priorite as 'Priorité',\
                         s.nom as 'Statut',\
+                        f.creation as 'Date de création',\
                         f.description as 'Description'\
                     FROM\
                         fiches f\

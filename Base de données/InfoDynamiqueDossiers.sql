@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `date` (
 INSERT INTO date
 	(derniereModification)
 VALUES
-	(CURRENT_TIMESTAMP)
+	(CURRENT_TIMESTAMP);
 
 -- --------------------------------------------------------
 
@@ -130,7 +130,8 @@ CREATE TABLE IF NOT EXISTS `fiches` (
   `priorite` int(10) NOT NULL,
   `idStatut` int(10) NOT NULL,
   `commentaire` varchar(1023) DEFAULT NULL,
-  `description` varchar(1023) DEFAULT NULL
+  `description` varchar(1023) DEFAULT NULL,
+  `creation` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -172,8 +173,8 @@ INSERT INTO `statutsFiche`
     (`id`, `nom`)
 VALUES
     (0, "Fermée"),
-    (1, "En cours"),
-    (2, "En attente"),
+    (1, "En attente"),
+    (2, "En cours"),
     (3, "Prêt, client au courant"),
     (4, "Prêt, message boîte vocale"),
     (5, "En attente de pièces"),
@@ -194,8 +195,8 @@ INSERT INTO `statutsTache`
     (`id`, `nom`)
 VALUES
     (0, "Terminée"),
-    (1, "En cours"),
-    (2, "En attente"),
+    (1, "En attente"),
+    (2, "En cours"),
     (3, "Terminée avec erreurs");
 
 -- --------------------------------------------------------
@@ -229,7 +230,8 @@ VALUES
     (1, "Portable"),
     (2, "Tour"),
     (3, "Tablette"),
-    (4, "Téléphone");
+    (4, "Téléphone"),
+    (5, "Autre");
 
 -- --------------------------------------------------------
 
