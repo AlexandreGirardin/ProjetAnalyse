@@ -7,24 +7,47 @@
     <x>0</x>
     <y>0</y>
     <width>237</width>
-    <height>151</height>
+    <height>156</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Ajouter une tâche</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../ressources.qrc">
+    <normaloff>:/Images/Toolbox.ico</normaloff>:/Images/Toolbox.ico</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="1">
-      <widget class="QComboBox" name="comboAction"/>
-     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="etiquetteAction">
        <property name="text">
         <string>Action:</string>
        </property>
       </widget>
+     </item>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QComboBox" name="comboAction">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="boutonAjouter">
+         <property name="icon">
+          <iconset resource="../ressources.qrc">
+           <normaloff>:/Images/tag-new.svg</normaloff>:/Images/tag-new.svg</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="etiquetteStatut">
@@ -34,7 +57,14 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QComboBox" name="comboStatut"/>
+      <widget class="QComboBox" name="comboStatut">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="etiquetteCommentaire">
@@ -64,7 +94,16 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <tabstops>
+  <tabstop>comboAction</tabstop>
+  <tabstop>boutonAjouter</tabstop>
+  <tabstop>comboStatut</tabstop>
+  <tabstop>champCommentaire</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../ressources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
