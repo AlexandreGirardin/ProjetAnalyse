@@ -4,7 +4,6 @@
 #include <QCloseEvent>
 #include <QPushButton>
 #include <QResizeEvent>
-#include <QDebug>
 
 VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::VuePrincipale)
 {
@@ -12,12 +11,23 @@ VuePrincipale::VuePrincipale(QWidget* parent) : QMainWindow(parent), ui(new Ui::
     configurerBoutonRecharger();
 }
 
+VuePrincipale::~VuePrincipale()
+{
+    delete ui;
+}
+
+void VuePrincipale::closeEvent (QCloseEvent* event)
+{
+    event->ignore();
+    emit deconnexion();
+}
+
 void VuePrincipale::configurerBoutonRecharger()
 {
     boutonRecharger = new QPushButton(QIcon(":Images/refresh"), tr("Rafraîchir"), this);
     boutonRecharger->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     boutonRecharger->setFixedHeight(ui->onglets->tabBar()->tabRect(0).height());
-    boutonRecharger->show();
+    boutonRecharger->hide();
     repositionnerBoutonRecharger();
 }
 
@@ -35,15 +45,14 @@ QPushButton *VuePrincipale::getBoutonRecharger() const
     return boutonRecharger;
 }
 
-void VuePrincipale::closeEvent (QCloseEvent* event)
+void VuePrincipale::cacherBoutonRecharger() const
 {
-    event->ignore();
-    emit deconnexion();
+    boutonRecharger->hide();
 }
 
-VuePrincipale::~VuePrincipale()
+void VuePrincipale::afficherBoutonRecharger() const
 {
-    delete ui;
+    boutonRecharger->show();
 }
 
 QTabWidget* VuePrincipale::onglets() const

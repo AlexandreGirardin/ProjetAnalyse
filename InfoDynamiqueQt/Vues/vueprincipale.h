@@ -96,6 +96,12 @@ private:
      */
     void configurerBoutonRecharger();
 
+public slots:
+
+    void cacherBoutonRecharger() const;
+
+    void afficherBoutonRecharger() const;
+
 signals:
 
     /**

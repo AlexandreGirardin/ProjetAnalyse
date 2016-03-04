@@ -98,6 +98,7 @@ bool MappeurTaches::syncTaches(const Fiche* fiche) {
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }

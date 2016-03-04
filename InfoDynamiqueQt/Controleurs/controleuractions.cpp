@@ -9,10 +9,15 @@
 
 #include <QMessageBox>
 
-int ControleurActions::creerAction()
+int ControleurActions::creerAction(QWidget *parent)
 {
     int id = -1;
-    VueGestionAction* vue = new VueGestionAction(Application::vuePrincipale());
+    VueGestionAction* vue;
+    if (parent) {
+        vue = new VueGestionAction(parent);
+    } else {
+        vue = new VueGestionAction(Application::vuePrincipale());
+    }
     vue->setWindowTitle(tr("Créer une nouvelle action"));
     vue->setEtat(true);
     if (vue->exec() == vue->Accepted) {

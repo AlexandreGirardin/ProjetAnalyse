@@ -19,7 +19,7 @@ public slots:
      * Lance la création d'une nouvelle action
      * @return L'id de la nouvelle action ou -1
      */
-    static int creerAction();
+    static int creerAction(QWidget* parent = 0);
 
     /**
      * @brief modifierAction

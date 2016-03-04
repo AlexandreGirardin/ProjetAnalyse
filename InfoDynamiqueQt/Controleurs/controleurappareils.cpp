@@ -50,13 +50,16 @@ void ControleurAppareils::modifierAppareil(const int &idAppareil)
     }
 }
 
-void ControleurAppareils::voirAppareil(const int &idAppareil, const bool &modal)
+void ControleurAppareils::voirAppareil(const int &idAppareil, QWidget* parent)
 {
     Appareil* appareil = MappeurAppareils::get(idAppareil);
     if (appareil != NULL) {
-        VueAppareil* vue = new VueAppareil(Application::vuePrincipale());
-        vue->setModal(modal);
-        vue->setWindowTitle(tr("Appareil"));
+        VueAppareil* vue;
+        if (parent) {
+            vue = new VueAppareil(parent);
+        } else {
+            vue = new VueAppareil(Application::vuePrincipale());
+        }
         assignerAppareil(vue, appareil);
         appareil->deleteLater();
         connect(vue, SIGNAL(finished(int)), vue, SLOT(deleteLater()));

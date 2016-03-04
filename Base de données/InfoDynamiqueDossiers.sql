@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `modifications`
+--
+
+CREATE TABLE IF NOT EXISTS `date` (
+  `derniereModification` TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO date
+	(derniereModification)
+VALUES
+	(CURRENT_TIMESTAMP);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `actions`
 --
 

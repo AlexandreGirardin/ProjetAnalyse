@@ -1,16 +1,19 @@
 #include "application.h"
 #include "Vues/vueprincipale.h"
 
+#include "Mappeurs/aidemappeurs.h"
 #include "Controleurs/controleurconnexion.h"
 #include "Controleurs/controleurongletactions.h"
 #include "Controleurs/controleurongletappareils.h"
 #include "Controleurs/controleurongletclients.h"
 #include "Controleurs/controleurongletfiches.h"
 
+#include <QDateTime>
 #include <QPushButton>
 #include <QSettings>
+#include <QTimer>
 
-const Application* Application::m_instance = NULL;
+Application* Application::m_instance = NULL;
 VuePrincipale* Application::m_vuePrincipale = NULL;
 QSqlDatabase* Application::bd = NULL;
 ControleurConnexion* Application::connexion = NULL;
@@ -21,7 +24,7 @@ Application::Application(int &argc, char **argv) :
     m_instance = this;
 }
 
-const Application* Application::get()
+Application* Application::get()
 {
     return m_instance;
 }
@@ -45,6 +48,10 @@ void Application::connecter()
 void Application::ouvrirFenetre()
 {
     bd = connexion->bd();
+    derniereModification = AideMappeurs::derniereModification();
+    chrono = new QTimer(m_vuePrincipale);
+    connect(chrono, SIGNAL(timeout()), this, SLOT(verifierModifications()));
+    chrono->start(15000);
     chargerOnglet();
     m_vuePrincipale->show();
 }
@@ -78,7 +85,8 @@ void Application::creerFenetre()
     appareilsCharges = false;
     actionsChargees = false;
     paresseux = connect(m_vuePrincipale->onglets(), SIGNAL(currentChanged(int)), this, SLOT(chargerOnglet()));
-    connect(m_vuePrincipale->getBoutonRecharger(), SIGNAL(clicked()), get(), SIGNAL(rafraichirTout()));
+    connect(m_vuePrincipale->getBoutonRecharger(), SIGNAL(clicked()), get(), SLOT(rechargerDonnees()));
+    connect(m_instance, SIGNAL(nouvellesModifications()), m_vuePrincipale, SLOT(afficherBoutonRecharger()));
     connect(m_vuePrincipale, SIGNAL(deconnexion()), this, SLOT(deconnexion()));
 }
 
@@ -107,12 +115,31 @@ void Application::chargerOnglet()
 
 void Application::deconnexion()
 {
+    chrono->stop();
     sauvegarderParametres();
     m_vuePrincipale->hide();
     connexion->fermer();
     connexion->deleteLater();
     m_vuePrincipale->deleteLater();
     demarrer();
+}
+
+void Application::verifierModifications()
+{
+    QDateTime* nouvelleDate = AideMappeurs::derniereModification();
+    if (derniereModification != NULL && derniereModification->isValid()) {
+        if (*nouvelleDate > *derniereModification) {
+            delete derniereModification;
+            derniereModification = nouvelleDate;
+            emit nouvellesModifications();
+        }
+    }
+}
+
+void Application::rechargerDonnees()
+{
+    emit rafraichirTout();
+    m_vuePrincipale->cacherBoutonRecharger();
 }
 
 void Application::erreurEcriture(const QString &message)
@@ -123,6 +150,13 @@ void Application::erreurEcriture(const QString &message)
 void Application::erreurSuppression(const QString &message)
 {
     erreur(tr("Une erreur s'est produite lors de la suppression:\n")+message, tr("Erreur lors de la suppression"));
+}
+
+void Application::donneesModifiees()
+{
+    QDateTime* ancienne = &*derniereModification;
+    derniereModification = AideMappeurs::derniereModification();
+    delete ancienne;
 }
 
 void Application::fermer()

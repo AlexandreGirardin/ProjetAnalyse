@@ -5,6 +5,7 @@
 #include "Controleurs/controleurensembles.h"
 #include "Controleurs/requetessql.h"
 #include "Mappeurs/mappeuractions.h"
+#include "Modeles/action.h"
 #include "Vues/fragment.h"
 
 #include <QHeaderView>
@@ -57,9 +58,20 @@ void ControleurOngletActions::configurerFragmentActions()
 
 void ControleurOngletActions::configurerBoutonEtat()
  {
-    boutonEtat = fragmentActions->ajouterBouton(3, tr("Changer l'état"), QIcon(":/Images/reverse"));
+    boutonEtat = fragmentActions->ajouterBouton(3, tr("Désactiver"), QIcon(":/Images/reverse"));
     boutonEtat->setEnabled(false);
+    int largeurDesactiver = boutonEtat->width();
+    boutonEtat->setText(tr("Activer"));
+    int largeurActiver = boutonEtat->width();
+    if (largeurActiver > largeurDesactiver) {
+        boutonEtat->setMinimumWidth(largeurActiver);
+    } else {
+        boutonEtat->setMinimumWidth(largeurDesactiver);
+    }
+    boutonEtat->setText(tr("Changer l'état"));
     connect(boutonEtat, SIGNAL(clicked()), this, SLOT(changerEtatAction()));
+    connect(fragmentActions, SIGNAL(modeleSelectionne(int)), this, SLOT(ajusterBoutonChangerEtat()));
+    connect(fragmentActions, SIGNAL(modeleRelache()), this, SLOT(ajusterBoutonChangerEtat()));
 }
 
 void ControleurOngletActions::configurerBoutonSupprimerAction()
@@ -139,6 +151,23 @@ void ControleurOngletActions::activerBoutonSupprimerAction(const bool &actif)
             boutonSupprimerAction->setEnabled(false);
             boutonSupprimerAction->setToolTip(tr("Cette action ne peut pas être supprimée."));
         }
+    }
+}
+
+void ControleurOngletActions::ajusterBoutonChangerEtat()
+{
+    if (fragmentActions->idModele() != -1) {
+        Action* action = MappeurActions::get(fragmentActions->idModele());
+        if (action != NULL) {
+            if (action->etat()) {
+                boutonEtat->setText(tr("Désactiver"));
+            } else {
+                boutonEtat->setText(tr("Activer"));
+            }
+        }
+        action->deleteLater();
+    } else {
+        boutonEtat->setText(tr("Changer l'état"));
     }
 }
 

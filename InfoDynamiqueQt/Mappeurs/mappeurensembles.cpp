@@ -76,6 +76,7 @@ bool MappeurEnsembles::inserer(EnsembleActions *ensemble)
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }
@@ -106,6 +107,7 @@ bool MappeurEnsembles::mettreAJour(const EnsembleActions* ensemble)
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }
@@ -124,6 +126,7 @@ bool MappeurEnsembles::supprimer(const EnsembleActions* ensemble)
     }
     if (succes) {
         bd.commit();
+        AideMappeurs::noterModification();
     } else {
         bd.rollback();
     }

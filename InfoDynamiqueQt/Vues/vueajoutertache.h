@@ -29,10 +29,17 @@ public:
 
     /**
      * @brief setActions
-     * Assigne les actions au menu déroulant actions
+     * Assigne les actions au menu déroulant des actions
      * @param actions La liste des actions à assigner
      */
     void setActions(const QList<Action*>* actions);
+
+    /**
+     * @brief setAction
+     * Ajoute une action au menu déroulant des actions
+     * @param action L'action à ajouter
+     */
+    void setAction(const Action *action);
 
     /**
      * @brief getAction
@@ -69,6 +76,10 @@ public:
 private:
 
     Ui::VueAjouterTache *ui;
+
+public slots:
+
+    void ajouterAction();
 
 };
 

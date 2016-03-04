@@ -293,7 +293,7 @@ private slots:
 
     /**
      * @brief pieceSelectionnee
-     * Active le bouton reitirer pièce
+     * Active le bouton retirer pièce
      */
     void pieceSelectionnee();
 

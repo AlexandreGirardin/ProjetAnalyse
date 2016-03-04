@@ -22,16 +22,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
+    <property name="margin">
      <number>0</number>
     </property>
     <item>
@@ -49,7 +40,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="documentMode">
        <bool>true</bool>
@@ -69,7 +60,7 @@
          <normaloff>:/Images/im-user.svg</normaloff>:/Images/im-user.svg</iconset>
        </attribute>
        <attribute name="title">
-        <string>Clients</string>
+        <string>&amp;Clients</string>
        </attribute>
        <attribute name="toolTip">
         <string>Gestion des clients, de leurs appareils et de leurs fiches</string>
@@ -78,16 +69,7 @@
         <property name="spacing">
          <number>4</number>
         </property>
-        <property name="leftMargin">
-         <number>4</number>
-        </property>
-        <property name="topMargin">
-         <number>4</number>
-        </property>
-        <property name="rightMargin">
-         <number>4</number>
-        </property>
-        <property name="bottomMargin">
+        <property name="margin">
          <number>4</number>
         </property>
        </layout>
@@ -98,7 +80,7 @@
          <normaloff>:/Images/document-new.svg</normaloff>:/Images/document-new.svg</iconset>
        </attribute>
        <attribute name="title">
-        <string>Fiches</string>
+        <string>&amp;Fiches</string>
        </attribute>
        <attribute name="toolTip">
         <string>Gestion des fiches</string>
@@ -107,16 +89,7 @@
         <property name="spacing">
          <number>4</number>
         </property>
-        <property name="leftMargin">
-         <number>4</number>
-        </property>
-        <property name="topMargin">
-         <number>4</number>
-        </property>
-        <property name="rightMargin">
-         <number>4</number>
-        </property>
-        <property name="bottomMargin">
+        <property name="margin">
          <number>4</number>
         </property>
        </layout>
@@ -127,7 +100,7 @@
          <normaloff>:/Images/computer-laptop.svg</normaloff>:/Images/computer-laptop.svg</iconset>
        </attribute>
        <attribute name="title">
-        <string>Appareils</string>
+        <string>A&amp;ppareils</string>
        </attribute>
        <attribute name="toolTip">
         <string>Gestion des appareils</string>
@@ -136,16 +109,7 @@
         <property name="spacing">
          <number>4</number>
         </property>
-        <property name="leftMargin">
-         <number>4</number>
-        </property>
-        <property name="topMargin">
-         <number>4</number>
-        </property>
-        <property name="rightMargin">
-         <number>4</number>
-        </property>
-        <property name="bottomMargin">
+        <property name="margin">
          <number>4</number>
         </property>
        </layout>
@@ -156,7 +120,7 @@
          <normaloff>:/Images/tag.svg</normaloff>:/Images/tag.svg</iconset>
        </attribute>
        <attribute name="title">
-        <string>Actions</string>
+        <string>&amp;Actions</string>
        </attribute>
        <attribute name="toolTip">
         <string>Gestion des actions et des ensembles d'actions</string>
@@ -165,16 +129,7 @@
         <property name="spacing">
          <number>4</number>
         </property>
-        <property name="leftMargin">
-         <number>4</number>
-        </property>
-        <property name="topMargin">
-         <number>4</number>
-        </property>
-        <property name="rightMargin">
-         <number>4</number>
-        </property>
-        <property name="bottomMargin">
+        <property name="margin">
          <number>4</number>
         </property>
        </layout>
