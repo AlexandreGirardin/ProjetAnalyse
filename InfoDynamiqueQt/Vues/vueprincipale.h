@@ -15,14 +15,14 @@ class VuePrincipale : public QMainWindow
 
     // Vue principale de l'application, regroupant les autres vues dans des onglets
 
-    QPushButton* boutonRecharger;
-
-    void repositionnerBoutonRecharger();
-
-    void configurerBoutonRecharger();
 
 public:
 
+    /**
+     * @brief VuePrincipale
+     * Le constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VuePrincipale(QWidget* parent = 0);
 
     ~VuePrincipale();
@@ -65,8 +65,7 @@ public:
 
     /**
      * @brief getBoutonRecharger
-     * retourne le bouton qui permet de rafraichir l'application
-     * @return
+     * @return Le bouton qui permet de rafraichir les données l'application
      */
     QPushButton* getBoutonRecharger() const;
 
@@ -81,6 +80,21 @@ private:
      * @param event L'événement de fermeture de fenêtre
      */
     void closeEvent(QCloseEvent* event);
+
+    // Bouton permettant de rafraichir les données de l'application
+    QPushButton* boutonRecharger;
+
+    /**
+     * @brief repositionnerBoutonRecharger
+     * Permet le repositionnement du bouton recharger
+     */
+    void repositionnerBoutonRecharger();
+
+    /**
+     * @brief configurerBoutonRecharger
+     * Configure les paramètres du bouton recharger
+     */
+    void configurerBoutonRecharger();
 
 signals:
 

@@ -5,7 +5,7 @@ ChampFormulaire::ChampFormulaire(const QString& raison, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ChampFormulaire)
 {
-    valide = false;
+    m_valide = false;
     ui->setupUi(this);
     connect(ui->champ, SIGNAL(textChanged(QString)), this, SIGNAL(valeurChangee()));
     ui->iconeStatut->setToolTip(raison);
@@ -45,14 +45,14 @@ QLineEdit* ChampFormulaire::getChamp() const
 
 void ChampFormulaire::setValide(const bool &valeur)
 {
-    if (valeur != valide) {
-        valide = valeur;
+    if (valeur != m_valide) {
+        m_valide = valeur;
         ui->iconeStatut->setVisible(!valeur);
         emit validiteChangee();
     }
 }
 
 bool ChampFormulaire::estValide() {
-    return valide;
+    return m_valide;
 }
 

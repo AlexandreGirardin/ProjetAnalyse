@@ -24,7 +24,13 @@ class VueEditionFiche : public QDialog
 
 public:
 
+    /**
+     * @brief VueEditionFiche
+     * Le constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueEditionFiche(QWidget* parent = 0);
+    
     ~VueEditionFiche();
 
     /**
@@ -146,10 +152,13 @@ private:
 
     Ui::VueEditionFiche* ui;
 
+    // L'id de la fiche actuelle
     int m_idFiche;
 
+    // L'id du client actuel
     int m_idClient;
 
+    // L'id de l'appareil actuel
     int m_idAppareil;
 
     /**

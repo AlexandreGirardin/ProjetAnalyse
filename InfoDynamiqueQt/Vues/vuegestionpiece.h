@@ -16,6 +16,12 @@ class VueGestionPiece : public QDialog
     // Vue servant à créer, visualiser et modifier une pièce
 
 public:
+
+    /**
+     * @brief VueGestionPiece
+     * Le constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueGestionPiece(QWidget* parent = 0);
     ~VueGestionPiece();
 
@@ -66,6 +72,7 @@ public:
 private:
     Ui::VueGestionPiece* ui;
 
+    //Champ contenant le nom de la pièce
     ChampFormulaire* nom;
 
 private slots:

@@ -14,8 +14,17 @@ class VueAjouterTache : public QDialog
 {
     Q_OBJECT
 
+    //
+
 public:
+
+    /**
+     * @brief VueAjouterTache
+     * Le constructeur de la vue
+     * @param parent
+     */
     explicit VueAjouterTache(QWidget *parent = 0);
+
     ~VueAjouterTache();
 
     /**
@@ -58,7 +67,9 @@ public:
     QString getCommentaire() const;
 
 private:
+
     Ui::VueAjouterTache *ui;
+
 };
 
 #endif // VUEAJOUTERTACHE_H

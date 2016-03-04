@@ -30,6 +30,11 @@ private:
 
 public:
 
+    /**
+     * @brief VueConnexion
+     * Le constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueConnexion(QWidget *parent = 0);
 
     ~VueConnexion();

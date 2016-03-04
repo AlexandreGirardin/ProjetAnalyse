@@ -21,7 +21,11 @@ class VueGestionFiche : public QDialog
     // Vue servant à modifier les informations générales d'une fiche
 
 public:
-
+    /**
+     * @brief VueGestionFiche
+     * Constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueGestionFiche(QWidget* parent = 0);
 
     ~VueGestionFiche();
