@@ -13,8 +13,17 @@ class ChampFormulaire : public QWidget
 {
     Q_OBJECT
 
+    // Le wiget permet de valider
+
 public:
+
+    /**
+     * @brief VueGestionPiece
+     * Le constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit ChampFormulaire(const QString& raison, QWidget *parent = 0);
+
     ~ChampFormulaire();
 
     /**
@@ -57,9 +66,11 @@ public:
     bool estValide();
 
 private:
+
     Ui::ChampFormulaire *ui;
 
-    bool valide;
+    // Conserve la validité du champ
+    bool m_valide;
 
 signals:
 

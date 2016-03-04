@@ -15,7 +15,13 @@ class VueAppareil : public QDialog
     Q_OBJECT
 
 public:
+    /**
+     * @brief VueAppareil
+     * Le constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueAppareil(QWidget *parent = 0);
+    
     ~VueAppareil();
 
     /**

@@ -15,8 +15,15 @@ class vueRapport;
 class VueRapport : public QDialog
 {
     Q_OBJECT
+    
+    // Vue servant à visualiser de façon simple le traveil effectué sur une fiche
 
 public:
+    /**
+     * @brief VueRapport
+     * Le constructeur de la vue
+     * @param parent Le widget parent de la vue
+     */
     explicit VueRapport(QWidget *parent = 0);
     ~VueRapport();
 
