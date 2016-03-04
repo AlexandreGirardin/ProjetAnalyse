@@ -126,16 +126,14 @@ void Application::deconnexion()
 
 void Application::verifierModifications()
 {
-//    if (bd != NULL && bd->isOpen()) {
-        QDateTime* nouvelleDate = AideMappeurs::derniereModification();
-        if (derniereModification != NULL && derniereModification->isValid()) {
-            if (*nouvelleDate > *derniereModification) {
-                delete derniereModification;
-                derniereModification = nouvelleDate;
-                emit nouvellesModifications();
-            }
+    QDateTime* nouvelleDate = AideMappeurs::derniereModification();
+    if (derniereModification != NULL && derniereModification->isValid()) {
+        if (*nouvelleDate > *derniereModification) {
+            delete derniereModification;
+            derniereModification = nouvelleDate;
+            emit nouvellesModifications();
         }
-//    }
+    }
 }
 
 void Application::rechargerDonnees()

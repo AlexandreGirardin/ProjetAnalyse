@@ -193,6 +193,13 @@ public slots:
      * @param actif Si une action est sélectionnée
      */
     void activerBoutonSupprimerAction(const bool &actif);
+
+    /**
+     * @brief ajusterBoutonChangerEtat
+     * Ajuste le texte du bouton de changement d'état
+     * en fonction de l'état de l'action actuellement sélectionnée
+     */
+    void ajusterBoutonChangerEtat();
 };
 
 #endif // CONTROLEURONGLETACTIONS_H
