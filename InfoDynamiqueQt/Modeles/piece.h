@@ -21,6 +21,11 @@ private:
 
 public:
 
+    /**
+     * @brief Piece
+     * Le constructeur de l'objet
+     * @param parent L'objet parent
+     */
     explicit Piece(QObject* parent = 0);
 
     /**
@@ -65,6 +70,10 @@ public:
      */
     void setPrixInt(const int &value);
 
+    /**
+     * @brief setPrixDouble
+     * @param value Le prix à assigner à la pièce, en dollars et en sous
+     */
     void setPrixDouble(const double &value);
 
     /**

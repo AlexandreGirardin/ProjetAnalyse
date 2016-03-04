@@ -16,7 +16,8 @@ public:
 
     /**
      * @brief Fabricant
-     * @param parent
+     * Le constructeur de l'objet
+     * @param parent L'objet parent
      */
     explicit Fabricant(QObject* parent = 0);
 

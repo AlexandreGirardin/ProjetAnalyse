@@ -29,7 +29,8 @@ public:
 
     /**
      * @brief Tache
-     * @param parent
+     * Le constructeur de l'objet
+     * @param parent L'objet parent
      */
     explicit Tache(QObject* parent = 0);
 
