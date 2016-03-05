@@ -13,6 +13,7 @@ void ControleurConnexion::sauvegarderChamps()
     parametres.setValue("connexion/hote", m_bd.hostName());
     parametres.setValue("connexion/port", m_bd.port());
     parametres.setValue("connexion/usager", m_bd.userName());
+    parametres.setValue("connexion/bd", m_bd.databaseName());
 }
 
 ControleurConnexion::ControleurConnexion(const QString &nom, QObject* parent)
@@ -28,7 +29,6 @@ QSqlDatabase* ControleurConnexion::bd()
 
 void ControleurConnexion::connecterDossiers()
 {
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     vue = new VueConnexion();
     connect(vue, SIGNAL(testerConnexion()), this, SLOT(sonderHote()));
     if (vue->exec() == vue->Accepted) {
@@ -43,20 +43,6 @@ void ControleurConnexion::connecterDossiers()
         emit annule();
     }
     vue->deleteLater();
-
-// Commenter ce qui précède et décommenter ce qui suit <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-//
-//    m_bd = QSqlDatabase::addDatabase(QString("QMYSQL"), nomBd);
-//    m_bd.setHostName("localhost");
-//    m_bd.setPort(3307);
-//    m_bd.setUserName("root");
-////    m_bd.setPassword("root");
-//    m_bd.setDatabaseName("InfoDynamiqueDossiers");
-//    if (!m_bd.open()) {
-//        qDebug() << "Erreur d'ouverture de la base de données";
-//        }
-//    emit connexionEtablie();
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
 void ControleurConnexion::fermer()
 {

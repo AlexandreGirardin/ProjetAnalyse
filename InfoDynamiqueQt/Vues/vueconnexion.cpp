@@ -116,9 +116,21 @@ void VueConnexion::peuplerTableau(QAbstractTableModel* valeurs)
         ui->listeBd->model()->deleteLater();
     }
     if (valeurs->rowCount() > 0) {
+        QSettings parametres;
+        QString derniereBD = parametres.value("connexion/bd","InfoDynamiqueDossiers").toString();
         ui->listeBd->setFocus();
+        int derniereDansListe = -1;
+        for (int i = 0; i < valeurs->rowCount() && derniereDansListe < 0; ++i) {
+            if (valeurs->index(i, 0).data().toString() == derniereBD) {
+                derniereDansListe = i;
+            }
+        }
         ui->listeBd->setModel(valeurs);
-        ui->listeBd->setCurrentIndex(valeurs->index(0,0));
+        if (derniereDansListe > 0) {
+            ui->listeBd->setCurrentIndex(valeurs->index(derniereDansListe, 0));
+        } else {
+            ui->listeBd->setCurrentIndex(valeurs->index(0,0));
+        }
         activerBoutonOk();
     } else {
         desactiverBoutonOk();
