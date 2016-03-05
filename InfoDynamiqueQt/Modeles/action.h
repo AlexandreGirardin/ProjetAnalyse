@@ -21,8 +21,9 @@ private:
 public:
 
     /**
-     * @brief Action Constructeur d'Action
-     * @param parent
+     * @brief Action
+     * Le constructeur de l'objet
+     * @param parent L'objet parent
      */
     explicit Action(QObject* parent = 0);
 

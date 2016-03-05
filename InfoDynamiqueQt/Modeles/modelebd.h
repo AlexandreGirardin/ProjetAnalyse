@@ -15,6 +15,11 @@ protected:
 
 public:
 
+    /**
+     * @brief ModeleBD
+     * Le constructeur de l'objet
+     * @param parent L'objet parent
+     */
     explicit ModeleBD(QObject *parent = 0);
 
     /**

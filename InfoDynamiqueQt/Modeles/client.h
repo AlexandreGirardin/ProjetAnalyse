@@ -28,6 +28,11 @@ private:
 
 public:
 
+    /**
+     * @brief Client
+     * Le constructeur de l'objet
+     * @param parent L'objet parent
+     */
     explicit Client(QObject* parent = 0);
 
     /**

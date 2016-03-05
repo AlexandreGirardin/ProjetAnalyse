@@ -12,6 +12,8 @@ class QSqlRecord;
 
 class MappeurTaches {
 
+    // Lit et écrit des objets Tâches dans la base de données
+
 public:
 
     /**
@@ -114,6 +116,12 @@ public:
      */
     static bool syncTaches(const Fiche* fiche);
 
+    /**
+     * @brief construirePourActions
+     * Convertit les actions en tâches
+     * @param actions Liste d'actions à transformer en tâches
+     * @return Liste de tâches
+     */
     static QList<Tache*>* construirePourActions(const QList<Action*>* actions);
 
 private:

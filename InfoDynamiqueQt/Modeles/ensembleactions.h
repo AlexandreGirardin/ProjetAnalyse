@@ -24,7 +24,8 @@ public:
 
     /**
      * @brief EnsembleTaches
-     * @param parent
+     * Le constructeur de l'objet
+     * @param parent L'objet parent
      */
     explicit EnsembleActions(QObject* parent = 0);
 

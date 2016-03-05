@@ -37,6 +37,11 @@ private:
 
 public:
 
+    /**
+     * @brief Fiche
+     * Le constructeur de l'objet
+     * @param parent L'objet parent
+     */
     explicit Fiche(QObject* parent = 0);
 
     /**

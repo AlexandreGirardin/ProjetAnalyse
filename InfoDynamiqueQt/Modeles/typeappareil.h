@@ -17,7 +17,8 @@ public:
 
     /**
      * @brief TypeAppareil
-     * @param parent
+     * Le constructeur de l'objet
+     * @param parent l'objet parent
      */
     explicit TypeAppareil(QObject* parent = 0);
 

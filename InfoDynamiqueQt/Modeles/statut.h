@@ -15,6 +15,11 @@ private:
 
 public:
 
+    /**
+     * @brief Statut
+     * Le constructeur de l'objet
+     * @param parent
+     */
     explicit Statut(QObject* parent = 0);
 
     /**
