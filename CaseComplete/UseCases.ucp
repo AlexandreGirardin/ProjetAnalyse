@@ -18,7 +18,7 @@
     <UniqueID>UC-eb5b895d-a7fd-4214-a5f1-73ae010e3835</UniqueID>
     <UserID>UC-8</UserID>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
-    <Name>Connexion à la base de données</Name>
+    <Name>Connecter à la base de données</Name>
     <Description>Processus de connexion au serveur de base de données.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
@@ -38,7 +38,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:33:34.1946433-04:00</DateAdded>
-    <DateModified>2016-03-01T15:44:49.9392557-05:00</DateModified>
+    <DateModified>2016-03-08T17:14:25.9053449-05:00</DateModified>
   </UseCase>
   <ElementStub>
     <ParentID>P-8e58c860-f6b4-41f3-9690-38c3020d2f3e</ParentID>
