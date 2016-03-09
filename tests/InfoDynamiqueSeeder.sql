@@ -1,15 +1,8 @@
 -- Commandes pour insérer des valeurs par défaut dans les tables
 
-INSERT INTO `InfoDynamiqueDossiers`.`techniciens`
-    (`id`, `prenom`, `nom`)
-VALUES
-    (1, "Ajax",    "Archambeault"),
-    (2, "Bruno",   "Beaudoin"),
-    (3, "Charles", "Chartrand");
-
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`clients`
+INSERT INTO `clients`
     (`id`, `prenom`, `nom`, `telephone`, `adresse`, `courriel`)
 VALUES
     (1, "Dilbert",   "Daiquiri",    "5558501111", "1 rue Dickens",    "dd@courriel.com"),
@@ -20,28 +13,15 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fabricants`
-    (`id`, `nom`)
-VALUES
-    (1, "Lenovo"),
-    (2, "Asus"),
-    (3, "Acer"),
-    (4, "Dell"),
-    (5, "Toshiba");
+-- fabricants peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`types`
-    (`id`, `nom`)
-VALUES
-    (1, "Portable"),
-    (2, "Tour"),
-    (3, "Tablette"),
-    (4, "Téléphone");
+-- types peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`appareils`
+INSERT INTO `appareils`
     (`id`, `idType`, `idFabricant`, `idClient`, `description`, `motDePasse`)
 VALUES
     (1, 1, 2, 5, "Manque la lettre Y sur le clavier", "bonjour123"),
@@ -51,7 +31,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`pieces`
+INSERT INTO `pieces`
     (`id`, `nom`, `description`, `prix`)
 VALUES
     (1, "WesternDigital 1to Blue", "Disque dur Western Digital 1to Blue", "9999"),
@@ -61,7 +41,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`actions`
+INSERT INTO `actions`
     (`id`, `nom`, `description`, `etat`)
 VALUES
     (1,  "CCleaner",              "Supprimer les fichiers temporaires et nettoyer le registre.",    1),
@@ -77,7 +57,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`ensembles`
+INSERT INTO `ensembles`
     (`id`, `nom`, `description`)
 VALUES
     (1, "Nettoyage de virus",       "Nettoyer les virus et fichiers temporaires de l'ordinateur."),
@@ -86,7 +66,7 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`ensemblesActions`
+INSERT INTO `ensemblesActions`
     (`idEnsemble`, `idAction`)
 VALUES
     (1, 1),
@@ -103,49 +83,34 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`statutsTache`
-    (`id`, `nom`)
-VALUES
-    (0, "Terminée"),
-    (1, "En cours"),
-    (2, "En attente"),
-    (3, "Terminée avec erreurs");
+-- statutsFiche peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`statutsFiche`
-    (`id`, `nom`)
-VALUES
-    (0, "Fermée"),
-    (1, "En cours"),
-    (2, "En attente"),
-    (3, "Prêt, client au courant"),
-    (4, "Prêt, message boîte vocale"),
-    (5, "En attente de pièces"),
-    (6, "En attente de confirmation du client");
+-- statutsTaches peuplée dès la création de la base de données
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fiches`
-    (`id`, `idAppareil`, `priorite`, `idTechnicien`, `idStatut`, `description`)
+INSERT INTO `fiches`
+    (`id`, `idAppareil`, `priorite`, `idStatut`, `description`)
 VALUES
-    (1,  1, 1, 2, 0, "Nettoyage du disque dur"),
-    (2,  1, 2, 2, 1, "Nettoyage des virus"),
-    (3,  2, 2, 2, 2, "Réparation de l'écran"),
-    (4,  2, 2, 2, 3, "Transfert de données"),
-    (5,  1, 2, 2, 4, "Ne démarre pas"),
-    (6,  2, 2, 2, 5, "Mise à niveau Windows 10"),
-    (7,  1, 2, 2, 6, "Nettoyage du disque dur"),
-    (8,  2, 2, 2, 0, "Problème de son"),
-    (9,  2, 2, 2, 1, "Nettoyage du disque dur"),
-    (10, 1, 2, 2, 2, "Nettoyage des virus"),
-    (11, 3, 2, 2, 3, "Réparation de l'écran"),
-    (12, 3, 2, 2, 4, "Transfert de données"),
-    (13, 4, 2, 2, 5, "Ne démarre pas");
+    (1,  1, 1, 0, "Nettoyage du disque dur"),
+    (2,  1, 2, 1, "Nettoyage des virus"),
+    (3,  2, 2, 2, "Réparation de l'écran"),
+    (4,  2, 2, 3, "Transfert de données"),
+    (5,  1, 2, 4, "Ne démarre pas"),
+    (6,  2, 2, 5, "Mise à niveau Windows 10"),
+    (7,  1, 2, 6, "Nettoyage du disque dur"),
+    (8,  2, 2, 0, "Problème de son"),
+    (9,  2, 2, 1, "Nettoyage du disque dur"),
+    (10, 1, 2, 2, "Nettoyage des virus"),
+    (11, 3, 2, 3, "Réparation de l'écran"),
+    (12, 3, 2, 4, "Transfert de données"),
+    (13, 4, 2, 5, "Ne démarre pas");
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`fichesPieces`
+INSERT INTO `fichesPieces`
     (`idFiche`, `idPiece`)
 VALUES
     (5, 2),
@@ -153,33 +118,33 @@ VALUES
 
 -- ------------------------------------------------------------
 
-INSERT INTO `InfoDynamiqueDossiers`.`taches`
-    (`idFiche`, `idAction`, `idStatut`, `commentaire`)
+INSERT INTO `taches`
+    (`id`, `idFiche`, `idAction`, `idStatut`, `commentaire`)
 VALUES
-    (1,  1,  0, "Terminé"),
-    (1,  2,  1, ""),
-    (2,  2,  2, "D'ici vendredi"),
-    (2,  1,  3, "Passera chercher"),
-    (1,  3,  0, ""),
-    (3,  2,  1, ""),
-    (3,  3,  2, ""),
-    (3,  4,  3, "A nécessité plus de temps que prévu"),
-    (3,  5,  0, ""),
-    (4,  2,  1, ""),
-    (4,  6,  2, ""),
-    (5,  2,  3, ""),
-    (5,  6,  0, ""),
-    (6,  2,  1, ""),
-    (6,  6,  2, "Annulé"),
-    (7,  2,  3, ""),
-    (8,  2,  0, ""),
-    (9,  2,  1, ""),
-    (10, 2,  2, ""),
-    (8,  6,  3, ""),
-    (8,  7,  0, ""),
-    (9,  8,  1, ""),
-    (9,  9,  2, ""),
-    (10, 10, 3, "Terminé"),
-    (10, 1,  0, ""),
-    (5,  4,  1, ""),
-    (7,  4,  2, "");
+    (1,  1,  1,  0, "Terminé"),
+    (2,  1,  2,  1, ""),
+    (3,  2,  2,  2, "D'ici vendredi"),
+    (4,  2,  1,  3, "Passera chercher"),
+    (5,  1,  3,  0, ""),
+    (6,  3,  2,  1, ""),
+    (7,  3,  3,  2, ""),
+    (8,  3,  4,  3, "A nécessité plus de temps que prévu"),
+    (9,  3,  5,  0, ""),
+    (10, 4,  2,  1, ""),
+    (11, 4,  6,  2, ""),
+    (12, 5,  2,  3, ""),
+    (13, 5,  6,  0, ""),
+    (14, 6,  2,  1, ""),
+    (15, 6,  6,  2, "Annulé"),
+    (16, 7,  2,  3, ""),
+    (17, 8,  2,  0, ""),
+    (18, 9,  2,  1, ""),
+    (19, 10, 2,  2, ""),
+    (20, 8,  6,  3, ""),
+    (21, 8,  7,  0, ""),
+    (22, 9,  8,  1, ""),
+    (23, 9,  9,  2, ""),
+    (24, 10, 10, 3, "Terminé"),
+    (25, 10, 1,  0, ""),
+    (26, 5,  4,  1, ""),
+    (27, 7,  4,  2, "");

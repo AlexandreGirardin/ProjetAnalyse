@@ -42,7 +42,7 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T15:04:54.4152862-04:00</DateAdded>
-    <DateModified>2016-03-01T16:55:02.3215924-05:00</DateModified>
+    <DateModified>2016-03-08T16:39:16.4841468-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-388771e5-784d-4380-9d34-0ce80ef94230</UniqueID>
@@ -155,6 +155,85 @@ La facture est ajoutée à Acomba.</PostConditions>
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
     <DateModified>2015-12-16T15:18:18.5812808-05:00</DateModified>
   </UseCase>
+  <UseCase>
+    <UniqueID>UC-82c82749-9d4c-428d-a37c-be9fe782074c</UniqueID>
+    <UserID>UC-7-5</UserID>
+    <ParentID>P-ff092a79-7b5e-466c-af89-8377e68db807</ParentID>
+    <Name>Traiter une fiche de maintenance</Name>
+    <Description>Le technicien indique ce qu'il a fais sur la fiche et ajoute des tâches à effectuer ou des pièces changée si nécessaire.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  indique ce qu'il a fais sur la \cf3 fiche\cf2  et ajoute des \cf3 t\'e2ches\cf2  \'e0 effectuer ou des pi\'e8ces chang\'e9e si n\'e9cessaire.\cf0\par
+}
+</RichDescription>
+    <Sequence>5</Sequence>
+    <Priority>1</Priority>
+    <PreConditions>La fiche est déjà sélectionnée.</PreConditions>
+    <PostConditions>Les modifications apportées à la fiche sont sauvegardées dans la base de données.
+Le technicien est de retour à l'affichage précédent.</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2016-03-08T16:39:29.6433797-05:00</DateAdded>
+    <DateModified>2016-03-08T17:14:36.7325701-05:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-ff41637e-3721-4658-80d4-b7e86dd97a3f</UniqueID>
+    <UserID>UC-7-5.1</UserID>
+    <ParentID>UC-82c82749-9d4c-428d-a37c-be9fe782074c</ParentID>
+    <Name>Ajouter une tâche</Name>
+    <Description>Ajouter une tâche à la fiche de maintenance</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Ajouter une \cf1 t\'e2che\cf2  \'e0 la \cf1 fiche de maintenance\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <Priority>1</Priority>
+    <PreConditions>La fenêtre de «Traitement de la fiche de maintenance» est déjà affichée.</PreConditions>
+    <PostConditions>La tâche a été ajoutée à la fiche de maintenance.</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2016-03-08T16:58:20.1355557-05:00</DateAdded>
+    <DateModified>2016-03-08T17:13:32.1684791-05:00</DateModified>
+  </UseCase>
+  <UseCase>
+    <UniqueID>UC-4a4e8aaf-27f8-4955-a1f5-3f6e7a91bf92</UniqueID>
+    <UserID>UC-7-5.2</UserID>
+    <ParentID>UC-82c82749-9d4c-428d-a37c-be9fe782074c</ParentID>
+    <Name>Ajouter une pièce</Name>
+    <Description>Ajouter une tâche à la fiche de maintenance</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Ajouter une \cf1 t\'e2che\cf2  \'e0 la \cf1 fiche de maintenance\cf0\fs20\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <Priority>1</Priority>
+    <PreConditions>La fenêtre de «Traitement de la fiche de maintenance» est déjà affichée.</PreConditions>
+    <PostConditions>La pièce a été ajoutée à la fiche de maintenance.</PostConditions>
+    <Level />
+    <Complexity />
+    <UCStatus />
+    <ImplStatus />
+    <AssignedTo />
+    <Release />
+    <TestingSetup />
+    <TestingConfigurations />
+    <DateAdded>2016-03-08T17:09:55.5690484-05:00</DateAdded>
+    <DateModified>2016-03-08T17:13:52.5510743-05:00</DateModified>
+  </UseCase>
   <UCActor>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
@@ -177,6 +256,21 @@ La facture est ajoutée à Acomba.</PostConditions>
   </UCActor>
   <UCActor>
     <ParentID>UC-d6188758-d353-48f5-aba2-86e7e521c02c</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-ff41637e-3721-4658-80d4-b7e86dd97a3f</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-4a4e8aaf-27f8-4955-a1f5-3f6e7a91bf92</ParentID>
+    <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
+    <Kind>0</Kind>
+  </UCActor>
+  <UCActor>
+    <ParentID>UC-82c82749-9d4c-428d-a37c-be9fe782074c</ParentID>
     <ActorID>A-e90405a7-cde1-4222-87b5-8893a7d30795</ActorID>
     <Kind>0</Kind>
   </UCActor>
@@ -199,6 +293,18 @@ La facture est ajoutée à Acomba.</PostConditions>
   <Scenario>
     <UniqueID>MSS-5bcb2ed6-0bdd-4790-bfc7-900b576f23c4</UniqueID>
     <ParentID>UC-d6188758-d353-48f5-aba2-86e7e521c02c</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-aa53559e-bba2-4c0f-91a1-2f94c7f4606f</UniqueID>
+    <ParentID>UC-82c82749-9d4c-428d-a37c-be9fe782074c</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</UniqueID>
+    <ParentID>UC-ff41637e-3721-4658-80d4-b7e86dd97a3f</ParentID>
+  </Scenario>
+  <Scenario>
+    <UniqueID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</UniqueID>
+    <ParentID>UC-4a4e8aaf-27f8-4955-a1f5-3f6e7a91bf92</ParentID>
   </Scenario>
   <Step>
     <UniqueID>ST-253ddd9b-2055-4dfc-b4bb-fb4be1db7595</UniqueID>
@@ -225,18 +331,6 @@ La facture est ajoutée à Acomba.</PostConditions>
     <jsonTestStepBag>{"TestScenarioSteps":[{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"Nettoyage de virus\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-415b4dcc-a0c4-4422-95cf-dc0c79d85133","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Nettoyage de virus\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"R\\'e9installation avec backup\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-72afbc78-4eb5-408c-913d-c7772b292038","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Réinstallation avec backup\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"Nettoyage de virus\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-5fa97512-f126-4bfc-90be-73e3dae441ef","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Nettoyage de virus\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"Nettoyage de virus\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0ee9921c-8265-4ff2-b560-2671c1d5a36c","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Nettoyage de virus\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"Nettoyage de virus\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-d834a5df-d90e-460f-9d50-594fd1d2f3e0","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Nettoyage de virus\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"Redirection vers extension 3.1.a","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Redirection vers extension 3.1.a\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf0\\ulnone  ne parvient pas a trouver une ensemble de \\cf2 t\\'e2che\\cf3  qui lui convient.\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-5597b782-4919-4616-b9b1-c90d0634803b","TestingProcedure":"Le technicien ne parvient pas a trouver une ensemble de tâche qui lui convient."},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 N\/A\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0076a83e-eedd-4dde-b8e5-786d9469dfc0","TestingProcedure":"N\/A"},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"Nettoyage de virus\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-2975ebc6-e51b-4eaa-a9f0-b65d53fe6779","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Nettoyage de virus\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"Nettoyage de virus\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-e985324e-b9bf-41d9-a937-06f3c2ca79d1","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Nettoyage de virus\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"Nettoyage de virus\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-efe7e4a4-d2a1-4bf1-920d-bfd02791b0f7","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Nettoyage de virus\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"l'ensemble de tâches est sélectionné, les tâches de cet ensemble sont aussi sélectionnées dans la liste des tâches.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 l'\\cf1 ensemble de t\\'e2ches\\cf2  est s\\'e9lectionn\\'e9, les \\cf1 t\\'e2ches\\cf2  de cet ensemble sont aussi s\\'e9lectionn\\'e9es dans la liste des \\cf1 t\\'e2ches\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne l'\\cf3 ensemble de t\\'e2ches\\cf2  a partir du menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"Nettoyage de virus\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-19b2b8f2-cbf2-4b73-b2ad-73daa24ce50c","TestingProcedure":"Le technicien sélectionne l'ensemble de tâches a partir du menu déroulant\u000a\u000aPrésélection: \"Nettoyage de virus\""},{"ParentID":"ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd","UniqueID":null,"ExpectedResults":"rien ne se passe","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 rien ne se passe\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  ne s\\'e9lectionne rien dans le menu d\\'e9roulant\\par\u000d\u000a\\par\u000d\u000aPr\\'e9s\\'e9lection: \"\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-32ebce88-0e46-480c-bafb-ef3645a2c419","TestingProcedure":"Le technicien ne sélectionne rien dans le menu déroulant\u000a\u000aPrésélection: \"\""}]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-6ca83106-9fc7-49cf-917c-d32f09e5f90c</UniqueID>
-    <ParentID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</ParentID>
-    <Description>Le technicien sélectionne les actions manuellement dans la liste proposée.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red128\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  s\'e9lectionne les \cf3 actions\cf1  manuellement dans la liste propos\'e9e.\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[{"ParentID":"ST-6ca83106-9fc7-49cf-917c-d32f09e5f90c","UniqueID":null,"ExpectedResults":"les tâches \"Image Acronis\", \"Chkdsk \/f \/r\" et \"sfc \/scannow\" sont sélectionnées","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 les \\cf1 t\\'e2ches\\cf2  \"Image Acronis\", \"Chkdsk \/f \/r\" et \"sfc \/scannow\" sont s\\'e9lectionn\\'e9es\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;\\red128\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  s\\'e9lectionne les \\cf3 t\\'e2ches\\cf2  manuellement\\par\u000d\u000a\\par\u000d\u000a\\cf3 t\\'e2che\\cf2  s\\'e9lectionn\\'e9es:\\par\u000d\u000a1. image Acronis\\par\u000d\u000a2. chkdsk \/f \/r\\par\u000d\u000a3. sfc \/scannow  \\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-5597b782-4919-4616-b9b1-c90d0634803b","TestingProcedure":"Le technicien sélectionne les tâches manuellement\u000a\u000atâche sélectionnées:\u000a1. image Acronis\u000a2. chkdsk \/f \/r\u000a3. sfc \/scannow  "},{"ParentID":"ST-6ca83106-9fc7-49cf-917c-d32f09e5f90c","UniqueID":null,"ExpectedResults":"","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0076a83e-eedd-4dde-b8e5-786d9469dfc0","TestingProcedure":""}]}</jsonTestStepBag>
-  </Step>
-  <Step>
     <UniqueID>ST-c9151e72-015a-4391-995e-54f1e55b3d92</UniqueID>
     <ParentID>MSS-c8ca370d-d9fb-4e10-a999-8a121c19d264</ParentID>
     <Description>Le technicien indique au système d'enregistrer la fiche de maintenance.</Description>
@@ -246,19 +340,7 @@ La facture est ajoutée à Acomba.</PostConditions>
 }
 </RichDescription>
     <Sequence>3</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-415b4dcc-a0c4-4422-95cf-dc0c79d85133","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-72afbc78-4eb5-408c-913d-c7772b292038","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-5fa97512-f126-4bfc-90be-73e3dae441ef","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0ee9921c-8265-4ff2-b560-2671c1d5a36c","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-d834a5df-d90e-460f-9d50-594fd1d2f3e0","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-5597b782-4919-4616-b9b1-c90d0634803b","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 N\/A\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0076a83e-eedd-4dde-b8e5-786d9469dfc0","TestingProcedure":"N\/A"},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"Deuxième passage: \u000aRedirection vers l'extension *.a.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Deuxi\\'e8me passage: \\par\u000d\u000aRedirection vers l'extension *.a.\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Premier passage: \\par\u000d\u000aLe \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\par\u000d\u000a\\par\u000d\u000aDeuxi\\'e8me passage:\\par\u000d\u000aLe \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"Cancel\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-2975ebc6-e51b-4eaa-a9f0-b65d53fe6779","TestingProcedure":"Premier passage: \u000aLe technicien clique sur le bouton \"OK\"\u000a\u000aDeuxième passage:\u000aLe technicien clique sur le bouton \"Cancel\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-e985324e-b9bf-41d9-a937-06f3c2ca79d1","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-efe7e4a4-d2a1-4bf1-920d-bfd02791b0f7","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-19b2b8f2-cbf2-4b73-b2ad-73daa24ce50c","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"Redirection vers extension 4.a.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Redirection vers extension 4.a.\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-32ebce88-0e46-480c-bafb-ef3645a2c419","TestingProcedure":"Le technicien clique sur le bouton \"OK\""}]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-ea143863-44e4-46fc-9e11-82d3dfb21f3d</UniqueID>
-    <ParentID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</ParentID>
-    <Description>continue to step 4.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 continue to step 4.\par
-}
-</RichDescription>
-    <Sequence>1</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+    <jsonTestStepBag>{"TestScenarioSteps":[{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-415b4dcc-a0c4-4422-95cf-dc0c79d85133","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-72afbc78-4eb5-408c-913d-c7772b292038","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-5fa97512-f126-4bfc-90be-73e3dae441ef","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0ee9921c-8265-4ff2-b560-2671c1d5a36c","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-d834a5df-d90e-460f-9d50-594fd1d2f3e0","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-5597b782-4919-4616-b9b1-c90d0634803b","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 N\/A\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0076a83e-eedd-4dde-b8e5-786d9469dfc0","TestingProcedure":"N\/A"},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"Deuxième passage: \u000aRedirection vers l'extension *.a.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Deuxi\\'e8me passage: \\par\u000d\u000aRedirection vers l'extension *.a.\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Premier passage: \\par\u000d\u000aLe \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\par\u000d\u000a\\par\u000d\u000aDeuxi\\'e8me passage:\\par\u000d\u000aLe \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"Cancel\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-2975ebc6-e51b-4eaa-a9f0-b65d53fe6779","TestingProcedure":"Premier passage: \u000aLe technicien clique sur le bouton \"OK\"\u000a\u000aDeuxième passage:\u000aLe technicien clique sur le bouton \"Cancel\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-e985324e-b9bf-41d9-a937-06f3c2ca79d1","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-efe7e4a4-d2a1-4bf1-920d-bfd02791b0f7","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":null,"RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-19b2b8f2-cbf2-4b73-b2ad-73daa24ce50c","TestingProcedure":"Le technicien clique sur le bouton \"OK\""},{"ParentID":"ST-c9151e72-015a-4391-995e-54f1e55b3d92","UniqueID":null,"ExpectedResults":"","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red0\\green0\\blue255;\\red0\\green0\\blue0;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Le \\cf1\\ul technicien\\cf2\\ulnone  clique sur le bouton \"OK\"\\cf0\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-32ebce88-0e46-480c-bafb-ef3645a2c419","TestingProcedure":"Le technicien clique sur le bouton \"OK\""}]}</jsonTestStepBag>
   </Step>
   <Step>
     <UniqueID>ST-2132b1f0-7dce-4abc-a850-e8995622959e</UniqueID>
@@ -294,7 +376,7 @@ La facture est ajoutée à Acomba.</PostConditions>
 }
 </RichDescription>
     <Sequence>4</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-415b4dcc-a0c4-4422-95cf-dc0c79d85133","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajouté à la base de données.\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichée dans la section \"Fiches\".","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9 \\'e0 la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone .\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9e dans la section \"\\cf1 Fiches\\cf2 \".\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-72afbc78-4eb5-408c-913d-c7772b292038","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"2\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"2\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-5fa97512-f126-4bfc-90be-73e3dae441ef","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"3\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"3\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-0ee9921c-8265-4ff2-b560-2671c1d5a36c","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"4\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"4\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-d834a5df-d90e-460f-9d50-594fd1d2f3e0","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-5597b782-4919-4616-b9b1-c90d0634803b","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 N\/A\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0076a83e-eedd-4dde-b8e5-786d9469dfc0","TestingProcedure":"N\/A"},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"Premier passage:\u000aRedirection vers extension 5.a","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Premier passage:\\par\u000d\u000aRedirection vers extension 5.a\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-2975ebc6-e51b-4eaa-a9f0-b65d53fe6779","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-e985324e-b9bf-41d9-a937-06f3c2ca79d1","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-efe7e4a4-d2a1-4bf1-920d-bfd02791b0f7","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-19b2b8f2-cbf2-4b73-b2ad-73daa24ce50c","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-32ebce88-0e46-480c-bafb-ef3645a2c419","TestingProcedure":""}]}</jsonTestStepBag>
+    <jsonTestStepBag>{"TestScenarioSteps":[{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-415b4dcc-a0c4-4422-95cf-dc0c79d85133","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajouté à la base de données.\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichée dans la section \"Fiches\".","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9 \\'e0 la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone .\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9e dans la section \"\\cf1 Fiches\\cf2 \".\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-72afbc78-4eb5-408c-913d-c7772b292038","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"2\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"2\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-5fa97512-f126-4bfc-90be-73e3dae441ef","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"3\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"3\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-0ee9921c-8265-4ff2-b560-2671c1d5a36c","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"4\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"4\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-d834a5df-d90e-460f-9d50-594fd1d2f3e0","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-5597b782-4919-4616-b9b1-c90d0634803b","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 N\/A\\par\u000d\u000a}\u000d\u000a","ScenarioID":"TS-0076a83e-eedd-4dde-b8e5-786d9469dfc0","TestingProcedure":"N\/A"},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"Premier passage:\u000aRedirection vers extension 5.a","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 Premier passage:\\par\u000d\u000aRedirection vers extension 5.a\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-2975ebc6-e51b-4eaa-a9f0-b65d53fe6779","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-e985324e-b9bf-41d9-a937-06f3c2ca79d1","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-efe7e4a4-d2a1-4bf1-920d-bfd02791b0f7","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\", Le numéro de priorité sélectionné à l'étape 3  (\"1\") est affiché dans la colonne \"Priorité\" pour la nouvelle fiche.","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \", Le num\\'e9ro de priorit\\'e9 s\\'e9lectionn\\'e9 \\'e0 l'\\'e9tape 3  (\"1\") est affich\\'e9 dans la colonne \"Priorit\\'e9\" pour la nouvelle \\cf1 fiche\\cf2 .\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-19b2b8f2-cbf2-4b73-b2ad-73daa24ce50c","TestingProcedure":""},{"ParentID":"ST-e7377e83-2272-48ea-a60d-25cd9c7cda90","UniqueID":null,"ExpectedResults":"1. La fenêtre \"Créer une nouvelle fiche\" est fermée.\u000a2. La fiche de maintenance a été  créée dans le système et a été ajoutée dans la base de données actuelle à la table \"Fiches\".\u000a3. La fiche de maintenance est ajoutée à la liste des fiches affichées dans la section \"Fiches\".","RichExpectedResults":"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3084{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\u000d\u000a{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}\u000d\u000a\\viewkind4\\uc1\\pard\\f0\\fs20 1. La fen\\'eatre \"Cr\\'e9er une nouvelle \\cf1 fiche\\cf2 \" est ferm\\'e9e.\\cf0\\par\u000d\u000a2. La \\cf1 fiche de maintenance\\cf2  a \\'e9t\\'e9  cr\\'e9\\'e9e dans le \\cf3\\ul syst\\'e8me\\cf2\\ulnone  et a \\'e9t\\'e9 ajout\\'e9e dans la \\cf3\\ul base de donn\\'e9es\\cf2\\ulnone  actuelle \\'e0 la table \"\\cf1 Fiches\\cf2 \".\\par\u000d\u000a3. La \\cf1 fiche de maintenance\\cf2  est ajout\\'e9e \\'e0 la liste des \\cf1 fiches\\cf2  affich\\'e9es dans la section \"\\cf1 Fiches\\cf2 \".\\cf0\\par\u000d\u000a}\u000d\u000a","RichTestingProcedure":null,"ScenarioID":"TS-32ebce88-0e46-480c-bafb-ef3645a2c419","TestingProcedure":""}]}</jsonTestStepBag>
   </Step>
   <Step>
     <UniqueID>ST-7826d7be-7aa8-4983-948d-45561288906a</UniqueID>
@@ -792,30 +874,6 @@ La facture est ajoutée à Acomba.</PostConditions>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
   <Step>
-    <UniqueID>ST-c6b90a17-6c97-4694-8dea-2ef35d4917a3</UniqueID>
-    <ParentID>X-4117fcd6-ee5f-4e1b-94c5-87b1e54050f2</ParentID>
-    <Description>Le système affiche un message d'erreur indiquant qu'il manque des informations pour ces deux champs.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  affiche un message d'erreur indiquant qu'il manque des informations pour ces deux champs.\par
-}
-</RichDescription>
-    <Sequence>0</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
-    <UniqueID>ST-6589b135-121f-4d64-891d-1cbd6dd3c057</UniqueID>
-    <ParentID>X-4117fcd6-ee5f-4e1b-94c5-87b1e54050f2</ParentID>
-    <Description>Continue to step 3.</Description>
-    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Continue to step 3.\par
-}
-</RichDescription>
-    <Sequence>1</Sequence>
-    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Step>
-  <Step>
     <UniqueID>ST-f485d0b8-efbb-4ebe-a1be-c14aee805a87</UniqueID>
     <ParentID>MSS-8bc12115-e93c-4ede-aacb-ab428ea5da90</ParentID>
     <Description>Le technicien sauvegarde les modifications apportées à la fiche de maintenance en appuyant sur le bouton «Save»</Description>
@@ -827,18 +885,356 @@ La facture est ajoutée à Acomba.</PostConditions>
     <Sequence>2</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Step>
-  <Extension>
-    <UniqueID>X-4fd06427-7866-4cec-bcb6-35ff5ba19d1d</UniqueID>
-    <ParentID>ST-74ae81d2-3e19-488d-9c2b-b4b3d28644dd</ParentID>
-    <Description>Aucun ensemble de tâches ne correspond aux tâches voulues.</Description>
+  <Step>
+    <UniqueID>ST-37e60d8c-eec1-4316-a8f3-2bc3c1a48340</UniqueID>
+    <ParentID>MSS-aa53559e-bba2-4c0f-91a1-2f94c7f4606f</ParentID>
+    <Description>Le technicien clique sur le bouton «Traiter»</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-{\colortbl ;\red128\green0\blue0;\red0\green0\blue0;}
-\viewkind4\uc1\pard\f0\fs20 Aucun \cf1\ul ensemble de t\'e2ches\cf2\ulnone  ne correspond aux \cf1\ul t\'e2ches\cf2\ulnone  voulues.\cf0\par
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  clique sur le bouton \'abTraiter\'bb\cf0\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
-  </Extension>
+  </Step>
+  <Step>
+    <UniqueID>ST-4c95679e-5f9b-4096-9da3-3002e3728621</UniqueID>
+    <ParentID>MSS-aa53559e-bba2-4c0f-91a1-2f94c7f4606f</ParentID>
+    <Description>Le système fiche la page «Traitement d'une fiche de maintenance»</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  \cf3 fiche\cf2  la page \'abTraitement d'une \cf3 fiche de maintenance\cf2\'bb\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-b412dac1-dbdf-4c00-bb90-d3cde43d18a5</UniqueID>
+    <ParentID>MSS-aa53559e-bba2-4c0f-91a1-2f94c7f4606f</ParentID>
+    <Description>Le technicien effectue les changements voulu, que ce soit modifier la description, ajouter un commentaire, modifier le statut de la fiche, moifier la liste des tâches ou la liste des pièces.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  effectue les changements voulu, que ce soit modifier la description, ajouter un commentaire, modifier le statut de la \cf3 fiche\cf2 , moifier la liste des \cf3 t\'e2ches\cf2  ou la liste des pi\'e8ces.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-853e14b6-d19f-4251-af77-dba3f0224707</UniqueID>
+    <ParentID>MSS-aa53559e-bba2-4c0f-91a1-2f94c7f4606f</ParentID>
+    <Description>le technicien appuie sur le bouton «Save»</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 le \cf2\ul technicien\cf1\ulnone  appuie sur le bouton \'abSave\'bb\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-dca506ce-6832-498d-b30d-6d90e040fea6</UniqueID>
+    <ParentID>MSS-aa53559e-bba2-4c0f-91a1-2f94c7f4606f</ParentID>
+    <Description>Le système effectue les changements dans la Base de données</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  effectue les changements dans la \cf2\ul Base de donn\'e9es\cf0\ulnone\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-83f3af06-d3ea-4cae-9963-ef0c24a0f698</UniqueID>
+    <ParentID>MSS-aa53559e-bba2-4c0f-91a1-2f94c7f4606f</ParentID>
+    <Description>Le système retourne le technicien à l'écran précédent. </Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  retourne le \cf2\ul technicien\cf1\ulnone  \'e0 l'\'e9cran pr\'e9c\'e9dent. \cf0\par
+}
+</RichDescription>
+    <Sequence>5</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-d0d7e243-b812-4127-bf8a-8362d0ce31cf</UniqueID>
+    <ParentID>XA-cd99212d-a86b-4fbe-bb3f-822b05366ce6</ParentID>
+    <Description>le système retourne le technicien vers la page précédente</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 le \cf2\ul syst\'e8me\cf1\ulnone  retourne le \cf2\ul technicien\cf1\ulnone  vers la page pr\'e9c\'e9dente\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-5774082a-f444-44d8-a832-f03197a88e5b</UniqueID>
+    <ParentID>XA-cd99212d-a86b-4fbe-bb3f-822b05366ce6</ParentID>
+    <Description>ends</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 ends\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-76f0bb0b-1c1f-40a5-97d5-6ddc59ce1880</UniqueID>
+    <ParentID>X-fe3facce-a668-43f8-8bda-a1c06616614f</ParentID>
+    <Description>Le système affiche un message d'erreur de connexion à la BD.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche un message d'erreur de connexion \'e0 la BD.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-bc76e561-80d1-48c6-a5a9-07c343368997</UniqueID>
+    <ParentID>X-fe3facce-a668-43f8-8bda-a1c06616614f</ParentID>
+    <Description>Continue to step 4.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 Continue to step 4.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-edc7a1e2-ab00-4cde-99a8-431f094c1b1e</UniqueID>
+    <ParentID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</ParentID>
+    <Description>Le technicien appuie sur le bouton «+» à coté de la liste des tâches.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'ab+\'bb \'e0 cot\'e9 de la liste des \cf3 t\'e2ches\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-137f5c38-2885-4190-bb5a-41ae84ddfdb1</UniqueID>
+    <ParentID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</ParentID>
+    <Description>Le système affiche la fenêtre «Ajouter une tâche».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la fen\'eatre \'abAjouter une \cf3 t\'e2che\cf2\'bb.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-d0b908c1-232f-45f6-adc1-9f83a0da7463</UniqueID>
+    <ParentID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</ParentID>
+    <Description>Le technicien sélectionne une tâche dans la liste proposée.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  s\'e9lectionne une t\'e2che dans la liste propos\'e9e.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-5dae53bc-6794-491f-8e14-d3e9462ed602</UniqueID>
+    <ParentID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</ParentID>
+    <Description>Le technicien indique un statut à cette tâche.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  indique un statut \'e0 cette \cf3 t\'e2che\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-d487a4c0-6870-40bf-9d2c-e6c7a9e9bf2f</UniqueID>
+    <ParentID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</ParentID>
+    <Description>Le technicien entre un commentaire si nécessaire.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  entre un commentaire si n\'e9cessaire.\cf0\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-705b1153-2f2c-4ef4-861d-fe74ff75c7c2</UniqueID>
+    <ParentID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</ParentID>
+    <Description>Le technicien clique sur le bouton «Save» pour ajouter la tâche à la fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  clique sur le bouton \'abSave\'bb pour ajouter la \cf3 t\'e2che\cf2  \'e0 la \cf3 fiche de maintenance\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>5</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-f4f3fcfe-16e3-49e1-90c8-2e1598864c88</UniqueID>
+    <ParentID>XA-4a9561e4-94cb-4865-b5a9-15659637a9dc</ParentID>
+    <Description>Le système annule les changements et ferme la fenêtre d'ajout d'une nouvelle tâche.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  annule les changements et ferme la fen\'eatre d'ajout d'une nouvelle \cf3 t\'e2che\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-a361d5ca-ae17-45ac-b858-5c2ba1d2077e</UniqueID>
+    <ParentID>XA-4a9561e4-94cb-4865-b5a9-15659637a9dc</ParentID>
+    <Description>ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 ends.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-e243ad1e-d895-491b-90cc-8eb8e25fbde1</UniqueID>
+    <ParentID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</ParentID>
+    <Description />
+    <Sequence>6</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-261b0644-c23a-4930-b198-a4cd662f1a8c</UniqueID>
+    <ParentID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</ParentID>
+    <Description>Le technicien appuie sur le bouton «+» à coté de la liste des pièces.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'ab+\'bb \'e0 cot\'e9 de la liste des pi\'e8ces.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-8a53b87a-8a75-445c-8860-b03179d6d344</UniqueID>
+    <ParentID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</ParentID>
+    <Description>Le système affiche la fenêtre «Ajouter une nouvelle pièce».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  affiche la fen\'eatre \'abAjouter une \cf3 nouvelle pi\'e8ce\cf2\'bb.\cf0\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-5051ac6a-8fde-48f8-b336-3461d3c3fd7a</UniqueID>
+    <ParentID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</ParentID>
+    <Description>Le technicien indique un nom à la pièce.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  indique un nom \'e0 la pi\'e8ce.\cf0\par
+}
+</RichDescription>
+    <Sequence>2</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-a2a064e1-a291-49a5-be22-82310cf6e666</UniqueID>
+    <ParentID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</ParentID>
+    <Description>Le technicien indique le prix de cette pièce.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  indique le prix de cette pi\'e8ce.\cf0\par
+}
+</RichDescription>
+    <Sequence>4</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-a73a766c-cf65-4f27-b3af-bb8eb30699ac</UniqueID>
+    <ParentID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</ParentID>
+    <Description>Le technicien entre une description si nécessaire.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  entre une description si n\'e9cessaire.\cf0\par
+}
+</RichDescription>
+    <Sequence>5</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-3b58e135-b083-4854-89f2-59b8cb1d1eec</UniqueID>
+    <ParentID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</ParentID>
+    <Description>Le technicien clique sur le bouton «Save» pour ajouter la tâche à la fiche de maintenance.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  clique sur le bouton \'abSave\'bb pour ajouter la \cf3 t\'e2che\cf2  \'e0 la \cf3 fiche de maintenance\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>6</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-479d7e66-38cb-4116-ba99-5a27090b74f6</UniqueID>
+    <ParentID>XA-9ae98402-0f87-492a-8d63-1b4a7f54c1b6</ParentID>
+    <Description>Le système annule les changements et ferme la fenêtre d'ajout d'une nouvelle tâche.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red128\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul syst\'e8me\cf2\ulnone  annule les changements et ferme la fen\'eatre d'ajout d'une nouvelle \cf3 t\'e2che\cf2 .\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-cfa0b1f2-476b-4a4c-bd77-4079ba9a26fd</UniqueID>
+    <ParentID>XA-9ae98402-0f87-492a-8d63-1b4a7f54c1b6</ParentID>
+    <Description>ends.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 ends.\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-81dddaec-3ce7-4fd4-95da-4035060a60bb</UniqueID>
+    <ParentID>X-93b2a5bd-73e5-444f-a91c-7b087b9547b4</ParentID>
+    <Description>Le technicien ne peut pas cliquer sur le bouton «Save»</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul technicien\cf1\ulnone  ne peut pas cliquer sur le bouton \'abSave\'bb\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-dd12b6dc-116e-4222-b68f-232cf37a9ae9</UniqueID>
+    <ParentID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</ParentID>
+    <Description>Le système active le bouton «Save»</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;}
+\viewkind4\uc1\pard\cf1\f0\fs20 Le \cf2\ul syst\'e8me\cf1\ulnone  active le bouton \'abSave\'bb\par
+}
+</RichDescription>
+    <Sequence>3</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
+  <Step>
+    <UniqueID>ST-7ba6adf2-df9f-4a66-b2cf-32c88a08045a</UniqueID>
+    <ParentID>X-93b2a5bd-73e5-444f-a91c-7b087b9547b4</ParentID>
+    <Description>return to step 3</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+\viewkind4\uc1\pard\f0\fs20 return to step 3\par
+}
+</RichDescription>
+    <Sequence>1</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Step>
   <Extension>
     <UniqueID>X-cce072bb-be02-4235-8c4a-46006f44694b</UniqueID>
     <ParentID>ST-5eee0792-44a2-418f-be1f-37592e92abf9</ParentID>
@@ -948,12 +1344,24 @@ La facture est ajoutée à Acomba.</PostConditions>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Extension>
   <Extension>
-    <UniqueID>X-4117fcd6-ee5f-4e1b-94c5-87b1e54050f2</UniqueID>
-    <ParentID>ST-c9151e72-015a-4391-995e-54f1e55b3d92</ParentID>
-    <Description>Les champs description et Présélection sont vides.</Description>
+    <UniqueID>X-fe3facce-a668-43f8-8bda-a1c06616614f</UniqueID>
+    <ParentID>ST-dca506ce-6832-498d-b30d-6d90e040fea6</ParentID>
+    <Description>La base de données n'est pas accessible.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 La \cf1\ul base de donn\'e9es\cf2\ulnone  n'est pas accessible.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </Extension>
+  <Extension>
+    <UniqueID>X-93b2a5bd-73e5-444f-a91c-7b087b9547b4</UniqueID>
+    <ParentID>ST-5051ac6a-8fde-48f8-b336-3461d3c3fd7a</ParentID>
+    <Description>Aucun nom n'a été indiqué.</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Les champs description et Pr\'e9s\'e9lection sont vides.\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Aucun nom n'a \'e9t\'e9 indiqu\'e9.\par
 }
 </RichDescription>
     <Sequence>0</Sequence>
@@ -995,9 +1403,45 @@ La facture est ajoutée à Acomba.</PostConditions>
     <Sequence>0</Sequence>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </AnytimeExtension>
+  <AnytimeExtension>
+    <UniqueID>XA-cd99212d-a86b-4fbe-bb3f-822b05366ce6</UniqueID>
+    <ParentID>MSS-aa53559e-bba2-4c0f-91a1-2f94c7f4606f</ParentID>
+    <Description>Le technicien décide d'annuler la création.</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  d\'e9cide d'annuler la cr\'e9ation.\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </AnytimeExtension>
+  <AnytimeExtension>
+    <UniqueID>XA-4a9561e4-94cb-4865-b5a9-15659637a9dc</UniqueID>
+    <ParentID>MSS-903601b1-0de8-4293-9b14-545e2e0442a5</ParentID>
+    <Description>Le technicien appuie sur le bouton «Cancel».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abCancel\'bb.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </AnytimeExtension>
+  <AnytimeExtension>
+    <UniqueID>XA-9ae98402-0f87-492a-8d63-1b4a7f54c1b6</UniqueID>
+    <ParentID>MSS-e1c8e70a-2fe9-48f2-9e91-526d81327f95</ParentID>
+    <Description>Le technicien appuie sur le bouton «Cancel».</Description>
+    <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\f0\fs20 Le \cf1\ul technicien\cf2\ulnone  appuie sur le bouton \'abCancel\'bb.\cf0\par
+}
+</RichDescription>
+    <Sequence>0</Sequence>
+    <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
+  </AnytimeExtension>
   <UserID>
     <DefaultPrefix>UC-7-</DefaultPrefix>
-    <NextValue>5</NextValue>
+    <NextValue>6</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>A-7-</DefaultPrefix>

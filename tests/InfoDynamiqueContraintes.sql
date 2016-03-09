@@ -18,8 +18,7 @@ ALTER TABLE `ensemblesActions`
 --
 ALTER TABLE `fiches`
   ADD CONSTRAINT `fichesAppareil` FOREIGN KEY  (`idAppareil`) REFERENCES `appareils` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fichesStatut` FOREIGN KEY  (`idStatut`) REFERENCES `statutsFiche` (`id`),
-  ADD CONSTRAINT `fichesTechnicien` FOREIGN KEY  (`idTechnicien`) REFERENCES `techniciens` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `fichesStatut` FOREIGN KEY  (`idStatut`) REFERENCES `statutsFiche` (`id`);
 
 --
 -- Contraintes pour la table `fichesPieces`

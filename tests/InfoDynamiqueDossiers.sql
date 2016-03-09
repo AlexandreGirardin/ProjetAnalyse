@@ -16,9 +16,20 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- --------------------------------------------------------
+
 --
--- Base de données :  `InfoDynamiqueDossiers`
+-- Structure de la table `modifications`
 --
+
+CREATE TABLE IF NOT EXISTS `date` (
+  `derniereModification` TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO date
+	(derniereModification)
+VALUES
+	(CURRENT_TIMESTAMP);
 
 -- --------------------------------------------------------
 
@@ -89,13 +100,23 @@ CREATE TABLE IF NOT EXISTS `ensemblesActions` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `fabricants`
+-- Structure de la table `fabricants` et données de base
 --
 
 CREATE TABLE IF NOT EXISTS `fabricants` (
   `id` int(10) NOT NULL,
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `fabricants`
+    (`id`, `nom`)
+VALUES
+    (1, "Lenovo"),
+    (2, "Asus"),
+    (3, "Acer"),
+    (4, "Dell"),
+    (5, "Toshiba"),
+    (6, "Autre");
 
 -- --------------------------------------------------------
 
@@ -107,10 +128,10 @@ CREATE TABLE IF NOT EXISTS `fiches` (
   `id` int(10) NOT NULL,
   `idAppareil` int(10) NOT NULL,
   `priorite` int(10) NOT NULL,
-  `idTechnicien` int(10) NOT NULL,
   `idStatut` int(10) NOT NULL,
   `commentaire` varchar(1023) DEFAULT NULL,
-  `description` varchar(1023) DEFAULT NULL
+  `description` varchar(1023) DEFAULT NULL,
+  `creation` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -148,6 +169,17 @@ CREATE TABLE IF NOT EXISTS `statutsFiche` (
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `statutsFiche`
+    (`id`, `nom`)
+VALUES
+    (0, "Fermée"),
+    (1, "En attente"),
+    (2, "En cours"),
+    (3, "Prêt, client au courant"),
+    (4, "Prêt, message boîte vocale"),
+    (5, "En attente de pièces"),
+    (6, "En attente de confirmation du client");
+
 -- --------------------------------------------------------
 
 --
@@ -159,6 +191,14 @@ CREATE TABLE IF NOT EXISTS `statutsTache` (
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `statutsTache`
+    (`id`, `nom`)
+VALUES
+    (0, "Terminée"),
+    (1, "En attente"),
+    (2, "En cours"),
+    (3, "Terminée avec erreurs");
+
 -- --------------------------------------------------------
 
 --
@@ -166,22 +206,11 @@ CREATE TABLE IF NOT EXISTS `statutsTache` (
 --
 
 CREATE TABLE IF NOT EXISTS `taches` (
+  `id` int(10) NOT NULL,
   `idFiche` int(10) NOT NULL,
   `idAction` int(10) NOT NULL,
   `idStatut` int(10) NOT NULL,
   `commentaire` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `techniciens`
---
-
-CREATE TABLE IF NOT EXISTS `techniciens` (
-  `id` int(10) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -194,6 +223,15 @@ CREATE TABLE IF NOT EXISTS `types` (
   `id` int(10) NOT NULL,
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `types`
+    (`id`, `nom`)
+VALUES
+    (1, "Portable"),
+    (2, "Tour"),
+    (3, "Tablette"),
+    (4, "Téléphone"),
+    (5, "Autre");
 
 -- --------------------------------------------------------
 
@@ -255,7 +293,6 @@ ALTER TABLE `fabricants`
 ALTER TABLE `fiches`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idAppareil` (`idAppareil`),
-  ADD KEY `idTechnicien` (`idTechnicien`),
   ADD KEY `idStatut` (`idStatut`);
 
 --
@@ -289,15 +326,9 @@ ALTER TABLE `statutsTache`
 -- Index pour la table `taches`
 --
 ALTER TABLE `taches`
-  ADD PRIMARY KEY (`idFiche`,`idAction`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idStatut` (`idStatut`),
   ADD KEY `tachesAction` (`idAction`);
-
---
--- Index pour la table `techniciens`
---
-ALTER TABLE `techniciens`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `types`
@@ -364,6 +395,11 @@ ALTER TABLE `statutsFiche`
 ALTER TABLE `statutsTache`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `taches`
+--
+ALTER TABLE `taches`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT pour la table `types`
 --
 ALTER TABLE `types`
@@ -372,11 +408,6 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT pour la table `usagers`
 --
 ALTER TABLE `usagers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `techniciens`
---
-ALTER TABLE `techniciens`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables exportées
