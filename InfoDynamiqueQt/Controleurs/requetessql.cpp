@@ -184,14 +184,16 @@ QString const * const RequetesSQL::filtrerToutesFiches =
                                 OR f.priorite LIKE :filtre\
                                 OR s.nom LIKE :filtre\
                                 OR f.commentaire LIKE :filtre\
-                                OR f.description LIKE :filtre"));
+                                OR f.description LIKE :filtre\
+                                OR f.creation LIKE :filtre"));
 
 QString const * const RequetesSQL::filtrerFichesActives =
         new QString(*afficherFichesActives +
                     QString(" HAVING f.id LIKE :filtre\
                             OR c.telephone LIKE :filtre\
                             OR s.nom LIKE :filtre\
-                            OR f.description LIKE :filtre"));
+                            OR f.description LIKE :filtre\
+                            OR f.creation LIKE :filtre"));
 
 QString const * const RequetesSQL::tachesPourFiche =
         new QString("SELECT * FROM taches WHERE idFiche=:idFiche");
