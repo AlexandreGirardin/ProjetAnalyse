@@ -9,9 +9,9 @@ connecter()
 
 ldtp.waittillguiexist('*Gestion de dossiers*')
 coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
-ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+30, 'b1c')
+ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
 coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
-ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+30, 'b1c')
+ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
 
 ldtp.click('*Gestion de dossiers*', 'btnAjouter')
 ldtp.waittillguiexist('*une nouvelle fiche*')
@@ -20,7 +20,7 @@ ldtp.enterstring('*une nouvelle fiche*', 'txt0', "bonjour comment ca va")
 ldtp.mouseleftclick('*une nouvelle fiche*', 'cboDown')
 ldtp.mouseleftclick('*une nouvelle fiche*', 'lstInstallationavecbackup')
 ldtp.mouseleftclick('*une nouvelle fiche*', 'sldr0')
-ldtp.enterstring('*une nouvelle fiche*', 'sldr0', "<del>2")
+ldtp.enterstring('*une nouvelle fiche*', 'sldr0', "<del>4")
 ldtp.click('*une nouvelle fiche*', 'btnSaveEnter')
 
 coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'pane0')
@@ -34,6 +34,6 @@ else:
     im2 = Image.open("images/creer_fiche_test_priorite4_origin.png")
     diff = ImageChops.difference(im2, im1)
     if diff.getbbox():
-        print("Erreur possible dans 'Creation Fiche'")
+        print("Erreur possible dans 'Creation Fiche test: priorite4'")
 
 fermer()

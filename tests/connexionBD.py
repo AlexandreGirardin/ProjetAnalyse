@@ -1,7 +1,5 @@
-import sys
+import os
 import ldtp
-import Image
-import ImageChops
 
 def connecter():
 	ldtp.launchapp('C:\Program Files (x86)\InfoDynamiqueQT\InfoDynamiqueQt.exe')
@@ -17,3 +15,13 @@ def connecter():
 	ldtp.click('*Connexion*', 'btnConnecterEnter')
 	ldtp.click('*Connexion*', 'lstinfodynamiquedossiers')
 	ldtp.click('*Connexion*', 'btnOKEnter')
+
+def fermer():
+	ldtp.click("*Gestion de dossiers*", 'btnFermer')
+	ldtp.waittillguiexist('*Connexion*')
+	ldtp.click('*Connexion*', 'btnFermer')
+	
+	
+def ajouterPressePapier(texte):
+	commande = 'echo ' + texte.strip() + '| clip'
+	os.system(commande)

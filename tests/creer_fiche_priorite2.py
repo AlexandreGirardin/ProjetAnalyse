@@ -9,9 +9,9 @@ connecter()
 
 ldtp.waittillguiexist('*Gestion de dossiers*')
 coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
-ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+30, 'b1c')
+ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
 coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
-ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+30, 'b1c')
+ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
 
 ldtp.click('*Gestion de dossiers*', 'btnAjouter')
 ldtp.waittillguiexist('*une nouvelle fiche*')
@@ -34,6 +34,6 @@ else:
     im2 = Image.open("images/creer_fiche_test_priorite2_origin.png")
     diff = ImageChops.difference(im2, im1)
     if diff.getbbox():
-        print("Erreur possible dans 'Creation Fiche'")
+        print("Erreur possible dans 'Creation Fiche test: priorite2'")
 
 fermer()

@@ -7,6 +7,7 @@ from fermer_fenetre import *
 
 connecter()
 
+
 ldtp.waittillguiexist('*Gestion de dossiers*')
 coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
 ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
@@ -16,24 +17,22 @@ ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
 ldtp.click('*Gestion de dossiers*', 'btnAjouter')
 ldtp.waittillguiexist('*une nouvelle fiche*')
 ldtp.mouseleftclick('*une nouvelle fiche*', 'txt0')
-ldtp.enterstring('*une nouvelle fiche*', 'txt0', "bonjour comment ca va")
+ldtp.enterstring('*une nouvelle fiche*', 'txt0', "")
 ldtp.mouseleftclick('*une nouvelle fiche*', 'cboDown')
 ldtp.mouseleftclick('*une nouvelle fiche*', 'lstInstallationavecbackup')
-ldtp.mouseleftclick('*une nouvelle fiche*', 'sldr0')
-ldtp.enterstring('*une nouvelle fiche*', 'sldr0', "<del>3")
+ldtp.mouseleftclick('*une nouvelle fiche*', 'lstInstallationavecbackup')
 ldtp.click('*une nouvelle fiche*', 'btnSaveEnter')
-
 coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'pane0')
 if (len(sys.argv) > 1) and (sys.argv[1] == 'origin'):
-    ldtp.imagecapture('*Gestion de dossiers*', 'images/creer_fiche_test_priorite3_origin.png',
+    ldtp.imagecapture('*Gestion de dossiers*', 'images/creer_fiche_test_descritpion_basse_origin.png',
                       coordinate[0], coordinate[1], coordinate[2], coordinate[3])
 else:
-    ldtp.imagecapture('*Gestion de dossiers*', 'images/creer_fiche_test_priorite3.png',
+    ldtp.imagecapture('*Gestion de dossiers*', 'images/creer_fiche_test_descritpion_basse.png',
                       coordinate[0], coordinate[1], coordinate[2], coordinate[3])
-    im1 = Image.open("images/creer_fiche_test_priorite3.png")
-    im2 = Image.open("images/creer_fiche_test_priorite3_origin.png")
+    im1 = Image.open("images/creer_fiche_test_descritpion_basse.png")
+    im2 = Image.open("images/creer_fiche_test_descritpion_basse_origin.png")
     diff = ImageChops.difference(im2, im1)
     if diff.getbbox():
-        print("Erreur possible dans 'Creation Fiche test: priorite3'")
+        print("Erreur possible dans 'Creation Fiche test: description basse'")
 
 fermer()
