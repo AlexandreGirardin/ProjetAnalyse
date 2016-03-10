@@ -232,7 +232,7 @@ Le technicien est de retour à l'affichage précédent.</PostConditions>
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2016-03-08T17:09:55.5690484-05:00</DateAdded>
-    <DateModified>2016-03-09T20:54:47.06364-05:00</DateModified>
+    <DateModified>2016-03-10T10:26:32.2389309-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-73ec1886-a5c4-4ec1-bfae-1fbb50e1ae1e</ParentID>
@@ -2089,7 +2089,7 @@ Le technicien est de retour à l'affichage précédent.</PostConditions>
 \viewkind4\uc1\pard\f0\fs20 Ajout d'une pi\'e8ce avec une description de 1023 caract\'e8res\par
 }
 </RichDescription>
-    <Name>Ajout d'une pièce «Description limite haute  (1023 caractères)»</Name>
+    <Name>Ajout d'une pièce «Description limite haute  (254 caractères)»</Name>
     <Status />
     <Complexity />
     <TestType />

@@ -2,16 +2,11 @@ import sys
 import ldtp
 import Image
 import ImageChops
-from connexionBD import *
-from fermer_fenetre import *
+from commandes_bases import *
 
 connecter()
 
-ldtp.waittillguiexist('*Gestion de dossiers*')
-coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
-ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
-coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
-ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
+ajouterFiche()
 
 ldtp.click('*Gestion de dossiers*', 'btnAjouter')
 ldtp.waittillguiexist('*une nouvelle fiche*')

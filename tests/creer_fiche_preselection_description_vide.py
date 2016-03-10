@@ -2,21 +2,16 @@ import sys
 import ldtp
 import Image
 import ImageChops
-from connexionBD import *
-from fermer_fenetre import *
+from commandes_bases import *
 
 connecter()
 
-
-ldtp.waittillguiexist('*Gestion de dossiers*')
-coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
-ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
-coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'tbl0')
-ldtp.generatemouseevent(coordinate[0]+116, coordinate[1]+35, 'b1c')
+ajouterFiche()
 
 ldtp.click('*Gestion de dossiers*', 'btnAjouter')
 ldtp.waittillguiexist('*une nouvelle fiche*')
 ldtp.click('*une nouvelle fiche*', 'btnSaveEnter')
+
 coordinate = ldtp.getobjectsize('*Gestion de dossiers*', 'pane0')
 if (len(sys.argv) > 1) and (sys.argv[1] == 'origin'):
     ldtp.imagecapture('*Gestion de dossiers*', 'images/creer_fiche_test_preselection_description_origin.png',

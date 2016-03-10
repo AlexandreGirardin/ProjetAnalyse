@@ -113,6 +113,7 @@ VALUES
 INSERT INTO `fichesPieces`
     (`idFiche`, `idPiece`)
 VALUES
+    (1, 2),
     (5, 2),
     (8, 1);
 
@@ -147,4 +148,5 @@ VALUES
     (24, 10, 10, 3, "Terminé"),
     (25, 10, 1,  0, ""),
     (26, 5,  4,  1, ""),
-    (27, 7,  4,  2, "");
+    (27, 7,  4,  2, ""),
+    (28,  2,  2,  2, "D'ici vendredi");
