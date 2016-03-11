@@ -16,7 +16,7 @@
   </Package>
   <Story>
     <UniqueID>S-661cfd38-aea5-448d-a39e-8c1d25b57a17</UniqueID>
-    <UserID>S-10-2</UserID>
+    <UserID>S-12-1</UserID>
     <ParentID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</ParentID>
     <Name>Créer un dossier d'appareil</Name>
     <Description>Lorsqu'un service doit être effectué sur un nouvel appareil, l'employé crée un dossier pour l'appareil, s'il n'a pas déjà été créé, afin de pouvoir regrouper ses informations. Ainsi, toutes les tâches effectuées sur l'appareil seront conservées dans les archives</Description>
@@ -31,11 +31,11 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T09:47:42.796218-04:00</DateAdded>
-    <DateModified>2015-12-17T16:13:23.6901934-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.1239124-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-8aceabb7-ca3b-4028-b1e1-344edbd8354d</UniqueID>
-    <UserID>S-12-1</UserID>
+    <UserID>S-12-2</UserID>
     <ParentID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</ParentID>
     <Name>Consulter le dossier d'un appareil</Name>
     <Description>Un technicien peut consulter les informations d'un appareil (les tâches à faire, les tâches ayant été effectuées par le passé, les informations de son propriétaire).</Description>
@@ -50,11 +50,11 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T10:16:09.659216-04:00</DateAdded>
-    <DateModified>2015-11-16T08:56:14.5255771-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.1249131-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-28313edc-3c5d-4cd9-a820-dcb113c436f5</UniqueID>
-    <UserID>S-12-2</UserID>
+    <UserID>S-12-3</UserID>
     <ParentID>P-96915b0c-4d25-49d1-a30a-81a6d5ec05de</ParentID>
     <Name>Modifier le dossier d'un appareil</Name>
     <Description>Un dossier d'appareil peut être mis à jour par le technicien après avoir été créé par celui-ci ou sur l'interface web.
@@ -71,7 +71,7 @@ Pour satisfaire les r\'e8gles d'affaires, un \cf1 dossier\cf2  d'\cf1\ul apparei
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T10:17:46.0049852-04:00</DateAdded>
-    <DateModified>2015-12-18T13:28:04.2172631-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.127921-05:00</DateModified>
   </Story>
   <UserID>
     <DefaultPrefix>UC-12-</DefaultPrefix>
@@ -91,6 +91,6 @@ Pour satisfaire les r\'e8gles d'affaires, un \cf1 dossier\cf2  d'\cf1\ul apparei
   </UserID>
   <UserID>
     <DefaultPrefix>S-12-</DefaultPrefix>
-    <NextValue>3</NextValue>
+    <NextValue>4</NextValue>
   </UserID>
 </UCTDataSet>

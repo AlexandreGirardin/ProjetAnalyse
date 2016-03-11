@@ -16,7 +16,7 @@
   </Package>
   <Requirement>
     <UniqueID>REQ-bd86b376-14d3-40ee-9ef7-4316520f83ef</UniqueID>
-    <UserID>REQ-1</UserID>
+    <UserID>REQ-5-1</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Suivre de manière détaillée la maintenance</Name>
     <Description>Exigé par Jean Joly
@@ -37,12 +37,12 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  devrait aussi permettre de garder la trace des
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T09:49:22.2233875-04:00</DateAdded>
-    <DateModified>2015-11-16T08:26:40.0307012-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4814851-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-fbbd5fda-1de4-4396-a073-861f28f5c4b5</UniqueID>
-    <UserID>REQ-5-1</UserID>
+    <UserID>REQ-5-3</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Conserver des archives</Name>
     <Description>Exigé par Jean Joly, demandé par Jannie et Pierre-Luc
@@ -63,12 +63,12 @@ Les archives peuvent \'e9galement faciliter le diagnostic de nouveaux probl\'e8m
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T10:00:02.6993131-04:00</DateAdded>
-    <DateModified>2015-09-10T13:58:38.9706554-04:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4844895-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-56f29219-ffda-4735-8473-98610ffc3f9b</UniqueID>
-    <UserID>REQ-3</UserID>
+    <UserID>REQ-5-2</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Rester compatible avec Acomba</Name>
     <Description>Demandé dans le cadre du cours, Jean Joly qui aimerai bien.
@@ -87,12 +87,12 @@ Afin de simplifier la compatibilit\'e9 avec le \cf2\ul syst\'e8me\cf1\ulnone  \c
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T10:38:47.9538447-04:00</DateAdded>
-    <DateModified>2015-11-16T08:44:46.2893138-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4824882-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-58a5ebb5-e943-4a31-aabb-7859ad6b0132</UniqueID>
-    <UserID>REQ-5-2</UserID>
+    <UserID>REQ-5-4</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Création seulement</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -111,12 +111,12 @@ Pour des raisons de comptabilit\'e9, les donn\'e9es ne doivent jamais \'eatre ef
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T14:30:54.6928986-04:00</DateAdded>
-    <DateModified>2015-11-16T08:29:08.0847197-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4854902-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-dcaddce6-ca3b-4c87-8009-2b097523833e</UniqueID>
-    <UserID>REQ-5-3</UserID>
+    <UserID>REQ-5-5</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Rapidité</Name>
     <Description>Demandé par Jean Joly, recommandé fortement par Jannie.
@@ -135,12 +135,12 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  propos\'e9 doit \'eatre plus rapide que l'actu
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T14:40:06.9026685-04:00</DateAdded>
-    <DateModified>2015-11-16T08:41:42.5460846-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4874915-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-fab51d8e-4fad-408a-afca-cc2de50cd56b</UniqueID>
-    <UserID>REQ-5-4</UserID>
+    <UserID>REQ-5-6</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Simplicité</Name>
     <Description>Demandé par Jean Joly, recommandé pour Pierre
@@ -159,12 +159,12 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  doit \'eatre simple d'utilisation et ne pas ra
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T14:42:11.4064872-04:00</DateAdded>
-    <DateModified>2015-11-16T08:45:09.0872815-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4884922-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-c5795878-7bfe-419b-b9f3-926a3f818ae2</UniqueID>
-    <UserID>REQ-5-5</UserID>
+    <UserID>REQ-5-7</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Confidentialité</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -183,12 +183,12 @@ Les informations contenues dans le \cf2\ul syst\'e8me\cf1\ulnone  doivent demeur
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-10T14:45:03.3343892-04:00</DateAdded>
-    <DateModified>2015-11-16T08:27:58.8626205-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4894928-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-b4fe0324-ba13-47f6-9b5c-c4c38ac2c804</UniqueID>
-    <UserID>REQ-5-6</UserID>
+    <UserID>REQ-5-8</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permettre le suivi des tâches</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -207,12 +207,12 @@ Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir mettre \'e0 jour le statut d
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:19:22.964287-04:00</DateAdded>
-    <DateModified>2015-11-16T08:30:53.1679035-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4924944-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-9f9a9e51-e3f3-45ae-b82a-ab8addacd7ca</UniqueID>
-    <UserID>REQ-5-7</UserID>
+    <UserID>REQ-5-9</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Gérer les clients (CRU)</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -231,12 +231,12 @@ Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir cr\'e9er, modifier et visual
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:23:27.4766448-04:00</DateAdded>
-    <DateModified>2015-11-16T08:30:02.6029543-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4944973-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-cde001c1-7b2c-4f94-b880-41d85d9905ee</UniqueID>
-    <UserID>REQ-5-8</UserID>
+    <UserID>REQ-5-10</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Gérer les appareils (CRUA)</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -255,12 +255,12 @@ Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier, visualise
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:28:58.6328991-04:00</DateAdded>
-    <DateModified>2015-11-16T08:29:56.5245306-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.4974982-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-1cd048c3-23eb-4249-af01-0990307ecfc5</UniqueID>
-    <UserID>REQ-5-9</UserID>
+    <UserID>REQ-5-11</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Gérer les fiches (CRU)</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -279,12 +279,12 @@ Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier, et visual
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:29:43.1480511-04:00</DateAdded>
-    <DateModified>2015-11-16T08:30:09.6032953-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.5004986-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-f7faa38a-b475-4a42-ab1a-b69991b9c40f</UniqueID>
-    <UserID>REQ-5-10</UserID>
+    <UserID>REQ-5-12</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Faire des rapports</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie, demandé par Pierre-Luc
@@ -303,12 +303,12 @@ Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir g\'e9n\'e9rer un \cf3 rappor
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:43:54.8670356-04:00</DateAdded>
-    <DateModified>2015-11-16T08:29:29.3044734-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.5014985-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-a2ed5ecb-22e2-498c-bf37-84125401dd8a</UniqueID>
-    <UserID>REQ-5-11</UserID>
+    <UserID>REQ-5-13</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permettre le suivi du matériel</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -327,12 +327,12 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  doit pouvoir garder les traces des accessoires
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:50:49.2082544-04:00</DateAdded>
-    <DateModified>2015-11-16T08:31:31.7791189-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.5045028-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-8bde740d-4dfd-4634-b215-f8a54084275d</UniqueID>
-    <UserID>REQ-5-12</UserID>
+    <UserID>REQ-5-14</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Fournir une protection par mot de passe</Name>
     <Description>Exigé par Jean Joly
@@ -351,12 +351,12 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  doit \'eatre s\'e9curis\'e9 par un mot de pass
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T08:58:29.9099414-04:00</DateAdded>
-    <DateModified>2015-11-16T08:29:47.930368-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.5075036-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-ff3d7229-3193-4fa0-afd2-e50c04b3d00f</UniqueID>
-    <UserID>REQ-5-13</UserID>
+    <UserID>REQ-5-15</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Identifier le technicien</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -375,12 +375,12 @@ Le \cf2\ul syst\'e8me\cf1\ulnone  doit permettre d'identifier le \cf2\ul technic
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T10:08:37.1474049-04:00</DateAdded>
-    <DateModified>2015-11-16T08:30:28.244809-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.5095054-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-9e51d517-0b9f-4cd6-9051-0e0ae6c79649</UniqueID>
-    <UserID>REQ-5-14</UserID>
+    <UserID>REQ-5-16</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Gérer les tâches (CRU)</Name>
     <Description>Exigé par Jean Joly, recommandé par Jannie
@@ -399,12 +399,12 @@ Les \cf2\ul techniciens\cf1\ulnone  doivent pouvoir ajouter, modifier ou visuali
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-24T12:43:02.1202276-04:00</DateAdded>
-    <DateModified>2015-11-16T08:30:14.4628972-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.5115071-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <Requirement>
     <UniqueID>REQ-a0ad0dfd-0084-44bb-a41c-9c9a6e4fbdfb</UniqueID>
-    <UserID>REQ-5-15</UserID>
+    <UserID>REQ-5-17</UserID>
     <ParentID>P-2c62304e-8234-437b-a0a7-7d17e0b62773</ParentID>
     <Name>Permettre la gestion des appareils par le client (CRUA)</Name>
     <Description>Demandé dans le cadre du cours.
@@ -423,7 +423,7 @@ Le \cf2\ul client\cf1\ulnone  doit pouvoir consulter, ajouter, modifier et archi
     <AssignedTo />
     <Release />
     <DateAdded>2015-09-28T08:29:54.326271-04:00</DateAdded>
-    <DateModified>2015-11-16T08:33:34.1156021-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.5125058-05:00</DateModified>
     <jsonTestStepBag>{"TestScenarioSteps":[]}</jsonTestStepBag>
   </Requirement>
   <UserID>
@@ -436,7 +436,7 @@ Le \cf2\ul client\cf1\ulnone  doit pouvoir consulter, ajouter, modifier et archi
   </UserID>
   <UserID>
     <DefaultPrefix>REQ-5-</DefaultPrefix>
-    <NextValue>16</NextValue>
+    <NextValue>18</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>DEF-5-</DefaultPrefix>

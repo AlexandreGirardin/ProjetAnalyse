@@ -16,7 +16,7 @@
   </Package>
   <UseCase>
     <UniqueID>UC-6f16e93c-f54a-4648-8390-92bc00bf351f</UniqueID>
-    <UserID>UC-8-1</UserID>
+    <UserID>UC-16-1</UserID>
     <ParentID>P-5c1248cd-ad98-4937-9ead-6f8d89ff6087</ParentID>
     <Name>Créer une nouvelle action</Name>
     <Description>Ajouter une nouvelle action à la liste des actions définies.</Description>
@@ -38,11 +38,11 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:04:55.5623216-04:00</DateAdded>
-    <DateModified>2016-03-01T16:44:23.8967605-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.9718116-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-70cf062d-d8b2-42e8-9a00-cdaa827a72a0</UniqueID>
-    <UserID>UC-8-2</UserID>
+    <UserID>UC-16-2</UserID>
     <ParentID>P-5c1248cd-ad98-4937-9ead-6f8d89ff6087</ParentID>
     <Name>Activer/désactiver une action</Name>
     <Description>Le technicien peut modifier l'état d'une action.</Description>
@@ -64,11 +64,11 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-10T15:13:25.1372805-04:00</DateAdded>
-    <DateModified>2016-03-01T16:03:17.3082707-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.0078372-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-70f463c9-8eec-4b37-83f6-2ce760b9db1b</UniqueID>
-    <UserID>UC-8-3</UserID>
+    <UserID>UC-16-3</UserID>
     <ParentID>P-5c1248cd-ad98-4937-9ead-6f8d89ff6087</ParentID>
     <Name>Voir une définition d'action</Name>
     <Description>Permet au technicien de voir la description d'une action sélectionnée.</Description>
@@ -90,11 +90,11 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T10:46:03.7980141-04:00</DateAdded>
-    <DateModified>2015-12-17T15:26:59.6709424-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.0408619-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-519db064-3cc5-4179-9f52-5eea87db0e3f</UniqueID>
-    <UserID>UC-8-4</UserID>
+    <UserID>UC-16-4</UserID>
     <ParentID>P-5c1248cd-ad98-4937-9ead-6f8d89ff6087</ParentID>
     <Name>Modifier une action</Name>
     <Description>Permet de modifier les informations d'une action.</Description>
@@ -117,11 +117,11 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-17T13:22:14.9084413-04:00</DateAdded>
-    <DateModified>2015-12-17T15:29:41.6531756-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.0748834-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-18c80497-16f0-4fa5-af14-cdf84b88b24c</UniqueID>
-    <UserID>UC-15-1</UserID>
+    <UserID>UC-16-5</UserID>
     <ParentID>P-5c1248cd-ad98-4937-9ead-6f8d89ff6087</ParentID>
     <Name>Consulter une action</Name>
     <Description>Affiche les informations sur une action.</Description>
@@ -143,7 +143,7 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-12-17T16:09:56.8668674-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.1149068-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-6f16e93c-f54a-4648-8390-92bc00bf351f</ParentID>
@@ -933,7 +933,7 @@ Le système est de retour à la page de visualisation des actions.</PostConditio
   </AnytimeExtension>
   <UserID>
     <DefaultPrefix>UC-16-</DefaultPrefix>
-    <NextValue>1</NextValue>
+    <NextValue>6</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>A-16-</DefaultPrefix>

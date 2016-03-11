@@ -16,7 +16,7 @@
   </Package>
   <UseCase>
     <UniqueID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</UniqueID>
-    <UserID>UC-1</UserID>
+    <UserID>UC-15-1</UserID>
     <ParentID>P-8ff62fea-5061-4aae-a27f-8ecce8094ed7</ParentID>
     <Name>Créer un dossier de client</Name>
     <Description>Ajouter une entrée dans la base de données du système pour un nouveau client.</Description>
@@ -39,11 +39,11 @@
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-08-31T11:06:21.025455-04:00</DateAdded>
-    <DateModified>2016-03-01T16:54:42.0568021-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.8377236-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eac8e11f-eaf9-47b1-9aa1-193cc2239225</UniqueID>
-    <UserID>UC-5</UserID>
+    <UserID>UC-15-2</UserID>
     <ParentID>P-8ff62fea-5061-4aae-a27f-8ecce8094ed7</ParentID>
     <Name>Modifier un dossier de client</Name>
     <Description>Le technicien modifie les informations relatives à un client.</Description>
@@ -66,11 +66,11 @@ Le système est de retour à la page de visualisation des dossiers de client.</P
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-03T08:21:35.5151788-04:00</DateAdded>
-    <DateModified>2015-12-17T14:29:12.7727947-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.8707464-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-eec925da-091e-42c8-b860-c1841536beb0</UniqueID>
-    <UserID>UC-9</UserID>
+    <UserID>UC-15-3</UserID>
     <ParentID>P-8ff62fea-5061-4aae-a27f-8ecce8094ed7</ParentID>
     <Name>Rechercher un dossier de client</Name>
     <Description>Le technicien recherche le dossier d'un client en utilisant la recherche par mots-clés.</Description>
@@ -93,11 +93,11 @@ La base de données est accessible et les dossiers de clients sont affichés.</P
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-08T09:59:20.7772349-04:00</DateAdded>
-    <DateModified>2015-12-17T14:35:12.0578274-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.2379883-05:00</DateModified>
   </UseCase>
   <UseCase>
     <UniqueID>UC-61e8633f-4ad2-4a95-9dc6-b046e6423dda</UniqueID>
-    <UserID>UC-7-4</UserID>
+    <UserID>UC-15-4</UserID>
     <ParentID>P-8ff62fea-5061-4aae-a27f-8ecce8094ed7</ParentID>
     <Name>Consulter un dossier de client</Name>
     <Description>Affiche les informations sur le dossier de client.</Description>
@@ -119,7 +119,7 @@ La base de données est accessible et les dossiers de clients sont affichés.</P
     <TestingSetup />
     <TestingConfigurations />
     <DateAdded>2015-09-14T09:59:39.5954775-04:00</DateAdded>
-    <DateModified>2015-12-17T15:01:50.6128975-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.9367899-05:00</DateModified>
   </UseCase>
   <UCActor>
     <ParentID>UC-eb86b69c-fc55-409c-91bb-40f209e1d586</ParentID>
@@ -429,10 +429,10 @@ La base de données est accessible et les dossiers de clients sont affichés.</P
   <Step>
     <UniqueID>ST-642e8a63-9fc6-4efb-9ce3-6200c5dc6e22</UniqueID>
     <ParentID>X-b66d8987-a90c-4ad4-aa3d-d6f9a1f7ec0a</ParentID>
-    <Description>Selon la volonté du client, le technicien lui crée un dossier (UC-1)</Description>
+    <Description>Selon la volonté du client, le technicien lui crée un dossier (UC-15-1)</Description>
     <RichDescription>{\rtf1\ansi\ansicpg1252\deff0\deflang4105{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
 {\colortbl ;\red0\green0\blue0;\red128\green0\blue0;\red0\green0\blue255;}
-\viewkind4\uc1\pard\cf1\f0\fs20 Selon la volont\'e9 du \cf2\ul client\cf1\ulnone , le \cf3\ul technicien\cf1\ulnone  lui cr\'e9e un dossier (\cf3\ul UC-1\cf1\ulnone )\par
+\viewkind4\uc1\pard\cf1\f0\fs20 Selon la volont\'e9 du \cf2\ul client\cf1\ulnone , le \cf3\ul technicien\cf1\ulnone  lui cr\'e9e un dossier (\cf3\ul UC-15-1\cf1\ulnone )\par
 }
 </RichDescription>
     <Sequence>1</Sequence>
@@ -746,7 +746,7 @@ La base de données est accessible et les dossiers de clients sont affichés.</P
   </AnytimeExtension>
   <UserID>
     <DefaultPrefix>UC-15-</DefaultPrefix>
-    <NextValue>2</NextValue>
+    <NextValue>5</NextValue>
   </UserID>
   <UserID>
     <DefaultPrefix>A-15-</DefaultPrefix>

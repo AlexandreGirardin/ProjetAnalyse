@@ -9,8 +9,6 @@ connecter()
 ajouterFiche()
 
 ldtp.waittillguiexist('*une nouvelle fiche*')
-ldtp.mouseleftclick('*une nouvelle fiche*', 'txt0')
-ldtp.enterstring('*une nouvelle fiche*', 'txt0', "")
 ldtp.mouseleftclick('*une nouvelle fiche*', 'cboDown')
 ldtp.mouseleftclick('*une nouvelle fiche*', 'lstInstallationavecbackup')
 ldtp.click('*une nouvelle fiche*', 'btnSaveEnter')

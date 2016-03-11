@@ -16,7 +16,7 @@
   </Package>
   <Story>
     <UniqueID>S-33a9dbca-7379-4278-a783-894186bb2ba1</UniqueID>
-    <UserID>S-13-4</UserID>
+    <UserID>S-17-1</UserID>
     <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
     <Name>Modifier une action</Name>
     <Description>Un technicien peut modifier le nom ou la définition d'une action.</Description>
@@ -31,11 +31,11 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T15:08:52.3630526-04:00</DateAdded>
-    <DateModified>2015-11-16T08:56:38.8548733-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.1299192-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-2410a328-88b8-48b9-bbf3-e5e18d7c84f9</UniqueID>
-    <UserID>S-13-3</UserID>
+    <UserID>S-17-2</UserID>
     <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
     <Name>Voir une définition d'action</Name>
     <Description>Les techniciens peuvent visualiser la définition d'une tâche afin de savoir ce qu'ils y a à faire sur un appareil.</Description>
@@ -50,11 +50,11 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T10:35:15.9104295-04:00</DateAdded>
-    <DateModified>2015-12-18T14:07:33.3521085-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.1319193-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-4052f541-dccc-4dfe-81a6-08dd6539b773</UniqueID>
-    <UserID>S-13-2</UserID>
+    <UserID>S-17-3</UserID>
     <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
     <Name>Activer/désactiver une action</Name>
     <Description>Lorsque l'entreprise décide d'arrêter d'offrir un service, un technicien peut retirer l'action de la liste des actions. Pour des raisons d'archives, l'action n'est pas effacée mais simplement désactivée. Ainsi, elle est encore visible dans les tâches mais n'est plus présentée lors de la création d'une fiche de maintenance.</Description>
@@ -69,11 +69,11 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T10:26:32.5451102-04:00</DateAdded>
-    <DateModified>2015-11-16T08:56:22.0728191-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.1329208-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-614a9b43-4830-443d-b076-ed2e4d061f52</UniqueID>
-    <UserID>S-13-1</UserID>
+    <UserID>S-17-4</UserID>
     <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
     <Name>Créer une nouvelle action</Name>
     <Description>Un technicien peut créer une nouvelle définition d'une action à effectuer lorsque l'entreprise veut l'ajouter aux services offerts.</Description>
@@ -88,11 +88,11 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T10:22:51.4615219-04:00</DateAdded>
-    <DateModified>2015-09-17T15:11:35.6797394-04:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.1349221-05:00</DateModified>
   </Story>
   <Story>
     <UniqueID>S-069f4b6b-0660-4ff4-9b00-f23223372a39</UniqueID>
-    <UserID>S-17-1</UserID>
+    <UserID>S-17-5</UserID>
     <ParentID>P-21c41e59-543c-4731-b875-a4ef673bbb67</ParentID>
     <Name>Consulter une action</Name>
     <Description>Un technicien peut consulter une action dans le système. Affiche toutes les informations d'une action.</Description>
@@ -107,7 +107,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-11-16T09:33:27.0115098-05:00</DateAdded>
-    <DateModified>2015-12-18T14:43:42.5496764-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:24.135922-05:00</DateModified>
   </Story>
   <UserID>
     <DefaultPrefix>UC-17-</DefaultPrefix>
@@ -127,6 +127,6 @@
   </UserID>
   <UserID>
     <DefaultPrefix>S-17-</DefaultPrefix>
-    <NextValue>2</NextValue>
+    <NextValue>6</NextValue>
   </UserID>
 </UCTDataSet>

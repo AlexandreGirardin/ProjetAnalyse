@@ -16,7 +16,7 @@
   </Package>
   <Story>
     <UniqueID>S-70893881-ee57-4d80-a57f-20a8b62f7957</UniqueID>
-    <UserID>S-10-3</UserID>
+    <UserID>S-10-1</UserID>
     <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
     <Name>Ouverture de session</Name>
     <Description>Pour une plus grande sécurité, un mot de passe est demandé à l'ouverture du système. Ainsi, seul le personnel autorisé peut consulter et modifier les informations.</Description>
@@ -31,7 +31,7 @@
     <AssignedTo />
     <Status />
     <DateAdded>2015-09-17T09:54:14.4037058-04:00</DateAdded>
-    <DateModified>2015-12-17T16:13:54.9034685-05:00</DateModified>
+    <DateModified>2016-03-11T14:50:23.5185098-05:00</DateModified>
   </Story>
   <ElementStub>
     <ParentID>P-b75ac097-9dec-4ece-b2ae-ed63d154ff0f</ParentID>
@@ -81,6 +81,6 @@
   </UserID>
   <UserID>
     <DefaultPrefix>S-10-</DefaultPrefix>
-    <NextValue>8</NextValue>
+    <NextValue>2</NextValue>
   </UserID>
 </UCTDataSet>
